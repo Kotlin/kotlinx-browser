@@ -74,6 +74,7 @@ public external interface SVGBoundingBoxOptions {
         set(value) = definedExternally
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline fun SVGBoundingBoxOptions(fill: Boolean? = true, stroke: Boolean? = false, markers: Boolean? = false, clipped: Boolean? = false): SVGBoundingBoxOptions {
     val o = js("({})")
@@ -212,9 +213,11 @@ public external abstract class SVGNameList {
     fun getItem(index: Int): dynamic
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGNameList.get(index: Int): dynamic = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGNameList.set(index: Int, newItem: dynamic) { asDynamic()[index] = newItem }
 
@@ -233,9 +236,11 @@ public external abstract class SVGNumberList {
     fun getItem(index: Int): SVGNumber
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGNumberList.get(index: Int): SVGNumber? = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGNumberList.set(index: Int, newItem: SVGNumber) { asDynamic()[index] = newItem }
 
@@ -254,9 +259,11 @@ public external abstract class SVGLengthList {
     fun getItem(index: Int): SVGLength
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGLengthList.get(index: Int): SVGLength? = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGLengthList.set(index: Int, newItem: SVGLength) { asDynamic()[index] = newItem }
 
@@ -355,9 +362,11 @@ public external abstract class SVGStringList {
     fun getItem(index: Int): String
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGStringList.get(index: Int): String? = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGStringList.set(index: Int, newItem: String) { asDynamic()[index] = newItem }
 
@@ -809,9 +818,11 @@ public external abstract class SVGTransformList {
     fun getItem(index: Int): SVGTransform
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGTransformList.get(index: Int): SVGTransform? = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGTransformList.set(index: Int, newItem: SVGTransform) { asDynamic()[index] = newItem }
 
@@ -1053,9 +1064,11 @@ public external abstract class SVGPointList {
     fun getItem(index: Int): DOMPoint
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGPointList.get(index: Int): DOMPoint? = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun SVGPointList.set(index: Int, newItem: DOMPoint) { asDynamic()[index] = newItem }
 

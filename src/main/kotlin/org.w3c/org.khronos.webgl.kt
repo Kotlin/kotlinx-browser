@@ -53,6 +53,7 @@ public external interface WebGLContextAttributes {
         set(value) = definedExternally
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline fun WebGLContextAttributes(alpha: Boolean? = true, depth: Boolean? = true, stencil: Boolean? = false, antialias: Boolean? = true, premultipliedAlpha: Boolean? = true, preserveDrawingBuffer: Boolean? = false, preferLowPowerToHighPerformance: Boolean? = false, failIfMajorPerformanceCaveat: Boolean? = false): WebGLContextAttributes {
     val o = js("({})")
@@ -904,6 +905,7 @@ public external interface WebGLContextEventInit : EventInit {
         set(value) = definedExternally
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline fun WebGLContextEventInit(statusMessage: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): WebGLContextEventInit {
     val o = js("({})")
@@ -956,9 +958,11 @@ public external open class Int8Array : ArrayBufferView {
     }
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Int8Array.get(index: Int): Byte = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Int8Array.set(index: Int, value: Byte) { asDynamic()[index] = value }
 
@@ -983,9 +987,11 @@ public external open class Uint8Array : ArrayBufferView {
     }
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Uint8Array.get(index: Int): Byte = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Uint8Array.set(index: Int, value: Byte) { asDynamic()[index] = value }
 
@@ -1010,9 +1016,11 @@ public external open class Uint8ClampedArray : ArrayBufferView {
     }
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Uint8ClampedArray.get(index: Int): Byte = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Uint8ClampedArray.set(index: Int, value: Byte) { asDynamic()[index] = value }
 
@@ -1037,9 +1045,11 @@ public external open class Int16Array : ArrayBufferView {
     }
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Int16Array.get(index: Int): Short = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Int16Array.set(index: Int, value: Short) { asDynamic()[index] = value }
 
@@ -1064,9 +1074,11 @@ public external open class Uint16Array : ArrayBufferView {
     }
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Uint16Array.get(index: Int): Short = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Uint16Array.set(index: Int, value: Short) { asDynamic()[index] = value }
 
@@ -1091,9 +1103,11 @@ public external open class Int32Array : ArrayBufferView {
     }
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Int32Array.get(index: Int): Int = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Int32Array.set(index: Int, value: Int) { asDynamic()[index] = value }
 
@@ -1118,9 +1132,11 @@ public external open class Uint32Array : ArrayBufferView {
     }
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Uint32Array.get(index: Int): Int = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Uint32Array.set(index: Int, value: Int) { asDynamic()[index] = value }
 
@@ -1145,9 +1161,11 @@ public external open class Float32Array : ArrayBufferView {
     }
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Float32Array.get(index: Int): Float = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Float32Array.set(index: Int, value: Float) { asDynamic()[index] = value }
 
@@ -1172,9 +1190,11 @@ public external open class Float64Array : ArrayBufferView {
     }
 }
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Float64Array.get(index: Int): Double = asDynamic()[index]
 
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
 public inline operator fun Float64Array.set(index: Int, value: Double) { asDynamic()[index] = value }
 
