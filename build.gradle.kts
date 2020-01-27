@@ -33,7 +33,7 @@ val sourcesJar by tasks.registering(Jar::class) {
 
 publishing {
     publications.invoke {
-        register("mavenJava", MavenPublication::class) {
+        register("maven", MavenPublication::class) {
             artifactId = artifactId
             from(components["java"])
             artifact(sourcesJar.get())
