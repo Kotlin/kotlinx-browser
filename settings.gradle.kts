@@ -1,4 +1,8 @@
 pluginManagement {
+    repositories {
+        maven("https://kotlin.bintray.com/kotlin-bootstrap/")
+        gradlePluginPortal()
+    }
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id == "kotlin2js") {
@@ -8,6 +12,6 @@ pluginManagement {
     }
 }
 
-include ":dukat"
+include(":dukat")
 
 rootProject.name = "kotlinx-browser"

@@ -3,6 +3,7 @@ plugins {
 }
 
 repositories {
+    maven("https://kotlin.bintray.com/kotlin-bootstrap/")
     mavenCentral()
     maven("https://kotlin.bintray.com/dukat")
 }
