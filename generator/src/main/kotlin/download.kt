@@ -69,7 +69,7 @@ fun main(args: Array<String>) {
         w.appendln("package org.w3c.dom.css;")
         w.appendln()
         w.appendln("// generated from $cssPropertiesUrl")
-        w.appendln("// for more details see libraries/tools/org.jetbrains.kotlin.tools.dukat/download.kt")
+        w.appendln("// for more details see generator/src/main/kotlin/download.kt")
 
         w.appendln("partial interface CSSStyleDeclaration {")
 

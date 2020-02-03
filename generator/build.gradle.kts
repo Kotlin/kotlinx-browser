@@ -18,12 +18,12 @@ dependencies {
 task("downloadIDL", JavaExec::class) {
     main = "org.jetbrains.kotlin.tools.dukat.DownloadKt"
     classpath = sourceSets["main"].runtimeClasspath
-    dependsOn(":dukat:build")
+    dependsOn(":generator:build")
 }
 
 task("generateStdlibFromIDL", JavaExec::class) {
     main = "org.jetbrains.kotlin.tools.dukat.LaunchKt"
     classpath = sourceSets["main"].runtimeClasspath
-    dependsOn(":dukat:build")
+    dependsOn(":generator:build")
     systemProperty("line.separator", "\n")
 }

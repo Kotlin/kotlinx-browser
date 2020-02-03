@@ -1,7 +1,7 @@
 package org.w3c.dom.css;
 
 // generated from https://www.w3.org/Style/CSS/all-properties.en.json
-// for more details see libraries/tools/dukat/download.kt
+// for more details see generator/src/main/kotlin/download.kt
 partial interface CSSStyleDeclaration {
     attribute String alignContent;
     attribute String alignItems;

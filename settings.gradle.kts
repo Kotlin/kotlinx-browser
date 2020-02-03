@@ -12,6 +12,6 @@ pluginManagement {
     }
 }
 
-include(":dukat")
+include(":generator")
 
 rootProject.name = "kotlinx-browser"
