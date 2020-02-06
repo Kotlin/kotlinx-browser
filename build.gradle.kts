@@ -24,18 +24,23 @@ tasks.withType<Kotlin2JsCompile>().configureEach {
 
 group = "org.jetbrains.kotlinx"
 val artifactId = "kotlinx-browser"
-version = "0.1"
+version = "0.2"
 
 val sourcesJar by tasks.registering(Jar::class) {
     classifier = "sources"
     from(project.the<SourceSetContainer>()["main"].allSource)
 }
 
+tasks.jar {
+    from("${project(":empty").buildDir}/classes/kotlin/main/")
+    dependsOn(":empty:classes")
+}
+
 publishing {
     publications.invoke {
         register("maven", MavenPublication::class) {
             artifactId = artifactId
-            from(components["java"])
+            artifact(tasks.jar.get())
             artifact(sourcesJar.get())
         }
     }
