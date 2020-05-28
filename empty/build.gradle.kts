@@ -4,5 +4,5 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven("https://kotlin.bintray.com/kotlin-bootstrap/")
+    maven("https://dl.bintray.com/kotlin/kotlin-eap")
 }

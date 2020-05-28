@@ -2,13 +2,13 @@ import com.jfrog.bintray.gradle.BintrayExtension
 import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 
 plugins {
-    id("kotlin2js") version "1.4.0-dev-1075"
+    id("kotlin2js") version "1.4-M1"
     `maven-publish`
     id("com.jfrog.bintray") version "1.8.4"
 }
 
 repositories {
-    maven("https://kotlin.bintray.com/kotlin-bootstrap/")
+    maven ("https://dl.bintray.com/kotlin/kotlin-eap")
     mavenCentral()
 }
 
@@ -18,7 +18,7 @@ dependencies {
 
 tasks.withType<Kotlin2JsCompile>().configureEach {
     kotlinOptions {
-        freeCompilerArgs = freeCompilerArgs + listOf("-Xallow-kotlin-package", "-Xir-produce-klib-dir", "-Xir-only")
+        freeCompilerArgs = freeCompilerArgs + listOf("-Xallow-kotlin-package")
     }
 }
 
