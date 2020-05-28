@@ -12,8 +12,10 @@ import kotlin.js.*
 import org.khronos.webgl.*
 import org.w3c.dom.clipboard.*
 import org.w3c.dom.css.*
+import org.w3c.dom.encryptedmedia.*
 import org.w3c.dom.events.*
 import org.w3c.dom.mediacapture.*
+import org.w3c.dom.mediasource.*
 import org.w3c.dom.pointerevents.*
 import org.w3c.dom.svg.*
 import org.w3c.fetch.*
@@ -1278,7 +1280,7 @@ public external abstract class HTMLTrackElement : HTMLElement {
 public external abstract class HTMLMediaElement : HTMLElement {
     open val error: MediaError?
     open var src: String
-    open var srcObject: dynamic
+    open var srcObject: MediaProvider?
     open val currentSrc: String
     open var crossOrigin: String?
     open val networkState: Short
@@ -1303,6 +1305,9 @@ public external abstract class HTMLMediaElement : HTMLElement {
     open val audioTracks: AudioTrackList
     open val videoTracks: VideoTrackList
     open val textTracks: TextTrackList
+    open val mediaKeys: MediaKeys?
+    open var onencrypted: ((Event) -> dynamic)?
+    open var onwaitingforkey: ((Event) -> dynamic)?
     fun load()
     fun canPlayType(type: String): CanPlayTypeResult
     fun fastSeek(time: Double)
@@ -1310,6 +1315,7 @@ public external abstract class HTMLMediaElement : HTMLElement {
     fun play(): Promise<Unit>
     fun pause()
     fun addTextTrack(kind: TextTrackKind, label: String = definedExternally, language: String = definedExternally): TextTrack
+    fun setMediaKeys(mediaKeys: MediaKeys?): Promise<Unit>
 
     companion object {
         val NETWORK_EMPTY: Short
@@ -1380,6 +1386,7 @@ public external abstract class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
     open val label: String
     open val language: String
     open var enabled: Boolean
+    open val sourceBuffer: SourceBuffer?
 }
 
 /**
@@ -1407,6 +1414,7 @@ public external abstract class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
     open val label: String
     open val language: String
     open var selected: Boolean
+    open val sourceBuffer: SourceBuffer?
 }
 
 public external abstract class TextTrackList : EventTarget {
@@ -1434,6 +1442,7 @@ public external abstract class TextTrack : EventTarget, UnionAudioTrackOrTextTra
     open val cues: TextTrackCueList?
     open val activeCues: TextTrackCueList?
     open var oncuechange: ((Event) -> dynamic)?
+    open val sourceBuffer: SourceBuffer?
     fun addCue(cue: TextTrackCue)
     fun removeCue(cue: TextTrackCue)
 }
@@ -3776,6 +3785,7 @@ public external abstract class Navigator : NavigatorID, NavigatorLanguage, Navig
     open val mediaDevices: MediaDevices
     open val maxTouchPoints: Int
     open val serviceWorker: ServiceWorkerContainer
+    fun requestMediaKeySystemAccess(keySystem: String, supportedConfigurations: Array<MediaKeySystemConfiguration>): Promise<MediaKeySystemAccess>
     fun getUserMedia(constraints: MediaStreamConstraints, successCallback: (MediaStream) -> Unit, errorCallback: (dynamic) -> Unit)
     fun vibrate(pattern: dynamic): Boolean
 }
@@ -6412,6 +6422,8 @@ public external interface UnionAudioTrackOrTextTrackOrVideoTrack
 public external interface UnionElementOrMouseEvent
 
 public external interface UnionMessagePortOrWindowProxy
+
+public external interface MediaProvider
 
 public external interface RenderingContext
 
