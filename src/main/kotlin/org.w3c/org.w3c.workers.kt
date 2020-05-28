@@ -10,21 +10,10 @@ package org.w3c.workers
 
 import kotlin.js.*
 import org.khronos.webgl.*
-import org.w3c.css.masking.*
 import org.w3c.dom.*
-import org.w3c.dom.clipboard.*
-import org.w3c.dom.css.*
 import org.w3c.dom.events.*
-import org.w3c.dom.mediacapture.*
-import org.w3c.dom.parsing.*
-import org.w3c.dom.pointerevents.*
-import org.w3c.dom.svg.*
-import org.w3c.dom.url.*
 import org.w3c.fetch.*
-import org.w3c.files.*
 import org.w3c.notifications.*
-import org.w3c.performance.*
-import org.w3c.xhr.*
 
 /**
  * Exposes the JavaScript [ServiceWorker](https://developer.mozilla.org/en/docs/Web/API/ServiceWorker) to Kotlin
@@ -243,11 +232,7 @@ public external open class InstallEvent(type: String, eventInitDict: ExtendableE
 
 public external interface ForeignFetchOptions {
     var scopes: Array<String>?
-        get() = definedExternally
-        set(value) = definedExternally
     var origins: Array<String>?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
@@ -278,8 +263,6 @@ public external open class FetchEvent(type: String, eventInitDict: FetchEventIni
 
 public external interface FetchEventInit : ExtendableEventInit {
     var request: Request?
-        get() = definedExternally
-        set(value) = definedExternally
     var clientId: String? /* = null */
         get() = definedExternally
         set(value) = definedExternally
@@ -316,8 +299,6 @@ public external open class ForeignFetchEvent(type: String, eventInitDict: Foreig
 
 public external interface ForeignFetchEventInit : ExtendableEventInit {
     var request: Request?
-        get() = definedExternally
-        set(value) = definedExternally
     var origin: String? /* = "null" */
         get() = definedExternally
         set(value) = definedExternally
@@ -337,8 +318,6 @@ public inline fun ForeignFetchEventInit(request: Request?, origin: String? = "nu
 
 public external interface ForeignFetchResponse {
     var response: Response?
-        get() = definedExternally
-        set(value) = definedExternally
     var origin: String?
         get() = definedExternally
         set(value) = definedExternally

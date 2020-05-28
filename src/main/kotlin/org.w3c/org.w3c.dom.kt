@@ -10,18 +10,14 @@ package org.w3c.dom
 
 import kotlin.js.*
 import org.khronos.webgl.*
-import org.w3c.css.masking.*
 import org.w3c.dom.clipboard.*
 import org.w3c.dom.css.*
 import org.w3c.dom.events.*
 import org.w3c.dom.mediacapture.*
-import org.w3c.dom.parsing.*
 import org.w3c.dom.pointerevents.*
 import org.w3c.dom.svg.*
-import org.w3c.dom.url.*
 import org.w3c.fetch.*
 import org.w3c.files.*
-import org.w3c.notifications.*
 import org.w3c.performance.*
 import org.w3c.workers.*
 import org.w3c.xhr.*
@@ -3456,8 +3452,6 @@ public external open class PromiseRejectionEvent(type: String, eventInitDict: Pr
 
 public external interface PromiseRejectionEventInit : EventInit {
     var promise: Promise<Any?>?
-        get() = definedExternally
-        set(value) = definedExternally
     var reason: Any?
         get() = definedExternally
         set(value) = definedExternally
@@ -5262,8 +5256,6 @@ public external abstract class Element : Node, ParentNode, NonDocumentTypeChildN
 
 public external interface ShadowRootInit {
     var mode: ShadowRootMode?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
@@ -6419,6 +6411,8 @@ public external interface UnionAudioTrackOrTextTrackOrVideoTrack
 
 public external interface UnionElementOrMouseEvent
 
+public external interface UnionMessagePortOrWindowProxy
+
 public external interface RenderingContext
 
 public external interface HTMLOrSVGImageElement : CanvasImageSource
@@ -6426,8 +6420,6 @@ public external interface HTMLOrSVGImageElement : CanvasImageSource
 public external interface CanvasImageSource : ImageBitmapSource
 
 public external interface ImageBitmapSource
-
-public external interface UnionMessagePortOrWindowProxy
 
 public external interface HTMLOrSVGScriptElement
 

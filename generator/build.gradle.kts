@@ -11,7 +11,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("org.json:json:20090211")
-    implementation("org.jetbrains.dukat:dukat:0.0.26")
+    implementation("org.jetbrains.dukat:dukat:0.5.0")
     implementation("org.jsoup:jsoup:1.12.1")
 }
 
