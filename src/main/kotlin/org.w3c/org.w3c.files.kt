@@ -12,37 +12,43 @@ import kotlin.js.*
 import org.khronos.webgl.*
 import org.w3c.dom.*
 import org.w3c.dom.events.*
+import org.w3c.dom.url.*
 import org.w3c.xhr.*
 
 /**
  * Exposes the JavaScript [Blob](https://developer.mozilla.org/en/docs/Web/API/Blob) to Kotlin
  */
-public external open class Blob(blobParts: Array<dynamic> = definedExternally, options: BlobPropertyBag = definedExternally) : MediaProvider, ImageBitmapSource {
+public external abstract class Blob : MediaProvider, ImageBitmapSource, UnionBlobOrMediaSource {
     open val size: Number
     open val type: String
-    open val isClosed: Boolean
     fun slice(start: Int = definedExternally, end: Int = definedExternally, contentType: String = definedExternally): Blob
-    fun close()
+    fun stream(): dynamic
+    fun text(): Promise<String>
+    fun arrayBuffer(): Promise<ArrayBuffer>
 }
 
 public external interface BlobPropertyBag {
     var type: String? /* = "" */
         get() = definedExternally
         set(value) = definedExternally
+    var endings: EndingType? /* = EndingType.TRANSPARENT */
+        get() = definedExternally
+        set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun BlobPropertyBag(type: String? = ""): BlobPropertyBag {
+public inline fun BlobPropertyBag(type: String? = "", endings: EndingType? = EndingType.TRANSPARENT): BlobPropertyBag {
     val o = js("({})")
     o["type"] = type
+    o["endings"] = endings
     return o
 }
 
 /**
  * Exposes the JavaScript [File](https://developer.mozilla.org/en/docs/Web/API/File) to Kotlin
  */
-public external open class File(fileBits: Array<dynamic>, fileName: String, options: FilePropertyBag = definedExternally) : Blob {
+public external abstract class File : Blob {
     open val name: String
     open val lastModified: Int
 }
@@ -55,10 +61,11 @@ public external interface FilePropertyBag : BlobPropertyBag {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun FilePropertyBag(lastModified: Int? = undefined, type: String? = ""): FilePropertyBag {
+public inline fun FilePropertyBag(lastModified: Int? = undefined, type: String? = "", endings: EndingType? = EndingType.TRANSPARENT): FilePropertyBag {
     val o = js("({})")
     o["lastModified"] = lastModified
     o["type"] = type
+    o["endings"] = endings
     return o
 }
 
@@ -76,21 +83,21 @@ public inline operator fun FileList.get(index: Int): File? = asDynamic()[index]
 /**
  * Exposes the JavaScript [FileReader](https://developer.mozilla.org/en/docs/Web/API/FileReader) to Kotlin
  */
-public external open class FileReader : EventTarget {
+public external abstract class FileReader : EventTarget {
     open val readyState: Short
     open val result: dynamic
     open val error: dynamic
-    var onloadstart: ((ProgressEvent) -> dynamic)?
-    var onprogress: ((ProgressEvent) -> dynamic)?
-    var onload: ((Event) -> dynamic)?
-    var onabort: ((Event) -> dynamic)?
-    var onerror: ((Event) -> dynamic)?
-    var onloadend: ((Event) -> dynamic)?
-    fun readAsArrayBuffer(blob: Blob)
-    fun readAsBinaryString(blob: Blob)
-    fun readAsText(blob: Blob, label: String = definedExternally)
-    fun readAsDataURL(blob: Blob)
-    fun abort()
+    open var onloadstart: ((ProgressEvent) -> dynamic)?
+    open var onprogress: ((ProgressEvent) -> dynamic)?
+    open var onload: ((Event) -> dynamic)?
+    open var onabort: ((Event) -> dynamic)?
+    open var onerror: ((Event) -> dynamic)?
+    open var onloadend: ((Event) -> dynamic)?
+    fun readAsArrayBuffer(blob: Blob): dynamic
+    fun readAsBinaryString(blob: Blob): dynamic
+    fun readAsText(blob: Blob, encoding: String = definedExternally): dynamic
+    fun readAsDataURL(blob: Blob): dynamic
+    fun abort(): dynamic
 
     companion object {
         val EMPTY: Short
@@ -102,9 +109,19 @@ public external open class FileReader : EventTarget {
 /**
  * Exposes the JavaScript [FileReaderSync](https://developer.mozilla.org/en/docs/Web/API/FileReaderSync) to Kotlin
  */
-public external open class FileReaderSync {
+public external abstract class FileReaderSync {
     fun readAsArrayBuffer(blob: Blob): ArrayBuffer
     fun readAsBinaryString(blob: Blob): String
-    fun readAsText(blob: Blob, label: String = definedExternally): String
+    fun readAsText(blob: Blob, encoding: String = definedExternally): String
     fun readAsDataURL(blob: Blob): String
 }
+
+/* please, don't implement this interface! */
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+public external interface EndingType {
+    companion object
+}
+
+public inline val EndingType.Companion.TRANSPARENT: EndingType get() = "transparent".asDynamic().unsafeCast<EndingType>()
+
+public inline val EndingType.Companion.NATIVE: EndingType get() = "native".asDynamic().unsafeCast<EndingType>()

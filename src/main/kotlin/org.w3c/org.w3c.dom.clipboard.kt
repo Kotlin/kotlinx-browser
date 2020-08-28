@@ -12,6 +12,7 @@ import kotlin.js.*
 import org.khronos.webgl.*
 import org.w3c.dom.*
 import org.w3c.dom.events.*
+import org.w3c.files.*
 
 public external interface ClipboardEventInit : EventInit {
     var clipboardData: DataTransfer? /* = null */
@@ -33,7 +34,7 @@ public inline fun ClipboardEventInit(clipboardData: DataTransfer? = null, bubble
 /**
  * Exposes the JavaScript [ClipboardEvent](https://developer.mozilla.org/en/docs/Web/API/ClipboardEvent) to Kotlin
  */
-public external open class ClipboardEvent(type: String, eventInitDict: ClipboardEventInit = definedExternally) : Event {
+public external abstract class ClipboardEvent : Event {
     open val clipboardData: DataTransfer?
 
     companion object {
@@ -48,10 +49,36 @@ public external open class ClipboardEvent(type: String, eventInitDict: Clipboard
  * Exposes the JavaScript [Clipboard](https://developer.mozilla.org/en/docs/Web/API/Clipboard) to Kotlin
  */
 public external abstract class Clipboard : EventTarget {
-    fun read(): Promise<DataTransfer>
+    fun read(): Promise<Array<ClipboardItem>>
     fun readText(): Promise<String>
-    fun write(data: DataTransfer): Promise<Unit>
-    fun writeText(data: String): Promise<Unit>
+    fun write(data: Array<ClipboardItem>): Promise<dynamic>
+    fun writeText(data: String): Promise<dynamic>
+}
+
+public external abstract class ClipboardItem {
+    open val presentationStyle: PresentationStyle
+    open val lastModified: Int
+    open val delayed: Boolean
+    open val types: Array<out String>
+    fun getType(type: String): Promise<Blob>
+
+    companion object {
+        fun createDelayed(items: dynamic, options: ClipboardItemOptions = definedExternally): ClipboardItem
+    }
+}
+
+public external interface ClipboardItemOptions {
+    var presentationStyle: PresentationStyle? /* = PresentationStyle.UNSPECIFIED */
+        get() = definedExternally
+        set(value) = definedExternally
+}
+
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
+@kotlin.internal.InlineOnly
+public inline fun ClipboardItemOptions(presentationStyle: PresentationStyle? = PresentationStyle.UNSPECIFIED): ClipboardItemOptions {
+    val o = js("({})")
+    o["presentationStyle"] = presentationStyle
+    return o
 }
 
 public external interface ClipboardPermissionDescriptor {
@@ -67,3 +94,15 @@ public inline fun ClipboardPermissionDescriptor(allowWithoutGesture: Boolean? = 
     o["allowWithoutGesture"] = allowWithoutGesture
     return o
 }
+
+/* please, don't implement this interface! */
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+public external interface PresentationStyle {
+    companion object
+}
+
+public inline val PresentationStyle.Companion.UNSPECIFIED: PresentationStyle get() = "unspecified".asDynamic().unsafeCast<PresentationStyle>()
+
+public inline val PresentationStyle.Companion.INLINE: PresentationStyle get() = "inline".asDynamic().unsafeCast<PresentationStyle>()
+
+public inline val PresentationStyle.Companion.ATTACHMENT: PresentationStyle get() = "attachment".asDynamic().unsafeCast<PresentationStyle>()

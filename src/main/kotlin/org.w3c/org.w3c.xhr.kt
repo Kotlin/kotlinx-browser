@@ -32,27 +32,27 @@ public external abstract class XMLHttpRequestUpload : XMLHttpRequestEventTarget
 /**
  * Exposes the JavaScript [XMLHttpRequest](https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest) to Kotlin
  */
-public external open class XMLHttpRequest : XMLHttpRequestEventTarget {
-    var onreadystatechange: ((Event) -> dynamic)?
+public external abstract class XMLHttpRequest : XMLHttpRequestEventTarget {
+    open var onreadystatechange: ((Event) -> dynamic)?
     open val readyState: Short
-    var timeout: Int
-    var withCredentials: Boolean
+    open var timeout: Int
+    open var withCredentials: Boolean
     open val upload: XMLHttpRequestUpload
     open val responseURL: String
     open val status: Short
     open val statusText: String
-    var responseType: XMLHttpRequestResponseType
+    open var responseType: XMLHttpRequestResponseType
     open val response: Any?
     open val responseText: String
     open val responseXML: Document?
-    fun open(method: String, url: String)
-    fun open(method: String, url: String, async: Boolean, username: String? = definedExternally, password: String? = definedExternally)
-    fun setRequestHeader(name: String, value: String)
-    fun send(body: dynamic = definedExternally)
-    fun abort()
+    fun open(method: String, url: String): dynamic
+    fun open(method: String, url: String, async: Boolean, username: String? = definedExternally, password: String? = definedExternally): dynamic
+    fun setRequestHeader(name: String, value: String): dynamic
+    fun send(body: dynamic = definedExternally): dynamic
+    fun abort(): dynamic
     fun getResponseHeader(name: String): String?
     fun getAllResponseHeaders(): String
-    fun overrideMimeType(mime: String)
+    fun overrideMimeType(mime: String): dynamic
 
     companion object {
         val UNSENT: Short
@@ -66,21 +66,21 @@ public external open class XMLHttpRequest : XMLHttpRequestEventTarget {
 /**
  * Exposes the JavaScript [FormData](https://developer.mozilla.org/en/docs/Web/API/FormData) to Kotlin
  */
-public external open class FormData(form: HTMLFormElement = definedExternally) {
-    fun append(name: String, value: String)
-    fun append(name: String, value: Blob, filename: String = definedExternally)
-    fun delete(name: String)
+public external abstract class FormData {
+    fun append(name: String, value: String): dynamic
+    fun append(name: String, blobValue: Blob, filename: String = definedExternally): dynamic
+    fun delete(name: String): dynamic
     fun get(name: String): dynamic
     fun getAll(name: String): Array<dynamic>
     fun has(name: String): Boolean
-    fun set(name: String, value: String)
-    fun set(name: String, value: Blob, filename: String = definedExternally)
+    fun set(name: String, value: String): dynamic
+    fun set(name: String, blobValue: Blob, filename: String = definedExternally): dynamic
 }
 
 /**
  * Exposes the JavaScript [ProgressEvent](https://developer.mozilla.org/en/docs/Web/API/ProgressEvent) to Kotlin
  */
-public external open class ProgressEvent(type: String, eventInitDict: ProgressEventInit = definedExternally) : Event {
+public external abstract class ProgressEvent : Event {
     open val lengthComputable: Boolean
     open val loaded: Number
     open val total: Number

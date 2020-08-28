@@ -14,8 +14,8 @@ import org.w3c.dom.*
 
 public external abstract class MediaList : ItemArrayLike<String> {
     open var mediaText: String
-    fun appendMedium(medium: String)
-    fun deleteMedium(medium: String)
+    fun appendMedium(medium: String): dynamic
+    fun deleteMedium(medium: String): dynamic
     override fun item(index: Int): String?
 }
 
@@ -30,7 +30,7 @@ public external abstract class StyleSheet {
     open val type: String
     open val href: String?
     open val ownerNode: UnionElementOrProcessingInstruction?
-    open val parentStyleSheet: StyleSheet?
+    open val parentStyleSheet: CSSStyleSheet?
     open val title: String?
     open val media: MediaList
     open var disabled: Boolean
@@ -42,28 +42,23 @@ public external abstract class StyleSheet {
 public external abstract class CSSStyleSheet : StyleSheet {
     open val ownerRule: CSSRule?
     open val cssRules: CSSRuleList
-    fun insertRule(rule: String, index: Int): Int
-    fun deleteRule(index: Int)
+    open val rules: CSSRuleList
+    fun insertRule(rule: String, index: Int = definedExternally): Int
+    fun deleteRule(index: Int): dynamic
+    fun addRule(selector: String = definedExternally, style: String = definedExternally, index: Int = definedExternally): Int
+    fun removeRule(index: Int = definedExternally): dynamic
 }
 
 /**
  * Exposes the JavaScript [StyleSheetList](https://developer.mozilla.org/en/docs/Web/API/StyleSheetList) to Kotlin
  */
-public external abstract class StyleSheetList : ItemArrayLike<StyleSheet> {
-    override fun item(index: Int): StyleSheet?
+public external abstract class StyleSheetList : ItemArrayLike<CSSStyleSheet> {
+    override fun item(index: Int): CSSStyleSheet?
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline operator fun StyleSheetList.get(index: Int): StyleSheet? = asDynamic()[index]
-
-/**
- * Exposes the JavaScript [LinkStyle](https://developer.mozilla.org/en/docs/Web/API/LinkStyle) to Kotlin
- */
-public external interface LinkStyle {
-    val sheet: StyleSheet?
-        get() = definedExternally
-}
+public inline operator fun StyleSheetList.get(index: Int): CSSStyleSheet? = asDynamic()[index]
 
 /**
  * Exposes the JavaScript [CSSRuleList](https://developer.mozilla.org/en/docs/Web/API/CSSRuleList) to Kotlin
@@ -80,10 +75,10 @@ public inline operator fun CSSRuleList.get(index: Int): CSSRule? = asDynamic()[i
  * Exposes the JavaScript [CSSRule](https://developer.mozilla.org/en/docs/Web/API/CSSRule) to Kotlin
  */
 public external abstract class CSSRule {
-    open val type: Short
     open var cssText: String
     open val parentRule: CSSRule?
     open val parentStyleSheet: CSSStyleSheet?
+    open val type: Short
 
     companion object {
         val STYLE_RULE: Short
@@ -138,26 +133,8 @@ public external abstract class CSSImportRule : CSSRule {
  */
 public external abstract class CSSGroupingRule : CSSRule {
     open val cssRules: CSSRuleList
-    fun insertRule(rule: String, index: Int): Int
-    fun deleteRule(index: Int)
-
-    companion object {
-        val STYLE_RULE: Short
-        val CHARSET_RULE: Short
-        val IMPORT_RULE: Short
-        val MEDIA_RULE: Short
-        val FONT_FACE_RULE: Short
-        val PAGE_RULE: Short
-        val MARGIN_RULE: Short
-        val NAMESPACE_RULE: Short
-    }
-}
-
-/**
- * Exposes the JavaScript [CSSMediaRule](https://developer.mozilla.org/en/docs/Web/API/CSSMediaRule) to Kotlin
- */
-public external abstract class CSSMediaRule : CSSGroupingRule {
-    open val media: MediaList
+    fun insertRule(rule: String, index: Int = definedExternally): Int
+    fun deleteRule(index: Int): dynamic
 
     companion object {
         val STYLE_RULE: Short
@@ -247,7 +224,9 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var animationPlayState: String
     open var animationTimingFunction: String
     open var appearance: String
+    open var aspectRatio: String
     open var azimuth: String
+    open var backfaceVisibility: String
     open var background: String
     open var backgroundAttachment: String
     open var backgroundBlendMode: String
@@ -261,7 +240,6 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var baselineShift: String
     open var baselineSource: String
     open var blockEllipsis: String
-    open var blockOverflow: String
     open var blockSize: String
     open var blockStep: String
     open var blockStepAlign: String
@@ -365,7 +343,9 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var columnWidth: String
     open var columns: String
     open var contain: String
+    open var containIntrinsicSize: String
     open var content: String
+    open var contentVisibility: String
     open var `continue`: String
     open var counterIncrement: String
     open var counterReset: String
@@ -461,29 +441,23 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var imageOrientation: String
     open var imageRendering: String
     open var imageResolution: String
-    open var initialLetters: String
-    open var initialLettersAlign: String
-    open var initialLettersWrap: String
+    open var initialLetter: String
+    open var initialLetterAlign: String
+    open var initialLetterWrap: String
     open var inlineSize: String
     open var inlineSizing: String
     open var inset: String
-    open var insetAfter: String
-    open var insetBefore: String
     open var insetBlock: String
     open var insetBlockEnd: String
     open var insetBlockStart: String
-    open var insetEnd: String
     open var insetInline: String
     open var insetInlineEnd: String
     open var insetInlineStart: String
-    open var insetStart: String
     open var isolation: String
     open var justifyContent: String
     open var justifyItems: String
     open var justifySelf: String
     open var leadingTrim: String
-    open var leadingTrimOver: String
-    open var leadingTrimUnder: String
     open var left: String
     open var letterSpacing: String
     open var lightingColor: String
@@ -493,7 +467,6 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var lineHeight: String
     open var lineHeightStep: String
     open var linePadding: String
-    open var lineSizing: String
     open var lineSnap: String
     open var listStyle: String
     open var listStyleImage: String
@@ -555,15 +528,11 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var objectFit: String
     open var objectPosition: String
     open var offset: String
-    open var offsetAfter: String
     open var offsetAnchor: String
-    open var offsetBefore: String
     open var offsetDistance: String
-    open var offsetEnd: String
     open var offsetPath: String
     open var offsetPosition: String
     open var offsetRotate: String
-    open var offsetStart: String
     open var opacity: String
     open var order: String
     open var orphans: String
@@ -573,7 +542,9 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var outlineStyle: String
     open var outlineWidth: String
     open var overflow: String
+    open var overflowAnchor: String
     open var overflowBlock: String
+    open var overflowClipMargin: String
     open var overflowInline: String
     open var overflowWrap: String
     open var overflowX: String
@@ -601,6 +572,8 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var pause: String
     open var pauseAfter: String
     open var pauseBefore: String
+    open var perspective: String
+    open var perspectiveOrigin: String
     open var pitch: String
     open var pitchRange: String
     open var placeContent: String
@@ -608,16 +581,23 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var placeSelf: String
     open var playDuring: String
     open var position: String
+    open var propertyName: String
     open var quotes: String
     open var regionFragment: String
     open var resize: String
+    open var rest: String
+    open var restAfter: String
+    open var restBefore: String
     open var richness: String
     open var right: String
+    open var rotate: String
     open var rowGap: String
     open var rubyAlign: String
     open var rubyMerge: String
+    open var rubyOverhang: String
     open var rubyPosition: String
     open var running: String
+    open var scale: String
     open var scrollBehavior: String
     open var scrollMargin: String
     open var scrollMarginBlock: String
@@ -655,6 +635,7 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var spatialNavigationContain: String
     open var spatialNavigationFunction: String
     open var speak: String
+    open var speakAs: String
     open var speakHeader: String
     open var speakNumeral: String
     open var speakPunctuation: String
@@ -699,7 +680,7 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var textDecorationSkipSpaces: String
     open var textDecorationStyle: String
     open var textDecorationThickness: String
-    open var textDecorationWidth: String
+    open var textEdge: String
     open var textEmphasis: String
     open var textEmphasisColor: String
     open var textEmphasisPosition: String
@@ -722,16 +703,25 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var transform: String
     open var transformBox: String
     open var transformOrigin: String
+    open var transformStyle: String
     open var transition: String
     open var transitionDelay: String
     open var transitionDuration: String
     open var transitionProperty: String
     open var transitionTimingFunction: String
+    open var translate: String
     open var unicodeBidi: String
     open var userSelect: String
     open var verticalAlign: String
     open var visibility: String
+    open var voiceBalance: String
+    open var voiceDuration: String
     open var voiceFamily: String
+    open var voicePitch: String
+    open var voiceRange: String
+    open var voiceRate: String
+    open var voiceStress: String
+    open var voiceVolume: String
     open var volume: String
     open var whiteSpace: String
     open var widows: String
@@ -750,14 +740,9 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var writingMode: String
     open var zIndex: String
     open var pointerEvents: String
-    open var _dashed_attribute: String
-    open var _camel_cased_attribute: String
-    open var _webkit_cased_attribute: String
     fun getPropertyValue(property: String): String
     fun getPropertyPriority(property: String): String
-    fun setProperty(property: String, value: String, priority: String = definedExternally)
-    fun setPropertyValue(property: String, value: String)
-    fun setPropertyPriority(property: String, priority: String)
+    fun setProperty(property: String, value: String, priority: String = definedExternally): dynamic
     fun removeProperty(property: String): String
     override fun item(index: Int): String
 }
@@ -766,17 +751,8 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
 @kotlin.internal.InlineOnly
 public inline operator fun CSSStyleDeclaration.get(index: Int): String? = asDynamic()[index]
 
-public external interface ElementCSSInlineStyle {
-    val style: CSSStyleDeclaration
-}
-
-/**
- * Exposes the JavaScript [CSS](https://developer.mozilla.org/en/docs/Web/API/CSS) to Kotlin
- */
-public external abstract class CSS {
-    companion object {
-        fun escape(ident: String): String
-    }
+public external object CSS {
+    fun escape(ident: String): String
 }
 
 public external interface UnionElementOrProcessingInstruction
