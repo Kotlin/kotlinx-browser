@@ -2,10 +2,6 @@ package org.w3c.dom;
 
 
 // Downloaded from https://raw.githubusercontent.com/whatwg/html-mirror/master/source
-[Exposed=Window]
-interface Example {
-  // this is an IDL definition
-};
 [Exposed=Window,
  LegacyUnenumerableNamedProperties]
 interface HTMLAllCollection {
@@ -2512,10 +2508,6 @@ interface External {
   undefined IsSearchProviderInstalled();
 };
 // Downloaded from https://html.spec.whatwg.org/
-[Exposed=Window]
-interface Example {
-  // this is an IDL definition
-};
 [Exposed=Window,
  LegacyUnenumerableNamedProperties]
 interface HTMLAllCollection {
