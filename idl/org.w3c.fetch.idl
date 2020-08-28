@@ -1,23 +1,25 @@
 package org.w3c.fetch;
 
 
-// Downloaded from https://raw.githubusercontent.com/whatwg/fetch/master/Overview.src.html
-typedef (Headers or sequence<sequence<ByteString>> or OpenEndedDictionary<ByteString>) HeadersInit;
-[Constructor(optional HeadersInit init),
- Exposed=(Window,Worker)]
+// Downloaded from https://raw.githubusercontent.com/whatwg/fetch/master/fetch.bs
+typedef (sequence<sequence<ByteString>> or record<ByteString, ByteString>) HeadersInit;
+
+[Exposed=(Window,Worker)]
 interface Headers {
-  void append(ByteString name, ByteString value);
-  void delete(ByteString name);
+  constructor(optional HeadersInit init);
+
+  undefined append(ByteString name, ByteString value);
+  undefined delete(ByteString name);
   ByteString? get(ByteString name);
   boolean has(ByteString name);
-  void set(ByteString name, ByteString value);
+  undefined set(ByteString name, ByteString value);
   iterable<ByteString, ByteString>;
 };
-typedef (Blob or BufferSource or FormData or URLSearchParams or USVString) BodyInit;
-typedef (BodyInit or ReadableStream) ResponseBodyInit;
-[NoInterfaceObject,
- Exposed=(Window,Worker)]
-interface Body {
+typedef (Blob or BufferSource or FormData or URLSearchParams or USVString) XMLHttpRequestBodyInit;
+
+typedef (ReadableStream or XMLHttpRequestBodyInit) BodyInit;
+interface mixin Body {
+  readonly attribute ReadableStream? body;
   readonly attribute boolean bodyUsed;
   [NewObject] Promise<ArrayBuffer> arrayBuffer();
   [NewObject] Promise<Blob> blob();
@@ -27,14 +29,14 @@ interface Body {
 };
 typedef (Request or USVString) RequestInfo;
 
-[Constructor(RequestInfo input, optional RequestInit init),
- Exposed=(Window,Worker)]
+[Exposed=(Window,Worker)]
 interface Request {
+  constructor(RequestInfo input, optional RequestInit init = {});
+
   readonly attribute ByteString method;
   readonly attribute USVString url;
   [SameObject] readonly attribute Headers headers;
 
-  readonly attribute RequestType type;
   readonly attribute RequestDestination destination;
   readonly attribute USVString referrer;
   readonly attribute ReferrerPolicy referrerPolicy;
@@ -44,10 +46,13 @@ interface Request {
   readonly attribute RequestRedirect redirect;
   readonly attribute DOMString integrity;
   readonly attribute boolean keepalive;
+  readonly attribute boolean isReloadNavigation;
+  readonly attribute boolean isHistoryNavigation;
+  readonly attribute AbortSignal signal;
 
   [NewObject] Request clone();
 };
-Request implements Body;
+Request includes Body;
 
 dictionary RequestInit {
   ByteString method;
@@ -61,18 +66,19 @@ dictionary RequestInit {
   RequestRedirect redirect;
   DOMString integrity;
   boolean keepalive;
+  AbortSignal? signal;
   any window; // can only be set to null
 };
 
-enum RequestType { "", "audio", "font", "image", "script", "style", "track", "video" };
-enum RequestDestination { "", "document", "embed", "font", "image", "manifest", "media", "object", "report", "script", "serviceworker", "sharedworker", "style",  "worker", "xslt" };
+enum RequestDestination { "", "audio", "audioworklet", "document", "embed", "font", "frame", "iframe", "image", "manifest", "object", "paintworklet", "report", "script", "sharedworker", "style",  "track", "video", "worker", "xslt" };
 enum RequestMode { "navigate", "same-origin", "no-cors", "cors" };
 enum RequestCredentials { "omit", "same-origin", "include" };
 enum RequestCache { "default", "no-store", "reload", "no-cache", "force-cache", "only-if-cached" };
 enum RequestRedirect { "follow", "error", "manual" };
-[Constructor(optional ResponseBodyInit? body = null, optional ResponseInit init),
- Exposed=(Window,Worker)]
+[Exposed=(Window,Worker)]
 interface Response {
+  constructor(optional BodyInit? body = null, optional ResponseInit init = {});
+
   [NewObject] static Response error();
   [NewObject] static Response redirect(USVString url, optional unsigned short status = 302);
 
@@ -84,21 +90,19 @@ interface Response {
   readonly attribute boolean ok;
   readonly attribute ByteString statusText;
   [SameObject] readonly attribute Headers headers;
-  readonly attribute ReadableStream? body;
-  [SameObject] readonly attribute Promise<Headers> trailer;
 
   [NewObject] Response clone();
 };
-Response implements Body;
+Response includes Body;
 
 dictionary ResponseInit {
   unsigned short status = 200;
-  ByteString statusText = "OK";
+  ByteString statusText = "";
   HeadersInit headers;
 };
 
 enum ResponseType { "basic", "cors", "default", "error", "opaque", "opaqueredirect" };
-partial interface WindowOrWorkerGlobalScope {
-  [NewObject] Promise<Response> fetch(RequestInfo input, optional RequestInit init);
+partial interface mixin WindowOrWorkerGlobalScope {
+  [NewObject] Promise<Response> fetch(RequestInfo input, optional RequestInit init = {});
 };
 
