@@ -172,7 +172,7 @@ private val urls = listOf(
 
     "https://www.w3.org/TR/geolocation-API/" to "org.w3c.geolocation",
     "https://www.w3.org/TR/WebCryptoAPI/" to "org.w3c.crypto",
-    "https://www.w3.org/TR/IndexedDB/" to  "org.w3c.idb",
+//    "https://www.w3.org/TR/IndexedDB/" to  "org.w3c.idb",
     "https://www.w3.org/TR/eventsource/" to "org.w3c.eventsource",
 )
 
