@@ -16,13 +16,11 @@ import org.w3c.dom.events.*
  * Exposes the JavaScript [Performance](https://developer.mozilla.org/en/docs/Web/API/Performance) to Kotlin
  */
 public external abstract class Performance : EventTarget {
+    open val timeOrigin: Double
     open val timing: PerformanceTiming
     open val navigation: PerformanceNavigation
     fun now(): Double
-}
-
-public external interface GlobalPerformance {
-    val performance: Performance
+    fun toJSON(): dynamic
 }
 
 /**

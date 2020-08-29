@@ -11,43 +11,43 @@ package org.w3c.dom.url
 import kotlin.js.*
 import org.khronos.webgl.*
 import org.w3c.dom.mediasource.*
-import org.w3c.files.*
 
 /**
  * Exposes the JavaScript [URL](https://developer.mozilla.org/en/docs/Web/API/URL) to Kotlin
  */
-public external open class URL(url: String, base: String = definedExternally) {
-    var href: String
+public external abstract class URL {
+    open var href: String
     open val origin: String
-    var protocol: String
-    var username: String
-    var password: String
-    var host: String
-    var hostname: String
-    var port: String
-    var pathname: String
-    var search: String
+    open var protocol: String
+    open var username: String
+    open var password: String
+    open var host: String
+    open var hostname: String
+    open var port: String
+    open var pathname: String
+    open var search: String
     open val searchParams: URLSearchParams
-    var hash: String
+    open var hash: String
+    fun toJSON(): String
 
     companion object {
-        fun domainToASCII(domain: String): String
-        fun domainToUnicode(domain: String): String
         fun createObjectURL(mediaSource: MediaSource): String
-        fun createObjectURL(blob: Blob): String
-        fun createFor(blob: Blob): String
-        fun revokeObjectURL(url: String)
+        fun createObjectURL(obj: UnionBlobOrMediaSource): String
+        fun revokeObjectURL(url: String): dynamic
     }
 }
 
 /**
  * Exposes the JavaScript [URLSearchParams](https://developer.mozilla.org/en/docs/Web/API/URLSearchParams) to Kotlin
  */
-public external open class URLSearchParams(init: dynamic = definedExternally) {
-    fun append(name: String, value: String)
-    fun delete(name: String)
+public external abstract class URLSearchParams {
+    fun append(name: String, value: String): dynamic
+    fun delete(name: String): dynamic
     fun get(name: String): String?
     fun getAll(name: String): Array<String>
     fun has(name: String): Boolean
-    fun set(name: String, value: String)
+    fun set(name: String, value: String): dynamic
+    fun sort(): dynamic
 }
+
+public external interface UnionBlobOrMediaSource

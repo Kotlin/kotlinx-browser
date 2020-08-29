@@ -16,9 +16,11 @@ import org.w3c.workers.*
 /**
  * Exposes the JavaScript [Notification](https://developer.mozilla.org/en/docs/Web/API/Notification) to Kotlin
  */
-public external open class Notification(title: String, options: NotificationOptions = definedExternally) : EventTarget {
-    var onclick: ((MouseEvent) -> dynamic)?
-    var onerror: ((Event) -> dynamic)?
+public external abstract class Notification : EventTarget {
+    open var onclick: ((MouseEvent) -> dynamic)?
+    open var onshow: ((Event) -> dynamic)?
+    open var onerror: ((Event) -> dynamic)?
+    open var onclose: ((Event) -> dynamic)?
     open val title: String
     open val dir: NotificationDirection
     open val lang: String
@@ -27,22 +29,19 @@ public external open class Notification(title: String, options: NotificationOpti
     open val image: String
     open val icon: String
     open val badge: String
-    open val sound: String
     open val vibrate: Array<out Int>
     open val timestamp: Number
     open val renotify: Boolean
     open val silent: Boolean
-    open val noscreen: Boolean
     open val requireInteraction: Boolean
-    open val sticky: Boolean
     open val data: Any?
     open val actions: Array<out NotificationAction>
-    fun close()
+    fun close(): dynamic
 
     companion object {
         val permission: NotificationPermission
         val maxActions: Int
-        fun requestPermission(deprecatedCallback: (NotificationPermission) -> Unit = definedExternally): Promise<NotificationPermission>
+        fun requestPermission(deprecatedCallback: (NotificationPermission) -> dynamic = definedExternally): Promise<NotificationPermission>
     }
 }
 
@@ -68,9 +67,6 @@ public external interface NotificationOptions {
     var badge: String?
         get() = definedExternally
         set(value) = definedExternally
-    var sound: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var vibrate: dynamic
         get() = definedExternally
         set(value) = definedExternally
@@ -83,13 +79,7 @@ public external interface NotificationOptions {
     var silent: Boolean? /* = false */
         get() = definedExternally
         set(value) = definedExternally
-    var noscreen: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
     var requireInteraction: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var sticky: Boolean? /* = false */
         get() = definedExternally
         set(value) = definedExternally
     var data: Any? /* = null */
@@ -102,7 +92,7 @@ public external interface NotificationOptions {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun NotificationOptions(dir: NotificationDirection? = NotificationDirection.AUTO, lang: String? = "", body: String? = "", tag: String? = "", image: String? = undefined, icon: String? = undefined, badge: String? = undefined, sound: String? = undefined, vibrate: dynamic = undefined, timestamp: Number? = undefined, renotify: Boolean? = false, silent: Boolean? = false, noscreen: Boolean? = false, requireInteraction: Boolean? = false, sticky: Boolean? = false, data: Any? = null, actions: Array<NotificationAction>? = arrayOf()): NotificationOptions {
+public inline fun NotificationOptions(dir: NotificationDirection? = NotificationDirection.AUTO, lang: String? = "", body: String? = "", tag: String? = "", image: String? = undefined, icon: String? = undefined, badge: String? = undefined, vibrate: dynamic = undefined, timestamp: Number? = undefined, renotify: Boolean? = false, silent: Boolean? = false, requireInteraction: Boolean? = false, data: Any? = null, actions: Array<NotificationAction>? = arrayOf()): NotificationOptions {
     val o = js("({})")
     o["dir"] = dir
     o["lang"] = lang
@@ -111,14 +101,11 @@ public inline fun NotificationOptions(dir: NotificationDirection? = Notification
     o["image"] = image
     o["icon"] = icon
     o["badge"] = badge
-    o["sound"] = sound
     o["vibrate"] = vibrate
     o["timestamp"] = timestamp
     o["renotify"] = renotify
     o["silent"] = silent
-    o["noscreen"] = noscreen
     o["requireInteraction"] = requireInteraction
-    o["sticky"] = sticky
     o["data"] = data
     o["actions"] = actions
     return o
@@ -159,7 +146,7 @@ public inline fun GetNotificationOptions(tag: String? = ""): GetNotificationOpti
 /**
  * Exposes the JavaScript [NotificationEvent](https://developer.mozilla.org/en/docs/Web/API/NotificationEvent) to Kotlin
  */
-public external open class NotificationEvent(type: String, eventInitDict: NotificationEventInit) : ExtendableEvent {
+public external abstract class NotificationEvent : ExtendableEvent {
     open val notification: Notification
     open val action: String
 

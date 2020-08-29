@@ -1,22 +1,35 @@
 package org.w3c.fullscreen;
 
 
-// Downloaded from https://raw.githubusercontent.com/whatwg/fullscreen/master/fullscreen.html
-partial interface Element {
-  Promise<void> requestFullscreen();
+// Downloaded from https://raw.githubusercontent.com/whatwg/fullscreen/master/fullscreen.bs
+enum FullscreenNavigationUI {
+  "auto",
+  "show",
+  "hide"
 };
 
-partial interface Document {
-  [LenientSetter] readonly attribute boolean fullscreenEnabled;
-  [LenientSetter] readonly attribute boolean fullscreen; // historical
+dictionary FullscreenOptions {
+  FullscreenNavigationUI navigationUI = "auto";
+};
 
-  Promise<void> exitFullscreen();
+partial interface Element {
+  Promise<undefined> requestFullscreen(optional FullscreenOptions options = {});
 
   attribute EventHandler onfullscreenchange;
   attribute EventHandler onfullscreenerror;
 };
 
-partial interface DocumentOrShadowRoot {
-  [LenientSetter] readonly attribute Element? fullscreenElement;
+partial interface Document {
+  [LegacyLenientSetter] readonly attribute boolean fullscreenEnabled;
+  [LegacyLenientSetter, Unscopable] readonly attribute boolean fullscreen; // historical
+
+  Promise<undefined> exitFullscreen();
+
+  attribute EventHandler onfullscreenchange;
+  attribute EventHandler onfullscreenerror;
+};
+
+partial interface mixin DocumentOrShadowRoot {
+  [LegacyLenientSetter] readonly attribute Element? fullscreenElement;
 };
 

@@ -12,11 +12,12 @@ import kotlin.js.*
 import org.khronos.webgl.*
 import org.w3c.dom.*
 import org.w3c.dom.events.*
+import org.w3c.dom.url.*
 
 /**
  * Exposes the JavaScript [MediaSource](https://developer.mozilla.org/en/docs/Web/API/MediaSource) to Kotlin
  */
-public external open class MediaSource : EventTarget, MediaProvider {
+public external open class MediaSource : EventTarget, MediaProvider, UnionBlobOrMediaSource {
     open val sourceBuffers: SourceBufferList
     open val activeSourceBuffers: SourceBufferList
     open val readyState: ReadyState
