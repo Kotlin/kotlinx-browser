@@ -135,7 +135,7 @@ private fun translateCSSPropertyToDOMNotation(property: String): String {
 
 private val urls = listOf(
     "https://raw.githubusercontent.com/whatwg/html-mirror/master/source" to "org.w3c.dom",
-    "https://html.spec.whatwg.org/" to "org.w3c.dom", // was nothing before
+    "https://html.spec.whatwg.org/" to "org.w3c.dom",
     "https://raw.githubusercontent.com/whatwg/dom/master/dom.bs" to "org.w3c.dom",
     "https://dvcs.w3.org/hg/editing/raw-file/tip/editing.html" to "org.w3c.dom",
     "https://www.w3.org/TR/animation-timing/" to "org.w3c.dom",
@@ -166,13 +166,11 @@ private val urls = listOf(
 
     "https://www.w3.org/TR/hr-time/" to "org.w3c.performance",
     "https://www.w3.org/TR/2012/REC-navigation-timing-20121217/" to "org.w3c.performance",
-//    "https://www.w3.org/TR/user-timing-3/" to "org.w3c.performance",
 
     "https://w3c.github.io/ServiceWorker/" to "org.w3c.workers",
 
     "https://www.w3.org/TR/geolocation-API/" to "org.w3c.geolocation",
     "https://www.w3.org/TR/WebCryptoAPI/" to "org.w3c.crypto",
-//    "https://www.w3.org/TR/IndexedDB/" to  "org.w3c.idb",
     "https://www.w3.org/TR/eventsource/" to "org.w3c.eventsource",
 )
 
