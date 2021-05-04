@@ -111,8 +111,10 @@ private fun extractIDLText(rawContent: String, out: Appendable) {
     val soup = Jsoup.parse(rawContent)
 
     soup.select(".dfn-panel").remove()
+    soup.select("pre.extract").remove()
 
     soup.select("pre.idl").filter {!it.hasClass("extract")}.attachTo(out)
+    soup.select("pre code.idl").attachTo(out)
     soup.select("code.idl-code").attachTo(out)
     soup.select("spec-idl").attachTo(out)
 }
@@ -134,7 +136,7 @@ private fun translateCSSPropertyToDOMNotation(property: String): String {
 private val urls = listOf(
     "https://raw.githubusercontent.com/whatwg/html-mirror/master/source" to "org.w3c.dom",
     "https://html.spec.whatwg.org/" to "org.w3c.dom",
-    "https://raw.githubusercontent.com/whatwg/dom/master/dom.html" to "org.w3c.dom",
+    "https://raw.githubusercontent.com/whatwg/dom/master/dom.bs" to "org.w3c.dom",
     "https://dvcs.w3.org/hg/editing/raw-file/tip/editing.html" to "org.w3c.dom",
     "https://www.w3.org/TR/animation-timing/" to "org.w3c.dom",
     "https://www.w3.org/TR/geometry-1/" to "org.w3c.dom",
@@ -142,31 +144,34 @@ private val urls = listOf(
     "https://www.w3.org/TR/touch-events/" to "org.w3c.dom",
     "https://www.w3.org/TR/uievents/" to "org.w3c.dom.events",
     "https://www.w3.org/TR/pointerevents/" to "org.w3c.dom.pointerevents",
-
     "https://drafts.csswg.org/cssom/" to "org.w3c.dom.css",
     "https://www.w3.org/TR/css-masking-1/" to "org.w3c.css.masking",
 
     "https://w3c.github.io/mediacapture-main/" to "org.w3c.dom.mediacapture",
     "https://www.w3.org/TR/DOM-Parsing/" to "org.w3c.dom.parsing",
     "https://w3c.github.io/clipboard-apis" to "org.w3c.dom.clipboard",
-    "https://raw.githubusercontent.com/whatwg/url/master/url.html" to "org.w3c.dom.url",
+    "https://raw.githubusercontent.com/whatwg/url/master/url.bs" to "org.w3c.dom.url",
 
-    "https://www.w3.org/TR/SVG2/single-page.html" to "org.w3c.dom.svg",
+    "https://www.w3.org/TR/SVG2/idl.html" to "org.w3c.dom.svg",
     "https://www.khronos.org/registry/webgl/specs/latest/1.0/webgl.idl" to "org.khronos.webgl",
-    "https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl" to "org.khronos.webgl",
+//        "https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl" to "org.khronos.webgl", // permanently moved
 
-    "https://raw.githubusercontent.com/whatwg/xhr/master/Overview.src.html" to "org.w3c.xhr",
-    "https://raw.githubusercontent.com/whatwg/fetch/master/Overview.src.html" to "org.w3c.fetch",
+    "https://raw.githubusercontent.com/whatwg/xhr/master/xhr.bs" to "org.w3c.xhr",
+    "https://raw.githubusercontent.com/whatwg/fetch/master/fetch.bs" to "org.w3c.fetch",
     "https://raw.githubusercontent.com/w3c/FileAPI/gh-pages/index.html" to "org.w3c.files",
 
-    "https://raw.githubusercontent.com/whatwg/notifications/master/notifications.html" to "org.w3c.notifications",
-    "https://raw.githubusercontent.com/whatwg/fullscreen/master/fullscreen.html" to "org.w3c.fullscreen",
+    "https://raw.githubusercontent.com/whatwg/notifications/master/notifications.bs" to "org.w3c.notifications",
+    "https://raw.githubusercontent.com/whatwg/fullscreen/master/fullscreen.bs" to "org.w3c.fullscreen",
     "https://www.w3.org/TR/vibration/" to "org.w3c.vibration",
 
     "https://www.w3.org/TR/hr-time/" to "org.w3c.performance",
     "https://www.w3.org/TR/2012/REC-navigation-timing-20121217/" to "org.w3c.performance",
 
-    "https://w3c.github.io/ServiceWorker/" to "org.w3c.workers"
+    "https://w3c.github.io/ServiceWorker/" to "org.w3c.workers",
+
+    "https://www.w3.org/TR/geolocation-API/" to "org.w3c.geolocation",
+    "https://www.w3.org/TR/WebCryptoAPI/" to "org.w3c.crypto",
+    "https://www.w3.org/TR/eventsource/" to "org.w3c.eventsource",
 )
 
 private var cssPropertiesUrl = "https://www.w3.org/Style/CSS/all-properties.en.json"
