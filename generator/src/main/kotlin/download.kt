@@ -24,38 +24,40 @@ fun main(args: Array<String>) {
         val arg = argsIterator.next()
 
         when (arg) {
-            "--pkg" -> if (argsIterator.hasNext()) packageFilter = argsIterator.next() else throw IllegalArgumentException("argument $arg requires argument")
+            "--pkg" -> if (argsIterator.hasNext()) packageFilter =
+                argsIterator.next() else throw IllegalArgumentException("argument $arg requires argument")
             else -> throw IllegalArgumentException("Argument $arg is unknown")
         }
     }
 
-    val urlsPerFiles = urls.filter { packageFilter == null || it.second == packageFilter }.groupBy { it.second + ".idl" }
+    val urlsPerFiles =
+        urls.filter { packageFilter == null || it.second == packageFilter }.groupBy { it.second + ".idl" }
 
     urlsPerFiles.forEach { e ->
         val fileName = e.key
         val pkg = e.value.first().second
 
         File(dir, fileName).bufferedWriter().use { w ->
-            w.appendln("package $pkg;")
-            w.appendln()
-            w.appendln()
+            w.appendLine("package $pkg;")
+            w.appendLine()
+            w.appendLine()
 
             e.value.forEach { (url) ->
                 println("Loading $url...")
 
-                w.appendln("// Downloaded from $url")
+                w.appendLine("// Downloaded from $url")
                 val content = fetch(url)
 
                 if (content != null) {
                     if (url.endsWith(".idl")) {
-                        w.appendln(content)
+                        w.appendLine(content)
                     } else {
                         extractIDLText(content, w)
                     }
                 }
             }
 
-            w.appendln()
+            w.appendLine()
         }
     }
 
@@ -66,18 +68,18 @@ fun main(args: Array<String>) {
         .map { propertiesMappingSpecialCases[it] ?: it }
 
     File(dir, cssPropertiesFilename).bufferedWriter().use { w ->
-        w.appendln("package org.w3c.dom.css;")
-        w.appendln()
-        w.appendln("// generated from $cssPropertiesUrl")
-        w.appendln("// for more details see generator/src/main/kotlin/download.kt")
+        w.appendLine("package org.w3c.dom.css;")
+        w.appendLine()
+        w.appendLine("// generated from $cssPropertiesUrl")
+        w.appendLine("// for more details see generator/src/main/kotlin/download.kt")
 
-        w.appendln("partial interface CSSStyleDeclaration {")
+        w.appendLine("partial interface CSSStyleDeclaration {")
 
         cssPropertiesInDOMNotation.forEach {
-            w.appendln("    attribute String $it;")
+            w.appendLine("    attribute String $it;")
         }
 
-        w.appendln("};")
+        w.appendLine("};")
     }
 }
 
@@ -93,9 +95,9 @@ private fun fetch(url: String): String? {
 
 private fun Appendable.append(element: Element) {
     val text = element.text()
-    appendln(text)
+    appendLine(text)
     if (!text.trimEnd().endsWith(";")) {
-        appendln(";")
+        appendLine(";")
     }
 }
 
@@ -113,7 +115,7 @@ private fun extractIDLText(rawContent: String, out: Appendable) {
     soup.select(".dfn-panel").remove()
     soup.select("pre.extract").remove()
 
-    soup.select("pre.idl").filter {!it.hasClass("extract")}.attachTo(out)
+    soup.select("pre.idl").filter { !it.hasClass("extract") }.attachTo(out)
     soup.select("pre code.idl").attachTo(out)
     soup.select("code.idl-code").attachTo(out)
     soup.select("spec-idl").attachTo(out)
