@@ -2,7 +2,7 @@ import com.jfrog.bintray.gradle.BintrayExtension
 import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 
 plugins {
-    id("kotlin2js") version "1.4-M1"
+    id("kotlin2js") version "1.4.32"
     `maven-publish`
     id("com.jfrog.bintray") version "1.8.4"
 }
