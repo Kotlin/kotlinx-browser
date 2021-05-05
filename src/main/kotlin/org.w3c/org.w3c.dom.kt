@@ -26,6 +26,7 @@ import org.w3c.fullscreen.*
 import org.w3c.geolocation.*
 import org.w3c.idb.*
 import org.w3c.performance.*
+import org.w3c.storage.*
 import org.w3c.workers.*
 import org.w3c.xhr.*
 
@@ -3792,6 +3793,7 @@ public external abstract class Navigator {
     open val plugins: PluginArray
     open val mimeTypes: MimeTypeArray
     open val hardwareConcurrency: Number
+    open val storage: StorageManager
     fun requestMediaKeySystemAccess(keySystem: String, supportedConfigurations: Array<MediaKeySystemConfiguration>): Promise<MediaKeySystemAccess>
     fun getUserMedia(constraints: MediaStreamConstraints, successCallback: (MediaStream) -> dynamic, errorCallback: (dynamic) -> dynamic): dynamic
     fun vibrate(pattern: dynamic): Boolean
@@ -4160,6 +4162,7 @@ public external abstract class WorkerNavigator {
     open val languages: Array<out String>
     open val onLine: Boolean
     open val hardwareConcurrency: Number
+    open val storage: StorageManager
     fun taintEnabled(): Boolean
 }
 
