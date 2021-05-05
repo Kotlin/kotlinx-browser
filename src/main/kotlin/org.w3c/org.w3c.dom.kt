@@ -11,6 +11,7 @@ package org.w3c.dom
 import kotlin.js.*
 import org.khronos.webgl.*
 import org.w3c.crypto.*
+import org.w3c.css.fontloading.*
 import org.w3c.dom.clipboard.*
 import org.w3c.dom.css.*
 import org.w3c.dom.encryptedmedia.*
@@ -4046,7 +4047,7 @@ public external abstract class BroadcastChannel : EventTarget {
 /**
  * Exposes the JavaScript [WorkerGlobalScope](https://developer.mozilla.org/en/docs/Web/API/WorkerGlobalScope) to Kotlin
  */
-public external abstract class WorkerGlobalScope : EventTarget, GlobalCrypto {
+public external abstract class WorkerGlobalScope : EventTarget, GlobalCrypto, FontFaceSource {
     open val self: WorkerGlobalScope
     open val location: WorkerLocation
     open val navigator: WorkerNavigator
@@ -4769,7 +4770,7 @@ public inline fun GetRootNodeOptions(composed: Boolean? = false): GetRootNodeOpt
 /**
  * Exposes the JavaScript [Document](https://developer.mozilla.org/en/docs/Web/API/Document) to Kotlin
  */
-public external abstract class Document : Node, GeometryUtils {
+public external abstract class Document : Node, GeometryUtils, FontFaceSource {
     open val implementation: DOMImplementation
     open val URL: String
     open val documentURI: String
