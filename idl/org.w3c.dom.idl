@@ -360,6 +360,8 @@ interface HTMLSourceElement : HTMLElement {
   [CEReactions] attribute USVString srcset;
   [CEReactions] attribute DOMString sizes;
   [CEReactions] attribute DOMString media;
+  [CEReactions] attribute unsigned long width;
+  [CEReactions] attribute unsigned long height;
 };
 [Exposed=Window,
  LegacyFactoryFunction=Image(optional unsigned long width, optional unsigned long height)]
@@ -397,7 +399,6 @@ interface HTMLIFrameElement : HTMLElement {
   [SameObject, PutForwards=value] readonly attribute DOMTokenList sandbox;
   [CEReactions] attribute DOMString allow;
   [CEReactions] attribute boolean allowFullscreen;
-  [CEReactions] attribute boolean allowPaymentRequest;
   [CEReactions] attribute DOMString width;
   [CEReactions] attribute DOMString height;
   [CEReactions] attribute DOMString referrerPolicy;
@@ -427,7 +428,6 @@ interface HTMLObjectElement : HTMLElement {
   [CEReactions] attribute USVString data;
   [CEReactions] attribute DOMString type;
   [CEReactions] attribute DOMString name;
-  [CEReactions] attribute DOMString useMap;
   readonly attribute HTMLFormElement? form;
   [CEReactions] attribute DOMString width;
   [CEReactions] attribute DOMString height;
@@ -643,7 +643,7 @@ interface TextTrackCue : EventTarget {
 
   attribute DOMString id;
   attribute double startTime;
-  attribute double endTime;
+  attribute unrestricted double endTime;
   attribute boolean pauseOnExit;
 
   attribute EventHandler onenter;
@@ -1146,6 +1146,7 @@ interface HTMLSlotElement : HTMLElement {
   [CEReactions] attribute DOMString name;
   sequence<Node> assignedNodes(optional AssignedNodesOptions options = {});
   sequence<Element> assignedElements(optional AssignedNodesOptions options = {});
+  undefined assign((Element or Text)... nodes);
 };
 
 dictionary AssignedNodesOptions {
@@ -1177,11 +1178,14 @@ typedef (HTMLOrSVGImageElement or
          ImageBitmap or
          OffscreenCanvas) CanvasImageSource;
 
+enum PredefinedColorSpace { "srgb", "display-p3" };
+
 enum CanvasFillRule { "nonzero", "evenodd" };
 
 dictionary CanvasRenderingContext2DSettings {
   boolean alpha = true;
   boolean desynchronized = false;
+  PredefinedColorSpace colorSpace = "srgb";
 };
 
 enum ImageSmoothingQuality { "low", "medium", "high" };
@@ -1311,11 +1315,11 @@ interface mixin CanvasDrawImage {
 
 interface mixin CanvasImageData {
   // pixel manipulation
-  ImageData createImageData(long sw, long sh);
+  ImageData createImageData([EnforceRange] long sw, [EnforceRange] long sh, optional ImageDataSettings settings = {});
   ImageData createImageData(ImageData imagedata);
-  ImageData getImageData(long sx, long sy, long sw, long sh);
-  undefined putImageData(ImageData imagedata, long dx, long dy);
-  undefined putImageData(ImageData imagedata, long dx, long dy, long dirtyX, long dirtyY, long dirtyWidth, long dirtyHeight);
+  ImageData getImageData([EnforceRange] long sx, [EnforceRange] long sy, [EnforceRange] long sw, [EnforceRange] long sh, optional ImageDataSettings settings = {});
+  undefined putImageData(ImageData imagedata, [EnforceRange] long dx, [EnforceRange] long dy);
+  undefined putImageData(ImageData imagedata, [EnforceRange] long dx, [EnforceRange] long dy, [EnforceRange] long dirtyX, [EnforceRange] long dirtyY, [EnforceRange] long dirtyWidth, [EnforceRange] long dirtyHeight);
 };
 
 enum CanvasLineCap { "butt", "round", "square" };
@@ -1323,6 +1327,10 @@ enum CanvasLineJoin { "round", "bevel", "miter" };
 enum CanvasTextAlign { "start", "end", "left", "right", "center" };
 enum CanvasTextBaseline { "top", "hanging", "middle", "alphabetic", "ideographic", "bottom" };
 enum CanvasDirection { "ltr", "rtl", "inherit" };
+enum CanvasFontKerning { "auto", "normal", "none" };
+enum CanvasFontStretch { "ultra-condensed", "extra-condensed", "condensed", "semi-condensed", "normal", "semi-expanded", "expanded", "extra-expanded", "ultra-expanded" };
+enum CanvasFontVariantCaps { "normal", "small-caps", "all-small-caps", "petite-caps", "all-petite-caps", "unicase", "titling-caps" };
+enum CanvasTextRendering { "auto", "optimizeSpeed", "optimizeLegibility", "geometricPrecision" };
 
 interface mixin CanvasPathDrawingStyles {
   // line caps/joins
@@ -1343,6 +1351,12 @@ interface mixin CanvasTextDrawingStyles {
   attribute CanvasTextAlign textAlign; // (default: "start")
   attribute CanvasTextBaseline textBaseline; // (default: "alphabetic")
   attribute CanvasDirection direction; // (default: "inherit")
+  attribute double textLetterSpacing; // (default: 0)
+  attribute double textWordSpacing; // (default: 0)
+  attribute CanvasFontKerning fontKerning; // (default: "auto")
+  attribute CanvasFontStretch fontStretch; // (default: "normal")
+  attribute CanvasFontVariantCaps fontVariantCaps; // (default: "normal")
+  attribute CanvasTextRendering textRendering; // (default: "normal")
 };
 
 interface mixin CanvasPath {
@@ -1354,8 +1368,8 @@ interface mixin CanvasPath {
   undefined bezierCurveTo(unrestricted double cp1x, unrestricted double cp1y, unrestricted double cp2x, unrestricted double cp2y, unrestricted double x, unrestricted double y);
   undefined arcTo(unrestricted double x1, unrestricted double y1, unrestricted double x2, unrestricted double y2, unrestricted double radius); 
   undefined rect(unrestricted double x, unrestricted double y, unrestricted double w, unrestricted double h);
-  undefined arc(unrestricted double x, unrestricted double y, unrestricted double radius, unrestricted double startAngle, unrestricted double endAngle, optional boolean anticlockwise = false); 
-  undefined ellipse(unrestricted double x, unrestricted double y, unrestricted double radiusX, unrestricted double radiusY, unrestricted double rotation, unrestricted double startAngle, unrestricted double endAngle, optional boolean anticlockwise = false); 
+  undefined arc(unrestricted double x, unrestricted double y, unrestricted double radius, unrestricted double startAngle, unrestricted double endAngle, optional boolean counterclockwise = false); 
+  undefined ellipse(unrestricted double x, unrestricted double y, unrestricted double radiusX, unrestricted double radiusY, unrestricted double rotation, unrestricted double startAngle, unrestricted double endAngle, optional boolean counterclockwise = false); 
 };
 
 [Exposed=(Window,Worker)]
@@ -1389,15 +1403,20 @@ interface TextMetrics {
   readonly attribute double ideographicBaseline;
 };
 
+dictionary ImageDataSettings {
+  PredefinedColorSpace colorSpace;
+};
+
 [Exposed=(Window,Worker),
  Serializable]
 interface ImageData {
-  constructor(unsigned long sw, unsigned long sh);
-  constructor(Uint8ClampedArray data, unsigned long sw, optional unsigned long sh);
+  constructor(unsigned long sw, unsigned long sh, optional ImageDataSettings settings = {});
+  constructor(Uint8ClampedArray data, unsigned long sw, optional unsigned long sh, optional ImageDataSettings settings = {});
 
   readonly attribute unsigned long width;
   readonly attribute unsigned long height;
   readonly attribute Uint8ClampedArray data;
+  readonly attribute PredefinedColorSpace colorSpace;
 };
 
 [Exposed=(Window,Worker)]
@@ -1461,7 +1480,7 @@ OffscreenCanvasRenderingContext2D includes CanvasPath;
 interface CustomElementRegistry {
   [CEReactions] undefined define(DOMString name, CustomElementConstructor constructor, optional ElementDefinitionOptions options = {});
   (CustomElementConstructor or undefined) get(DOMString name);
-  Promise<undefined> whenDefined(DOMString name);
+  Promise<CustomElementConstructor> whenDefined(DOMString name);
   [CEReactions] undefined upgrade(Node root);
 };
 
@@ -1472,16 +1491,18 @@ dictionary ElementDefinitionOptions {
 };
 [Exposed=Window]
 interface ElementInternals {
-  // Form-associated custom elements
+  // Shadow root access
+  readonly attribute ShadowRoot? shadowRoot;
 
+  // Form-associated custom elements
   undefined setFormValue((File or USVString or FormData)? value,
-                    optional (File or USVString or FormData)? state);
+                         optional (File or USVString or FormData)? state);
 
   readonly attribute HTMLFormElement? form;
 
   undefined setValidity(optional ValidityStateFlags flags = {},
-                   optional DOMString message,
-                   optional HTMLElement anchor);
+                        optional DOMString message,
+                        optional HTMLElement anchor);
   readonly attribute boolean willValidate;
   readonly attribute ValidityState validity;
   readonly attribute DOMString validationMessage;
@@ -1490,6 +1511,9 @@ interface ElementInternals {
 
   readonly attribute NodeList labels;
 };
+
+// Accessibility semantics
+ElementInternals includes ARIAMixin;
 
 dictionary ValidityStateFlags {
   boolean valueMissing = false;
@@ -1598,8 +1622,7 @@ interface Window : EventTarget {
 
   // the user agent
   readonly attribute Navigator navigator; 
-  [SecureContext] readonly attribute ApplicationCache applicationCache;
-  readonly attribute boolean originIsolated;
+  readonly attribute boolean originAgentCluster;
 
   // user prompts
   undefined alert();
@@ -1633,8 +1656,8 @@ interface History {
   undefined go(optional long delta = 0);
   undefined back();
   undefined forward();
-  undefined pushState(any data, DOMString title, optional USVString? url = null);
-  undefined replaceState(any data, DOMString title, optional USVString? url = null);
+  undefined pushState(any data, DOMString unused, optional USVString? url = null);
+  undefined replaceState(any data, DOMString unused, optional USVString? url = null);
 };
 [Exposed=Window]
 interface Location { // but see also additional creation steps and overridden internal methods
@@ -1689,37 +1712,6 @@ dictionary PageTransitionEventInit : EventInit {
 [Exposed=Window]
 interface BeforeUnloadEvent : Event {
   attribute DOMString returnValue;
-};
-[SecureContext,
- Exposed=Window]
-interface ApplicationCache : EventTarget {
-
-  // update status
-  const unsigned short UNCACHED = 0;
-  const unsigned short IDLE = 1;
-  const unsigned short CHECKING = 2;
-  const unsigned short DOWNLOADING = 3;
-  const unsigned short UPDATEREADY = 4;
-  const unsigned short OBSOLETE = 5;
-  readonly attribute unsigned short status;
-
-  // updates
-  undefined update();
-  undefined abort();
-  undefined swapCache();
-
-  // events
-  attribute EventHandler onchecking;
-  attribute EventHandler onerror;
-  attribute EventHandler onnoupdate;
-  attribute EventHandler ondownloading;
-  attribute EventHandler onprogress;
-  attribute EventHandler onupdateready;
-  attribute EventHandler oncached;
-  attribute EventHandler onobsolete;
-};
-interface mixin NavigatorOnLine {
-  readonly attribute boolean onLine;
 };
 [Exposed=(Window,Worker)]
 interface ErrorEvent : Event {
@@ -1923,53 +1915,15 @@ interface mixin NavigatorLanguage {
   readonly attribute DOMString language;
   readonly attribute FrozenArray<DOMString> languages;
 };
+interface mixin NavigatorOnLine {
+  readonly attribute boolean onLine;
+};
 interface mixin NavigatorContentUtils {
   [SecureContext] undefined registerProtocolHandler(DOMString scheme, USVString url);
   [SecureContext] undefined unregisterProtocolHandler(DOMString scheme, USVString url);
 };
 interface mixin NavigatorCookies {
   readonly attribute boolean cookieEnabled;
-};
-interface mixin NavigatorPlugins {
-  [SameObject] readonly attribute PluginArray plugins;
-  [SameObject] readonly attribute MimeTypeArray mimeTypes;
-  boolean javaEnabled();
-};
-
-[Exposed=Window,
- LegacyUnenumerableNamedProperties]
-interface PluginArray {
-  undefined refresh(optional boolean reload = false);
-  readonly attribute unsigned long length;
-  getter Plugin? item(unsigned long index);
-  getter Plugin? namedItem(DOMString name);
-};
-
-[Exposed=Window,
- LegacyUnenumerableNamedProperties]
-interface MimeTypeArray {
-  readonly attribute unsigned long length;
-  getter MimeType? item(unsigned long index);
-  getter MimeType? namedItem(DOMString name);
-};
-
-[Exposed=Window,
- LegacyUnenumerableNamedProperties]
-interface Plugin {
-  readonly attribute DOMString name;
-  readonly attribute DOMString description;
-  readonly attribute DOMString filename;
-  readonly attribute unsigned long length;
-  getter MimeType? item(unsigned long index);
-  getter MimeType? namedItem(DOMString name);
-};
-
-[Exposed=Window]
-interface MimeType {
-  readonly attribute DOMString type;
-  readonly attribute DOMString description;
-  readonly attribute DOMString suffixes; // comma-separated
-  readonly attribute Plugin enabledPlugin;
 };
 [Exposed=(Window,Worker), Serializable, Transferable]
 interface ImageBitmap {
@@ -2211,6 +2165,16 @@ interface WorkerLocation {
   readonly attribute USVString search;
   readonly attribute USVString hash;
 };
+[Exposed=Worklet, SecureContext]
+interface WorkletGlobalScope {};
+[Exposed=Window, SecureContext]
+interface Worklet {
+  [NewObject] Promise<undefined> addModule(USVString moduleURL, optional WorkletOptions options = {});
+};
+
+dictionary WorkletOptions {
+  RequestCredentials credentials = "same-origin";
+};
 [Exposed=Window]
 interface Storage {
   readonly attribute unsigned long length;
@@ -2263,10 +2227,6 @@ interface HTMLMarqueeElement : HTMLElement {
   [CEReactions] attribute boolean trueSpeed;
   [CEReactions] attribute unsigned long vspace;
   [CEReactions] attribute DOMString width;
-
-  attribute EventHandler onbounce;
-  attribute EventHandler onfinish;
-  attribute EventHandler onstart;
 
   undefined start();
   undefined stop();
@@ -2413,6 +2373,7 @@ partial interface HTMLObjectElement {
   [CEReactions] attribute unsigned long vspace;
   [CEReactions] attribute DOMString codeBase;
   [CEReactions] attribute DOMString codeType;
+  [CEReactions] attribute DOMString useMap;
 
   [CEReactions] attribute [LegacyNullToEmptyString] DOMString border;
 };
@@ -2506,6 +2467,44 @@ partial interface Window {
 interface External {
   undefined AddSearchProvider();
   undefined IsSearchProviderInstalled();
+};
+interface mixin NavigatorPlugins {
+  [SameObject] readonly attribute PluginArray plugins;
+  [SameObject] readonly attribute MimeTypeArray mimeTypes;
+  boolean javaEnabled();
+};
+
+[Exposed=Window]
+interface PluginArray {
+  undefined refresh();
+  readonly attribute unsigned long length;
+  getter object? item(unsigned long index);
+  object? namedItem(DOMString name);
+};
+
+[Exposed=Window]
+interface MimeTypeArray {
+  readonly attribute unsigned long length;
+  getter object? item(unsigned long index);
+  object? namedItem(DOMString name);
+};
+
+[Exposed=Window]
+interface Plugin {
+  readonly attribute undefined name;
+  readonly attribute undefined description;
+  readonly attribute undefined filename;
+  readonly attribute undefined length;
+  getter undefined item(unsigned long index);
+  undefined namedItem(DOMString name);
+};
+
+[Exposed=Window]
+interface MimeType {
+  readonly attribute undefined type;
+  readonly attribute undefined description;
+  readonly attribute undefined suffixes;
+  readonly attribute undefined enabledPlugin;
 };
 // Downloaded from https://html.spec.whatwg.org/
 [Exposed=Window,
@@ -2866,6 +2865,8 @@ interface HTMLSourceElement : HTMLElement {
   [CEReactions] attribute USVString srcset;
   [CEReactions] attribute DOMString sizes;
   [CEReactions] attribute DOMString media;
+  [CEReactions] attribute unsigned long width;
+  [CEReactions] attribute unsigned long height;
 };
 [Exposed=Window,
  LegacyFactoryFunction=Image(optional unsigned long width, optional unsigned long height)]
@@ -2903,7 +2904,6 @@ interface HTMLIFrameElement : HTMLElement {
   [SameObject, PutForwards=value] readonly attribute DOMTokenList sandbox;
   [CEReactions] attribute DOMString allow;
   [CEReactions] attribute boolean allowFullscreen;
-  [CEReactions] attribute boolean allowPaymentRequest;
   [CEReactions] attribute DOMString width;
   [CEReactions] attribute DOMString height;
   [CEReactions] attribute DOMString referrerPolicy;
@@ -2933,7 +2933,6 @@ interface HTMLObjectElement : HTMLElement {
   [CEReactions] attribute USVString data;
   [CEReactions] attribute DOMString type;
   [CEReactions] attribute DOMString name;
-  [CEReactions] attribute DOMString useMap;
   readonly attribute HTMLFormElement? form;
   [CEReactions] attribute DOMString width;
   [CEReactions] attribute DOMString height;
@@ -3149,7 +3148,7 @@ interface TextTrackCue : EventTarget {
 
   attribute DOMString id;
   attribute double startTime;
-  attribute double endTime;
+  attribute unrestricted double endTime;
   attribute boolean pauseOnExit;
 
   attribute EventHandler onenter;
@@ -3652,6 +3651,7 @@ interface HTMLSlotElement : HTMLElement {
   [CEReactions] attribute DOMString name;
   sequence<Node> assignedNodes(optional AssignedNodesOptions options = {});
   sequence<Element> assignedElements(optional AssignedNodesOptions options = {});
+  undefined assign((Element or Text)... nodes);
 };
 
 dictionary AssignedNodesOptions {
@@ -3683,11 +3683,14 @@ typedef (HTMLOrSVGImageElement or
          ImageBitmap or
          OffscreenCanvas) CanvasImageSource;
 
+enum PredefinedColorSpace { "srgb", "display-p3" };
+
 enum CanvasFillRule { "nonzero", "evenodd" };
 
 dictionary CanvasRenderingContext2DSettings {
   boolean alpha = true;
   boolean desynchronized = false;
+  PredefinedColorSpace colorSpace = "srgb";
 };
 
 enum ImageSmoothingQuality { "low", "medium", "high" };
@@ -3817,11 +3820,11 @@ interface mixin CanvasDrawImage {
 
 interface mixin CanvasImageData {
   // pixel manipulation
-  ImageData createImageData(long sw, long sh);
+  ImageData createImageData([EnforceRange] long sw, [EnforceRange] long sh, optional ImageDataSettings settings = {});
   ImageData createImageData(ImageData imagedata);
-  ImageData getImageData(long sx, long sy, long sw, long sh);
-  undefined putImageData(ImageData imagedata, long dx, long dy);
-  undefined putImageData(ImageData imagedata, long dx, long dy, long dirtyX, long dirtyY, long dirtyWidth, long dirtyHeight);
+  ImageData getImageData([EnforceRange] long sx, [EnforceRange] long sy, [EnforceRange] long sw, [EnforceRange] long sh, optional ImageDataSettings settings = {});
+  undefined putImageData(ImageData imagedata, [EnforceRange] long dx, [EnforceRange] long dy);
+  undefined putImageData(ImageData imagedata, [EnforceRange] long dx, [EnforceRange] long dy, [EnforceRange] long dirtyX, [EnforceRange] long dirtyY, [EnforceRange] long dirtyWidth, [EnforceRange] long dirtyHeight);
 };
 
 enum CanvasLineCap { "butt", "round", "square" };
@@ -3829,6 +3832,10 @@ enum CanvasLineJoin { "round", "bevel", "miter" };
 enum CanvasTextAlign { "start", "end", "left", "right", "center" };
 enum CanvasTextBaseline { "top", "hanging", "middle", "alphabetic", "ideographic", "bottom" };
 enum CanvasDirection { "ltr", "rtl", "inherit" };
+enum CanvasFontKerning { "auto", "normal", "none" };
+enum CanvasFontStretch { "ultra-condensed", "extra-condensed", "condensed", "semi-condensed", "normal", "semi-expanded", "expanded", "extra-expanded", "ultra-expanded" };
+enum CanvasFontVariantCaps { "normal", "small-caps", "all-small-caps", "petite-caps", "all-petite-caps", "unicase", "titling-caps" };
+enum CanvasTextRendering { "auto", "optimizeSpeed", "optimizeLegibility", "geometricPrecision" };
 
 interface mixin CanvasPathDrawingStyles {
   // line caps/joins
@@ -3849,6 +3856,12 @@ interface mixin CanvasTextDrawingStyles {
   attribute CanvasTextAlign textAlign; // (default: "start")
   attribute CanvasTextBaseline textBaseline; // (default: "alphabetic")
   attribute CanvasDirection direction; // (default: "inherit")
+  attribute double textLetterSpacing; // (default: 0)
+  attribute double textWordSpacing; // (default: 0)
+  attribute CanvasFontKerning fontKerning; // (default: "auto")
+  attribute CanvasFontStretch fontStretch; // (default: "normal")
+  attribute CanvasFontVariantCaps fontVariantCaps; // (default: "normal")
+  attribute CanvasTextRendering textRendering; // (default: "normal")
 };
 
 interface mixin CanvasPath {
@@ -3860,8 +3873,8 @@ interface mixin CanvasPath {
   undefined bezierCurveTo(unrestricted double cp1x, unrestricted double cp1y, unrestricted double cp2x, unrestricted double cp2y, unrestricted double x, unrestricted double y);
   undefined arcTo(unrestricted double x1, unrestricted double y1, unrestricted double x2, unrestricted double y2, unrestricted double radius); 
   undefined rect(unrestricted double x, unrestricted double y, unrestricted double w, unrestricted double h);
-  undefined arc(unrestricted double x, unrestricted double y, unrestricted double radius, unrestricted double startAngle, unrestricted double endAngle, optional boolean anticlockwise = false); 
-  undefined ellipse(unrestricted double x, unrestricted double y, unrestricted double radiusX, unrestricted double radiusY, unrestricted double rotation, unrestricted double startAngle, unrestricted double endAngle, optional boolean anticlockwise = false); 
+  undefined arc(unrestricted double x, unrestricted double y, unrestricted double radius, unrestricted double startAngle, unrestricted double endAngle, optional boolean counterclockwise = false); 
+  undefined ellipse(unrestricted double x, unrestricted double y, unrestricted double radiusX, unrestricted double radiusY, unrestricted double rotation, unrestricted double startAngle, unrestricted double endAngle, optional boolean counterclockwise = false); 
 };
 
 [Exposed=(Window,Worker)]
@@ -3895,15 +3908,20 @@ interface TextMetrics {
   readonly attribute double ideographicBaseline;
 };
 
+dictionary ImageDataSettings {
+  PredefinedColorSpace colorSpace;
+};
+
 [Exposed=(Window,Worker),
  Serializable]
 interface ImageData {
-  constructor(unsigned long sw, unsigned long sh);
-  constructor(Uint8ClampedArray data, unsigned long sw, optional unsigned long sh);
+  constructor(unsigned long sw, unsigned long sh, optional ImageDataSettings settings = {});
+  constructor(Uint8ClampedArray data, unsigned long sw, optional unsigned long sh, optional ImageDataSettings settings = {});
 
   readonly attribute unsigned long width;
   readonly attribute unsigned long height;
   readonly attribute Uint8ClampedArray data;
+  readonly attribute PredefinedColorSpace colorSpace;
 };
 
 [Exposed=(Window,Worker)]
@@ -3967,7 +3985,7 @@ OffscreenCanvasRenderingContext2D includes CanvasPath;
 interface CustomElementRegistry {
   [CEReactions] undefined define(DOMString name, CustomElementConstructor constructor, optional ElementDefinitionOptions options = {});
   (CustomElementConstructor or undefined) get(DOMString name);
-  Promise<undefined> whenDefined(DOMString name);
+  Promise<CustomElementConstructor> whenDefined(DOMString name);
   [CEReactions] undefined upgrade(Node root);
 };
 
@@ -3978,16 +3996,18 @@ dictionary ElementDefinitionOptions {
 };
 [Exposed=Window]
 interface ElementInternals {
-  // Form-associated custom elements
+  // Shadow root access
+  readonly attribute ShadowRoot? shadowRoot;
 
+  // Form-associated custom elements
   undefined setFormValue((File or USVString or FormData)? value,
-                    optional (File or USVString or FormData)? state);
+                         optional (File or USVString or FormData)? state);
 
   readonly attribute HTMLFormElement? form;
 
   undefined setValidity(optional ValidityStateFlags flags = {},
-                   optional DOMString message,
-                   optional HTMLElement anchor);
+                        optional DOMString message,
+                        optional HTMLElement anchor);
   readonly attribute boolean willValidate;
   readonly attribute ValidityState validity;
   readonly attribute DOMString validationMessage;
@@ -3996,6 +4016,9 @@ interface ElementInternals {
 
   readonly attribute NodeList labels;
 };
+
+// Accessibility semantics
+ElementInternals includes ARIAMixin;
 
 dictionary ValidityStateFlags {
   boolean valueMissing = false;
@@ -4104,8 +4127,7 @@ interface Window : EventTarget {
 
   // the user agent
   readonly attribute Navigator navigator; 
-  [SecureContext] readonly attribute ApplicationCache applicationCache;
-  readonly attribute boolean originIsolated;
+  readonly attribute boolean originAgentCluster;
 
   // user prompts
   undefined alert();
@@ -4139,8 +4161,8 @@ interface History {
   undefined go(optional long delta = 0);
   undefined back();
   undefined forward();
-  undefined pushState(any data, DOMString title, optional USVString? url = null);
-  undefined replaceState(any data, DOMString title, optional USVString? url = null);
+  undefined pushState(any data, DOMString unused, optional USVString? url = null);
+  undefined replaceState(any data, DOMString unused, optional USVString? url = null);
 };
 [Exposed=Window]
 interface Location { // but see also additional creation steps and overridden internal methods
@@ -4195,37 +4217,6 @@ dictionary PageTransitionEventInit : EventInit {
 [Exposed=Window]
 interface BeforeUnloadEvent : Event {
   attribute DOMString returnValue;
-};
-[SecureContext,
- Exposed=Window]
-interface ApplicationCache : EventTarget {
-
-  // update status
-  const unsigned short UNCACHED = 0;
-  const unsigned short IDLE = 1;
-  const unsigned short CHECKING = 2;
-  const unsigned short DOWNLOADING = 3;
-  const unsigned short UPDATEREADY = 4;
-  const unsigned short OBSOLETE = 5;
-  readonly attribute unsigned short status;
-
-  // updates
-  undefined update();
-  undefined abort();
-  undefined swapCache();
-
-  // events
-  attribute EventHandler onchecking;
-  attribute EventHandler onerror;
-  attribute EventHandler onnoupdate;
-  attribute EventHandler ondownloading;
-  attribute EventHandler onprogress;
-  attribute EventHandler onupdateready;
-  attribute EventHandler oncached;
-  attribute EventHandler onobsolete;
-};
-interface mixin NavigatorOnLine {
-  readonly attribute boolean onLine;
 };
 [Exposed=(Window,Worker)]
 interface ErrorEvent : Event {
@@ -4429,53 +4420,15 @@ interface mixin NavigatorLanguage {
   readonly attribute DOMString language;
   readonly attribute FrozenArray<DOMString> languages;
 };
+interface mixin NavigatorOnLine {
+  readonly attribute boolean onLine;
+};
 interface mixin NavigatorContentUtils {
   [SecureContext] undefined registerProtocolHandler(DOMString scheme, USVString url);
   [SecureContext] undefined unregisterProtocolHandler(DOMString scheme, USVString url);
 };
 interface mixin NavigatorCookies {
   readonly attribute boolean cookieEnabled;
-};
-interface mixin NavigatorPlugins {
-  [SameObject] readonly attribute PluginArray plugins;
-  [SameObject] readonly attribute MimeTypeArray mimeTypes;
-  boolean javaEnabled();
-};
-
-[Exposed=Window,
- LegacyUnenumerableNamedProperties]
-interface PluginArray {
-  undefined refresh(optional boolean reload = false);
-  readonly attribute unsigned long length;
-  getter Plugin? item(unsigned long index);
-  getter Plugin? namedItem(DOMString name);
-};
-
-[Exposed=Window,
- LegacyUnenumerableNamedProperties]
-interface MimeTypeArray {
-  readonly attribute unsigned long length;
-  getter MimeType? item(unsigned long index);
-  getter MimeType? namedItem(DOMString name);
-};
-
-[Exposed=Window,
- LegacyUnenumerableNamedProperties]
-interface Plugin {
-  readonly attribute DOMString name;
-  readonly attribute DOMString description;
-  readonly attribute DOMString filename;
-  readonly attribute unsigned long length;
-  getter MimeType? item(unsigned long index);
-  getter MimeType? namedItem(DOMString name);
-};
-
-[Exposed=Window]
-interface MimeType {
-  readonly attribute DOMString type;
-  readonly attribute DOMString description;
-  readonly attribute DOMString suffixes; // comma-separated
-  readonly attribute Plugin enabledPlugin;
 };
 [Exposed=(Window,Worker), Serializable, Transferable]
 interface ImageBitmap {
@@ -4717,6 +4670,16 @@ interface WorkerLocation {
   readonly attribute USVString search;
   readonly attribute USVString hash;
 };
+[Exposed=Worklet, SecureContext]
+interface WorkletGlobalScope {};
+[Exposed=Window, SecureContext]
+interface Worklet {
+  [NewObject] Promise<undefined> addModule(USVString moduleURL, optional WorkletOptions options = {});
+};
+
+dictionary WorkletOptions {
+  RequestCredentials credentials = "same-origin";
+};
 [Exposed=Window]
 interface Storage {
   readonly attribute unsigned long length;
@@ -4769,10 +4732,6 @@ interface HTMLMarqueeElement : HTMLElement {
   [CEReactions] attribute boolean trueSpeed;
   [CEReactions] attribute unsigned long vspace;
   [CEReactions] attribute DOMString width;
-
-  attribute EventHandler onbounce;
-  attribute EventHandler onfinish;
-  attribute EventHandler onstart;
 
   undefined start();
   undefined stop();
@@ -4919,6 +4878,7 @@ partial interface HTMLObjectElement {
   [CEReactions] attribute unsigned long vspace;
   [CEReactions] attribute DOMString codeBase;
   [CEReactions] attribute DOMString codeType;
+  [CEReactions] attribute DOMString useMap;
 
   [CEReactions] attribute [LegacyNullToEmptyString] DOMString border;
 };
@@ -5013,6 +4973,44 @@ interface External {
   undefined AddSearchProvider();
   undefined IsSearchProviderInstalled();
 };
+interface mixin NavigatorPlugins {
+  [SameObject] readonly attribute PluginArray plugins;
+  [SameObject] readonly attribute MimeTypeArray mimeTypes;
+  boolean javaEnabled();
+};
+
+[Exposed=Window]
+interface PluginArray {
+  undefined refresh();
+  readonly attribute unsigned long length;
+  getter object? item(unsigned long index);
+  object? namedItem(DOMString name);
+};
+
+[Exposed=Window]
+interface MimeTypeArray {
+  readonly attribute unsigned long length;
+  getter object? item(unsigned long index);
+  object? namedItem(DOMString name);
+};
+
+[Exposed=Window]
+interface Plugin {
+  readonly attribute undefined name;
+  readonly attribute undefined description;
+  readonly attribute undefined filename;
+  readonly attribute undefined length;
+  getter undefined item(unsigned long index);
+  undefined namedItem(DOMString name);
+};
+
+[Exposed=Window]
+interface MimeType {
+  readonly attribute undefined type;
+  readonly attribute undefined description;
+  readonly attribute undefined suffixes;
+  readonly attribute undefined enabledPlugin;
+};
 // Downloaded from https://raw.githubusercontent.com/whatwg/dom/master/dom.bs
 [Exposed=(Window,Worker,AudioWorklet)]
 interface Event {
@@ -5020,7 +5018,7 @@ interface Event {
 
   readonly attribute DOMString type;
   readonly attribute EventTarget? target;
-  readonly attribute EventTarget? srcElement; // historical
+  readonly attribute EventTarget? srcElement; // legacy
   readonly attribute EventTarget? currentTarget;
   sequence<EventTarget> composedPath();
 
@@ -5031,12 +5029,12 @@ interface Event {
   readonly attribute unsigned short eventPhase;
 
   undefined stopPropagation();
-           attribute boolean cancelBubble; // historical alias of .stopPropagation
+           attribute boolean cancelBubble; // legacy alias of .stopPropagation()
   undefined stopImmediatePropagation();
 
   readonly attribute boolean bubbles;
   readonly attribute boolean cancelable;
-           attribute boolean returnValue;  // historical
+           attribute boolean returnValue;  // legacy
   undefined preventDefault();
   readonly attribute boolean defaultPrevented;
   readonly attribute boolean composed;
@@ -5044,7 +5042,7 @@ interface Event {
   [LegacyUnforgeable] readonly attribute boolean isTrusted;
   readonly attribute DOMHighResTimeStamp timeStamp;
 
-  undefined initEvent(DOMString type, optional boolean bubbles = false, optional boolean cancelable = false); // historical
+  undefined initEvent(DOMString type, optional boolean bubbles = false, optional boolean cancelable = false); // legacy
 };
 
 dictionary EventInit {
@@ -5053,7 +5051,7 @@ dictionary EventInit {
   boolean composed = false;
 };
 partial interface Window {
-  [Replaceable] readonly attribute any event; // historical
+  [Replaceable] readonly attribute (Event or undefined) event; // legacy
 };
 [Exposed=(Window,Worker)]
 interface CustomEvent : Event {
@@ -5061,7 +5059,7 @@ interface CustomEvent : Event {
 
   readonly attribute any detail;
 
-  undefined initCustomEvent(DOMString type, optional boolean bubbles = false, optional boolean cancelable = false, optional any detail = null); // historical
+  undefined initCustomEvent(DOMString type, optional boolean bubbles = false, optional boolean cancelable = false, optional any detail = null); // legacy
 };
 
 dictionary CustomEventInit : EventInit {
@@ -5087,6 +5085,7 @@ dictionary EventListenerOptions {
 dictionary AddEventListenerOptions : EventListenerOptions {
   boolean passive = false;
   boolean once = false;
+  AbortSignal signal;
 };
 [Exposed=(Window,Worker)]
 interface AbortController {
@@ -5098,6 +5097,8 @@ interface AbortController {
 };
 [Exposed=(Window,Worker)]
 interface AbortSignal : EventTarget {
+  [NewObject] static AbortSignal abort();
+
   readonly attribute boolean aborted;
 
   attribute EventHandler onabort;
@@ -5197,14 +5198,14 @@ interface Node : EventTarget {
   const unsigned short ATTRIBUTE_NODE = 2;
   const unsigned short TEXT_NODE = 3;
   const unsigned short CDATA_SECTION_NODE = 4;
-  const unsigned short ENTITY_REFERENCE_NODE = 5; // historical
-  const unsigned short ENTITY_NODE = 6; // historical
+  const unsigned short ENTITY_REFERENCE_NODE = 5; // legacy
+  const unsigned short ENTITY_NODE = 6; // legacy
   const unsigned short PROCESSING_INSTRUCTION_NODE = 7;
   const unsigned short COMMENT_NODE = 8;
   const unsigned short DOCUMENT_NODE = 9;
   const unsigned short DOCUMENT_TYPE_NODE = 10;
   const unsigned short DOCUMENT_FRAGMENT_NODE = 11;
-  const unsigned short NOTATION_NODE = 12; // historical
+  const unsigned short NOTATION_NODE = 12; // legacy
   readonly attribute unsigned short nodeType;
   readonly attribute DOMString nodeName;
 
@@ -5228,7 +5229,7 @@ interface Node : EventTarget {
 
   [CEReactions, NewObject] Node cloneNode(optional boolean deep = false);
   boolean isEqualNode(Node? otherNode);
-  boolean isSameNode(Node? otherNode); // historical alias of ===
+  boolean isSameNode(Node? otherNode); // legacy alias of ===
 
   const unsigned short DOCUMENT_POSITION_DISCONNECTED = 0x01;
   const unsigned short DOCUMENT_POSITION_PRECEDING = 0x02;
@@ -5261,8 +5262,8 @@ interface Document : Node {
   readonly attribute USVString documentURI;
   readonly attribute DOMString compatMode;
   readonly attribute DOMString characterSet;
-  readonly attribute DOMString charset; // historical alias of .characterSet
-  readonly attribute DOMString inputEncoding; // historical alias of .characterSet
+  readonly attribute DOMString charset; // legacy alias of .characterSet
+  readonly attribute DOMString inputEncoding; // legacy alias of .characterSet
   readonly attribute DOMString contentType;
 
   readonly attribute DocumentType? doctype;
@@ -5285,7 +5286,7 @@ interface Document : Node {
   [NewObject] Attr createAttribute(DOMString localName);
   [NewObject] Attr createAttributeNS(DOMString? namespace, DOMString qualifiedName);
 
-  [NewObject] Event createEvent(DOMString interface); // historical
+  [NewObject] Event createEvent(DOMString interface); // legacy
 
   [NewObject] Range createRange();
 
@@ -5321,11 +5322,14 @@ interface DocumentFragment : Node {
 [Exposed=Window]
 interface ShadowRoot : DocumentFragment {
   readonly attribute ShadowRootMode mode;
+  readonly attribute boolean delegatesFocus;
+  readonly attribute SlotAssignmentMode slotAssignment;
   readonly attribute Element host;
   attribute EventHandler onslotchange;
 };
 
 enum ShadowRootMode { "open", "closed" };
+enum SlotAssignmentMode { "manual", "named" };
 [Exposed=Window]
 interface Element : Node {
   readonly attribute DOMString? namespaceURI;
@@ -5362,19 +5366,20 @@ interface Element : Node {
 
   Element? closest(DOMString selectors);
   boolean matches(DOMString selectors);
-  boolean webkitMatchesSelector(DOMString selectors); // historical alias of .matches
+  boolean webkitMatchesSelector(DOMString selectors); // legacy alias of .matches
 
   HTMLCollection getElementsByTagName(DOMString qualifiedName);
   HTMLCollection getElementsByTagNameNS(DOMString? namespace, DOMString localName);
   HTMLCollection getElementsByClassName(DOMString classNames);
 
-  [CEReactions] Element? insertAdjacentElement(DOMString where, Element element); // historical
-  undefined insertAdjacentText(DOMString where, DOMString data); // historical
+  [CEReactions] Element? insertAdjacentElement(DOMString where, Element element); // legacy
+  undefined insertAdjacentText(DOMString where, DOMString data); // legacy
 };
 
 dictionary ShadowRootInit {
   required ShadowRootMode mode;
   boolean delegatesFocus = false;
+  SlotAssignmentMode slotAssignment = "named";
 };
 [Exposed=Window,
  LegacyUnenumerableNamedProperties]
@@ -5526,14 +5531,14 @@ callback interface NodeFilter {
   const unsigned long SHOW_ATTRIBUTE = 0x2;
   const unsigned long SHOW_TEXT = 0x4;
   const unsigned long SHOW_CDATA_SECTION = 0x8;
-  const unsigned long SHOW_ENTITY_REFERENCE = 0x10; // historical
-  const unsigned long SHOW_ENTITY = 0x20; // historical
+  const unsigned long SHOW_ENTITY_REFERENCE = 0x10; // legacy
+  const unsigned long SHOW_ENTITY = 0x20; // legacy
   const unsigned long SHOW_PROCESSING_INSTRUCTION = 0x40;
   const unsigned long SHOW_COMMENT = 0x80;
   const unsigned long SHOW_DOCUMENT = 0x100;
   const unsigned long SHOW_DOCUMENT_TYPE = 0x200;
   const unsigned long SHOW_DOCUMENT_FRAGMENT = 0x400;
-  const unsigned long SHOW_NOTATION = 0x800; // historical
+  const unsigned long SHOW_NOTATION = 0x800; // legacy
 
   unsigned short acceptNode(Node node);
 };
@@ -5596,6 +5601,18 @@ interface XPathEvaluator {
 };
 
 XPathEvaluator includes XPathEvaluatorBase;
+[Exposed=Window]
+interface XSLTProcessor {
+  constructor();
+  undefined importStylesheet(Node style);
+  [CEReactions] DocumentFragment transformToFragment(Node source, Document output);
+  [CEReactions] Document transformToDocument(Node source);
+  undefined setParameter([LegacyNullToEmptyString] DOMString namespaceURI, DOMString localName, any value);
+  any getParameter([LegacyNullToEmptyString] DOMString namespaceURI, DOMString localName);
+  undefined removeParameter([LegacyNullToEmptyString] DOMString namespaceURI, DOMString localName);
+  undefined clearParameters();
+  undefined reset();
+};
 // Downloaded from https://dvcs.w3.org/hg/editing/raw-file/tip/editing.html
 interface Selection {
   readonly attribute Node? anchorNode;

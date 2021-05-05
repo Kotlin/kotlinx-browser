@@ -3,6 +3,7 @@ package org.w3c.dom.css;
 // generated from https://www.w3.org/Style/CSS/all-properties.en.json
 // for more details see generator/src/main/kotlin/download.kt
 partial interface CSSStyleDeclaration {
+    attribute String accentColor;
     attribute String alignContent;
     attribute String alignItems;
     attribute String alignSelf;
@@ -137,7 +138,11 @@ partial interface CSSStyleDeclaration {
     attribute String columnWidth;
     attribute String columns;
     attribute String contain;
+    attribute String containIntrinsicBlockSize;
+    attribute String containIntrinsicHeight;
+    attribute String containIntrinsicInlineSize;
     attribute String containIntrinsicSize;
+    attribute String containIntrinsicWidth;
     attribute String content;
     attribute String contentVisibility;
     attribute String continue;
@@ -314,6 +319,7 @@ partial interface CSSStyleDeclaration {
     attribute String minBlockSize;
     attribute String minHeight;
     attribute String minInlineSize;
+    attribute String minIntrinsicSizing;
     attribute String minWidth;
     attribute String mixBlendMode;
     attribute String navDown;

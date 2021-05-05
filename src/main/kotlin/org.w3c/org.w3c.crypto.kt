@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2021 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -552,6 +552,7 @@ public inline fun Pbkdf2Params(salt: dynamic, iterations: Int?, hash: dynamic, n
 }
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface KeyType {
     companion object
@@ -564,6 +565,7 @@ public inline val KeyType.Companion.PRIVATE: KeyType get() = "private".asDynamic
 public inline val KeyType.Companion.SECRET: KeyType get() = "secret".asDynamic().unsafeCast<KeyType>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface KeyUsage {
     companion object
@@ -586,6 +588,7 @@ public inline val KeyUsage.Companion.WRAPKEY: KeyUsage get() = "wrapKey".asDynam
 public inline val KeyUsage.Companion.UNWRAPKEY: KeyUsage get() = "unwrapKey".asDynamic().unsafeCast<KeyUsage>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface KeyFormat {
     companion object

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2021 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -73,6 +73,7 @@ public external abstract class SourceBufferList : EventTarget {
 public inline operator fun SourceBufferList.get(index: Int): SourceBuffer? = asDynamic()[index]
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface ReadyState {
     companion object
@@ -85,6 +86,7 @@ public inline val ReadyState.Companion.OPEN: ReadyState get() = "open".asDynamic
 public inline val ReadyState.Companion.ENDED: ReadyState get() = "ended".asDynamic().unsafeCast<ReadyState>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface EndOfStreamError {
     companion object
@@ -95,6 +97,7 @@ public inline val EndOfStreamError.Companion.NETWORK: EndOfStreamError get() = "
 public inline val EndOfStreamError.Companion.DECODE: EndOfStreamError get() = "decode".asDynamic().unsafeCast<EndOfStreamError>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface AppendMode {
     companion object

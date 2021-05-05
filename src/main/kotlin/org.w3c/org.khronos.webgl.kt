@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2021 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -124,56 +124,56 @@ public external abstract class WebGLRenderingContext {
     fun isContextLost(): Boolean
     fun getSupportedExtensions(): Array<String>?
     fun getExtension(name: String): dynamic
-    fun activeTexture(texture: Int)
-    fun attachShader(program: WebGLProgram, shader: WebGLShader)
-    fun bindAttribLocation(program: WebGLProgram, index: Int, name: String)
-    fun bindBuffer(target: Int, buffer: WebGLBuffer?)
-    fun bindFramebuffer(target: Int, framebuffer: WebGLFramebuffer?)
-    fun bindRenderbuffer(target: Int, renderbuffer: WebGLRenderbuffer?)
-    fun bindTexture(target: Int, texture: WebGLTexture?)
-    fun blendColor(red: Float, green: Float, blue: Float, alpha: Float)
-    fun blendEquation(mode: Int)
-    fun blendEquationSeparate(modeRGB: Int, modeAlpha: Int)
-    fun blendFunc(sfactor: Int, dfactor: Int)
-    fun blendFuncSeparate(srcRGB: Int, dstRGB: Int, srcAlpha: Int, dstAlpha: Int)
+    fun activeTexture(texture: Int): dynamic
+    fun attachShader(program: WebGLProgram, shader: WebGLShader): dynamic
+    fun bindAttribLocation(program: WebGLProgram, index: Int, name: String): dynamic
+    fun bindBuffer(target: Int, buffer: WebGLBuffer?): dynamic
+    fun bindFramebuffer(target: Int, framebuffer: WebGLFramebuffer?): dynamic
+    fun bindRenderbuffer(target: Int, renderbuffer: WebGLRenderbuffer?): dynamic
+    fun bindTexture(target: Int, texture: WebGLTexture?): dynamic
+    fun blendColor(red: Float, green: Float, blue: Float, alpha: Float): dynamic
+    fun blendEquation(mode: Int): dynamic
+    fun blendEquationSeparate(modeRGB: Int, modeAlpha: Int): dynamic
+    fun blendFunc(sfactor: Int, dfactor: Int): dynamic
+    fun blendFuncSeparate(srcRGB: Int, dstRGB: Int, srcAlpha: Int, dstAlpha: Int): dynamic
     fun checkFramebufferStatus(target: Int): Int
-    fun clear(mask: Int)
-    fun clearColor(red: Float, green: Float, blue: Float, alpha: Float)
-    fun clearDepth(depth: Float)
-    fun clearStencil(s: Int)
-    fun colorMask(red: Boolean, green: Boolean, blue: Boolean, alpha: Boolean)
-    fun compileShader(shader: WebGLShader)
-    fun copyTexImage2D(target: Int, level: Int, internalformat: Int, x: Int, y: Int, width: Int, height: Int, border: Int)
-    fun copyTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, x: Int, y: Int, width: Int, height: Int)
+    fun clear(mask: Int): dynamic
+    fun clearColor(red: Float, green: Float, blue: Float, alpha: Float): dynamic
+    fun clearDepth(depth: Float): dynamic
+    fun clearStencil(s: Int): dynamic
+    fun colorMask(red: Boolean, green: Boolean, blue: Boolean, alpha: Boolean): dynamic
+    fun compileShader(shader: WebGLShader): dynamic
+    fun copyTexImage2D(target: Int, level: Int, internalformat: Int, x: Int, y: Int, width: Int, height: Int, border: Int): dynamic
+    fun copyTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, x: Int, y: Int, width: Int, height: Int): dynamic
     fun createBuffer(): WebGLBuffer?
     fun createFramebuffer(): WebGLFramebuffer?
     fun createProgram(): WebGLProgram?
     fun createRenderbuffer(): WebGLRenderbuffer?
     fun createShader(type: Int): WebGLShader?
     fun createTexture(): WebGLTexture?
-    fun cullFace(mode: Int)
-    fun deleteBuffer(buffer: WebGLBuffer?)
-    fun deleteFramebuffer(framebuffer: WebGLFramebuffer?)
-    fun deleteProgram(program: WebGLProgram?)
-    fun deleteRenderbuffer(renderbuffer: WebGLRenderbuffer?)
-    fun deleteShader(shader: WebGLShader?)
-    fun deleteTexture(texture: WebGLTexture?)
-    fun depthFunc(func: Int)
-    fun depthMask(flag: Boolean)
-    fun depthRange(zNear: Float, zFar: Float)
-    fun detachShader(program: WebGLProgram, shader: WebGLShader)
-    fun disable(cap: Int)
-    fun disableVertexAttribArray(index: Int)
-    fun drawArrays(mode: Int, first: Int, count: Int)
-    fun drawElements(mode: Int, count: Int, type: Int, offset: Int)
-    fun enable(cap: Int)
-    fun enableVertexAttribArray(index: Int)
-    fun finish()
-    fun flush()
-    fun framebufferRenderbuffer(target: Int, attachment: Int, renderbuffertarget: Int, renderbuffer: WebGLRenderbuffer?)
-    fun framebufferTexture2D(target: Int, attachment: Int, textarget: Int, texture: WebGLTexture?, level: Int)
-    fun frontFace(mode: Int)
-    fun generateMipmap(target: Int)
+    fun cullFace(mode: Int): dynamic
+    fun deleteBuffer(buffer: WebGLBuffer?): dynamic
+    fun deleteFramebuffer(framebuffer: WebGLFramebuffer?): dynamic
+    fun deleteProgram(program: WebGLProgram?): dynamic
+    fun deleteRenderbuffer(renderbuffer: WebGLRenderbuffer?): dynamic
+    fun deleteShader(shader: WebGLShader?): dynamic
+    fun deleteTexture(texture: WebGLTexture?): dynamic
+    fun depthFunc(func: Int): dynamic
+    fun depthMask(flag: Boolean): dynamic
+    fun depthRange(zNear: Float, zFar: Float): dynamic
+    fun detachShader(program: WebGLProgram, shader: WebGLShader): dynamic
+    fun disable(cap: Int): dynamic
+    fun disableVertexAttribArray(index: Int): dynamic
+    fun drawArrays(mode: Int, first: Int, count: Int): dynamic
+    fun drawElements(mode: Int, count: Int, type: Int, offset: Int): dynamic
+    fun enable(cap: Int): dynamic
+    fun enableVertexAttribArray(index: Int): dynamic
+    fun finish(): dynamic
+    fun flush(): dynamic
+    fun framebufferRenderbuffer(target: Int, attachment: Int, renderbuffertarget: Int, renderbuffer: WebGLRenderbuffer?): dynamic
+    fun framebufferTexture2D(target: Int, attachment: Int, textarget: Int, texture: WebGLTexture?, level: Int): dynamic
+    fun frontFace(mode: Int): dynamic
+    fun generateMipmap(target: Int): dynamic
     fun getActiveAttrib(program: WebGLProgram, index: Int): WebGLActiveInfo?
     fun getActiveUniform(program: WebGLProgram, index: Int): WebGLActiveInfo?
     fun getAttachedShaders(program: WebGLProgram): Array<WebGLShader>?
@@ -194,7 +194,7 @@ public external abstract class WebGLRenderingContext {
     fun getUniformLocation(program: WebGLProgram, name: String): WebGLUniformLocation?
     fun getVertexAttrib(index: Int, pname: Int): Any?
     fun getVertexAttribOffset(index: Int, pname: Int): Int
-    fun hint(target: Int, mode: Int)
+    fun hint(target: Int, mode: Int): dynamic
     fun isBuffer(buffer: WebGLBuffer?): Boolean
     fun isEnabled(cap: Int): Boolean
     fun isFramebuffer(framebuffer: WebGLFramebuffer?): Boolean
@@ -202,63 +202,63 @@ public external abstract class WebGLRenderingContext {
     fun isRenderbuffer(renderbuffer: WebGLRenderbuffer?): Boolean
     fun isShader(shader: WebGLShader?): Boolean
     fun isTexture(texture: WebGLTexture?): Boolean
-    fun lineWidth(width: Float)
-    fun linkProgram(program: WebGLProgram)
-    fun pixelStorei(pname: Int, param: Int)
-    fun polygonOffset(factor: Float, units: Float)
-    fun renderbufferStorage(target: Int, internalformat: Int, width: Int, height: Int)
-    fun sampleCoverage(value: Float, invert: Boolean)
-    fun scissor(x: Int, y: Int, width: Int, height: Int)
-    fun shaderSource(shader: WebGLShader, source: String)
-    fun stencilFunc(func: Int, ref: Int, mask: Int)
-    fun stencilFuncSeparate(face: Int, func: Int, ref: Int, mask: Int)
-    fun stencilMask(mask: Int)
-    fun stencilMaskSeparate(face: Int, mask: Int)
-    fun stencilOp(fail: Int, zfail: Int, zpass: Int)
-    fun stencilOpSeparate(face: Int, fail: Int, zfail: Int, zpass: Int)
-    fun texParameterf(target: Int, pname: Int, param: Float)
-    fun texParameteri(target: Int, pname: Int, param: Int)
-    fun uniform1f(location: WebGLUniformLocation?, x: Float)
-    fun uniform2f(location: WebGLUniformLocation?, x: Float, y: Float)
-    fun uniform3f(location: WebGLUniformLocation?, x: Float, y: Float, z: Float)
-    fun uniform4f(location: WebGLUniformLocation?, x: Float, y: Float, z: Float, w: Float)
-    fun uniform1i(location: WebGLUniformLocation?, x: Int)
-    fun uniform2i(location: WebGLUniformLocation?, x: Int, y: Int)
-    fun uniform3i(location: WebGLUniformLocation?, x: Int, y: Int, z: Int)
-    fun uniform4i(location: WebGLUniformLocation?, x: Int, y: Int, z: Int, w: Int)
-    fun useProgram(program: WebGLProgram?)
-    fun validateProgram(program: WebGLProgram)
-    fun vertexAttrib1f(index: Int, x: Float)
-    fun vertexAttrib2f(index: Int, x: Float, y: Float)
-    fun vertexAttrib3f(index: Int, x: Float, y: Float, z: Float)
-    fun vertexAttrib4f(index: Int, x: Float, y: Float, z: Float, w: Float)
-    fun vertexAttrib1fv(index: Int, values: dynamic)
-    fun vertexAttrib2fv(index: Int, values: dynamic)
-    fun vertexAttrib3fv(index: Int, values: dynamic)
-    fun vertexAttrib4fv(index: Int, values: dynamic)
-    fun vertexAttribPointer(index: Int, size: Int, type: Int, normalized: Boolean, stride: Int, offset: Int)
-    fun viewport(x: Int, y: Int, width: Int, height: Int)
-    fun bufferData(target: Int, size: Int, usage: Int)
-    fun bufferData(target: Int, data: dynamic, usage: Int)
-    fun bufferSubData(target: Int, offset: Int, data: dynamic)
-    fun compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, data: ArrayBufferView)
-    fun compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, data: ArrayBufferView)
-    fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?)
-    fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, pixels: ArrayBufferView?)
-    fun texImage2D(target: Int, level: Int, internalformat: Int, format: Int, type: Int, source: TexImageSource)
-    fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?)
-    fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, type: Int, source: TexImageSource)
-    fun uniform1fv(location: WebGLUniformLocation?, v: dynamic)
-    fun uniform2fv(location: WebGLUniformLocation?, v: dynamic)
-    fun uniform3fv(location: WebGLUniformLocation?, v: dynamic)
-    fun uniform4fv(location: WebGLUniformLocation?, v: dynamic)
-    fun uniform1iv(location: WebGLUniformLocation?, v: dynamic)
-    fun uniform2iv(location: WebGLUniformLocation?, v: dynamic)
-    fun uniform3iv(location: WebGLUniformLocation?, v: dynamic)
-    fun uniform4iv(location: WebGLUniformLocation?, v: dynamic)
-    fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, value: dynamic)
-    fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, value: dynamic)
-    fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, value: dynamic)
+    fun lineWidth(width: Float): dynamic
+    fun linkProgram(program: WebGLProgram): dynamic
+    fun pixelStorei(pname: Int, param: Int): dynamic
+    fun polygonOffset(factor: Float, units: Float): dynamic
+    fun renderbufferStorage(target: Int, internalformat: Int, width: Int, height: Int): dynamic
+    fun sampleCoverage(value: Float, invert: Boolean): dynamic
+    fun scissor(x: Int, y: Int, width: Int, height: Int): dynamic
+    fun shaderSource(shader: WebGLShader, source: String): dynamic
+    fun stencilFunc(func: Int, ref: Int, mask: Int): dynamic
+    fun stencilFuncSeparate(face: Int, func: Int, ref: Int, mask: Int): dynamic
+    fun stencilMask(mask: Int): dynamic
+    fun stencilMaskSeparate(face: Int, mask: Int): dynamic
+    fun stencilOp(fail: Int, zfail: Int, zpass: Int): dynamic
+    fun stencilOpSeparate(face: Int, fail: Int, zfail: Int, zpass: Int): dynamic
+    fun texParameterf(target: Int, pname: Int, param: Float): dynamic
+    fun texParameteri(target: Int, pname: Int, param: Int): dynamic
+    fun uniform1f(location: WebGLUniformLocation?, x: Float): dynamic
+    fun uniform2f(location: WebGLUniformLocation?, x: Float, y: Float): dynamic
+    fun uniform3f(location: WebGLUniformLocation?, x: Float, y: Float, z: Float): dynamic
+    fun uniform4f(location: WebGLUniformLocation?, x: Float, y: Float, z: Float, w: Float): dynamic
+    fun uniform1i(location: WebGLUniformLocation?, x: Int): dynamic
+    fun uniform2i(location: WebGLUniformLocation?, x: Int, y: Int): dynamic
+    fun uniform3i(location: WebGLUniformLocation?, x: Int, y: Int, z: Int): dynamic
+    fun uniform4i(location: WebGLUniformLocation?, x: Int, y: Int, z: Int, w: Int): dynamic
+    fun useProgram(program: WebGLProgram?): dynamic
+    fun validateProgram(program: WebGLProgram): dynamic
+    fun vertexAttrib1f(index: Int, x: Float): dynamic
+    fun vertexAttrib2f(index: Int, x: Float, y: Float): dynamic
+    fun vertexAttrib3f(index: Int, x: Float, y: Float, z: Float): dynamic
+    fun vertexAttrib4f(index: Int, x: Float, y: Float, z: Float, w: Float): dynamic
+    fun vertexAttrib1fv(index: Int, values: dynamic): dynamic
+    fun vertexAttrib2fv(index: Int, values: dynamic): dynamic
+    fun vertexAttrib3fv(index: Int, values: dynamic): dynamic
+    fun vertexAttrib4fv(index: Int, values: dynamic): dynamic
+    fun vertexAttribPointer(index: Int, size: Int, type: Int, normalized: Boolean, stride: Int, offset: Int): dynamic
+    fun viewport(x: Int, y: Int, width: Int, height: Int): dynamic
+    fun bufferData(target: Int, size: Int, usage: Int): dynamic
+    fun bufferData(target: Int, data: dynamic, usage: Int): dynamic
+    fun bufferSubData(target: Int, offset: Int, data: dynamic): dynamic
+    fun compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, data: ArrayBufferView): dynamic
+    fun compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, data: ArrayBufferView): dynamic
+    fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?): dynamic
+    fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, pixels: ArrayBufferView?): dynamic
+    fun texImage2D(target: Int, level: Int, internalformat: Int, format: Int, type: Int, source: TexImageSource): dynamic
+    fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?): dynamic
+    fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, type: Int, source: TexImageSource): dynamic
+    fun uniform1fv(location: WebGLUniformLocation?, v: dynamic): dynamic
+    fun uniform2fv(location: WebGLUniformLocation?, v: dynamic): dynamic
+    fun uniform3fv(location: WebGLUniformLocation?, v: dynamic): dynamic
+    fun uniform4fv(location: WebGLUniformLocation?, v: dynamic): dynamic
+    fun uniform1iv(location: WebGLUniformLocation?, v: dynamic): dynamic
+    fun uniform2iv(location: WebGLUniformLocation?, v: dynamic): dynamic
+    fun uniform3iv(location: WebGLUniformLocation?, v: dynamic): dynamic
+    fun uniform4iv(location: WebGLUniformLocation?, v: dynamic): dynamic
+    fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, value: dynamic): dynamic
+    fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, value: dynamic): dynamic
+    fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, value: dynamic): dynamic
 
     companion object {
         val DEPTH_BUFFER_BIT: Int
@@ -563,7 +563,7 @@ public external abstract class WebGLRenderingContext {
 /**
  * Exposes the JavaScript [WebGLContextEvent](https://developer.mozilla.org/en/docs/Web/API/WebGLContextEvent) to Kotlin
  */
-public external open class WebGLContextEvent(type: String, eventInit: WebGLContextEventInit = definedExternally) : Event {
+public external abstract class WebGLContextEvent : Event {
     open val statusMessage: String
 
     companion object {
@@ -594,6 +594,7 @@ public inline fun WebGLContextEventInit(statusMessage: String? = "", bubbles: Bo
 public external interface TexImageSource
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface WebGLPowerPreference {
     companion object

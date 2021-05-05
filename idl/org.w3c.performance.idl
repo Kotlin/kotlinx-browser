@@ -2,17 +2,17 @@ package org.w3c.performance;
 
 
 // Downloaded from https://www.w3.org/TR/hr-time/
-typedef double DOMHighResTimeStamp;
-[Exposed=(Window,Worker)]
+WebIDLtypedef double DOMHighResTimeStamp;
+WebIDL[Exposed=(Window,Worker)]
 interface Performance : EventTarget {
     DOMHighResTimeStamp now();
     readonly attribute DOMHighResTimeStamp timeOrigin;
     [Default] object toJSON();
 };
-partial interface mixin WindowOrWorkerGlobalScope {
+WebIDLpartial interface mixin WindowOrWorkerGlobalScope {
   [Replaceable] readonly attribute Performance performance;
 };
-typedef double DOMHighResTimeStamp;
+WebIDLtypedef double DOMHighResTimeStamp;
 
 [Exposed=(Window,Worker)]
 interface Performance : EventTarget {

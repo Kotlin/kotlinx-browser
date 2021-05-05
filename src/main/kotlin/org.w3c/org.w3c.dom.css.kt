@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2021 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -209,6 +209,7 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var cssText: String
     open val parentRule: CSSRule?
     open var cssFloat: String
+    open var accentColor: String
     open var alignContent: String
     open var alignItems: String
     open var alignSelf: String
@@ -343,7 +344,11 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var columnWidth: String
     open var columns: String
     open var contain: String
+    open var containIntrinsicBlockSize: String
+    open var containIntrinsicHeight: String
+    open var containIntrinsicInlineSize: String
     open var containIntrinsicSize: String
+    open var containIntrinsicWidth: String
     open var content: String
     open var contentVisibility: String
     open var `continue`: String
@@ -519,6 +524,7 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<String> {
     open var minBlockSize: String
     open var minHeight: String
     open var minInlineSize: String
+    open var minIntrinsicSizing: String
     open var minWidth: String
     open var mixBlendMode: String
     open var navDown: String

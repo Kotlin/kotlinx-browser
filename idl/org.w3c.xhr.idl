@@ -80,7 +80,7 @@ interface FormData {
   undefined set(USVString name, Blob blobValue, optional USVString filename);
   iterable<USVString, FormDataEntryValue>;
 };
-[Exposed=(Window,DedicatedWorker,SharedWorker)]
+[Exposed=(Window,Worker)]
 interface ProgressEvent : Event {
   constructor(DOMString type, optional ProgressEventInit eventInitDict = {});
 

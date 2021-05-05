@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2021 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -483,7 +483,7 @@ public external abstract class Event {
     open val defaultPrevented: Boolean
     open val composed: Boolean
     open val isTrusted: Boolean
-    open val timeStamp: Double
+    open val timeStamp: dynamic
     fun composedPath(): Array<EventTarget>
     fun stopPropagation(): dynamic
     fun stopImmediatePropagation(): dynamic

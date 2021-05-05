@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2021 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -96,6 +96,7 @@ public inline fun ClipboardPermissionDescriptor(allowWithoutGesture: Boolean? = 
 }
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface PresentationStyle {
     companion object

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2021 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -23,6 +23,7 @@ import org.w3c.fetch.*
 import org.w3c.files.*
 import org.w3c.fullscreen.*
 import org.w3c.geolocation.*
+import org.w3c.idb.*
 import org.w3c.performance.*
 import org.w3c.workers.*
 import org.w3c.xhr.*
@@ -1056,6 +1057,8 @@ public external abstract class HTMLSourceElement : HTMLElement {
     open var srcset: String
     open var sizes: String
     open var media: String
+    open var width: Int
+    open var height: Int
 
     companion object {
         val ELEMENT_NODE: Short
@@ -1142,7 +1145,6 @@ public external abstract class HTMLIFrameElement : HTMLElement {
     open val sandbox: DOMTokenList
     open var allow: String
     open var allowFullscreen: Boolean
-    open var allowPaymentRequest: Boolean
     open var width: String
     open var height: String
     open var referrerPolicy: String
@@ -1220,7 +1222,6 @@ public external abstract class HTMLObjectElement : HTMLElement {
     open var data: String
     open var type: String
     open var name: String
-    open var useMap: String
     open val form: HTMLFormElement?
     open var width: String
     open var height: String
@@ -1238,6 +1239,7 @@ public external abstract class HTMLObjectElement : HTMLElement {
     open var vspace: Int
     open var codeBase: String
     open var codeType: String
+    open var useMap: String
     open var border: String
     fun getSVGDocument(): Document?
     fun checkValidity(): Boolean
@@ -2744,6 +2746,7 @@ public external abstract class HTMLSlotElement : HTMLElement {
     open var name: String
     fun assignedNodes(options: AssignedNodesOptions = definedExternally): Array<Node>
     fun assignedElements(options: AssignedNodesOptions = definedExternally): Array<Element>
+    fun assign(vararg nodes: UnionElementOrText): dynamic
 
     companion object {
         val ELEMENT_NODE: Short
@@ -2821,14 +2824,18 @@ public external interface CanvasRenderingContext2DSettings {
     var desynchronized: Boolean? /* = false */
         get() = definedExternally
         set(value) = definedExternally
+    var colorSpace: PredefinedColorSpace? /* = PredefinedColorSpace.SRGB */
+        get() = definedExternally
+        set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun CanvasRenderingContext2DSettings(alpha: Boolean? = true, desynchronized: Boolean? = false): CanvasRenderingContext2DSettings {
+public inline fun CanvasRenderingContext2DSettings(alpha: Boolean? = true, desynchronized: Boolean? = false, colorSpace: PredefinedColorSpace? = PredefinedColorSpace.SRGB): CanvasRenderingContext2DSettings {
     val o = js("({})")
     o["alpha"] = alpha
     o["desynchronized"] = desynchronized
+    o["colorSpace"] = colorSpace
     return o
 }
 
@@ -2857,6 +2864,12 @@ public external abstract class CanvasRenderingContext2D {
     open var textAlign: CanvasTextAlign
     open var textBaseline: CanvasTextBaseline
     open var direction: CanvasDirection
+    open var textLetterSpacing: Double
+    open var textWordSpacing: Double
+    open var fontKerning: CanvasFontKerning
+    open var fontStretch: CanvasFontStretch
+    open var fontVariantCaps: CanvasFontVariantCaps
+    open var textRendering: CanvasTextRendering
     fun getContextAttributes(): CanvasRenderingContext2DSettings
     fun save(): dynamic
     fun restore(): dynamic
@@ -2895,9 +2908,9 @@ public external abstract class CanvasRenderingContext2D {
     fun drawImage(image: CanvasImageSource, dx: Double, dy: Double): dynamic
     fun drawImage(image: CanvasImageSource, dx: Double, dy: Double, dw: Double, dh: Double): dynamic
     fun drawImage(image: CanvasImageSource, sx: Double, sy: Double, sw: Double, sh: Double, dx: Double, dy: Double, dw: Double, dh: Double): dynamic
-    fun createImageData(sw: Int, sh: Int): ImageData
+    fun createImageData(sw: Int, sh: Int, settings: ImageDataSettings = definedExternally): ImageData
     fun createImageData(imagedata: ImageData): ImageData
-    fun getImageData(sx: Int, sy: Int, sw: Int, sh: Int): ImageData
+    fun getImageData(sx: Int, sy: Int, sw: Int, sh: Int, settings: ImageDataSettings = definedExternally): ImageData
     fun putImageData(imagedata: ImageData, dx: Int, dy: Int): dynamic
     fun putImageData(imagedata: ImageData, dx: Int, dy: Int, dirtyX: Int, dirtyY: Int, dirtyWidth: Int, dirtyHeight: Int): dynamic
     fun setLineDash(segments: Array<Double>): dynamic
@@ -2909,8 +2922,8 @@ public external abstract class CanvasRenderingContext2D {
     fun bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): dynamic
     fun arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): dynamic
     fun rect(x: Double, y: Double, w: Double, h: Double): dynamic
-    fun arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean = definedExternally): dynamic
-    fun ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean = definedExternally): dynamic
+    fun arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally): dynamic
+    fun ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally): dynamic
 }
 
 /**
@@ -2945,6 +2958,20 @@ public external abstract class TextMetrics {
     open val ideographicBaseline: Double
 }
 
+public external interface ImageDataSettings {
+    var colorSpace: PredefinedColorSpace?
+        get() = definedExternally
+        set(value) = definedExternally
+}
+
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
+@kotlin.internal.InlineOnly
+public inline fun ImageDataSettings(colorSpace: PredefinedColorSpace? = undefined): ImageDataSettings {
+    val o = js("({})")
+    o["colorSpace"] = colorSpace
+    return o
+}
+
 /**
  * Exposes the JavaScript [ImageData](https://developer.mozilla.org/en/docs/Web/API/ImageData) to Kotlin
  */
@@ -2952,6 +2979,7 @@ public external abstract class ImageData : ImageBitmapSource, TexImageSource {
     open val width: Int
     open val height: Int
     open val data: Uint8ClampedArray
+    open val colorSpace: PredefinedColorSpace
 }
 
 /**
@@ -2966,8 +2994,8 @@ public external abstract class Path2D {
     fun bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): dynamic
     fun arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): dynamic
     fun rect(x: Double, y: Double, w: Double, h: Double): dynamic
-    fun arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean = definedExternally): dynamic
-    fun ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean = definedExternally): dynamic
+    fun arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally): dynamic
+    fun ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally): dynamic
 }
 
 /**
@@ -3040,6 +3068,12 @@ public external abstract class OffscreenCanvasRenderingContext2D {
     open var textAlign: CanvasTextAlign
     open var textBaseline: CanvasTextBaseline
     open var direction: CanvasDirection
+    open var textLetterSpacing: Double
+    open var textWordSpacing: Double
+    open var fontKerning: CanvasFontKerning
+    open var fontStretch: CanvasFontStretch
+    open var fontVariantCaps: CanvasFontVariantCaps
+    open var textRendering: CanvasTextRendering
     fun commit(): dynamic
     fun save(): dynamic
     fun restore(): dynamic
@@ -3074,9 +3108,9 @@ public external abstract class OffscreenCanvasRenderingContext2D {
     fun drawImage(image: CanvasImageSource, dx: Double, dy: Double): dynamic
     fun drawImage(image: CanvasImageSource, dx: Double, dy: Double, dw: Double, dh: Double): dynamic
     fun drawImage(image: CanvasImageSource, sx: Double, sy: Double, sw: Double, sh: Double, dx: Double, dy: Double, dw: Double, dh: Double): dynamic
-    fun createImageData(sw: Int, sh: Int): ImageData
+    fun createImageData(sw: Int, sh: Int, settings: ImageDataSettings = definedExternally): ImageData
     fun createImageData(imagedata: ImageData): ImageData
-    fun getImageData(sx: Int, sy: Int, sw: Int, sh: Int): ImageData
+    fun getImageData(sx: Int, sy: Int, sw: Int, sh: Int, settings: ImageDataSettings = definedExternally): ImageData
     fun putImageData(imagedata: ImageData, dx: Int, dy: Int): dynamic
     fun putImageData(imagedata: ImageData, dx: Int, dy: Int, dirtyX: Int, dirtyY: Int, dirtyWidth: Int, dirtyHeight: Int): dynamic
     fun setLineDash(segments: Array<Double>): dynamic
@@ -3088,8 +3122,8 @@ public external abstract class OffscreenCanvasRenderingContext2D {
     fun bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): dynamic
     fun arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): dynamic
     fun rect(x: Double, y: Double, w: Double, h: Double): dynamic
-    fun arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean = definedExternally): dynamic
-    fun ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean = definedExternally): dynamic
+    fun arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally): dynamic
+    fun ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally): dynamic
 }
 
 /**
@@ -3098,7 +3132,7 @@ public external abstract class OffscreenCanvasRenderingContext2D {
 public external abstract class CustomElementRegistry {
     fun define(name: String, constructor: () -> HTMLElement, options: ElementDefinitionOptions = definedExternally): dynamic
     fun get(name: String): dynamic
-    fun whenDefined(name: String): Promise<dynamic>
+    fun whenDefined(name: String): Promise<() -> HTMLElement>
     fun upgrade(root: Node): dynamic
 }
 
@@ -3117,6 +3151,7 @@ public inline fun ElementDefinitionOptions(extends: String? = undefined): Elemen
 }
 
 public external abstract class ElementInternals {
+    open val shadowRoot: ShadowRoot?
     open val form: HTMLFormElement?
     open val willValidate: Boolean
     open val validity: ValidityState
@@ -3312,10 +3347,9 @@ public external abstract class Window : EventTarget, GlobalCrypto, MessageEventS
     open val parent: Window?
     open val frameElement: Element?
     open val navigator: Navigator
-    open val applicationCache: ApplicationCache
-    open val originIsolated: Boolean
+    open val originAgentCluster: Boolean
     open val external: External
-    open val event: Any?
+    open val event: dynamic
     open val screen: Screen
     open val innerWidth: Int
     open val innerHeight: Int
@@ -3424,6 +3458,7 @@ public external abstract class Window : EventTarget, GlobalCrypto, MessageEventS
     open val origin: String
     open val isSecureContext: Boolean
     open val crossOriginIsolated: Boolean
+    open val indexedDB: IDBFactory
     open val caches: CacheStorage
     open val sessionStorage: Storage
     open val localStorage: Storage
@@ -3442,7 +3477,7 @@ public external abstract class Window : EventTarget, GlobalCrypto, MessageEventS
     fun captureEvents(): dynamic
     fun releaseEvents(): dynamic
     fun getSelection(): Selection
-    fun requestAnimationFrame(callback: (Double) -> Unit): Int
+    fun requestAnimationFrame(callback: (dynamic) -> Unit): Int
     fun cancelAnimationFrame(handle: Int)
     fun matchMedia(query: String): MediaQueryList
     fun moveTo(x: Int, y: Int)
@@ -3502,8 +3537,8 @@ public external abstract class History {
     fun go(delta: Int = definedExternally): dynamic
     fun back(): dynamic
     fun forward(): dynamic
-    fun pushState(data: Any?, title: String, url: String? = definedExternally): dynamic
-    fun replaceState(data: Any?, title: String, url: String? = definedExternally): dynamic
+    fun pushState(data: Any?, unused: String, url: String? = definedExternally): dynamic
+    fun replaceState(data: Any?, unused: String, url: String? = definedExternally): dynamic
 }
 
 /**
@@ -3635,30 +3670,6 @@ public external abstract class BeforeUnloadEvent : Event {
     }
 }
 
-public external abstract class ApplicationCache : EventTarget {
-    open val status: Short
-    open var onchecking: ((Event) -> dynamic)?
-    open var onerror: ((Event) -> dynamic)?
-    open var onnoupdate: ((Event) -> dynamic)?
-    open var ondownloading: ((Event) -> dynamic)?
-    open var onprogress: ((ProgressEvent) -> dynamic)?
-    open var onupdateready: ((Event) -> dynamic)?
-    open var oncached: ((Event) -> dynamic)?
-    open var onobsolete: ((Event) -> dynamic)?
-    fun update(): dynamic
-    fun abort(): dynamic
-    fun swapCache(): dynamic
-
-    companion object {
-        val UNCACHED: Short
-        val IDLE: Short
-        val CHECKING: Short
-        val DOWNLOADING: Short
-        val UPDATEREADY: Short
-        val OBSOLETE: Short
-    }
-}
-
 /**
  * Exposes the JavaScript [ErrorEvent](https://developer.mozilla.org/en/docs/Web/API/ErrorEvent) to Kotlin
  */
@@ -3785,68 +3796,6 @@ public external abstract class Navigator {
     fun registerProtocolHandler(scheme: String, url: String): dynamic
     fun unregisterProtocolHandler(scheme: String, url: String): dynamic
     fun javaEnabled(): Boolean
-}
-
-/**
- * Exposes the JavaScript [PluginArray](https://developer.mozilla.org/en/docs/Web/API/PluginArray) to Kotlin
- */
-public external abstract class PluginArray : ItemArrayLike<Plugin> {
-    fun refresh(reload: Boolean = definedExternally): dynamic
-    override fun item(index: Int): Plugin?
-    fun namedItem(name: String): Plugin?
-}
-
-@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
-@kotlin.internal.InlineOnly
-public inline operator fun PluginArray.get(index: Int): Plugin? = asDynamic()[index]
-
-@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
-@kotlin.internal.InlineOnly
-public inline operator fun PluginArray.get(name: String): Plugin? = asDynamic()[name]
-
-/**
- * Exposes the JavaScript [MimeTypeArray](https://developer.mozilla.org/en/docs/Web/API/MimeTypeArray) to Kotlin
- */
-public external abstract class MimeTypeArray : ItemArrayLike<MimeType> {
-    override fun item(index: Int): MimeType?
-    fun namedItem(name: String): MimeType?
-}
-
-@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
-@kotlin.internal.InlineOnly
-public inline operator fun MimeTypeArray.get(index: Int): MimeType? = asDynamic()[index]
-
-@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
-@kotlin.internal.InlineOnly
-public inline operator fun MimeTypeArray.get(name: String): MimeType? = asDynamic()[name]
-
-/**
- * Exposes the JavaScript [Plugin](https://developer.mozilla.org/en/docs/Web/API/Plugin) to Kotlin
- */
-public external abstract class Plugin : ItemArrayLike<MimeType> {
-    open val name: String
-    open val description: String
-    open val filename: String
-    override fun item(index: Int): MimeType?
-    fun namedItem(name: String): MimeType?
-}
-
-@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
-@kotlin.internal.InlineOnly
-public inline operator fun Plugin.get(index: Int): MimeType? = asDynamic()[index]
-
-@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
-@kotlin.internal.InlineOnly
-public inline operator fun Plugin.get(name: String): MimeType? = asDynamic()[name]
-
-/**
- * Exposes the JavaScript [MimeType](https://developer.mozilla.org/en/docs/Web/API/MimeType) to Kotlin
- */
-public external abstract class MimeType {
-    open val type: String
-    open val description: String
-    open val suffixes: String
-    open val enabledPlugin: Plugin
 }
 
 /**
@@ -4109,6 +4058,7 @@ public external abstract class WorkerGlobalScope : EventTarget, GlobalCrypto {
     open val isSecureContext: Boolean
     open val crossOriginIsolated: Boolean
     open val performance: Performance
+    open val indexedDB: IDBFactory
     open val caches: CacheStorage
     fun importScripts(vararg urls: String): dynamic
     fun btoa(data: String): String
@@ -4133,7 +4083,7 @@ public external abstract class DedicatedWorkerGlobalScope : WorkerGlobalScope {
     fun postMessage(message: Any?, transfer: Array<dynamic>): dynamic
     fun postMessage(message: Any?, options: PostMessageOptions = definedExternally): dynamic
     fun close(): dynamic
-    fun requestAnimationFrame(callback: (Double) -> Unit): Int
+    fun requestAnimationFrame(callback: (dynamic) -> Unit): Int
     fun cancelAnimationFrame(handle: Int): dynamic
 }
 
@@ -4225,6 +4175,26 @@ public external abstract class WorkerLocation {
     open val hash: String
 }
 
+public external abstract class WorkletGlobalScope
+
+public external abstract class Worklet {
+    fun addModule(moduleURL: String, options: WorkletOptions = definedExternally): Promise<dynamic>
+}
+
+public external interface WorkletOptions {
+    var credentials: RequestCredentials? /* = RequestCredentials.SAME_ORIGIN */
+        get() = definedExternally
+        set(value) = definedExternally
+}
+
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
+@kotlin.internal.InlineOnly
+public inline fun WorkletOptions(credentials: RequestCredentials? = RequestCredentials.SAME_ORIGIN): WorkletOptions {
+    val o = js("({})")
+    o["credentials"] = credentials
+    return o
+}
+
 /**
  * Exposes the JavaScript [Storage](https://developer.mozilla.org/en/docs/Web/API/Storage) to Kotlin
  */
@@ -4312,9 +4282,6 @@ public external abstract class HTMLMarqueeElement : HTMLElement {
     open var trueSpeed: Boolean
     open var vspace: Int
     open var width: String
-    open var onbounce: ((Event) -> dynamic)?
-    open var onfinish: ((Event) -> dynamic)?
-    open var onstart: ((Event) -> dynamic)?
     fun start(): dynamic
     fun stop(): dynamic
 
@@ -4479,6 +4446,57 @@ public external abstract class External {
     fun IsSearchProviderInstalled(): dynamic
 }
 
+/**
+ * Exposes the JavaScript [PluginArray](https://developer.mozilla.org/en/docs/Web/API/PluginArray) to Kotlin
+ */
+public external abstract class PluginArray : ItemArrayLike<dynamic> {
+    fun refresh(): dynamic
+    fun namedItem(name: String): dynamic
+    override fun item(index: Int): dynamic
+}
+
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
+@kotlin.internal.InlineOnly
+public inline operator fun PluginArray.get(index: Int): dynamic = asDynamic()[index]
+
+/**
+ * Exposes the JavaScript [MimeTypeArray](https://developer.mozilla.org/en/docs/Web/API/MimeTypeArray) to Kotlin
+ */
+public external abstract class MimeTypeArray : ItemArrayLike<dynamic> {
+    fun namedItem(name: String): dynamic
+    override fun item(index: Int): dynamic
+}
+
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
+@kotlin.internal.InlineOnly
+public inline operator fun MimeTypeArray.get(index: Int): dynamic = asDynamic()[index]
+
+/**
+ * Exposes the JavaScript [Plugin](https://developer.mozilla.org/en/docs/Web/API/Plugin) to Kotlin
+ */
+public external abstract class Plugin {
+    open val name: dynamic
+    open val description: dynamic
+    open val filename: dynamic
+    open val length: dynamic
+    fun namedItem(name: String): dynamic
+    fun item(index: Int): dynamic
+}
+
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
+@kotlin.internal.InlineOnly
+public inline operator fun Plugin.get(index: Int): dynamic = asDynamic()[index]
+
+/**
+ * Exposes the JavaScript [MimeType](https://developer.mozilla.org/en/docs/Web/API/MimeType) to Kotlin
+ */
+public external abstract class MimeType {
+    open val type: dynamic
+    open val description: dynamic
+    open val suffixes: dynamic
+    open val enabledPlugin: dynamic
+}
+
 public external interface EventInit {
     var bubbles: Boolean? /* = false */
         get() = definedExternally
@@ -4554,14 +4572,18 @@ public external interface AddEventListenerOptions : EventListenerOptions {
     var once: Boolean? /* = false */
         get() = definedExternally
         set(value) = definedExternally
+    var signal: AbortSignal?
+        get() = definedExternally
+        set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun AddEventListenerOptions(passive: Boolean? = false, once: Boolean? = false, capture: Boolean? = false): AddEventListenerOptions {
+public inline fun AddEventListenerOptions(passive: Boolean? = false, once: Boolean? = false, signal: AbortSignal? = undefined, capture: Boolean? = false): AddEventListenerOptions {
     val o = js("({})")
     o["passive"] = passive
     o["once"] = once
+    o["signal"] = signal
     o["capture"] = capture
     return o
 }
@@ -4574,6 +4596,10 @@ public external abstract class AbortController {
 public external abstract class AbortSignal : EventTarget {
     open val aborted: Boolean
     open var onabort: ((Event) -> dynamic)?
+
+    companion object {
+        fun abort(): AbortSignal
+    }
 }
 
 /**
@@ -5079,6 +5105,8 @@ public external abstract class DocumentFragment : Node {
  */
 public external abstract class ShadowRoot : DocumentFragment {
     open val mode: ShadowRootMode
+    open val delegatesFocus: Boolean
+    open val slotAssignment: SlotAssignmentMode
     open val host: Element
     open var onslotchange: ((Event) -> dynamic)?
     open val activeElement: Element?
@@ -5110,7 +5138,7 @@ public external abstract class ShadowRoot : DocumentFragment {
 /**
  * Exposes the JavaScript [Element](https://developer.mozilla.org/en/docs/Web/API/Element) to Kotlin
  */
-public external abstract class Element : Node, GeometryUtils, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrProcessingInstruction {
+public external abstract class Element : Node, GeometryUtils, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction {
     open val namespaceURI: String?
     open val prefix: String?
     open val localName: String
@@ -5217,14 +5245,18 @@ public external interface ShadowRootInit {
     var delegatesFocus: Boolean? /* = false */
         get() = definedExternally
         set(value) = definedExternally
+    var slotAssignment: SlotAssignmentMode? /* = SlotAssignmentMode.NAMED */
+        get() = definedExternally
+        set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun ShadowRootInit(mode: ShadowRootMode?, delegatesFocus: Boolean? = false): ShadowRootInit {
+public inline fun ShadowRootInit(mode: ShadowRootMode?, delegatesFocus: Boolean? = false, slotAssignment: SlotAssignmentMode? = SlotAssignmentMode.NAMED): ShadowRootInit {
     val o = js("({})")
     o["mode"] = mode
     o["delegatesFocus"] = delegatesFocus
+    o["slotAssignment"] = slotAssignment
     return o
 }
 
@@ -5326,7 +5358,7 @@ public external abstract class CharacterData : Node {
 /**
  * Exposes the JavaScript [Text](https://developer.mozilla.org/en/docs/Web/API/Text) to Kotlin
  */
-public external abstract class Text : CharacterData, GeometryUtils {
+public external abstract class Text : CharacterData, GeometryUtils, UnionElementOrText {
     open val wholeText: String
     open val assignedSlot: HTMLSlotElement?
     fun splitText(offset: Int): Text
@@ -5614,6 +5646,17 @@ public external abstract class XPathEvaluator {
     fun createNSResolver(nodeResolver: Node): XPathNSResolver
     fun evaluate(expression: String, contextNode: Node, resolver: XPathNSResolver? = definedExternally, type: Short = definedExternally, result: XPathResult? = definedExternally): XPathResult
     fun evaluate(expression: String, contextNode: Node, resolver: ((String?) -> String?)? = definedExternally, type: Short = definedExternally, result: XPathResult? = definedExternally): XPathResult
+}
+
+public external abstract class XSLTProcessor {
+    fun importStylesheet(style: Node): dynamic
+    fun transformToFragment(source: Node, output: Document): DocumentFragment
+    fun transformToDocument(source: Node): Document
+    fun setParameter(namespaceURI: String, localName: String, value: Any?): dynamic
+    fun getParameter(namespaceURI: String, localName: String): Any?
+    fun removeParameter(namespaceURI: String, localName: String): dynamic
+    fun clearParameters(): dynamic
+    fun reset(): dynamic
 }
 
 public external abstract class Selection {
@@ -6311,6 +6354,8 @@ public external interface UnionHTMLOptGroupElementOrHTMLOptionElement
 
 public external interface UnionAudioTrackOrTextTrackOrVideoTrack
 
+public external interface UnionElementOrText
+
 public external interface UnionHTMLCanvasElementOrOffscreenCanvas
 
 public external interface MediaProvider
@@ -6326,6 +6371,7 @@ public external interface MessageEventSource
 public external interface HTMLOrSVGScriptElement
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface DocumentReadyState {
     companion object
@@ -6338,6 +6384,7 @@ public inline val DocumentReadyState.Companion.INTERACTIVE: DocumentReadyState g
 public inline val DocumentReadyState.Companion.COMPLETE: DocumentReadyState get() = "complete".asDynamic().unsafeCast<DocumentReadyState>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface CanPlayTypeResult {
     companion object
@@ -6350,6 +6397,7 @@ public inline val CanPlayTypeResult.Companion.MAYBE: CanPlayTypeResult get() = "
 public inline val CanPlayTypeResult.Companion.PROBABLY: CanPlayTypeResult get() = "probably".asDynamic().unsafeCast<CanPlayTypeResult>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface TextTrackMode {
     companion object
@@ -6362,6 +6410,7 @@ public inline val TextTrackMode.Companion.HIDDEN: TextTrackMode get() = "hidden"
 public inline val TextTrackMode.Companion.SHOWING: TextTrackMode get() = "showing".asDynamic().unsafeCast<TextTrackMode>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface TextTrackKind {
     companion object
@@ -6378,6 +6427,7 @@ public inline val TextTrackKind.Companion.CHAPTERS: TextTrackKind get() = "chapt
 public inline val TextTrackKind.Companion.METADATA: TextTrackKind get() = "metadata".asDynamic().unsafeCast<TextTrackKind>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface SelectionMode {
     companion object
@@ -6392,6 +6442,18 @@ public inline val SelectionMode.Companion.END: SelectionMode get() = "end".asDyn
 public inline val SelectionMode.Companion.PRESERVE: SelectionMode get() = "preserve".asDynamic().unsafeCast<SelectionMode>()
 
 /* please, don't implement this interface! */
+@JsName("null")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+public external interface PredefinedColorSpace {
+    companion object
+}
+
+public inline val PredefinedColorSpace.Companion.SRGB: PredefinedColorSpace get() = "srgb".asDynamic().unsafeCast<PredefinedColorSpace>()
+
+public inline val PredefinedColorSpace.Companion.DISPLAY_P3: PredefinedColorSpace get() = "display-p3".asDynamic().unsafeCast<PredefinedColorSpace>()
+
+/* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface CanvasFillRule {
     companion object
@@ -6402,6 +6464,7 @@ public inline val CanvasFillRule.Companion.NONZERO: CanvasFillRule get() = "nonz
 public inline val CanvasFillRule.Companion.EVENODD: CanvasFillRule get() = "evenodd".asDynamic().unsafeCast<CanvasFillRule>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface ImageSmoothingQuality {
     companion object
@@ -6414,6 +6477,7 @@ public inline val ImageSmoothingQuality.Companion.MEDIUM: ImageSmoothingQuality 
 public inline val ImageSmoothingQuality.Companion.HIGH: ImageSmoothingQuality get() = "high".asDynamic().unsafeCast<ImageSmoothingQuality>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface CanvasLineCap {
     companion object
@@ -6426,6 +6490,7 @@ public inline val CanvasLineCap.Companion.ROUND: CanvasLineCap get() = "round".a
 public inline val CanvasLineCap.Companion.SQUARE: CanvasLineCap get() = "square".asDynamic().unsafeCast<CanvasLineCap>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface CanvasLineJoin {
     companion object
@@ -6438,6 +6503,7 @@ public inline val CanvasLineJoin.Companion.BEVEL: CanvasLineJoin get() = "bevel"
 public inline val CanvasLineJoin.Companion.MITER: CanvasLineJoin get() = "miter".asDynamic().unsafeCast<CanvasLineJoin>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface CanvasTextAlign {
     companion object
@@ -6454,6 +6520,7 @@ public inline val CanvasTextAlign.Companion.RIGHT: CanvasTextAlign get() = "righ
 public inline val CanvasTextAlign.Companion.CENTER: CanvasTextAlign get() = "center".asDynamic().unsafeCast<CanvasTextAlign>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface CanvasTextBaseline {
     companion object
@@ -6472,6 +6539,7 @@ public inline val CanvasTextBaseline.Companion.IDEOGRAPHIC: CanvasTextBaseline g
 public inline val CanvasTextBaseline.Companion.BOTTOM: CanvasTextBaseline get() = "bottom".asDynamic().unsafeCast<CanvasTextBaseline>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface CanvasDirection {
     companion object
@@ -6484,6 +6552,81 @@ public inline val CanvasDirection.Companion.RTL: CanvasDirection get() = "rtl".a
 public inline val CanvasDirection.Companion.INHERIT: CanvasDirection get() = "inherit".asDynamic().unsafeCast<CanvasDirection>()
 
 /* please, don't implement this interface! */
+@JsName("null")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+public external interface CanvasFontKerning {
+    companion object
+}
+
+public inline val CanvasFontKerning.Companion.AUTO: CanvasFontKerning get() = "auto".asDynamic().unsafeCast<CanvasFontKerning>()
+
+public inline val CanvasFontKerning.Companion.NORMAL: CanvasFontKerning get() = "normal".asDynamic().unsafeCast<CanvasFontKerning>()
+
+public inline val CanvasFontKerning.Companion.NONE: CanvasFontKerning get() = "none".asDynamic().unsafeCast<CanvasFontKerning>()
+
+/* please, don't implement this interface! */
+@JsName("null")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+public external interface CanvasFontStretch {
+    companion object
+}
+
+public inline val CanvasFontStretch.Companion.ULTRA_CONDENSED: CanvasFontStretch get() = "ultra-condensed".asDynamic().unsafeCast<CanvasFontStretch>()
+
+public inline val CanvasFontStretch.Companion.EXTRA_CONDENSED: CanvasFontStretch get() = "extra-condensed".asDynamic().unsafeCast<CanvasFontStretch>()
+
+public inline val CanvasFontStretch.Companion.CONDENSED: CanvasFontStretch get() = "condensed".asDynamic().unsafeCast<CanvasFontStretch>()
+
+public inline val CanvasFontStretch.Companion.SEMI_CONDENSED: CanvasFontStretch get() = "semi-condensed".asDynamic().unsafeCast<CanvasFontStretch>()
+
+public inline val CanvasFontStretch.Companion.NORMAL: CanvasFontStretch get() = "normal".asDynamic().unsafeCast<CanvasFontStretch>()
+
+public inline val CanvasFontStretch.Companion.SEMI_EXPANDED: CanvasFontStretch get() = "semi-expanded".asDynamic().unsafeCast<CanvasFontStretch>()
+
+public inline val CanvasFontStretch.Companion.EXPANDED: CanvasFontStretch get() = "expanded".asDynamic().unsafeCast<CanvasFontStretch>()
+
+public inline val CanvasFontStretch.Companion.EXTRA_EXPANDED: CanvasFontStretch get() = "extra-expanded".asDynamic().unsafeCast<CanvasFontStretch>()
+
+public inline val CanvasFontStretch.Companion.ULTRA_EXPANDED: CanvasFontStretch get() = "ultra-expanded".asDynamic().unsafeCast<CanvasFontStretch>()
+
+/* please, don't implement this interface! */
+@JsName("null")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+public external interface CanvasFontVariantCaps {
+    companion object
+}
+
+public inline val CanvasFontVariantCaps.Companion.NORMAL: CanvasFontVariantCaps get() = "normal".asDynamic().unsafeCast<CanvasFontVariantCaps>()
+
+public inline val CanvasFontVariantCaps.Companion.SMALL_CAPS: CanvasFontVariantCaps get() = "small-caps".asDynamic().unsafeCast<CanvasFontVariantCaps>()
+
+public inline val CanvasFontVariantCaps.Companion.ALL_SMALL_CAPS: CanvasFontVariantCaps get() = "all-small-caps".asDynamic().unsafeCast<CanvasFontVariantCaps>()
+
+public inline val CanvasFontVariantCaps.Companion.PETITE_CAPS: CanvasFontVariantCaps get() = "petite-caps".asDynamic().unsafeCast<CanvasFontVariantCaps>()
+
+public inline val CanvasFontVariantCaps.Companion.ALL_PETITE_CAPS: CanvasFontVariantCaps get() = "all-petite-caps".asDynamic().unsafeCast<CanvasFontVariantCaps>()
+
+public inline val CanvasFontVariantCaps.Companion.UNICASE: CanvasFontVariantCaps get() = "unicase".asDynamic().unsafeCast<CanvasFontVariantCaps>()
+
+public inline val CanvasFontVariantCaps.Companion.TITLING_CAPS: CanvasFontVariantCaps get() = "titling-caps".asDynamic().unsafeCast<CanvasFontVariantCaps>()
+
+/* please, don't implement this interface! */
+@JsName("null")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+public external interface CanvasTextRendering {
+    companion object
+}
+
+public inline val CanvasTextRendering.Companion.AUTO: CanvasTextRendering get() = "auto".asDynamic().unsafeCast<CanvasTextRendering>()
+
+public inline val CanvasTextRendering.Companion.OPTIMIZESPEED: CanvasTextRendering get() = "optimizeSpeed".asDynamic().unsafeCast<CanvasTextRendering>()
+
+public inline val CanvasTextRendering.Companion.OPTIMIZELEGIBILITY: CanvasTextRendering get() = "optimizeLegibility".asDynamic().unsafeCast<CanvasTextRendering>()
+
+public inline val CanvasTextRendering.Companion.GEOMETRICPRECISION: CanvasTextRendering get() = "geometricPrecision".asDynamic().unsafeCast<CanvasTextRendering>()
+
+/* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface OffscreenRenderingContextId {
     companion object
@@ -6498,6 +6641,7 @@ public inline val OffscreenRenderingContextId.Companion.WEBGL: OffscreenRenderin
 public inline val OffscreenRenderingContextId.Companion.WEBGL2: OffscreenRenderingContextId get() = "webgl2".asDynamic().unsafeCast<OffscreenRenderingContextId>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface ScrollRestoration {
     companion object
@@ -6508,6 +6652,7 @@ public inline val ScrollRestoration.Companion.AUTO: ScrollRestoration get() = "a
 public inline val ScrollRestoration.Companion.MANUAL: ScrollRestoration get() = "manual".asDynamic().unsafeCast<ScrollRestoration>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface DOMParserSupportedType {
     companion object
@@ -6524,6 +6669,7 @@ public inline val DOMParserSupportedType.Companion.APPLICATION_XHTML_XML: DOMPar
 public inline val DOMParserSupportedType.Companion.IMAGE_SVG_XML: DOMParserSupportedType get() = "image/svg+xml".asDynamic().unsafeCast<DOMParserSupportedType>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface ImageOrientation {
     companion object
@@ -6534,6 +6680,7 @@ public inline val ImageOrientation.Companion.NONE: ImageOrientation get() = "non
 public inline val ImageOrientation.Companion.FLIPY: ImageOrientation get() = "flipY".asDynamic().unsafeCast<ImageOrientation>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface PremultiplyAlpha {
     companion object
@@ -6546,6 +6693,7 @@ public inline val PremultiplyAlpha.Companion.PREMULTIPLY: PremultiplyAlpha get()
 public inline val PremultiplyAlpha.Companion.DEFAULT: PremultiplyAlpha get() = "default".asDynamic().unsafeCast<PremultiplyAlpha>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface ColorSpaceConversion {
     companion object
@@ -6556,6 +6704,7 @@ public inline val ColorSpaceConversion.Companion.NONE: ColorSpaceConversion get(
 public inline val ColorSpaceConversion.Companion.DEFAULT: ColorSpaceConversion get() = "default".asDynamic().unsafeCast<ColorSpaceConversion>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface ResizeQuality {
     companion object
@@ -6570,6 +6719,7 @@ public inline val ResizeQuality.Companion.MEDIUM: ResizeQuality get() = "medium"
 public inline val ResizeQuality.Companion.HIGH: ResizeQuality get() = "high".asDynamic().unsafeCast<ResizeQuality>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface BinaryType {
     companion object
@@ -6580,6 +6730,7 @@ public inline val BinaryType.Companion.BLOB: BinaryType get() = "blob".asDynamic
 public inline val BinaryType.Companion.ARRAYBUFFER: BinaryType get() = "arraybuffer".asDynamic().unsafeCast<BinaryType>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface WorkerType {
     companion object
@@ -6590,6 +6741,7 @@ public inline val WorkerType.Companion.CLASSIC: WorkerType get() = "classic".asD
 public inline val WorkerType.Companion.MODULE: WorkerType get() = "module".asDynamic().unsafeCast<WorkerType>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface ShadowRootMode {
     companion object
@@ -6600,6 +6752,18 @@ public inline val ShadowRootMode.Companion.OPEN: ShadowRootMode get() = "open".a
 public inline val ShadowRootMode.Companion.CLOSED: ShadowRootMode get() = "closed".asDynamic().unsafeCast<ShadowRootMode>()
 
 /* please, don't implement this interface! */
+@JsName("null")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+public external interface SlotAssignmentMode {
+    companion object
+}
+
+public inline val SlotAssignmentMode.Companion.MANUAL: SlotAssignmentMode get() = "manual".asDynamic().unsafeCast<SlotAssignmentMode>()
+
+public inline val SlotAssignmentMode.Companion.NAMED: SlotAssignmentMode get() = "named".asDynamic().unsafeCast<SlotAssignmentMode>()
+
+/* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface ScrollBehavior {
     companion object
@@ -6612,6 +6776,7 @@ public inline val ScrollBehavior.Companion.INSTANT: ScrollBehavior get() = "inst
 public inline val ScrollBehavior.Companion.SMOOTH: ScrollBehavior get() = "smooth".asDynamic().unsafeCast<ScrollBehavior>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface ScrollLogicalPosition {
     companion object
@@ -6626,6 +6791,7 @@ public inline val ScrollLogicalPosition.Companion.END: ScrollLogicalPosition get
 public inline val ScrollLogicalPosition.Companion.NEAREST: ScrollLogicalPosition get() = "nearest".asDynamic().unsafeCast<ScrollLogicalPosition>()
 
 /* please, don't implement this interface! */
+@JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public external interface CSSBoxType {
     companion object
