@@ -146,6 +146,7 @@ private val urls = listOf(
     "https://www.w3.org/TR/touch-events/" to "org.w3c.dom",
     "https://www.w3.org/TR/uievents/" to "org.w3c.dom.events",
     "https://www.w3.org/TR/pointerevents/" to "org.w3c.dom.pointerevents",
+    "https://www.w3.org/TR/pointerlock/" to "org.w3c.dom.pointerlock",
     "https://drafts.csswg.org/cssom/" to "org.w3c.dom.css",
     "https://www.w3.org/TR/css-masking-1/" to "org.w3c.css.masking",
 

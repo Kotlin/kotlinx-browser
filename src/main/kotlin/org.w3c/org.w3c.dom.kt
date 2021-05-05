@@ -3289,7 +3289,7 @@ public external interface DragEventInit : MouseEventInit {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun DragEventInit(dataTransfer: DataTransfer? = null, screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): DragEventInit {
+public inline fun DragEventInit(dataTransfer: DataTransfer? = null, screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, movementX: Int? = 0, movementY: Int? = 0, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): DragEventInit {
     val o = js("({})")
     o["dataTransfer"] = dataTransfer
     o["screenX"] = screenX
@@ -3299,6 +3299,8 @@ public inline fun DragEventInit(dataTransfer: DataTransfer? = null, screenX: Int
     o["button"] = button
     o["buttons"] = buttons
     o["relatedTarget"] = relatedTarget
+    o["movementX"] = movementX
+    o["movementY"] = movementY
     o["ctrlKey"] = ctrlKey
     o["shiftKey"] = shiftKey
     o["altKey"] = altKey
@@ -4807,6 +4809,8 @@ public external abstract class Document : Node, GeometryUtils {
     open val applets: HTMLCollection
     open val all: HTMLAllCollection
     open val scrollingElement: Element?
+    open var onpointerlockchange: ((Event) -> dynamic)?
+    open var onpointerlockerror: ((Event) -> dynamic)?
     open val rootElement: SVGSVGElement?
     open val fullscreenEnabled: Boolean
     open val fullscreen: Boolean
@@ -4893,6 +4897,7 @@ public external abstract class Document : Node, GeometryUtils {
     open var onpaste: ((ClipboardEvent) -> dynamic)?
     open val activeElement: Element?
     open val styleSheets: StyleSheetList
+    open val pointerLockElement: Element?
     open val fullscreenElement: Element?
     open val children: HTMLCollection
     open val firstElementChild: Element?
@@ -4940,6 +4945,7 @@ public external abstract class Document : Node, GeometryUtils {
     fun caretPositionFromPoint(x: Double, y: Double): CaretPosition?
     fun createTouch(view: Window, target: EventTarget, identifier: Int, pageX: Int, pageY: Int, screenX: Int, screenY: Int): Touch
     fun createTouchList(vararg touches: Touch): TouchList
+    fun exitPointerLock()
     fun exitFullscreen(): Promise<dynamic>
     fun getElementById(elementId: String): Element?
     fun prepend(vararg nodes: dynamic): dynamic
@@ -5111,6 +5117,7 @@ public external abstract class ShadowRoot : DocumentFragment {
     open var onslotchange: ((Event) -> dynamic)?
     open val activeElement: Element?
     open val styleSheets: StyleSheetList
+    open val pointerLockElement: Element?
     open val fullscreenElement: Element?
 
     companion object {
@@ -5207,6 +5214,7 @@ public external abstract class Element : Node, GeometryUtils, UnionElementOrHTML
     fun setPointerCapture(pointerId: Int)
     fun releasePointerCapture(pointerId: Int)
     fun hasPointerCapture(pointerId: Int): Boolean
+    fun requestPointerLock()
     fun requestFullscreen(options: FullscreenOptions = definedExternally): Promise<dynamic>
     fun prepend(vararg nodes: dynamic): dynamic
     fun append(vararg nodes: dynamic): dynamic

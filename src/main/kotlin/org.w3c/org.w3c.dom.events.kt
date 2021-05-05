@@ -103,6 +103,8 @@ public external open class MouseEvent(type: String, eventInitDict: MouseEventIni
     open val y: Double
     open val offsetX: Double
     open val offsetY: Double
+    open val movementX: Int
+    open val movementY: Int
     fun getModifierState(keyArg: String): Boolean
 
     companion object {
@@ -135,11 +137,17 @@ public external interface MouseEventInit : EventModifierInit {
     var relatedTarget: EventTarget? /* = null */
         get() = definedExternally
         set(value) = definedExternally
+    var movementX: Int? /* = 0 */
+        get() = definedExternally
+        set(value) = definedExternally
+    var movementY: Int? /* = 0 */
+        get() = definedExternally
+        set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun MouseEventInit(screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MouseEventInit {
+public inline fun MouseEventInit(screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, movementX: Int? = 0, movementY: Int? = 0, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MouseEventInit {
     val o = js("({})")
     o["screenX"] = screenX
     o["screenY"] = screenY
@@ -148,6 +156,8 @@ public inline fun MouseEventInit(screenX: Int? = 0, screenY: Int? = 0, clientX: 
     o["button"] = button
     o["buttons"] = buttons
     o["relatedTarget"] = relatedTarget
+    o["movementX"] = movementX
+    o["movementY"] = movementY
     o["ctrlKey"] = ctrlKey
     o["shiftKey"] = shiftKey
     o["altKey"] = altKey
@@ -278,7 +288,7 @@ public external interface WheelEventInit : MouseEventInit {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun WheelEventInit(deltaX: Double? = 0.0, deltaY: Double? = 0.0, deltaZ: Double? = 0.0, deltaMode: Int? = 0, screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): WheelEventInit {
+public inline fun WheelEventInit(deltaX: Double? = 0.0, deltaY: Double? = 0.0, deltaZ: Double? = 0.0, deltaMode: Int? = 0, screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, movementX: Int? = 0, movementY: Int? = 0, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): WheelEventInit {
     val o = js("({})")
     o["deltaX"] = deltaX
     o["deltaY"] = deltaY
@@ -291,6 +301,8 @@ public inline fun WheelEventInit(deltaX: Double? = 0.0, deltaY: Double? = 0.0, d
     o["button"] = button
     o["buttons"] = buttons
     o["relatedTarget"] = relatedTarget
+    o["movementX"] = movementX
+    o["movementY"] = movementY
     o["ctrlKey"] = ctrlKey
     o["shiftKey"] = shiftKey
     o["altKey"] = altKey
