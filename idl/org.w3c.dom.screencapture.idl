@@ -1,0 +1,40 @@
+package org.w3c.dom.screencapture;
+
+
+// Downloaded from https://www.w3.org/TR/screen-capture/
+WebIDLpartial interface MediaDevices {
+  Promise<MediaStream> getDisplayMedia(optional DisplayMediaStreamConstraints constraints = {});
+};
+WebIDLdictionary DisplayMediaStreamConstraints {
+  (boolean or MediaTrackConstraints) video = true;
+  (boolean or MediaTrackConstraints) audio = false;
+};
+WebIDLpartial dictionary MediaTrackSupportedConstraints {
+  boolean displaySurface = true;
+  boolean logicalSurface = true;
+  boolean cursor = true;
+  boolean restrictOwnAudio = true;
+};
+WebIDLpartial dictionary MediaTrackConstraintSet {
+  ConstrainDOMString displaySurface;
+  ConstrainBoolean logicalSurface;
+  ConstrainDOMString cursor;
+  ConstrainBoolean restrictOwnAudio;
+};
+WebIDLpartial dictionary MediaTrackSettings {
+  DOMString displaySurface;
+  boolean logicalSurface;
+  DOMString cursor;
+};
+WebIDLenum DisplayCaptureSurfaceType {
+  "monitor",
+  "window",
+  "application",
+  "browser"
+};
+WebIDLenum CursorCaptureConstraint {
+  "never",
+  "always",
+  "motion"
+};
+

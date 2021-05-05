@@ -12,8 +12,6 @@ import kotlin.js.*
 import org.khronos.webgl.*
 import org.w3c.dom.events.*
 
-public external abstract class 
-
 /**
  * Exposes the JavaScript [Performance](https://developer.mozilla.org/en/docs/Web/API/Performance) to Kotlin
  */

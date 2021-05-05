@@ -152,6 +152,7 @@ private val urls = listOf(
     "https://www.w3.org/TR/css-font-loading/" to "org.w3c.css.fontloading",
 
     "https://w3c.github.io/mediacapture-main/" to "org.w3c.dom.mediacapture",
+    "https://www.w3.org/TR/screen-capture/" to "org.w3c.dom.screencapture",
     "https://www.w3.org/TR/DOM-Parsing/" to "org.w3c.dom.parsing",
     "https://w3c.github.io/clipboard-apis" to "org.w3c.dom.clipboard",
     "https://raw.githubusercontent.com/whatwg/url/master/url.bs" to "org.w3c.dom.url",

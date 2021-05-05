@@ -100,11 +100,23 @@ public external interface MediaTrackSupportedConstraints {
     var groupId: Boolean? /* = true */
         get() = definedExternally
         set(value) = definedExternally
+    var displaySurface: Boolean? /* = true */
+        get() = definedExternally
+        set(value) = definedExternally
+    var logicalSurface: Boolean? /* = true */
+        get() = definedExternally
+        set(value) = definedExternally
+    var cursor: Boolean? /* = true */
+        get() = definedExternally
+        set(value) = definedExternally
+    var restrictOwnAudio: Boolean? /* = true */
+        get() = definedExternally
+        set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun MediaTrackSupportedConstraints(width: Boolean? = true, height: Boolean? = true, aspectRatio: Boolean? = true, frameRate: Boolean? = true, facingMode: Boolean? = true, resizeMode: Boolean? = true, sampleRate: Boolean? = true, sampleSize: Boolean? = true, echoCancellation: Boolean? = true, autoGainControl: Boolean? = true, noiseSuppression: Boolean? = true, latency: Boolean? = true, channelCount: Boolean? = true, deviceId: Boolean? = true, groupId: Boolean? = true): MediaTrackSupportedConstraints {
+public inline fun MediaTrackSupportedConstraints(width: Boolean? = true, height: Boolean? = true, aspectRatio: Boolean? = true, frameRate: Boolean? = true, facingMode: Boolean? = true, resizeMode: Boolean? = true, sampleRate: Boolean? = true, sampleSize: Boolean? = true, echoCancellation: Boolean? = true, autoGainControl: Boolean? = true, noiseSuppression: Boolean? = true, latency: Boolean? = true, channelCount: Boolean? = true, deviceId: Boolean? = true, groupId: Boolean? = true, displaySurface: Boolean? = true, logicalSurface: Boolean? = true, cursor: Boolean? = true, restrictOwnAudio: Boolean? = true): MediaTrackSupportedConstraints {
     val o = js("({})")
     o["width"] = width
     o["height"] = height
@@ -121,6 +133,10 @@ public inline fun MediaTrackSupportedConstraints(width: Boolean? = true, height:
     o["channelCount"] = channelCount
     o["deviceId"] = deviceId
     o["groupId"] = groupId
+    o["displaySurface"] = displaySurface
+    o["logicalSurface"] = logicalSurface
+    o["cursor"] = cursor
+    o["restrictOwnAudio"] = restrictOwnAudio
     return o
 }
 
@@ -205,7 +221,7 @@ public external interface MediaTrackConstraints : MediaTrackConstraintSet {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun MediaTrackConstraints(advanced: Array<MediaTrackConstraintSet>? = undefined, width: dynamic = undefined, height: dynamic = undefined, aspectRatio: dynamic = undefined, frameRate: dynamic = undefined, facingMode: dynamic = undefined, resizeMode: dynamic = undefined, sampleRate: dynamic = undefined, sampleSize: dynamic = undefined, echoCancellation: dynamic = undefined, autoGainControl: dynamic = undefined, noiseSuppression: dynamic = undefined, latency: dynamic = undefined, channelCount: dynamic = undefined, deviceId: dynamic = undefined, groupId: dynamic = undefined): MediaTrackConstraints {
+public inline fun MediaTrackConstraints(advanced: Array<MediaTrackConstraintSet>? = undefined, width: dynamic = undefined, height: dynamic = undefined, aspectRatio: dynamic = undefined, frameRate: dynamic = undefined, facingMode: dynamic = undefined, resizeMode: dynamic = undefined, sampleRate: dynamic = undefined, sampleSize: dynamic = undefined, echoCancellation: dynamic = undefined, autoGainControl: dynamic = undefined, noiseSuppression: dynamic = undefined, latency: dynamic = undefined, channelCount: dynamic = undefined, deviceId: dynamic = undefined, groupId: dynamic = undefined, displaySurface: dynamic = undefined, logicalSurface: dynamic = undefined, cursor: dynamic = undefined, restrictOwnAudio: dynamic = undefined): MediaTrackConstraints {
     val o = js("({})")
     o["advanced"] = advanced
     o["width"] = width
@@ -223,6 +239,10 @@ public inline fun MediaTrackConstraints(advanced: Array<MediaTrackConstraintSet>
     o["channelCount"] = channelCount
     o["deviceId"] = deviceId
     o["groupId"] = groupId
+    o["displaySurface"] = displaySurface
+    o["logicalSurface"] = logicalSurface
+    o["cursor"] = cursor
+    o["restrictOwnAudio"] = restrictOwnAudio
     return o
 }
 
@@ -272,11 +292,23 @@ public external interface MediaTrackConstraintSet {
     var groupId: dynamic
         get() = definedExternally
         set(value) = definedExternally
+    var displaySurface: dynamic
+        get() = definedExternally
+        set(value) = definedExternally
+    var logicalSurface: dynamic
+        get() = definedExternally
+        set(value) = definedExternally
+    var cursor: dynamic
+        get() = definedExternally
+        set(value) = definedExternally
+    var restrictOwnAudio: dynamic
+        get() = definedExternally
+        set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun MediaTrackConstraintSet(width: dynamic = undefined, height: dynamic = undefined, aspectRatio: dynamic = undefined, frameRate: dynamic = undefined, facingMode: dynamic = undefined, resizeMode: dynamic = undefined, sampleRate: dynamic = undefined, sampleSize: dynamic = undefined, echoCancellation: dynamic = undefined, autoGainControl: dynamic = undefined, noiseSuppression: dynamic = undefined, latency: dynamic = undefined, channelCount: dynamic = undefined, deviceId: dynamic = undefined, groupId: dynamic = undefined): MediaTrackConstraintSet {
+public inline fun MediaTrackConstraintSet(width: dynamic = undefined, height: dynamic = undefined, aspectRatio: dynamic = undefined, frameRate: dynamic = undefined, facingMode: dynamic = undefined, resizeMode: dynamic = undefined, sampleRate: dynamic = undefined, sampleSize: dynamic = undefined, echoCancellation: dynamic = undefined, autoGainControl: dynamic = undefined, noiseSuppression: dynamic = undefined, latency: dynamic = undefined, channelCount: dynamic = undefined, deviceId: dynamic = undefined, groupId: dynamic = undefined, displaySurface: dynamic = undefined, logicalSurface: dynamic = undefined, cursor: dynamic = undefined, restrictOwnAudio: dynamic = undefined): MediaTrackConstraintSet {
     val o = js("({})")
     o["width"] = width
     o["height"] = height
@@ -293,6 +325,10 @@ public inline fun MediaTrackConstraintSet(width: dynamic = undefined, height: dy
     o["channelCount"] = channelCount
     o["deviceId"] = deviceId
     o["groupId"] = groupId
+    o["displaySurface"] = displaySurface
+    o["logicalSurface"] = logicalSurface
+    o["cursor"] = cursor
+    o["restrictOwnAudio"] = restrictOwnAudio
     return o
 }
 
@@ -345,11 +381,20 @@ public external interface MediaTrackSettings {
     var groupId: String?
         get() = definedExternally
         set(value) = definedExternally
+    var displaySurface: String?
+        get() = definedExternally
+        set(value) = definedExternally
+    var logicalSurface: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var cursor: String?
+        get() = definedExternally
+        set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun MediaTrackSettings(width: Int? = undefined, height: Int? = undefined, aspectRatio: Double? = undefined, frameRate: Double? = undefined, facingMode: String? = undefined, resizeMode: String? = undefined, sampleRate: Int? = undefined, sampleSize: Int? = undefined, echoCancellation: Boolean? = undefined, autoGainControl: Boolean? = undefined, noiseSuppression: Boolean? = undefined, latency: Double? = undefined, channelCount: Int? = undefined, deviceId: String? = undefined, groupId: String? = undefined): MediaTrackSettings {
+public inline fun MediaTrackSettings(width: Int? = undefined, height: Int? = undefined, aspectRatio: Double? = undefined, frameRate: Double? = undefined, facingMode: String? = undefined, resizeMode: String? = undefined, sampleRate: Int? = undefined, sampleSize: Int? = undefined, echoCancellation: Boolean? = undefined, autoGainControl: Boolean? = undefined, noiseSuppression: Boolean? = undefined, latency: Double? = undefined, channelCount: Int? = undefined, deviceId: String? = undefined, groupId: String? = undefined, displaySurface: String? = undefined, logicalSurface: Boolean? = undefined, cursor: String? = undefined): MediaTrackSettings {
     val o = js("({})")
     o["width"] = width
     o["height"] = height
@@ -366,6 +411,9 @@ public inline fun MediaTrackSettings(width: Int? = undefined, height: Int? = und
     o["channelCount"] = channelCount
     o["deviceId"] = deviceId
     o["groupId"] = groupId
+    o["displaySurface"] = displaySurface
+    o["logicalSurface"] = logicalSurface
+    o["cursor"] = cursor
     return o
 }
 
@@ -408,6 +456,7 @@ public external abstract class OverconstrainedError {
 public external abstract class MediaDevices : EventTarget {
     open var ondevicechange: ((Event) -> dynamic)?
     fun enumerateDevices(): Promise<Array<MediaDeviceInfo>>
+    fun getDisplayMedia(constraints: dynamic = definedExternally): Promise<MediaStream>
     fun getSupportedConstraints(): MediaTrackSupportedConstraints
     fun getUserMedia(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
 }
