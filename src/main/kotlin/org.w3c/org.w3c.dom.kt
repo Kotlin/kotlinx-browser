@@ -3482,7 +3482,6 @@ public external abstract class Window : EventTarget, GlobalCrypto, MessageEventS
     fun releaseEvents(): dynamic
     fun getSelection(): Selection
     fun requestAnimationFrame(callback: (dynamic) -> Unit): Int
-    fun cancelAnimationFrame(handle: Int)
     fun matchMedia(query: String): MediaQueryList
     fun moveTo(x: Int, y: Int)
     fun moveBy(x: Int, y: Int)
@@ -3909,7 +3908,6 @@ public external open class EventSource(url: String, eventSourceInitDict: EventSo
     var onmessage: ((MessageEvent) -> dynamic)?
     var onerror: ((Event) -> dynamic)?
     fun close(): dynamic
-    fun close()
 
     companion object {
         val CONNECTING: Short

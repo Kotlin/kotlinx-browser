@@ -10,6 +10,7 @@ package org.w3c.geolocation
 
 import kotlin.js.*
 import org.khronos.webgl.*
+import kotlin.Double.Companion.POSITIVE_INFINITY
 
 public external interface Geolocation {
     fun getCurrentPosition(successCallback: (Position) -> Unit, errorCallback: (PositionError) -> Unit = definedExternally, options: PositionOptions = definedExternally)
@@ -31,7 +32,7 @@ public external interface PositionOptions {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun PositionOptions(enableHighAccuracy: Boolean? = false, timeout: Int? = definedExternally, maximumAge: Int? = 0): PositionOptions {
+public inline fun PositionOptions(enableHighAccuracy: Boolean? = false, timeout: Int? = POSITIVE_INFINITY.toInt(), maximumAge: Int? = 0): PositionOptions {
     val o = js("({})")
     o["enableHighAccuracy"] = enableHighAccuracy
     o["timeout"] = timeout
