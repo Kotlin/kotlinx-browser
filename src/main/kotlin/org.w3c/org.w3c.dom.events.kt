@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2021 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -18,6 +18,7 @@ import org.w3c.dom.*
 public external open class UIEvent(type: String, eventInitDict: UIEventInit = definedExternally) : Event {
     open val view: Window?
     open val detail: Int
+    open val which: Int
 
     companion object {
         val NONE: Short
@@ -84,7 +85,7 @@ public inline fun FocusEventInit(relatedTarget: EventTarget? = null, view: Windo
 /**
  * Exposes the JavaScript [MouseEvent](https://developer.mozilla.org/en/docs/Web/API/MouseEvent) to Kotlin
  */
-public external open class MouseEvent(type: String, eventInitDict: MouseEventInit = definedExternally) : UIEvent, UnionElementOrMouseEvent {
+public external open class MouseEvent(type: String, eventInitDict: MouseEventInit = definedExternally) : UIEvent {
     open val screenX: Int
     open val screenY: Int
     open val clientX: Int
@@ -96,13 +97,14 @@ public external open class MouseEvent(type: String, eventInitDict: MouseEventIni
     open val button: Short
     open val buttons: Short
     open val relatedTarget: EventTarget?
-    open val region: String?
     open val pageX: Double
     open val pageY: Double
     open val x: Double
     open val y: Double
     open val offsetX: Double
     open val offsetY: Double
+    open val movementX: Int
+    open val movementY: Int
     fun getModifierState(keyArg: String): Boolean
 
     companion object {
@@ -135,14 +137,17 @@ public external interface MouseEventInit : EventModifierInit {
     var relatedTarget: EventTarget? /* = null */
         get() = definedExternally
         set(value) = definedExternally
-    var region: String? /* = null */
+    var movementX: Int? /* = 0 */
+        get() = definedExternally
+        set(value) = definedExternally
+    var movementY: Int? /* = 0 */
         get() = definedExternally
         set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun MouseEventInit(screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, region: String? = null, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MouseEventInit {
+public inline fun MouseEventInit(screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, movementX: Int? = 0, movementY: Int? = 0, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MouseEventInit {
     val o = js("({})")
     o["screenX"] = screenX
     o["screenY"] = screenY
@@ -151,7 +156,8 @@ public inline fun MouseEventInit(screenX: Int? = 0, screenY: Int? = 0, clientX: 
     o["button"] = button
     o["buttons"] = buttons
     o["relatedTarget"] = relatedTarget
-    o["region"] = region
+    o["movementX"] = movementX
+    o["movementY"] = movementY
     o["ctrlKey"] = ctrlKey
     o["shiftKey"] = shiftKey
     o["altKey"] = altKey
@@ -282,7 +288,7 @@ public external interface WheelEventInit : MouseEventInit {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun WheelEventInit(deltaX: Double? = 0.0, deltaY: Double? = 0.0, deltaZ: Double? = 0.0, deltaMode: Int? = 0, screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, region: String? = null, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): WheelEventInit {
+public inline fun WheelEventInit(deltaX: Double? = 0.0, deltaY: Double? = 0.0, deltaZ: Double? = 0.0, deltaMode: Int? = 0, screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, movementX: Int? = 0, movementY: Int? = 0, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): WheelEventInit {
     val o = js("({})")
     o["deltaX"] = deltaX
     o["deltaY"] = deltaY
@@ -295,7 +301,8 @@ public inline fun WheelEventInit(deltaX: Double? = 0.0, deltaY: Double? = 0.0, d
     o["button"] = button
     o["buttons"] = buttons
     o["relatedTarget"] = relatedTarget
-    o["region"] = region
+    o["movementX"] = movementX
+    o["movementY"] = movementY
     o["ctrlKey"] = ctrlKey
     o["shiftKey"] = shiftKey
     o["altKey"] = altKey
@@ -322,8 +329,9 @@ public inline fun WheelEventInit(deltaX: Double? = 0.0, deltaY: Double? = 0.0, d
  * Exposes the JavaScript [InputEvent](https://developer.mozilla.org/en/docs/Web/API/InputEvent) to Kotlin
  */
 public external open class InputEvent(type: String, eventInitDict: InputEventInit = definedExternally) : UIEvent {
-    open val data: String
+    open val data: String?
     open val isComposing: Boolean
+    open val inputType: String
 
     companion object {
         val NONE: Short
@@ -340,14 +348,18 @@ public external interface InputEventInit : UIEventInit {
     var isComposing: Boolean? /* = false */
         get() = definedExternally
         set(value) = definedExternally
+    var inputType: String? /* = "" */
+        get() = definedExternally
+        set(value) = definedExternally
 }
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-public inline fun InputEventInit(data: String? = "", isComposing: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): InputEventInit {
+public inline fun InputEventInit(data: String? = "", isComposing: Boolean? = false, inputType: String? = "", view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): InputEventInit {
     val o = js("({})")
     o["data"] = data
     o["isComposing"] = isComposing
+    o["inputType"] = inputType
     o["view"] = view
     o["detail"] = detail
     o["bubbles"] = bubbles
@@ -371,7 +383,6 @@ public external open class KeyboardEvent(type: String, eventInitDict: KeyboardEv
     open val isComposing: Boolean
     open val charCode: Int
     open val keyCode: Int
-    open val which: Int
     fun getModifierState(keyArg: String): Boolean
 
     companion object {
@@ -471,22 +482,25 @@ public inline fun CompositionEventInit(data: String? = "", view: Window? = null,
 /**
  * Exposes the JavaScript [Event](https://developer.mozilla.org/en/docs/Web/API/Event) to Kotlin
  */
-public external open class Event(type: String, eventInitDict: EventInit = definedExternally) {
+public external abstract class Event {
     open val type: String
     open val target: EventTarget?
+    open val srcElement: EventTarget?
     open val currentTarget: EventTarget?
     open val eventPhase: Short
+    open var cancelBubble: Boolean
     open val bubbles: Boolean
     open val cancelable: Boolean
+    open var returnValue: Boolean
     open val defaultPrevented: Boolean
     open val composed: Boolean
     open val isTrusted: Boolean
-    open val timeStamp: Number
+    open val timeStamp: dynamic
     fun composedPath(): Array<EventTarget>
-    fun stopPropagation()
-    fun stopImmediatePropagation()
-    fun preventDefault()
-    fun initEvent(type: String, bubbles: Boolean, cancelable: Boolean)
+    fun stopPropagation(): dynamic
+    fun stopImmediatePropagation(): dynamic
+    fun preventDefault(): dynamic
+    fun initEvent(type: String, bubbles: Boolean = definedExternally, cancelable: Boolean = definedExternally): dynamic
 
     companion object {
         val NONE: Short
@@ -500,10 +514,10 @@ public external open class Event(type: String, eventInitDict: EventInit = define
  * Exposes the JavaScript [EventTarget](https://developer.mozilla.org/en/docs/Web/API/EventTarget) to Kotlin
  */
 public external abstract class EventTarget {
-    fun addEventListener(type: String, callback: EventListener?, options: dynamic = definedExternally)
-    fun addEventListener(type: String, callback: ((Event) -> Unit)?, options: dynamic = definedExternally)
-    fun removeEventListener(type: String, callback: EventListener?, options: dynamic = definedExternally)
-    fun removeEventListener(type: String, callback: ((Event) -> Unit)?, options: dynamic = definedExternally)
+    fun addEventListener(type: String, callback: EventListener?, options: dynamic = definedExternally): dynamic
+    fun addEventListener(type: String, callback: ((Event) -> dynamic)?, options: dynamic = definedExternally): dynamic
+    fun removeEventListener(type: String, callback: EventListener?, options: dynamic = definedExternally): dynamic
+    fun removeEventListener(type: String, callback: ((Event) -> dynamic)?, options: dynamic = definedExternally): dynamic
     fun dispatchEvent(event: Event): Boolean
 }
 
@@ -511,5 +525,5 @@ public external abstract class EventTarget {
  * Exposes the JavaScript [EventListener](https://developer.mozilla.org/en/docs/Web/API/EventListener) to Kotlin
  */
 public external interface EventListener {
-    fun handleEvent(event: Event)
+    fun handleEvent(event: Event): dynamic
 }

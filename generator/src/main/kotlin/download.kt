@@ -24,38 +24,40 @@ fun main(args: Array<String>) {
         val arg = argsIterator.next()
 
         when (arg) {
-            "--pkg" -> if (argsIterator.hasNext()) packageFilter = argsIterator.next() else throw IllegalArgumentException("argument $arg requires argument")
+            "--pkg" -> if (argsIterator.hasNext()) packageFilter =
+                argsIterator.next() else throw IllegalArgumentException("argument $arg requires argument")
             else -> throw IllegalArgumentException("Argument $arg is unknown")
         }
     }
 
-    val urlsPerFiles = urls.filter { packageFilter == null || it.second == packageFilter }.groupBy { it.second + ".idl" }
+    val urlsPerFiles =
+        urls.filter { packageFilter == null || it.second == packageFilter }.groupBy { it.second + ".idl" }
 
     urlsPerFiles.forEach { e ->
         val fileName = e.key
         val pkg = e.value.first().second
 
         File(dir, fileName).bufferedWriter().use { w ->
-            w.appendln("package $pkg;")
-            w.appendln()
-            w.appendln()
+            w.appendLine("package $pkg;")
+            w.appendLine()
+            w.appendLine()
 
             e.value.forEach { (url) ->
                 println("Loading $url...")
 
-                w.appendln("// Downloaded from $url")
+                w.appendLine("// Downloaded from $url")
                 val content = fetch(url)
 
                 if (content != null) {
                     if (url.endsWith(".idl")) {
-                        w.appendln(content)
+                        w.appendLine(content)
                     } else {
                         extractIDLText(content, w)
                     }
                 }
             }
 
-            w.appendln()
+            w.appendLine()
         }
     }
 
@@ -66,18 +68,18 @@ fun main(args: Array<String>) {
         .map { propertiesMappingSpecialCases[it] ?: it }
 
     File(dir, cssPropertiesFilename).bufferedWriter().use { w ->
-        w.appendln("package org.w3c.dom.css;")
-        w.appendln()
-        w.appendln("// generated from $cssPropertiesUrl")
-        w.appendln("// for more details see generator/src/main/kotlin/download.kt")
+        w.appendLine("package org.w3c.dom.css;")
+        w.appendLine()
+        w.appendLine("// generated from $cssPropertiesUrl")
+        w.appendLine("// for more details see generator/src/main/kotlin/download.kt")
 
-        w.appendln("partial interface CSSStyleDeclaration {")
+        w.appendLine("partial interface CSSStyleDeclaration {")
 
         cssPropertiesInDOMNotation.forEach {
-            w.appendln("    attribute String $it;")
+            w.appendLine("    attribute String $it;")
         }
 
-        w.appendln("};")
+        w.appendLine("};")
     }
 }
 
@@ -93,9 +95,9 @@ private fun fetch(url: String): String? {
 
 private fun Appendable.append(element: Element) {
     val text = element.text()
-    appendln(text)
+    appendLine(text)
     if (!text.trimEnd().endsWith(";")) {
-        appendln(";")
+        appendLine(";")
     }
 }
 
@@ -111,8 +113,10 @@ private fun extractIDLText(rawContent: String, out: Appendable) {
     val soup = Jsoup.parse(rawContent)
 
     soup.select(".dfn-panel").remove()
+    soup.select("pre.extract").remove()
 
-    soup.select("pre.idl").filter {!it.hasClass("extract")}.attachTo(out)
+    soup.select("pre.idl").filter { !it.hasClass("extract") }.attachTo(out)
+    soup.select("pre code.idl").attachTo(out)
     soup.select("code.idl-code").attachTo(out)
     soup.select("spec-idl").attachTo(out)
 }
@@ -134,7 +138,7 @@ private fun translateCSSPropertyToDOMNotation(property: String): String {
 private val urls = listOf(
     "https://raw.githubusercontent.com/whatwg/html-mirror/master/source" to "org.w3c.dom",
     "https://html.spec.whatwg.org/" to "org.w3c.dom",
-    "https://raw.githubusercontent.com/whatwg/dom/master/dom.html" to "org.w3c.dom",
+    "https://raw.githubusercontent.com/whatwg/dom/master/dom.bs" to "org.w3c.dom",
     "https://dvcs.w3.org/hg/editing/raw-file/tip/editing.html" to "org.w3c.dom",
     "https://www.w3.org/TR/animation-timing/" to "org.w3c.dom",
     "https://www.w3.org/TR/geometry-1/" to "org.w3c.dom",
@@ -142,31 +146,39 @@ private val urls = listOf(
     "https://www.w3.org/TR/touch-events/" to "org.w3c.dom",
     "https://www.w3.org/TR/uievents/" to "org.w3c.dom.events",
     "https://www.w3.org/TR/pointerevents/" to "org.w3c.dom.pointerevents",
-
+    "https://www.w3.org/TR/pointerlock/" to "org.w3c.dom.pointerlock",
     "https://drafts.csswg.org/cssom/" to "org.w3c.dom.css",
     "https://www.w3.org/TR/css-masking-1/" to "org.w3c.css.masking",
+    "https://www.w3.org/TR/css-font-loading/" to "org.w3c.css.fontloading",
 
     "https://w3c.github.io/mediacapture-main/" to "org.w3c.dom.mediacapture",
+    "https://www.w3.org/TR/screen-capture/" to "org.w3c.dom.screencapture",
     "https://www.w3.org/TR/DOM-Parsing/" to "org.w3c.dom.parsing",
     "https://w3c.github.io/clipboard-apis" to "org.w3c.dom.clipboard",
-    "https://raw.githubusercontent.com/whatwg/url/master/url.html" to "org.w3c.dom.url",
+    "https://raw.githubusercontent.com/whatwg/url/master/url.bs" to "org.w3c.dom.url",
 
-    "https://www.w3.org/TR/SVG2/single-page.html" to "org.w3c.dom.svg",
+    "https://www.w3.org/TR/SVG2/idl.html" to "org.w3c.dom.svg",
     "https://www.khronos.org/registry/webgl/specs/latest/1.0/webgl.idl" to "org.khronos.webgl",
-    "https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl" to "org.khronos.webgl",
+//        "https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl" to "org.khronos.webgl", // permanently moved
 
-    "https://raw.githubusercontent.com/whatwg/xhr/master/Overview.src.html" to "org.w3c.xhr",
-    "https://raw.githubusercontent.com/whatwg/fetch/master/Overview.src.html" to "org.w3c.fetch",
+    "https://raw.githubusercontent.com/whatwg/xhr/master/xhr.bs" to "org.w3c.xhr",
+    "https://raw.githubusercontent.com/whatwg/fetch/master/fetch.bs" to "org.w3c.fetch",
     "https://raw.githubusercontent.com/w3c/FileAPI/gh-pages/index.html" to "org.w3c.files",
 
-    "https://raw.githubusercontent.com/whatwg/notifications/master/notifications.html" to "org.w3c.notifications",
-    "https://raw.githubusercontent.com/whatwg/fullscreen/master/fullscreen.html" to "org.w3c.fullscreen",
+    "https://raw.githubusercontent.com/whatwg/notifications/master/notifications.bs" to "org.w3c.notifications",
+    "https://raw.githubusercontent.com/whatwg/fullscreen/master/fullscreen.bs" to "org.w3c.fullscreen",
     "https://www.w3.org/TR/vibration/" to "org.w3c.vibration",
 
     "https://www.w3.org/TR/hr-time/" to "org.w3c.performance",
     "https://www.w3.org/TR/2012/REC-navigation-timing-20121217/" to "org.w3c.performance",
 
-    "https://w3c.github.io/ServiceWorker/" to "org.w3c.workers"
+    "https://w3c.github.io/ServiceWorker/" to "org.w3c.workers",
+    "https://raw.githubusercontent.com/whatwg/storage/main/storage.bs" to "org.w3c.storage",
+
+    "https://www.w3.org/TR/geolocation-API/" to "org.w3c.geolocation",
+    "https://www.w3.org/TR/WebCryptoAPI/" to "org.w3c.crypto",
+    "https://www.w3.org/TR/IndexedDB/" to  "org.w3c.idb",
+    "https://www.w3.org/TR/eventsource/" to "org.w3c.eventsource",
 )
 
 private var cssPropertiesUrl = "https://www.w3.org/Style/CSS/all-properties.en.json"

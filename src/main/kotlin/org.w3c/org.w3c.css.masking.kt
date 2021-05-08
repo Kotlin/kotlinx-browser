@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2021 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -15,7 +15,7 @@ import org.w3c.dom.svg.*
 /**
  * Exposes the JavaScript [SVGClipPathElement](https://developer.mozilla.org/en/docs/Web/API/SVGClipPathElement) to Kotlin
  */
-public external abstract class SVGClipPathElement : SVGElement, SVGUnitTypes {
+public external abstract class SVGClipPathElement : SVGElement {
     open val clipPathUnits: SVGAnimatedEnumeration
     open val transform: SVGAnimatedTransformList
 
@@ -47,7 +47,7 @@ public external abstract class SVGClipPathElement : SVGElement, SVGUnitTypes {
 /**
  * Exposes the JavaScript [SVGMaskElement](https://developer.mozilla.org/en/docs/Web/API/SVGMaskElement) to Kotlin
  */
-public external abstract class SVGMaskElement : SVGElement, SVGUnitTypes {
+public external abstract class SVGMaskElement : SVGElement {
     open val maskUnits: SVGAnimatedEnumeration
     open val maskContentUnits: SVGAnimatedEnumeration
     open val x: SVGAnimatedLength
