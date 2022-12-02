@@ -3,15 +3,14 @@ plugins {
 }
 
 repositories {
-    maven("https://dl.bintray.com/kotlin/kotlin-eap")
     mavenCentral()
-    maven("https://kotlin.bintray.com/dukat")
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-dependencies")
 }
 
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("org.json:json:20090211")
-    implementation("org.jetbrains.dukat:dukat:0.5.0")
+    implementation("org.jetbrains.dukat:dukat:0.5.8-rc.5")
     implementation("org.jsoup:jsoup:1.12.1")
 }
 

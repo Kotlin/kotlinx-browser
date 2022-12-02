@@ -1,8 +1,13 @@
 plugins {
-    id("kotlin2js")
+    kotlin("js")
 }
 
 repositories {
     mavenCentral()
-    maven("https://dl.bintray.com/kotlin/kotlin-eap")
+}
+
+kotlin {
+    js {
+        nodejs()
+    }
 }
