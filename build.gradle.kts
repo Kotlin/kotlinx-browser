@@ -7,13 +7,16 @@ plugins {
     `maven-publish`
 }
 
+fun Project.getSensitiveProperty(name: String): String? =
+    project.findProperty(name) as? String ?: System.getenv(name)
+
 publishing {
     repositories {
         maven {
-            url = URI("URI")
+            url = URI("https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
             credentials {
-                username = "USERNAME"
-                password = "PASSWORD"
+                username = getSensitiveProperty("publish.user")
+                password = getSensitiveProperty("publish.password")
             }
         }
     }
@@ -23,9 +26,16 @@ repositories {
     mavenCentral()
 }
 
-group = "org.jetbrains.kotlinx"
+
 val artifactId = "kotlinx-browser"
-version = "0.1"
+val deployVersion = properties["deployVersion"]
+val versionSuffix = properties["versionSuffix"]
+if (deployVersion != null) {
+    version = "$version-$deployVersion"
+}
+if (versionSuffix != null) {
+    version = "$version-$versionSuffix"
+}
 
 kotlin {
     @OptIn(ExperimentalWasmDsl::class)
