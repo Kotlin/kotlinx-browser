@@ -1,39 +1,45 @@
 import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
-import java.net.URI
 
 plugins {
     kotlin("multiplatform") version "1.9.23"
     `maven-publish`
+    signing
 }
 
-fun Project.getSensitiveProperty(name: String): String? =
-    project.findProperty(name) as? String ?: System.getenv(name)
+// empty xxx-javadoc.jar
+tasks.withType<Jar> {
+    archiveClassifier = "javadoc"
+}
 
 publishing {
     repositories {
-        maven {
-            url = URI("https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
-            credentials {
-                username = getSensitiveProperty("publish.user")
-                password = getSensitiveProperty("publish.password")
-            }
-        }
+        configureMavenPublication(this, project)
+    }
+
+    publications.forEach {
+        it as MavenPublication
+        it.pom.configureMavenCentralMetadata(project)
+        signPublicationIfKeyPresent(project, it)
+    }
+
+    tasks.withType<AbstractPublishToMaven>().configureEach {
+        dependsOn(tasks.withType<Sign>())
     }
 }
+
 
 repositories {
     mavenCentral()
 }
 
-
 val artifactId = "kotlinx-browser"
-val deployVersion = properties["deployVersion"]
-val versionSuffix = properties["versionSuffix"]
-if (deployVersion != null) {
+val deployVersion = properties["deployVersion"]?.toString()
+val versionSuffix = properties["versionSuffix"]?.toString()
+if (!deployVersion.isNullOrBlank()) {
     version = "$version-$deployVersion"
 }
-if (versionSuffix != null) {
+if (!versionSuffix.isNullOrBlank()) {
     version = "$version-$versionSuffix"
 }
 
