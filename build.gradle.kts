@@ -11,22 +11,23 @@ tasks.withType<Jar> {
     archiveClassifier = "javadoc"
 }
 
-publishing {
-    repositories {
-        configureMavenPublication(this, project)
-    }
+afterEvaluate {
+    publishing {
+        repositories {
+            configureMavenPublication(this, project)
+        }
 
-    publications.forEach {
-        it as MavenPublication
-        it.pom.configureMavenCentralMetadata(project)
-        signPublicationIfKeyPresent(project, it)
-    }
+        publications.forEach {
+            it as MavenPublication
+            it.pom.configureMavenCentralMetadata(project)
+            signPublicationIfKeyPresent(project, it)
+        }
 
-    tasks.withType<AbstractPublishToMaven>().configureEach {
-        dependsOn(tasks.withType<Sign>())
+        tasks.withType<AbstractPublishToMaven>().configureEach {
+            dependsOn(tasks.withType<Sign>())
+        }
     }
 }
-
 
 repositories {
     mavenCentral()
