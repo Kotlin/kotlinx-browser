@@ -51,7 +51,6 @@ The library is compatible with the Kotlin Standard Library not lower than `1.9.2
 
 - Add the Maven Central repository if it is not already there:
 
-<!---
 ```kotlin
 repositories {
     mavenCentral()
@@ -70,7 +69,7 @@ kotlin {
     }
 }
 ```
---->
+
 
 ## Building
 
