@@ -6,11 +6,6 @@ plugins {
     signing
 }
 
-// empty xxx-javadoc.jar
-tasks.withType<Jar> {
-    archiveClassifier = "javadoc"
-}
-
 afterEvaluate {
     publishing {
         repositories {
