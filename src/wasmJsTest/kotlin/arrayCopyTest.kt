@@ -4,7 +4,7 @@
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
-// See github.com/kotlin/dukat for details
+// See generator/src/main/kotlin/helpers/generate.kt for details
 
 
 @file:OptIn(ExperimentalUnsignedTypes::class)

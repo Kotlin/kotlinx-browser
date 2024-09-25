@@ -17,7 +17,7 @@ fun main() {
 fun generatePublicStdlibFunctions() {
     FileWriter(File("../src/wasmJsMain/kotlin/arrayCopy.kt")).use { writer: FileWriter ->
         with(writer) {
-            appendLine(getHeader())
+            appendLine(getHeader(seeDetailsAt = "generator/src/main/kotlin/helpers/generate.kt"))
 
             appendLine("package org.khronos.webgl")
 
@@ -75,7 +75,7 @@ private fun FileWriter.appendConversionsForType(
 fun generateTests() {
     FileWriter(File("../src/wasmJsTest/kotlin/arrayCopyTest.kt")).use { writer: FileWriter ->
         with(writer) {
-            appendLine(getHeader())
+            appendLine(getHeader(seeDetailsAt = "generator/src/main/kotlin/helpers/generate.kt"))
 
             appendLine("@file:OptIn(ExperimentalUnsignedTypes::class)")
             appendLine("import org.khronos.webgl.*")

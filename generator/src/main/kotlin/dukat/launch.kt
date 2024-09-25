@@ -28,12 +28,12 @@ private fun readCopyrightNoticeFromProfile(copyrightProfile: File): String {
         }
 }
 
-internal fun getHeader(): String {
+internal fun getHeader(seeDetailsAt: String = "github.com/kotlin/dukat"): String {
     val copyrightNotice = readCopyrightNoticeFromProfile(
         File(".idea/copyright/apache.xml")
     )
     val note = "// NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!$LINE_SEPARATOR" +
-            "// See github.com/kotlin/dukat for details$LINE_SEPARATOR"
+            "// See $seeDetailsAt for details$LINE_SEPARATOR"
     return copyrightNotice + LINE_SEPARATOR + note + LINE_SEPARATOR
 }
 
