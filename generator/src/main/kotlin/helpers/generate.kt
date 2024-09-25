@@ -42,7 +42,7 @@ private fun FileWriter.appendConversionsForType(
     val jsArrayType = "${jsType}Array"
 
     appendLine()
-    appendLine("/** Returns a new array containing all the elements of this array. */")
+    appendLine("/** Returns a new [$kotlinArrayType] containing all the elements of this [$jsArrayType]. */")
     if (isUnsigned) {
         appendLine("@ExperimentalUnsignedTypes")
     }
@@ -54,7 +54,7 @@ private fun FileWriter.appendConversionsForType(
     }
 
     appendLine()
-    appendLine("/** Returns a new array containing all the elements of this array. */")
+    appendLine("/** Returns a new [$jsArrayType] containing all the elements of this [$kotlinArrayType]. */")
     if (isUnsigned) {
         appendLine("@ExperimentalUnsignedTypes")
     }
