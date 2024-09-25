@@ -24,3 +24,9 @@ task("generateWasmStdlibFromIDL", JavaExec::class) {
     dependsOn("build")
     systemProperty("line.separator", "\n")
 }
+
+task("generateWasmJsUtils", JavaExec::class) {
+    mainClass.set("org.jetbrains.kotlin.generators.wasm.js.GenerateKt")
+    classpath = sourceSets["main"].runtimeClasspath
+    dependsOn("build")
+}
