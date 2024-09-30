@@ -63,7 +63,7 @@ kotlin {
     sourceSets {
         commonMain {
              dependencies {
-                 implementation("org.jetbrains.kotlinx:kotlinx-browser:0.1")
+                 implementation("org.jetbrains.kotlinx:kotlinx-browser:0.2")
              }
         }
     }
