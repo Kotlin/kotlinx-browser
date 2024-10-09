@@ -61,7 +61,7 @@ repositories {
 ```kotlin
 kotlin {
     sourceSets {
-        commonMain {
+        wasmJsMain {
              dependencies {
                  implementation("org.jetbrains.kotlinx:kotlinx-browser:0.2")
              }
