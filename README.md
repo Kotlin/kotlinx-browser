@@ -57,7 +57,7 @@ repositories {
 }
 ```
 
-- In multiplatform projects, add a dependency to the commonMain source set dependencies
+- In multiplatform projects, add a dependency to the wasmJsMain source set dependencies
 ```kotlin
 kotlin {
     sourceSets {
