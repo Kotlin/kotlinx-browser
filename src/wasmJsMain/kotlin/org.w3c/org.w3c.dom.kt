@@ -3004,7 +3004,7 @@ public external interface ElementDefinitionOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ElementDefinitionOptions(extends: String? = undefined): ElementDefinitionOptions { js("return { extends };") }
+public fun ElementDefinitionOptions(extends_: String? = undefined): ElementDefinitionOptions { js("return { extends: extends_ };") }
 
 public external interface ElementContentEditable : JsAny {
     var contentEditable: String
