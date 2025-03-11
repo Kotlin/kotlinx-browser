@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -102,7 +102,7 @@ public external interface NotificationOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun NotificationOptions(dir: NotificationDirection? = NotificationDirection.AUTO, lang: String? = "", body: String? = "", tag: String? = "", image: String? = undefined, icon: String? = undefined, badge: String? = undefined, sound: String? = undefined, vibrate: JsAny? /* Int|JsArray<JsNumber> */ = undefined, timestamp: JsNumber? = undefined, renotify: Boolean? = false, silent: Boolean? = false, noscreen: Boolean? = false, requireInteraction: Boolean? = false, sticky: Boolean? = false, data: JsAny? = null, actions: JsArray<NotificationAction>? = JsArray()): NotificationOptions { js("return { dir, lang, body, tag, image, icon, badge, sound, vibrate, timestamp, renotify, silent, noscreen, requireInteraction, sticky, data, actions };") }
+public fun NotificationOptions(dir: NotificationDirection? = NotificationDirection.AUTO, lang: String? = "", body: String? = "", tag: String? = "", image: String? = undefined, icon: String? = undefined, badge: String? = undefined, sound: String? = undefined, vibrate: JsAny? /* Int|JsArray<JsNumber> */ = undefined, timestamp: JsNumber? = undefined, renotify: Boolean? = false, silent: Boolean? = false, noscreen: Boolean? = false, requireInteraction: Boolean? = false, sticky: Boolean? = false, data: JsAny? = null, actions: JsArray<NotificationAction>? = JsArray()): NotificationOptions = js("({ dir: dir, lang: lang, body: body, tag: tag, image: image, icon: icon, badge: badge, sound: sound, vibrate: vibrate, timestamp: timestamp, renotify: renotify, silent: silent, noscreen: noscreen, requireInteraction: requireInteraction, sticky: sticky, data: data, actions: actions })")
 
 public external interface NotificationAction : JsAny {
     var action: String?
@@ -113,7 +113,7 @@ public external interface NotificationAction : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun NotificationAction(action: String?, title: String?, icon: String? = undefined): NotificationAction { js("return { action, title, icon };") }
+public fun NotificationAction(action: String?, title: String?, icon: String? = undefined): NotificationAction = js("({ action: action, title: title, icon: icon })")
 
 public external interface GetNotificationOptions : JsAny {
     var tag: String? /* = "" */
@@ -122,7 +122,7 @@ public external interface GetNotificationOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun GetNotificationOptions(tag: String? = ""): GetNotificationOptions { js("return { tag };") }
+public fun GetNotificationOptions(tag: String? = ""): GetNotificationOptions = js("({ tag: tag })")
 
 /**
  * Exposes the JavaScript [NotificationEvent](https://developer.mozilla.org/en/docs/Web/API/NotificationEvent) to Kotlin
@@ -147,7 +147,7 @@ public external interface NotificationEventInit : ExtendableEventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun NotificationEventInit(notification: Notification?, action: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): NotificationEventInit { js("return { notification, action, bubbles, cancelable, composed };") }
+public fun NotificationEventInit(notification: Notification?, action: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): NotificationEventInit = js("({ notification: notification, action: action, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /* please, don't implement this interface! */
 @JsName("null")

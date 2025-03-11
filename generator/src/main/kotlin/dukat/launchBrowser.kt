@@ -11,7 +11,7 @@ import org.jetbrains.kotlin.tools.dukat.wasm.translateIdlToSourceSet
 import java.io.File
 
 fun main() {
-    val outputDirectory = "../src/wasmJsMain/kotlin/org.w3c/"
+    val outputDirectory = "../src/browserMain/kotlin/org.w3c/"
     val input = "../idl/org.w3c.dom.idl"
 
     val sourceSet = translateIdlToSourceSet(input)

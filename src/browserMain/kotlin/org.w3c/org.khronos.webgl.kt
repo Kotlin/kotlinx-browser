@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -41,7 +41,7 @@ public external interface WebGLContextAttributes : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun WebGLContextAttributes(alpha: Boolean? = true, depth: Boolean? = true, stencil: Boolean? = false, antialias: Boolean? = true, premultipliedAlpha: Boolean? = true, preserveDrawingBuffer: Boolean? = false, preferLowPowerToHighPerformance: Boolean? = false, failIfMajorPerformanceCaveat: Boolean? = false): WebGLContextAttributes { js("return { alpha, depth, stencil, antialias, premultipliedAlpha, preserveDrawingBuffer, preferLowPowerToHighPerformance, failIfMajorPerformanceCaveat };") }
+public fun WebGLContextAttributes(alpha: Boolean? = true, depth: Boolean? = true, stencil: Boolean? = false, antialias: Boolean? = true, premultipliedAlpha: Boolean? = true, preserveDrawingBuffer: Boolean? = false, preferLowPowerToHighPerformance: Boolean? = false, failIfMajorPerformanceCaveat: Boolean? = false): WebGLContextAttributes = js("({ alpha: alpha, depth: depth, stencil: stencil, antialias: antialias, premultipliedAlpha: premultipliedAlpha, preserveDrawingBuffer: preserveDrawingBuffer, preferLowPowerToHighPerformance: preferLowPowerToHighPerformance, failIfMajorPerformanceCaveat: failIfMajorPerformanceCaveat })")
 
 public external abstract class WebGLObject : JsAny
 
@@ -885,7 +885,7 @@ public external interface WebGLContextEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun WebGLContextEventInit(statusMessage: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): WebGLContextEventInit { js("return { statusMessage, bubbles, cancelable, composed };") }
+public fun WebGLContextEventInit(statusMessage: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): WebGLContextEventInit = js("({ statusMessage: statusMessage, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [ArrayBuffer](https://developer.mozilla.org/en/docs/Web/API/ArrayBuffer) to Kotlin
@@ -930,7 +930,7 @@ public external open class Int8Array : ArrayBufferView, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForInt8Array(obj: Int8Array, index: Int): Byte { js("return obj[index];") }
+internal fun getMethodImplForInt8Array(obj: Int8Array, index: Int): Byte = js("obj[index]")
 
 public operator fun Int8Array.get(index: Int): Byte = getMethodImplForInt8Array(this, index)
 
@@ -961,7 +961,7 @@ public external open class Uint8Array : ArrayBufferView, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForUint8Array(obj: Uint8Array, index: Int): Byte { js("return obj[index];") }
+internal fun getMethodImplForUint8Array(obj: Uint8Array, index: Int): Byte = js("obj[index]")
 
 public operator fun Uint8Array.get(index: Int): Byte = getMethodImplForUint8Array(this, index)
 
@@ -992,7 +992,7 @@ public external open class Uint8ClampedArray : ArrayBufferView, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForUint8ClampedArray(obj: Uint8ClampedArray, index: Int): Byte { js("return obj[index];") }
+internal fun getMethodImplForUint8ClampedArray(obj: Uint8ClampedArray, index: Int): Byte = js("obj[index]")
 
 public operator fun Uint8ClampedArray.get(index: Int): Byte = getMethodImplForUint8ClampedArray(this, index)
 
@@ -1023,7 +1023,7 @@ public external open class Int16Array : ArrayBufferView, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForInt16Array(obj: Int16Array, index: Int): Short { js("return obj[index];") }
+internal fun getMethodImplForInt16Array(obj: Int16Array, index: Int): Short = js("obj[index]")
 
 public operator fun Int16Array.get(index: Int): Short = getMethodImplForInt16Array(this, index)
 
@@ -1054,7 +1054,7 @@ public external open class Uint16Array : ArrayBufferView, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForUint16Array(obj: Uint16Array, index: Int): Short { js("return obj[index];") }
+internal fun getMethodImplForUint16Array(obj: Uint16Array, index: Int): Short = js("obj[index]")
 
 public operator fun Uint16Array.get(index: Int): Short = getMethodImplForUint16Array(this, index)
 
@@ -1085,7 +1085,7 @@ public external open class Int32Array : ArrayBufferView, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForInt32Array(obj: Int32Array, index: Int): Int { js("return obj[index];") }
+internal fun getMethodImplForInt32Array(obj: Int32Array, index: Int): Int = js("obj[index]")
 
 public operator fun Int32Array.get(index: Int): Int = getMethodImplForInt32Array(this, index)
 
@@ -1116,7 +1116,7 @@ public external open class Uint32Array : ArrayBufferView, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForUint32Array(obj: Uint32Array, index: Int): Int { js("return obj[index];") }
+internal fun getMethodImplForUint32Array(obj: Uint32Array, index: Int): Int = js("obj[index]")
 
 public operator fun Uint32Array.get(index: Int): Int = getMethodImplForUint32Array(this, index)
 
@@ -1147,7 +1147,7 @@ public external open class Float32Array : ArrayBufferView, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForFloat32Array(obj: Float32Array, index: Int): Float { js("return obj[index];") }
+internal fun getMethodImplForFloat32Array(obj: Float32Array, index: Int): Float = js("obj[index]")
 
 public operator fun Float32Array.get(index: Int): Float = getMethodImplForFloat32Array(this, index)
 
@@ -1178,7 +1178,7 @@ public external open class Float64Array : ArrayBufferView, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForFloat64Array(obj: Float64Array, index: Int): Double { js("return obj[index];") }
+internal fun getMethodImplForFloat64Array(obj: Float64Array, index: Int): Double = js("obj[index]")
 
 public operator fun Float64Array.get(index: Int): Double = getMethodImplForFloat64Array(this, index)
 

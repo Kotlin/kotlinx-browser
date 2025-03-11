@@ -380,9 +380,7 @@ private class IdlFileConverter(
                 SUPPRESS_UNUSED_PARAMETER_ANNOTATION
             ),
             body = BlockStatementModel(
-                listOf(
-                    ExpressionStatementModel(callJsFunction("return obj[${key.name}];"))
-                )
+                listOf(ReturnStatementModel(callJsFunction("obj[${key.name}]")))
             ),
             visibilityModifier = VisibilityModifierModel.INTERNAL,
             comment = null,
@@ -555,8 +553,8 @@ private class IdlFileConverter(
 
     fun IDLDictionaryDeclaration.generateFunctionBody(): List<StatementModel> =
         listOf<StatementModel>(
-            ExpressionStatementModel(
-                callJsFunction("return { ${members.joinToString { it.name }} };")
+            ReturnStatementModel(
+                callJsFunction("({ ${members.joinToString(", ") { "${it.name}: ${it.name}" }} })")
             )
         )
 

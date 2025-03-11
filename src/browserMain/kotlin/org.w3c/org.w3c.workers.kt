@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -67,7 +67,7 @@ public external interface RegistrationOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun RegistrationOptions(scope: String? = undefined, type: WorkerType? = WorkerType.CLASSIC): RegistrationOptions { js("return { scope, type };") }
+public fun RegistrationOptions(scope: String? = undefined, type: WorkerType? = WorkerType.CLASSIC): RegistrationOptions = js("({ scope: scope, type: type })")
 
 /**
  * Exposes the JavaScript [ServiceWorkerMessageEvent](https://developer.mozilla.org/en/docs/Web/API/ServiceWorkerMessageEvent) to Kotlin
@@ -106,7 +106,7 @@ public external interface ServiceWorkerMessageEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ServiceWorkerMessageEventInit(data: JsAny? = undefined, origin: String? = undefined, lastEventId: String? = undefined, source: UnionMessagePortOrServiceWorker? = undefined, ports: JsArray<MessagePort>? = undefined, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ServiceWorkerMessageEventInit { js("return { data, origin, lastEventId, source, ports, bubbles, cancelable, composed };") }
+public fun ServiceWorkerMessageEventInit(data: JsAny? = undefined, origin: String? = undefined, lastEventId: String? = undefined, source: UnionMessagePortOrServiceWorker? = undefined, ports: JsArray<MessagePort>? = undefined, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ServiceWorkerMessageEventInit = js("({ data: data, origin: origin, lastEventId: lastEventId, source: source, ports: ports, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [ServiceWorkerGlobalScope](https://developer.mozilla.org/en/docs/Web/API/ServiceWorkerGlobalScope) to Kotlin
@@ -165,7 +165,7 @@ public external interface ClientQueryOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ClientQueryOptions(includeUncontrolled: Boolean? = false, type: ClientType? = ClientType.WINDOW): ClientQueryOptions { js("return { includeUncontrolled, type };") }
+public fun ClientQueryOptions(includeUncontrolled: Boolean? = false, type: ClientType? = ClientType.WINDOW): ClientQueryOptions = js("({ includeUncontrolled: includeUncontrolled, type: type })")
 
 /**
  * Exposes the JavaScript [ExtendableEvent](https://developer.mozilla.org/en/docs/Web/API/ExtendableEvent) to Kotlin
@@ -184,7 +184,7 @@ public external open class ExtendableEvent(type: String, eventInitDict: Extendab
 public external interface ExtendableEventInit : EventInit, JsAny
 
 @Suppress("UNUSED_PARAMETER")
-public fun ExtendableEventInit(bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ExtendableEventInit { js("return { bubbles, cancelable, composed };") }
+public fun ExtendableEventInit(bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ExtendableEventInit = js("({ bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [InstallEvent](https://developer.mozilla.org/en/docs/Web/API/InstallEvent) to Kotlin
@@ -206,7 +206,7 @@ public external interface ForeignFetchOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ForeignFetchOptions(scopes: JsArray<JsString>?, origins: JsArray<JsString>?): ForeignFetchOptions { js("return { scopes, origins };") }
+public fun ForeignFetchOptions(scopes: JsArray<JsString>?, origins: JsArray<JsString>?): ForeignFetchOptions = js("({ scopes: scopes, origins: origins })")
 
 /**
  * Exposes the JavaScript [FetchEvent](https://developer.mozilla.org/en/docs/Web/API/FetchEvent) to Kotlin
@@ -236,7 +236,7 @@ public external interface FetchEventInit : ExtendableEventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun FetchEventInit(request: Request?, clientId: String? = null, isReload: Boolean? = false, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): FetchEventInit { js("return { request, clientId, isReload, bubbles, cancelable, composed };") }
+public fun FetchEventInit(request: Request?, clientId: String? = null, isReload: Boolean? = false, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): FetchEventInit = js("({ request: request, clientId: clientId, isReload: isReload, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 public external open class ForeignFetchEvent(type: String, eventInitDict: ForeignFetchEventInit) : ExtendableEvent, JsAny {
     open val request: Request
@@ -259,7 +259,7 @@ public external interface ForeignFetchEventInit : ExtendableEventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ForeignFetchEventInit(request: Request?, origin: String? = "null", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ForeignFetchEventInit { js("return { request, origin, bubbles, cancelable, composed };") }
+public fun ForeignFetchEventInit(request: Request?, origin: String? = "null", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ForeignFetchEventInit = js("({ request: request, origin: origin, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 public external interface ForeignFetchResponse : JsAny {
     var response: Response?
@@ -272,7 +272,7 @@ public external interface ForeignFetchResponse : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ForeignFetchResponse(response: Response?, origin: String? = undefined, headers: JsArray<JsString>? = undefined): ForeignFetchResponse { js("return { response, origin, headers };") }
+public fun ForeignFetchResponse(response: Response?, origin: String? = undefined, headers: JsArray<JsString>? = undefined): ForeignFetchResponse = js("({ response: response, origin: origin, headers: headers })")
 
 /**
  * Exposes the JavaScript [ExtendableMessageEvent](https://developer.mozilla.org/en/docs/Web/API/ExtendableMessageEvent) to Kotlin
@@ -311,7 +311,7 @@ public external interface ExtendableMessageEventInit : ExtendableEventInit, JsAn
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ExtendableMessageEventInit(data: JsAny? = undefined, origin: String? = undefined, lastEventId: String? = undefined, source: UnionClientOrMessagePortOrServiceWorker? = undefined, ports: JsArray<MessagePort>? = undefined, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ExtendableMessageEventInit { js("return { data, origin, lastEventId, source, ports, bubbles, cancelable, composed };") }
+public fun ExtendableMessageEventInit(data: JsAny? = undefined, origin: String? = undefined, lastEventId: String? = undefined, source: UnionClientOrMessagePortOrServiceWorker? = undefined, ports: JsArray<MessagePort>? = undefined, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ExtendableMessageEventInit = js("({ data: data, origin: origin, lastEventId: lastEventId, source: source, ports: ports, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [Cache](https://developer.mozilla.org/en/docs/Web/API/Cache) to Kotlin
@@ -350,7 +350,7 @@ public external interface CacheQueryOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun CacheQueryOptions(ignoreSearch: Boolean? = false, ignoreMethod: Boolean? = false, ignoreVary: Boolean? = false, cacheName: String? = undefined): CacheQueryOptions { js("return { ignoreSearch, ignoreMethod, ignoreVary, cacheName };") }
+public fun CacheQueryOptions(ignoreSearch: Boolean? = false, ignoreMethod: Boolean? = false, ignoreVary: Boolean? = false, cacheName: String? = undefined): CacheQueryOptions = js("({ ignoreSearch: ignoreSearch, ignoreMethod: ignoreMethod, ignoreVary: ignoreVary, cacheName: cacheName })")
 
 public external interface CacheBatchOperation : JsAny {
     var type: String?
@@ -368,7 +368,7 @@ public external interface CacheBatchOperation : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun CacheBatchOperation(type: String? = undefined, request: Request? = undefined, response: Response? = undefined, options: CacheQueryOptions? = undefined): CacheBatchOperation { js("return { type, request, response, options };") }
+public fun CacheBatchOperation(type: String? = undefined, request: Request? = undefined, response: Response? = undefined, options: CacheQueryOptions? = undefined): CacheBatchOperation = js("({ type: type, request: request, response: response, options: options })")
 
 /**
  * Exposes the JavaScript [CacheStorage](https://developer.mozilla.org/en/docs/Web/API/CacheStorage) to Kotlin
