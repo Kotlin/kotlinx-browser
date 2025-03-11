@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -42,7 +42,7 @@ public external interface MediaKeySystemConfiguration : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MediaKeySystemConfiguration(label: String? = "", initDataTypes: JsArray<JsString>? = JsArray(), audioCapabilities: JsArray<MediaKeySystemMediaCapability>? = JsArray(), videoCapabilities: JsArray<MediaKeySystemMediaCapability>? = JsArray(), distinctiveIdentifier: MediaKeysRequirement? = MediaKeysRequirement.OPTIONAL, persistentState: MediaKeysRequirement? = MediaKeysRequirement.OPTIONAL, sessionTypes: JsArray<JsString>? = undefined): MediaKeySystemConfiguration { js("return { label, initDataTypes, audioCapabilities, videoCapabilities, distinctiveIdentifier, persistentState, sessionTypes };") }
+public fun MediaKeySystemConfiguration(label: String? = "", initDataTypes: JsArray<JsString>? = JsArray(), audioCapabilities: JsArray<MediaKeySystemMediaCapability>? = JsArray(), videoCapabilities: JsArray<MediaKeySystemMediaCapability>? = JsArray(), distinctiveIdentifier: MediaKeysRequirement? = MediaKeysRequirement.OPTIONAL, persistentState: MediaKeysRequirement? = MediaKeysRequirement.OPTIONAL, sessionTypes: JsArray<JsString>? = undefined): MediaKeySystemConfiguration = js("({ label: label, initDataTypes: initDataTypes, audioCapabilities: audioCapabilities, videoCapabilities: videoCapabilities, distinctiveIdentifier: distinctiveIdentifier, persistentState: persistentState, sessionTypes: sessionTypes })")
 
 public external interface MediaKeySystemMediaCapability : JsAny {
     var contentType: String? /* = "" */
@@ -54,7 +54,7 @@ public external interface MediaKeySystemMediaCapability : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MediaKeySystemMediaCapability(contentType: String? = "", robustness: String? = ""): MediaKeySystemMediaCapability { js("return { contentType, robustness };") }
+public fun MediaKeySystemMediaCapability(contentType: String? = "", robustness: String? = ""): MediaKeySystemMediaCapability = js("({ contentType: contentType, robustness: robustness })")
 
 /**
  * Exposes the JavaScript [MediaKeySystemAccess](https://developer.mozilla.org/en/docs/Web/API/MediaKeySystemAccess) to Kotlin
@@ -120,7 +120,7 @@ public external interface MediaKeyMessageEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MediaKeyMessageEventInit(messageType: MediaKeyMessageType?, message: ArrayBuffer?, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaKeyMessageEventInit { js("return { messageType, message, bubbles, cancelable, composed };") }
+public fun MediaKeyMessageEventInit(messageType: MediaKeyMessageType?, message: ArrayBuffer?, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaKeyMessageEventInit = js("({ messageType: messageType, message: message, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 public external open class MediaEncryptedEvent(type: String, eventInitDict: MediaEncryptedEventInit = definedExternally) : Event, JsAny {
     open val initDataType: String
@@ -144,7 +144,7 @@ public external interface MediaEncryptedEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MediaEncryptedEventInit(initDataType: String? = "", initData: ArrayBuffer? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaEncryptedEventInit { js("return { initDataType, initData, bubbles, cancelable, composed };") }
+public fun MediaEncryptedEventInit(initDataType: String? = "", initData: ArrayBuffer? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaEncryptedEventInit = js("({ initDataType: initDataType, initData: initData, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /* please, don't implement this interface! */
 @JsName("null")

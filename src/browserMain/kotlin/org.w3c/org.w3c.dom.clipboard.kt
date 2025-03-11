@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -21,7 +21,7 @@ public external interface ClipboardEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ClipboardEventInit(clipboardData: DataTransfer? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ClipboardEventInit { js("return { clipboardData, bubbles, cancelable, composed };") }
+public fun ClipboardEventInit(clipboardData: DataTransfer? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ClipboardEventInit = js("({ clipboardData: clipboardData, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [ClipboardEvent](https://developer.mozilla.org/en/docs/Web/API/ClipboardEvent) to Kotlin
@@ -54,4 +54,4 @@ public external interface ClipboardPermissionDescriptor : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ClipboardPermissionDescriptor(allowWithoutGesture: Boolean? = false): ClipboardPermissionDescriptor { js("return { allowWithoutGesture };") }
+public fun ClipboardPermissionDescriptor(allowWithoutGesture: Boolean? = false): ClipboardPermissionDescriptor = js("({ allowWithoutGesture: allowWithoutGesture })")

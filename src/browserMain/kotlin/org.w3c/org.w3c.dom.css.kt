@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -21,7 +21,7 @@ public external abstract class MediaList : ItemArrayLike<JsString>, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForMediaList(obj: MediaList, index: Int): String? { js("return obj[index];") }
+internal fun getMethodImplForMediaList(obj: MediaList, index: Int): String? = js("obj[index]")
 
 public operator fun MediaList.get(index: Int): String? = getMethodImplForMediaList(this, index)
 
@@ -56,7 +56,7 @@ public external abstract class StyleSheetList : ItemArrayLike<StyleSheet>, JsAny
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForStyleSheetList(obj: StyleSheetList, index: Int): StyleSheet? { js("return obj[index];") }
+internal fun getMethodImplForStyleSheetList(obj: StyleSheetList, index: Int): StyleSheet? = js("obj[index]")
 
 public operator fun StyleSheetList.get(index: Int): StyleSheet? = getMethodImplForStyleSheetList(this, index)
 
@@ -76,7 +76,7 @@ public external abstract class CSSRuleList : ItemArrayLike<CSSRule>, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForCSSRuleList(obj: CSSRuleList, index: Int): CSSRule? { js("return obj[index];") }
+internal fun getMethodImplForCSSRuleList(obj: CSSRuleList, index: Int): CSSRule? = js("obj[index]")
 
 public operator fun CSSRuleList.get(index: Int): CSSRule? = getMethodImplForCSSRuleList(this, index)
 
@@ -472,7 +472,7 @@ public external abstract class CSSStyleDeclaration : ItemArrayLike<JsString>, Js
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForCSSStyleDeclaration(obj: CSSStyleDeclaration, index: Int): String? { js("return obj[index];") }
+internal fun getMethodImplForCSSStyleDeclaration(obj: CSSStyleDeclaration, index: Int): String? = js("obj[index]")
 
 public operator fun CSSStyleDeclaration.get(index: Int): String? = getMethodImplForCSSStyleDeclaration(this, index)
 

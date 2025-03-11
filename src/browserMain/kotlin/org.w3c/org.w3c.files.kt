@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -33,7 +33,7 @@ public external interface BlobPropertyBag : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun BlobPropertyBag(type: String? = ""): BlobPropertyBag { js("return { type };") }
+public fun BlobPropertyBag(type: String? = ""): BlobPropertyBag = js("({ type: type })")
 
 /**
  * Exposes the JavaScript [File](https://developer.mozilla.org/en/docs/Web/API/File) to Kotlin
@@ -50,7 +50,7 @@ public external interface FilePropertyBag : BlobPropertyBag, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun FilePropertyBag(lastModified: Int? = undefined, type: String? = ""): FilePropertyBag { js("return { lastModified, type };") }
+public fun FilePropertyBag(lastModified: Int? = undefined, type: String? = ""): FilePropertyBag = js("({ lastModified: lastModified, type: type })")
 
 /**
  * Exposes the JavaScript [FileList](https://developer.mozilla.org/en/docs/Web/API/FileList) to Kotlin
@@ -60,7 +60,7 @@ public external abstract class FileList : ItemArrayLike<File>, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForFileList(obj: FileList, index: Int): File? { js("return obj[index];") }
+internal fun getMethodImplForFileList(obj: FileList, index: Int): File? = js("obj[index]")
 
 public operator fun FileList.get(index: Int): File? = getMethodImplForFileList(this, index)
 

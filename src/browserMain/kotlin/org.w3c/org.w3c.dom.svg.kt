@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -63,7 +63,7 @@ public external interface SVGBoundingBoxOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun SVGBoundingBoxOptions(fill: Boolean? = true, stroke: Boolean? = false, markers: Boolean? = false, clipped: Boolean? = false): SVGBoundingBoxOptions { js("return { fill, stroke, markers, clipped };") }
+public fun SVGBoundingBoxOptions(fill: Boolean? = true, stroke: Boolean? = false, markers: Boolean? = false, clipped: Boolean? = false): SVGBoundingBoxOptions = js("({ fill: fill, stroke: stroke, markers: markers, clipped: clipped })")
 
 /**
  * Exposes the JavaScript [SVGGraphicsElement](https://developer.mozilla.org/en/docs/Web/API/SVGGraphicsElement) to Kotlin
@@ -194,7 +194,7 @@ public external abstract class SVGNameList : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForSVGNameList(obj: SVGNameList, index: Int): JsAny? { js("return obj[index];") }
+internal fun getMethodImplForSVGNameList(obj: SVGNameList, index: Int): JsAny? = js("obj[index]")
 
 public operator fun SVGNameList.get(index: Int): JsAny? = getMethodImplForSVGNameList(this, index)
 
@@ -219,7 +219,7 @@ public external abstract class SVGNumberList : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForSVGNumberList(obj: SVGNumberList, index: Int): SVGNumber? { js("return obj[index];") }
+internal fun getMethodImplForSVGNumberList(obj: SVGNumberList, index: Int): SVGNumber? = js("obj[index]")
 
 public operator fun SVGNumberList.get(index: Int): SVGNumber? = getMethodImplForSVGNumberList(this, index)
 
@@ -244,7 +244,7 @@ public external abstract class SVGLengthList : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForSVGLengthList(obj: SVGLengthList, index: Int): SVGLength? { js("return obj[index];") }
+internal fun getMethodImplForSVGLengthList(obj: SVGLengthList, index: Int): SVGLength? = js("obj[index]")
 
 public operator fun SVGLengthList.get(index: Int): SVGLength? = getMethodImplForSVGLengthList(this, index)
 
@@ -349,7 +349,7 @@ public external abstract class SVGStringList : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForSVGStringList(obj: SVGStringList, index: Int): String? { js("return obj[index];") }
+internal fun getMethodImplForSVGStringList(obj: SVGStringList, index: Int): String? = js("obj[index]")
 
 public operator fun SVGStringList.get(index: Int): String? = getMethodImplForSVGStringList(this, index)
 
@@ -807,7 +807,7 @@ public external abstract class SVGTransformList : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForSVGTransformList(obj: SVGTransformList, index: Int): SVGTransform? { js("return obj[index];") }
+internal fun getMethodImplForSVGTransformList(obj: SVGTransformList, index: Int): SVGTransform? = js("obj[index]")
 
 public operator fun SVGTransformList.get(index: Int): SVGTransform? = getMethodImplForSVGTransformList(this, index)
 
@@ -1055,7 +1055,7 @@ public external abstract class SVGPointList : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForSVGPointList(obj: SVGPointList, index: Int): DOMPoint? { js("return obj[index];") }
+internal fun getMethodImplForSVGPointList(obj: SVGPointList, index: Int): DOMPoint? = js("obj[index]")
 
 public operator fun SVGPointList.get(index: Int): DOMPoint? = getMethodImplForSVGPointList(this, index)
 
