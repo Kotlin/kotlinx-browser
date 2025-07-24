@@ -44,23 +44,15 @@ fun MavenPom.configureMavenCentralMetadata(project: Project) {
     }
 }
 
-fun mavenRepositoryUri(): URI {
-    val repositoryId: String? = System.getenv("libs.repository.id")
-    return if (repositoryId == null) {
-        // Using implicitly created staging, for MPP it's likely to be a mistake because
-        // publication on TeamCity will create 3 independent staging repositories
-        URI("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
-    } else {
-        URI("https://oss.sonatype.org/service/local/staging/deployByRepositoryId/$repositoryId")
-    }
-}
-
 fun configureMavenPublication(rh: RepositoryHandler, project: Project) {
-    rh.maven {
-        url = mavenRepositoryUri()
-        credentials {
-            username = project.getSensitiveProperty("libs.sonatype.user")
-            password = project.getSensitiveProperty("libs.sonatype.password")
+    val repositoryUrl = project.getSensitiveProperty("libs.repo.url")
+    if (!repositoryUrl.isNullOrBlank()) {
+        rh.maven {
+            url = URI(repositoryUrl)
+            credentials {
+                username = project.getSensitiveProperty("libs.repo.user")
+                password = project.getSensitiveProperty("libs.repo.password")
+            }
         }
     }
 }
