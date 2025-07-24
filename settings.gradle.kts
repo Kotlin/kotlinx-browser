@@ -3,7 +3,7 @@ pluginManagement {
         gradlePluginPortal()
     }
     plugins {
-        kotlin("multiplatform").version("1.9.23")
+        kotlin("multiplatform").version("2.2.0")
     }
 }
 
