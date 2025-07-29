@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -69,7 +69,7 @@ public external abstract class SourceBufferList : EventTarget, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForSourceBufferList(obj: SourceBufferList, index: Int): SourceBuffer? { js("return obj[index];") }
+internal fun getMethodImplForSourceBufferList(obj: SourceBufferList, index: Int): SourceBuffer? = js("obj[index]")
 
 public operator fun SourceBufferList.get(index: Int): SourceBuffer? = getMethodImplForSourceBufferList(this, index)
 

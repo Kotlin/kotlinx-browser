@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -103,7 +103,7 @@ public external interface RequestInit : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun RequestInit(method: String? = undefined, headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */ = undefined, body: JsAny? /* Blob|BufferSource|FormData|URLSearchParams|String */ = undefined, referrer: String? = undefined, referrerPolicy: JsAny? = undefined, mode: RequestMode? = undefined, credentials: RequestCredentials? = undefined, cache: RequestCache? = undefined, redirect: RequestRedirect? = undefined, integrity: String? = undefined, keepalive: Boolean? = undefined, window: JsAny? = undefined): RequestInit { js("return { method, headers, body, referrer, referrerPolicy, mode, credentials, cache, redirect, integrity, keepalive, window };") }
+public fun RequestInit(method: String? = undefined, headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */ = undefined, body: JsAny? /* Blob|BufferSource|FormData|URLSearchParams|String */ = undefined, referrer: String? = undefined, referrerPolicy: JsAny? = undefined, mode: RequestMode? = undefined, credentials: RequestCredentials? = undefined, cache: RequestCache? = undefined, redirect: RequestRedirect? = undefined, integrity: String? = undefined, keepalive: Boolean? = undefined, window: JsAny? = undefined): RequestInit = js("({ method: method, headers: headers, body: body, referrer: referrer, referrerPolicy: referrerPolicy, mode: mode, credentials: credentials, cache: cache, redirect: redirect, integrity: integrity, keepalive: keepalive, window: window })")
 
 /**
  * Exposes the JavaScript [Response](https://developer.mozilla.org/en/docs/Web/API/Response) to Kotlin
@@ -145,7 +145,7 @@ public external interface ResponseInit : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ResponseInit(status: Short? = 200, statusText: String? = "OK", headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */ = undefined): ResponseInit { js("return { status, statusText, headers };") }
+public fun ResponseInit(status: Short? = 200, statusText: String? = "OK", headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */ = undefined): ResponseInit = js("({ status: status, statusText: statusText, headers: headers })")
 
 /* please, don't implement this interface! */
 @JsName("null")

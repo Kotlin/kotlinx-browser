@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -32,12 +32,12 @@ public external abstract class HTMLAllCollection : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLAllCollection(obj: HTMLAllCollection, index: Int): Element? { js("return obj[index];") }
+internal fun getMethodImplForHTMLAllCollection(obj: HTMLAllCollection, index: Int): Element? = js("obj[index]")
 
 public operator fun HTMLAllCollection.get(index: Int): Element? = getMethodImplForHTMLAllCollection(this, index)
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLAllCollection(obj: HTMLAllCollection, name: String): UnionElementOrHTMLCollection? { js("return obj[name];") }
+internal fun getMethodImplForHTMLAllCollection(obj: HTMLAllCollection, name: String): UnionElementOrHTMLCollection? = js("obj[name]")
 
 public operator fun HTMLAllCollection.get(name: String): UnionElementOrHTMLCollection? = getMethodImplForHTMLAllCollection(this, name)
 
@@ -152,7 +152,7 @@ public external abstract class HTMLUnknownElement : HTMLElement, JsAny {
 public external abstract class DOMStringMap : JsAny
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForDOMStringMap(obj: DOMStringMap, name: String): String? { js("return obj[name];") }
+internal fun getMethodImplForDOMStringMap(obj: DOMStringMap, name: String): String? = js("obj[name]")
 
 public operator fun DOMStringMap.get(name: String): String? = getMethodImplForDOMStringMap(this, name)
 
@@ -1382,7 +1382,7 @@ public external abstract class AudioTrackList : EventTarget, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForAudioTrackList(obj: AudioTrackList, index: Int): AudioTrack? { js("return obj[index];") }
+internal fun getMethodImplForAudioTrackList(obj: AudioTrackList, index: Int): AudioTrack? = js("obj[index]")
 
 public operator fun AudioTrackList.get(index: Int): AudioTrack? = getMethodImplForAudioTrackList(this, index)
 
@@ -1411,7 +1411,7 @@ public external abstract class VideoTrackList : EventTarget, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForVideoTrackList(obj: VideoTrackList, index: Int): VideoTrack? { js("return obj[index];") }
+internal fun getMethodImplForVideoTrackList(obj: VideoTrackList, index: Int): VideoTrack? = js("obj[index]")
 
 public operator fun VideoTrackList.get(index: Int): VideoTrack? = getMethodImplForVideoTrackList(this, index)
 
@@ -1436,7 +1436,7 @@ public external abstract class TextTrackList : EventTarget, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForTextTrackList(obj: TextTrackList, index: Int): TextTrack? { js("return obj[index];") }
+internal fun getMethodImplForTextTrackList(obj: TextTrackList, index: Int): TextTrack? = js("obj[index]")
 
 public operator fun TextTrackList.get(index: Int): TextTrack? = getMethodImplForTextTrackList(this, index)
 
@@ -1464,7 +1464,7 @@ public external abstract class TextTrackCueList : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForTextTrackCueList(obj: TextTrackCueList, index: Int): TextTrackCue? { js("return obj[index];") }
+internal fun getMethodImplForTextTrackCueList(obj: TextTrackCueList, index: Int): TextTrackCue? = js("obj[index]")
 
 public operator fun TextTrackCueList.get(index: Int): TextTrackCue? = getMethodImplForTextTrackCueList(this, index)
 
@@ -1511,7 +1511,7 @@ public external interface TrackEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun TrackEventInit(track: UnionAudioTrackOrTextTrackOrVideoTrack? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): TrackEventInit { js("return { track, bubbles, cancelable, composed };") }
+public fun TrackEventInit(track: UnionAudioTrackOrTextTrackOrVideoTrack? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): TrackEventInit = js("({ track: track, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [HTMLMapElement](https://developer.mozilla.org/en/docs/Web/API/HTMLMapElement) to Kotlin
@@ -1846,12 +1846,12 @@ public external abstract class HTMLFormElement : HTMLElement, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLFormElement(obj: HTMLFormElement, index: Int): Element? { js("return obj[index];") }
+internal fun getMethodImplForHTMLFormElement(obj: HTMLFormElement, index: Int): Element? = js("obj[index]")
 
 public operator fun HTMLFormElement.get(index: Int): Element? = getMethodImplForHTMLFormElement(this, index)
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLFormElement(obj: HTMLFormElement, name: String): UnionElementOrRadioNodeList? { js("return obj[name];") }
+internal fun getMethodImplForHTMLFormElement(obj: HTMLFormElement, name: String): UnionElementOrRadioNodeList? = js("obj[name]")
 
 public operator fun HTMLFormElement.get(name: String): UnionElementOrRadioNodeList? = getMethodImplForHTMLFormElement(this, name)
 
@@ -2069,7 +2069,7 @@ public external abstract class HTMLSelectElement : HTMLElement, ItemArrayLike<El
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLSelectElement(obj: HTMLSelectElement, index: Int): Element? { js("return obj[index];") }
+internal fun getMethodImplForHTMLSelectElement(obj: HTMLSelectElement, index: Int): Element? = js("obj[index]")
 
 public operator fun HTMLSelectElement.get(index: Int): Element? = getMethodImplForHTMLSelectElement(this, index)
 
@@ -2564,7 +2564,7 @@ public external interface RelatedEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun RelatedEventInit(relatedTarget: EventTarget? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): RelatedEventInit { js("return { relatedTarget, bubbles, cancelable, composed };") }
+public fun RelatedEventInit(relatedTarget: EventTarget? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): RelatedEventInit = js("({ relatedTarget: relatedTarget, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [HTMLDialogElement](https://developer.mozilla.org/en/docs/Web/API/HTMLDialogElement) to Kotlin
@@ -2699,7 +2699,7 @@ public external interface AssignedNodesOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun AssignedNodesOptions(flatten: Boolean? = false): AssignedNodesOptions { js("return { flatten };") }
+public fun AssignedNodesOptions(flatten: Boolean? = false): AssignedNodesOptions = js("({ flatten: flatten })")
 
 /**
  * Exposes the JavaScript [HTMLCanvasElement](https://developer.mozilla.org/en/docs/Web/API/HTMLCanvasElement) to Kotlin
@@ -2740,7 +2740,7 @@ public external interface CanvasRenderingContext2DSettings : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun CanvasRenderingContext2DSettings(alpha: Boolean? = true): CanvasRenderingContext2DSettings { js("return { alpha };") }
+public fun CanvasRenderingContext2DSettings(alpha: Boolean? = true): CanvasRenderingContext2DSettings = js("({ alpha: alpha })")
 
 /**
  * Exposes the JavaScript [CanvasRenderingContext2D](https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D) to Kotlin
@@ -2938,7 +2938,7 @@ public external interface HitRegionOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun HitRegionOptions(path: Path2D? = null, fillRule: CanvasFillRule? = CanvasFillRule.NONZERO, id: String? = "", parentID: String? = null, cursor: String? = "inherit", control: Element? = null, label: String? = null, role: String? = null): HitRegionOptions { js("return { path, fillRule, id, parentID, cursor, control, label, role };") }
+public fun HitRegionOptions(path: Path2D? = null, fillRule: CanvasFillRule? = CanvasFillRule.NONZERO, id: String? = "", parentID: String? = null, cursor: String? = "inherit", control: Element? = null, label: String? = null, role: String? = null): HitRegionOptions = js("({ path: path, fillRule: fillRule, id: id, parentID: parentID, cursor: cursor, control: control, label: label, role: role })")
 
 /**
  * Exposes the JavaScript [ImageData](https://developer.mozilla.org/en/docs/Web/API/ImageData) to Kotlin
@@ -2986,7 +2986,7 @@ public external interface ImageBitmapRenderingContextSettings : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ImageBitmapRenderingContextSettings(alpha: Boolean? = true): ImageBitmapRenderingContextSettings { js("return { alpha };") }
+public fun ImageBitmapRenderingContextSettings(alpha: Boolean? = true): ImageBitmapRenderingContextSettings = js("({ alpha: alpha })")
 
 /**
  * Exposes the JavaScript [CustomElementRegistry](https://developer.mozilla.org/en/docs/Web/API/CustomElementRegistry) to Kotlin
@@ -3004,7 +3004,7 @@ public external interface ElementDefinitionOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ElementDefinitionOptions(extends_: String? = undefined): ElementDefinitionOptions { js("return { extends: extends_ };") }
+public fun ElementDefinitionOptions(extends: String? = undefined): ElementDefinitionOptions = js("({ extends: extends })")
 
 public external interface ElementContentEditable : JsAny {
     var contentEditable: String
@@ -3038,7 +3038,7 @@ public external abstract class DataTransferItemList : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForDataTransferItemList(obj: DataTransferItemList, index: Int): DataTransferItem? { js("return obj[index];") }
+internal fun getMethodImplForDataTransferItemList(obj: DataTransferItemList, index: Int): DataTransferItem? = js("obj[index]")
 
 public operator fun DataTransferItemList.get(index: Int): DataTransferItem? = getMethodImplForDataTransferItemList(this, index)
 
@@ -3073,7 +3073,7 @@ public external interface DragEventInit : MouseEventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun DragEventInit(dataTransfer: DataTransfer? = null, screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, region: String? = null, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): DragEventInit { js("return { dataTransfer, screenX, screenY, clientX, clientY, button, buttons, relatedTarget, region, ctrlKey, shiftKey, altKey, metaKey, modifierAltGraph, modifierCapsLock, modifierFn, modifierFnLock, modifierHyper, modifierNumLock, modifierScrollLock, modifierSuper, modifierSymbol, modifierSymbolLock, view, detail, bubbles, cancelable, composed };") }
+public fun DragEventInit(dataTransfer: DataTransfer? = null, screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, region: String? = null, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): DragEventInit = js("({ dataTransfer: dataTransfer, screenX: screenX, screenY: screenY, clientX: clientX, clientY: clientY, button: button, buttons: buttons, relatedTarget: relatedTarget, region: region, ctrlKey: ctrlKey, shiftKey: shiftKey, altKey: altKey, metaKey: metaKey, modifierAltGraph: modifierAltGraph, modifierCapsLock: modifierCapsLock, modifierFn: modifierFn, modifierFnLock: modifierFnLock, modifierHyper: modifierHyper, modifierNumLock: modifierNumLock, modifierScrollLock: modifierScrollLock, modifierSuper: modifierSuper, modifierSymbol: modifierSymbol, modifierSymbolLock: modifierSymbolLock, view: view, detail: detail, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [Window](https://developer.mozilla.org/en/docs/Web/API/Window) to Kotlin
@@ -3145,7 +3145,7 @@ public external abstract class Window : EventTarget, GlobalEventHandlers, Window
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForWindow(obj: Window, name: String): JsAny? { js("return obj[name];") }
+internal fun getMethodImplForWindow(obj: Window, name: String): JsAny? = js("obj[name]")
 
 public operator fun Window.get(name: String): JsAny? = getMethodImplForWindow(this, name)
 
@@ -3207,7 +3207,7 @@ public external interface PopStateEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun PopStateEventInit(state: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PopStateEventInit { js("return { state, bubbles, cancelable, composed };") }
+public fun PopStateEventInit(state: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PopStateEventInit = js("({ state: state, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [HashChangeEvent](https://developer.mozilla.org/en/docs/Web/API/HashChangeEvent) to Kotlin
@@ -3234,7 +3234,7 @@ public external interface HashChangeEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun HashChangeEventInit(oldURL: String? = "", newURL: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): HashChangeEventInit { js("return { oldURL, newURL, bubbles, cancelable, composed };") }
+public fun HashChangeEventInit(oldURL: String? = "", newURL: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): HashChangeEventInit = js("({ oldURL: oldURL, newURL: newURL, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [PageTransitionEvent](https://developer.mozilla.org/en/docs/Web/API/PageTransitionEvent) to Kotlin
@@ -3257,7 +3257,7 @@ public external interface PageTransitionEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun PageTransitionEventInit(persisted: Boolean? = false, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PageTransitionEventInit { js("return { persisted, bubbles, cancelable, composed };") }
+public fun PageTransitionEventInit(persisted: Boolean? = false, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PageTransitionEventInit = js("({ persisted: persisted, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [BeforeUnloadEvent](https://developer.mozilla.org/en/docs/Web/API/BeforeUnloadEvent) to Kotlin
@@ -3341,7 +3341,7 @@ public external interface ErrorEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ErrorEventInit(message: String? = "", filename: String? = "", lineno: Int? = 0, colno: Int? = 0, error: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ErrorEventInit { js("return { message, filename, lineno, colno, error, bubbles, cancelable, composed };") }
+public fun ErrorEventInit(message: String? = "", filename: String? = "", lineno: Int? = 0, colno: Int? = 0, error: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ErrorEventInit = js("({ message: message, filename: filename, lineno: lineno, colno: colno, error: error, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [PromiseRejectionEvent](https://developer.mozilla.org/en/docs/Web/API/PromiseRejectionEvent) to Kotlin
@@ -3366,7 +3366,7 @@ public external interface PromiseRejectionEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun PromiseRejectionEventInit(promise: Promise<JsAny?>?, reason: JsAny? = undefined, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PromiseRejectionEventInit { js("return { promise, reason, bubbles, cancelable, composed };") }
+public fun PromiseRejectionEventInit(promise: Promise<JsAny?>?, reason: JsAny? = undefined, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PromiseRejectionEventInit = js("({ promise: promise, reason: reason, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [GlobalEventHandlers](https://developer.mozilla.org/en/docs/Web/API/GlobalEventHandlers) to Kotlin
@@ -3741,12 +3741,12 @@ public external abstract class PluginArray : ItemArrayLike<Plugin>, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForPluginArray(obj: PluginArray, index: Int): Plugin? { js("return obj[index];") }
+internal fun getMethodImplForPluginArray(obj: PluginArray, index: Int): Plugin? = js("obj[index]")
 
 public operator fun PluginArray.get(index: Int): Plugin? = getMethodImplForPluginArray(this, index)
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForPluginArray(obj: PluginArray, name: String): Plugin? { js("return obj[name];") }
+internal fun getMethodImplForPluginArray(obj: PluginArray, name: String): Plugin? = js("obj[name]")
 
 public operator fun PluginArray.get(name: String): Plugin? = getMethodImplForPluginArray(this, name)
 
@@ -3759,12 +3759,12 @@ public external abstract class MimeTypeArray : ItemArrayLike<MimeType>, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForMimeTypeArray(obj: MimeTypeArray, index: Int): MimeType? { js("return obj[index];") }
+internal fun getMethodImplForMimeTypeArray(obj: MimeTypeArray, index: Int): MimeType? = js("obj[index]")
 
 public operator fun MimeTypeArray.get(index: Int): MimeType? = getMethodImplForMimeTypeArray(this, index)
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForMimeTypeArray(obj: MimeTypeArray, name: String): MimeType? { js("return obj[name];") }
+internal fun getMethodImplForMimeTypeArray(obj: MimeTypeArray, name: String): MimeType? = js("obj[name]")
 
 public operator fun MimeTypeArray.get(name: String): MimeType? = getMethodImplForMimeTypeArray(this, name)
 
@@ -3780,12 +3780,12 @@ public external abstract class Plugin : ItemArrayLike<MimeType>, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForPlugin(obj: Plugin, index: Int): MimeType? { js("return obj[index];") }
+internal fun getMethodImplForPlugin(obj: Plugin, index: Int): MimeType? = js("obj[index]")
 
 public operator fun Plugin.get(index: Int): MimeType? = getMethodImplForPlugin(this, index)
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForPlugin(obj: Plugin, name: String): MimeType? { js("return obj[name];") }
+internal fun getMethodImplForPlugin(obj: Plugin, name: String): MimeType? = js("obj[name]")
 
 public operator fun Plugin.get(name: String): MimeType? = getMethodImplForPlugin(this, name)
 
@@ -3830,7 +3830,7 @@ public external interface ImageBitmapOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ImageBitmapOptions(imageOrientation: ImageOrientation? = ImageOrientation.NONE, premultiplyAlpha: PremultiplyAlpha? = PremultiplyAlpha.DEFAULT, colorSpaceConversion: ColorSpaceConversion? = ColorSpaceConversion.DEFAULT, resizeWidth: Int? = undefined, resizeHeight: Int? = undefined, resizeQuality: ResizeQuality? = ResizeQuality.LOW): ImageBitmapOptions { js("return { imageOrientation, premultiplyAlpha, colorSpaceConversion, resizeWidth, resizeHeight, resizeQuality };") }
+public fun ImageBitmapOptions(imageOrientation: ImageOrientation? = ImageOrientation.NONE, premultiplyAlpha: PremultiplyAlpha? = PremultiplyAlpha.DEFAULT, colorSpaceConversion: ColorSpaceConversion? = ColorSpaceConversion.DEFAULT, resizeWidth: Int? = undefined, resizeHeight: Int? = undefined, resizeQuality: ResizeQuality? = ResizeQuality.LOW): ImageBitmapOptions = js("({ imageOrientation: imageOrientation, premultiplyAlpha: premultiplyAlpha, colorSpaceConversion: colorSpaceConversion, resizeWidth: resizeWidth, resizeHeight: resizeHeight, resizeQuality: resizeQuality })")
 
 /**
  * Exposes the JavaScript [MessageEvent](https://developer.mozilla.org/en/docs/Web/API/MessageEvent) to Kotlin
@@ -3870,7 +3870,7 @@ public external interface MessageEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MessageEventInit(data: JsAny? = null, origin: String? = "", lastEventId: String? = "", source: UnionMessagePortOrWindowProxy? = null, ports: JsArray<MessagePort>? = JsArray(), bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MessageEventInit { js("return { data, origin, lastEventId, source, ports, bubbles, cancelable, composed };") }
+public fun MessageEventInit(data: JsAny? = null, origin: String? = "", lastEventId: String? = "", source: UnionMessagePortOrWindowProxy? = null, ports: JsArray<MessagePort>? = JsArray(), bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MessageEventInit = js("({ data: data, origin: origin, lastEventId: lastEventId, source: source, ports: ports, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [EventSource](https://developer.mozilla.org/en/docs/Web/API/EventSource) to Kotlin
@@ -3898,7 +3898,7 @@ public external interface EventSourceInit : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun EventSourceInit(withCredentials: Boolean? = false): EventSourceInit { js("return { withCredentials };") }
+public fun EventSourceInit(withCredentials: Boolean? = false): EventSourceInit = js("({ withCredentials: withCredentials })")
 
 /**
  * Exposes the JavaScript [WebSocket](https://developer.mozilla.org/en/docs/Web/API/WebSocket) to Kotlin
@@ -3957,7 +3957,7 @@ public external interface CloseEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun CloseEventInit(wasClean: Boolean? = false, code: Short? = 0, reason: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): CloseEventInit { js("return { wasClean, code, reason, bubbles, cancelable, composed };") }
+public fun CloseEventInit(wasClean: Boolean? = false, code: Short? = 0, reason: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): CloseEventInit = js("({ wasClean: wasClean, code: code, reason: reason, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [MessageChannel](https://developer.mozilla.org/en/docs/Web/API/MessageChannel) to Kotlin
@@ -4051,7 +4051,7 @@ public external interface WorkerOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun WorkerOptions(type: WorkerType? = WorkerType.CLASSIC, credentials: RequestCredentials? = RequestCredentials.OMIT): WorkerOptions { js("return { type, credentials };") }
+public fun WorkerOptions(type: WorkerType? = WorkerType.CLASSIC, credentials: RequestCredentials? = RequestCredentials.OMIT): WorkerOptions = js("({ type: type, credentials: credentials })")
 
 /**
  * Exposes the JavaScript [SharedWorker](https://developer.mozilla.org/en/docs/Web/API/SharedWorker) to Kotlin
@@ -4103,7 +4103,7 @@ public external abstract class Storage : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForStorage(obj: Storage, key: String): String? { js("return obj[key];") }
+internal fun getMethodImplForStorage(obj: Storage, key: String): String? = js("obj[key]")
 
 public operator fun Storage.get(key: String): String? = getMethodImplForStorage(this, key)
 
@@ -4163,7 +4163,7 @@ public external interface StorageEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun StorageEventInit(key: String? = null, oldValue: String? = null, newValue: String? = null, url: String? = "", storageArea: Storage? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): StorageEventInit { js("return { key, oldValue, newValue, url, storageArea, bubbles, cancelable, composed };") }
+public fun StorageEventInit(key: String? = null, oldValue: String? = null, newValue: String? = null, url: String? = "", storageArea: Storage? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): StorageEventInit = js("({ key: key, oldValue: oldValue, newValue: newValue, url: url, storageArea: storageArea, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 public external abstract class HTMLAppletElement : HTMLElement, JsAny {
     open var align: String
@@ -4379,7 +4379,7 @@ public external interface EventInit : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun EventInit(bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): EventInit { js("return { bubbles, cancelable, composed };") }
+public fun EventInit(bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): EventInit = js("({ bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [CustomEvent](https://developer.mozilla.org/en/docs/Web/API/CustomEvent) to Kotlin
@@ -4403,7 +4403,7 @@ public external interface CustomEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun CustomEventInit(detail: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): CustomEventInit { js("return { detail, bubbles, cancelable, composed };") }
+public fun CustomEventInit(detail: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): CustomEventInit = js("({ detail: detail, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 public external interface EventListenerOptions : JsAny {
     var capture: Boolean? /* = false */
@@ -4412,7 +4412,7 @@ public external interface EventListenerOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun EventListenerOptions(capture: Boolean? = false): EventListenerOptions { js("return { capture };") }
+public fun EventListenerOptions(capture: Boolean? = false): EventListenerOptions = js("({ capture: capture })")
 
 public external interface AddEventListenerOptions : EventListenerOptions, JsAny {
     var passive: Boolean? /* = false */
@@ -4424,7 +4424,7 @@ public external interface AddEventListenerOptions : EventListenerOptions, JsAny 
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun AddEventListenerOptions(passive: Boolean? = false, once: Boolean? = false, capture: Boolean? = false): AddEventListenerOptions { js("return { passive, once, capture };") }
+public fun AddEventListenerOptions(passive: Boolean? = false, once: Boolean? = false, capture: Boolean? = false): AddEventListenerOptions = js("({ passive: passive, once: once, capture: capture })")
 
 public external interface NonElementParentNode : JsAny {
     fun getElementById(elementId: String): Element?
@@ -4495,7 +4495,7 @@ public external abstract class NodeList : ItemArrayLike<Node>, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForNodeList(obj: NodeList, index: Int): Node? { js("return obj[index];") }
+internal fun getMethodImplForNodeList(obj: NodeList, index: Int): Node? = js("obj[index]")
 
 public operator fun NodeList.get(index: Int): Node? = getMethodImplForNodeList(this, index)
 
@@ -4508,12 +4508,12 @@ public external abstract class HTMLCollection : ItemArrayLike<Element>, UnionEle
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLCollection(obj: HTMLCollection, index: Int): Element? { js("return obj[index];") }
+internal fun getMethodImplForHTMLCollection(obj: HTMLCollection, index: Int): Element? = js("obj[index]")
 
 public operator fun HTMLCollection.get(index: Int): Element? = getMethodImplForHTMLCollection(this, index)
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLCollection(obj: HTMLCollection, name: String): Element? { js("return obj[name];") }
+internal fun getMethodImplForHTMLCollection(obj: HTMLCollection, name: String): Element? = js("obj[name]")
 
 public operator fun HTMLCollection.get(name: String): Element? = getMethodImplForHTMLCollection(this, name)
 
@@ -4554,7 +4554,7 @@ public external interface MutationObserverInit : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MutationObserverInit(childList: Boolean? = false, attributes: Boolean? = undefined, characterData: Boolean? = undefined, subtree: Boolean? = false, attributeOldValue: Boolean? = undefined, characterDataOldValue: Boolean? = undefined, attributeFilter: JsArray<JsString>? = undefined): MutationObserverInit { js("return { childList, attributes, characterData, subtree, attributeOldValue, characterDataOldValue, attributeFilter };") }
+public fun MutationObserverInit(childList: Boolean? = false, attributes: Boolean? = undefined, characterData: Boolean? = undefined, subtree: Boolean? = false, attributeOldValue: Boolean? = undefined, characterDataOldValue: Boolean? = undefined, attributeFilter: JsArray<JsString>? = undefined): MutationObserverInit = js("({ childList: childList, attributes: attributes, characterData: characterData, subtree: subtree, attributeOldValue: attributeOldValue, characterDataOldValue: characterDataOldValue, attributeFilter: attributeFilter })")
 
 /**
  * Exposes the JavaScript [MutationRecord](https://developer.mozilla.org/en/docs/Web/API/MutationRecord) to Kotlin
@@ -4634,7 +4634,7 @@ public external interface GetRootNodeOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun GetRootNodeOptions(composed: Boolean? = false): GetRootNodeOptions { js("return { composed };") }
+public fun GetRootNodeOptions(composed: Boolean? = false): GetRootNodeOptions = js("({ composed: composed })")
 
 /**
  * Exposes the JavaScript [Document](https://developer.mozilla.org/en/docs/Web/API/Document) to Kotlin
@@ -4849,7 +4849,7 @@ public external open class Document : Node, GlobalEventHandlers, DocumentAndElem
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForDocument(obj: Document, name: String): JsAny? { js("return obj[name];") }
+internal fun getMethodImplForDocument(obj: Document, name: String): JsAny? = js("obj[name]")
 
 public operator fun Document.get(name: String): JsAny? = getMethodImplForDocument(this, name)
 
@@ -4886,7 +4886,7 @@ public external interface ElementCreationOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ElementCreationOptions(param_is: String? = undefined): ElementCreationOptions { js("return { is };") }
+public fun ElementCreationOptions(param_is: String? = undefined): ElementCreationOptions = js("({ is: is })")
 
 /**
  * Exposes the JavaScript [DOMImplementation](https://developer.mozilla.org/en/docs/Web/API/DOMImplementation) to Kotlin
@@ -5088,7 +5088,7 @@ public external interface ShadowRootInit : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ShadowRootInit(mode: ShadowRootMode?): ShadowRootInit { js("return { mode };") }
+public fun ShadowRootInit(mode: ShadowRootMode?): ShadowRootInit = js("({ mode: mode })")
 
 /**
  * Exposes the JavaScript [NamedNodeMap](https://developer.mozilla.org/en/docs/Web/API/NamedNodeMap) to Kotlin
@@ -5104,12 +5104,12 @@ public external abstract class NamedNodeMap : ItemArrayLike<Attr>, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForNamedNodeMap(obj: NamedNodeMap, index: Int): Attr? { js("return obj[index];") }
+internal fun getMethodImplForNamedNodeMap(obj: NamedNodeMap, index: Int): Attr? = js("obj[index]")
 
 public operator fun NamedNodeMap.get(index: Int): Attr? = getMethodImplForNamedNodeMap(this, index)
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForNamedNodeMap(obj: NamedNodeMap, qualifiedName: String): Attr? { js("return obj[qualifiedName];") }
+internal fun getMethodImplForNamedNodeMap(obj: NamedNodeMap, qualifiedName: String): Attr? = js("obj[qualifiedName]")
 
 public operator fun NamedNodeMap.get(qualifiedName: String): Attr? = getMethodImplForNamedNodeMap(this, qualifiedName)
 
@@ -5435,7 +5435,7 @@ public external abstract class DOMTokenList : ItemArrayLike<JsString>, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForDOMTokenList(obj: DOMTokenList, index: Int): String? { js("return obj[index];") }
+internal fun getMethodImplForDOMTokenList(obj: DOMTokenList, index: Int): String? = js("obj[index]")
 
 public operator fun DOMTokenList.get(index: Int): String? = getMethodImplForDOMTokenList(this, index)
 
@@ -5481,7 +5481,7 @@ public external interface DOMPointInit : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun DOMPointInit(x: Double? = 0.0, y: Double? = 0.0, z: Double? = 0.0, w: Double? = 1.0): DOMPointInit { js("return { x, y, z, w };") }
+public fun DOMPointInit(x: Double? = 0.0, y: Double? = 0.0, z: Double? = 0.0, w: Double? = 1.0): DOMPointInit = js("({ x: x, y: y, z: z, w: w })")
 
 /**
  * Exposes the JavaScript [DOMRect](https://developer.mozilla.org/en/docs/Web/API/DOMRect) to Kotlin
@@ -5523,14 +5523,14 @@ public external interface DOMRectInit : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun DOMRectInit(x: Double? = 0.0, y: Double? = 0.0, width: Double? = 0.0, height: Double? = 0.0): DOMRectInit { js("return { x, y, width, height };") }
+public fun DOMRectInit(x: Double? = 0.0, y: Double? = 0.0, width: Double? = 0.0, height: Double? = 0.0): DOMRectInit = js("({ x: x, y: y, width: width, height: height })")
 
 public external interface DOMRectList : ItemArrayLike<DOMRect>, JsAny {
     override fun item(index: Int): DOMRect?
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForDOMRectList(obj: DOMRectList, index: Int): DOMRect? { js("return obj[index];") }
+internal fun getMethodImplForDOMRectList(obj: DOMRectList, index: Int): DOMRect? = js("obj[index]")
 
 public operator fun DOMRectList.get(index: Int): DOMRect? = getMethodImplForDOMRectList(this, index)
 
@@ -5646,7 +5646,7 @@ public external interface ScrollOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ScrollOptions(behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollOptions { js("return { behavior };") }
+public fun ScrollOptions(behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollOptions = js("({ behavior: behavior })")
 
 /**
  * Exposes the JavaScript [ScrollToOptions](https://developer.mozilla.org/en/docs/Web/API/ScrollToOptions) to Kotlin
@@ -5661,7 +5661,7 @@ public external interface ScrollToOptions : ScrollOptions, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ScrollToOptions(left: Double? = undefined, top: Double? = undefined, behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollToOptions { js("return { left, top, behavior };") }
+public fun ScrollToOptions(left: Double? = undefined, top: Double? = undefined, behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollToOptions = js("({ left: left, top: top, behavior: behavior })")
 
 /**
  * Exposes the JavaScript [MediaQueryList](https://developer.mozilla.org/en/docs/Web/API/MediaQueryList) to Kotlin
@@ -5701,7 +5701,7 @@ public external interface MediaQueryListEventInit : EventInit, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MediaQueryListEventInit(media: String? = "", matches: Boolean? = false, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaQueryListEventInit { js("return { media, matches, bubbles, cancelable, composed };") }
+public fun MediaQueryListEventInit(media: String? = "", matches: Boolean? = false, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaQueryListEventInit = js("({ media: media, matches: matches, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /**
  * Exposes the JavaScript [Screen](https://developer.mozilla.org/en/docs/Web/API/Screen) to Kotlin
@@ -5734,7 +5734,7 @@ public external interface ScrollIntoViewOptions : ScrollOptions, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ScrollIntoViewOptions(block: ScrollLogicalPosition? = ScrollLogicalPosition.CENTER, inline: ScrollLogicalPosition? = ScrollLogicalPosition.CENTER, behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollIntoViewOptions { js("return { block, inline, behavior };") }
+public fun ScrollIntoViewOptions(block: ScrollLogicalPosition? = ScrollLogicalPosition.CENTER, inline: ScrollLogicalPosition? = ScrollLogicalPosition.CENTER, behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollIntoViewOptions = js("({ block: block, inline: inline, behavior: behavior })")
 
 public external interface BoxQuadOptions : JsAny {
     var box: CSSBoxType? /* = CSSBoxType.BORDER */
@@ -5746,7 +5746,7 @@ public external interface BoxQuadOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun BoxQuadOptions(box: CSSBoxType? = CSSBoxType.BORDER, relativeTo: JsAny? /* Text|Element|CSSPseudoElement|Document */ = undefined): BoxQuadOptions { js("return { box, relativeTo };") }
+public fun BoxQuadOptions(box: CSSBoxType? = CSSBoxType.BORDER, relativeTo: JsAny? /* Text|Element|CSSPseudoElement|Document */ = undefined): BoxQuadOptions = js("({ box: box, relativeTo: relativeTo })")
 
 public external interface ConvertCoordinateOptions : JsAny {
     var fromBox: CSSBoxType? /* = CSSBoxType.BORDER */
@@ -5758,7 +5758,7 @@ public external interface ConvertCoordinateOptions : JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ConvertCoordinateOptions(fromBox: CSSBoxType? = CSSBoxType.BORDER, toBox: CSSBoxType? = CSSBoxType.BORDER): ConvertCoordinateOptions { js("return { fromBox, toBox };") }
+public fun ConvertCoordinateOptions(fromBox: CSSBoxType? = CSSBoxType.BORDER, toBox: CSSBoxType? = CSSBoxType.BORDER): ConvertCoordinateOptions = js("({ fromBox: fromBox, toBox: toBox })")
 
 /**
  * Exposes the JavaScript [GeometryUtils](https://developer.mozilla.org/en/docs/Web/API/GeometryUtils) to Kotlin
@@ -5796,7 +5796,7 @@ public external abstract class TouchList : ItemArrayLike<Touch>, JsAny {
 }
 
 @Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForTouchList(obj: TouchList, index: Int): Touch? { js("return obj[index];") }
+internal fun getMethodImplForTouchList(obj: TouchList, index: Int): Touch? = js("obj[index]")
 
 public operator fun TouchList.get(index: Int): Touch? = getMethodImplForTouchList(this, index)
 

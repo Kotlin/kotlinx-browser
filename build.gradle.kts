@@ -1,7 +1,7 @@
-import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+@file:OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
 
 plugins {
-    kotlin("multiplatform") version "2.2.0"
+    kotlin("multiplatform") version "2.2.20-Beta2"
     `maven-publish`
     signing
 }
@@ -39,13 +39,23 @@ if (!versionSuffix.isNullOrBlank()) {
 }
 
 kotlin {
-    @OptIn(ExperimentalWasmDsl::class)
+    compilerOptions {
+        optIn.add("kotlin.js.ExperimentalWasmJsInterop")
+    }
+
+    js {
+        nodejs()
+    }
+
     wasmJs {
         nodejs()
     }
 
+    applyDefaultHierarchyTemplate()
+
     sourceSets {
-        val wasmJsTest by getting {
+        val commonMain by getting
+        val webTest by getting {
             dependencies {
                 implementation(kotlin("test"))
             }

@@ -3,7 +3,7 @@
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
 
-package org.jetbrains.kotlin.generators.wasm.js
+package org.jetbrains.kotlin.generators.helpers
 
 import org.jetbrains.kotlin.tools.dukat.getHeader
 import java.io.File
@@ -15,25 +15,52 @@ fun main() {
 }
 
 fun generatePublicStdlibFunctions() {
-    FileWriter(File("../src/wasmJsMain/kotlin/arrayCopy.kt")).use { writer: FileWriter ->
+    val conversions = listOf(
+        Conversion("Byte", "Int8"),
+        Conversion("UByte", "Uint8", isUnsigned = true),
+        Conversion("Short", "Int16"),
+        Conversion("UShort", "Uint16", isUnsigned = true),
+        Conversion("Int", "Int32"),
+        Conversion("UInt", "Uint32", isUnsigned = true),
+        Conversion("Float", "Float32"),
+        Conversion("Double", "Float64")
+    )
+
+    FileWriter(File("../src/webMain/kotlin/arrayCopy.kt")).use { writer: FileWriter ->
+        with(writer) {
+            appendLine(getHeader(seeDetailsAt = "generator/src/main/kotlin/helpers/generate.kt"))
+            appendLine("package org.khronos.webgl")
+
+            conversions.forEach { (ktType, jsType, isUnsigned) ->
+                appendExpectConversionsForType(ktType, jsType, isUnsigned)
+            }
+        }
+    }
+    FileWriter(File("../src/jsMain/kotlin/arrayCopy.js.kt")).use { writer: FileWriter ->
         with(writer) {
             appendLine(getHeader(seeDetailsAt = "generator/src/main/kotlin/helpers/generate.kt"))
 
             appendLine("package org.khronos.webgl")
 
-            appendConversionsForType("Byte", "Int8")
-            appendConversionsForType("UByte", "Uint8", isUnsigned = true)
-            appendConversionsForType("Short", "Int16")
-            appendConversionsForType("UShort", "Uint16", isUnsigned = true)
-            appendConversionsForType("Int", "Int32")
-            appendConversionsForType("UInt", "Uint32", isUnsigned = true)
-            appendConversionsForType("Float", "Float32")
-            appendConversionsForType("Double", "Float64")
+            conversions.forEach { (ktType, jsType, isUnsigned) ->
+                appendJsConversionsForType(ktType, jsType, isUnsigned)
+            }
+        }
+    }
+    FileWriter(File("../src/wasmJsMain/kotlin/arrayCopy.wasm.kt")).use { writer: FileWriter ->
+        with(writer) {
+            appendLine(getHeader(seeDetailsAt = "generator/src/main/kotlin/helpers/generate.kt"))
+            appendLine("package org.khronos.webgl")
+
+            conversions.forEach { (ktType, jsType, isUnsigned) ->
+                appendWasmConversionsForType(ktType, jsType, isUnsigned)
+            }
         }
     }
 }
 
-private fun FileWriter.appendConversionsForType(
+
+private fun FileWriter.appendExpectConversionsForType(
     ktType: String,
     jsType: String,
     isUnsigned: Boolean = false,
@@ -46,7 +73,55 @@ private fun FileWriter.appendConversionsForType(
     if (isUnsigned) {
         appendLine("@ExperimentalUnsignedTypes")
     }
-    appendLine("public fun $jsArrayType.to$kotlinArrayType(): $kotlinArrayType =")
+    appendLine("public expect fun $jsArrayType.to$kotlinArrayType(): $kotlinArrayType")
+    appendLine()
+    appendLine("/** Returns a new [$jsArrayType] containing all the elements of this [$kotlinArrayType]. */")
+    if (isUnsigned) {
+        appendLine("@ExperimentalUnsignedTypes")
+    }
+    appendLine("public expect fun $kotlinArrayType.to$jsArrayType(): $jsArrayType")
+}
+
+
+private fun FileWriter.appendJsConversionsForType(
+    ktType: String,
+    jsType: String,
+    isUnsigned: Boolean = false,
+) {
+    val kotlinArrayType = "${ktType}Array"
+    val jsArrayType = "${jsType}Array"
+
+    appendLine()
+    appendLine("/** Returns a new [$kotlinArrayType] containing all the elements of this [$jsArrayType]. */")
+    if (isUnsigned) {
+        appendLine("@ExperimentalUnsignedTypes")
+    }
+    appendLine("public actual inline fun $jsArrayType.to$kotlinArrayType(): $kotlinArrayType =")
+    appendLine("    unsafeCast<$kotlinArrayType>()")
+
+    appendLine()
+    appendLine("/** Returns a new [$jsArrayType] containing all the elements of this [$kotlinArrayType]. */")
+    if (isUnsigned) {
+        appendLine("@ExperimentalUnsignedTypes")
+    }
+    appendLine("public actual inline fun $kotlinArrayType.to$jsArrayType(): $jsArrayType =")
+    appendLine("    unsafeCast<$jsArrayType>()")
+}
+
+private fun FileWriter.appendWasmConversionsForType(
+    ktType: String,
+    jsType: String,
+    isUnsigned: Boolean = false,
+) {
+    val kotlinArrayType = "${ktType}Array"
+    val jsArrayType = "${jsType}Array"
+
+    appendLine()
+    appendLine("/** Returns a new [$kotlinArrayType] containing all the elements of this [$jsArrayType]. */")
+    if (isUnsigned) {
+        appendLine("@ExperimentalUnsignedTypes")
+    }
+    appendLine("public actual fun $jsArrayType.to$kotlinArrayType(): $kotlinArrayType =")
     if (isUnsigned) {
         appendLine("    $kotlinArrayType(this.length) { this[it].to$ktType() }")
     } else {
@@ -58,7 +133,7 @@ private fun FileWriter.appendConversionsForType(
     if (isUnsigned) {
         appendLine("@ExperimentalUnsignedTypes")
     }
-    appendLine("public fun $kotlinArrayType.to$jsArrayType(): $jsArrayType {")
+    appendLine("public actual fun $kotlinArrayType.to$jsArrayType(): $jsArrayType {")
     appendLine("    val result = $jsArrayType(this.size)")
     appendLine("    for (index in this.indices) {")
     if (isUnsigned) {
@@ -73,7 +148,7 @@ private fun FileWriter.appendConversionsForType(
 }
 
 fun generateTests() {
-    FileWriter(File("../src/wasmJsTest/kotlin/arrayCopyTest.kt")).use { writer: FileWriter ->
+    FileWriter(File("../src/webtest/kotlin/arrayCopyTest.kt")).use { writer: FileWriter ->
         with(writer) {
             appendLine(getHeader(seeDetailsAt = "generator/src/main/kotlin/helpers/generate.kt"))
 
@@ -147,3 +222,6 @@ private fun FileWriter.appendTestFunction(
     appendLine("        testJsRoundTrip($kotlinArrayType(1000) { it.to$ktType() })")
     appendLine("    }")
 }
+
+data class Conversion(val jsType: String, val ktType: String, val isUnsigned: Boolean = false)
+data class InteropCorrespondence(val interopType: String, val wasmType: String, val jsType: String)

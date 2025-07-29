@@ -18,15 +18,15 @@ task("downloadIDL", JavaExec::class) {
     dependsOn("build")
 }
 
-task("generateWasmStdlibFromIDL", JavaExec::class) {
-    mainClass = "org.jetbrains.kotlin.tools.dukat.LaunchWasmKt"
+task("generateStdlibFromIDL", JavaExec::class) {
+    mainClass = "org.jetbrains.kotlin.tools.dukat.LaunchBrowserKt"
     classpath = sourceSets["main"].runtimeClasspath
     dependsOn("build")
     systemProperty("line.separator", "\n")
 }
 
-task("generateWasmJsUtils", JavaExec::class) {
-    mainClass.set("org.jetbrains.kotlin.generators.wasm.js.GenerateKt")
+task("generateUtils", JavaExec::class) {
+    mainClass.set("org.jetbrains.kotlin.generators.helpers.GenerateKt")
     classpath = sourceSets["main"].runtimeClasspath
     dependsOn("build")
 }
