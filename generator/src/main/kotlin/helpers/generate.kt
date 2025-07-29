@@ -26,7 +26,7 @@ fun generatePublicStdlibFunctions() {
         Conversion("Double", "Float64")
     )
 
-    FileWriter(File("../src/browserMain/kotlin/arrayCopy.kt")).use { writer: FileWriter ->
+    FileWriter(File("../src/webMain/kotlin/arrayCopy.kt")).use { writer: FileWriter ->
         with(writer) {
             appendLine(getHeader(seeDetailsAt = "generator/src/main/kotlin/helpers/generate.kt"))
             appendLine("package org.khronos.webgl")
@@ -148,7 +148,7 @@ private fun FileWriter.appendWasmConversionsForType(
 }
 
 fun generateTests() {
-    FileWriter(File("../src/browserTest/kotlin/arrayCopyTest.kt")).use { writer: FileWriter ->
+    FileWriter(File("../src/webtest/kotlin/arrayCopyTest.kt")).use { writer: FileWriter ->
         with(writer) {
             appendLine(getHeader(seeDetailsAt = "generator/src/main/kotlin/helpers/generate.kt"))
 

@@ -5,6 +5,8 @@
 
 package org.w3c.dom
 
+import kotlin.js.JsAny
+
 public external interface ItemArrayLike<out T : JsAny?> : JsAny {
     public val length: Int
     public fun item(index: Int): T?
