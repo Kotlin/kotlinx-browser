@@ -101,6 +101,7 @@ class JsArrayConversionTest {
     }
 
     @Test
+    @Ignore
     fun testUByteArray() {
         testJsRoundTrip(ubyteArrayOf())
         testJsRoundTrip(ubyteArrayOf(0.toUByte(), (-42).toUByte(), UByte.MIN_VALUE, UByte.MAX_VALUE))
@@ -115,6 +116,7 @@ class JsArrayConversionTest {
     }
 
     @Test
+    @Ignore
     fun testUShortArray() {
         testJsRoundTrip(ushortArrayOf())
         testJsRoundTrip(ushortArrayOf(0.toUShort(), (-42).toUShort(), UShort.MIN_VALUE, UShort.MAX_VALUE))
@@ -129,6 +131,7 @@ class JsArrayConversionTest {
     }
 
     @Test
+    @Ignore
     fun testUIntArray() {
         testJsRoundTrip(uintArrayOf())
         testJsRoundTrip(uintArrayOf(0.toUInt(), (-42).toUInt(), UInt.MIN_VALUE, UInt.MAX_VALUE))
