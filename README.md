@@ -8,11 +8,9 @@
 [![TeamCity build](https://img.shields.io/teamcity/build/s/KotlinTools_KotlinxBrowser_Build.svg?server=http%3A%2F%2Fteamcity.jetbrains.com)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=KotlinTools_KotlinxDatetime_Build_All&guest=1)
 
 
-Kotlin WasmJS browser API
+Kotlin Web browser API
 
-A Kotlin library for working with browser declarations in WasmJs.
-
-This library contains is a replacement for browser declarations, which planned to be removed from Kotlin WasmJS standard library.
+A Kotlin library for working with browser declarations in Kotlin WasmJs and Kotlin Js targets.
 
 See [Using in your projects](#using-in-your-projects) for the instructions how to setup a dependency in your project.
 
@@ -24,7 +22,7 @@ This library is still in work-in-progress state. Which means that it is not publ
 
 Is required to use:
 
-* Kotlin `1.9.23` or newer
+* Kotlin `2.2.20-Beta2` or newer
 
 <!---
 ## Types
@@ -45,7 +43,9 @@ Work in progress
 
 > Note that the library is experimental, and the API is subject to change.
 
-The library is compatible with the Kotlin Standard Library not lower than `1.9.23`.
+The library is compatible with the Kotlin Standard Library not lower than `2.2.20-Beta2`.
+
+(with older Kotlin versions one needs to use `kotlinx-browser` version `0.3`)
 
 ### Gradle
 
@@ -57,13 +57,21 @@ repositories {
 }
 ```
 
-- In multiplatform projects, add a dependency to the wasmJsMain source set dependencies
+- In multiplatform projects, add a dependency to common or target source set dependencies:
 ```kotlin
 kotlin {
+    wasmJs {
+        browser()
+    }
+    
+    js {
+        browser()
+    }
+    
     sourceSets {
-        wasmJsMain {
+        commonMain {
              dependencies {
-                 implementation("org.jetbrains.kotlinx:kotlinx-browser:0.3")
+                 implementation("org.jetbrains.kotlinx:kotlinx-browser:0.4")
              }
         }
     }
@@ -73,7 +81,7 @@ kotlin {
 
 ## Building
 
-The project requires Kotlin 1.9.23 to build and to run tests.
+The project requires Kotlin 2.2.20-Beta2 to build and to run tests.
 
 After that, the project can be opened in IDEA and/or built with Gradle.
 
