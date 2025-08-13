@@ -5,19 +5,36 @@
 
 package org.jetbrains.kotlin.tools.dukat
 
+import dukat.common.translateIdlToCommonSourceSet
+import org.jetbrains.dukat.astModel.SourceSetModel
 import org.jetbrains.dukat.translatorString.compileUnits
 import org.jetbrains.dukat.translatorString.translateSourceSet
-import org.jetbrains.kotlin.tools.dukat.wasm.translateIdlToSourceSet
+import org.jetbrains.kotlin.tools.dukat.js.translateIdlToJsSourceSet
+import org.jetbrains.kotlin.tools.dukat.wasm.translateIdlToWasmSourceSet
 import java.io.File
 
 fun main() {
-    val outputDirectory = "../src/webMain/kotlin/org.w3c/"
     val input = "../idl/org.w3c.dom.idl"
 
-    val sourceSet = translateIdlToSourceSet(input)
-    compileUnits(translateSourceSet(sourceSet), outputDirectory)
+    compileAndSaveResultInto(
+        "../src/webMain/kotlin/org.w3c/",
+        translateIdlToCommonSourceSet(input)
+    )
 
-    File(outputDirectory).walk().forEach {
+    compileAndSaveResultInto(
+        "../src/wasmJsMain/kotlin/org.w3c/",
+        translateIdlToWasmSourceSet(input)
+    )
+
+    compileAndSaveResultInto(
+        "../src/jsMain/kotlin/org.w3c/",
+        translateIdlToJsSourceSet(input)
+    )
+}
+
+private fun compileAndSaveResultInto(directory: String, sourceSet: SourceSetModel) {
+    compileUnits(translateSourceSet(sourceSet), directory)
+    File(directory).walk().forEach {
         if (it.isFile && it.name.endsWith(".kt")) {
             it.writeText(getHeader() + it.readText())
         }

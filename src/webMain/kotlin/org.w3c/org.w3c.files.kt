@@ -6,6 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See github.com/kotlin/dukat for details
 
+@file:Suppress("EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE", "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE", "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION", "JS_NAME_CLASH", "EXPECT_ACTUAL_IR_INCOMPATIBILITY", "EXPECT_ACTUAL_IR_MISMATCH", "AMBIGUOUS_ACTUALS", "WRONG_JS_INTEROP_TYPE")
 package org.w3c.files
 
 import kotlin.js.*
@@ -18,7 +19,7 @@ import org.w3c.xhr.*
 /**
  * Exposes the JavaScript [Blob](https://developer.mozilla.org/en/docs/Web/API/Blob) to Kotlin
  */
-public external open class Blob(blobParts: JsArray<JsAny? /* BufferSource|Blob|String */> = definedExternally, options: BlobPropertyBag = definedExternally) : MediaProvider, ImageBitmapSource, JsAny {
+public expect open class Blob(blobParts: JsArray<JsAny? /* BufferSource|Blob|String */> = definedExternally, options: BlobPropertyBag = definedExternally) : MediaProvider, ImageBitmapSource, JsAny {
     open val size: JsNumber
     open val type: String
     open val isClosed: Boolean
@@ -26,48 +27,41 @@ public external open class Blob(blobParts: JsArray<JsAny? /* BufferSource|Blob|S
     fun close()
 }
 
-public external interface BlobPropertyBag : JsAny {
-    var type: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface BlobPropertyBag : JsAny {
+    open var type: String? /* = "" */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun BlobPropertyBag(type: String? = ""): BlobPropertyBag = js("({ type: type })")
+public expect fun BlobPropertyBag(type: String? = ""): BlobPropertyBag
 
 /**
  * Exposes the JavaScript [File](https://developer.mozilla.org/en/docs/Web/API/File) to Kotlin
  */
-public external open class File(fileBits: JsArray<JsAny? /* BufferSource|Blob|String */>, fileName: String, options: FilePropertyBag = definedExternally) : Blob, JsAny {
+public expect open class File(fileBits: JsArray<JsAny? /* BufferSource|Blob|String */>, fileName: String, options: FilePropertyBag = definedExternally) : Blob, JsAny {
     open val name: String
     open val lastModified: Int
 }
 
-public external interface FilePropertyBag : BlobPropertyBag, JsAny {
-    var lastModified: Int?
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface FilePropertyBag : BlobPropertyBag, JsAny {
+    open var lastModified: Int?
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun FilePropertyBag(lastModified: Int? = undefined, type: String? = ""): FilePropertyBag = js("({ lastModified: lastModified, type: type })")
+public expect fun FilePropertyBag(lastModified: Int? = undefined, type: String? = ""): FilePropertyBag
 
 /**
  * Exposes the JavaScript [FileList](https://developer.mozilla.org/en/docs/Web/API/FileList) to Kotlin
  */
-public external abstract class FileList : ItemArrayLike<File>, JsAny {
+public expect abstract class FileList : ItemArrayLike<File>, JsAny {
     override fun item(index: Int): File?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForFileList(obj: FileList, index: Int): File? = js("obj[index]")
-
-public operator fun FileList.get(index: Int): File? = getMethodImplForFileList(this, index)
+public expect operator fun FileList.get(index: Int): File?
 
 /**
  * Exposes the JavaScript [FileReader](https://developer.mozilla.org/en/docs/Web/API/FileReader) to Kotlin
  */
-public external open class FileReader : EventTarget, JsAny {
+public expect open class FileReader() : EventTarget, JsAny {
     open val readyState: Short
     open val result: JsAny? /* String|ArrayBuffer */
     open val error: JsAny?
@@ -93,7 +87,7 @@ public external open class FileReader : EventTarget, JsAny {
 /**
  * Exposes the JavaScript [FileReaderSync](https://developer.mozilla.org/en/docs/Web/API/FileReaderSync) to Kotlin
  */
-public external open class FileReaderSync : JsAny {
+public expect open class FileReaderSync() : JsAny {
     fun readAsArrayBuffer(blob: Blob): ArrayBuffer
     fun readAsBinaryString(blob: Blob): String
     fun readAsText(blob: Blob, label: String = definedExternally): String

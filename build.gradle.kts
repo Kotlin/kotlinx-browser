@@ -39,6 +39,11 @@ if (!versionSuffix.isNullOrBlank()) {
 }
 
 kotlin {
+    @OptIn(org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation::class)
+    abiValidation {
+        enabled.set(true)
+    }
+
     compilerOptions {
         optIn.add("kotlin.js.ExperimentalWasmJsInterop")
     }
@@ -61,4 +66,8 @@ kotlin {
             }
         }
     }
+}
+
+tasks.check.configure {
+    dependsOn(tasks.checkLegacyAbi)
 }

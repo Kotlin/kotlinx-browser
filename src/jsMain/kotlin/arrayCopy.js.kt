@@ -9,6 +9,18 @@
 
 package org.khronos.webgl
 
+/** Returns a new [UByteArray] containing all the elements of this [Uint8Array]. */
+@ExperimentalUnsignedTypes
+@Suppress("INVISIBLE_REFERENCE")
+public actual inline fun Uint8Array.toUByteArray(): UByteArray =
+    UByteArray(Int8Array(buffer).unsafeCast<ByteArray>())
+
+/** Returns a new [Uint8Array] containing all the elements of this [UByteArray]. */
+@ExperimentalUnsignedTypes
+@Suppress("INVISIBLE_REFERENCE")
+public actual inline fun UByteArray.toUint8Array(): Uint8Array =
+    Uint8Array(storage.unsafeCast<Int8Array>().buffer)
+
 /** Returns a new [ByteArray] containing all the elements of this [Int8Array]. */
 public actual inline fun Int8Array.toByteArray(): ByteArray =
     unsafeCast<ByteArray>()
@@ -17,15 +29,17 @@ public actual inline fun Int8Array.toByteArray(): ByteArray =
 public actual inline fun ByteArray.toInt8Array(): Int8Array =
     unsafeCast<Int8Array>()
 
-/** Returns a new [UByteArray] containing all the elements of this [Uint8Array]. */
+/** Returns a new [UShortArray] containing all the elements of this [Uint16Array]. */
 @ExperimentalUnsignedTypes
-public actual inline fun Uint8Array.toUByteArray(): UByteArray =
-    unsafeCast<UByteArray>()
+@Suppress("INVISIBLE_REFERENCE")
+public actual inline fun Uint16Array.toUShortArray(): UShortArray =
+    UShortArray(Int16Array(buffer).unsafeCast<ShortArray>())
 
-/** Returns a new [Uint8Array] containing all the elements of this [UByteArray]. */
+/** Returns a new [Uint16Array] containing all the elements of this [UShortArray]. */
 @ExperimentalUnsignedTypes
-public actual inline fun UByteArray.toUint8Array(): Uint8Array =
-    unsafeCast<Uint8Array>()
+@Suppress("INVISIBLE_REFERENCE")
+public actual inline fun UShortArray.toUint16Array(): Uint16Array =
+    Uint16Array(storage.unsafeCast<Int16Array>().buffer)
 
 /** Returns a new [ShortArray] containing all the elements of this [Int16Array]. */
 public actual inline fun Int16Array.toShortArray(): ShortArray =
@@ -35,15 +49,17 @@ public actual inline fun Int16Array.toShortArray(): ShortArray =
 public actual inline fun ShortArray.toInt16Array(): Int16Array =
     unsafeCast<Int16Array>()
 
-/** Returns a new [UShortArray] containing all the elements of this [Uint16Array]. */
+/** Returns a new [UIntArray] containing all the elements of this [Uint32Array]. */
 @ExperimentalUnsignedTypes
-public actual inline fun Uint16Array.toUShortArray(): UShortArray =
-    unsafeCast<UShortArray>()
+@Suppress("INVISIBLE_REFERENCE")
+public actual inline fun Uint32Array.toUIntArray(): UIntArray =
+    UIntArray(Int32Array(buffer).unsafeCast<IntArray>())
 
-/** Returns a new [Uint16Array] containing all the elements of this [UShortArray]. */
+/** Returns a new [Uint32Array] containing all the elements of this [UIntArray]. */
 @ExperimentalUnsignedTypes
-public actual inline fun UShortArray.toUint16Array(): Uint16Array =
-    unsafeCast<Uint16Array>()
+@Suppress("INVISIBLE_REFERENCE")
+public actual inline fun UIntArray.toUint32Array(): Uint32Array =
+    Uint32Array(storage.unsafeCast<Int32Array>().buffer)
 
 /** Returns a new [IntArray] containing all the elements of this [Int32Array]. */
 public actual inline fun Int32Array.toIntArray(): IntArray =
@@ -52,16 +68,6 @@ public actual inline fun Int32Array.toIntArray(): IntArray =
 /** Returns a new [Int32Array] containing all the elements of this [IntArray]. */
 public actual inline fun IntArray.toInt32Array(): Int32Array =
     unsafeCast<Int32Array>()
-
-/** Returns a new [UIntArray] containing all the elements of this [Uint32Array]. */
-@ExperimentalUnsignedTypes
-public actual inline fun Uint32Array.toUIntArray(): UIntArray =
-    unsafeCast<UIntArray>()
-
-/** Returns a new [Uint32Array] containing all the elements of this [UIntArray]. */
-@ExperimentalUnsignedTypes
-public actual inline fun UIntArray.toUint32Array(): Uint32Array =
-    unsafeCast<Uint32Array>()
 
 /** Returns a new [FloatArray] containing all the elements of this [Float32Array]. */
 public actual inline fun Float32Array.toFloatArray(): FloatArray =

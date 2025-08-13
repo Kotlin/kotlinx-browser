@@ -6,6 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See github.com/kotlin/dukat for details
 
+@file:Suppress("EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE", "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE", "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION", "JS_NAME_CLASH", "EXPECT_ACTUAL_IR_INCOMPATIBILITY", "EXPECT_ACTUAL_IR_MISMATCH", "AMBIGUOUS_ACTUALS", "WRONG_JS_INTEROP_TYPE")
 package org.w3c.performance
 
 import kotlin.js.*
@@ -16,20 +17,20 @@ import org.w3c.undefined
 /**
  * Exposes the JavaScript [Performance](https://developer.mozilla.org/en/docs/Web/API/Performance) to Kotlin
  */
-public external abstract class Performance : EventTarget, JsAny {
+public expect abstract class Performance : EventTarget, JsAny {
     open val timing: PerformanceTiming
     open val navigation: PerformanceNavigation
     fun now(): Double
 }
 
-public external interface GlobalPerformance : JsAny {
+public expect interface GlobalPerformance : JsAny {
     val performance: Performance
 }
 
 /**
  * Exposes the JavaScript [PerformanceTiming](https://developer.mozilla.org/en/docs/Web/API/PerformanceTiming) to Kotlin
  */
-public external abstract class PerformanceTiming : JsAny {
+public expect abstract class PerformanceTiming : JsAny {
     open val navigationStart: JsNumber
     open val unloadEventStart: JsNumber
     open val unloadEventEnd: JsNumber
@@ -56,7 +57,7 @@ public external abstract class PerformanceTiming : JsAny {
 /**
  * Exposes the JavaScript [PerformanceNavigation](https://developer.mozilla.org/en/docs/Web/API/PerformanceNavigation) to Kotlin
  */
-public external abstract class PerformanceNavigation : JsAny {
+public expect abstract class PerformanceNavigation : JsAny {
     open val type: Short
     open val redirectCount: Short
 
