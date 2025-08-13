@@ -6,6 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See github.com/kotlin/dukat for details
 
+@file:Suppress("EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE", "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE", "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION", "JS_NAME_CLASH", "EXPECT_ACTUAL_IR_INCOMPATIBILITY", "EXPECT_ACTUAL_IR_MISMATCH", "AMBIGUOUS_ACTUALS", "WRONG_JS_INTEROP_TYPE")
 package org.w3c.dom
 
 import kotlin.js.*
@@ -25,38 +26,32 @@ import org.w3c.undefined
 import org.w3c.workers.*
 import org.w3c.xhr.*
 
-public external abstract class HTMLAllCollection : JsAny {
+public expect abstract class HTMLAllCollection : JsAny {
     open val length: Int
     fun item(nameOrIndex: String = definedExternally): UnionElementOrHTMLCollection?
     fun namedItem(name: String): UnionElementOrHTMLCollection?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLAllCollection(obj: HTMLAllCollection, index: Int): Element? = js("obj[index]")
+public expect operator fun HTMLAllCollection.get(index: Int): Element?
 
-public operator fun HTMLAllCollection.get(index: Int): Element? = getMethodImplForHTMLAllCollection(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLAllCollection(obj: HTMLAllCollection, name: String): UnionElementOrHTMLCollection? = js("obj[name]")
-
-public operator fun HTMLAllCollection.get(name: String): UnionElementOrHTMLCollection? = getMethodImplForHTMLAllCollection(this, name)
+public expect operator fun HTMLAllCollection.get(name: String): UnionElementOrHTMLCollection?
 
 /**
  * Exposes the JavaScript [HTMLFormControlsCollection](https://developer.mozilla.org/en/docs/Web/API/HTMLFormControlsCollection) to Kotlin
  */
-public external abstract class HTMLFormControlsCollection : HTMLCollection, JsAny
+public expect abstract class HTMLFormControlsCollection : HTMLCollection, JsAny
 
 /**
  * Exposes the JavaScript [RadioNodeList](https://developer.mozilla.org/en/docs/Web/API/RadioNodeList) to Kotlin
  */
-public external abstract class RadioNodeList : NodeList, UnionElementOrRadioNodeList, JsAny {
+public expect abstract class RadioNodeList : NodeList, UnionElementOrRadioNodeList, JsAny {
     open var value: String
 }
 
 /**
  * Exposes the JavaScript [HTMLOptionsCollection](https://developer.mozilla.org/en/docs/Web/API/HTMLOptionsCollection) to Kotlin
  */
-public external abstract class HTMLOptionsCollection : HTMLCollection, JsAny {
+public expect abstract class HTMLOptionsCollection : HTMLCollection, JsAny {
     override var length: Int
     open var selectedIndex: Int
     fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: HTMLElement)
@@ -65,15 +60,12 @@ public external abstract class HTMLOptionsCollection : HTMLCollection, JsAny {
     fun remove(index: Int)
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForHTMLOptionsCollection(obj: HTMLOptionsCollection, index: Int, option: HTMLOptionElement?) { js("obj[index] = option;") }
-
-public operator fun HTMLOptionsCollection.set(index: Int, option: HTMLOptionElement?) = setMethodImplForHTMLOptionsCollection(this, index, option)
+public expect operator fun HTMLOptionsCollection.set(index: Int, option: HTMLOptionElement?)
 
 /**
  * Exposes the JavaScript [HTMLElement](https://developer.mozilla.org/en/docs/Web/API/HTMLElement) to Kotlin
  */
-public external abstract class HTMLElement : Element, GlobalEventHandlers, DocumentAndElementEventHandlers, ElementContentEditable, ElementCSSInlineStyle, JsAny {
+public expect abstract class HTMLElement : Element, GlobalEventHandlers, DocumentAndElementEventHandlers, ElementContentEditable, ElementCSSInlineStyle, JsAny {
     open var title: String
     open var lang: String
     open var translate: Boolean
@@ -123,7 +115,7 @@ public external abstract class HTMLElement : Element, GlobalEventHandlers, Docum
 /**
  * Exposes the JavaScript [HTMLUnknownElement](https://developer.mozilla.org/en/docs/Web/API/HTMLUnknownElement) to Kotlin
  */
-public external abstract class HTMLUnknownElement : HTMLElement, JsAny {
+public expect abstract class HTMLUnknownElement : HTMLElement, JsAny {
     companion object {
         val ELEMENT_NODE: Short
         val ATTRIBUTE_NODE: Short
@@ -149,22 +141,16 @@ public external abstract class HTMLUnknownElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [DOMStringMap](https://developer.mozilla.org/en/docs/Web/API/DOMStringMap) to Kotlin
  */
-public external abstract class DOMStringMap : JsAny
+public expect abstract class DOMStringMap : JsAny
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForDOMStringMap(obj: DOMStringMap, name: String): String? = js("obj[name]")
+public expect operator fun DOMStringMap.get(name: String): String?
 
-public operator fun DOMStringMap.get(name: String): String? = getMethodImplForDOMStringMap(this, name)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForDOMStringMap(obj: DOMStringMap, name: String, value: String) { js("obj[name] = value;") }
-
-public operator fun DOMStringMap.set(name: String, value: String) = setMethodImplForDOMStringMap(this, name, value)
+public expect operator fun DOMStringMap.set(name: String, value: String)
 
 /**
  * Exposes the JavaScript [HTMLHtmlElement](https://developer.mozilla.org/en/docs/Web/API/HTMLHtmlElement) to Kotlin
  */
-public external abstract class HTMLHtmlElement : HTMLElement, JsAny {
+public expect abstract class HTMLHtmlElement : HTMLElement, JsAny {
     open var version: String
 
     companion object {
@@ -192,7 +178,7 @@ public external abstract class HTMLHtmlElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLHeadElement](https://developer.mozilla.org/en/docs/Web/API/HTMLHeadElement) to Kotlin
  */
-public external abstract class HTMLHeadElement : HTMLElement, JsAny {
+public expect abstract class HTMLHeadElement : HTMLElement, JsAny {
     companion object {
         val ELEMENT_NODE: Short
         val ATTRIBUTE_NODE: Short
@@ -218,7 +204,7 @@ public external abstract class HTMLHeadElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLTitleElement](https://developer.mozilla.org/en/docs/Web/API/HTMLTitleElement) to Kotlin
  */
-public external abstract class HTMLTitleElement : HTMLElement, JsAny {
+public expect abstract class HTMLTitleElement : HTMLElement, JsAny {
     open var text: String
 
     companion object {
@@ -246,7 +232,7 @@ public external abstract class HTMLTitleElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLBaseElement](https://developer.mozilla.org/en/docs/Web/API/HTMLBaseElement) to Kotlin
  */
-public external abstract class HTMLBaseElement : HTMLElement, JsAny {
+public expect abstract class HTMLBaseElement : HTMLElement, JsAny {
     open var href: String
     open var target: String
 
@@ -275,7 +261,7 @@ public external abstract class HTMLBaseElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLLinkElement](https://developer.mozilla.org/en/docs/Web/API/HTMLLinkElement) to Kotlin
  */
-public external abstract class HTMLLinkElement : HTMLElement, LinkStyle, JsAny {
+public expect abstract class HTMLLinkElement : HTMLElement, LinkStyle, JsAny {
     open var href: String
     open var crossOrigin: String?
     open var rel: String
@@ -318,7 +304,7 @@ public external abstract class HTMLLinkElement : HTMLElement, LinkStyle, JsAny {
 /**
  * Exposes the JavaScript [HTMLMetaElement](https://developer.mozilla.org/en/docs/Web/API/HTMLMetaElement) to Kotlin
  */
-public external abstract class HTMLMetaElement : HTMLElement, JsAny {
+public expect abstract class HTMLMetaElement : HTMLElement, JsAny {
     open var name: String
     open var httpEquiv: String
     open var content: String
@@ -349,7 +335,7 @@ public external abstract class HTMLMetaElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLStyleElement](https://developer.mozilla.org/en/docs/Web/API/HTMLStyleElement) to Kotlin
  */
-public external abstract class HTMLStyleElement : HTMLElement, LinkStyle, JsAny {
+public expect abstract class HTMLStyleElement : HTMLElement, LinkStyle, JsAny {
     open var media: String
     open var nonce: String
     open var type: String
@@ -379,7 +365,7 @@ public external abstract class HTMLStyleElement : HTMLElement, LinkStyle, JsAny 
 /**
  * Exposes the JavaScript [HTMLBodyElement](https://developer.mozilla.org/en/docs/Web/API/HTMLBodyElement) to Kotlin
  */
-public external abstract class HTMLBodyElement : HTMLElement, WindowEventHandlers, JsAny {
+public expect abstract class HTMLBodyElement : HTMLElement, WindowEventHandlers, JsAny {
     open var text: String
     open var link: String
     open var vLink: String
@@ -412,7 +398,7 @@ public external abstract class HTMLBodyElement : HTMLElement, WindowEventHandler
 /**
  * Exposes the JavaScript [HTMLHeadingElement](https://developer.mozilla.org/en/docs/Web/API/HTMLHeadingElement) to Kotlin
  */
-public external abstract class HTMLHeadingElement : HTMLElement, JsAny {
+public expect abstract class HTMLHeadingElement : HTMLElement, JsAny {
     open var align: String
 
     companion object {
@@ -440,7 +426,7 @@ public external abstract class HTMLHeadingElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLParagraphElement](https://developer.mozilla.org/en/docs/Web/API/HTMLParagraphElement) to Kotlin
  */
-public external abstract class HTMLParagraphElement : HTMLElement, JsAny {
+public expect abstract class HTMLParagraphElement : HTMLElement, JsAny {
     open var align: String
 
     companion object {
@@ -468,7 +454,7 @@ public external abstract class HTMLParagraphElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLHRElement](https://developer.mozilla.org/en/docs/Web/API/HTMLHRElement) to Kotlin
  */
-public external abstract class HTMLHRElement : HTMLElement, JsAny {
+public expect abstract class HTMLHRElement : HTMLElement, JsAny {
     open var align: String
     open var color: String
     open var noShade: Boolean
@@ -500,7 +486,7 @@ public external abstract class HTMLHRElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLPreElement](https://developer.mozilla.org/en/docs/Web/API/HTMLPreElement) to Kotlin
  */
-public external abstract class HTMLPreElement : HTMLElement, JsAny {
+public expect abstract class HTMLPreElement : HTMLElement, JsAny {
     open var width: Int
 
     companion object {
@@ -528,7 +514,7 @@ public external abstract class HTMLPreElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLQuoteElement](https://developer.mozilla.org/en/docs/Web/API/HTMLQuoteElement) to Kotlin
  */
-public external abstract class HTMLQuoteElement : HTMLElement, JsAny {
+public expect abstract class HTMLQuoteElement : HTMLElement, JsAny {
     open var cite: String
 
     companion object {
@@ -556,7 +542,7 @@ public external abstract class HTMLQuoteElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLOListElement](https://developer.mozilla.org/en/docs/Web/API/HTMLOListElement) to Kotlin
  */
-public external abstract class HTMLOListElement : HTMLElement, JsAny {
+public expect abstract class HTMLOListElement : HTMLElement, JsAny {
     open var reversed: Boolean
     open var start: Int
     open var type: String
@@ -587,7 +573,7 @@ public external abstract class HTMLOListElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLUListElement](https://developer.mozilla.org/en/docs/Web/API/HTMLUListElement) to Kotlin
  */
-public external abstract class HTMLUListElement : HTMLElement, JsAny {
+public expect abstract class HTMLUListElement : HTMLElement, JsAny {
     open var compact: Boolean
     open var type: String
 
@@ -616,7 +602,7 @@ public external abstract class HTMLUListElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLLIElement](https://developer.mozilla.org/en/docs/Web/API/HTMLLIElement) to Kotlin
  */
-public external abstract class HTMLLIElement : HTMLElement, JsAny {
+public expect abstract class HTMLLIElement : HTMLElement, JsAny {
     open var value: Int
     open var type: String
 
@@ -645,7 +631,7 @@ public external abstract class HTMLLIElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLDListElement](https://developer.mozilla.org/en/docs/Web/API/HTMLDListElement) to Kotlin
  */
-public external abstract class HTMLDListElement : HTMLElement, JsAny {
+public expect abstract class HTMLDListElement : HTMLElement, JsAny {
     open var compact: Boolean
 
     companion object {
@@ -673,7 +659,7 @@ public external abstract class HTMLDListElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLDivElement](https://developer.mozilla.org/en/docs/Web/API/HTMLDivElement) to Kotlin
  */
-public external abstract class HTMLDivElement : HTMLElement, JsAny {
+public expect abstract class HTMLDivElement : HTMLElement, JsAny {
     open var align: String
 
     companion object {
@@ -701,7 +687,7 @@ public external abstract class HTMLDivElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLAnchorElement](https://developer.mozilla.org/en/docs/Web/API/HTMLAnchorElement) to Kotlin
  */
-public external abstract class HTMLAnchorElement : HTMLElement, HTMLHyperlinkElementUtils, JsAny {
+public expect abstract class HTMLAnchorElement : HTMLElement, HTMLHyperlinkElementUtils, JsAny {
     open var target: String
     open var download: String
     open var ping: String
@@ -742,7 +728,7 @@ public external abstract class HTMLAnchorElement : HTMLElement, HTMLHyperlinkEle
 /**
  * Exposes the JavaScript [HTMLDataElement](https://developer.mozilla.org/en/docs/Web/API/HTMLDataElement) to Kotlin
  */
-public external abstract class HTMLDataElement : HTMLElement, JsAny {
+public expect abstract class HTMLDataElement : HTMLElement, JsAny {
     open var value: String
 
     companion object {
@@ -770,7 +756,7 @@ public external abstract class HTMLDataElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLTimeElement](https://developer.mozilla.org/en/docs/Web/API/HTMLTimeElement) to Kotlin
  */
-public external abstract class HTMLTimeElement : HTMLElement, JsAny {
+public expect abstract class HTMLTimeElement : HTMLElement, JsAny {
     open var dateTime: String
 
     companion object {
@@ -798,7 +784,7 @@ public external abstract class HTMLTimeElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLSpanElement](https://developer.mozilla.org/en/docs/Web/API/HTMLSpanElement) to Kotlin
  */
-public external abstract class HTMLSpanElement : HTMLElement, JsAny {
+public expect abstract class HTMLSpanElement : HTMLElement, JsAny {
     companion object {
         val ELEMENT_NODE: Short
         val ATTRIBUTE_NODE: Short
@@ -824,7 +810,7 @@ public external abstract class HTMLSpanElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLBRElement](https://developer.mozilla.org/en/docs/Web/API/HTMLBRElement) to Kotlin
  */
-public external abstract class HTMLBRElement : HTMLElement, JsAny {
+public expect abstract class HTMLBRElement : HTMLElement, JsAny {
     open var clear: String
 
     companion object {
@@ -852,7 +838,7 @@ public external abstract class HTMLBRElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLHyperlinkElementUtils](https://developer.mozilla.org/en/docs/Web/API/HTMLHyperlinkElementUtils) to Kotlin
  */
-public external interface HTMLHyperlinkElementUtils : JsAny {
+public expect interface HTMLHyperlinkElementUtils : JsAny {
     var href: String
     val origin: String
     var protocol: String
@@ -869,7 +855,7 @@ public external interface HTMLHyperlinkElementUtils : JsAny {
 /**
  * Exposes the JavaScript [HTMLModElement](https://developer.mozilla.org/en/docs/Web/API/HTMLModElement) to Kotlin
  */
-public external abstract class HTMLModElement : HTMLElement, JsAny {
+public expect abstract class HTMLModElement : HTMLElement, JsAny {
     open var cite: String
     open var dateTime: String
 
@@ -898,7 +884,7 @@ public external abstract class HTMLModElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLPictureElement](https://developer.mozilla.org/en/docs/Web/API/HTMLPictureElement) to Kotlin
  */
-public external abstract class HTMLPictureElement : HTMLElement, JsAny {
+public expect abstract class HTMLPictureElement : HTMLElement, JsAny {
     companion object {
         val ELEMENT_NODE: Short
         val ATTRIBUTE_NODE: Short
@@ -924,7 +910,7 @@ public external abstract class HTMLPictureElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLSourceElement](https://developer.mozilla.org/en/docs/Web/API/HTMLSourceElement) to Kotlin
  */
-public external abstract class HTMLSourceElement : HTMLElement, JsAny {
+public expect abstract class HTMLSourceElement : HTMLElement, JsAny {
     open var src: String
     open var type: String
     open var srcset: String
@@ -956,7 +942,7 @@ public external abstract class HTMLSourceElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLImageElement](https://developer.mozilla.org/en/docs/Web/API/HTMLImageElement) to Kotlin
  */
-public external abstract class HTMLImageElement : HTMLElement, HTMLOrSVGImageElement, TexImageSource, JsAny {
+public expect abstract class HTMLImageElement : HTMLElement, HTMLOrSVGImageElement, TexImageSource, JsAny {
     open var alt: String
     open var src: String
     open var srcset: String
@@ -1006,7 +992,7 @@ public external abstract class HTMLImageElement : HTMLElement, HTMLOrSVGImageEle
 /**
  * Exposes the JavaScript [HTMLIFrameElement](https://developer.mozilla.org/en/docs/Web/API/HTMLIFrameElement) to Kotlin
  */
-public external abstract class HTMLIFrameElement : HTMLElement, JsAny {
+public expect abstract class HTMLIFrameElement : HTMLElement, JsAny {
     open var src: String
     open var srcdoc: String
     open var name: String
@@ -1051,7 +1037,7 @@ public external abstract class HTMLIFrameElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLEmbedElement](https://developer.mozilla.org/en/docs/Web/API/HTMLEmbedElement) to Kotlin
  */
-public external abstract class HTMLEmbedElement : HTMLElement, JsAny {
+public expect abstract class HTMLEmbedElement : HTMLElement, JsAny {
     open var src: String
     open var type: String
     open var width: String
@@ -1085,7 +1071,7 @@ public external abstract class HTMLEmbedElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLObjectElement](https://developer.mozilla.org/en/docs/Web/API/HTMLObjectElement) to Kotlin
  */
-public external abstract class HTMLObjectElement : HTMLElement, JsAny {
+public expect abstract class HTMLObjectElement : HTMLElement, JsAny {
     open var data: String
     open var type: String
     open var typeMustMatch: Boolean
@@ -1139,7 +1125,7 @@ public external abstract class HTMLObjectElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLParamElement](https://developer.mozilla.org/en/docs/Web/API/HTMLParamElement) to Kotlin
  */
-public external abstract class HTMLParamElement : HTMLElement, JsAny {
+public expect abstract class HTMLParamElement : HTMLElement, JsAny {
     open var name: String
     open var value: String
     open var type: String
@@ -1170,7 +1156,7 @@ public external abstract class HTMLParamElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLVideoElement](https://developer.mozilla.org/en/docs/Web/API/HTMLVideoElement) to Kotlin
  */
-public external abstract class HTMLVideoElement : HTMLMediaElement, CanvasImageSource, TexImageSource, JsAny {
+public expect abstract class HTMLVideoElement : HTMLMediaElement, CanvasImageSource, TexImageSource, JsAny {
     open var width: Int
     open var height: Int
     open val videoWidth: Int
@@ -1212,7 +1198,7 @@ public external abstract class HTMLVideoElement : HTMLMediaElement, CanvasImageS
 /**
  * Exposes the JavaScript [HTMLAudioElement](https://developer.mozilla.org/en/docs/Web/API/HTMLAudioElement) to Kotlin
  */
-public external abstract class HTMLAudioElement : HTMLMediaElement, JsAny {
+public expect abstract class HTMLAudioElement : HTMLMediaElement, JsAny {
     companion object {
         val NETWORK_EMPTY: Short
         val NETWORK_IDLE: Short
@@ -1247,7 +1233,7 @@ public external abstract class HTMLAudioElement : HTMLMediaElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLTrackElement](https://developer.mozilla.org/en/docs/Web/API/HTMLTrackElement) to Kotlin
  */
-public external abstract class HTMLTrackElement : HTMLElement, JsAny {
+public expect abstract class HTMLTrackElement : HTMLElement, JsAny {
     open var kind: String
     open var src: String
     open var srclang: String
@@ -1285,7 +1271,7 @@ public external abstract class HTMLTrackElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLMediaElement](https://developer.mozilla.org/en/docs/Web/API/HTMLMediaElement) to Kotlin
  */
-public external abstract class HTMLMediaElement : HTMLElement, JsAny {
+public expect abstract class HTMLMediaElement : HTMLElement, JsAny {
     open val error: MediaError?
     open var src: String
     open var srcObject: MediaProvider?
@@ -1359,7 +1345,7 @@ public external abstract class HTMLMediaElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [MediaError](https://developer.mozilla.org/en/docs/Web/API/MediaError) to Kotlin
  */
-public external abstract class MediaError : JsAny {
+public expect abstract class MediaError : JsAny {
     open val code: Short
 
     companion object {
@@ -1373,7 +1359,7 @@ public external abstract class MediaError : JsAny {
 /**
  * Exposes the JavaScript [AudioTrackList](https://developer.mozilla.org/en/docs/Web/API/AudioTrackList) to Kotlin
  */
-public external abstract class AudioTrackList : EventTarget, JsAny {
+public expect abstract class AudioTrackList : EventTarget, JsAny {
     open val length: Int
     open var onchange: ((Event) -> Unit)?
     open var onaddtrack: ((TrackEvent) -> Unit)?
@@ -1381,15 +1367,12 @@ public external abstract class AudioTrackList : EventTarget, JsAny {
     fun getTrackById(id: String): AudioTrack?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForAudioTrackList(obj: AudioTrackList, index: Int): AudioTrack? = js("obj[index]")
-
-public operator fun AudioTrackList.get(index: Int): AudioTrack? = getMethodImplForAudioTrackList(this, index)
+public expect operator fun AudioTrackList.get(index: Int): AudioTrack?
 
 /**
  * Exposes the JavaScript [AudioTrack](https://developer.mozilla.org/en/docs/Web/API/AudioTrack) to Kotlin
  */
-public external abstract class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTrack, JsAny {
+public expect abstract class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTrack, JsAny {
     open val id: String
     open val kind: String
     open val label: String
@@ -1401,7 +1384,7 @@ public external abstract class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
 /**
  * Exposes the JavaScript [VideoTrackList](https://developer.mozilla.org/en/docs/Web/API/VideoTrackList) to Kotlin
  */
-public external abstract class VideoTrackList : EventTarget, JsAny {
+public expect abstract class VideoTrackList : EventTarget, JsAny {
     open val length: Int
     open val selectedIndex: Int
     open var onchange: ((Event) -> Unit)?
@@ -1410,15 +1393,12 @@ public external abstract class VideoTrackList : EventTarget, JsAny {
     fun getTrackById(id: String): VideoTrack?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForVideoTrackList(obj: VideoTrackList, index: Int): VideoTrack? = js("obj[index]")
-
-public operator fun VideoTrackList.get(index: Int): VideoTrack? = getMethodImplForVideoTrackList(this, index)
+public expect operator fun VideoTrackList.get(index: Int): VideoTrack?
 
 /**
  * Exposes the JavaScript [VideoTrack](https://developer.mozilla.org/en/docs/Web/API/VideoTrack) to Kotlin
  */
-public external abstract class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTrack, JsAny {
+public expect abstract class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTrack, JsAny {
     open val id: String
     open val kind: String
     open val label: String
@@ -1427,7 +1407,7 @@ public external abstract class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
     open val sourceBuffer: SourceBuffer?
 }
 
-public external abstract class TextTrackList : EventTarget, JsAny {
+public expect abstract class TextTrackList : EventTarget, JsAny {
     open val length: Int
     open var onchange: ((Event) -> Unit)?
     open var onaddtrack: ((TrackEvent) -> Unit)?
@@ -1435,15 +1415,12 @@ public external abstract class TextTrackList : EventTarget, JsAny {
     fun getTrackById(id: String): TextTrack?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForTextTrackList(obj: TextTrackList, index: Int): TextTrack? = js("obj[index]")
-
-public operator fun TextTrackList.get(index: Int): TextTrack? = getMethodImplForTextTrackList(this, index)
+public expect operator fun TextTrackList.get(index: Int): TextTrack?
 
 /**
  * Exposes the JavaScript [TextTrack](https://developer.mozilla.org/en/docs/Web/API/TextTrack) to Kotlin
  */
-public external abstract class TextTrack : EventTarget, UnionAudioTrackOrTextTrackOrVideoTrack, JsAny {
+public expect abstract class TextTrack : EventTarget, UnionAudioTrackOrTextTrackOrVideoTrack, JsAny {
     open val kind: TextTrackKind
     open val label: String
     open val language: String
@@ -1458,20 +1435,17 @@ public external abstract class TextTrack : EventTarget, UnionAudioTrackOrTextTra
     fun removeCue(cue: TextTrackCue)
 }
 
-public external abstract class TextTrackCueList : JsAny {
+public expect abstract class TextTrackCueList : JsAny {
     open val length: Int
     fun getCueById(id: String): TextTrackCue?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForTextTrackCueList(obj: TextTrackCueList, index: Int): TextTrackCue? = js("obj[index]")
-
-public operator fun TextTrackCueList.get(index: Int): TextTrackCue? = getMethodImplForTextTrackCueList(this, index)
+public expect operator fun TextTrackCueList.get(index: Int): TextTrackCue?
 
 /**
  * Exposes the JavaScript [TextTrackCue](https://developer.mozilla.org/en/docs/Web/API/TextTrackCue) to Kotlin
  */
-public external abstract class TextTrackCue : EventTarget, JsAny {
+public expect abstract class TextTrackCue : EventTarget, JsAny {
     open val track: TextTrack?
     open var id: String
     open var startTime: Double
@@ -1484,7 +1458,7 @@ public external abstract class TextTrackCue : EventTarget, JsAny {
 /**
  * Exposes the JavaScript [TimeRanges](https://developer.mozilla.org/en/docs/Web/API/TimeRanges) to Kotlin
  */
-public external abstract class TimeRanges : JsAny {
+public expect abstract class TimeRanges : JsAny {
     open val length: Int
     fun start(index: Int): Double
     fun end(index: Int): Double
@@ -1493,7 +1467,7 @@ public external abstract class TimeRanges : JsAny {
 /**
  * Exposes the JavaScript [TrackEvent](https://developer.mozilla.org/en/docs/Web/API/TrackEvent) to Kotlin
  */
-public external open class TrackEvent(type: String, eventInitDict: TrackEventInit = definedExternally) : Event, JsAny {
+public expect open class TrackEvent(type: String, eventInitDict: TrackEventInit = definedExternally) : Event, JsAny {
     open val track: UnionAudioTrackOrTextTrackOrVideoTrack?
 
     companion object {
@@ -1504,19 +1478,17 @@ public external open class TrackEvent(type: String, eventInitDict: TrackEventIni
     }
 }
 
-public external interface TrackEventInit : EventInit, JsAny {
-    var track: UnionAudioTrackOrTextTrackOrVideoTrack? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface TrackEventInit : EventInit, JsAny {
+    open var track: UnionAudioTrackOrTextTrackOrVideoTrack? /* = null */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun TrackEventInit(track: UnionAudioTrackOrTextTrackOrVideoTrack? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): TrackEventInit = js("({ track: track, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun TrackEventInit(track: UnionAudioTrackOrTextTrackOrVideoTrack? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): TrackEventInit
 
 /**
  * Exposes the JavaScript [HTMLMapElement](https://developer.mozilla.org/en/docs/Web/API/HTMLMapElement) to Kotlin
  */
-public external abstract class HTMLMapElement : HTMLElement, JsAny {
+public expect abstract class HTMLMapElement : HTMLElement, JsAny {
     open var name: String
     open val areas: HTMLCollection
 
@@ -1545,7 +1517,7 @@ public external abstract class HTMLMapElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLAreaElement](https://developer.mozilla.org/en/docs/Web/API/HTMLAreaElement) to Kotlin
  */
-public external abstract class HTMLAreaElement : HTMLElement, HTMLHyperlinkElementUtils, JsAny {
+public expect abstract class HTMLAreaElement : HTMLElement, HTMLHyperlinkElementUtils, JsAny {
     open var alt: String
     open var coords: String
     open var shape: String
@@ -1582,7 +1554,7 @@ public external abstract class HTMLAreaElement : HTMLElement, HTMLHyperlinkEleme
 /**
  * Exposes the JavaScript [HTMLTableElement](https://developer.mozilla.org/en/docs/Web/API/HTMLTableElement) to Kotlin
  */
-public external abstract class HTMLTableElement : HTMLElement, JsAny {
+public expect abstract class HTMLTableElement : HTMLElement, JsAny {
     open var caption: HTMLTableCaptionElement?
     open var tHead: HTMLTableSectionElement?
     open var tFoot: HTMLTableSectionElement?
@@ -1632,7 +1604,7 @@ public external abstract class HTMLTableElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLTableCaptionElement](https://developer.mozilla.org/en/docs/Web/API/HTMLTableCaptionElement) to Kotlin
  */
-public external abstract class HTMLTableCaptionElement : HTMLElement, JsAny {
+public expect abstract class HTMLTableCaptionElement : HTMLElement, JsAny {
     open var align: String
 
     companion object {
@@ -1660,7 +1632,7 @@ public external abstract class HTMLTableCaptionElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLTableColElement](https://developer.mozilla.org/en/docs/Web/API/HTMLTableColElement) to Kotlin
  */
-public external abstract class HTMLTableColElement : HTMLElement, JsAny {
+public expect abstract class HTMLTableColElement : HTMLElement, JsAny {
     open var span: Int
     open var align: String
     open var ch: String
@@ -1693,7 +1665,7 @@ public external abstract class HTMLTableColElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLTableSectionElement](https://developer.mozilla.org/en/docs/Web/API/HTMLTableSectionElement) to Kotlin
  */
-public external abstract class HTMLTableSectionElement : HTMLElement, JsAny {
+public expect abstract class HTMLTableSectionElement : HTMLElement, JsAny {
     open val rows: HTMLCollection
     open var align: String
     open var ch: String
@@ -1727,7 +1699,7 @@ public external abstract class HTMLTableSectionElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLTableRowElement](https://developer.mozilla.org/en/docs/Web/API/HTMLTableRowElement) to Kotlin
  */
-public external abstract class HTMLTableRowElement : HTMLElement, JsAny {
+public expect abstract class HTMLTableRowElement : HTMLElement, JsAny {
     open val rowIndex: Int
     open val sectionRowIndex: Int
     open val cells: HTMLCollection
@@ -1764,7 +1736,7 @@ public external abstract class HTMLTableRowElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLTableCellElement](https://developer.mozilla.org/en/docs/Web/API/HTMLTableCellElement) to Kotlin
  */
-public external abstract class HTMLTableCellElement : HTMLElement, JsAny {
+public expect abstract class HTMLTableCellElement : HTMLElement, JsAny {
     open var colSpan: Int
     open var rowSpan: Int
     open var headers: String
@@ -1806,7 +1778,7 @@ public external abstract class HTMLTableCellElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLFormElement](https://developer.mozilla.org/en/docs/Web/API/HTMLFormElement) to Kotlin
  */
-public external abstract class HTMLFormElement : HTMLElement, JsAny {
+public expect abstract class HTMLFormElement : HTMLElement, JsAny {
     open var acceptCharset: String
     open var action: String
     open var autocomplete: String
@@ -1845,20 +1817,14 @@ public external abstract class HTMLFormElement : HTMLElement, JsAny {
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLFormElement(obj: HTMLFormElement, index: Int): Element? = js("obj[index]")
+public expect operator fun HTMLFormElement.get(index: Int): Element?
 
-public operator fun HTMLFormElement.get(index: Int): Element? = getMethodImplForHTMLFormElement(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLFormElement(obj: HTMLFormElement, name: String): UnionElementOrRadioNodeList? = js("obj[name]")
-
-public operator fun HTMLFormElement.get(name: String): UnionElementOrRadioNodeList? = getMethodImplForHTMLFormElement(this, name)
+public expect operator fun HTMLFormElement.get(name: String): UnionElementOrRadioNodeList?
 
 /**
  * Exposes the JavaScript [HTMLLabelElement](https://developer.mozilla.org/en/docs/Web/API/HTMLLabelElement) to Kotlin
  */
-public external abstract class HTMLLabelElement : HTMLElement, JsAny {
+public expect abstract class HTMLLabelElement : HTMLElement, JsAny {
     open val form: HTMLFormElement?
     open var htmlFor: String
     open val control: HTMLElement?
@@ -1888,7 +1854,7 @@ public external abstract class HTMLLabelElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLInputElement](https://developer.mozilla.org/en/docs/Web/API/HTMLInputElement) to Kotlin
  */
-public external abstract class HTMLInputElement : HTMLElement, JsAny {
+public expect abstract class HTMLInputElement : HTMLElement, JsAny {
     open var accept: String
     open var alt: String
     open var autocomplete: String
@@ -1971,7 +1937,7 @@ public external abstract class HTMLInputElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLButtonElement](https://developer.mozilla.org/en/docs/Web/API/HTMLButtonElement) to Kotlin
  */
-public external abstract class HTMLButtonElement : HTMLElement, JsAny {
+public expect abstract class HTMLButtonElement : HTMLElement, JsAny {
     open var autofocus: Boolean
     open var disabled: Boolean
     open val form: HTMLFormElement?
@@ -2017,7 +1983,7 @@ public external abstract class HTMLButtonElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLSelectElement](https://developer.mozilla.org/en/docs/Web/API/HTMLSelectElement) to Kotlin
  */
-public external abstract class HTMLSelectElement : HTMLElement, ItemArrayLike<Element>, JsAny {
+public expect abstract class HTMLSelectElement : HTMLElement, ItemArrayLike<Element>, JsAny {
     open var autocomplete: String
     open var autofocus: Boolean
     open var disabled: Boolean
@@ -2068,20 +2034,14 @@ public external abstract class HTMLSelectElement : HTMLElement, ItemArrayLike<El
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLSelectElement(obj: HTMLSelectElement, index: Int): Element? = js("obj[index]")
+public expect operator fun HTMLSelectElement.get(index: Int): Element?
 
-public operator fun HTMLSelectElement.get(index: Int): Element? = getMethodImplForHTMLSelectElement(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForHTMLSelectElement(obj: HTMLSelectElement, index: Int, option: HTMLOptionElement?) { js("obj[index] = option;") }
-
-public operator fun HTMLSelectElement.set(index: Int, option: HTMLOptionElement?) = setMethodImplForHTMLSelectElement(this, index, option)
+public expect operator fun HTMLSelectElement.set(index: Int, option: HTMLOptionElement?)
 
 /**
  * Exposes the JavaScript [HTMLDataListElement](https://developer.mozilla.org/en/docs/Web/API/HTMLDataListElement) to Kotlin
  */
-public external abstract class HTMLDataListElement : HTMLElement, JsAny {
+public expect abstract class HTMLDataListElement : HTMLElement, JsAny {
     open val options: HTMLCollection
 
     companion object {
@@ -2109,7 +2069,7 @@ public external abstract class HTMLDataListElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLOptGroupElement](https://developer.mozilla.org/en/docs/Web/API/HTMLOptGroupElement) to Kotlin
  */
-public external abstract class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGroupElementOrHTMLOptionElement, JsAny {
+public expect abstract class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGroupElementOrHTMLOptionElement, JsAny {
     open var disabled: Boolean
     open var label: String
 
@@ -2138,7 +2098,7 @@ public external abstract class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGr
 /**
  * Exposes the JavaScript [HTMLOptionElement](https://developer.mozilla.org/en/docs/Web/API/HTMLOptionElement) to Kotlin
  */
-public external abstract class HTMLOptionElement : HTMLElement, UnionHTMLOptGroupElementOrHTMLOptionElement, JsAny {
+public expect abstract class HTMLOptionElement : HTMLElement, UnionHTMLOptGroupElementOrHTMLOptionElement, JsAny {
     open var disabled: Boolean
     open val form: HTMLFormElement?
     open var label: String
@@ -2173,7 +2133,7 @@ public external abstract class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
 /**
  * Exposes the JavaScript [HTMLTextAreaElement](https://developer.mozilla.org/en/docs/Web/API/HTMLTextAreaElement) to Kotlin
  */
-public external abstract class HTMLTextAreaElement : HTMLElement, JsAny {
+public expect abstract class HTMLTextAreaElement : HTMLElement, JsAny {
     open var autocomplete: String
     open var autofocus: Boolean
     open var cols: Int
@@ -2233,7 +2193,7 @@ public external abstract class HTMLTextAreaElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLKeygenElement](https://developer.mozilla.org/en/docs/Web/API/HTMLKeygenElement) to Kotlin
  */
-public external abstract class HTMLKeygenElement : HTMLElement, JsAny {
+public expect abstract class HTMLKeygenElement : HTMLElement, JsAny {
     open var autofocus: Boolean
     open var challenge: String
     open var disabled: Boolean
@@ -2274,7 +2234,7 @@ public external abstract class HTMLKeygenElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLOutputElement](https://developer.mozilla.org/en/docs/Web/API/HTMLOutputElement) to Kotlin
  */
-public external abstract class HTMLOutputElement : HTMLElement, JsAny {
+public expect abstract class HTMLOutputElement : HTMLElement, JsAny {
     open val htmlFor: DOMTokenList
     open val form: HTMLFormElement?
     open var name: String
@@ -2314,7 +2274,7 @@ public external abstract class HTMLOutputElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLProgressElement](https://developer.mozilla.org/en/docs/Web/API/HTMLProgressElement) to Kotlin
  */
-public external abstract class HTMLProgressElement : HTMLElement, JsAny {
+public expect abstract class HTMLProgressElement : HTMLElement, JsAny {
     open var value: Double
     open var max: Double
     open val position: Double
@@ -2345,7 +2305,7 @@ public external abstract class HTMLProgressElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLMeterElement](https://developer.mozilla.org/en/docs/Web/API/HTMLMeterElement) to Kotlin
  */
-public external abstract class HTMLMeterElement : HTMLElement, JsAny {
+public expect abstract class HTMLMeterElement : HTMLElement, JsAny {
     open var value: Double
     open var min: Double
     open var max: Double
@@ -2379,7 +2339,7 @@ public external abstract class HTMLMeterElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLFieldSetElement](https://developer.mozilla.org/en/docs/Web/API/HTMLFieldSetElement) to Kotlin
  */
-public external abstract class HTMLFieldSetElement : HTMLElement, JsAny {
+public expect abstract class HTMLFieldSetElement : HTMLElement, JsAny {
     open var disabled: Boolean
     open val form: HTMLFormElement?
     open var name: String
@@ -2417,7 +2377,7 @@ public external abstract class HTMLFieldSetElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLLegendElement](https://developer.mozilla.org/en/docs/Web/API/HTMLLegendElement) to Kotlin
  */
-public external abstract class HTMLLegendElement : HTMLElement, JsAny {
+public expect abstract class HTMLLegendElement : HTMLElement, JsAny {
     open val form: HTMLFormElement?
     open var align: String
 
@@ -2446,7 +2406,7 @@ public external abstract class HTMLLegendElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [ValidityState](https://developer.mozilla.org/en/docs/Web/API/ValidityState) to Kotlin
  */
-public external abstract class ValidityState : JsAny {
+public expect abstract class ValidityState : JsAny {
     open val valueMissing: Boolean
     open val typeMismatch: Boolean
     open val patternMismatch: Boolean
@@ -2463,7 +2423,7 @@ public external abstract class ValidityState : JsAny {
 /**
  * Exposes the JavaScript [HTMLDetailsElement](https://developer.mozilla.org/en/docs/Web/API/HTMLDetailsElement) to Kotlin
  */
-public external abstract class HTMLDetailsElement : HTMLElement, JsAny {
+public expect abstract class HTMLDetailsElement : HTMLElement, JsAny {
     open var open: Boolean
 
     companion object {
@@ -2488,7 +2448,7 @@ public external abstract class HTMLDetailsElement : HTMLElement, JsAny {
     }
 }
 
-public external abstract class HTMLMenuElement : HTMLElement, JsAny {
+public expect abstract class HTMLMenuElement : HTMLElement, JsAny {
     open var type: String
     open var label: String
     open var compact: Boolean
@@ -2515,7 +2475,7 @@ public external abstract class HTMLMenuElement : HTMLElement, JsAny {
     }
 }
 
-public external abstract class HTMLMenuItemElement : HTMLElement, JsAny {
+public expect abstract class HTMLMenuItemElement : HTMLElement, JsAny {
     open var type: String
     open var label: String
     open var icon: String
@@ -2546,7 +2506,7 @@ public external abstract class HTMLMenuItemElement : HTMLElement, JsAny {
     }
 }
 
-public external open class RelatedEvent(type: String, eventInitDict: RelatedEventInit = definedExternally) : Event, JsAny {
+public expect open class RelatedEvent(type: String, eventInitDict: RelatedEventInit = definedExternally) : Event, JsAny {
     open val relatedTarget: EventTarget?
 
     companion object {
@@ -2557,19 +2517,17 @@ public external open class RelatedEvent(type: String, eventInitDict: RelatedEven
     }
 }
 
-public external interface RelatedEventInit : EventInit, JsAny {
-    var relatedTarget: EventTarget? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface RelatedEventInit : EventInit, JsAny {
+    open var relatedTarget: EventTarget? /* = null */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun RelatedEventInit(relatedTarget: EventTarget? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): RelatedEventInit = js("({ relatedTarget: relatedTarget, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun RelatedEventInit(relatedTarget: EventTarget? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): RelatedEventInit
 
 /**
  * Exposes the JavaScript [HTMLDialogElement](https://developer.mozilla.org/en/docs/Web/API/HTMLDialogElement) to Kotlin
  */
-public external abstract class HTMLDialogElement : HTMLElement, JsAny {
+public expect abstract class HTMLDialogElement : HTMLElement, JsAny {
     open var open: Boolean
     open var returnValue: String
     fun show(anchor: UnionElementOrMouseEvent = definedExternally)
@@ -2601,7 +2559,7 @@ public external abstract class HTMLDialogElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLScriptElement](https://developer.mozilla.org/en/docs/Web/API/HTMLScriptElement) to Kotlin
  */
-public external abstract class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptElement, JsAny {
+public expect abstract class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptElement, JsAny {
     open var src: String
     open var type: String
     open var charset: String
@@ -2638,7 +2596,7 @@ public external abstract class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
 /**
  * Exposes the JavaScript [HTMLTemplateElement](https://developer.mozilla.org/en/docs/Web/API/HTMLTemplateElement) to Kotlin
  */
-public external abstract class HTMLTemplateElement : HTMLElement, JsAny {
+public expect abstract class HTMLTemplateElement : HTMLElement, JsAny {
     open val content: DocumentFragment
 
     companion object {
@@ -2666,7 +2624,7 @@ public external abstract class HTMLTemplateElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLSlotElement](https://developer.mozilla.org/en/docs/Web/API/HTMLSlotElement) to Kotlin
  */
-public external abstract class HTMLSlotElement : HTMLElement, JsAny {
+public expect abstract class HTMLSlotElement : HTMLElement, JsAny {
     open var name: String
     fun assignedNodes(options: AssignedNodesOptions = definedExternally): JsArray<Node>
 
@@ -2692,19 +2650,17 @@ public external abstract class HTMLSlotElement : HTMLElement, JsAny {
     }
 }
 
-public external interface AssignedNodesOptions : JsAny {
-    var flatten: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface AssignedNodesOptions : JsAny {
+    open var flatten: Boolean? /* = false */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun AssignedNodesOptions(flatten: Boolean? = false): AssignedNodesOptions = js("({ flatten: flatten })")
+public expect fun AssignedNodesOptions(flatten: Boolean? = false): AssignedNodesOptions
 
 /**
  * Exposes the JavaScript [HTMLCanvasElement](https://developer.mozilla.org/en/docs/Web/API/HTMLCanvasElement) to Kotlin
  */
-public external abstract class HTMLCanvasElement : HTMLElement, CanvasImageSource, TexImageSource, JsAny {
+public expect abstract class HTMLCanvasElement : HTMLElement, CanvasImageSource, TexImageSource, JsAny {
     open var width: Int
     open var height: Int
     fun getContext(contextId: String, vararg arguments: JsAny?): RenderingContext?
@@ -2733,28 +2689,26 @@ public external abstract class HTMLCanvasElement : HTMLElement, CanvasImageSourc
     }
 }
 
-public external interface CanvasRenderingContext2DSettings : JsAny {
-    var alpha: Boolean? /* = true */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface CanvasRenderingContext2DSettings : JsAny {
+    open var alpha: Boolean? /* = true */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun CanvasRenderingContext2DSettings(alpha: Boolean? = true): CanvasRenderingContext2DSettings = js("({ alpha: alpha })")
+public expect fun CanvasRenderingContext2DSettings(alpha: Boolean? = true): CanvasRenderingContext2DSettings
 
 /**
  * Exposes the JavaScript [CanvasRenderingContext2D](https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D) to Kotlin
  */
-public external abstract class CanvasRenderingContext2D : CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasUserInterface, CanvasText, CanvasDrawImage, CanvasHitRegion, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath, RenderingContext, JsAny {
+public expect abstract class CanvasRenderingContext2D : CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasUserInterface, CanvasText, CanvasDrawImage, CanvasHitRegion, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath, RenderingContext, JsAny {
     open val canvas: HTMLCanvasElement
 }
 
-public external interface CanvasState : JsAny {
+public expect interface CanvasState : JsAny {
     fun save()
     fun restore()
 }
 
-public external interface CanvasTransform : JsAny {
+public expect interface CanvasTransform : JsAny {
     fun scale(x: Double, y: Double)
     fun rotate(angle: Double)
     fun translate(x: Double, y: Double)
@@ -2765,17 +2719,17 @@ public external interface CanvasTransform : JsAny {
     fun resetTransform()
 }
 
-public external interface CanvasCompositing : JsAny {
+public expect interface CanvasCompositing : JsAny {
     var globalAlpha: Double
     var globalCompositeOperation: String
 }
 
-public external interface CanvasImageSmoothing : JsAny {
+public expect interface CanvasImageSmoothing : JsAny {
     var imageSmoothingEnabled: Boolean
     var imageSmoothingQuality: ImageSmoothingQuality
 }
 
-public external interface CanvasFillStrokeStyles : JsAny {
+public expect interface CanvasFillStrokeStyles : JsAny {
     var strokeStyle: JsAny? /* String|CanvasGradient|CanvasPattern */
     var fillStyle: JsAny? /* String|CanvasGradient|CanvasPattern */
     fun createLinearGradient(x0: Double, y0: Double, x1: Double, y1: Double): CanvasGradient
@@ -2783,24 +2737,24 @@ public external interface CanvasFillStrokeStyles : JsAny {
     fun createPattern(image: CanvasImageSource, repetition: String): CanvasPattern?
 }
 
-public external interface CanvasShadowStyles : JsAny {
+public expect interface CanvasShadowStyles : JsAny {
     var shadowOffsetX: Double
     var shadowOffsetY: Double
     var shadowBlur: Double
     var shadowColor: String
 }
 
-public external interface CanvasFilters : JsAny {
+public expect interface CanvasFilters : JsAny {
     var filter: String
 }
 
-public external interface CanvasRect : JsAny {
+public expect interface CanvasRect : JsAny {
     fun clearRect(x: Double, y: Double, w: Double, h: Double)
     fun fillRect(x: Double, y: Double, w: Double, h: Double)
     fun strokeRect(x: Double, y: Double, w: Double, h: Double)
 }
 
-public external interface CanvasDrawPath : JsAny {
+public expect interface CanvasDrawPath : JsAny {
     fun beginPath()
     fun fill(fillRule: CanvasFillRule = definedExternally)
     fun fill(path: Path2D, fillRule: CanvasFillRule = definedExternally)
@@ -2815,32 +2769,32 @@ public external interface CanvasDrawPath : JsAny {
     fun isPointInStroke(path: Path2D, x: Double, y: Double): Boolean
 }
 
-public external interface CanvasUserInterface : JsAny {
+public expect interface CanvasUserInterface : JsAny {
     fun drawFocusIfNeeded(element: Element)
     fun drawFocusIfNeeded(path: Path2D, element: Element)
     fun scrollPathIntoView()
     fun scrollPathIntoView(path: Path2D)
 }
 
-public external interface CanvasText : JsAny {
+public expect interface CanvasText : JsAny {
     fun fillText(text: String, x: Double, y: Double, maxWidth: Double = definedExternally)
     fun strokeText(text: String, x: Double, y: Double, maxWidth: Double = definedExternally)
     fun measureText(text: String): TextMetrics
 }
 
-public external interface CanvasDrawImage : JsAny {
+public expect interface CanvasDrawImage : JsAny {
     fun drawImage(image: CanvasImageSource, dx: Double, dy: Double)
     fun drawImage(image: CanvasImageSource, dx: Double, dy: Double, dw: Double, dh: Double)
     fun drawImage(image: CanvasImageSource, sx: Double, sy: Double, sw: Double, sh: Double, dx: Double, dy: Double, dw: Double, dh: Double)
 }
 
-public external interface CanvasHitRegion : JsAny {
+public expect interface CanvasHitRegion : JsAny {
     fun addHitRegion(options: HitRegionOptions = definedExternally)
     fun removeHitRegion(id: String)
     fun clearHitRegions()
 }
 
-public external interface CanvasImageData : JsAny {
+public expect interface CanvasImageData : JsAny {
     fun createImageData(sw: Double, sh: Double): ImageData
     fun createImageData(imagedata: ImageData): ImageData
     fun getImageData(sx: Double, sy: Double, sw: Double, sh: Double): ImageData
@@ -2848,7 +2802,7 @@ public external interface CanvasImageData : JsAny {
     fun putImageData(imagedata: ImageData, dx: Double, dy: Double, dirtyX: Double, dirtyY: Double, dirtyWidth: Double, dirtyHeight: Double)
 }
 
-public external interface CanvasPathDrawingStyles : JsAny {
+public expect interface CanvasPathDrawingStyles : JsAny {
     var lineWidth: Double
     var lineCap: CanvasLineCap
     var lineJoin: CanvasLineJoin
@@ -2858,14 +2812,14 @@ public external interface CanvasPathDrawingStyles : JsAny {
     fun getLineDash(): JsArray<JsNumber>
 }
 
-public external interface CanvasTextDrawingStyles : JsAny {
+public expect interface CanvasTextDrawingStyles : JsAny {
     var font: String
     var textAlign: CanvasTextAlign
     var textBaseline: CanvasTextBaseline
     var direction: CanvasDirection
 }
 
-public external interface CanvasPath : JsAny {
+public expect interface CanvasPath : JsAny {
     fun closePath()
     fun moveTo(x: Double, y: Double)
     fun lineTo(x: Double, y: Double)
@@ -2881,21 +2835,21 @@ public external interface CanvasPath : JsAny {
 /**
  * Exposes the JavaScript [CanvasGradient](https://developer.mozilla.org/en/docs/Web/API/CanvasGradient) to Kotlin
  */
-public external abstract class CanvasGradient : JsAny {
+public expect abstract class CanvasGradient : JsAny {
     fun addColorStop(offset: Double, color: String)
 }
 
 /**
  * Exposes the JavaScript [CanvasPattern](https://developer.mozilla.org/en/docs/Web/API/CanvasPattern) to Kotlin
  */
-public external abstract class CanvasPattern : JsAny {
+public expect abstract class CanvasPattern : JsAny {
     fun setTransform(transform: JsAny? = definedExternally)
 }
 
 /**
  * Exposes the JavaScript [TextMetrics](https://developer.mozilla.org/en/docs/Web/API/TextMetrics) to Kotlin
  */
-public external abstract class TextMetrics : JsAny {
+public expect abstract class TextMetrics : JsAny {
     open val width: Double
     open val actualBoundingBoxLeft: Double
     open val actualBoundingBoxRight: Double
@@ -2910,40 +2864,24 @@ public external abstract class TextMetrics : JsAny {
     open val ideographicBaseline: Double
 }
 
-public external interface HitRegionOptions : JsAny {
-    var path: Path2D? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
-    var fillRule: CanvasFillRule? /* = CanvasFillRule.NONZERO */
-        get() = definedExternally
-        set(value) = definedExternally
-    var id: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var parentID: String? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
-    var cursor: String? /* = "inherit" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var control: Element? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
-    var label: String? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
-    var role: String? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface HitRegionOptions : JsAny {
+    open var path: Path2D? /* = null */
+    open var fillRule: CanvasFillRule? /* = CanvasFillRule.NONZERO */
+    open var id: String? /* = "" */
+    open var parentID: String? /* = null */
+    open var cursor: String? /* = "inherit" */
+    open var control: Element? /* = null */
+    open var label: String? /* = null */
+    open var role: String? /* = null */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun HitRegionOptions(path: Path2D? = null, fillRule: CanvasFillRule? = CanvasFillRule.NONZERO, id: String? = "", parentID: String? = null, cursor: String? = "inherit", control: Element? = null, label: String? = null, role: String? = null): HitRegionOptions = js("({ path: path, fillRule: fillRule, id: id, parentID: parentID, cursor: cursor, control: control, label: label, role: role })")
+public expect fun HitRegionOptions(path: Path2D? = null, fillRule: CanvasFillRule? = CanvasFillRule.NONZERO, id: String? = "", parentID: String? = null, cursor: String? = "inherit", control: Element? = null, label: String? = null, role: String? = null): HitRegionOptions
 
 /**
  * Exposes the JavaScript [ImageData](https://developer.mozilla.org/en/docs/Web/API/ImageData) to Kotlin
  */
-public external open class ImageData : ImageBitmapSource, TexImageSource, JsAny {
+public expect open class ImageData : ImageBitmapSource, TexImageSource, JsAny {
     constructor(sw: Int, sh: Int)
     constructor(data: Uint8ClampedArray, sw: Int, sh: Int = definedExternally)
     open val width: Int
@@ -2954,7 +2892,7 @@ public external open class ImageData : ImageBitmapSource, TexImageSource, JsAny 
 /**
  * Exposes the JavaScript [Path2D](https://developer.mozilla.org/en/docs/Web/API/Path2D) to Kotlin
  */
-public external open class Path2D() : CanvasPath, JsAny {
+public expect open class Path2D() : CanvasPath, JsAny {
     constructor(path: Path2D)
     constructor(paths: JsArray<Path2D>, fillRule: CanvasFillRule = definedExternally)
     constructor(d: String)
@@ -2974,39 +2912,35 @@ public external open class Path2D() : CanvasPath, JsAny {
 /**
  * Exposes the JavaScript [ImageBitmapRenderingContext](https://developer.mozilla.org/en/docs/Web/API/ImageBitmapRenderingContext) to Kotlin
  */
-public external abstract class ImageBitmapRenderingContext : JsAny {
+public expect abstract class ImageBitmapRenderingContext : JsAny {
     open val canvas: HTMLCanvasElement
     fun transferFromImageBitmap(bitmap: ImageBitmap?)
 }
 
-public external interface ImageBitmapRenderingContextSettings : JsAny {
-    var alpha: Boolean? /* = true */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface ImageBitmapRenderingContextSettings : JsAny {
+    open var alpha: Boolean? /* = true */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ImageBitmapRenderingContextSettings(alpha: Boolean? = true): ImageBitmapRenderingContextSettings = js("({ alpha: alpha })")
+public expect fun ImageBitmapRenderingContextSettings(alpha: Boolean? = true): ImageBitmapRenderingContextSettings
 
 /**
  * Exposes the JavaScript [CustomElementRegistry](https://developer.mozilla.org/en/docs/Web/API/CustomElementRegistry) to Kotlin
  */
-public external abstract class CustomElementRegistry : JsAny {
+public expect abstract class CustomElementRegistry : JsAny {
     fun define(name: String, constructor: () -> JsAny?, options: ElementDefinitionOptions = definedExternally)
     fun get(name: String): JsAny?
     fun whenDefined(name: String): Promise<Nothing?>
 }
 
-public external interface ElementDefinitionOptions : JsAny {
-    var extends: String?
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface ElementDefinitionOptions : JsAny {
+    open var extends: String?
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ElementDefinitionOptions(extends_: String? = undefined): ElementDefinitionOptions = js("({ extends: extends_ })")
+public expect fun ElementDefinitionOptions(extends_: String? = undefined): ElementDefinitionOptions
 
-public external interface ElementContentEditable : JsAny {
+public expect interface ElementContentEditable : JsAny {
     var contentEditable: String
     val isContentEditable: Boolean
 }
@@ -3014,7 +2948,7 @@ public external interface ElementContentEditable : JsAny {
 /**
  * Exposes the JavaScript [DataTransfer](https://developer.mozilla.org/en/docs/Web/API/DataTransfer) to Kotlin
  */
-public external abstract class DataTransfer : JsAny {
+public expect abstract class DataTransfer : JsAny {
     open var dropEffect: String
     open var effectAllowed: String
     open val items: DataTransferItemList
@@ -3029,7 +2963,7 @@ public external abstract class DataTransfer : JsAny {
 /**
  * Exposes the JavaScript [DataTransferItemList](https://developer.mozilla.org/en/docs/Web/API/DataTransferItemList) to Kotlin
  */
-public external abstract class DataTransferItemList : JsAny {
+public expect abstract class DataTransferItemList : JsAny {
     open val length: Int
     fun add(data: String, type: String): DataTransferItem?
     fun add(data: File): DataTransferItem?
@@ -3037,15 +2971,12 @@ public external abstract class DataTransferItemList : JsAny {
     fun clear()
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForDataTransferItemList(obj: DataTransferItemList, index: Int): DataTransferItem? = js("obj[index]")
-
-public operator fun DataTransferItemList.get(index: Int): DataTransferItem? = getMethodImplForDataTransferItemList(this, index)
+public expect operator fun DataTransferItemList.get(index: Int): DataTransferItem?
 
 /**
  * Exposes the JavaScript [DataTransferItem](https://developer.mozilla.org/en/docs/Web/API/DataTransferItem) to Kotlin
  */
-public external abstract class DataTransferItem : JsAny {
+public expect abstract class DataTransferItem : JsAny {
     open val kind: String
     open val type: String
     fun getAsString(_callback: ((String) -> Unit)?)
@@ -3055,7 +2986,7 @@ public external abstract class DataTransferItem : JsAny {
 /**
  * Exposes the JavaScript [DragEvent](https://developer.mozilla.org/en/docs/Web/API/DragEvent) to Kotlin
  */
-public external open class DragEvent(type: String, eventInitDict: DragEventInit = definedExternally) : MouseEvent, JsAny {
+public expect open class DragEvent(type: String, eventInitDict: DragEventInit = definedExternally) : MouseEvent, JsAny {
     open val dataTransfer: DataTransfer?
 
     companion object {
@@ -3066,19 +2997,17 @@ public external open class DragEvent(type: String, eventInitDict: DragEventInit 
     }
 }
 
-public external interface DragEventInit : MouseEventInit, JsAny {
-    var dataTransfer: DataTransfer? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface DragEventInit : MouseEventInit, JsAny {
+    open var dataTransfer: DataTransfer? /* = null */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun DragEventInit(dataTransfer: DataTransfer? = null, screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, region: String? = null, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): DragEventInit = js("({ dataTransfer: dataTransfer, screenX: screenX, screenY: screenY, clientX: clientX, clientY: clientY, button: button, buttons: buttons, relatedTarget: relatedTarget, region: region, ctrlKey: ctrlKey, shiftKey: shiftKey, altKey: altKey, metaKey: metaKey, modifierAltGraph: modifierAltGraph, modifierCapsLock: modifierCapsLock, modifierFn: modifierFn, modifierFnLock: modifierFnLock, modifierHyper: modifierHyper, modifierNumLock: modifierNumLock, modifierScrollLock: modifierScrollLock, modifierSuper: modifierSuper, modifierSymbol: modifierSymbol, modifierSymbolLock: modifierSymbolLock, view: view, detail: detail, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun DragEventInit(dataTransfer: DataTransfer? = null, screenX: Int? = 0, screenY: Int? = 0, clientX: Int? = 0, clientY: Int? = 0, button: Short? = 0, buttons: Short? = 0, relatedTarget: EventTarget? = null, region: String? = null, ctrlKey: Boolean? = false, shiftKey: Boolean? = false, altKey: Boolean? = false, metaKey: Boolean? = false, modifierAltGraph: Boolean? = false, modifierCapsLock: Boolean? = false, modifierFn: Boolean? = false, modifierFnLock: Boolean? = false, modifierHyper: Boolean? = false, modifierNumLock: Boolean? = false, modifierScrollLock: Boolean? = false, modifierSuper: Boolean? = false, modifierSymbol: Boolean? = false, modifierSymbolLock: Boolean? = false, view: Window? = null, detail: Int? = 0, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): DragEventInit
 
 /**
  * Exposes the JavaScript [Window](https://developer.mozilla.org/en/docs/Web/API/Window) to Kotlin
  */
-public external abstract class Window : EventTarget, GlobalEventHandlers, WindowEventHandlers, WindowOrWorkerGlobalScope, WindowSessionStorage, WindowLocalStorage, GlobalPerformance, UnionMessagePortOrWindowProxy, JsAny {
+public expect abstract class Window : EventTarget, GlobalEventHandlers, WindowEventHandlers, WindowOrWorkerGlobalScope, WindowSessionStorage, WindowLocalStorage, GlobalPerformance, UnionMessagePortOrWindowProxy, JsAny {
     open val window: Window
     open val self: Window
     open val document: Document
@@ -3144,19 +3073,16 @@ public external abstract class Window : EventTarget, GlobalEventHandlers, Window
     fun getComputedStyle(elt: Element, pseudoElt: String? = definedExternally): CSSStyleDeclaration
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForWindow(obj: Window, name: String): JsAny? = js("obj[name]")
+public expect operator fun Window.get(name: String): JsAny?
 
-public operator fun Window.get(name: String): JsAny? = getMethodImplForWindow(this, name)
-
-public external abstract class BarProp : JsAny {
+public expect abstract class BarProp : JsAny {
     open val visible: Boolean
 }
 
 /**
  * Exposes the JavaScript [History](https://developer.mozilla.org/en/docs/Web/API/History) to Kotlin
  */
-public external abstract class History : JsAny {
+public expect abstract class History : JsAny {
     open val length: Int
     open var scrollRestoration: ScrollRestoration
     open val state: JsAny?
@@ -3170,7 +3096,7 @@ public external abstract class History : JsAny {
 /**
  * Exposes the JavaScript [Location](https://developer.mozilla.org/en/docs/Web/API/Location) to Kotlin
  */
-public external abstract class Location : JsAny {
+public expect abstract class Location : JsAny {
     open var href: String
     open val origin: String
     open var protocol: String
@@ -3189,7 +3115,7 @@ public external abstract class Location : JsAny {
 /**
  * Exposes the JavaScript [PopStateEvent](https://developer.mozilla.org/en/docs/Web/API/PopStateEvent) to Kotlin
  */
-public external open class PopStateEvent(type: String, eventInitDict: PopStateEventInit = definedExternally) : Event, JsAny {
+public expect open class PopStateEvent(type: String, eventInitDict: PopStateEventInit = definedExternally) : Event, JsAny {
     open val state: JsAny?
 
     companion object {
@@ -3200,19 +3126,17 @@ public external open class PopStateEvent(type: String, eventInitDict: PopStateEv
     }
 }
 
-public external interface PopStateEventInit : EventInit, JsAny {
-    var state: JsAny? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface PopStateEventInit : EventInit, JsAny {
+    open var state: JsAny? /* = null */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun PopStateEventInit(state: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PopStateEventInit = js("({ state: state, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun PopStateEventInit(state: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PopStateEventInit
 
 /**
  * Exposes the JavaScript [HashChangeEvent](https://developer.mozilla.org/en/docs/Web/API/HashChangeEvent) to Kotlin
  */
-public external open class HashChangeEvent(type: String, eventInitDict: HashChangeEventInit = definedExternally) : Event, JsAny {
+public expect open class HashChangeEvent(type: String, eventInitDict: HashChangeEventInit = definedExternally) : Event, JsAny {
     open val oldURL: String
     open val newURL: String
 
@@ -3224,22 +3148,18 @@ public external open class HashChangeEvent(type: String, eventInitDict: HashChan
     }
 }
 
-public external interface HashChangeEventInit : EventInit, JsAny {
-    var oldURL: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var newURL: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface HashChangeEventInit : EventInit, JsAny {
+    open var oldURL: String? /* = "" */
+    open var newURL: String? /* = "" */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun HashChangeEventInit(oldURL: String? = "", newURL: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): HashChangeEventInit = js("({ oldURL: oldURL, newURL: newURL, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun HashChangeEventInit(oldURL: String? = "", newURL: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): HashChangeEventInit
 
 /**
  * Exposes the JavaScript [PageTransitionEvent](https://developer.mozilla.org/en/docs/Web/API/PageTransitionEvent) to Kotlin
  */
-public external open class PageTransitionEvent(type: String, eventInitDict: PageTransitionEventInit = definedExternally) : Event, JsAny {
+public expect open class PageTransitionEvent(type: String, eventInitDict: PageTransitionEventInit = definedExternally) : Event, JsAny {
     open val persisted: Boolean
 
     companion object {
@@ -3250,19 +3170,17 @@ public external open class PageTransitionEvent(type: String, eventInitDict: Page
     }
 }
 
-public external interface PageTransitionEventInit : EventInit, JsAny {
-    var persisted: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface PageTransitionEventInit : EventInit, JsAny {
+    open var persisted: Boolean? /* = false */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun PageTransitionEventInit(persisted: Boolean? = false, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PageTransitionEventInit = js("({ persisted: persisted, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun PageTransitionEventInit(persisted: Boolean? = false, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PageTransitionEventInit
 
 /**
  * Exposes the JavaScript [BeforeUnloadEvent](https://developer.mozilla.org/en/docs/Web/API/BeforeUnloadEvent) to Kotlin
  */
-public external open class BeforeUnloadEvent : Event, JsAny {
+public expect open class BeforeUnloadEvent : Event, JsAny {
     var returnValue: String
 
     companion object {
@@ -3273,7 +3191,7 @@ public external open class BeforeUnloadEvent : Event, JsAny {
     }
 }
 
-public external abstract class ApplicationCache : EventTarget, JsAny {
+public expect abstract class ApplicationCache : EventTarget, JsAny {
     open val status: Short
     open var onchecking: ((Event) -> Unit)?
     open var onerror: ((Event) -> Unit)?
@@ -3300,14 +3218,14 @@ public external abstract class ApplicationCache : EventTarget, JsAny {
 /**
  * Exposes the JavaScript [NavigatorOnLine](https://developer.mozilla.org/en/docs/Web/API/NavigatorOnLine) to Kotlin
  */
-public external interface NavigatorOnLine : JsAny {
+public expect interface NavigatorOnLine : JsAny {
     val onLine: Boolean
 }
 
 /**
  * Exposes the JavaScript [ErrorEvent](https://developer.mozilla.org/en/docs/Web/API/ErrorEvent) to Kotlin
  */
-public external open class ErrorEvent(type: String, eventInitDict: ErrorEventInit = definedExternally) : Event, JsAny {
+public expect open class ErrorEvent(type: String, eventInitDict: ErrorEventInit = definedExternally) : Event, JsAny {
     open val message: String
     open val filename: String
     open val lineno: Int
@@ -3322,31 +3240,21 @@ public external open class ErrorEvent(type: String, eventInitDict: ErrorEventIni
     }
 }
 
-public external interface ErrorEventInit : EventInit, JsAny {
-    var message: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var filename: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var lineno: Int? /* = 0 */
-        get() = definedExternally
-        set(value) = definedExternally
-    var colno: Int? /* = 0 */
-        get() = definedExternally
-        set(value) = definedExternally
-    var error: JsAny? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface ErrorEventInit : EventInit, JsAny {
+    open var message: String? /* = "" */
+    open var filename: String? /* = "" */
+    open var lineno: Int? /* = 0 */
+    open var colno: Int? /* = 0 */
+    open var error: JsAny? /* = null */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ErrorEventInit(message: String? = "", filename: String? = "", lineno: Int? = 0, colno: Int? = 0, error: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ErrorEventInit = js("({ message: message, filename: filename, lineno: lineno, colno: colno, error: error, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun ErrorEventInit(message: String? = "", filename: String? = "", lineno: Int? = 0, colno: Int? = 0, error: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ErrorEventInit
 
 /**
  * Exposes the JavaScript [PromiseRejectionEvent](https://developer.mozilla.org/en/docs/Web/API/PromiseRejectionEvent) to Kotlin
  */
-public external open class PromiseRejectionEvent(type: String, eventInitDict: PromiseRejectionEventInit) : Event, JsAny {
+public expect open class PromiseRejectionEvent(type: String, eventInitDict: PromiseRejectionEventInit) : Event, JsAny {
     open val promise: Promise<JsAny?>
     open val reason: JsAny?
 
@@ -3358,302 +3266,122 @@ public external open class PromiseRejectionEvent(type: String, eventInitDict: Pr
     }
 }
 
-public external interface PromiseRejectionEventInit : EventInit, JsAny {
+public expect interface PromiseRejectionEventInit : EventInit, JsAny {
     var promise: Promise<JsAny?>?
-    var reason: JsAny?
-        get() = definedExternally
-        set(value) = definedExternally
+    open var reason: JsAny?
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun PromiseRejectionEventInit(promise: Promise<JsAny?>?, reason: JsAny? = undefined, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PromiseRejectionEventInit = js("({ promise: promise, reason: reason, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun PromiseRejectionEventInit(promise: Promise<JsAny?>?, reason: JsAny? = undefined, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): PromiseRejectionEventInit
 
 /**
  * Exposes the JavaScript [GlobalEventHandlers](https://developer.mozilla.org/en/docs/Web/API/GlobalEventHandlers) to Kotlin
  */
-public external interface GlobalEventHandlers : JsAny {
-    var onabort: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onblur: ((FocusEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var oncancel: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var oncanplay: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var oncanplaythrough: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onchange: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onclick: ((MouseEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onclose: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var oncontextmenu: ((MouseEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var oncuechange: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ondblclick: ((MouseEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ondrag: ((DragEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ondragend: ((DragEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ondragenter: ((DragEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ondragexit: ((DragEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ondragleave: ((DragEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ondragover: ((DragEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ondragstart: ((DragEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ondrop: ((DragEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ondurationchange: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onemptied: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onended: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onerror: ((JsAny? /* Event|String */, String, Int, Int, JsAny?) -> JsAny?)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onfocus: ((FocusEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var oninput: ((InputEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var oninvalid: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onkeydown: ((KeyboardEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onkeypress: ((KeyboardEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onkeyup: ((KeyboardEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onload: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onloadeddata: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onloadedmetadata: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onloadend: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onloadstart: ((ProgressEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onmousedown: ((MouseEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onmouseenter: ((MouseEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onmouseleave: ((MouseEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onmousemove: ((MouseEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onmouseout: ((MouseEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onmouseover: ((MouseEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onmouseup: ((MouseEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onwheel: ((WheelEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpause: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onplay: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onplaying: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onprogress: ((ProgressEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onratechange: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onreset: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onresize: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onscroll: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onseeked: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onseeking: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onselect: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onshow: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onstalled: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onsubmit: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onsuspend: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ontimeupdate: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ontoggle: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onvolumechange: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onwaiting: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ongotpointercapture: ((PointerEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onlostpointercapture: ((PointerEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpointerdown: ((PointerEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpointermove: ((PointerEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpointerup: ((PointerEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpointercancel: ((PointerEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpointerover: ((PointerEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpointerout: ((PointerEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpointerenter: ((PointerEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpointerleave: ((PointerEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface GlobalEventHandlers : JsAny {
+    open var onabort: ((Event) -> Unit)?
+    open var onblur: ((FocusEvent) -> Unit)?
+    open var oncancel: ((Event) -> Unit)?
+    open var oncanplay: ((Event) -> Unit)?
+    open var oncanplaythrough: ((Event) -> Unit)?
+    open var onchange: ((Event) -> Unit)?
+    open var onclick: ((MouseEvent) -> Unit)?
+    open var onclose: ((Event) -> Unit)?
+    open var oncontextmenu: ((MouseEvent) -> Unit)?
+    open var oncuechange: ((Event) -> Unit)?
+    open var ondblclick: ((MouseEvent) -> Unit)?
+    open var ondrag: ((DragEvent) -> Unit)?
+    open var ondragend: ((DragEvent) -> Unit)?
+    open var ondragenter: ((DragEvent) -> Unit)?
+    open var ondragexit: ((DragEvent) -> Unit)?
+    open var ondragleave: ((DragEvent) -> Unit)?
+    open var ondragover: ((DragEvent) -> Unit)?
+    open var ondragstart: ((DragEvent) -> Unit)?
+    open var ondrop: ((DragEvent) -> Unit)?
+    open var ondurationchange: ((Event) -> Unit)?
+    open var onemptied: ((Event) -> Unit)?
+    open var onended: ((Event) -> Unit)?
+    open var onerror: ((JsAny? /* Event|String */, String, Int, Int, JsAny?) -> JsAny?)?
+    open var onfocus: ((FocusEvent) -> Unit)?
+    open var oninput: ((InputEvent) -> Unit)?
+    open var oninvalid: ((Event) -> Unit)?
+    open var onkeydown: ((KeyboardEvent) -> Unit)?
+    open var onkeypress: ((KeyboardEvent) -> Unit)?
+    open var onkeyup: ((KeyboardEvent) -> Unit)?
+    open var onload: ((Event) -> Unit)?
+    open var onloadeddata: ((Event) -> Unit)?
+    open var onloadedmetadata: ((Event) -> Unit)?
+    open var onloadend: ((Event) -> Unit)?
+    open var onloadstart: ((ProgressEvent) -> Unit)?
+    open var onmousedown: ((MouseEvent) -> Unit)?
+    open var onmouseenter: ((MouseEvent) -> Unit)?
+    open var onmouseleave: ((MouseEvent) -> Unit)?
+    open var onmousemove: ((MouseEvent) -> Unit)?
+    open var onmouseout: ((MouseEvent) -> Unit)?
+    open var onmouseover: ((MouseEvent) -> Unit)?
+    open var onmouseup: ((MouseEvent) -> Unit)?
+    open var onwheel: ((WheelEvent) -> Unit)?
+    open var onpause: ((Event) -> Unit)?
+    open var onplay: ((Event) -> Unit)?
+    open var onplaying: ((Event) -> Unit)?
+    open var onprogress: ((ProgressEvent) -> Unit)?
+    open var onratechange: ((Event) -> Unit)?
+    open var onreset: ((Event) -> Unit)?
+    open var onresize: ((Event) -> Unit)?
+    open var onscroll: ((Event) -> Unit)?
+    open var onseeked: ((Event) -> Unit)?
+    open var onseeking: ((Event) -> Unit)?
+    open var onselect: ((Event) -> Unit)?
+    open var onshow: ((Event) -> Unit)?
+    open var onstalled: ((Event) -> Unit)?
+    open var onsubmit: ((Event) -> Unit)?
+    open var onsuspend: ((Event) -> Unit)?
+    open var ontimeupdate: ((Event) -> Unit)?
+    open var ontoggle: ((Event) -> Unit)?
+    open var onvolumechange: ((Event) -> Unit)?
+    open var onwaiting: ((Event) -> Unit)?
+    open var ongotpointercapture: ((PointerEvent) -> Unit)?
+    open var onlostpointercapture: ((PointerEvent) -> Unit)?
+    open var onpointerdown: ((PointerEvent) -> Unit)?
+    open var onpointermove: ((PointerEvent) -> Unit)?
+    open var onpointerup: ((PointerEvent) -> Unit)?
+    open var onpointercancel: ((PointerEvent) -> Unit)?
+    open var onpointerover: ((PointerEvent) -> Unit)?
+    open var onpointerout: ((PointerEvent) -> Unit)?
+    open var onpointerenter: ((PointerEvent) -> Unit)?
+    open var onpointerleave: ((PointerEvent) -> Unit)?
 }
 
 /**
  * Exposes the JavaScript [WindowEventHandlers](https://developer.mozilla.org/en/docs/Web/API/WindowEventHandlers) to Kotlin
  */
-public external interface WindowEventHandlers : JsAny {
-    var onafterprint: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onbeforeprint: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onbeforeunload: ((BeforeUnloadEvent) -> String?)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onhashchange: ((HashChangeEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onlanguagechange: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onmessage: ((MessageEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onoffline: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ononline: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpagehide: ((PageTransitionEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpageshow: ((PageTransitionEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpopstate: ((PopStateEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onrejectionhandled: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onstorage: ((StorageEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onunhandledrejection: ((PromiseRejectionEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onunload: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface WindowEventHandlers : JsAny {
+    open var onafterprint: ((Event) -> Unit)?
+    open var onbeforeprint: ((Event) -> Unit)?
+    open var onbeforeunload: ((BeforeUnloadEvent) -> String?)?
+    open var onhashchange: ((HashChangeEvent) -> Unit)?
+    open var onlanguagechange: ((Event) -> Unit)?
+    open var onmessage: ((MessageEvent) -> Unit)?
+    open var onoffline: ((Event) -> Unit)?
+    open var ononline: ((Event) -> Unit)?
+    open var onpagehide: ((PageTransitionEvent) -> Unit)?
+    open var onpageshow: ((PageTransitionEvent) -> Unit)?
+    open var onpopstate: ((PopStateEvent) -> Unit)?
+    open var onrejectionhandled: ((Event) -> Unit)?
+    open var onstorage: ((StorageEvent) -> Unit)?
+    open var onunhandledrejection: ((PromiseRejectionEvent) -> Unit)?
+    open var onunload: ((Event) -> Unit)?
 }
 
-public external interface DocumentAndElementEventHandlers : JsAny {
-    var oncopy: ((ClipboardEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var oncut: ((ClipboardEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var onpaste: ((ClipboardEvent) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface DocumentAndElementEventHandlers : JsAny {
+    open var oncopy: ((ClipboardEvent) -> Unit)?
+    open var oncut: ((ClipboardEvent) -> Unit)?
+    open var onpaste: ((ClipboardEvent) -> Unit)?
 }
 
 /**
  * Exposes the JavaScript [WindowOrWorkerGlobalScope](https://developer.mozilla.org/en/docs/Web/API/WindowOrWorkerGlobalScope) to Kotlin
  */
-public external interface WindowOrWorkerGlobalScope : JsAny {
+public expect interface WindowOrWorkerGlobalScope : JsAny {
     val origin: String
     val caches: CacheStorage
     fun btoa(data: String): String
@@ -3673,7 +3401,7 @@ public external interface WindowOrWorkerGlobalScope : JsAny {
 /**
  * Exposes the JavaScript [Navigator](https://developer.mozilla.org/en/docs/Web/API/Navigator) to Kotlin
  */
-public external abstract class Navigator : NavigatorID, NavigatorLanguage, NavigatorOnLine, NavigatorContentUtils, NavigatorCookies, NavigatorPlugins, NavigatorConcurrentHardware, JsAny {
+public expect abstract class Navigator : NavigatorID, NavigatorLanguage, NavigatorOnLine, NavigatorContentUtils, NavigatorCookies, NavigatorPlugins, NavigatorConcurrentHardware, JsAny {
     open val clipboard: Clipboard
     open val mediaDevices: MediaDevices
     open val maxTouchPoints: Int
@@ -3687,7 +3415,7 @@ public external abstract class Navigator : NavigatorID, NavigatorLanguage, Navig
 /**
  * Exposes the JavaScript [NavigatorID](https://developer.mozilla.org/en/docs/Web/API/NavigatorID) to Kotlin
  */
-public external interface NavigatorID : JsAny {
+public expect interface NavigatorID : JsAny {
     val appCodeName: String
     val appName: String
     val appVersion: String
@@ -3704,12 +3432,12 @@ public external interface NavigatorID : JsAny {
 /**
  * Exposes the JavaScript [NavigatorLanguage](https://developer.mozilla.org/en/docs/Web/API/NavigatorLanguage) to Kotlin
  */
-public external interface NavigatorLanguage : JsAny {
+public expect interface NavigatorLanguage : JsAny {
     val language: String
     val languages: JsArray<out JsString>
 }
 
-public external interface NavigatorContentUtils : JsAny {
+public expect interface NavigatorContentUtils : JsAny {
     fun registerProtocolHandler(scheme: String, url: String, title: String)
     fun registerContentHandler(mimeType: String, url: String, title: String)
     fun isProtocolHandlerRegistered(scheme: String, url: String): String
@@ -3718,14 +3446,14 @@ public external interface NavigatorContentUtils : JsAny {
     fun unregisterContentHandler(mimeType: String, url: String)
 }
 
-public external interface NavigatorCookies : JsAny {
+public expect interface NavigatorCookies : JsAny {
     val cookieEnabled: Boolean
 }
 
 /**
  * Exposes the JavaScript [NavigatorPlugins](https://developer.mozilla.org/en/docs/Web/API/NavigatorPlugins) to Kotlin
  */
-public external interface NavigatorPlugins : JsAny {
+public expect interface NavigatorPlugins : JsAny {
     val plugins: PluginArray
     val mimeTypes: MimeTypeArray
     fun javaEnabled(): Boolean
@@ -3734,44 +3462,32 @@ public external interface NavigatorPlugins : JsAny {
 /**
  * Exposes the JavaScript [PluginArray](https://developer.mozilla.org/en/docs/Web/API/PluginArray) to Kotlin
  */
-public external abstract class PluginArray : ItemArrayLike<Plugin>, JsAny {
+public expect abstract class PluginArray : ItemArrayLike<Plugin>, JsAny {
     fun refresh(reload: Boolean = definedExternally)
     override fun item(index: Int): Plugin?
     fun namedItem(name: String): Plugin?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForPluginArray(obj: PluginArray, index: Int): Plugin? = js("obj[index]")
+public expect operator fun PluginArray.get(index: Int): Plugin?
 
-public operator fun PluginArray.get(index: Int): Plugin? = getMethodImplForPluginArray(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForPluginArray(obj: PluginArray, name: String): Plugin? = js("obj[name]")
-
-public operator fun PluginArray.get(name: String): Plugin? = getMethodImplForPluginArray(this, name)
+public expect operator fun PluginArray.get(name: String): Plugin?
 
 /**
  * Exposes the JavaScript [MimeTypeArray](https://developer.mozilla.org/en/docs/Web/API/MimeTypeArray) to Kotlin
  */
-public external abstract class MimeTypeArray : ItemArrayLike<MimeType>, JsAny {
+public expect abstract class MimeTypeArray : ItemArrayLike<MimeType>, JsAny {
     override fun item(index: Int): MimeType?
     fun namedItem(name: String): MimeType?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForMimeTypeArray(obj: MimeTypeArray, index: Int): MimeType? = js("obj[index]")
+public expect operator fun MimeTypeArray.get(index: Int): MimeType?
 
-public operator fun MimeTypeArray.get(index: Int): MimeType? = getMethodImplForMimeTypeArray(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForMimeTypeArray(obj: MimeTypeArray, name: String): MimeType? = js("obj[name]")
-
-public operator fun MimeTypeArray.get(name: String): MimeType? = getMethodImplForMimeTypeArray(this, name)
+public expect operator fun MimeTypeArray.get(name: String): MimeType?
 
 /**
  * Exposes the JavaScript [Plugin](https://developer.mozilla.org/en/docs/Web/API/Plugin) to Kotlin
  */
-public external abstract class Plugin : ItemArrayLike<MimeType>, JsAny {
+public expect abstract class Plugin : ItemArrayLike<MimeType>, JsAny {
     open val name: String
     open val description: String
     open val filename: String
@@ -3779,20 +3495,14 @@ public external abstract class Plugin : ItemArrayLike<MimeType>, JsAny {
     fun namedItem(name: String): MimeType?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForPlugin(obj: Plugin, index: Int): MimeType? = js("obj[index]")
+public expect operator fun Plugin.get(index: Int): MimeType?
 
-public operator fun Plugin.get(index: Int): MimeType? = getMethodImplForPlugin(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForPlugin(obj: Plugin, name: String): MimeType? = js("obj[name]")
-
-public operator fun Plugin.get(name: String): MimeType? = getMethodImplForPlugin(this, name)
+public expect operator fun Plugin.get(name: String): MimeType?
 
 /**
  * Exposes the JavaScript [MimeType](https://developer.mozilla.org/en/docs/Web/API/MimeType) to Kotlin
  */
-public external abstract class MimeType : JsAny {
+public expect abstract class MimeType : JsAny {
     open val type: String
     open val description: String
     open val suffixes: String
@@ -3802,40 +3512,28 @@ public external abstract class MimeType : JsAny {
 /**
  * Exposes the JavaScript [ImageBitmap](https://developer.mozilla.org/en/docs/Web/API/ImageBitmap) to Kotlin
  */
-public external abstract class ImageBitmap : CanvasImageSource, TexImageSource, JsAny {
+public expect abstract class ImageBitmap : CanvasImageSource, TexImageSource, JsAny {
     open val width: Int
     open val height: Int
     fun close()
 }
 
-public external interface ImageBitmapOptions : JsAny {
-    var imageOrientation: ImageOrientation? /* = ImageOrientation.NONE */
-        get() = definedExternally
-        set(value) = definedExternally
-    var premultiplyAlpha: PremultiplyAlpha? /* = PremultiplyAlpha.DEFAULT */
-        get() = definedExternally
-        set(value) = definedExternally
-    var colorSpaceConversion: ColorSpaceConversion? /* = ColorSpaceConversion.DEFAULT */
-        get() = definedExternally
-        set(value) = definedExternally
-    var resizeWidth: Int?
-        get() = definedExternally
-        set(value) = definedExternally
-    var resizeHeight: Int?
-        get() = definedExternally
-        set(value) = definedExternally
-    var resizeQuality: ResizeQuality? /* = ResizeQuality.LOW */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface ImageBitmapOptions : JsAny {
+    open var imageOrientation: ImageOrientation? /* = ImageOrientation.NONE */
+    open var premultiplyAlpha: PremultiplyAlpha? /* = PremultiplyAlpha.DEFAULT */
+    open var colorSpaceConversion: ColorSpaceConversion? /* = ColorSpaceConversion.DEFAULT */
+    open var resizeWidth: Int?
+    open var resizeHeight: Int?
+    open var resizeQuality: ResizeQuality? /* = ResizeQuality.LOW */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ImageBitmapOptions(imageOrientation: ImageOrientation? = ImageOrientation.NONE, premultiplyAlpha: PremultiplyAlpha? = PremultiplyAlpha.DEFAULT, colorSpaceConversion: ColorSpaceConversion? = ColorSpaceConversion.DEFAULT, resizeWidth: Int? = undefined, resizeHeight: Int? = undefined, resizeQuality: ResizeQuality? = ResizeQuality.LOW): ImageBitmapOptions = js("({ imageOrientation: imageOrientation, premultiplyAlpha: premultiplyAlpha, colorSpaceConversion: colorSpaceConversion, resizeWidth: resizeWidth, resizeHeight: resizeHeight, resizeQuality: resizeQuality })")
+public expect fun ImageBitmapOptions(imageOrientation: ImageOrientation? = ImageOrientation.NONE, premultiplyAlpha: PremultiplyAlpha? = PremultiplyAlpha.DEFAULT, colorSpaceConversion: ColorSpaceConversion? = ColorSpaceConversion.DEFAULT, resizeWidth: Int? = undefined, resizeHeight: Int? = undefined, resizeQuality: ResizeQuality? = ResizeQuality.LOW): ImageBitmapOptions
 
 /**
  * Exposes the JavaScript [MessageEvent](https://developer.mozilla.org/en/docs/Web/API/MessageEvent) to Kotlin
  */
-public external open class MessageEvent(type: String, eventInitDict: MessageEventInit = definedExternally) : Event, JsAny {
+public expect open class MessageEvent(type: String, eventInitDict: MessageEventInit = definedExternally) : Event, JsAny {
     open val data: JsAny?
     open val origin: String
     open val lastEventId: String
@@ -3851,31 +3549,21 @@ public external open class MessageEvent(type: String, eventInitDict: MessageEven
     }
 }
 
-public external interface MessageEventInit : EventInit, JsAny {
-    var data: JsAny? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
-    var origin: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var lastEventId: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var source: UnionMessagePortOrWindowProxy? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
-    var ports: JsArray<MessagePort>? /* = arrayOf() */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface MessageEventInit : EventInit, JsAny {
+    open var data: JsAny? /* = null */
+    open var origin: String? /* = "" */
+    open var lastEventId: String? /* = "" */
+    open var source: UnionMessagePortOrWindowProxy? /* = null */
+    open var ports: JsArray<MessagePort>? /* = arrayOf() */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MessageEventInit(data: JsAny? = null, origin: String? = "", lastEventId: String? = "", source: UnionMessagePortOrWindowProxy? = null, ports: JsArray<MessagePort>? = JsArray(), bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MessageEventInit = js("({ data: data, origin: origin, lastEventId: lastEventId, source: source, ports: ports, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun MessageEventInit(data: JsAny? = null, origin: String? = "", lastEventId: String? = "", source: UnionMessagePortOrWindowProxy? = null, ports: JsArray<MessagePort>? = JsArray(), bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MessageEventInit
 
 /**
  * Exposes the JavaScript [EventSource](https://developer.mozilla.org/en/docs/Web/API/EventSource) to Kotlin
  */
-public external open class EventSource(url: String, eventSourceInitDict: EventSourceInit = definedExternally) : EventTarget, JsAny {
+public expect open class EventSource(url: String, eventSourceInitDict: EventSourceInit = definedExternally) : EventTarget, JsAny {
     open val url: String
     open val withCredentials: Boolean
     open val readyState: Short
@@ -3891,19 +3579,17 @@ public external open class EventSource(url: String, eventSourceInitDict: EventSo
     }
 }
 
-public external interface EventSourceInit : JsAny {
-    var withCredentials: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface EventSourceInit : JsAny {
+    open var withCredentials: Boolean? /* = false */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun EventSourceInit(withCredentials: Boolean? = false): EventSourceInit = js("({ withCredentials: withCredentials })")
+public expect fun EventSourceInit(withCredentials: Boolean? = false): EventSourceInit
 
 /**
  * Exposes the JavaScript [WebSocket](https://developer.mozilla.org/en/docs/Web/API/WebSocket) to Kotlin
  */
-public external open class WebSocket(url: String, protocols: JsAny? /* String|JsArray<JsString> */ = definedExternally) : EventTarget, JsAny {
+public expect open class WebSocket(url: String, protocols: JsAny? /* String|JsArray<JsString> */ = definedExternally) : EventTarget, JsAny {
     open val url: String
     open val readyState: Short
     open val bufferedAmount: JsNumber
@@ -3931,7 +3617,7 @@ public external open class WebSocket(url: String, protocols: JsAny? /* String|Js
 /**
  * Exposes the JavaScript [CloseEvent](https://developer.mozilla.org/en/docs/Web/API/CloseEvent) to Kotlin
  */
-public external open class CloseEvent(type: String, eventInitDict: CloseEventInit = definedExternally) : Event, JsAny {
+public expect open class CloseEvent(type: String, eventInitDict: CloseEventInit = definedExternally) : Event, JsAny {
     open val wasClean: Boolean
     open val code: Short
     open val reason: String
@@ -3944,25 +3630,19 @@ public external open class CloseEvent(type: String, eventInitDict: CloseEventIni
     }
 }
 
-public external interface CloseEventInit : EventInit, JsAny {
-    var wasClean: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var code: Short? /* = 0 */
-        get() = definedExternally
-        set(value) = definedExternally
-    var reason: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface CloseEventInit : EventInit, JsAny {
+    open var wasClean: Boolean? /* = false */
+    open var code: Short? /* = 0 */
+    open var reason: String? /* = "" */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun CloseEventInit(wasClean: Boolean? = false, code: Short? = 0, reason: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): CloseEventInit = js("({ wasClean: wasClean, code: code, reason: reason, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun CloseEventInit(wasClean: Boolean? = false, code: Short? = 0, reason: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): CloseEventInit
 
 /**
  * Exposes the JavaScript [MessageChannel](https://developer.mozilla.org/en/docs/Web/API/MessageChannel) to Kotlin
  */
-public external open class MessageChannel : JsAny {
+public expect open class MessageChannel() : JsAny {
     open val port1: MessagePort
     open val port2: MessagePort
 }
@@ -3970,7 +3650,7 @@ public external open class MessageChannel : JsAny {
 /**
  * Exposes the JavaScript [MessagePort](https://developer.mozilla.org/en/docs/Web/API/MessagePort) to Kotlin
  */
-public external abstract class MessagePort : EventTarget, UnionMessagePortOrWindowProxy, UnionMessagePortOrServiceWorker, UnionClientOrMessagePortOrServiceWorker, JsAny {
+public expect abstract class MessagePort : EventTarget, UnionMessagePortOrWindowProxy, UnionMessagePortOrServiceWorker, UnionClientOrMessagePortOrServiceWorker, JsAny {
     open var onmessage: ((MessageEvent) -> Unit)?
     fun postMessage(message: JsAny?, transfer: JsArray<JsAny> = definedExternally)
     fun start()
@@ -3980,7 +3660,7 @@ public external abstract class MessagePort : EventTarget, UnionMessagePortOrWind
 /**
  * Exposes the JavaScript [BroadcastChannel](https://developer.mozilla.org/en/docs/Web/API/BroadcastChannel) to Kotlin
  */
-public external open class BroadcastChannel(name: String) : EventTarget, JsAny {
+public expect open class BroadcastChannel(name: String) : EventTarget, JsAny {
     open val name: String
     var onmessage: ((MessageEvent) -> Unit)?
     fun postMessage(message: JsAny?)
@@ -3990,7 +3670,7 @@ public external open class BroadcastChannel(name: String) : EventTarget, JsAny {
 /**
  * Exposes the JavaScript [WorkerGlobalScope](https://developer.mozilla.org/en/docs/Web/API/WorkerGlobalScope) to Kotlin
  */
-public external abstract class WorkerGlobalScope : EventTarget, WindowOrWorkerGlobalScope, GlobalPerformance, JsAny {
+public expect abstract class WorkerGlobalScope : EventTarget, WindowOrWorkerGlobalScope, GlobalPerformance, JsAny {
     open val self: WorkerGlobalScope
     open val location: WorkerLocation
     open val navigator: WorkerNavigator
@@ -4006,7 +3686,7 @@ public external abstract class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
 /**
  * Exposes the JavaScript [DedicatedWorkerGlobalScope](https://developer.mozilla.org/en/docs/Web/API/DedicatedWorkerGlobalScope) to Kotlin
  */
-public external abstract class DedicatedWorkerGlobalScope : WorkerGlobalScope, JsAny {
+public expect abstract class DedicatedWorkerGlobalScope : WorkerGlobalScope, JsAny {
     open var onmessage: ((MessageEvent) -> Unit)?
     fun postMessage(message: JsAny?, transfer: JsArray<JsAny> = definedExternally)
     fun close()
@@ -4015,7 +3695,7 @@ public external abstract class DedicatedWorkerGlobalScope : WorkerGlobalScope, J
 /**
  * Exposes the JavaScript [SharedWorkerGlobalScope](https://developer.mozilla.org/en/docs/Web/API/SharedWorkerGlobalScope) to Kotlin
  */
-public external abstract class SharedWorkerGlobalScope : WorkerGlobalScope, JsAny {
+public expect abstract class SharedWorkerGlobalScope : WorkerGlobalScope, JsAny {
     open val name: String
     open val applicationCache: ApplicationCache
     open var onconnect: ((Event) -> Unit)?
@@ -4025,38 +3705,32 @@ public external abstract class SharedWorkerGlobalScope : WorkerGlobalScope, JsAn
 /**
  * Exposes the JavaScript [AbstractWorker](https://developer.mozilla.org/en/docs/Web/API/AbstractWorker) to Kotlin
  */
-public external interface AbstractWorker : JsAny {
-    var onerror: ((Event) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface AbstractWorker : JsAny {
+    open var onerror: ((Event) -> Unit)?
 }
 
 /**
  * Exposes the JavaScript [Worker](https://developer.mozilla.org/en/docs/Web/API/Worker) to Kotlin
  */
-public external open class Worker(scriptURL: String, options: WorkerOptions = definedExternally) : EventTarget, AbstractWorker, JsAny {
+public expect open class Worker(scriptURL: String, options: WorkerOptions = definedExternally) : EventTarget, AbstractWorker, JsAny {
     var onmessage: ((MessageEvent) -> Unit)?
     override var onerror: ((Event) -> Unit)?
     fun terminate()
     fun postMessage(message: JsAny?, transfer: JsArray<JsAny> = definedExternally)
 }
 
-public external interface WorkerOptions : JsAny {
-    var type: WorkerType? /* = WorkerType.CLASSIC */
-        get() = definedExternally
-        set(value) = definedExternally
-    var credentials: RequestCredentials? /* = RequestCredentials.OMIT */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface WorkerOptions : JsAny {
+    open var type: WorkerType? /* = WorkerType.CLASSIC */
+    open var credentials: RequestCredentials? /* = RequestCredentials.OMIT */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun WorkerOptions(type: WorkerType? = WorkerType.CLASSIC, credentials: RequestCredentials? = RequestCredentials.OMIT): WorkerOptions = js("({ type: type, credentials: credentials })")
+public expect fun WorkerOptions(type: WorkerType? = WorkerType.CLASSIC, credentials: RequestCredentials? = RequestCredentials.OMIT): WorkerOptions
 
 /**
  * Exposes the JavaScript [SharedWorker](https://developer.mozilla.org/en/docs/Web/API/SharedWorker) to Kotlin
  */
-public external open class SharedWorker(scriptURL: String, name: String = definedExternally, options: WorkerOptions = definedExternally) : EventTarget, AbstractWorker, JsAny {
+public expect open class SharedWorker(scriptURL: String, name: String = definedExternally, options: WorkerOptions = definedExternally) : EventTarget, AbstractWorker, JsAny {
     open val port: MessagePort
     override var onerror: ((Event) -> Unit)?
 }
@@ -4064,21 +3738,21 @@ public external open class SharedWorker(scriptURL: String, name: String = define
 /**
  * Exposes the JavaScript [NavigatorConcurrentHardware](https://developer.mozilla.org/en/docs/Web/API/NavigatorConcurrentHardware) to Kotlin
  */
-public external interface NavigatorConcurrentHardware : JsAny {
+public expect interface NavigatorConcurrentHardware : JsAny {
     val hardwareConcurrency: JsNumber
 }
 
 /**
  * Exposes the JavaScript [WorkerNavigator](https://developer.mozilla.org/en/docs/Web/API/WorkerNavigator) to Kotlin
  */
-public external abstract class WorkerNavigator : NavigatorID, NavigatorLanguage, NavigatorOnLine, NavigatorConcurrentHardware, JsAny {
+public expect abstract class WorkerNavigator : NavigatorID, NavigatorLanguage, NavigatorOnLine, NavigatorConcurrentHardware, JsAny {
     open val serviceWorker: ServiceWorkerContainer
 }
 
 /**
  * Exposes the JavaScript [WorkerLocation](https://developer.mozilla.org/en/docs/Web/API/WorkerLocation) to Kotlin
  */
-public external abstract class WorkerLocation : JsAny {
+public expect abstract class WorkerLocation : JsAny {
     open val href: String
     open val origin: String
     open val protocol: String
@@ -4093,7 +3767,7 @@ public external abstract class WorkerLocation : JsAny {
 /**
  * Exposes the JavaScript [Storage](https://developer.mozilla.org/en/docs/Web/API/Storage) to Kotlin
  */
-public external abstract class Storage : JsAny {
+public expect abstract class Storage : JsAny {
     open val length: Int
     fun key(index: Int): String?
     fun removeItem(key: String)
@@ -4102,34 +3776,28 @@ public external abstract class Storage : JsAny {
     fun setItem(key: String, value: String)
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForStorage(obj: Storage, key: String): String? = js("obj[key]")
+public expect operator fun Storage.get(key: String): String?
 
-public operator fun Storage.get(key: String): String? = getMethodImplForStorage(this, key)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForStorage(obj: Storage, key: String, value: String) { js("obj[key] = value;") }
-
-public operator fun Storage.set(key: String, value: String) = setMethodImplForStorage(this, key, value)
+public expect operator fun Storage.set(key: String, value: String)
 
 /**
  * Exposes the JavaScript [WindowSessionStorage](https://developer.mozilla.org/en/docs/Web/API/WindowSessionStorage) to Kotlin
  */
-public external interface WindowSessionStorage : JsAny {
+public expect interface WindowSessionStorage : JsAny {
     val sessionStorage: Storage
 }
 
 /**
  * Exposes the JavaScript [WindowLocalStorage](https://developer.mozilla.org/en/docs/Web/API/WindowLocalStorage) to Kotlin
  */
-public external interface WindowLocalStorage : JsAny {
+public expect interface WindowLocalStorage : JsAny {
     val localStorage: Storage
 }
 
 /**
  * Exposes the JavaScript [StorageEvent](https://developer.mozilla.org/en/docs/Web/API/StorageEvent) to Kotlin
  */
-public external open class StorageEvent(type: String, eventInitDict: StorageEventInit = definedExternally) : Event, JsAny {
+public expect open class StorageEvent(type: String, eventInitDict: StorageEventInit = definedExternally) : Event, JsAny {
     open val key: String?
     open val oldValue: String?
     open val newValue: String?
@@ -4144,28 +3812,18 @@ public external open class StorageEvent(type: String, eventInitDict: StorageEven
     }
 }
 
-public external interface StorageEventInit : EventInit, JsAny {
-    var key: String? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
-    var oldValue: String? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
-    var newValue: String? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
-    var url: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var storageArea: Storage? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface StorageEventInit : EventInit, JsAny {
+    open var key: String? /* = null */
+    open var oldValue: String? /* = null */
+    open var newValue: String? /* = null */
+    open var url: String? /* = "" */
+    open var storageArea: Storage? /* = null */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun StorageEventInit(key: String? = null, oldValue: String? = null, newValue: String? = null, url: String? = "", storageArea: Storage? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): StorageEventInit = js("({ key: key, oldValue: oldValue, newValue: newValue, url: url, storageArea: storageArea, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun StorageEventInit(key: String? = null, oldValue: String? = null, newValue: String? = null, url: String? = "", storageArea: Storage? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): StorageEventInit
 
-public external abstract class HTMLAppletElement : HTMLElement, JsAny {
+public expect abstract class HTMLAppletElement : HTMLElement, JsAny {
     open var align: String
     open var alt: String
     open var archive: String
@@ -4203,7 +3861,7 @@ public external abstract class HTMLAppletElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLMarqueeElement](https://developer.mozilla.org/en/docs/Web/API/HTMLMarqueeElement) to Kotlin
  */
-public external abstract class HTMLMarqueeElement : HTMLElement, JsAny {
+public expect abstract class HTMLMarqueeElement : HTMLElement, JsAny {
     open var behavior: String
     open var bgColor: String
     open var direction: String
@@ -4246,7 +3904,7 @@ public external abstract class HTMLMarqueeElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLFrameSetElement](https://developer.mozilla.org/en/docs/Web/API/HTMLFrameSetElement) to Kotlin
  */
-public external abstract class HTMLFrameSetElement : HTMLElement, WindowEventHandlers, JsAny {
+public expect abstract class HTMLFrameSetElement : HTMLElement, WindowEventHandlers, JsAny {
     open var cols: String
     open var rows: String
 
@@ -4272,7 +3930,7 @@ public external abstract class HTMLFrameSetElement : HTMLElement, WindowEventHan
     }
 }
 
-public external abstract class HTMLFrameElement : HTMLElement, JsAny {
+public expect abstract class HTMLFrameElement : HTMLElement, JsAny {
     open var name: String
     open var scrolling: String
     open var src: String
@@ -4306,7 +3964,7 @@ public external abstract class HTMLFrameElement : HTMLElement, JsAny {
     }
 }
 
-public external abstract class HTMLDirectoryElement : HTMLElement, JsAny {
+public expect abstract class HTMLDirectoryElement : HTMLElement, JsAny {
     open var compact: Boolean
 
     companion object {
@@ -4334,7 +3992,7 @@ public external abstract class HTMLDirectoryElement : HTMLElement, JsAny {
 /**
  * Exposes the JavaScript [HTMLFontElement](https://developer.mozilla.org/en/docs/Web/API/HTMLFontElement) to Kotlin
  */
-public external abstract class HTMLFontElement : HTMLElement, JsAny {
+public expect abstract class HTMLFontElement : HTMLElement, JsAny {
     open var color: String
     open var face: String
     open var size: String
@@ -4361,30 +4019,24 @@ public external abstract class HTMLFontElement : HTMLElement, JsAny {
     }
 }
 
-public external interface External : JsAny {
+public expect interface External : JsAny {
     fun AddSearchProvider()
     fun IsSearchProviderInstalled()
 }
 
-public external interface EventInit : JsAny {
-    var bubbles: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var cancelable: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var composed: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface EventInit : JsAny {
+    open var bubbles: Boolean? /* = false */
+    open var cancelable: Boolean? /* = false */
+    open var composed: Boolean? /* = false */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun EventInit(bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): EventInit = js("({ bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun EventInit(bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): EventInit
 
 /**
  * Exposes the JavaScript [CustomEvent](https://developer.mozilla.org/en/docs/Web/API/CustomEvent) to Kotlin
  */
-public external open class CustomEvent(type: String, eventInitDict: CustomEventInit = definedExternally) : Event, JsAny {
+public expect open class CustomEvent(type: String, eventInitDict: CustomEventInit = definedExternally) : Event, JsAny {
     open val detail: JsAny?
     fun initCustomEvent(type: String, bubbles: Boolean, cancelable: Boolean, detail: JsAny?)
 
@@ -4396,57 +4048,46 @@ public external open class CustomEvent(type: String, eventInitDict: CustomEventI
     }
 }
 
-public external interface CustomEventInit : EventInit, JsAny {
-    var detail: JsAny? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface CustomEventInit : EventInit, JsAny {
+    open var detail: JsAny? /* = null */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun CustomEventInit(detail: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): CustomEventInit = js("({ detail: detail, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun CustomEventInit(detail: JsAny? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): CustomEventInit
 
-public external interface EventListenerOptions : JsAny {
-    var capture: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface EventListenerOptions : JsAny {
+    open var capture: Boolean? /* = false */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun EventListenerOptions(capture: Boolean? = false): EventListenerOptions = js("({ capture: capture })")
+public expect fun EventListenerOptions(capture: Boolean? = false): EventListenerOptions
 
-public external interface AddEventListenerOptions : EventListenerOptions, JsAny {
-    var passive: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var once: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface AddEventListenerOptions : EventListenerOptions, JsAny {
+    open var passive: Boolean? /* = false */
+    open var once: Boolean? /* = false */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun AddEventListenerOptions(passive: Boolean? = false, once: Boolean? = false, capture: Boolean? = false): AddEventListenerOptions = js("({ passive: passive, once: once, capture: capture })")
+public expect fun AddEventListenerOptions(passive: Boolean? = false, once: Boolean? = false, capture: Boolean? = false): AddEventListenerOptions
 
-public external interface NonElementParentNode : JsAny {
+public expect interface NonElementParentNode : JsAny {
     fun getElementById(elementId: String): Element?
 }
 
 /**
  * Exposes the JavaScript [DocumentOrShadowRoot](https://developer.mozilla.org/en/docs/Web/API/DocumentOrShadowRoot) to Kotlin
  */
-public external interface DocumentOrShadowRoot : JsAny {
-    val fullscreenElement: Element?
-        get() = definedExternally
+public expect interface DocumentOrShadowRoot : JsAny {
+    open val fullscreenElement: Element?
 }
 
 /**
  * Exposes the JavaScript [ParentNode](https://developer.mozilla.org/en/docs/Web/API/ParentNode) to Kotlin
  */
-public external interface ParentNode : JsAny {
+public expect interface ParentNode : JsAny {
     val children: HTMLCollection
-    val firstElementChild: Element?
-        get() = definedExternally
-    val lastElementChild: Element?
-        get() = definedExternally
+    open val firstElementChild: Element?
+    open val lastElementChild: Element?
     val childElementCount: Int
     fun prepend(vararg nodes: Node)
     fun prepend(vararg nodes: String)
@@ -4459,17 +4100,15 @@ public external interface ParentNode : JsAny {
 /**
  * Exposes the JavaScript [NonDocumentTypeChildNode](https://developer.mozilla.org/en/docs/Web/API/NonDocumentTypeChildNode) to Kotlin
  */
-public external interface NonDocumentTypeChildNode : JsAny {
-    val previousElementSibling: Element?
-        get() = definedExternally
-    val nextElementSibling: Element?
-        get() = definedExternally
+public expect interface NonDocumentTypeChildNode : JsAny {
+    open val previousElementSibling: Element?
+    open val nextElementSibling: Element?
 }
 
 /**
  * Exposes the JavaScript [ChildNode](https://developer.mozilla.org/en/docs/Web/API/ChildNode) to Kotlin
  */
-public external interface ChildNode : JsAny {
+public expect interface ChildNode : JsAny {
     fun before(vararg nodes: Node)
     fun before(vararg nodes: String)
     fun after(vararg nodes: Node)
@@ -4482,45 +4121,35 @@ public external interface ChildNode : JsAny {
 /**
  * Exposes the JavaScript [Slotable](https://developer.mozilla.org/en/docs/Web/API/Slotable) to Kotlin
  */
-public external interface Slotable : JsAny {
-    val assignedSlot: HTMLSlotElement?
-        get() = definedExternally
+public expect interface Slotable : JsAny {
+    open val assignedSlot: HTMLSlotElement?
 }
 
 /**
  * Exposes the JavaScript [NodeList](https://developer.mozilla.org/en/docs/Web/API/NodeList) to Kotlin
  */
-public external abstract class NodeList : ItemArrayLike<Node>, JsAny {
+public expect abstract class NodeList : ItemArrayLike<Node>, JsAny {
     override fun item(index: Int): Node?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForNodeList(obj: NodeList, index: Int): Node? = js("obj[index]")
-
-public operator fun NodeList.get(index: Int): Node? = getMethodImplForNodeList(this, index)
+public expect operator fun NodeList.get(index: Int): Node?
 
 /**
  * Exposes the JavaScript [HTMLCollection](https://developer.mozilla.org/en/docs/Web/API/HTMLCollection) to Kotlin
  */
-public external abstract class HTMLCollection : ItemArrayLike<Element>, UnionElementOrHTMLCollection, JsAny {
+public expect abstract class HTMLCollection : ItemArrayLike<Element>, UnionElementOrHTMLCollection, JsAny {
     override fun item(index: Int): Element?
     fun namedItem(name: String): Element?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLCollection(obj: HTMLCollection, index: Int): Element? = js("obj[index]")
+public expect operator fun HTMLCollection.get(index: Int): Element?
 
-public operator fun HTMLCollection.get(index: Int): Element? = getMethodImplForHTMLCollection(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForHTMLCollection(obj: HTMLCollection, name: String): Element? = js("obj[name]")
-
-public operator fun HTMLCollection.get(name: String): Element? = getMethodImplForHTMLCollection(this, name)
+public expect operator fun HTMLCollection.get(name: String): Element?
 
 /**
  * Exposes the JavaScript [MutationObserver](https://developer.mozilla.org/en/docs/Web/API/MutationObserver) to Kotlin
  */
-public external open class MutationObserver(callback: (JsArray<MutationRecord>, MutationObserver) -> Unit) : JsAny {
+public expect open class MutationObserver(callback: (JsArray<MutationRecord>, MutationObserver) -> Unit) : JsAny {
     fun observe(target: Node, options: MutationObserverInit = definedExternally)
     fun disconnect()
     fun takeRecords(): JsArray<MutationRecord>
@@ -4529,37 +4158,23 @@ public external open class MutationObserver(callback: (JsArray<MutationRecord>, 
 /**
  * Exposes the JavaScript [MutationObserverInit](https://developer.mozilla.org/en/docs/Web/API/MutationObserverInit) to Kotlin
  */
-public external interface MutationObserverInit : JsAny {
-    var childList: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var attributes: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
-    var characterData: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
-    var subtree: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var attributeOldValue: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
-    var characterDataOldValue: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
-    var attributeFilter: JsArray<JsString>?
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface MutationObserverInit : JsAny {
+    open var childList: Boolean? /* = false */
+    open var attributes: Boolean?
+    open var characterData: Boolean?
+    open var subtree: Boolean? /* = false */
+    open var attributeOldValue: Boolean?
+    open var characterDataOldValue: Boolean?
+    open var attributeFilter: JsArray<JsString>?
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MutationObserverInit(childList: Boolean? = false, attributes: Boolean? = undefined, characterData: Boolean? = undefined, subtree: Boolean? = false, attributeOldValue: Boolean? = undefined, characterDataOldValue: Boolean? = undefined, attributeFilter: JsArray<JsString>? = undefined): MutationObserverInit = js("({ childList: childList, attributes: attributes, characterData: characterData, subtree: subtree, attributeOldValue: attributeOldValue, characterDataOldValue: characterDataOldValue, attributeFilter: attributeFilter })")
+public expect fun MutationObserverInit(childList: Boolean? = false, attributes: Boolean? = undefined, characterData: Boolean? = undefined, subtree: Boolean? = false, attributeOldValue: Boolean? = undefined, characterDataOldValue: Boolean? = undefined, attributeFilter: JsArray<JsString>? = undefined): MutationObserverInit
 
 /**
  * Exposes the JavaScript [MutationRecord](https://developer.mozilla.org/en/docs/Web/API/MutationRecord) to Kotlin
  */
-public external abstract class MutationRecord : JsAny {
+public expect abstract class MutationRecord : JsAny {
     open val type: String
     open val target: Node
     open val addedNodes: NodeList
@@ -4574,7 +4189,7 @@ public external abstract class MutationRecord : JsAny {
 /**
  * Exposes the JavaScript [Node](https://developer.mozilla.org/en/docs/Web/API/Node) to Kotlin
  */
-public external abstract class Node : EventTarget, JsAny {
+public expect abstract class Node : EventTarget, JsAny {
     open val nodeType: Short
     open val nodeName: String
     open val baseURI: String
@@ -4627,19 +4242,17 @@ public external abstract class Node : EventTarget, JsAny {
     }
 }
 
-public external interface GetRootNodeOptions : JsAny {
-    var composed: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface GetRootNodeOptions : JsAny {
+    open var composed: Boolean? /* = false */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun GetRootNodeOptions(composed: Boolean? = false): GetRootNodeOptions = js("({ composed: composed })")
+public expect fun GetRootNodeOptions(composed: Boolean? = false): GetRootNodeOptions
 
 /**
  * Exposes the JavaScript [Document](https://developer.mozilla.org/en/docs/Web/API/Document) to Kotlin
  */
-public external open class Document : Node, GlobalEventHandlers, DocumentAndElementEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, GeometryUtils, JsAny {
+public expect open class Document() : Node, GlobalEventHandlers, DocumentAndElementEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, GeometryUtils, JsAny {
     open val implementation: DOMImplementation
     open val URL: String
     open val documentURI: String
@@ -4848,15 +4461,12 @@ public external open class Document : Node, GlobalEventHandlers, DocumentAndElem
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForDocument(obj: Document, name: String): JsAny? = js("obj[name]")
-
-public operator fun Document.get(name: String): JsAny? = getMethodImplForDocument(this, name)
+public expect operator fun Document.get(name: String): JsAny?
 
 /**
  * Exposes the JavaScript [XMLDocument](https://developer.mozilla.org/en/docs/Web/API/XMLDocument) to Kotlin
  */
-public external open class XMLDocument : Document, JsAny {
+public expect open class XMLDocument : Document, JsAny {
     companion object {
         val ELEMENT_NODE: Short
         val ATTRIBUTE_NODE: Short
@@ -4879,19 +4489,17 @@ public external open class XMLDocument : Document, JsAny {
     }
 }
 
-public external interface ElementCreationOptions : JsAny {
-    var `is`: String?
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface ElementCreationOptions : JsAny {
+    open var `is`: String?
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ElementCreationOptions(param_is: String? = undefined): ElementCreationOptions = js("({ is: is })")
+public expect fun ElementCreationOptions(param_is: String? = undefined): ElementCreationOptions
 
 /**
  * Exposes the JavaScript [DOMImplementation](https://developer.mozilla.org/en/docs/Web/API/DOMImplementation) to Kotlin
  */
-public external abstract class DOMImplementation : JsAny {
+public expect abstract class DOMImplementation : JsAny {
     fun createDocumentType(qualifiedName: String, publicId: String, systemId: String): DocumentType
     fun createDocument(namespace: String?, qualifiedName: String, doctype: DocumentType? = definedExternally): XMLDocument
     fun createHTMLDocument(title: String = definedExternally): Document
@@ -4901,7 +4509,7 @@ public external abstract class DOMImplementation : JsAny {
 /**
  * Exposes the JavaScript [DocumentType](https://developer.mozilla.org/en/docs/Web/API/DocumentType) to Kotlin
  */
-public external abstract class DocumentType : Node, ChildNode, JsAny {
+public expect abstract class DocumentType : Node, ChildNode, JsAny {
     open val name: String
     open val publicId: String
     open val systemId: String
@@ -4931,7 +4539,7 @@ public external abstract class DocumentType : Node, ChildNode, JsAny {
 /**
  * Exposes the JavaScript [DocumentFragment](https://developer.mozilla.org/en/docs/Web/API/DocumentFragment) to Kotlin
  */
-public external open class DocumentFragment : Node, NonElementParentNode, ParentNode, JsAny {
+public expect open class DocumentFragment() : Node, NonElementParentNode, ParentNode, JsAny {
     override val children: HTMLCollection
     override val firstElementChild: Element?
     override val lastElementChild: Element?
@@ -4969,7 +4577,7 @@ public external open class DocumentFragment : Node, NonElementParentNode, Parent
 /**
  * Exposes the JavaScript [ShadowRoot](https://developer.mozilla.org/en/docs/Web/API/ShadowRoot) to Kotlin
  */
-public external open class ShadowRoot : DocumentFragment, DocumentOrShadowRoot, JsAny {
+public expect open class ShadowRoot : DocumentFragment, DocumentOrShadowRoot, JsAny {
     open val mode: ShadowRootMode
     open val host: Element
     override val fullscreenElement: Element?
@@ -4999,7 +4607,7 @@ public external open class ShadowRoot : DocumentFragment, DocumentOrShadowRoot, 
 /**
  * Exposes the JavaScript [Element](https://developer.mozilla.org/en/docs/Web/API/Element) to Kotlin
  */
-public external abstract class Element : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slotable, GeometryUtils, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrMouseEvent, UnionElementOrProcessingInstruction, JsAny {
+public expect abstract class Element : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slotable, GeometryUtils, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrMouseEvent, UnionElementOrProcessingInstruction, JsAny {
     open val namespaceURI: String?
     open val prefix: String?
     open val localName: String
@@ -5083,17 +4691,17 @@ public external abstract class Element : Node, ParentNode, NonDocumentTypeChildN
     }
 }
 
-public external interface ShadowRootInit : JsAny {
+public expect interface ShadowRootInit : JsAny {
     var mode: ShadowRootMode?
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ShadowRootInit(mode: ShadowRootMode?): ShadowRootInit = js("({ mode: mode })")
+public expect fun ShadowRootInit(mode: ShadowRootMode?): ShadowRootInit
 
 /**
  * Exposes the JavaScript [NamedNodeMap](https://developer.mozilla.org/en/docs/Web/API/NamedNodeMap) to Kotlin
  */
-public external abstract class NamedNodeMap : ItemArrayLike<Attr>, JsAny {
+public expect abstract class NamedNodeMap : ItemArrayLike<Attr>, JsAny {
     fun getNamedItemNS(namespace: String?, localName: String): Attr?
     fun setNamedItem(attr: Attr): Attr?
     fun setNamedItemNS(attr: Attr): Attr?
@@ -5103,20 +4711,14 @@ public external abstract class NamedNodeMap : ItemArrayLike<Attr>, JsAny {
     fun getNamedItem(qualifiedName: String): Attr?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForNamedNodeMap(obj: NamedNodeMap, index: Int): Attr? = js("obj[index]")
+public expect operator fun NamedNodeMap.get(index: Int): Attr?
 
-public operator fun NamedNodeMap.get(index: Int): Attr? = getMethodImplForNamedNodeMap(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForNamedNodeMap(obj: NamedNodeMap, qualifiedName: String): Attr? = js("obj[qualifiedName]")
-
-public operator fun NamedNodeMap.get(qualifiedName: String): Attr? = getMethodImplForNamedNodeMap(this, qualifiedName)
+public expect operator fun NamedNodeMap.get(qualifiedName: String): Attr?
 
 /**
  * Exposes the JavaScript [Attr](https://developer.mozilla.org/en/docs/Web/API/Attr) to Kotlin
  */
-public external abstract class Attr : Node, JsAny {
+public expect abstract class Attr : Node, JsAny {
     open val namespaceURI: String?
     open val prefix: String?
     open val localName: String
@@ -5150,7 +4752,7 @@ public external abstract class Attr : Node, JsAny {
 /**
  * Exposes the JavaScript [CharacterData](https://developer.mozilla.org/en/docs/Web/API/CharacterData) to Kotlin
  */
-public external abstract class CharacterData : Node, NonDocumentTypeChildNode, ChildNode, JsAny {
+public expect abstract class CharacterData : Node, NonDocumentTypeChildNode, ChildNode, JsAny {
     open var data: String
     open val length: Int
     fun substringData(offset: Int, count: Int): String
@@ -5184,7 +4786,7 @@ public external abstract class CharacterData : Node, NonDocumentTypeChildNode, C
 /**
  * Exposes the JavaScript [Text](https://developer.mozilla.org/en/docs/Web/API/Text) to Kotlin
  */
-public external open class Text(data: String = definedExternally) : CharacterData, Slotable, GeometryUtils, JsAny {
+public expect open class Text(data: String = definedExternally) : CharacterData, Slotable, GeometryUtils, JsAny {
     open val wholeText: String
     override val assignedSlot: HTMLSlotElement?
     override val previousElementSibling: Element?
@@ -5233,7 +4835,7 @@ public external open class Text(data: String = definedExternally) : CharacterDat
 /**
  * Exposes the JavaScript [CDATASection](https://developer.mozilla.org/en/docs/Web/API/CDATASection) to Kotlin
  */
-public external open class CDATASection : Text, JsAny {
+public expect open class CDATASection : Text, JsAny {
     companion object {
         val ELEMENT_NODE: Short
         val ATTRIBUTE_NODE: Short
@@ -5259,7 +4861,7 @@ public external open class CDATASection : Text, JsAny {
 /**
  * Exposes the JavaScript [ProcessingInstruction](https://developer.mozilla.org/en/docs/Web/API/ProcessingInstruction) to Kotlin
  */
-public external abstract class ProcessingInstruction : CharacterData, LinkStyle, UnionElementOrProcessingInstruction, JsAny {
+public expect abstract class ProcessingInstruction : CharacterData, LinkStyle, UnionElementOrProcessingInstruction, JsAny {
     open val target: String
 
     companion object {
@@ -5287,7 +4889,7 @@ public external abstract class ProcessingInstruction : CharacterData, LinkStyle,
 /**
  * Exposes the JavaScript [Comment](https://developer.mozilla.org/en/docs/Web/API/Comment) to Kotlin
  */
-public external open class Comment(data: String = definedExternally) : CharacterData, JsAny {
+public expect open class Comment(data: String = definedExternally) : CharacterData, JsAny {
     override val previousElementSibling: Element?
     override val nextElementSibling: Element?
     override fun before(vararg nodes: Node)
@@ -5323,7 +4925,7 @@ public external open class Comment(data: String = definedExternally) : Character
 /**
  * Exposes the JavaScript [Range](https://developer.mozilla.org/en/docs/Web/API/Range) to Kotlin
  */
-public external open class Range : JsAny {
+public expect open class Range() : JsAny {
     open val startContainer: Node
     open val startOffset: Int
     open val endContainer: Node
@@ -5365,7 +4967,7 @@ public external open class Range : JsAny {
 /**
  * Exposes the JavaScript [NodeIterator](https://developer.mozilla.org/en/docs/Web/API/NodeIterator) to Kotlin
  */
-public external abstract class NodeIterator : JsAny {
+public expect abstract class NodeIterator : JsAny {
     open val root: Node
     open val referenceNode: Node
     open val pointerBeforeReferenceNode: Boolean
@@ -5379,7 +4981,7 @@ public external abstract class NodeIterator : JsAny {
 /**
  * Exposes the JavaScript [TreeWalker](https://developer.mozilla.org/en/docs/Web/API/TreeWalker) to Kotlin
  */
-public external abstract class TreeWalker : JsAny {
+public expect abstract class TreeWalker : JsAny {
     open val root: Node
     open val whatToShow: Int
     open val filter: NodeFilter?
@@ -5397,7 +4999,7 @@ public external abstract class TreeWalker : JsAny {
  * Exposes the JavaScript [NodeFilter](https://developer.mozilla.org/en/docs/Web/API/NodeFilter) to Kotlin
  */
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface NodeFilter : JsAny {
+public expect interface NodeFilter : JsAny {
     fun acceptNode(node: Node): Short
 
     companion object {
@@ -5423,7 +5025,7 @@ public external interface NodeFilter : JsAny {
 /**
  * Exposes the JavaScript [DOMTokenList](https://developer.mozilla.org/en/docs/Web/API/DOMTokenList) to Kotlin
  */
-public external abstract class DOMTokenList : ItemArrayLike<JsString>, JsAny {
+public expect abstract class DOMTokenList : ItemArrayLike<JsString>, JsAny {
     open var value: String
     fun contains(token: String): Boolean
     fun add(vararg tokens: String)
@@ -5434,15 +5036,12 @@ public external abstract class DOMTokenList : ItemArrayLike<JsString>, JsAny {
     override fun item(index: Int): JsString?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForDOMTokenList(obj: DOMTokenList, index: Int): String? = js("obj[index]")
-
-public operator fun DOMTokenList.get(index: Int): String? = getMethodImplForDOMTokenList(this, index)
+public expect operator fun DOMTokenList.get(index: Int): String?
 
 /**
  * Exposes the JavaScript [DOMPointReadOnly](https://developer.mozilla.org/en/docs/Web/API/DOMPointReadOnly) to Kotlin
  */
-public external open class DOMPointReadOnly(x: Double, y: Double, z: Double, w: Double) : JsAny {
+public expect open class DOMPointReadOnly(x: Double, y: Double, z: Double, w: Double) : JsAny {
     open val x: Double
     open val y: Double
     open val z: Double
@@ -5453,7 +5052,7 @@ public external open class DOMPointReadOnly(x: Double, y: Double, z: Double, w: 
 /**
  * Exposes the JavaScript [DOMPoint](https://developer.mozilla.org/en/docs/Web/API/DOMPoint) to Kotlin
  */
-public external open class DOMPoint : DOMPointReadOnly, JsAny {
+public expect open class DOMPoint : DOMPointReadOnly, JsAny {
     constructor(point: DOMPointInit)
     constructor(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, w: Double = definedExternally)
     override var x: Double
@@ -5465,28 +5064,20 @@ public external open class DOMPoint : DOMPointReadOnly, JsAny {
 /**
  * Exposes the JavaScript [DOMPointInit](https://developer.mozilla.org/en/docs/Web/API/DOMPointInit) to Kotlin
  */
-public external interface DOMPointInit : JsAny {
-    var x: Double? /* = 0.0 */
-        get() = definedExternally
-        set(value) = definedExternally
-    var y: Double? /* = 0.0 */
-        get() = definedExternally
-        set(value) = definedExternally
-    var z: Double? /* = 0.0 */
-        get() = definedExternally
-        set(value) = definedExternally
-    var w: Double? /* = 1.0 */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface DOMPointInit : JsAny {
+    open var x: Double? /* = 0.0 */
+    open var y: Double? /* = 0.0 */
+    open var z: Double? /* = 0.0 */
+    open var w: Double? /* = 1.0 */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun DOMPointInit(x: Double? = 0.0, y: Double? = 0.0, z: Double? = 0.0, w: Double? = 1.0): DOMPointInit = js("({ x: x, y: y, z: z, w: w })")
+public expect fun DOMPointInit(x: Double? = 0.0, y: Double? = 0.0, z: Double? = 0.0, w: Double? = 1.0): DOMPointInit
 
 /**
  * Exposes the JavaScript [DOMRect](https://developer.mozilla.org/en/docs/Web/API/DOMRect) to Kotlin
  */
-public external open class DOMRect(x: Double = definedExternally, y: Double = definedExternally, width: Double = definedExternally, height: Double = definedExternally) : DOMRectReadOnly, JsAny {
+public expect open class DOMRect(x: Double = definedExternally, y: Double = definedExternally, width: Double = definedExternally, height: Double = definedExternally) : DOMRectReadOnly, JsAny {
     override var x: Double
     override var y: Double
     override var width: Double
@@ -5496,7 +5087,7 @@ public external open class DOMRect(x: Double = definedExternally, y: Double = de
 /**
  * Exposes the JavaScript [DOMRectReadOnly](https://developer.mozilla.org/en/docs/Web/API/DOMRectReadOnly) to Kotlin
  */
-public external open class DOMRectReadOnly(x: Double, y: Double, width: Double, height: Double) : JsAny {
+public expect open class DOMRectReadOnly(x: Double, y: Double, width: Double, height: Double) : JsAny {
     open val x: Double
     open val y: Double
     open val width: Double
@@ -5507,37 +5098,26 @@ public external open class DOMRectReadOnly(x: Double, y: Double, width: Double, 
     open val left: Double
 }
 
-public external interface DOMRectInit : JsAny {
-    var x: Double? /* = 0.0 */
-        get() = definedExternally
-        set(value) = definedExternally
-    var y: Double? /* = 0.0 */
-        get() = definedExternally
-        set(value) = definedExternally
-    var width: Double? /* = 0.0 */
-        get() = definedExternally
-        set(value) = definedExternally
-    var height: Double? /* = 0.0 */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface DOMRectInit : JsAny {
+    open var x: Double? /* = 0.0 */
+    open var y: Double? /* = 0.0 */
+    open var width: Double? /* = 0.0 */
+    open var height: Double? /* = 0.0 */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun DOMRectInit(x: Double? = 0.0, y: Double? = 0.0, width: Double? = 0.0, height: Double? = 0.0): DOMRectInit = js("({ x: x, y: y, width: width, height: height })")
+public expect fun DOMRectInit(x: Double? = 0.0, y: Double? = 0.0, width: Double? = 0.0, height: Double? = 0.0): DOMRectInit
 
-public external interface DOMRectList : ItemArrayLike<DOMRect>, JsAny {
+public expect interface DOMRectList : ItemArrayLike<DOMRect>, JsAny {
     override fun item(index: Int): DOMRect?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForDOMRectList(obj: DOMRectList, index: Int): DOMRect? = js("obj[index]")
-
-public operator fun DOMRectList.get(index: Int): DOMRect? = getMethodImplForDOMRectList(this, index)
+public expect operator fun DOMRectList.get(index: Int): DOMRect?
 
 /**
  * Exposes the JavaScript [DOMQuad](https://developer.mozilla.org/en/docs/Web/API/DOMQuad) to Kotlin
  */
-public external open class DOMQuad : JsAny {
+public expect open class DOMQuad : JsAny {
     constructor(p1: DOMPointInit = definedExternally, p2: DOMPointInit = definedExternally, p3: DOMPointInit = definedExternally, p4: DOMPointInit = definedExternally)
     constructor(rect: DOMRectInit)
     open val p1: DOMPoint
@@ -5550,7 +5130,7 @@ public external open class DOMQuad : JsAny {
 /**
  * Exposes the JavaScript [DOMMatrixReadOnly](https://developer.mozilla.org/en/docs/Web/API/DOMMatrixReadOnly) to Kotlin
  */
-public external open class DOMMatrixReadOnly(numberSequence: JsArray<JsNumber>) : JsAny {
+public expect open class DOMMatrixReadOnly(numberSequence: JsArray<JsNumber>) : JsAny {
     open val a: Double
     open val b: Double
     open val c: Double
@@ -5596,7 +5176,7 @@ public external open class DOMMatrixReadOnly(numberSequence: JsArray<JsNumber>) 
 /**
  * Exposes the JavaScript [DOMMatrix](https://developer.mozilla.org/en/docs/Web/API/DOMMatrix) to Kotlin
  */
-public external open class DOMMatrix() : DOMMatrixReadOnly, JsAny {
+public expect open class DOMMatrix() : DOMMatrixReadOnly, JsAny {
     constructor(transformList: String)
     constructor(other: DOMMatrixReadOnly)
     constructor(array32: Float32Array)
@@ -5639,34 +5219,28 @@ public external open class DOMMatrix() : DOMMatrixReadOnly, JsAny {
     fun setMatrixValue(transformList: String): DOMMatrix
 }
 
-public external interface ScrollOptions : JsAny {
-    var behavior: ScrollBehavior? /* = ScrollBehavior.AUTO */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface ScrollOptions : JsAny {
+    open var behavior: ScrollBehavior? /* = ScrollBehavior.AUTO */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ScrollOptions(behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollOptions = js("({ behavior: behavior })")
+public expect fun ScrollOptions(behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollOptions
 
 /**
  * Exposes the JavaScript [ScrollToOptions](https://developer.mozilla.org/en/docs/Web/API/ScrollToOptions) to Kotlin
  */
-public external interface ScrollToOptions : ScrollOptions, JsAny {
-    var left: Double?
-        get() = definedExternally
-        set(value) = definedExternally
-    var top: Double?
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface ScrollToOptions : ScrollOptions, JsAny {
+    open var left: Double?
+    open var top: Double?
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ScrollToOptions(left: Double? = undefined, top: Double? = undefined, behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollToOptions = js("({ left: left, top: top, behavior: behavior })")
+public expect fun ScrollToOptions(left: Double? = undefined, top: Double? = undefined, behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollToOptions
 
 /**
  * Exposes the JavaScript [MediaQueryList](https://developer.mozilla.org/en/docs/Web/API/MediaQueryList) to Kotlin
  */
-public external abstract class MediaQueryList : EventTarget, JsAny {
+public expect abstract class MediaQueryList : EventTarget, JsAny {
     open val media: String
     open val matches: Boolean
     open var onchange: ((Event) -> Unit)?
@@ -5679,7 +5253,7 @@ public external abstract class MediaQueryList : EventTarget, JsAny {
 /**
  * Exposes the JavaScript [MediaQueryListEvent](https://developer.mozilla.org/en/docs/Web/API/MediaQueryListEvent) to Kotlin
  */
-public external open class MediaQueryListEvent(type: String, eventInitDict: MediaQueryListEventInit = definedExternally) : Event, JsAny {
+public expect open class MediaQueryListEvent(type: String, eventInitDict: MediaQueryListEventInit = definedExternally) : Event, JsAny {
     open val media: String
     open val matches: Boolean
 
@@ -5691,22 +5265,18 @@ public external open class MediaQueryListEvent(type: String, eventInitDict: Medi
     }
 }
 
-public external interface MediaQueryListEventInit : EventInit, JsAny {
-    var media: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var matches: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface MediaQueryListEventInit : EventInit, JsAny {
+    open var media: String? /* = "" */
+    open var matches: Boolean? /* = false */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MediaQueryListEventInit(media: String? = "", matches: Boolean? = false, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaQueryListEventInit = js("({ media: media, matches: matches, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun MediaQueryListEventInit(media: String? = "", matches: Boolean? = false, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaQueryListEventInit
 
 /**
  * Exposes the JavaScript [Screen](https://developer.mozilla.org/en/docs/Web/API/Screen) to Kotlin
  */
-public external abstract class Screen : JsAny {
+public expect abstract class Screen : JsAny {
     open val availWidth: Int
     open val availHeight: Int
     open val width: Int
@@ -5718,52 +5288,40 @@ public external abstract class Screen : JsAny {
 /**
  * Exposes the JavaScript [CaretPosition](https://developer.mozilla.org/en/docs/Web/API/CaretPosition) to Kotlin
  */
-public external abstract class CaretPosition : JsAny {
+public expect abstract class CaretPosition : JsAny {
     open val offsetNode: Node
     open val offset: Int
     fun getClientRect(): DOMRect?
 }
 
-public external interface ScrollIntoViewOptions : ScrollOptions, JsAny {
-    var block: ScrollLogicalPosition? /* = ScrollLogicalPosition.CENTER */
-        get() = definedExternally
-        set(value) = definedExternally
-    var inline: ScrollLogicalPosition? /* = ScrollLogicalPosition.CENTER */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface ScrollIntoViewOptions : ScrollOptions, JsAny {
+    open var block: ScrollLogicalPosition? /* = ScrollLogicalPosition.CENTER */
+    open var inline: ScrollLogicalPosition? /* = ScrollLogicalPosition.CENTER */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ScrollIntoViewOptions(block: ScrollLogicalPosition? = ScrollLogicalPosition.CENTER, inline: ScrollLogicalPosition? = ScrollLogicalPosition.CENTER, behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollIntoViewOptions = js("({ block: block, inline: inline, behavior: behavior })")
+public expect fun ScrollIntoViewOptions(block: ScrollLogicalPosition? = ScrollLogicalPosition.CENTER, inline: ScrollLogicalPosition? = ScrollLogicalPosition.CENTER, behavior: ScrollBehavior? = ScrollBehavior.AUTO): ScrollIntoViewOptions
 
-public external interface BoxQuadOptions : JsAny {
-    var box: CSSBoxType? /* = CSSBoxType.BORDER */
-        get() = definedExternally
-        set(value) = definedExternally
-    var relativeTo: JsAny? /* Text|Element|CSSPseudoElement|Document */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface BoxQuadOptions : JsAny {
+    open var box: CSSBoxType? /* = CSSBoxType.BORDER */
+    open var relativeTo: JsAny? /* Text|Element|CSSPseudoElement|Document */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun BoxQuadOptions(box: CSSBoxType? = CSSBoxType.BORDER, relativeTo: JsAny? /* Text|Element|CSSPseudoElement|Document */ = undefined): BoxQuadOptions = js("({ box: box, relativeTo: relativeTo })")
+public expect fun BoxQuadOptions(box: CSSBoxType? = CSSBoxType.BORDER, relativeTo: JsAny? /* Text|Element|CSSPseudoElement|Document */ = undefined): BoxQuadOptions
 
-public external interface ConvertCoordinateOptions : JsAny {
-    var fromBox: CSSBoxType? /* = CSSBoxType.BORDER */
-        get() = definedExternally
-        set(value) = definedExternally
-    var toBox: CSSBoxType? /* = CSSBoxType.BORDER */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface ConvertCoordinateOptions : JsAny {
+    open var fromBox: CSSBoxType? /* = CSSBoxType.BORDER */
+    open var toBox: CSSBoxType? /* = CSSBoxType.BORDER */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ConvertCoordinateOptions(fromBox: CSSBoxType? = CSSBoxType.BORDER, toBox: CSSBoxType? = CSSBoxType.BORDER): ConvertCoordinateOptions = js("({ fromBox: fromBox, toBox: toBox })")
+public expect fun ConvertCoordinateOptions(fromBox: CSSBoxType? = CSSBoxType.BORDER, toBox: CSSBoxType? = CSSBoxType.BORDER): ConvertCoordinateOptions
 
 /**
  * Exposes the JavaScript [GeometryUtils](https://developer.mozilla.org/en/docs/Web/API/GeometryUtils) to Kotlin
  */
-public external interface GeometryUtils : JsAny {
+public expect interface GeometryUtils : JsAny {
     fun getBoxQuads(options: BoxQuadOptions = definedExternally): JsArray<DOMQuad>
     fun convertQuadFromNode(quad: JsAny?, from: Text, options: ConvertCoordinateOptions = definedExternally): DOMQuad
     fun convertQuadFromNode(quad: JsAny?, from: Element, options: ConvertCoordinateOptions = definedExternally): DOMQuad
@@ -5779,7 +5337,7 @@ public external interface GeometryUtils : JsAny {
 /**
  * Exposes the JavaScript [Touch](https://developer.mozilla.org/en/docs/Web/API/Touch) to Kotlin
  */
-public external abstract class Touch : JsAny {
+public expect abstract class Touch : JsAny {
     open val identifier: Int
     open val target: EventTarget
     open val screenX: Int
@@ -5791,16 +5349,13 @@ public external abstract class Touch : JsAny {
     open val region: String?
 }
 
-public external abstract class TouchList : ItemArrayLike<Touch>, JsAny {
+public expect abstract class TouchList : ItemArrayLike<Touch>, JsAny {
     override fun item(index: Int): Touch?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForTouchList(obj: TouchList, index: Int): Touch? = js("obj[index]")
+public expect operator fun TouchList.get(index: Int): Touch?
 
-public operator fun TouchList.get(index: Int): Touch? = getMethodImplForTouchList(this, index)
-
-public external open class TouchEvent : UIEvent, JsAny {
+public expect open class TouchEvent : UIEvent, JsAny {
     open val touches: TouchList
     open val targetTouches: TouchList
     open val changedTouches: TouchList
@@ -5820,7 +5375,7 @@ public external open class TouchEvent : UIEvent, JsAny {
 /**
  * Exposes the JavaScript [Image](https://developer.mozilla.org/en/docs/Web/API/Image) to Kotlin
  */
-public external open class Image(width: Int = definedExternally, height: Int = definedExternally) : HTMLImageElement, JsAny {
+public expect open class Image(width: Int = definedExternally, height: Int = definedExternally) : HTMLImageElement, JsAny {
     override var onabort: ((Event) -> Unit)?
     override var onblur: ((FocusEvent) -> Unit)?
     override var oncancel: ((Event) -> Unit)?
@@ -5951,7 +5506,7 @@ public external open class Image(width: Int = definedExternally, height: Int = d
     }
 }
 
-public external open class Audio(src: String = definedExternally) : HTMLAudioElement, JsAny {
+public expect open class Audio(src: String = definedExternally) : HTMLAudioElement, JsAny {
     override var onabort: ((Event) -> Unit)?
     override var onblur: ((FocusEvent) -> Unit)?
     override var oncancel: ((Event) -> Unit)?
@@ -6094,7 +5649,7 @@ public external open class Audio(src: String = definedExternally) : HTMLAudioEle
 /**
  * Exposes the JavaScript [Option](https://developer.mozilla.org/en/docs/Web/API/Option) to Kotlin
  */
-public external open class Option(text: String = definedExternally, value: String = definedExternally, defaultSelected: Boolean = definedExternally, selected: Boolean = definedExternally) : HTMLOptionElement, JsAny {
+public expect open class Option(text: String = definedExternally, value: String = definedExternally, defaultSelected: Boolean = definedExternally, selected: Boolean = definedExternally) : HTMLOptionElement, JsAny {
     override var onabort: ((Event) -> Unit)?
     override var onblur: ((FocusEvent) -> Unit)?
     override var oncancel: ((Event) -> Unit)?
@@ -6225,333 +5780,333 @@ public external open class Option(text: String = definedExternally, value: Strin
     }
 }
 
-public external interface UnionElementOrHTMLCollection
+public expect interface UnionElementOrHTMLCollection
 
-public external interface UnionElementOrRadioNodeList
+public expect interface UnionElementOrRadioNodeList
 
-public external interface UnionHTMLOptGroupElementOrHTMLOptionElement
+public expect interface UnionHTMLOptGroupElementOrHTMLOptionElement
 
-public external interface UnionAudioTrackOrTextTrackOrVideoTrack
+public expect interface UnionAudioTrackOrTextTrackOrVideoTrack
 
-public external interface UnionElementOrMouseEvent
+public expect interface UnionElementOrMouseEvent
 
-public external interface UnionMessagePortOrWindowProxy
+public expect interface UnionMessagePortOrWindowProxy
 
-public external interface MediaProvider
+public expect interface MediaProvider
 
-public external interface RenderingContext
+public expect interface RenderingContext
 
-public external interface HTMLOrSVGImageElement : CanvasImageSource
+public expect interface HTMLOrSVGImageElement : CanvasImageSource
 
-public external interface CanvasImageSource : ImageBitmapSource
+public expect interface CanvasImageSource : ImageBitmapSource
 
-public external interface ImageBitmapSource
+public expect interface ImageBitmapSource
 
-public external interface HTMLOrSVGScriptElement
-
-/* please, don't implement this interface! */
-@JsName("null")
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface DocumentReadyState : JsAny {
-    companion object
-}
-
-public inline val DocumentReadyState.Companion.LOADING: DocumentReadyState get() = "loading".toJsString().unsafeCast<DocumentReadyState>()
-
-public inline val DocumentReadyState.Companion.INTERACTIVE: DocumentReadyState get() = "interactive".toJsString().unsafeCast<DocumentReadyState>()
-
-public inline val DocumentReadyState.Companion.COMPLETE: DocumentReadyState get() = "complete".toJsString().unsafeCast<DocumentReadyState>()
+public expect interface HTMLOrSVGScriptElement
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface CanPlayTypeResult : JsAny {
+public expect interface DocumentReadyState : JsAny {
     companion object
 }
 
-public inline val CanPlayTypeResult.Companion.EMPTY: CanPlayTypeResult get() = "".toJsString().unsafeCast<CanPlayTypeResult>()
+public expect inline val DocumentReadyState.Companion.LOADING: DocumentReadyState
 
-public inline val CanPlayTypeResult.Companion.MAYBE: CanPlayTypeResult get() = "maybe".toJsString().unsafeCast<CanPlayTypeResult>()
+public expect inline val DocumentReadyState.Companion.INTERACTIVE: DocumentReadyState
 
-public inline val CanPlayTypeResult.Companion.PROBABLY: CanPlayTypeResult get() = "probably".toJsString().unsafeCast<CanPlayTypeResult>()
+public expect inline val DocumentReadyState.Companion.COMPLETE: DocumentReadyState
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface TextTrackMode : JsAny {
+public expect interface CanPlayTypeResult : JsAny {
     companion object
 }
 
-public inline val TextTrackMode.Companion.DISABLED: TextTrackMode get() = "disabled".toJsString().unsafeCast<TextTrackMode>()
+public expect inline val CanPlayTypeResult.Companion.EMPTY: CanPlayTypeResult
 
-public inline val TextTrackMode.Companion.HIDDEN: TextTrackMode get() = "hidden".toJsString().unsafeCast<TextTrackMode>()
+public expect inline val CanPlayTypeResult.Companion.MAYBE: CanPlayTypeResult
 
-public inline val TextTrackMode.Companion.SHOWING: TextTrackMode get() = "showing".toJsString().unsafeCast<TextTrackMode>()
+public expect inline val CanPlayTypeResult.Companion.PROBABLY: CanPlayTypeResult
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface TextTrackKind : JsAny {
+public expect interface TextTrackMode : JsAny {
     companion object
 }
 
-public inline val TextTrackKind.Companion.SUBTITLES: TextTrackKind get() = "subtitles".toJsString().unsafeCast<TextTrackKind>()
+public expect inline val TextTrackMode.Companion.DISABLED: TextTrackMode
 
-public inline val TextTrackKind.Companion.CAPTIONS: TextTrackKind get() = "captions".toJsString().unsafeCast<TextTrackKind>()
+public expect inline val TextTrackMode.Companion.HIDDEN: TextTrackMode
 
-public inline val TextTrackKind.Companion.DESCRIPTIONS: TextTrackKind get() = "descriptions".toJsString().unsafeCast<TextTrackKind>()
-
-public inline val TextTrackKind.Companion.CHAPTERS: TextTrackKind get() = "chapters".toJsString().unsafeCast<TextTrackKind>()
-
-public inline val TextTrackKind.Companion.METADATA: TextTrackKind get() = "metadata".toJsString().unsafeCast<TextTrackKind>()
+public expect inline val TextTrackMode.Companion.SHOWING: TextTrackMode
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface SelectionMode : JsAny {
+public expect interface TextTrackKind : JsAny {
     companion object
 }
 
-public inline val SelectionMode.Companion.SELECT: SelectionMode get() = "select".toJsString().unsafeCast<SelectionMode>()
+public expect inline val TextTrackKind.Companion.SUBTITLES: TextTrackKind
 
-public inline val SelectionMode.Companion.START: SelectionMode get() = "start".toJsString().unsafeCast<SelectionMode>()
+public expect inline val TextTrackKind.Companion.CAPTIONS: TextTrackKind
 
-public inline val SelectionMode.Companion.END: SelectionMode get() = "end".toJsString().unsafeCast<SelectionMode>()
+public expect inline val TextTrackKind.Companion.DESCRIPTIONS: TextTrackKind
 
-public inline val SelectionMode.Companion.PRESERVE: SelectionMode get() = "preserve".toJsString().unsafeCast<SelectionMode>()
+public expect inline val TextTrackKind.Companion.CHAPTERS: TextTrackKind
+
+public expect inline val TextTrackKind.Companion.METADATA: TextTrackKind
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface CanvasFillRule : JsAny {
+public expect interface SelectionMode : JsAny {
     companion object
 }
 
-public inline val CanvasFillRule.Companion.NONZERO: CanvasFillRule get() = "nonzero".toJsString().unsafeCast<CanvasFillRule>()
+public expect inline val SelectionMode.Companion.SELECT: SelectionMode
 
-public inline val CanvasFillRule.Companion.EVENODD: CanvasFillRule get() = "evenodd".toJsString().unsafeCast<CanvasFillRule>()
+public expect inline val SelectionMode.Companion.START: SelectionMode
+
+public expect inline val SelectionMode.Companion.END: SelectionMode
+
+public expect inline val SelectionMode.Companion.PRESERVE: SelectionMode
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface ImageSmoothingQuality : JsAny {
+public expect interface CanvasFillRule : JsAny {
     companion object
 }
 
-public inline val ImageSmoothingQuality.Companion.LOW: ImageSmoothingQuality get() = "low".toJsString().unsafeCast<ImageSmoothingQuality>()
+public expect inline val CanvasFillRule.Companion.NONZERO: CanvasFillRule
 
-public inline val ImageSmoothingQuality.Companion.MEDIUM: ImageSmoothingQuality get() = "medium".toJsString().unsafeCast<ImageSmoothingQuality>()
-
-public inline val ImageSmoothingQuality.Companion.HIGH: ImageSmoothingQuality get() = "high".toJsString().unsafeCast<ImageSmoothingQuality>()
+public expect inline val CanvasFillRule.Companion.EVENODD: CanvasFillRule
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface CanvasLineCap : JsAny {
+public expect interface ImageSmoothingQuality : JsAny {
     companion object
 }
 
-public inline val CanvasLineCap.Companion.BUTT: CanvasLineCap get() = "butt".toJsString().unsafeCast<CanvasLineCap>()
+public expect inline val ImageSmoothingQuality.Companion.LOW: ImageSmoothingQuality
 
-public inline val CanvasLineCap.Companion.ROUND: CanvasLineCap get() = "round".toJsString().unsafeCast<CanvasLineCap>()
+public expect inline val ImageSmoothingQuality.Companion.MEDIUM: ImageSmoothingQuality
 
-public inline val CanvasLineCap.Companion.SQUARE: CanvasLineCap get() = "square".toJsString().unsafeCast<CanvasLineCap>()
+public expect inline val ImageSmoothingQuality.Companion.HIGH: ImageSmoothingQuality
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface CanvasLineJoin : JsAny {
+public expect interface CanvasLineCap : JsAny {
     companion object
 }
 
-public inline val CanvasLineJoin.Companion.ROUND: CanvasLineJoin get() = "round".toJsString().unsafeCast<CanvasLineJoin>()
+public expect inline val CanvasLineCap.Companion.BUTT: CanvasLineCap
 
-public inline val CanvasLineJoin.Companion.BEVEL: CanvasLineJoin get() = "bevel".toJsString().unsafeCast<CanvasLineJoin>()
+public expect inline val CanvasLineCap.Companion.ROUND: CanvasLineCap
 
-public inline val CanvasLineJoin.Companion.MITER: CanvasLineJoin get() = "miter".toJsString().unsafeCast<CanvasLineJoin>()
+public expect inline val CanvasLineCap.Companion.SQUARE: CanvasLineCap
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface CanvasTextAlign : JsAny {
+public expect interface CanvasLineJoin : JsAny {
     companion object
 }
 
-public inline val CanvasTextAlign.Companion.START: CanvasTextAlign get() = "start".toJsString().unsafeCast<CanvasTextAlign>()
+public expect inline val CanvasLineJoin.Companion.ROUND: CanvasLineJoin
 
-public inline val CanvasTextAlign.Companion.END: CanvasTextAlign get() = "end".toJsString().unsafeCast<CanvasTextAlign>()
+public expect inline val CanvasLineJoin.Companion.BEVEL: CanvasLineJoin
 
-public inline val CanvasTextAlign.Companion.LEFT: CanvasTextAlign get() = "left".toJsString().unsafeCast<CanvasTextAlign>()
-
-public inline val CanvasTextAlign.Companion.RIGHT: CanvasTextAlign get() = "right".toJsString().unsafeCast<CanvasTextAlign>()
-
-public inline val CanvasTextAlign.Companion.CENTER: CanvasTextAlign get() = "center".toJsString().unsafeCast<CanvasTextAlign>()
+public expect inline val CanvasLineJoin.Companion.MITER: CanvasLineJoin
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface CanvasTextBaseline : JsAny {
+public expect interface CanvasTextAlign : JsAny {
     companion object
 }
 
-public inline val CanvasTextBaseline.Companion.TOP: CanvasTextBaseline get() = "top".toJsString().unsafeCast<CanvasTextBaseline>()
+public expect inline val CanvasTextAlign.Companion.START: CanvasTextAlign
 
-public inline val CanvasTextBaseline.Companion.HANGING: CanvasTextBaseline get() = "hanging".toJsString().unsafeCast<CanvasTextBaseline>()
+public expect inline val CanvasTextAlign.Companion.END: CanvasTextAlign
 
-public inline val CanvasTextBaseline.Companion.MIDDLE: CanvasTextBaseline get() = "middle".toJsString().unsafeCast<CanvasTextBaseline>()
+public expect inline val CanvasTextAlign.Companion.LEFT: CanvasTextAlign
 
-public inline val CanvasTextBaseline.Companion.ALPHABETIC: CanvasTextBaseline get() = "alphabetic".toJsString().unsafeCast<CanvasTextBaseline>()
+public expect inline val CanvasTextAlign.Companion.RIGHT: CanvasTextAlign
 
-public inline val CanvasTextBaseline.Companion.IDEOGRAPHIC: CanvasTextBaseline get() = "ideographic".toJsString().unsafeCast<CanvasTextBaseline>()
-
-public inline val CanvasTextBaseline.Companion.BOTTOM: CanvasTextBaseline get() = "bottom".toJsString().unsafeCast<CanvasTextBaseline>()
+public expect inline val CanvasTextAlign.Companion.CENTER: CanvasTextAlign
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface CanvasDirection : JsAny {
+public expect interface CanvasTextBaseline : JsAny {
     companion object
 }
 
-public inline val CanvasDirection.Companion.LTR: CanvasDirection get() = "ltr".toJsString().unsafeCast<CanvasDirection>()
+public expect inline val CanvasTextBaseline.Companion.TOP: CanvasTextBaseline
 
-public inline val CanvasDirection.Companion.RTL: CanvasDirection get() = "rtl".toJsString().unsafeCast<CanvasDirection>()
+public expect inline val CanvasTextBaseline.Companion.HANGING: CanvasTextBaseline
 
-public inline val CanvasDirection.Companion.INHERIT: CanvasDirection get() = "inherit".toJsString().unsafeCast<CanvasDirection>()
+public expect inline val CanvasTextBaseline.Companion.MIDDLE: CanvasTextBaseline
+
+public expect inline val CanvasTextBaseline.Companion.ALPHABETIC: CanvasTextBaseline
+
+public expect inline val CanvasTextBaseline.Companion.IDEOGRAPHIC: CanvasTextBaseline
+
+public expect inline val CanvasTextBaseline.Companion.BOTTOM: CanvasTextBaseline
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface ScrollRestoration : JsAny {
+public expect interface CanvasDirection : JsAny {
     companion object
 }
 
-public inline val ScrollRestoration.Companion.AUTO: ScrollRestoration get() = "auto".toJsString().unsafeCast<ScrollRestoration>()
+public expect inline val CanvasDirection.Companion.LTR: CanvasDirection
 
-public inline val ScrollRestoration.Companion.MANUAL: ScrollRestoration get() = "manual".toJsString().unsafeCast<ScrollRestoration>()
+public expect inline val CanvasDirection.Companion.RTL: CanvasDirection
+
+public expect inline val CanvasDirection.Companion.INHERIT: CanvasDirection
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface ImageOrientation : JsAny {
+public expect interface ScrollRestoration : JsAny {
     companion object
 }
 
-public inline val ImageOrientation.Companion.NONE: ImageOrientation get() = "none".toJsString().unsafeCast<ImageOrientation>()
+public expect inline val ScrollRestoration.Companion.AUTO: ScrollRestoration
 
-public inline val ImageOrientation.Companion.FLIPY: ImageOrientation get() = "flipY".toJsString().unsafeCast<ImageOrientation>()
+public expect inline val ScrollRestoration.Companion.MANUAL: ScrollRestoration
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface PremultiplyAlpha : JsAny {
+public expect interface ImageOrientation : JsAny {
     companion object
 }
 
-public inline val PremultiplyAlpha.Companion.NONE: PremultiplyAlpha get() = "none".toJsString().unsafeCast<PremultiplyAlpha>()
+public expect inline val ImageOrientation.Companion.NONE: ImageOrientation
 
-public inline val PremultiplyAlpha.Companion.PREMULTIPLY: PremultiplyAlpha get() = "premultiply".toJsString().unsafeCast<PremultiplyAlpha>()
-
-public inline val PremultiplyAlpha.Companion.DEFAULT: PremultiplyAlpha get() = "default".toJsString().unsafeCast<PremultiplyAlpha>()
+public expect inline val ImageOrientation.Companion.FLIPY: ImageOrientation
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface ColorSpaceConversion : JsAny {
+public expect interface PremultiplyAlpha : JsAny {
     companion object
 }
 
-public inline val ColorSpaceConversion.Companion.NONE: ColorSpaceConversion get() = "none".toJsString().unsafeCast<ColorSpaceConversion>()
+public expect inline val PremultiplyAlpha.Companion.NONE: PremultiplyAlpha
 
-public inline val ColorSpaceConversion.Companion.DEFAULT: ColorSpaceConversion get() = "default".toJsString().unsafeCast<ColorSpaceConversion>()
+public expect inline val PremultiplyAlpha.Companion.PREMULTIPLY: PremultiplyAlpha
+
+public expect inline val PremultiplyAlpha.Companion.DEFAULT: PremultiplyAlpha
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface ResizeQuality : JsAny {
+public expect interface ColorSpaceConversion : JsAny {
     companion object
 }
 
-public inline val ResizeQuality.Companion.PIXELATED: ResizeQuality get() = "pixelated".toJsString().unsafeCast<ResizeQuality>()
+public expect inline val ColorSpaceConversion.Companion.NONE: ColorSpaceConversion
 
-public inline val ResizeQuality.Companion.LOW: ResizeQuality get() = "low".toJsString().unsafeCast<ResizeQuality>()
-
-public inline val ResizeQuality.Companion.MEDIUM: ResizeQuality get() = "medium".toJsString().unsafeCast<ResizeQuality>()
-
-public inline val ResizeQuality.Companion.HIGH: ResizeQuality get() = "high".toJsString().unsafeCast<ResizeQuality>()
+public expect inline val ColorSpaceConversion.Companion.DEFAULT: ColorSpaceConversion
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface BinaryType : JsAny {
+public expect interface ResizeQuality : JsAny {
     companion object
 }
 
-public inline val BinaryType.Companion.BLOB: BinaryType get() = "blob".toJsString().unsafeCast<BinaryType>()
+public expect inline val ResizeQuality.Companion.PIXELATED: ResizeQuality
 
-public inline val BinaryType.Companion.ARRAYBUFFER: BinaryType get() = "arraybuffer".toJsString().unsafeCast<BinaryType>()
+public expect inline val ResizeQuality.Companion.LOW: ResizeQuality
+
+public expect inline val ResizeQuality.Companion.MEDIUM: ResizeQuality
+
+public expect inline val ResizeQuality.Companion.HIGH: ResizeQuality
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface WorkerType : JsAny {
+public expect interface BinaryType : JsAny {
     companion object
 }
 
-public inline val WorkerType.Companion.CLASSIC: WorkerType get() = "classic".toJsString().unsafeCast<WorkerType>()
+public expect inline val BinaryType.Companion.BLOB: BinaryType
 
-public inline val WorkerType.Companion.MODULE: WorkerType get() = "module".toJsString().unsafeCast<WorkerType>()
+public expect inline val BinaryType.Companion.ARRAYBUFFER: BinaryType
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface ShadowRootMode : JsAny {
+public expect interface WorkerType : JsAny {
     companion object
 }
 
-public inline val ShadowRootMode.Companion.OPEN: ShadowRootMode get() = "open".toJsString().unsafeCast<ShadowRootMode>()
+public expect inline val WorkerType.Companion.CLASSIC: WorkerType
 
-public inline val ShadowRootMode.Companion.CLOSED: ShadowRootMode get() = "closed".toJsString().unsafeCast<ShadowRootMode>()
+public expect inline val WorkerType.Companion.MODULE: WorkerType
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface ScrollBehavior : JsAny {
+public expect interface ShadowRootMode : JsAny {
     companion object
 }
 
-public inline val ScrollBehavior.Companion.AUTO: ScrollBehavior get() = "auto".toJsString().unsafeCast<ScrollBehavior>()
+public expect inline val ShadowRootMode.Companion.OPEN: ShadowRootMode
 
-public inline val ScrollBehavior.Companion.INSTANT: ScrollBehavior get() = "instant".toJsString().unsafeCast<ScrollBehavior>()
-
-public inline val ScrollBehavior.Companion.SMOOTH: ScrollBehavior get() = "smooth".toJsString().unsafeCast<ScrollBehavior>()
+public expect inline val ShadowRootMode.Companion.CLOSED: ShadowRootMode
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface ScrollLogicalPosition : JsAny {
+public expect interface ScrollBehavior : JsAny {
     companion object
 }
 
-public inline val ScrollLogicalPosition.Companion.START: ScrollLogicalPosition get() = "start".toJsString().unsafeCast<ScrollLogicalPosition>()
+public expect inline val ScrollBehavior.Companion.AUTO: ScrollBehavior
 
-public inline val ScrollLogicalPosition.Companion.CENTER: ScrollLogicalPosition get() = "center".toJsString().unsafeCast<ScrollLogicalPosition>()
+public expect inline val ScrollBehavior.Companion.INSTANT: ScrollBehavior
 
-public inline val ScrollLogicalPosition.Companion.END: ScrollLogicalPosition get() = "end".toJsString().unsafeCast<ScrollLogicalPosition>()
-
-public inline val ScrollLogicalPosition.Companion.NEAREST: ScrollLogicalPosition get() = "nearest".toJsString().unsafeCast<ScrollLogicalPosition>()
+public expect inline val ScrollBehavior.Companion.SMOOTH: ScrollBehavior
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface CSSBoxType : JsAny {
+public expect interface ScrollLogicalPosition : JsAny {
     companion object
 }
 
-public inline val CSSBoxType.Companion.MARGIN: CSSBoxType get() = "margin".toJsString().unsafeCast<CSSBoxType>()
+public expect inline val ScrollLogicalPosition.Companion.START: ScrollLogicalPosition
 
-public inline val CSSBoxType.Companion.BORDER: CSSBoxType get() = "border".toJsString().unsafeCast<CSSBoxType>()
+public expect inline val ScrollLogicalPosition.Companion.CENTER: ScrollLogicalPosition
 
-public inline val CSSBoxType.Companion.PADDING: CSSBoxType get() = "padding".toJsString().unsafeCast<CSSBoxType>()
+public expect inline val ScrollLogicalPosition.Companion.END: ScrollLogicalPosition
 
-public inline val CSSBoxType.Companion.CONTENT: CSSBoxType get() = "content".toJsString().unsafeCast<CSSBoxType>()
+public expect inline val ScrollLogicalPosition.Companion.NEAREST: ScrollLogicalPosition
+
+/* please, don't implement this interface! */
+@JsName("null")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+public expect interface CSSBoxType : JsAny {
+    companion object
+}
+
+public expect inline val CSSBoxType.Companion.MARGIN: CSSBoxType
+
+public expect inline val CSSBoxType.Companion.BORDER: CSSBoxType
+
+public expect inline val CSSBoxType.Companion.PADDING: CSSBoxType
+
+public expect inline val CSSBoxType.Companion.CONTENT: CSSBoxType

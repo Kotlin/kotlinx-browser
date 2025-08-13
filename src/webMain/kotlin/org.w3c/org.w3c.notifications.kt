@@ -6,6 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See github.com/kotlin/dukat for details
 
+@file:Suppress("EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE", "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE", "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION", "JS_NAME_CLASH", "EXPECT_ACTUAL_IR_INCOMPATIBILITY", "EXPECT_ACTUAL_IR_MISMATCH", "AMBIGUOUS_ACTUALS", "WRONG_JS_INTEROP_TYPE")
 package org.w3c.notifications
 
 import kotlin.js.*
@@ -17,7 +18,7 @@ import org.w3c.workers.*
 /**
  * Exposes the JavaScript [Notification](https://developer.mozilla.org/en/docs/Web/API/Notification) to Kotlin
  */
-public external open class Notification(title: String, options: NotificationOptions = definedExternally) : EventTarget, JsAny {
+public expect open class Notification(title: String, options: NotificationOptions = definedExternally) : EventTarget, JsAny {
     var onclick: ((MouseEvent) -> Unit)?
     var onerror: ((Event) -> Unit)?
     open val title: String
@@ -47,87 +48,49 @@ public external open class Notification(title: String, options: NotificationOpti
     }
 }
 
-public external interface NotificationOptions : JsAny {
-    var dir: NotificationDirection? /* = NotificationDirection.AUTO */
-        get() = definedExternally
-        set(value) = definedExternally
-    var lang: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var body: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var tag: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var image: String?
-        get() = definedExternally
-        set(value) = definedExternally
-    var icon: String?
-        get() = definedExternally
-        set(value) = definedExternally
-    var badge: String?
-        get() = definedExternally
-        set(value) = definedExternally
-    var sound: String?
-        get() = definedExternally
-        set(value) = definedExternally
-    var vibrate: JsAny? /* Int|JsArray<JsNumber> */
-        get() = definedExternally
-        set(value) = definedExternally
-    var timestamp: JsNumber?
-        get() = definedExternally
-        set(value) = definedExternally
-    var renotify: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var silent: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var noscreen: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var requireInteraction: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var sticky: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var data: JsAny? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
-    var actions: JsArray<NotificationAction>? /* = arrayOf() */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface NotificationOptions : JsAny {
+    open var dir: NotificationDirection? /* = NotificationDirection.AUTO */
+    open var lang: String? /* = "" */
+    open var body: String? /* = "" */
+    open var tag: String? /* = "" */
+    open var image: String?
+    open var icon: String?
+    open var badge: String?
+    open var sound: String?
+    open var vibrate: JsAny? /* Int|JsArray<JsNumber> */
+    open var timestamp: JsNumber?
+    open var renotify: Boolean? /* = false */
+    open var silent: Boolean? /* = false */
+    open var noscreen: Boolean? /* = false */
+    open var requireInteraction: Boolean? /* = false */
+    open var sticky: Boolean? /* = false */
+    open var data: JsAny? /* = null */
+    open var actions: JsArray<NotificationAction>? /* = arrayOf() */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun NotificationOptions(dir: NotificationDirection? = NotificationDirection.AUTO, lang: String? = "", body: String? = "", tag: String? = "", image: String? = undefined, icon: String? = undefined, badge: String? = undefined, sound: String? = undefined, vibrate: JsAny? /* Int|JsArray<JsNumber> */ = undefined, timestamp: JsNumber? = undefined, renotify: Boolean? = false, silent: Boolean? = false, noscreen: Boolean? = false, requireInteraction: Boolean? = false, sticky: Boolean? = false, data: JsAny? = null, actions: JsArray<NotificationAction>? = JsArray()): NotificationOptions = js("({ dir: dir, lang: lang, body: body, tag: tag, image: image, icon: icon, badge: badge, sound: sound, vibrate: vibrate, timestamp: timestamp, renotify: renotify, silent: silent, noscreen: noscreen, requireInteraction: requireInteraction, sticky: sticky, data: data, actions: actions })")
+public expect fun NotificationOptions(dir: NotificationDirection? = NotificationDirection.AUTO, lang: String? = "", body: String? = "", tag: String? = "", image: String? = undefined, icon: String? = undefined, badge: String? = undefined, sound: String? = undefined, vibrate: JsAny? /* Int|JsArray<JsNumber> */ = undefined, timestamp: JsNumber? = undefined, renotify: Boolean? = false, silent: Boolean? = false, noscreen: Boolean? = false, requireInteraction: Boolean? = false, sticky: Boolean? = false, data: JsAny? = null, actions: JsArray<NotificationAction>? = JsArray()): NotificationOptions
 
-public external interface NotificationAction : JsAny {
+public expect interface NotificationAction : JsAny {
     var action: String?
     var title: String?
-    var icon: String?
-        get() = definedExternally
-        set(value) = definedExternally
+    open var icon: String?
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun NotificationAction(action: String?, title: String?, icon: String? = undefined): NotificationAction = js("({ action: action, title: title, icon: icon })")
+public expect fun NotificationAction(action: String?, title: String?, icon: String? = undefined): NotificationAction
 
-public external interface GetNotificationOptions : JsAny {
-    var tag: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface GetNotificationOptions : JsAny {
+    open var tag: String? /* = "" */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun GetNotificationOptions(tag: String? = ""): GetNotificationOptions = js("({ tag: tag })")
+public expect fun GetNotificationOptions(tag: String? = ""): GetNotificationOptions
 
 /**
  * Exposes the JavaScript [NotificationEvent](https://developer.mozilla.org/en/docs/Web/API/NotificationEvent) to Kotlin
  */
-public external open class NotificationEvent(type: String, eventInitDict: NotificationEventInit) : ExtendableEvent, JsAny {
+public expect open class NotificationEvent(type: String, eventInitDict: NotificationEventInit) : ExtendableEvent, JsAny {
     open val notification: Notification
     open val action: String
 
@@ -139,38 +102,36 @@ public external open class NotificationEvent(type: String, eventInitDict: Notifi
     }
 }
 
-public external interface NotificationEventInit : ExtendableEventInit, JsAny {
+public expect interface NotificationEventInit : ExtendableEventInit, JsAny {
     var notification: Notification?
-    var action: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
+    open var action: String? /* = "" */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun NotificationEventInit(notification: Notification?, action: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): NotificationEventInit = js("({ notification: notification, action: action, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun NotificationEventInit(notification: Notification?, action: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): NotificationEventInit
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface NotificationPermission : JsAny {
+public expect interface NotificationPermission : JsAny {
     companion object
 }
 
-public inline val NotificationPermission.Companion.DEFAULT: NotificationPermission get() = "default".toJsString().unsafeCast<NotificationPermission>()
+public expect inline val NotificationPermission.Companion.DEFAULT: NotificationPermission
 
-public inline val NotificationPermission.Companion.DENIED: NotificationPermission get() = "denied".toJsString().unsafeCast<NotificationPermission>()
+public expect inline val NotificationPermission.Companion.DENIED: NotificationPermission
 
-public inline val NotificationPermission.Companion.GRANTED: NotificationPermission get() = "granted".toJsString().unsafeCast<NotificationPermission>()
+public expect inline val NotificationPermission.Companion.GRANTED: NotificationPermission
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface NotificationDirection : JsAny {
+public expect interface NotificationDirection : JsAny {
     companion object
 }
 
-public inline val NotificationDirection.Companion.AUTO: NotificationDirection get() = "auto".toJsString().unsafeCast<NotificationDirection>()
+public expect inline val NotificationDirection.Companion.AUTO: NotificationDirection
 
-public inline val NotificationDirection.Companion.LTR: NotificationDirection get() = "ltr".toJsString().unsafeCast<NotificationDirection>()
+public expect inline val NotificationDirection.Companion.LTR: NotificationDirection
 
-public inline val NotificationDirection.Companion.RTL: NotificationDirection get() = "rtl".toJsString().unsafeCast<NotificationDirection>()
+public expect inline val NotificationDirection.Companion.RTL: NotificationDirection

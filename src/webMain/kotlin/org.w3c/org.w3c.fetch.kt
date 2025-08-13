@@ -6,6 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See github.com/kotlin/dukat for details
 
+@file:Suppress("EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE", "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE", "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION", "JS_NAME_CLASH", "EXPECT_ACTUAL_IR_INCOMPATIBILITY", "EXPECT_ACTUAL_IR_MISMATCH", "AMBIGUOUS_ACTUALS", "WRONG_JS_INTEROP_TYPE")
 package org.w3c.fetch
 
 import kotlin.js.*
@@ -17,7 +18,7 @@ import org.w3c.xhr.*
 /**
  * Exposes the JavaScript [Headers](https://developer.mozilla.org/en/docs/Web/API/Headers) to Kotlin
  */
-public external open class Headers(init: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */ = definedExternally) : JsAny {
+public expect open class Headers(init: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */ = definedExternally) : JsAny {
     fun append(name: String, value: String)
     fun delete(name: String)
     fun get(name: String): String?
@@ -28,7 +29,7 @@ public external open class Headers(init: JsAny? /* Headers|JsArray<JsArray<JsStr
 /**
  * Exposes the JavaScript [Body](https://developer.mozilla.org/en/docs/Web/API/Body) to Kotlin
  */
-public external interface Body : JsAny {
+public expect interface Body : JsAny {
     val bodyUsed: Boolean
     fun arrayBuffer(): Promise<ArrayBuffer>
     fun blob(): Promise<Blob>
@@ -40,7 +41,7 @@ public external interface Body : JsAny {
 /**
  * Exposes the JavaScript [Request](https://developer.mozilla.org/en/docs/Web/API/Request) to Kotlin
  */
-public external open class Request(input: JsAny? /* Request|String */, init: RequestInit = definedExternally) : Body, JsAny {
+public expect open class Request(input: JsAny? /* Request|String */, init: RequestInit = definedExternally) : Body, JsAny {
     open val method: String
     open val url: String
     open val headers: Headers
@@ -63,52 +64,28 @@ public external open class Request(input: JsAny? /* Request|String */, init: Req
     override fun text(): Promise<JsString>
 }
 
-public external interface RequestInit : JsAny {
-    var method: String?
-        get() = definedExternally
-        set(value) = definedExternally
-    var headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */
-        get() = definedExternally
-        set(value) = definedExternally
-    var body: JsAny? /* Blob|BufferSource|FormData|URLSearchParams|String */
-        get() = definedExternally
-        set(value) = definedExternally
-    var referrer: String?
-        get() = definedExternally
-        set(value) = definedExternally
-    var referrerPolicy: JsAny?
-        get() = definedExternally
-        set(value) = definedExternally
-    var mode: RequestMode?
-        get() = definedExternally
-        set(value) = definedExternally
-    var credentials: RequestCredentials?
-        get() = definedExternally
-        set(value) = definedExternally
-    var cache: RequestCache?
-        get() = definedExternally
-        set(value) = definedExternally
-    var redirect: RequestRedirect?
-        get() = definedExternally
-        set(value) = definedExternally
-    var integrity: String?
-        get() = definedExternally
-        set(value) = definedExternally
-    var keepalive: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
-    var window: JsAny?
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface RequestInit : JsAny {
+    open var method: String?
+    open var headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */
+    open var body: JsAny? /* Blob|BufferSource|FormData|URLSearchParams|String */
+    open var referrer: String?
+    open var referrerPolicy: JsAny?
+    open var mode: RequestMode?
+    open var credentials: RequestCredentials?
+    open var cache: RequestCache?
+    open var redirect: RequestRedirect?
+    open var integrity: String?
+    open var keepalive: Boolean?
+    open var window: JsAny?
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun RequestInit(method: String? = undefined, headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */ = undefined, body: JsAny? /* Blob|BufferSource|FormData|URLSearchParams|String */ = undefined, referrer: String? = undefined, referrerPolicy: JsAny? = undefined, mode: RequestMode? = undefined, credentials: RequestCredentials? = undefined, cache: RequestCache? = undefined, redirect: RequestRedirect? = undefined, integrity: String? = undefined, keepalive: Boolean? = undefined, window: JsAny? = undefined): RequestInit = js("({ method: method, headers: headers, body: body, referrer: referrer, referrerPolicy: referrerPolicy, mode: mode, credentials: credentials, cache: cache, redirect: redirect, integrity: integrity, keepalive: keepalive, window: window })")
+public expect fun RequestInit(method: String? = undefined, headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */ = undefined, body: JsAny? /* Blob|BufferSource|FormData|URLSearchParams|String */ = undefined, referrer: String? = undefined, referrerPolicy: JsAny? = undefined, mode: RequestMode? = undefined, credentials: RequestCredentials? = undefined, cache: RequestCache? = undefined, redirect: RequestRedirect? = undefined, integrity: String? = undefined, keepalive: Boolean? = undefined, window: JsAny? = undefined): RequestInit
 
 /**
  * Exposes the JavaScript [Response](https://developer.mozilla.org/en/docs/Web/API/Response) to Kotlin
  */
-public external open class Response(body: JsAny? /* JsAny?|ReadableStream */ = definedExternally, init: ResponseInit = definedExternally) : Body, JsAny {
+public expect open class Response(body: JsAny? /* JsAny?|ReadableStream */ = definedExternally, init: ResponseInit = definedExternally) : Body, JsAny {
     open val type: ResponseType
     open val url: String
     open val redirected: Boolean
@@ -132,156 +109,150 @@ public external open class Response(body: JsAny? /* JsAny?|ReadableStream */ = d
     }
 }
 
-public external interface ResponseInit : JsAny {
-    var status: Short? /* = 200 */
-        get() = definedExternally
-        set(value) = definedExternally
-    var statusText: String? /* = "OK" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface ResponseInit : JsAny {
+    open var status: Short? /* = 200 */
+    open var statusText: String? /* = "OK" */
+    open var headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ResponseInit(status: Short? = 200, statusText: String? = "OK", headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */ = undefined): ResponseInit = js("({ status: status, statusText: statusText, headers: headers })")
+public expect fun ResponseInit(status: Short? = 200, statusText: String? = "OK", headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */ = undefined): ResponseInit
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface RequestType : JsAny {
+public expect interface RequestType : JsAny {
     companion object
 }
 
-public inline val RequestType.Companion.EMPTY: RequestType get() = "".toJsString().unsafeCast<RequestType>()
+public expect inline val RequestType.Companion.EMPTY: RequestType
 
-public inline val RequestType.Companion.AUDIO: RequestType get() = "audio".toJsString().unsafeCast<RequestType>()
+public expect inline val RequestType.Companion.AUDIO: RequestType
 
-public inline val RequestType.Companion.FONT: RequestType get() = "font".toJsString().unsafeCast<RequestType>()
+public expect inline val RequestType.Companion.FONT: RequestType
 
-public inline val RequestType.Companion.IMAGE: RequestType get() = "image".toJsString().unsafeCast<RequestType>()
+public expect inline val RequestType.Companion.IMAGE: RequestType
 
-public inline val RequestType.Companion.SCRIPT: RequestType get() = "script".toJsString().unsafeCast<RequestType>()
+public expect inline val RequestType.Companion.SCRIPT: RequestType
 
-public inline val RequestType.Companion.STYLE: RequestType get() = "style".toJsString().unsafeCast<RequestType>()
+public expect inline val RequestType.Companion.STYLE: RequestType
 
-public inline val RequestType.Companion.TRACK: RequestType get() = "track".toJsString().unsafeCast<RequestType>()
+public expect inline val RequestType.Companion.TRACK: RequestType
 
-public inline val RequestType.Companion.VIDEO: RequestType get() = "video".toJsString().unsafeCast<RequestType>()
+public expect inline val RequestType.Companion.VIDEO: RequestType
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface RequestDestination : JsAny {
+public expect interface RequestDestination : JsAny {
     companion object
 }
 
-public inline val RequestDestination.Companion.EMPTY: RequestDestination get() = "".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.EMPTY: RequestDestination
 
-public inline val RequestDestination.Companion.DOCUMENT: RequestDestination get() = "document".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.DOCUMENT: RequestDestination
 
-public inline val RequestDestination.Companion.EMBED: RequestDestination get() = "embed".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.EMBED: RequestDestination
 
-public inline val RequestDestination.Companion.FONT: RequestDestination get() = "font".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.FONT: RequestDestination
 
-public inline val RequestDestination.Companion.IMAGE: RequestDestination get() = "image".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.IMAGE: RequestDestination
 
-public inline val RequestDestination.Companion.MANIFEST: RequestDestination get() = "manifest".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.MANIFEST: RequestDestination
 
-public inline val RequestDestination.Companion.MEDIA: RequestDestination get() = "media".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.MEDIA: RequestDestination
 
-public inline val RequestDestination.Companion.OBJECT: RequestDestination get() = "object".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.OBJECT: RequestDestination
 
-public inline val RequestDestination.Companion.REPORT: RequestDestination get() = "report".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.REPORT: RequestDestination
 
-public inline val RequestDestination.Companion.SCRIPT: RequestDestination get() = "script".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.SCRIPT: RequestDestination
 
-public inline val RequestDestination.Companion.SERVICEWORKER: RequestDestination get() = "serviceworker".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.SERVICEWORKER: RequestDestination
 
-public inline val RequestDestination.Companion.SHAREDWORKER: RequestDestination get() = "sharedworker".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.SHAREDWORKER: RequestDestination
 
-public inline val RequestDestination.Companion.STYLE: RequestDestination get() = "style".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.STYLE: RequestDestination
 
-public inline val RequestDestination.Companion.WORKER: RequestDestination get() = "worker".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.WORKER: RequestDestination
 
-public inline val RequestDestination.Companion.XSLT: RequestDestination get() = "xslt".toJsString().unsafeCast<RequestDestination>()
+public expect inline val RequestDestination.Companion.XSLT: RequestDestination
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface RequestMode : JsAny {
+public expect interface RequestMode : JsAny {
     companion object
 }
 
-public inline val RequestMode.Companion.NAVIGATE: RequestMode get() = "navigate".toJsString().unsafeCast<RequestMode>()
+public expect inline val RequestMode.Companion.NAVIGATE: RequestMode
 
-public inline val RequestMode.Companion.SAME_ORIGIN: RequestMode get() = "same-origin".toJsString().unsafeCast<RequestMode>()
+public expect inline val RequestMode.Companion.SAME_ORIGIN: RequestMode
 
-public inline val RequestMode.Companion.NO_CORS: RequestMode get() = "no-cors".toJsString().unsafeCast<RequestMode>()
+public expect inline val RequestMode.Companion.NO_CORS: RequestMode
 
-public inline val RequestMode.Companion.CORS: RequestMode get() = "cors".toJsString().unsafeCast<RequestMode>()
+public expect inline val RequestMode.Companion.CORS: RequestMode
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface RequestCredentials : JsAny {
+public expect interface RequestCredentials : JsAny {
     companion object
 }
 
-public inline val RequestCredentials.Companion.OMIT: RequestCredentials get() = "omit".toJsString().unsafeCast<RequestCredentials>()
+public expect inline val RequestCredentials.Companion.OMIT: RequestCredentials
 
-public inline val RequestCredentials.Companion.SAME_ORIGIN: RequestCredentials get() = "same-origin".toJsString().unsafeCast<RequestCredentials>()
+public expect inline val RequestCredentials.Companion.SAME_ORIGIN: RequestCredentials
 
-public inline val RequestCredentials.Companion.INCLUDE: RequestCredentials get() = "include".toJsString().unsafeCast<RequestCredentials>()
+public expect inline val RequestCredentials.Companion.INCLUDE: RequestCredentials
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface RequestCache : JsAny {
+public expect interface RequestCache : JsAny {
     companion object
 }
 
-public inline val RequestCache.Companion.DEFAULT: RequestCache get() = "default".toJsString().unsafeCast<RequestCache>()
+public expect inline val RequestCache.Companion.DEFAULT: RequestCache
 
-public inline val RequestCache.Companion.NO_STORE: RequestCache get() = "no-store".toJsString().unsafeCast<RequestCache>()
+public expect inline val RequestCache.Companion.NO_STORE: RequestCache
 
-public inline val RequestCache.Companion.RELOAD: RequestCache get() = "reload".toJsString().unsafeCast<RequestCache>()
+public expect inline val RequestCache.Companion.RELOAD: RequestCache
 
-public inline val RequestCache.Companion.NO_CACHE: RequestCache get() = "no-cache".toJsString().unsafeCast<RequestCache>()
+public expect inline val RequestCache.Companion.NO_CACHE: RequestCache
 
-public inline val RequestCache.Companion.FORCE_CACHE: RequestCache get() = "force-cache".toJsString().unsafeCast<RequestCache>()
+public expect inline val RequestCache.Companion.FORCE_CACHE: RequestCache
 
-public inline val RequestCache.Companion.ONLY_IF_CACHED: RequestCache get() = "only-if-cached".toJsString().unsafeCast<RequestCache>()
+public expect inline val RequestCache.Companion.ONLY_IF_CACHED: RequestCache
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface RequestRedirect : JsAny {
+public expect interface RequestRedirect : JsAny {
     companion object
 }
 
-public inline val RequestRedirect.Companion.FOLLOW: RequestRedirect get() = "follow".toJsString().unsafeCast<RequestRedirect>()
+public expect inline val RequestRedirect.Companion.FOLLOW: RequestRedirect
 
-public inline val RequestRedirect.Companion.ERROR: RequestRedirect get() = "error".toJsString().unsafeCast<RequestRedirect>()
+public expect inline val RequestRedirect.Companion.ERROR: RequestRedirect
 
-public inline val RequestRedirect.Companion.MANUAL: RequestRedirect get() = "manual".toJsString().unsafeCast<RequestRedirect>()
+public expect inline val RequestRedirect.Companion.MANUAL: RequestRedirect
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface ResponseType : JsAny {
+public expect interface ResponseType : JsAny {
     companion object
 }
 
-public inline val ResponseType.Companion.BASIC: ResponseType get() = "basic".toJsString().unsafeCast<ResponseType>()
+public expect inline val ResponseType.Companion.BASIC: ResponseType
 
-public inline val ResponseType.Companion.CORS: ResponseType get() = "cors".toJsString().unsafeCast<ResponseType>()
+public expect inline val ResponseType.Companion.CORS: ResponseType
 
-public inline val ResponseType.Companion.DEFAULT: ResponseType get() = "default".toJsString().unsafeCast<ResponseType>()
+public expect inline val ResponseType.Companion.DEFAULT: ResponseType
 
-public inline val ResponseType.Companion.ERROR: ResponseType get() = "error".toJsString().unsafeCast<ResponseType>()
+public expect inline val ResponseType.Companion.ERROR: ResponseType
 
-public inline val ResponseType.Companion.OPAQUE: ResponseType get() = "opaque".toJsString().unsafeCast<ResponseType>()
+public expect inline val ResponseType.Companion.OPAQUE: ResponseType
 
-public inline val ResponseType.Companion.OPAQUEREDIRECT: ResponseType get() = "opaqueredirect".toJsString().unsafeCast<ResponseType>()
+public expect inline val ResponseType.Companion.OPAQUEREDIRECT: ResponseType

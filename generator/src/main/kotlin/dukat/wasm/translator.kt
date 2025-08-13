@@ -5,17 +5,19 @@
 
 package org.jetbrains.kotlin.tools.dukat.wasm
 
+import dukat.common.PutExpectActualToDeclarations
+import dukat.util.suppress
 import org.jetbrains.dukat.astCommon.IdentifierEntity
 import org.jetbrains.dukat.astCommon.NameEntity
 import org.jetbrains.dukat.astModel.*
-import org.jetbrains.dukat.commonLowerings.AddExplicitGettersAndSetters
+import org.jetbrains.dukat.astModel.modifiers.ExpectActualModifier
 import org.jetbrains.dukat.idlLowerings.*
 import org.jetbrains.dukat.idlParser.parseIDL
 import org.jetbrains.dukat.idlReferenceResolver.DirectoryReferencesResolver
 import org.jetbrains.dukat.model.commonLowerings.*
 import org.jetbrains.dukat.ownerContext.NodeOwner
 
-fun translateIdlToSourceSet(fileName: String): SourceSetModel {
+fun translateIdlToWasmSourceSet(fileName: String): SourceSetModel {
     val translationContext = TranslationContext()
     return parseIDL(fileName, DirectoryReferencesResolver())
         .voidifyEventHandlerReturnType()
@@ -37,9 +39,8 @@ fun translateIdlToSourceSet(fileName: String): SourceSetModel {
             ModelContextAwareLowering(translationContext),
             LowerOverrides(translationContext),
             EscapeIdentificators(),
-            AddExplicitGettersAndSetters(),
         )
-        .lower(ReplaceDynamics())  // Wasm-specific
+        .lower(PutExpectActualToDeclarations(ExpectActualModifier.ACTUAL),ReplaceDynamics())  // Wasm-specific
         .addKDocs()
         .relocateDeclarations()
         .addImportsForUsedPackages()
@@ -56,6 +57,23 @@ class WasmPostProcessingHacks : TopLevelModelLowering {
             member.name == IdentifierEntity("item") &&
                     (member.parameters.firstOrNull()?.type as? TypeValueModel)?.value == IdentifierEntity("Int")
         }
+    }
+
+    override fun lower(module: ModuleModel): ModuleModel {
+        module.annotations.add(
+            suppress(
+                "EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE",
+                "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE",
+                "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION",
+                "JS_NAME_CLASH",
+                "EXPECT_ACTUAL_IR_INCOMPATIBILITY",
+                "EXPECT_ACTUAL_IR_MISMATCH",
+                "AMBIGUOUS_ACTUALS",
+                "WRONG_JS_INTEROP_TYPE",
+                file = true
+            )
+        )
+        return super.lower(module)
     }
 
     override fun lowerClassLikeModel(ownerContext: NodeOwner<ClassLikeModel>, parentModule: ModuleModel): ClassLikeModel {

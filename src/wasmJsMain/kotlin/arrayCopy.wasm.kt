@@ -9,19 +9,6 @@
 
 package org.khronos.webgl
 
-/** Returns a new [ByteArray] containing all the elements of this [Int8Array]. */
-public actual fun Int8Array.toByteArray(): ByteArray =
-    ByteArray(this.length) { this[it] }
-
-/** Returns a new [Int8Array] containing all the elements of this [ByteArray]. */
-public actual fun ByteArray.toInt8Array(): Int8Array {
-    val result = Int8Array(this.size)
-    for (index in this.indices) {
-        result[index] = this[index]
-    }
-    return result
-}
-
 /** Returns a new [UByteArray] containing all the elements of this [Uint8Array]. */
 @ExperimentalUnsignedTypes
 public actual fun Uint8Array.toUByteArray(): UByteArray =
@@ -37,13 +24,13 @@ public actual fun UByteArray.toUint8Array(): Uint8Array {
     return result
 }
 
-/** Returns a new [ShortArray] containing all the elements of this [Int16Array]. */
-public actual fun Int16Array.toShortArray(): ShortArray =
-    ShortArray(this.length) { this[it] }
+/** Returns a new [ByteArray] containing all the elements of this [Int8Array]. */
+public actual fun Int8Array.toByteArray(): ByteArray =
+    ByteArray(this.length) { this[it] }
 
-/** Returns a new [Int16Array] containing all the elements of this [ShortArray]. */
-public actual fun ShortArray.toInt16Array(): Int16Array {
-    val result = Int16Array(this.size)
+/** Returns a new [Int8Array] containing all the elements of this [ByteArray]. */
+public actual fun ByteArray.toInt8Array(): Int8Array {
+    val result = Int8Array(this.size)
     for (index in this.indices) {
         result[index] = this[index]
     }
@@ -65,13 +52,13 @@ public actual fun UShortArray.toUint16Array(): Uint16Array {
     return result
 }
 
-/** Returns a new [IntArray] containing all the elements of this [Int32Array]. */
-public actual fun Int32Array.toIntArray(): IntArray =
-    IntArray(this.length) { this[it] }
+/** Returns a new [ShortArray] containing all the elements of this [Int16Array]. */
+public actual fun Int16Array.toShortArray(): ShortArray =
+    ShortArray(this.length) { this[it] }
 
-/** Returns a new [Int32Array] containing all the elements of this [IntArray]. */
-public actual fun IntArray.toInt32Array(): Int32Array {
-    val result = Int32Array(this.size)
+/** Returns a new [Int16Array] containing all the elements of this [ShortArray]. */
+public actual fun ShortArray.toInt16Array(): Int16Array {
+    val result = Int16Array(this.size)
     for (index in this.indices) {
         result[index] = this[index]
     }
@@ -89,6 +76,19 @@ public actual fun UIntArray.toUint32Array(): Uint32Array {
     val result = Uint32Array(this.size)
     for (index in this.indices) {
         result[index] = this[index].toInt()
+    }
+    return result
+}
+
+/** Returns a new [IntArray] containing all the elements of this [Int32Array]. */
+public actual fun Int32Array.toIntArray(): IntArray =
+    IntArray(this.length) { this[it] }
+
+/** Returns a new [Int32Array] containing all the elements of this [IntArray]. */
+public actual fun IntArray.toInt32Array(): Int32Array {
+    val result = Int32Array(this.size)
+    for (index in this.indices) {
+        result[index] = this[index]
     }
     return result
 }

@@ -6,6 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See github.com/kotlin/dukat for details
 
+@file:Suppress("EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE", "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE", "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION", "JS_NAME_CLASH", "EXPECT_ACTUAL_IR_INCOMPATIBILITY", "EXPECT_ACTUAL_IR_MISMATCH", "AMBIGUOUS_ACTUALS", "WRONG_JS_INTEROP_TYPE")
 package org.w3c.dom.encryptedmedia
 
 import kotlin.js.*
@@ -17,49 +18,31 @@ import org.w3c.undefined
 /**
  * Exposes the JavaScript [MediaKeySystemConfiguration](https://developer.mozilla.org/en/docs/Web/API/MediaKeySystemConfiguration) to Kotlin
  */
-public external interface MediaKeySystemConfiguration : JsAny {
-    var label: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var initDataTypes: JsArray<JsString>? /* = arrayOf() */
-        get() = definedExternally
-        set(value) = definedExternally
-    var audioCapabilities: JsArray<MediaKeySystemMediaCapability>? /* = arrayOf() */
-        get() = definedExternally
-        set(value) = definedExternally
-    var videoCapabilities: JsArray<MediaKeySystemMediaCapability>? /* = arrayOf() */
-        get() = definedExternally
-        set(value) = definedExternally
-    var distinctiveIdentifier: MediaKeysRequirement? /* = MediaKeysRequirement.OPTIONAL */
-        get() = definedExternally
-        set(value) = definedExternally
-    var persistentState: MediaKeysRequirement? /* = MediaKeysRequirement.OPTIONAL */
-        get() = definedExternally
-        set(value) = definedExternally
-    var sessionTypes: JsArray<JsString>?
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface MediaKeySystemConfiguration : JsAny {
+    open var label: String? /* = "" */
+    open var initDataTypes: JsArray<JsString>? /* = arrayOf() */
+    open var audioCapabilities: JsArray<MediaKeySystemMediaCapability>? /* = arrayOf() */
+    open var videoCapabilities: JsArray<MediaKeySystemMediaCapability>? /* = arrayOf() */
+    open var distinctiveIdentifier: MediaKeysRequirement? /* = MediaKeysRequirement.OPTIONAL */
+    open var persistentState: MediaKeysRequirement? /* = MediaKeysRequirement.OPTIONAL */
+    open var sessionTypes: JsArray<JsString>?
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MediaKeySystemConfiguration(label: String? = "", initDataTypes: JsArray<JsString>? = JsArray(), audioCapabilities: JsArray<MediaKeySystemMediaCapability>? = JsArray(), videoCapabilities: JsArray<MediaKeySystemMediaCapability>? = JsArray(), distinctiveIdentifier: MediaKeysRequirement? = MediaKeysRequirement.OPTIONAL, persistentState: MediaKeysRequirement? = MediaKeysRequirement.OPTIONAL, sessionTypes: JsArray<JsString>? = undefined): MediaKeySystemConfiguration = js("({ label: label, initDataTypes: initDataTypes, audioCapabilities: audioCapabilities, videoCapabilities: videoCapabilities, distinctiveIdentifier: distinctiveIdentifier, persistentState: persistentState, sessionTypes: sessionTypes })")
+public expect fun MediaKeySystemConfiguration(label: String? = "", initDataTypes: JsArray<JsString>? = JsArray(), audioCapabilities: JsArray<MediaKeySystemMediaCapability>? = JsArray(), videoCapabilities: JsArray<MediaKeySystemMediaCapability>? = JsArray(), distinctiveIdentifier: MediaKeysRequirement? = MediaKeysRequirement.OPTIONAL, persistentState: MediaKeysRequirement? = MediaKeysRequirement.OPTIONAL, sessionTypes: JsArray<JsString>? = undefined): MediaKeySystemConfiguration
 
-public external interface MediaKeySystemMediaCapability : JsAny {
-    var contentType: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var robustness: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface MediaKeySystemMediaCapability : JsAny {
+    open var contentType: String? /* = "" */
+    open var robustness: String? /* = "" */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MediaKeySystemMediaCapability(contentType: String? = "", robustness: String? = ""): MediaKeySystemMediaCapability = js("({ contentType: contentType, robustness: robustness })")
+public expect fun MediaKeySystemMediaCapability(contentType: String? = "", robustness: String? = ""): MediaKeySystemMediaCapability
 
 /**
  * Exposes the JavaScript [MediaKeySystemAccess](https://developer.mozilla.org/en/docs/Web/API/MediaKeySystemAccess) to Kotlin
  */
-public external abstract class MediaKeySystemAccess : JsAny {
+public expect abstract class MediaKeySystemAccess : JsAny {
     open val keySystem: String
     fun getConfiguration(): MediaKeySystemConfiguration
     fun createMediaKeys(): Promise<MediaKeys>
@@ -68,7 +51,7 @@ public external abstract class MediaKeySystemAccess : JsAny {
 /**
  * Exposes the JavaScript [MediaKeys](https://developer.mozilla.org/en/docs/Web/API/MediaKeys) to Kotlin
  */
-public external abstract class MediaKeys : JsAny {
+public expect abstract class MediaKeys : JsAny {
     fun createSession(sessionType: MediaKeySessionType = definedExternally): MediaKeySession
     fun setServerCertificate(serverCertificate: JsAny?): Promise<JsBoolean>
 }
@@ -76,7 +59,7 @@ public external abstract class MediaKeys : JsAny {
 /**
  * Exposes the JavaScript [MediaKeySession](https://developer.mozilla.org/en/docs/Web/API/MediaKeySession) to Kotlin
  */
-public external abstract class MediaKeySession : EventTarget, JsAny {
+public expect abstract class MediaKeySession : EventTarget, JsAny {
     open val sessionId: String
     open val expiration: Double
     open val closed: Promise<Nothing?>
@@ -93,7 +76,7 @@ public external abstract class MediaKeySession : EventTarget, JsAny {
 /**
  * Exposes the JavaScript [MediaKeyStatusMap](https://developer.mozilla.org/en/docs/Web/API/MediaKeyStatusMap) to Kotlin
  */
-public external abstract class MediaKeyStatusMap : JsAny {
+public expect abstract class MediaKeyStatusMap : JsAny {
     open val size: Int
     fun has(keyId: JsAny?): Boolean
     fun get(keyId: JsAny?): JsAny?
@@ -102,7 +85,7 @@ public external abstract class MediaKeyStatusMap : JsAny {
 /**
  * Exposes the JavaScript [MediaKeyMessageEvent](https://developer.mozilla.org/en/docs/Web/API/MediaKeyMessageEvent) to Kotlin
  */
-public external open class MediaKeyMessageEvent(type: String, eventInitDict: MediaKeyMessageEventInit) : Event, JsAny {
+public expect open class MediaKeyMessageEvent(type: String, eventInitDict: MediaKeyMessageEventInit) : Event, JsAny {
     open val messageType: MediaKeyMessageType
     open val message: ArrayBuffer
 
@@ -114,15 +97,15 @@ public external open class MediaKeyMessageEvent(type: String, eventInitDict: Med
     }
 }
 
-public external interface MediaKeyMessageEventInit : EventInit, JsAny {
+public expect interface MediaKeyMessageEventInit : EventInit, JsAny {
     var messageType: MediaKeyMessageType?
     var message: ArrayBuffer?
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MediaKeyMessageEventInit(messageType: MediaKeyMessageType?, message: ArrayBuffer?, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaKeyMessageEventInit = js("({ messageType: messageType, message: message, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun MediaKeyMessageEventInit(messageType: MediaKeyMessageType?, message: ArrayBuffer?, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaKeyMessageEventInit
 
-public external open class MediaEncryptedEvent(type: String, eventInitDict: MediaEncryptedEventInit = definedExternally) : Event, JsAny {
+public expect open class MediaEncryptedEvent(type: String, eventInitDict: MediaEncryptedEventInit = definedExternally) : Event, JsAny {
     open val initDataType: String
     open val initData: ArrayBuffer?
 
@@ -134,74 +117,70 @@ public external open class MediaEncryptedEvent(type: String, eventInitDict: Medi
     }
 }
 
-public external interface MediaEncryptedEventInit : EventInit, JsAny {
-    var initDataType: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
-    var initData: ArrayBuffer? /* = null */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface MediaEncryptedEventInit : EventInit, JsAny {
+    open var initDataType: String? /* = "" */
+    open var initData: ArrayBuffer? /* = null */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun MediaEncryptedEventInit(initDataType: String? = "", initData: ArrayBuffer? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaEncryptedEventInit = js("({ initDataType: initDataType, initData: initData, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun MediaEncryptedEventInit(initDataType: String? = "", initData: ArrayBuffer? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaEncryptedEventInit
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface MediaKeysRequirement : JsAny {
+public expect interface MediaKeysRequirement : JsAny {
     companion object
 }
 
-public inline val MediaKeysRequirement.Companion.REQUIRED: MediaKeysRequirement get() = "required".toJsString().unsafeCast<MediaKeysRequirement>()
+public expect inline val MediaKeysRequirement.Companion.REQUIRED: MediaKeysRequirement
 
-public inline val MediaKeysRequirement.Companion.OPTIONAL: MediaKeysRequirement get() = "optional".toJsString().unsafeCast<MediaKeysRequirement>()
+public expect inline val MediaKeysRequirement.Companion.OPTIONAL: MediaKeysRequirement
 
-public inline val MediaKeysRequirement.Companion.NOT_ALLOWED: MediaKeysRequirement get() = "not-allowed".toJsString().unsafeCast<MediaKeysRequirement>()
+public expect inline val MediaKeysRequirement.Companion.NOT_ALLOWED: MediaKeysRequirement
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface MediaKeySessionType : JsAny {
+public expect interface MediaKeySessionType : JsAny {
     companion object
 }
 
-public inline val MediaKeySessionType.Companion.TEMPORARY: MediaKeySessionType get() = "temporary".toJsString().unsafeCast<MediaKeySessionType>()
+public expect inline val MediaKeySessionType.Companion.TEMPORARY: MediaKeySessionType
 
-public inline val MediaKeySessionType.Companion.PERSISTENT_LICENSE: MediaKeySessionType get() = "persistent-license".toJsString().unsafeCast<MediaKeySessionType>()
+public expect inline val MediaKeySessionType.Companion.PERSISTENT_LICENSE: MediaKeySessionType
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface MediaKeyStatus : JsAny {
+public expect interface MediaKeyStatus : JsAny {
     companion object
 }
 
-public inline val MediaKeyStatus.Companion.USABLE: MediaKeyStatus get() = "usable".toJsString().unsafeCast<MediaKeyStatus>()
+public expect inline val MediaKeyStatus.Companion.USABLE: MediaKeyStatus
 
-public inline val MediaKeyStatus.Companion.EXPIRED: MediaKeyStatus get() = "expired".toJsString().unsafeCast<MediaKeyStatus>()
+public expect inline val MediaKeyStatus.Companion.EXPIRED: MediaKeyStatus
 
-public inline val MediaKeyStatus.Companion.RELEASED: MediaKeyStatus get() = "released".toJsString().unsafeCast<MediaKeyStatus>()
+public expect inline val MediaKeyStatus.Companion.RELEASED: MediaKeyStatus
 
-public inline val MediaKeyStatus.Companion.OUTPUT_RESTRICTED: MediaKeyStatus get() = "output-restricted".toJsString().unsafeCast<MediaKeyStatus>()
+public expect inline val MediaKeyStatus.Companion.OUTPUT_RESTRICTED: MediaKeyStatus
 
-public inline val MediaKeyStatus.Companion.OUTPUT_DOWNSCALED: MediaKeyStatus get() = "output-downscaled".toJsString().unsafeCast<MediaKeyStatus>()
+public expect inline val MediaKeyStatus.Companion.OUTPUT_DOWNSCALED: MediaKeyStatus
 
-public inline val MediaKeyStatus.Companion.STATUS_PENDING: MediaKeyStatus get() = "status-pending".toJsString().unsafeCast<MediaKeyStatus>()
+public expect inline val MediaKeyStatus.Companion.STATUS_PENDING: MediaKeyStatus
 
-public inline val MediaKeyStatus.Companion.INTERNAL_ERROR: MediaKeyStatus get() = "internal-error".toJsString().unsafeCast<MediaKeyStatus>()
+public expect inline val MediaKeyStatus.Companion.INTERNAL_ERROR: MediaKeyStatus
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface MediaKeyMessageType : JsAny {
+public expect interface MediaKeyMessageType : JsAny {
     companion object
 }
 
-public inline val MediaKeyMessageType.Companion.LICENSE_REQUEST: MediaKeyMessageType get() = "license-request".toJsString().unsafeCast<MediaKeyMessageType>()
+public expect inline val MediaKeyMessageType.Companion.LICENSE_REQUEST: MediaKeyMessageType
 
-public inline val MediaKeyMessageType.Companion.LICENSE_RENEWAL: MediaKeyMessageType get() = "license-renewal".toJsString().unsafeCast<MediaKeyMessageType>()
+public expect inline val MediaKeyMessageType.Companion.LICENSE_RENEWAL: MediaKeyMessageType
 
-public inline val MediaKeyMessageType.Companion.LICENSE_RELEASE: MediaKeyMessageType get() = "license-release".toJsString().unsafeCast<MediaKeyMessageType>()
+public expect inline val MediaKeyMessageType.Companion.LICENSE_RELEASE: MediaKeyMessageType
 
-public inline val MediaKeyMessageType.Companion.INDIVIDUALIZATION_REQUEST: MediaKeyMessageType get() = "individualization-request".toJsString().unsafeCast<MediaKeyMessageType>()
+public expect inline val MediaKeyMessageType.Companion.INDIVIDUALIZATION_REQUEST: MediaKeyMessageType

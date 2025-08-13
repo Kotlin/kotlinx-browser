@@ -6,6 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See github.com/kotlin/dukat for details
 
+@file:Suppress("EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE", "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE", "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION", "JS_NAME_CLASH", "EXPECT_ACTUAL_IR_INCOMPATIBILITY", "EXPECT_ACTUAL_IR_MISMATCH", "AMBIGUOUS_ACTUALS", "WRONG_JS_INTEROP_TYPE")
 package org.khronos.webgl
 
 import kotlin.js.*
@@ -13,77 +14,61 @@ import org.w3c.dom.*
 import org.w3c.dom.events.*
 import org.w3c.undefined
 
-public external interface WebGLContextAttributes : JsAny {
-    var alpha: Boolean? /* = true */
-        get() = definedExternally
-        set(value) = definedExternally
-    var depth: Boolean? /* = true */
-        get() = definedExternally
-        set(value) = definedExternally
-    var stencil: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var antialias: Boolean? /* = true */
-        get() = definedExternally
-        set(value) = definedExternally
-    var premultipliedAlpha: Boolean? /* = true */
-        get() = definedExternally
-        set(value) = definedExternally
-    var preserveDrawingBuffer: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var preferLowPowerToHighPerformance: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var failIfMajorPerformanceCaveat: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface WebGLContextAttributes : JsAny {
+    open var alpha: Boolean? /* = true */
+    open var depth: Boolean? /* = true */
+    open var stencil: Boolean? /* = false */
+    open var antialias: Boolean? /* = true */
+    open var premultipliedAlpha: Boolean? /* = true */
+    open var preserveDrawingBuffer: Boolean? /* = false */
+    open var preferLowPowerToHighPerformance: Boolean? /* = false */
+    open var failIfMajorPerformanceCaveat: Boolean? /* = false */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun WebGLContextAttributes(alpha: Boolean? = true, depth: Boolean? = true, stencil: Boolean? = false, antialias: Boolean? = true, premultipliedAlpha: Boolean? = true, preserveDrawingBuffer: Boolean? = false, preferLowPowerToHighPerformance: Boolean? = false, failIfMajorPerformanceCaveat: Boolean? = false): WebGLContextAttributes = js("({ alpha: alpha, depth: depth, stencil: stencil, antialias: antialias, premultipliedAlpha: premultipliedAlpha, preserveDrawingBuffer: preserveDrawingBuffer, preferLowPowerToHighPerformance: preferLowPowerToHighPerformance, failIfMajorPerformanceCaveat: failIfMajorPerformanceCaveat })")
+public expect fun WebGLContextAttributes(alpha: Boolean? = true, depth: Boolean? = true, stencil: Boolean? = false, antialias: Boolean? = true, premultipliedAlpha: Boolean? = true, preserveDrawingBuffer: Boolean? = false, preferLowPowerToHighPerformance: Boolean? = false, failIfMajorPerformanceCaveat: Boolean? = false): WebGLContextAttributes
 
-public external abstract class WebGLObject : JsAny
+public expect abstract class WebGLObject : JsAny
 
 /**
  * Exposes the JavaScript [WebGLBuffer](https://developer.mozilla.org/en/docs/Web/API/WebGLBuffer) to Kotlin
  */
-public external abstract class WebGLBuffer : WebGLObject, JsAny
+public expect abstract class WebGLBuffer : WebGLObject, JsAny
 
 /**
  * Exposes the JavaScript [WebGLFramebuffer](https://developer.mozilla.org/en/docs/Web/API/WebGLFramebuffer) to Kotlin
  */
-public external abstract class WebGLFramebuffer : WebGLObject, JsAny
+public expect abstract class WebGLFramebuffer : WebGLObject, JsAny
 
 /**
  * Exposes the JavaScript [WebGLProgram](https://developer.mozilla.org/en/docs/Web/API/WebGLProgram) to Kotlin
  */
-public external abstract class WebGLProgram : WebGLObject, JsAny
+public expect abstract class WebGLProgram : WebGLObject, JsAny
 
 /**
  * Exposes the JavaScript [WebGLRenderbuffer](https://developer.mozilla.org/en/docs/Web/API/WebGLRenderbuffer) to Kotlin
  */
-public external abstract class WebGLRenderbuffer : WebGLObject, JsAny
+public expect abstract class WebGLRenderbuffer : WebGLObject, JsAny
 
 /**
  * Exposes the JavaScript [WebGLShader](https://developer.mozilla.org/en/docs/Web/API/WebGLShader) to Kotlin
  */
-public external abstract class WebGLShader : WebGLObject, JsAny
+public expect abstract class WebGLShader : WebGLObject, JsAny
 
 /**
  * Exposes the JavaScript [WebGLTexture](https://developer.mozilla.org/en/docs/Web/API/WebGLTexture) to Kotlin
  */
-public external abstract class WebGLTexture : WebGLObject, JsAny
+public expect abstract class WebGLTexture : WebGLObject, JsAny
 
 /**
  * Exposes the JavaScript [WebGLUniformLocation](https://developer.mozilla.org/en/docs/Web/API/WebGLUniformLocation) to Kotlin
  */
-public external abstract class WebGLUniformLocation : JsAny
+public expect abstract class WebGLUniformLocation : JsAny
 
 /**
  * Exposes the JavaScript [WebGLActiveInfo](https://developer.mozilla.org/en/docs/Web/API/WebGLActiveInfo) to Kotlin
  */
-public external abstract class WebGLActiveInfo : JsAny {
+public expect abstract class WebGLActiveInfo : JsAny {
     open val size: Int
     open val type: Int
     open val name: String
@@ -92,14 +77,14 @@ public external abstract class WebGLActiveInfo : JsAny {
 /**
  * Exposes the JavaScript [WebGLShaderPrecisionFormat](https://developer.mozilla.org/en/docs/Web/API/WebGLShaderPrecisionFormat) to Kotlin
  */
-public external abstract class WebGLShaderPrecisionFormat : JsAny {
+public expect abstract class WebGLShaderPrecisionFormat : JsAny {
     open val rangeMin: Int
     open val rangeMax: Int
     open val precision: Int
 }
 
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface WebGLRenderingContextBase : JsAny {
+public expect interface WebGLRenderingContextBase : JsAny {
     val canvas: HTMLCanvasElement
     val drawingBufferWidth: Int
     val drawingBufferHeight: Int
@@ -562,7 +547,7 @@ public external interface WebGLRenderingContextBase : JsAny {
 /**
  * Exposes the JavaScript [WebGLRenderingContext](https://developer.mozilla.org/en/docs/Web/API/WebGLRenderingContext) to Kotlin
  */
-public external abstract class WebGLRenderingContext : WebGLRenderingContextBase, RenderingContext, JsAny {
+public expect abstract class WebGLRenderingContext : WebGLRenderingContextBase, RenderingContext, JsAny {
     companion object {
         val DEPTH_BUFFER_BIT: Int
         val STENCIL_BUFFER_BIT: Int
@@ -867,7 +852,7 @@ public external abstract class WebGLRenderingContext : WebGLRenderingContextBase
 /**
  * Exposes the JavaScript [WebGLContextEvent](https://developer.mozilla.org/en/docs/Web/API/WebGLContextEvent) to Kotlin
  */
-public external open class WebGLContextEvent(type: String, eventInit: WebGLContextEventInit = definedExternally) : Event, JsAny {
+public expect open class WebGLContextEvent(type: String, eventInit: WebGLContextEventInit = definedExternally) : Event, JsAny {
     open val statusMessage: String
 
     companion object {
@@ -878,19 +863,17 @@ public external open class WebGLContextEvent(type: String, eventInit: WebGLConte
     }
 }
 
-public external interface WebGLContextEventInit : EventInit, JsAny {
-    var statusMessage: String? /* = "" */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface WebGLContextEventInit : EventInit, JsAny {
+    open var statusMessage: String? /* = "" */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun WebGLContextEventInit(statusMessage: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): WebGLContextEventInit = js("({ statusMessage: statusMessage, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun WebGLContextEventInit(statusMessage: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): WebGLContextEventInit
 
 /**
  * Exposes the JavaScript [ArrayBuffer](https://developer.mozilla.org/en/docs/Web/API/ArrayBuffer) to Kotlin
  */
-public external open class ArrayBuffer(length: Int) : BufferDataSource, JsAny {
+public expect open class ArrayBuffer(length: Int) : BufferDataSource, JsAny {
     open val byteLength: Int
     fun slice(begin: Int, end: Int = definedExternally): ArrayBuffer
 
@@ -902,7 +885,7 @@ public external open class ArrayBuffer(length: Int) : BufferDataSource, JsAny {
 /**
  * Exposes the JavaScript [ArrayBufferView](https://developer.mozilla.org/en/docs/Web/API/ArrayBufferView) to Kotlin
  */
-public external interface ArrayBufferView : BufferDataSource, JsAny {
+public expect interface ArrayBufferView : BufferDataSource, JsAny {
     val buffer: ArrayBuffer
     val byteOffset: Int
     val byteLength: Int
@@ -911,7 +894,7 @@ public external interface ArrayBufferView : BufferDataSource, JsAny {
 /**
  * Exposes the JavaScript [Int8Array](https://developer.mozilla.org/en/docs/Web/API/Int8Array) to Kotlin
  */
-public external open class Int8Array : ArrayBufferView, JsAny {
+public expect open class Int8Array : ArrayBufferView, JsAny {
     constructor(length: Int)
     constructor(array: Int8Array)
     constructor(array: JsArray<JsNumber>)
@@ -929,20 +912,14 @@ public external open class Int8Array : ArrayBufferView, JsAny {
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForInt8Array(obj: Int8Array, index: Int): Byte = js("obj[index]")
+public expect operator fun Int8Array.get(index: Int): Byte
 
-public operator fun Int8Array.get(index: Int): Byte = getMethodImplForInt8Array(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForInt8Array(obj: Int8Array, index: Int, value: Byte) { js("obj[index] = value;") }
-
-public operator fun Int8Array.set(index: Int, value: Byte) = setMethodImplForInt8Array(this, index, value)
+public expect operator fun Int8Array.set(index: Int, value: Byte)
 
 /**
  * Exposes the JavaScript [Uint8Array](https://developer.mozilla.org/en/docs/Web/API/Uint8Array) to Kotlin
  */
-public external open class Uint8Array : ArrayBufferView, JsAny {
+public expect open class Uint8Array : ArrayBufferView, JsAny {
     constructor(length: Int)
     constructor(array: Uint8Array)
     constructor(array: JsArray<JsNumber>)
@@ -960,20 +937,14 @@ public external open class Uint8Array : ArrayBufferView, JsAny {
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForUint8Array(obj: Uint8Array, index: Int): Byte = js("obj[index]")
+public expect operator fun Uint8Array.get(index: Int): Byte
 
-public operator fun Uint8Array.get(index: Int): Byte = getMethodImplForUint8Array(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForUint8Array(obj: Uint8Array, index: Int, value: Byte) { js("obj[index] = value;") }
-
-public operator fun Uint8Array.set(index: Int, value: Byte) = setMethodImplForUint8Array(this, index, value)
+public expect operator fun Uint8Array.set(index: Int, value: Byte)
 
 /**
  * Exposes the JavaScript [Uint8ClampedArray](https://developer.mozilla.org/en/docs/Web/API/Uint8ClampedArray) to Kotlin
  */
-public external open class Uint8ClampedArray : ArrayBufferView, JsAny {
+public expect open class Uint8ClampedArray : ArrayBufferView, JsAny {
     constructor(length: Int)
     constructor(array: Uint8ClampedArray)
     constructor(array: JsArray<JsNumber>)
@@ -991,20 +962,14 @@ public external open class Uint8ClampedArray : ArrayBufferView, JsAny {
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForUint8ClampedArray(obj: Uint8ClampedArray, index: Int): Byte = js("obj[index]")
+public expect operator fun Uint8ClampedArray.get(index: Int): Byte
 
-public operator fun Uint8ClampedArray.get(index: Int): Byte = getMethodImplForUint8ClampedArray(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForUint8ClampedArray(obj: Uint8ClampedArray, index: Int, value: Byte) { js("obj[index] = value;") }
-
-public operator fun Uint8ClampedArray.set(index: Int, value: Byte) = setMethodImplForUint8ClampedArray(this, index, value)
+public expect operator fun Uint8ClampedArray.set(index: Int, value: Byte)
 
 /**
  * Exposes the JavaScript [Int16Array](https://developer.mozilla.org/en/docs/Web/API/Int16Array) to Kotlin
  */
-public external open class Int16Array : ArrayBufferView, JsAny {
+public expect open class Int16Array : ArrayBufferView, JsAny {
     constructor(length: Int)
     constructor(array: Int16Array)
     constructor(array: JsArray<JsNumber>)
@@ -1022,20 +987,14 @@ public external open class Int16Array : ArrayBufferView, JsAny {
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForInt16Array(obj: Int16Array, index: Int): Short = js("obj[index]")
+public expect operator fun Int16Array.get(index: Int): Short
 
-public operator fun Int16Array.get(index: Int): Short = getMethodImplForInt16Array(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForInt16Array(obj: Int16Array, index: Int, value: Short) { js("obj[index] = value;") }
-
-public operator fun Int16Array.set(index: Int, value: Short) = setMethodImplForInt16Array(this, index, value)
+public expect operator fun Int16Array.set(index: Int, value: Short)
 
 /**
  * Exposes the JavaScript [Uint16Array](https://developer.mozilla.org/en/docs/Web/API/Uint16Array) to Kotlin
  */
-public external open class Uint16Array : ArrayBufferView, JsAny {
+public expect open class Uint16Array : ArrayBufferView, JsAny {
     constructor(length: Int)
     constructor(array: Uint16Array)
     constructor(array: JsArray<JsNumber>)
@@ -1053,20 +1012,14 @@ public external open class Uint16Array : ArrayBufferView, JsAny {
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForUint16Array(obj: Uint16Array, index: Int): Short = js("obj[index]")
+public expect operator fun Uint16Array.get(index: Int): Short
 
-public operator fun Uint16Array.get(index: Int): Short = getMethodImplForUint16Array(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForUint16Array(obj: Uint16Array, index: Int, value: Short) { js("obj[index] = value;") }
-
-public operator fun Uint16Array.set(index: Int, value: Short) = setMethodImplForUint16Array(this, index, value)
+public expect operator fun Uint16Array.set(index: Int, value: Short)
 
 /**
  * Exposes the JavaScript [Int32Array](https://developer.mozilla.org/en/docs/Web/API/Int32Array) to Kotlin
  */
-public external open class Int32Array : ArrayBufferView, JsAny {
+public expect open class Int32Array : ArrayBufferView, JsAny {
     constructor(length: Int)
     constructor(array: Int32Array)
     constructor(array: JsArray<JsNumber>)
@@ -1084,20 +1037,14 @@ public external open class Int32Array : ArrayBufferView, JsAny {
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForInt32Array(obj: Int32Array, index: Int): Int = js("obj[index]")
+public expect operator fun Int32Array.get(index: Int): Int
 
-public operator fun Int32Array.get(index: Int): Int = getMethodImplForInt32Array(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForInt32Array(obj: Int32Array, index: Int, value: Int) { js("obj[index] = value;") }
-
-public operator fun Int32Array.set(index: Int, value: Int) = setMethodImplForInt32Array(this, index, value)
+public expect operator fun Int32Array.set(index: Int, value: Int)
 
 /**
  * Exposes the JavaScript [Uint32Array](https://developer.mozilla.org/en/docs/Web/API/Uint32Array) to Kotlin
  */
-public external open class Uint32Array : ArrayBufferView, JsAny {
+public expect open class Uint32Array : ArrayBufferView, JsAny {
     constructor(length: Int)
     constructor(array: Uint32Array)
     constructor(array: JsArray<JsNumber>)
@@ -1115,20 +1062,14 @@ public external open class Uint32Array : ArrayBufferView, JsAny {
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForUint32Array(obj: Uint32Array, index: Int): Int = js("obj[index]")
+public expect operator fun Uint32Array.get(index: Int): Int
 
-public operator fun Uint32Array.get(index: Int): Int = getMethodImplForUint32Array(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForUint32Array(obj: Uint32Array, index: Int, value: Int) { js("obj[index] = value;") }
-
-public operator fun Uint32Array.set(index: Int, value: Int) = setMethodImplForUint32Array(this, index, value)
+public expect operator fun Uint32Array.set(index: Int, value: Int)
 
 /**
  * Exposes the JavaScript [Float32Array](https://developer.mozilla.org/en/docs/Web/API/Float32Array) to Kotlin
  */
-public external open class Float32Array : ArrayBufferView, JsAny {
+public expect open class Float32Array : ArrayBufferView, JsAny {
     constructor(length: Int)
     constructor(array: Float32Array)
     constructor(array: JsArray<JsNumber>)
@@ -1146,20 +1087,14 @@ public external open class Float32Array : ArrayBufferView, JsAny {
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForFloat32Array(obj: Float32Array, index: Int): Float = js("obj[index]")
+public expect operator fun Float32Array.get(index: Int): Float
 
-public operator fun Float32Array.get(index: Int): Float = getMethodImplForFloat32Array(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForFloat32Array(obj: Float32Array, index: Int, value: Float) { js("obj[index] = value;") }
-
-public operator fun Float32Array.set(index: Int, value: Float) = setMethodImplForFloat32Array(this, index, value)
+public expect operator fun Float32Array.set(index: Int, value: Float)
 
 /**
  * Exposes the JavaScript [Float64Array](https://developer.mozilla.org/en/docs/Web/API/Float64Array) to Kotlin
  */
-public external open class Float64Array : ArrayBufferView, JsAny {
+public expect open class Float64Array : ArrayBufferView, JsAny {
     constructor(length: Int)
     constructor(array: Float64Array)
     constructor(array: JsArray<JsNumber>)
@@ -1177,20 +1112,14 @@ public external open class Float64Array : ArrayBufferView, JsAny {
     }
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForFloat64Array(obj: Float64Array, index: Int): Double = js("obj[index]")
+public expect operator fun Float64Array.get(index: Int): Double
 
-public operator fun Float64Array.get(index: Int): Double = getMethodImplForFloat64Array(this, index)
-
-@Suppress("UNUSED_PARAMETER")
-internal fun setMethodImplForFloat64Array(obj: Float64Array, index: Int, value: Double) { js("obj[index] = value;") }
-
-public operator fun Float64Array.set(index: Int, value: Double) = setMethodImplForFloat64Array(this, index, value)
+public expect operator fun Float64Array.set(index: Int, value: Double)
 
 /**
  * Exposes the JavaScript [DataView](https://developer.mozilla.org/en/docs/Web/API/DataView) to Kotlin
  */
-public external open class DataView(buffer: ArrayBuffer, byteOffset: Int = definedExternally, byteLength: Int = definedExternally) : ArrayBufferView, JsAny {
+public expect open class DataView(buffer: ArrayBuffer, byteOffset: Int = definedExternally, byteLength: Int = definedExternally) : ArrayBufferView, JsAny {
     override val buffer: ArrayBuffer
     override val byteOffset: Int
     override val byteLength: Int
@@ -1212,6 +1141,6 @@ public external open class DataView(buffer: ArrayBuffer, byteOffset: Int = defin
     fun setFloat64(byteOffset: Int, value: Double, littleEndian: Boolean = definedExternally)
 }
 
-public external interface BufferDataSource
+public expect interface BufferDataSource
 
-public external interface TexImageSource
+public expect interface TexImageSource

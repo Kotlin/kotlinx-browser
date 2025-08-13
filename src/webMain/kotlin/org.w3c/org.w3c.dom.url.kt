@@ -6,6 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See github.com/kotlin/dukat for details
 
+@file:Suppress("EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE", "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE", "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION", "JS_NAME_CLASH", "EXPECT_ACTUAL_IR_INCOMPATIBILITY", "EXPECT_ACTUAL_IR_MISMATCH", "AMBIGUOUS_ACTUALS", "WRONG_JS_INTEROP_TYPE")
 package org.w3c.dom.url
 
 import kotlin.js.*
@@ -17,7 +18,7 @@ import org.w3c.undefined
 /**
  * Exposes the JavaScript [URL](https://developer.mozilla.org/en/docs/Web/API/URL) to Kotlin
  */
-public external open class URL(url: String, base: String = definedExternally) : JsAny {
+public expect open class URL(url: String, base: String = definedExternally) : JsAny {
     var href: String
     open val origin: String
     var protocol: String
@@ -44,7 +45,7 @@ public external open class URL(url: String, base: String = definedExternally) : 
 /**
  * Exposes the JavaScript [URLSearchParams](https://developer.mozilla.org/en/docs/Web/API/URLSearchParams) to Kotlin
  */
-public external open class URLSearchParams(init: JsAny? /* String|URLSearchParams */ = definedExternally) : JsAny {
+public expect open class URLSearchParams(init: JsAny? /* String|URLSearchParams */ = definedExternally) : JsAny {
     fun append(name: String, value: String)
     fun delete(name: String)
     fun get(name: String): String?

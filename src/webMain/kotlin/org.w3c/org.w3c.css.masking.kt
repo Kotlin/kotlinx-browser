@@ -6,6 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See github.com/kotlin/dukat for details
 
+@file:Suppress("EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE", "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE", "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION", "JS_NAME_CLASH", "EXPECT_ACTUAL_IR_INCOMPATIBILITY", "EXPECT_ACTUAL_IR_MISMATCH", "AMBIGUOUS_ACTUALS", "WRONG_JS_INTEROP_TYPE")
 package org.w3c.css.masking
 
 import kotlin.js.*
@@ -16,7 +17,7 @@ import org.w3c.undefined
 /**
  * Exposes the JavaScript [SVGClipPathElement](https://developer.mozilla.org/en/docs/Web/API/SVGClipPathElement) to Kotlin
  */
-public external abstract class SVGClipPathElement : SVGElement, SVGUnitTypes, JsAny {
+public expect abstract class SVGClipPathElement : SVGElement, SVGUnitTypes, JsAny {
     open val clipPathUnits: SVGAnimatedEnumeration
     open val transform: SVGAnimatedTransformList
 
@@ -48,7 +49,7 @@ public external abstract class SVGClipPathElement : SVGElement, SVGUnitTypes, Js
 /**
  * Exposes the JavaScript [SVGMaskElement](https://developer.mozilla.org/en/docs/Web/API/SVGMaskElement) to Kotlin
  */
-public external abstract class SVGMaskElement : SVGElement, SVGUnitTypes, JsAny {
+public expect abstract class SVGMaskElement : SVGElement, SVGUnitTypes, JsAny {
     open val maskUnits: SVGAnimatedEnumeration
     open val maskContentUnits: SVGAnimatedEnumeration
     open val x: SVGAnimatedLength

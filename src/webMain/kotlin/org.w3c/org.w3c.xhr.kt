@@ -6,6 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See github.com/kotlin/dukat for details
 
+@file:Suppress("EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE", "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE", "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION", "JS_NAME_CLASH", "EXPECT_ACTUAL_IR_INCOMPATIBILITY", "EXPECT_ACTUAL_IR_MISMATCH", "AMBIGUOUS_ACTUALS", "WRONG_JS_INTEROP_TYPE")
 package org.w3c.xhr
 
 import kotlin.js.*
@@ -19,7 +20,7 @@ import org.w3c.undefined
 /**
  * Exposes the JavaScript [XMLHttpRequestEventTarget](https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequestEventTarget) to Kotlin
  */
-public external abstract class XMLHttpRequestEventTarget : EventTarget, JsAny {
+public expect abstract class XMLHttpRequestEventTarget : EventTarget, JsAny {
     open var onloadstart: ((ProgressEvent) -> Unit)?
     open var onprogress: ((ProgressEvent) -> Unit)?
     open var onabort: ((Event) -> Unit)?
@@ -29,12 +30,12 @@ public external abstract class XMLHttpRequestEventTarget : EventTarget, JsAny {
     open var onloadend: ((Event) -> Unit)?
 }
 
-public external abstract class XMLHttpRequestUpload : XMLHttpRequestEventTarget, JsAny
+public expect abstract class XMLHttpRequestUpload : XMLHttpRequestEventTarget, JsAny
 
 /**
  * Exposes the JavaScript [XMLHttpRequest](https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest) to Kotlin
  */
-public external open class XMLHttpRequest : XMLHttpRequestEventTarget, JsAny {
+public expect open class XMLHttpRequest() : XMLHttpRequestEventTarget, JsAny {
     var onreadystatechange: ((Event) -> Unit)?
     open val readyState: Short
     var timeout: Int
@@ -73,7 +74,7 @@ public external open class XMLHttpRequest : XMLHttpRequestEventTarget, JsAny {
 /**
  * Exposes the JavaScript [FormData](https://developer.mozilla.org/en/docs/Web/API/FormData) to Kotlin
  */
-public external open class FormData(form: HTMLFormElement = definedExternally) : JsAny {
+public expect open class FormData(form: HTMLFormElement = definedExternally) : JsAny {
     fun append(name: String, value: String)
     fun append(name: String, value: Blob, filename: String = definedExternally)
     fun delete(name: String)
@@ -87,7 +88,7 @@ public external open class FormData(form: HTMLFormElement = definedExternally) :
 /**
  * Exposes the JavaScript [ProgressEvent](https://developer.mozilla.org/en/docs/Web/API/ProgressEvent) to Kotlin
  */
-public external open class ProgressEvent(type: String, eventInitDict: ProgressEventInit = definedExternally) : Event, JsAny {
+public expect open class ProgressEvent(type: String, eventInitDict: ProgressEventInit = definedExternally) : Event, JsAny {
     open val lengthComputable: Boolean
     open val loaded: JsNumber
     open val total: JsNumber
@@ -100,36 +101,30 @@ public external open class ProgressEvent(type: String, eventInitDict: ProgressEv
     }
 }
 
-public external interface ProgressEventInit : EventInit, JsAny {
-    var lengthComputable: Boolean? /* = false */
-        get() = definedExternally
-        set(value) = definedExternally
-    var loaded: JsNumber? /* = 0 */
-        get() = definedExternally
-        set(value) = definedExternally
-    var total: JsNumber? /* = 0 */
-        get() = definedExternally
-        set(value) = definedExternally
+public expect interface ProgressEventInit : EventInit, JsAny {
+    open var lengthComputable: Boolean? /* = false */
+    open var loaded: JsNumber? /* = 0 */
+    open var total: JsNumber? /* = 0 */
 }
 
 @Suppress("UNUSED_PARAMETER")
-public fun ProgressEventInit(lengthComputable: Boolean? = false, loaded: JsNumber? = 0.toJsNumber(), total: JsNumber? = 0.toJsNumber(), bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ProgressEventInit = js("({ lengthComputable: lengthComputable, loaded: loaded, total: total, bubbles: bubbles, cancelable: cancelable, composed: composed })")
+public expect fun ProgressEventInit(lengthComputable: Boolean? = false, loaded: JsNumber? = 0.toJsNumber(), total: JsNumber? = 0.toJsNumber(), bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ProgressEventInit
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface XMLHttpRequestResponseType : JsAny {
+public expect interface XMLHttpRequestResponseType : JsAny {
     companion object
 }
 
-public inline val XMLHttpRequestResponseType.Companion.EMPTY: XMLHttpRequestResponseType get() = "".toJsString().unsafeCast<XMLHttpRequestResponseType>()
+public expect inline val XMLHttpRequestResponseType.Companion.EMPTY: XMLHttpRequestResponseType
 
-public inline val XMLHttpRequestResponseType.Companion.ARRAYBUFFER: XMLHttpRequestResponseType get() = "arraybuffer".toJsString().unsafeCast<XMLHttpRequestResponseType>()
+public expect inline val XMLHttpRequestResponseType.Companion.ARRAYBUFFER: XMLHttpRequestResponseType
 
-public inline val XMLHttpRequestResponseType.Companion.BLOB: XMLHttpRequestResponseType get() = "blob".toJsString().unsafeCast<XMLHttpRequestResponseType>()
+public expect inline val XMLHttpRequestResponseType.Companion.BLOB: XMLHttpRequestResponseType
 
-public inline val XMLHttpRequestResponseType.Companion.DOCUMENT: XMLHttpRequestResponseType get() = "document".toJsString().unsafeCast<XMLHttpRequestResponseType>()
+public expect inline val XMLHttpRequestResponseType.Companion.DOCUMENT: XMLHttpRequestResponseType
 
-public inline val XMLHttpRequestResponseType.Companion.JSON: XMLHttpRequestResponseType get() = "json".toJsString().unsafeCast<XMLHttpRequestResponseType>()
+public expect inline val XMLHttpRequestResponseType.Companion.JSON: XMLHttpRequestResponseType
 
-public inline val XMLHttpRequestResponseType.Companion.TEXT: XMLHttpRequestResponseType get() = "text".toJsString().unsafeCast<XMLHttpRequestResponseType>()
+public expect inline val XMLHttpRequestResponseType.Companion.TEXT: XMLHttpRequestResponseType

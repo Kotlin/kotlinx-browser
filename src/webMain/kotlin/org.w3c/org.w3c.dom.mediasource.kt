@@ -6,6 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See github.com/kotlin/dukat for details
 
+@file:Suppress("EXPECT_ACTUAL_INCOMPATIBLE_RETURN_TYPE", "NON_EXTERNAL_TYPE_EXTENDS_EXTERNAL_TYPE", "CALL_TO_DEFINED_EXTERNALLY_FROM_NON_EXTERNAL_DECLARATION", "JS_NAME_CLASH", "EXPECT_ACTUAL_IR_INCOMPATIBILITY", "EXPECT_ACTUAL_IR_MISMATCH", "AMBIGUOUS_ACTUALS", "WRONG_JS_INTEROP_TYPE")
 package org.w3c.dom.mediasource
 
 import kotlin.js.*
@@ -17,7 +18,7 @@ import org.w3c.undefined
 /**
  * Exposes the JavaScript [MediaSource](https://developer.mozilla.org/en/docs/Web/API/MediaSource) to Kotlin
  */
-public external open class MediaSource : EventTarget, MediaProvider, JsAny {
+public expect open class MediaSource() : EventTarget, MediaProvider, JsAny {
     open val sourceBuffers: SourceBufferList
     open val activeSourceBuffers: SourceBufferList
     open val readyState: ReadyState
@@ -39,7 +40,7 @@ public external open class MediaSource : EventTarget, MediaProvider, JsAny {
 /**
  * Exposes the JavaScript [SourceBuffer](https://developer.mozilla.org/en/docs/Web/API/SourceBuffer) to Kotlin
  */
-public external abstract class SourceBuffer : EventTarget, JsAny {
+public expect abstract class SourceBuffer : EventTarget, JsAny {
     open var mode: AppendMode
     open val updating: Boolean
     open val buffered: TimeRanges
@@ -62,48 +63,45 @@ public external abstract class SourceBuffer : EventTarget, JsAny {
 /**
  * Exposes the JavaScript [SourceBufferList](https://developer.mozilla.org/en/docs/Web/API/SourceBufferList) to Kotlin
  */
-public external abstract class SourceBufferList : EventTarget, JsAny {
+public expect abstract class SourceBufferList : EventTarget, JsAny {
     open val length: Int
     open var onaddsourcebuffer: ((Event) -> Unit)?
     open var onremovesourcebuffer: ((Event) -> Unit)?
 }
 
-@Suppress("UNUSED_PARAMETER")
-internal fun getMethodImplForSourceBufferList(obj: SourceBufferList, index: Int): SourceBuffer? = js("obj[index]")
-
-public operator fun SourceBufferList.get(index: Int): SourceBuffer? = getMethodImplForSourceBufferList(this, index)
+public expect operator fun SourceBufferList.get(index: Int): SourceBuffer?
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface ReadyState : JsAny {
+public expect interface ReadyState : JsAny {
     companion object
 }
 
-public inline val ReadyState.Companion.CLOSED: ReadyState get() = "closed".toJsString().unsafeCast<ReadyState>()
+public expect inline val ReadyState.Companion.CLOSED: ReadyState
 
-public inline val ReadyState.Companion.OPEN: ReadyState get() = "open".toJsString().unsafeCast<ReadyState>()
+public expect inline val ReadyState.Companion.OPEN: ReadyState
 
-public inline val ReadyState.Companion.ENDED: ReadyState get() = "ended".toJsString().unsafeCast<ReadyState>()
+public expect inline val ReadyState.Companion.ENDED: ReadyState
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface EndOfStreamError : JsAny {
+public expect interface EndOfStreamError : JsAny {
     companion object
 }
 
-public inline val EndOfStreamError.Companion.NETWORK: EndOfStreamError get() = "network".toJsString().unsafeCast<EndOfStreamError>()
+public expect inline val EndOfStreamError.Companion.NETWORK: EndOfStreamError
 
-public inline val EndOfStreamError.Companion.DECODE: EndOfStreamError get() = "decode".toJsString().unsafeCast<EndOfStreamError>()
+public expect inline val EndOfStreamError.Companion.DECODE: EndOfStreamError
 
 /* please, don't implement this interface! */
 @JsName("null")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
-public external interface AppendMode : JsAny {
+public expect interface AppendMode : JsAny {
     companion object
 }
 
-public inline val AppendMode.Companion.SEGMENTS: AppendMode get() = "segments".toJsString().unsafeCast<AppendMode>()
+public expect inline val AppendMode.Companion.SEGMENTS: AppendMode
 
-public inline val AppendMode.Companion.SEQUENCE: AppendMode get() = "sequence".toJsString().unsafeCast<AppendMode>()
+public expect inline val AppendMode.Companion.SEQUENCE: AppendMode
