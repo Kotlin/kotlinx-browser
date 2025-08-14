@@ -8,9 +8,9 @@
 [![TeamCity build](https://img.shields.io/teamcity/build/s/KotlinTools_KotlinxBrowser_Build.svg?server=http%3A%2F%2Fteamcity.jetbrains.com)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=KotlinTools_KotlinxDatetime_Build_All&guest=1)
 
 
-Kotlin Web browser API
+Kotlin browser API
 
-A Kotlin library for working with browser declarations in Kotlin WasmJs and Kotlin Js targets.
+A Kotlin library for working with browser declarations in Kotlin with WasmJs and JS targets.
 
 See [Using in your projects](#using-in-your-projects) for the instructions how to setup a dependency in your project.
 
@@ -71,7 +71,7 @@ kotlin {
     sourceSets {
         commonMain {
              dependencies {
-                 implementation("org.jetbrains.kotlinx:kotlinx-browser:0.4")
+                 implementation("org.jetbrains.kotlinx:kotlinx-browser:0.5.0")
              }
         }
     }
