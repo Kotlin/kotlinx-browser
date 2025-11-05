@@ -3773,17 +3773,17 @@ actual external interface WindowOrWorkerGlobalScope {
     actual fun atob(data: String): String
     @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
     @kotlin.internal.LowPriorityInOverloadResolution
-    actual fun setTimeout(handler: dynamic, timeout: Int, vararg arguments: Any?): Int
+    actual fun setTimeout(handler: dynamic, timeout: Int = definedExternally, vararg arguments: Any?): Int
     actual fun clearTimeout(handle: Int)
     @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
     @kotlin.internal.LowPriorityInOverloadResolution
-    actual fun setInterval(handler: dynamic, timeout: Int, vararg arguments: Any?): Int
+    actual fun setInterval(handler: dynamic, timeout: Int = definedExternally, vararg arguments: Any?): Int
     actual fun clearInterval(handle: Int)
     actual fun createImageBitmap(image: ImageBitmapSource, options: ImageBitmapOptions): Promise<ImageBitmap>
     actual fun createImageBitmap(image: ImageBitmapSource, sx: Int, sy: Int, sw: Int, sh: Int, options: ImageBitmapOptions): Promise<ImageBitmap>
     @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
     @kotlin.internal.LowPriorityInOverloadResolution
-    actual fun fetch(input: dynamic, init: RequestInit): Promise<Response>
+    actual fun fetch(input: dynamic, init: RequestInit = definedExternally): Promise<Response>
 }
 
 /**
@@ -6036,13 +6036,13 @@ actual external interface GeometryUtils {
     actual fun getBoxQuads(options: BoxQuadOptions): Array<DOMQuad>
     @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
     @kotlin.internal.LowPriorityInOverloadResolution
-    actual fun convertQuadFromNode(quad: dynamic, from: dynamic, options: ConvertCoordinateOptions): DOMQuad
+    actual fun convertQuadFromNode(quad: dynamic, from: dynamic, options: ConvertCoordinateOptions = definedExternally): DOMQuad
     @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
     @kotlin.internal.LowPriorityInOverloadResolution
-    actual fun convertRectFromNode(rect: DOMRectReadOnly, from: dynamic, options: ConvertCoordinateOptions): DOMQuad
+    actual fun convertRectFromNode(rect: DOMRectReadOnly, from: dynamic, options: ConvertCoordinateOptions = definedExternally): DOMQuad
     @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
     @kotlin.internal.LowPriorityInOverloadResolution
-    actual fun convertPointFromNode(point: DOMPointInit, from: dynamic, options: ConvertCoordinateOptions): DOMPoint
+    actual fun convertPointFromNode(point: DOMPointInit, from: dynamic, options: ConvertCoordinateOptions = definedExternally): DOMPoint
 }
 
 /**
