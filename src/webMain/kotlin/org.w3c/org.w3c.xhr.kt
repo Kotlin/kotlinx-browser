@@ -111,7 +111,7 @@ public expect interface ProgressEventInit : EventInit, JsAny {
 public expect fun ProgressEventInit(lengthComputable: Boolean? = false, loaded: JsNumber? = 0.toJsNumber(), total: JsNumber? = 0.toJsNumber(), bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): ProgressEventInit
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface XMLHttpRequestResponseType : JsAny {
     companion object

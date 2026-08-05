@@ -75,7 +75,7 @@ internal fun getMethodImplForSourceBufferList(obj: SourceBufferList, index: Int)
 public actual operator fun SourceBufferList.get(index: Int): SourceBuffer? = getMethodImplForSourceBufferList(this, index)
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ReadyState : JsAny {
     actual companion object
@@ -88,7 +88,7 @@ public actual inline val ReadyState.Companion.OPEN: ReadyState get() = "open".to
 public actual inline val ReadyState.Companion.ENDED: ReadyState get() = "ended".toJsString().unsafeCast<ReadyState>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface EndOfStreamError : JsAny {
     actual companion object
@@ -99,7 +99,7 @@ public actual inline val EndOfStreamError.Companion.NETWORK: EndOfStreamError ge
 public actual inline val EndOfStreamError.Companion.DECODE: EndOfStreamError get() = "decode".toJsString().unsafeCast<EndOfStreamError>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface AppendMode : JsAny {
     actual companion object

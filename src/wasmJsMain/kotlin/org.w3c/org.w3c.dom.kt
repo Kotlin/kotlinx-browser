@@ -6251,7 +6251,7 @@ public actual external interface ImageBitmapSource
 public actual external interface HTMLOrSVGScriptElement
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface DocumentReadyState : JsAny {
     actual companion object
@@ -6264,7 +6264,7 @@ public actual inline val DocumentReadyState.Companion.INTERACTIVE: DocumentReady
 public actual inline val DocumentReadyState.Companion.COMPLETE: DocumentReadyState get() = "complete".toJsString().unsafeCast<DocumentReadyState>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface CanPlayTypeResult : JsAny {
     actual companion object
@@ -6277,7 +6277,7 @@ public actual inline val CanPlayTypeResult.Companion.MAYBE: CanPlayTypeResult ge
 public actual inline val CanPlayTypeResult.Companion.PROBABLY: CanPlayTypeResult get() = "probably".toJsString().unsafeCast<CanPlayTypeResult>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface TextTrackMode : JsAny {
     actual companion object
@@ -6290,7 +6290,7 @@ public actual inline val TextTrackMode.Companion.HIDDEN: TextTrackMode get() = "
 public actual inline val TextTrackMode.Companion.SHOWING: TextTrackMode get() = "showing".toJsString().unsafeCast<TextTrackMode>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface TextTrackKind : JsAny {
     actual companion object
@@ -6307,7 +6307,7 @@ public actual inline val TextTrackKind.Companion.CHAPTERS: TextTrackKind get() =
 public actual inline val TextTrackKind.Companion.METADATA: TextTrackKind get() = "metadata".toJsString().unsafeCast<TextTrackKind>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface SelectionMode : JsAny {
     actual companion object
@@ -6322,7 +6322,7 @@ public actual inline val SelectionMode.Companion.END: SelectionMode get() = "end
 public actual inline val SelectionMode.Companion.PRESERVE: SelectionMode get() = "preserve".toJsString().unsafeCast<SelectionMode>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface CanvasFillRule : JsAny {
     actual companion object
@@ -6333,7 +6333,7 @@ public actual inline val CanvasFillRule.Companion.NONZERO: CanvasFillRule get() 
 public actual inline val CanvasFillRule.Companion.EVENODD: CanvasFillRule get() = "evenodd".toJsString().unsafeCast<CanvasFillRule>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ImageSmoothingQuality : JsAny {
     actual companion object
@@ -6346,7 +6346,7 @@ public actual inline val ImageSmoothingQuality.Companion.MEDIUM: ImageSmoothingQ
 public actual inline val ImageSmoothingQuality.Companion.HIGH: ImageSmoothingQuality get() = "high".toJsString().unsafeCast<ImageSmoothingQuality>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface CanvasLineCap : JsAny {
     actual companion object
@@ -6359,7 +6359,7 @@ public actual inline val CanvasLineCap.Companion.ROUND: CanvasLineCap get() = "r
 public actual inline val CanvasLineCap.Companion.SQUARE: CanvasLineCap get() = "square".toJsString().unsafeCast<CanvasLineCap>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface CanvasLineJoin : JsAny {
     actual companion object
@@ -6372,7 +6372,7 @@ public actual inline val CanvasLineJoin.Companion.BEVEL: CanvasLineJoin get() = 
 public actual inline val CanvasLineJoin.Companion.MITER: CanvasLineJoin get() = "miter".toJsString().unsafeCast<CanvasLineJoin>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface CanvasTextAlign : JsAny {
     actual companion object
@@ -6389,7 +6389,7 @@ public actual inline val CanvasTextAlign.Companion.RIGHT: CanvasTextAlign get() 
 public actual inline val CanvasTextAlign.Companion.CENTER: CanvasTextAlign get() = "center".toJsString().unsafeCast<CanvasTextAlign>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface CanvasTextBaseline : JsAny {
     actual companion object
@@ -6408,7 +6408,7 @@ public actual inline val CanvasTextBaseline.Companion.IDEOGRAPHIC: CanvasTextBas
 public actual inline val CanvasTextBaseline.Companion.BOTTOM: CanvasTextBaseline get() = "bottom".toJsString().unsafeCast<CanvasTextBaseline>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface CanvasDirection : JsAny {
     actual companion object
@@ -6421,7 +6421,7 @@ public actual inline val CanvasDirection.Companion.RTL: CanvasDirection get() = 
 public actual inline val CanvasDirection.Companion.INHERIT: CanvasDirection get() = "inherit".toJsString().unsafeCast<CanvasDirection>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ScrollRestoration : JsAny {
     actual companion object
@@ -6432,7 +6432,7 @@ public actual inline val ScrollRestoration.Companion.AUTO: ScrollRestoration get
 public actual inline val ScrollRestoration.Companion.MANUAL: ScrollRestoration get() = "manual".toJsString().unsafeCast<ScrollRestoration>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ImageOrientation : JsAny {
     actual companion object
@@ -6443,7 +6443,7 @@ public actual inline val ImageOrientation.Companion.NONE: ImageOrientation get()
 public actual inline val ImageOrientation.Companion.FLIPY: ImageOrientation get() = "flipY".toJsString().unsafeCast<ImageOrientation>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface PremultiplyAlpha : JsAny {
     actual companion object
@@ -6456,7 +6456,7 @@ public actual inline val PremultiplyAlpha.Companion.PREMULTIPLY: PremultiplyAlph
 public actual inline val PremultiplyAlpha.Companion.DEFAULT: PremultiplyAlpha get() = "default".toJsString().unsafeCast<PremultiplyAlpha>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ColorSpaceConversion : JsAny {
     actual companion object
@@ -6467,7 +6467,7 @@ public actual inline val ColorSpaceConversion.Companion.NONE: ColorSpaceConversi
 public actual inline val ColorSpaceConversion.Companion.DEFAULT: ColorSpaceConversion get() = "default".toJsString().unsafeCast<ColorSpaceConversion>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ResizeQuality : JsAny {
     actual companion object
@@ -6482,7 +6482,7 @@ public actual inline val ResizeQuality.Companion.MEDIUM: ResizeQuality get() = "
 public actual inline val ResizeQuality.Companion.HIGH: ResizeQuality get() = "high".toJsString().unsafeCast<ResizeQuality>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface BinaryType : JsAny {
     actual companion object
@@ -6493,7 +6493,7 @@ public actual inline val BinaryType.Companion.BLOB: BinaryType get() = "blob".to
 public actual inline val BinaryType.Companion.ARRAYBUFFER: BinaryType get() = "arraybuffer".toJsString().unsafeCast<BinaryType>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface WorkerType : JsAny {
     actual companion object
@@ -6504,7 +6504,7 @@ public actual inline val WorkerType.Companion.CLASSIC: WorkerType get() = "class
 public actual inline val WorkerType.Companion.MODULE: WorkerType get() = "module".toJsString().unsafeCast<WorkerType>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ShadowRootMode : JsAny {
     actual companion object
@@ -6515,7 +6515,7 @@ public actual inline val ShadowRootMode.Companion.OPEN: ShadowRootMode get() = "
 public actual inline val ShadowRootMode.Companion.CLOSED: ShadowRootMode get() = "closed".toJsString().unsafeCast<ShadowRootMode>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ScrollBehavior : JsAny {
     actual companion object
@@ -6528,7 +6528,7 @@ public actual inline val ScrollBehavior.Companion.INSTANT: ScrollBehavior get() 
 public actual inline val ScrollBehavior.Companion.SMOOTH: ScrollBehavior get() = "smooth".toJsString().unsafeCast<ScrollBehavior>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ScrollLogicalPosition : JsAny {
     actual companion object
@@ -6543,7 +6543,7 @@ public actual inline val ScrollLogicalPosition.Companion.END: ScrollLogicalPosit
 public actual inline val ScrollLogicalPosition.Companion.NEAREST: ScrollLogicalPosition get() = "nearest".toJsString().unsafeCast<ScrollLogicalPosition>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface CSSBoxType : JsAny {
     actual companion object

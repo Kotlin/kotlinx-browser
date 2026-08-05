@@ -151,7 +151,7 @@ public actual external interface NotificationEventInit : ExtendableEventInit, Js
 public actual fun NotificationEventInit(notification: Notification?, action: String?, bubbles: Boolean?, cancelable: Boolean?, composed: Boolean?): NotificationEventInit = js("({ notification: notification, action: action, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface NotificationPermission : JsAny {
     actual companion object
@@ -164,7 +164,7 @@ public actual inline val NotificationPermission.Companion.DENIED: NotificationPe
 public actual inline val NotificationPermission.Companion.GRANTED: NotificationPermission get() = "granted".toJsString().unsafeCast<NotificationPermission>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface NotificationDirection : JsAny {
     actual companion object

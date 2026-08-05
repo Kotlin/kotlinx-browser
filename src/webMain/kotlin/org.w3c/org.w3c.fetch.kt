@@ -119,7 +119,7 @@ public expect interface ResponseInit : JsAny {
 public expect fun ResponseInit(status: Short? = 200, statusText: String? = "OK", headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */ = undefined): ResponseInit
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface RequestType : JsAny {
     companion object
@@ -142,7 +142,7 @@ public expect inline val RequestType.Companion.TRACK: RequestType
 public expect inline val RequestType.Companion.VIDEO: RequestType
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface RequestDestination : JsAny {
     companion object
@@ -179,7 +179,7 @@ public expect inline val RequestDestination.Companion.WORKER: RequestDestination
 public expect inline val RequestDestination.Companion.XSLT: RequestDestination
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface RequestMode : JsAny {
     companion object
@@ -194,7 +194,7 @@ public expect inline val RequestMode.Companion.NO_CORS: RequestMode
 public expect inline val RequestMode.Companion.CORS: RequestMode
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface RequestCredentials : JsAny {
     companion object
@@ -207,7 +207,7 @@ public expect inline val RequestCredentials.Companion.SAME_ORIGIN: RequestCreden
 public expect inline val RequestCredentials.Companion.INCLUDE: RequestCredentials
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface RequestCache : JsAny {
     companion object
@@ -226,7 +226,7 @@ public expect inline val RequestCache.Companion.FORCE_CACHE: RequestCache
 public expect inline val RequestCache.Companion.ONLY_IF_CACHED: RequestCache
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface RequestRedirect : JsAny {
     companion object
@@ -239,7 +239,7 @@ public expect inline val RequestRedirect.Companion.ERROR: RequestRedirect
 public expect inline val RequestRedirect.Companion.MANUAL: RequestRedirect
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ResponseType : JsAny {
     companion object

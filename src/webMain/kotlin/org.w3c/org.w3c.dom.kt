@@ -5805,7 +5805,7 @@ public expect interface ImageBitmapSource
 public expect interface HTMLOrSVGScriptElement
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface DocumentReadyState : JsAny {
     companion object
@@ -5818,7 +5818,7 @@ public expect inline val DocumentReadyState.Companion.INTERACTIVE: DocumentReady
 public expect inline val DocumentReadyState.Companion.COMPLETE: DocumentReadyState
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface CanPlayTypeResult : JsAny {
     companion object
@@ -5831,7 +5831,7 @@ public expect inline val CanPlayTypeResult.Companion.MAYBE: CanPlayTypeResult
 public expect inline val CanPlayTypeResult.Companion.PROBABLY: CanPlayTypeResult
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface TextTrackMode : JsAny {
     companion object
@@ -5844,7 +5844,7 @@ public expect inline val TextTrackMode.Companion.HIDDEN: TextTrackMode
 public expect inline val TextTrackMode.Companion.SHOWING: TextTrackMode
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface TextTrackKind : JsAny {
     companion object
@@ -5861,7 +5861,7 @@ public expect inline val TextTrackKind.Companion.CHAPTERS: TextTrackKind
 public expect inline val TextTrackKind.Companion.METADATA: TextTrackKind
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface SelectionMode : JsAny {
     companion object
@@ -5876,7 +5876,7 @@ public expect inline val SelectionMode.Companion.END: SelectionMode
 public expect inline val SelectionMode.Companion.PRESERVE: SelectionMode
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface CanvasFillRule : JsAny {
     companion object
@@ -5887,7 +5887,7 @@ public expect inline val CanvasFillRule.Companion.NONZERO: CanvasFillRule
 public expect inline val CanvasFillRule.Companion.EVENODD: CanvasFillRule
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ImageSmoothingQuality : JsAny {
     companion object
@@ -5900,7 +5900,7 @@ public expect inline val ImageSmoothingQuality.Companion.MEDIUM: ImageSmoothingQ
 public expect inline val ImageSmoothingQuality.Companion.HIGH: ImageSmoothingQuality
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface CanvasLineCap : JsAny {
     companion object
@@ -5913,7 +5913,7 @@ public expect inline val CanvasLineCap.Companion.ROUND: CanvasLineCap
 public expect inline val CanvasLineCap.Companion.SQUARE: CanvasLineCap
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface CanvasLineJoin : JsAny {
     companion object
@@ -5926,7 +5926,7 @@ public expect inline val CanvasLineJoin.Companion.BEVEL: CanvasLineJoin
 public expect inline val CanvasLineJoin.Companion.MITER: CanvasLineJoin
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface CanvasTextAlign : JsAny {
     companion object
@@ -5943,7 +5943,7 @@ public expect inline val CanvasTextAlign.Companion.RIGHT: CanvasTextAlign
 public expect inline val CanvasTextAlign.Companion.CENTER: CanvasTextAlign
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface CanvasTextBaseline : JsAny {
     companion object
@@ -5962,7 +5962,7 @@ public expect inline val CanvasTextBaseline.Companion.IDEOGRAPHIC: CanvasTextBas
 public expect inline val CanvasTextBaseline.Companion.BOTTOM: CanvasTextBaseline
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface CanvasDirection : JsAny {
     companion object
@@ -5975,7 +5975,7 @@ public expect inline val CanvasDirection.Companion.RTL: CanvasDirection
 public expect inline val CanvasDirection.Companion.INHERIT: CanvasDirection
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ScrollRestoration : JsAny {
     companion object
@@ -5986,7 +5986,7 @@ public expect inline val ScrollRestoration.Companion.AUTO: ScrollRestoration
 public expect inline val ScrollRestoration.Companion.MANUAL: ScrollRestoration
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ImageOrientation : JsAny {
     companion object
@@ -5997,7 +5997,7 @@ public expect inline val ImageOrientation.Companion.NONE: ImageOrientation
 public expect inline val ImageOrientation.Companion.FLIPY: ImageOrientation
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface PremultiplyAlpha : JsAny {
     companion object
@@ -6010,7 +6010,7 @@ public expect inline val PremultiplyAlpha.Companion.PREMULTIPLY: PremultiplyAlph
 public expect inline val PremultiplyAlpha.Companion.DEFAULT: PremultiplyAlpha
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ColorSpaceConversion : JsAny {
     companion object
@@ -6021,7 +6021,7 @@ public expect inline val ColorSpaceConversion.Companion.NONE: ColorSpaceConversi
 public expect inline val ColorSpaceConversion.Companion.DEFAULT: ColorSpaceConversion
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ResizeQuality : JsAny {
     companion object
@@ -6036,7 +6036,7 @@ public expect inline val ResizeQuality.Companion.MEDIUM: ResizeQuality
 public expect inline val ResizeQuality.Companion.HIGH: ResizeQuality
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface BinaryType : JsAny {
     companion object
@@ -6047,7 +6047,7 @@ public expect inline val BinaryType.Companion.BLOB: BinaryType
 public expect inline val BinaryType.Companion.ARRAYBUFFER: BinaryType
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface WorkerType : JsAny {
     companion object
@@ -6058,7 +6058,7 @@ public expect inline val WorkerType.Companion.CLASSIC: WorkerType
 public expect inline val WorkerType.Companion.MODULE: WorkerType
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ShadowRootMode : JsAny {
     companion object
@@ -6069,7 +6069,7 @@ public expect inline val ShadowRootMode.Companion.OPEN: ShadowRootMode
 public expect inline val ShadowRootMode.Companion.CLOSED: ShadowRootMode
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ScrollBehavior : JsAny {
     companion object
@@ -6082,7 +6082,7 @@ public expect inline val ScrollBehavior.Companion.INSTANT: ScrollBehavior
 public expect inline val ScrollBehavior.Companion.SMOOTH: ScrollBehavior
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ScrollLogicalPosition : JsAny {
     companion object
@@ -6097,7 +6097,7 @@ public expect inline val ScrollLogicalPosition.Companion.END: ScrollLogicalPosit
 public expect inline val ScrollLogicalPosition.Companion.NEAREST: ScrollLogicalPosition
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface CSSBoxType : JsAny {
     companion object

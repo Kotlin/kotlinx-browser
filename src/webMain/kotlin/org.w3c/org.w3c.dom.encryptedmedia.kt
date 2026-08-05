@@ -126,7 +126,7 @@ public expect interface MediaEncryptedEventInit : EventInit, JsAny {
 public expect fun MediaEncryptedEventInit(initDataType: String? = "", initData: ArrayBuffer? = null, bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): MediaEncryptedEventInit
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface MediaKeysRequirement : JsAny {
     companion object
@@ -139,7 +139,7 @@ public expect inline val MediaKeysRequirement.Companion.OPTIONAL: MediaKeysRequi
 public expect inline val MediaKeysRequirement.Companion.NOT_ALLOWED: MediaKeysRequirement
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface MediaKeySessionType : JsAny {
     companion object
@@ -150,7 +150,7 @@ public expect inline val MediaKeySessionType.Companion.TEMPORARY: MediaKeySessio
 public expect inline val MediaKeySessionType.Companion.PERSISTENT_LICENSE: MediaKeySessionType
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface MediaKeyStatus : JsAny {
     companion object
@@ -171,7 +171,7 @@ public expect inline val MediaKeyStatus.Companion.STATUS_PENDING: MediaKeyStatus
 public expect inline val MediaKeyStatus.Companion.INTERNAL_ERROR: MediaKeyStatus
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface MediaKeyMessageType : JsAny {
     companion object

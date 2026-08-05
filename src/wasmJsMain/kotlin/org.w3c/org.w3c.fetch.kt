@@ -149,7 +149,7 @@ public actual external interface ResponseInit : JsAny {
 public actual fun ResponseInit(status: Short?, statusText: String?, headers: JsAny? /* Headers|JsArray<JsArray<JsString>>|OpenEndedDictionary<JsString> */): ResponseInit = js("({ status: status, statusText: statusText, headers: headers })")
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface RequestType : JsAny {
     actual companion object
@@ -172,7 +172,7 @@ public actual inline val RequestType.Companion.TRACK: RequestType get() = "track
 public actual inline val RequestType.Companion.VIDEO: RequestType get() = "video".toJsString().unsafeCast<RequestType>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface RequestDestination : JsAny {
     actual companion object
@@ -209,7 +209,7 @@ public actual inline val RequestDestination.Companion.WORKER: RequestDestination
 public actual inline val RequestDestination.Companion.XSLT: RequestDestination get() = "xslt".toJsString().unsafeCast<RequestDestination>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface RequestMode : JsAny {
     actual companion object
@@ -224,7 +224,7 @@ public actual inline val RequestMode.Companion.NO_CORS: RequestMode get() = "no-
 public actual inline val RequestMode.Companion.CORS: RequestMode get() = "cors".toJsString().unsafeCast<RequestMode>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface RequestCredentials : JsAny {
     actual companion object
@@ -237,7 +237,7 @@ public actual inline val RequestCredentials.Companion.SAME_ORIGIN: RequestCreden
 public actual inline val RequestCredentials.Companion.INCLUDE: RequestCredentials get() = "include".toJsString().unsafeCast<RequestCredentials>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface RequestCache : JsAny {
     actual companion object
@@ -256,7 +256,7 @@ public actual inline val RequestCache.Companion.FORCE_CACHE: RequestCache get() 
 public actual inline val RequestCache.Companion.ONLY_IF_CACHED: RequestCache get() = "only-if-cached".toJsString().unsafeCast<RequestCache>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface RequestRedirect : JsAny {
     actual companion object
@@ -269,7 +269,7 @@ public actual inline val RequestRedirect.Companion.ERROR: RequestRedirect get() 
 public actual inline val RequestRedirect.Companion.MANUAL: RequestRedirect get() = "manual".toJsString().unsafeCast<RequestRedirect>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ResponseType : JsAny {
     actual companion object

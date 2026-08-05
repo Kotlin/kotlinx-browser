@@ -343,7 +343,7 @@ public expect interface UnionMessagePortOrServiceWorker
 public expect interface UnionClientOrMessagePortOrServiceWorker
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ServiceWorkerState : JsAny {
     companion object
@@ -360,7 +360,7 @@ public expect inline val ServiceWorkerState.Companion.ACTIVATED: ServiceWorkerSt
 public expect inline val ServiceWorkerState.Companion.REDUNDANT: ServiceWorkerState
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface FrameType : JsAny {
     companion object
@@ -375,7 +375,7 @@ public expect inline val FrameType.Companion.NESTED: FrameType
 public expect inline val FrameType.Companion.NONE: FrameType
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ClientType : JsAny {
     companion object

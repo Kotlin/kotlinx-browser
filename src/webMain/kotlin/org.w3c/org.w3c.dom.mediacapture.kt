@@ -323,7 +323,7 @@ public expect interface Constraints : ConstraintSet, JsAny {
 public expect fun Constraints(advanced: JsArray<ConstraintSet>? = undefined): Constraints
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface MediaStreamTrackState : JsAny {
     companion object
@@ -334,7 +334,7 @@ public expect inline val MediaStreamTrackState.Companion.LIVE: MediaStreamTrackS
 public expect inline val MediaStreamTrackState.Companion.ENDED: MediaStreamTrackState
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface VideoFacingModeEnum : JsAny {
     companion object
@@ -349,7 +349,7 @@ public expect inline val VideoFacingModeEnum.Companion.LEFT: VideoFacingModeEnum
 public expect inline val VideoFacingModeEnum.Companion.RIGHT: VideoFacingModeEnum
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface VideoResizeModeEnum : JsAny {
     companion object
@@ -360,7 +360,7 @@ public expect inline val VideoResizeModeEnum.Companion.NONE: VideoResizeModeEnum
 public expect inline val VideoResizeModeEnum.Companion.CROP_AND_SCALE: VideoResizeModeEnum
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface MediaDeviceKind : JsAny {
     companion object

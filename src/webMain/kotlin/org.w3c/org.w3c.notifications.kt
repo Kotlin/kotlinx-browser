@@ -111,7 +111,7 @@ public expect interface NotificationEventInit : ExtendableEventInit, JsAny {
 public expect fun NotificationEventInit(notification: Notification?, action: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): NotificationEventInit
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface NotificationPermission : JsAny {
     companion object
@@ -124,7 +124,7 @@ public expect inline val NotificationPermission.Companion.DENIED: NotificationPe
 public expect inline val NotificationPermission.Companion.GRANTED: NotificationPermission
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface NotificationDirection : JsAny {
     companion object

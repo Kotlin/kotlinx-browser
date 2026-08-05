@@ -72,7 +72,7 @@ public expect abstract class SourceBufferList : EventTarget, JsAny {
 public expect operator fun SourceBufferList.get(index: Int): SourceBuffer?
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ReadyState : JsAny {
     companion object
@@ -85,7 +85,7 @@ public expect inline val ReadyState.Companion.OPEN: ReadyState
 public expect inline val ReadyState.Companion.ENDED: ReadyState
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface EndOfStreamError : JsAny {
     companion object
@@ -96,7 +96,7 @@ public expect inline val EndOfStreamError.Companion.NETWORK: EndOfStreamError
 public expect inline val EndOfStreamError.Companion.DECODE: EndOfStreamError
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface AppendMode : JsAny {
     companion object

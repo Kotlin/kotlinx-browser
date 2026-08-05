@@ -148,7 +148,7 @@ public actual external interface MediaEncryptedEventInit : EventInit, JsAny {
 public actual fun MediaEncryptedEventInit(initDataType: String?, initData: ArrayBuffer?, bubbles: Boolean?, cancelable: Boolean?, composed: Boolean?): MediaEncryptedEventInit = js("({ initDataType: initDataType, initData: initData, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface MediaKeysRequirement : JsAny {
     actual companion object
@@ -161,7 +161,7 @@ public actual inline val MediaKeysRequirement.Companion.OPTIONAL: MediaKeysRequi
 public actual inline val MediaKeysRequirement.Companion.NOT_ALLOWED: MediaKeysRequirement get() = "not-allowed".toJsString().unsafeCast<MediaKeysRequirement>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface MediaKeySessionType : JsAny {
     actual companion object
@@ -172,7 +172,7 @@ public actual inline val MediaKeySessionType.Companion.TEMPORARY: MediaKeySessio
 public actual inline val MediaKeySessionType.Companion.PERSISTENT_LICENSE: MediaKeySessionType get() = "persistent-license".toJsString().unsafeCast<MediaKeySessionType>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface MediaKeyStatus : JsAny {
     actual companion object
@@ -193,7 +193,7 @@ public actual inline val MediaKeyStatus.Companion.STATUS_PENDING: MediaKeyStatus
 public actual inline val MediaKeyStatus.Companion.INTERNAL_ERROR: MediaKeyStatus get() = "internal-error".toJsString().unsafeCast<MediaKeyStatus>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface MediaKeyMessageType : JsAny {
     actual companion object

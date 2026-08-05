@@ -487,7 +487,7 @@ public actual external interface Constraints : ConstraintSet, JsAny {
 public actual fun Constraints(advanced: JsArray<ConstraintSet>?): Constraints = js("({ advanced: advanced })")
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface MediaStreamTrackState : JsAny {
     actual companion object
@@ -498,7 +498,7 @@ public actual inline val MediaStreamTrackState.Companion.LIVE: MediaStreamTrackS
 public actual inline val MediaStreamTrackState.Companion.ENDED: MediaStreamTrackState get() = "ended".toJsString().unsafeCast<MediaStreamTrackState>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface VideoFacingModeEnum : JsAny {
     actual companion object
@@ -513,7 +513,7 @@ public actual inline val VideoFacingModeEnum.Companion.LEFT: VideoFacingModeEnum
 public actual inline val VideoFacingModeEnum.Companion.RIGHT: VideoFacingModeEnum get() = "right".toJsString().unsafeCast<VideoFacingModeEnum>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface VideoResizeModeEnum : JsAny {
     actual companion object
@@ -524,7 +524,7 @@ public actual inline val VideoResizeModeEnum.Companion.NONE: VideoResizeModeEnum
 public actual inline val VideoResizeModeEnum.Companion.CROP_AND_SCALE: VideoResizeModeEnum get() = "crop-and-scale".toJsString().unsafeCast<VideoResizeModeEnum>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface MediaDeviceKind : JsAny {
     actual companion object

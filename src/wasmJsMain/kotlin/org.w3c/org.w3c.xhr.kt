@@ -117,7 +117,7 @@ public actual external interface ProgressEventInit : EventInit, JsAny {
 public actual fun ProgressEventInit(lengthComputable: Boolean?, loaded: JsNumber?, total: JsNumber?, bubbles: Boolean?, cancelable: Boolean?, composed: Boolean?): ProgressEventInit = js("({ lengthComputable: lengthComputable, loaded: loaded, total: total, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("NaN")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface XMLHttpRequestResponseType : JsAny {
     actual companion object
