@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -117,7 +117,7 @@ public actual external interface ProgressEventInit : EventInit, JsAny {
 public actual fun ProgressEventInit(lengthComputable: Boolean?, loaded: JsNumber?, total: JsNumber?, bubbles: Boolean?, cancelable: Boolean?, composed: Boolean?): ProgressEventInit = js("({ lengthComputable: lengthComputable, loaded: loaded, total: total, bubbles: bubbles, cancelable: cancelable, composed: composed })")
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface XMLHttpRequestResponseType : JsAny {
     actual companion object

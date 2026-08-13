@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -192,7 +192,7 @@ actual inline fun NotificationEventInit(notification: Notification?, action: Str
 }
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface NotificationPermission {
     actual companion object
@@ -205,7 +205,7 @@ actual inline val NotificationPermission.Companion.DENIED: NotificationPermissio
 actual inline val NotificationPermission.Companion.GRANTED: NotificationPermission get() = "granted".asDynamic().unsafeCast<NotificationPermission>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface NotificationDirection {
     actual companion object
