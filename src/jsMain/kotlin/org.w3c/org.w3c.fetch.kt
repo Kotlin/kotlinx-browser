@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -171,7 +171,7 @@ actual inline fun ResponseInit(status: Short?, statusText: String?, headers: dyn
 }
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface RequestType {
     actual companion object
@@ -194,7 +194,7 @@ actual inline val RequestType.Companion.TRACK: RequestType get() = "track".asDyn
 actual inline val RequestType.Companion.VIDEO: RequestType get() = "video".asDynamic().unsafeCast<RequestType>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface RequestDestination {
     actual companion object
@@ -231,7 +231,7 @@ actual inline val RequestDestination.Companion.WORKER: RequestDestination get() 
 actual inline val RequestDestination.Companion.XSLT: RequestDestination get() = "xslt".asDynamic().unsafeCast<RequestDestination>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface RequestMode {
     actual companion object
@@ -246,7 +246,7 @@ actual inline val RequestMode.Companion.NO_CORS: RequestMode get() = "no-cors".a
 actual inline val RequestMode.Companion.CORS: RequestMode get() = "cors".asDynamic().unsafeCast<RequestMode>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface RequestCredentials {
     actual companion object
@@ -259,7 +259,7 @@ actual inline val RequestCredentials.Companion.SAME_ORIGIN: RequestCredentials g
 actual inline val RequestCredentials.Companion.INCLUDE: RequestCredentials get() = "include".asDynamic().unsafeCast<RequestCredentials>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface RequestCache {
     actual companion object
@@ -278,7 +278,7 @@ actual inline val RequestCache.Companion.FORCE_CACHE: RequestCache get() = "forc
 actual inline val RequestCache.Companion.ONLY_IF_CACHED: RequestCache get() = "only-if-cached".asDynamic().unsafeCast<RequestCache>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface RequestRedirect {
     actual companion object
@@ -291,7 +291,7 @@ actual inline val RequestRedirect.Companion.ERROR: RequestRedirect get() = "erro
 actual inline val RequestRedirect.Companion.MANUAL: RequestRedirect get() = "manual".asDynamic().unsafeCast<RequestRedirect>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface ResponseType {
     actual companion object

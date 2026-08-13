@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -182,7 +182,7 @@ actual inline fun MediaEncryptedEventInit(initDataType: String?, initData: Array
 }
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface MediaKeysRequirement {
     actual companion object
@@ -195,7 +195,7 @@ actual inline val MediaKeysRequirement.Companion.OPTIONAL: MediaKeysRequirement 
 actual inline val MediaKeysRequirement.Companion.NOT_ALLOWED: MediaKeysRequirement get() = "not-allowed".asDynamic().unsafeCast<MediaKeysRequirement>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface MediaKeySessionType {
     actual companion object
@@ -206,7 +206,7 @@ actual inline val MediaKeySessionType.Companion.TEMPORARY: MediaKeySessionType g
 actual inline val MediaKeySessionType.Companion.PERSISTENT_LICENSE: MediaKeySessionType get() = "persistent-license".asDynamic().unsafeCast<MediaKeySessionType>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface MediaKeyStatus {
     actual companion object
@@ -227,7 +227,7 @@ actual inline val MediaKeyStatus.Companion.STATUS_PENDING: MediaKeyStatus get() 
 actual inline val MediaKeyStatus.Companion.INTERNAL_ERROR: MediaKeyStatus get() = "internal-error".asDynamic().unsafeCast<MediaKeyStatus>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 actual external interface MediaKeyMessageType {
     actual companion object

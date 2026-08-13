@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -397,7 +397,7 @@ public actual external interface UnionMessagePortOrServiceWorker
 public actual external interface UnionClientOrMessagePortOrServiceWorker
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ServiceWorkerState : JsAny {
     actual companion object
@@ -414,7 +414,7 @@ public actual inline val ServiceWorkerState.Companion.ACTIVATED: ServiceWorkerSt
 public actual inline val ServiceWorkerState.Companion.REDUNDANT: ServiceWorkerState get() = "redundant".toJsString().unsafeCast<ServiceWorkerState>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface FrameType : JsAny {
     actual companion object
@@ -429,7 +429,7 @@ public actual inline val FrameType.Companion.NESTED: FrameType get() = "nested".
 public actual inline val FrameType.Companion.NONE: FrameType get() = "none".toJsString().unsafeCast<FrameType>()
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public actual external interface ClientType : JsAny {
     actual companion object

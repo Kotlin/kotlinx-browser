@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -111,7 +111,7 @@ public expect interface NotificationEventInit : ExtendableEventInit, JsAny {
 public expect fun NotificationEventInit(notification: Notification?, action: String? = "", bubbles: Boolean? = false, cancelable: Boolean? = false, composed: Boolean? = false): NotificationEventInit
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface NotificationPermission : JsAny {
     companion object
@@ -124,7 +124,7 @@ public expect inline val NotificationPermission.Companion.DENIED: NotificationPe
 public expect inline val NotificationPermission.Companion.GRANTED: NotificationPermission
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface NotificationDirection : JsAny {
     companion object

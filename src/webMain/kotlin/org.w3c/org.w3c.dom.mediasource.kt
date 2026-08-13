@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
@@ -72,7 +72,7 @@ public expect abstract class SourceBufferList : EventTarget, JsAny {
 public expect operator fun SourceBufferList.get(index: Int): SourceBuffer?
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface ReadyState : JsAny {
     companion object
@@ -85,7 +85,7 @@ public expect inline val ReadyState.Companion.OPEN: ReadyState
 public expect inline val ReadyState.Companion.ENDED: ReadyState
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface EndOfStreamError : JsAny {
     companion object
@@ -96,7 +96,7 @@ public expect inline val EndOfStreamError.Companion.NETWORK: EndOfStreamError
 public expect inline val EndOfStreamError.Companion.DECODE: EndOfStreamError
 
 /* please, don't implement this interface! */
-@JsName("null")
+@JsName("Object")
 @Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
 public expect interface AppendMode : JsAny {
     companion object
