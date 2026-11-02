@@ -1,0 +1,29 @@
+{
+  "name": "kotlinx-browser",
+  "version": "1.0.0",
+  "description": "A Kotlin library for working with browser declarations in Kotlin with WasmJs and JS targets.",
+  "homepage": "https://github.com/kotlin/kotlinx-browser#readme",
+  "bugs": {
+    "url": "https://github.com/kotlin/kotlinx-browser/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotlin/kotlinx-browser.git"
+  },
+  "license": "Apache-2.0",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "copy:idl": "node scripts/copy-idl.js",
+    "copy-idl": "node scripts/copy-idl.js",
+    "get:json": "node scripts/get-json.js",
+    "get-json": "node scripts/get-json.js",
+    "parse:idl": "node scripts/get-json.js",
+    "parse": "node scripts/get-json.js",
+    "ingest": "npm run copy:idl && npm run get:json"
+  },
+  "dependencies": {
+    "@webref/idl": "3.86.0",
+    "webidl2": "24.5.0"
+  }
+}

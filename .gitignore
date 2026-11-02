@@ -15,3 +15,5 @@ gradle-app.setting
 /.idea/
 /kotlin-js-store/
 /.kotlin/
+node_modules/
+.DS_Store
