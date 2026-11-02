@@ -16,8 +16,6 @@ async function main() {
     // Get pinned package versions
     const pkgJsonPath = path.resolve(rootDir, 'package.json');
     const pkgJson = JSON.parse(await fs.readFile(pkgJsonPath, 'utf-8'));
-    const webrefVersion = pkgJson.dependencies?.['@webref/idl'] || 'unknown';
-    const webidl2Version = pkgJson.dependencies?.['webidl2'] || 'unknown';
 
     // Ensure idl directory exists and clean old files
     await fs.mkdir(idlDir, {recursive: true});
