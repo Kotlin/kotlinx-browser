@@ -9,13 +9,6 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.dukat:dukat:0.5.8-rc.6")
-    implementation("org.jsoup:jsoup:1.14.2")
-}
-
-task("downloadIDL", JavaExec::class) {
-    mainClass = "org.jetbrains.kotlin.tools.dukat.DownloadKt"
-    classpath = sourceSets["main"].runtimeClasspath
-    dependsOn("build")
 }
 
 task("generateStdlibFromIDL", JavaExec::class) {
@@ -30,3 +23,83 @@ task("generateUtils", JavaExec::class) {
     classpath = sourceSets["main"].runtimeClasspath
     dependsOn("build")
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sonia
+marina
+rafik
+ilya
+pola
+liezzie
