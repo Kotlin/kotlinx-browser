@@ -9,6 +9,7 @@ import org.jetbrains.kotlin.tools.idl.ir.IdlGenericType
 import org.jetbrains.kotlin.tools.idl.ir.IdlNamedType
 import org.jetbrains.kotlin.tools.idl.ir.IdlType
 import org.jetbrains.kotlin.tools.idl.ir.IdlUnionType
+import org.jetbrains.kotlin.tools.idl.surface.Builtins
 
 /** A Kotlin type as the Kotlin/Wasm backend will print it. */
 sealed interface KotlinType {
@@ -73,6 +74,7 @@ class UnmappableTypeException(message: String) : IllegalArgumentException(messag
  * | `BufferSource`, `AllowSharedBufferSource` | `org.khronos.webgl.BufferDataSource` | same |
  * | union                                     | [KotlinType.Union]  | `JsAny`              |
  * | `(undefined or T)`                        | `T?`                | `T?`                 |
+ * | `WindowProxy`                              | `Window` reference  | same                 |
  * | any other name                            | [KotlinType.Reference] | same              |
  *
  * `long long` deliberately maps to `Double`, not `JsBigInt`: per the Web IDL ECMAScript binding, `long long` and
@@ -125,6 +127,7 @@ object WasmTypeMapping {
             in STRING_TYPES -> named(if (typeArgument) "kotlin.js.JsString" else "kotlin.String")
             in NUMERIC_TYPES -> named(if (typeArgument) "kotlin.js.JsNumber" else NUMERIC_TYPES.getValue(name))
             in BUFFER_TYPES -> named(BUFFER_TYPES.getValue(name))
+            in Builtins.ALIASES -> KotlinType.Reference(Builtins.ALIASES.getValue(name), type.nullable)
             else -> KotlinType.Reference(name, type.nullable)
         }
     }

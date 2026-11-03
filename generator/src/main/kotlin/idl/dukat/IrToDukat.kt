@@ -8,6 +8,8 @@ package org.jetbrains.kotlin.tools.idl.dukat
 import org.jetbrains.dukat.astCommon.toNameEntity
 import org.jetbrains.dukat.idlDeclarations.*
 import org.jetbrains.kotlin.tools.idl.ir.*
+import org.jetbrains.kotlin.tools.idl.surface.Builtins
+import org.jetbrains.kotlin.tools.idl.surface.legacyWindowAliases
 
 /**
  * TEMPORARY bridge: [IdlIR] → dukat's `IDLSourceSetDeclaration`, so the existing dukat lowering chain keeps
@@ -23,15 +25,19 @@ import org.jetbrains.kotlin.tools.idl.ir.*
  *  - Dropped (no representation in dukat): member-, argument- and type-level extended attributes; constant values;
  *    `iterable`/`maplike`/`setlike`/`async iterable`; `deleter` and bare `stringifier`; type arguments of `record`.
  *  - `ObservableArray<T>` becomes `FrozenArray<T>`; `async_sequence<T>` and `bigint` become `any`.
+ *  - `BufferSource`/`AllowSharedBufferSource` become `BufferDataSource`, `WindowProxy` becomes `Window`;
+ *    `[LegacyWindowAlias]`es become typedefs.
  *
  * Specs that share a Kotlin package are merged into one dukat file named `<package>.idl`, which keeps dukat's output
- * file names (`org.w3c.dom.kt`, …) and its package-based `relocateDeclarations` working unchanged.
+ * file names (`org.w3c.dom.kt`, …) and its package-based `relocateDeclarations` working unchanged. Definitions are
+ * first moved to their Kotlin package (package overrides; partials follow their main definition), because dukat's
+ * `resolvePartials` lands a merged declaration in whichever file it sees last.
  */
-fun IdlIR.toDukat(): IDLSourceSetDeclaration {
-    val files = specs.groupBy { it.packageName }.map { (packageName, specs) ->
+fun IdlIR.toDukat(packageOverrides: Map<String, String> = emptyMap()): IDLSourceSetDeclaration {
+    val files = withDukatWorkarounds().relocated(packageOverrides).specs.groupBy { it.packageName }.map { (packageName, specs) ->
         IDLFileDeclaration(
             fileName = "$packageName.idl",
-            declarations = specs.flatMap { spec -> spec.definitions.mapNotNull { it.toDukat() } },
+            declarations = specs.flatMap { spec -> spec.definitions.flatMap { listOfNotNull(it.toDukat()) + it.aliasTypedefs() } },
             referencedFiles = emptyList(),
             packageName = packageName.toNameEntity(),
         )
@@ -183,7 +189,22 @@ internal fun IdlType.toDukat(): IDLTypeDeclaration = when (this) {
 private fun dukatTypeName(idlName: String): String = when (idlName) {
     "undefined" -> "void"
     "bigint" -> "any"
+    // Hand-written org.khronos.webgl declarations model the webidl buffer typedefs with a marker interface.
+    "BufferSource", "AllowSharedBufferSource" -> "BufferDataSource"
+    // JS Numbers (see WasmTypeMapping); dukat's own maps disagree between the common, wasm and JS chains.
+    "long long", "unsigned long long" -> "unrestricteddouble"
+    in Builtins.ALIASES -> Builtins.ALIASES.getValue(idlName)
     else -> idlName.replace(" ", "")
+}
+
+/**
+ * `[LegacyWindowAlias=SVGPoint] interface DOMPoint` → `typedef DOMPoint SVGPoint;`, so references to the alias resolve.
+ * dukat's resolveTypedefs inlines it (references become `DOMPoint`, as in the legacy API); the new backend will emit a
+ * real `typealias` instead.
+ */
+private fun IdlDefinition.aliasTypedefs(): List<IDLTypedefDeclaration> {
+    val target = (this as? IdlInterface)?.name ?: return emptyList()
+    return legacyWindowAliases().map { IDLTypedefDeclaration(name = it, typeReference = single(target)) }
 }
 
 /** Default values as dukat's parser produced them: the IDL source text of the literal. */
@@ -235,3 +256,136 @@ private fun single(name: String) = IDLSingleTypeDeclaration(name, null, false)
 private val VOID = IDLSingleTypeDeclaration("void", null, false)
 
 private val EMPTY_ARGUMENT = IDLArgumentDeclaration("", IDLSingleTypeDeclaration("", null, false), null, false, false)
+
+// ---------------------------------------------------------------------------------------------------------------------
+// IR → IR workarounds for constructs the legacy dukat backend cannot express. They only exist so the transitional
+// chain keeps compiling; each one maps to a rule the new backend implements properly.
+// ---------------------------------------------------------------------------------------------------------------------
+
+private fun IdlIR.withDukatWorkarounds(): IdlIR {
+    val callbacks = definitions.filterIsInstance<IdlCallback>().map { it.name }.toSet()
+    return IdlIR(specs.map { spec ->
+        spec.copy(definitions = spec.definitions.map {
+            it.namespaceAsInterface().mapTypes { t -> t.eraseCallbackTypeArguments(callbacks) }.erasePromiseUndefinedInCallbacks()
+        })
+    }).dropInexpressibleDictionaryDefaults()
+}
+
+/**
+ * `callback F = Promise<undefined> ()` → `Promise<any>`: dukat's common chain prints the function type as
+ * `() -> Promise<Nothing?>` and its JS chain as `() -> Promise<Unit>`, so expect and actual disagree.
+ */
+private fun IdlDefinition.erasePromiseUndefinedInCallbacks(): IdlDefinition {
+    if (this !is IdlCallback) return this
+    val type = returnType
+    if (type !is IdlGenericType || type.generic != "Promise") return this
+    val argument = type.arguments.single()
+    if (argument !is IdlNamedType || argument.name != "undefined") return this
+    return copy(returnType = type.copy(arguments = listOf(IdlNamedType("any"))))
+}
+
+/**
+ * `namespace CSS { … }` → `interface CSS { static … }`. That is how the legacy IDL declared it (so the API keeps its
+ * `abstract class CSS { companion object { … } }` shape), and dukat's common source set cannot emit
+ * `expect external object`.
+ */
+private fun IdlDefinition.namespaceAsInterface(): IdlDefinition {
+    if (this !is IdlNamespace) return this
+    return IdlInterface(
+        name = name,
+        kind = IdlInterfaceKind.INTERFACE,
+        partial = partial,
+        inheritance = null,
+        members = members.map { member ->
+            when (member) {
+                is IdlAttribute -> member.copy(special = IdlAttributeSpecial.STATIC)
+                is IdlOperation -> member.copy(special = IdlOperationSpecial.STATIC)
+                else -> member
+            }
+        },
+        extAttrs = extAttrs,
+    )
+}
+
+/** `Promise<CustomElementConstructor>` → `Promise<any>`: a Kotlin function type is not a `JsAny` type argument. */
+private fun IdlType.eraseCallbackTypeArguments(callbacks: Set<String>): IdlType = when (this) {
+    is IdlNamedType -> this
+    is IdlUnionType -> copy(members = members.map { it.eraseCallbackTypeArguments(callbacks) })
+    is IdlGenericType -> copy(arguments = arguments.map { argument ->
+        if (argument is IdlNamedType && argument.name in callbacks) IdlNamedType("any")
+        else argument.eraseCallbackTypeArguments(callbacks)
+    })
+}
+
+/**
+ * dukat prints dictionary defaults as Kotlin literals of the member's mapped type, which fails for string defaults of
+ * union-typed members (`(MediaList or DOMString) media = ""`) and integer defaults of `long long` members (mapped to
+ * `JsNumber`). Without a default the factory parameter is `undefined`, so JS applies the spec default instead.
+ */
+private fun IdlIR.dropInexpressibleDictionaryDefaults(): IdlIR = IdlIR(specs.map { spec ->
+    spec.copy(definitions = spec.definitions.map { definition ->
+        if (definition !is IdlDictionary) return@map definition
+        definition.copy(members = definition.members.map { field ->
+            val type = field.type
+            val inexpressible = when {
+                field.default == null || field.default == IdlValue.Null -> false
+                type is IdlUnionType -> true
+                type is IdlNamedType && type.name in setOf("long long", "unsigned long long") -> true
+                else -> false
+            }
+            if (inexpressible) field.copy(default = null) else field
+        })
+    })
+})
+
+private fun IdlDefinition.mapTypes(transform: (IdlType) -> IdlType): IdlDefinition {
+    fun IdlArgument.map() = copy(type = transform(type))
+    fun IdlMember.map(): IdlMember = when (this) {
+        is IdlAttribute -> copy(type = transform(type))
+        is IdlConstant -> copy(type = transform(type))
+        is IdlOperation -> copy(returnType = returnType?.let(transform), arguments = arguments.map { it.map() })
+        is IdlConstructor -> copy(arguments = arguments.map { it.map() })
+        is IdlDeclarationMember -> copy(typeArguments = typeArguments.map(transform), arguments = arguments.map { it.map() })
+    }
+    return when (this) {
+        is IdlInterface -> copy(members = members.map { it.map() })
+        is IdlNamespace -> copy(members = members.map { it.map() })
+        is IdlDictionary -> copy(members = members.map { it.copy(type = transform(it.type)) })
+        is IdlCallback -> copy(returnType = transform(returnType), arguments = arguments.map { it.map() })
+        is IdlTypedef -> copy(type = transform(type))
+        is IdlEnum, is IdlIncludes -> this
+    }
+}
+
+/**
+ * Puts each definition into its Kotlin package: [packageOverrides] first, then (for partials) the package of the main
+ * definition, then the spec's package. Moved definitions go to synthetic spec entries, so dukat sees each declaration
+ * and all its partials in one file.
+ */
+private fun IdlIR.relocated(packageOverrides: Map<String, String>): IdlIR {
+    val mainPackage = mutableMapOf<String, String>()
+    for (spec in specs) for (d in spec.definitions) {
+        if (d is IdlNamedDefinition && !(d is IdlPartialable && d.partial)) mainPackage[d.name] = spec.packageName
+    }
+    val problems = packageOverrides.mapNotNull { (name, pkg) ->
+        when (mainPackage[name]) {
+            null -> "package override for '$name': no such definition"
+            pkg -> "package override for '$name' is redundant: its spec already maps to $pkg"
+            else -> null
+        }
+    }
+    require(problems.isEmpty()) { problems.joinToString("\n") }
+
+    fun target(d: IdlDefinition, spec: IdlSpec): String {
+        if (d !is IdlNamedDefinition) return spec.packageName
+        return packageOverrides[d.name] ?: mainPackage[d.name] ?: spec.packageName
+    }
+
+    val moved = mutableListOf<IdlSpec>()
+    val kept = specs.map { spec ->
+        val (stay, move) = spec.definitions.partition { target(it, spec) == spec.packageName }
+        move.groupBy { target(it, spec) }.forEach { (pkg, definitions) -> moved += IdlSpec("${spec.name} (relocated)", pkg, definitions) }
+        spec.copy(definitions = stay)
+    }
+    return IdlIR(kept + moved)
+}

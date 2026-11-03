@@ -738,3 +738,7 @@ partial interface mixin WindowOrWorkerGlobalScope {
 partial interface mixin WindowOrWorkerGlobalScope {
   [SecureContext, SameObject] readonly attribute CacheStorage caches;
 };
+// spec: wai-aria (org.w3c.dom)
+Element includes ARIAMixin;
+Element includes ARIANotifyMixin;
+Document includes ARIANotifyMixin;

@@ -7,7 +7,9 @@ package org.jetbrains.kotlin.tools.idl.dukat
 
 import org.jetbrains.dukat.idlDeclarations.*
 import org.jetbrains.kotlin.tools.dukat.wasm.translateIdlToWasmSourceSet
+import org.jetbrains.kotlin.tools.dukat.PACKAGE_OVERRIDES
 import org.jetbrains.kotlin.tools.idl.loadAllowlistedIdl
+import org.jetbrains.kotlin.tools.idl.loadSurface
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -54,7 +56,8 @@ class IrToDukatTest {
 
         val timeout = interfaces("AbortSignal").single().operations.single { it.name == "timeout" }
         assertTrue(timeout.static)
-        assertEquals("unsignedlonglong", timeout.arguments.single().type.name)
+        // long long is a JS Number: spelled so that every dukat chain maps it to Double.
+        assertEquals("unrestricteddouble", timeout.arguments.single().type.name)
     }
 
     @Test
@@ -69,6 +72,19 @@ class IrToDukatTest {
     fun enumValuesAreQuotedLikeTheLegacyParser() {
         val mode = dukat.files.flatMap { it.declarations }.filterIsInstance<IDLEnumDeclaration>().single { it.name == "RequestMode" }
         assertEquals(listOf("\"navigate\"", "\"same-origin\"", "\"no-cors\"", "\"cors\""), mode.members)
+    }
+
+    @Test
+    fun packageOverridesAndPartialsFollowTheMainDefinition() {
+        val relocated = loadSurface().ir.toDukat(PACKAGE_OVERRIDES)
+        fun packagesOf(name: String) = relocated.files
+            .filter { file -> file.declarations.any { it is IDLInterfaceDeclaration && it.name == name } }
+            .map { it.fileName }
+        // Main definition in pointerevents, partials in pointerevents, cssom-view and pointerlock: all end up together.
+        assertEquals(listOf("org.w3c.dom.events.idl"), packagesOf("MouseEvent"))
+        assertEquals(listOf("org.w3c.dom.parsing.idl"), packagesOf("DOMParser"))
+        // Element: main in dom, partials in html, cssom-view, fullscreen, … — all in org.w3c.dom.
+        assertEquals(listOf("org.w3c.dom.idl"), packagesOf("Element"))
     }
 
     /** Smoke test: the existing dukat wasm chain accepts the adapter's output for the whole allowlist. */

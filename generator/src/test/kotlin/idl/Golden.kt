@@ -15,8 +15,9 @@ object Golden {
 
     private val update: Boolean get() = System.getProperty("kotlinx.browser.updateGolden") == "true"
 
-    fun assertMatches(fileName: String, actual: String) {
-        val file = dir.resolve(fileName)
+    fun assertMatches(fileName: String, actual: String) = assertMatchesFile(dir.resolve(fileName), actual)
+
+    fun assertMatchesFile(file: Path, actual: String) {
         if (update || !Files.exists(file)) {
             Files.createDirectories(file.parent)
             Files.writeString(file, actual)

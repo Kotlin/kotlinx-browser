@@ -14,6 +14,7 @@ import org.jetbrains.dukat.astCommon.appendLeft
 import org.jetbrains.dukat.astCommon.rightMost
 import org.jetbrains.dukat.astCommon.toNameEntity
 import org.jetbrains.dukat.astModel.AnnotationModel
+import org.jetbrains.dukat.astModel.ParameterModifierModel
 import org.jetbrains.dukat.astModel.ClassLikeReferenceModel
 import org.jetbrains.dukat.astModel.ClassModel
 import org.jetbrains.dukat.astModel.ConstructorModel
@@ -543,7 +544,12 @@ private class IdlFileConverter(
         )
         val generatedFunction = FunctionModel(
             name = IdentifierEntity(name),
-            parameters = members.map { it.convertToParameterModel() },
+            // The factory is inline; nullable function-typed parameters (callback members) must then be noinline.
+            parameters = members.map { member ->
+                member.convertToParameterModel().let {
+                    if (it.type is FunctionTypeModel) it.copy(modifier = ParameterModifierModel.NOINLINE) else it
+                }
+            },
             type = TypeValueModel(
                 value = IdentifierEntity(name),
                 params = listOf(),
