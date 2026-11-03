@@ -1,7 +1,7 @@
 @file:OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
 
 plugins {
-    kotlin("multiplatform") version "2.2.20-Beta2"
+    kotlin("multiplatform") version "2.5.0-Beta2"
     `maven-publish`
     signing
 }
@@ -40,9 +40,7 @@ if (!versionSuffix.isNullOrBlank()) {
 
 kotlin {
     @OptIn(org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation::class)
-    abiValidation {
-        enabled.set(true)
-    }
+    abiValidation()
 
     compilerOptions {
         optIn.add("kotlin.js.ExperimentalWasmJsInterop")
@@ -66,8 +64,4 @@ kotlin {
             }
         }
     }
-}
-
-tasks.check.configure {
-    dependsOn(tasks.checkLegacyAbi)
 }
