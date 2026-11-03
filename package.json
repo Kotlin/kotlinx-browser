@@ -20,7 +20,8 @@
     "get-json": "node scripts/get-json.js",
     "parse:idl": "node scripts/get-json.js",
     "parse": "node scripts/get-json.js",
-    "ingest": "npm run copy:idl && npm run get:json"
+    "ingest": "npm run copy:idl && npm run get:json",
+    "check:ir-roundtrip": "node scripts/check-ir-roundtrip.js"
   },
   "dependencies": {
     "@webref/idl": "3.86.0",

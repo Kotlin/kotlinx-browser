@@ -17,8 +17,7 @@ import org.jetbrains.dukat.idlLowerings.resolvePartials
 import org.jetbrains.dukat.idlLowerings.resolveTypedefs
 import org.jetbrains.dukat.idlLowerings.specifyDefaultValues
 import org.jetbrains.dukat.idlLowerings.specifyEventHandlerTypes
-import org.jetbrains.dukat.idlParser.parseIDL
-import org.jetbrains.dukat.idlReferenceResolver.DirectoryReferencesResolver
+import org.jetbrains.dukat.idlDeclarations.IDLSourceSetDeclaration
 import org.jetbrains.dukat.model.commonLowerings.EscapeIdentificators
 import org.jetbrains.dukat.model.commonLowerings.LowerOverrides
 import org.jetbrains.dukat.model.commonLowerings.ModelContextAwareLowering
@@ -30,9 +29,9 @@ import org.jetbrains.kotlin.tools.dukat.wasm.convertToWasmModel
 import org.jetbrains.kotlin.tools.dukat.wasm.resolveTypesKeepingUnions
 import org.jetbrains.kotlin.tools.dukat.wasm.voidifyEventHandlerReturnType
 
-fun translateIdlToCommonSourceSet(fileName: String): SourceSetModel {
+fun translateIdlToCommonSourceSet(idl: IDLSourceSetDeclaration): SourceSetModel {
     val translationContext = TranslationContext()
-    return parseIDL(fileName, DirectoryReferencesResolver())
+    return idl
         .voidifyEventHandlerReturnType()
         .resolvePartials()
         .addConstructors()

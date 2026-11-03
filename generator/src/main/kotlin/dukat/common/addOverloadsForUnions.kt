@@ -27,15 +27,6 @@ class UnionParametersOverloadsLowering(
         if (numUnionTypes == 0)
             return listOf(op)
 
-        if (numUnionTypes > 1)
-            TODO(
-                """
-                Not supported in current implementation to keep it simple.
-                If updated IDL contains multiple union arguments and this check fails,
-                consider updating the algorithm or return listOf(op) as a fallback.
-                """
-            )
-
         val unionTypedArgumentIndex = op.arguments.indexOfFirst { it.type is IDLUnionTypeDeclaration }
         val unionTypedArgument = op.arguments[unionTypedArgumentIndex]
         val unionType = unionTypedArgument.type as IDLUnionTypeDeclaration
@@ -79,7 +70,8 @@ class UnionParametersOverloadsLowering(
         }
 
 
-        return result
+        // Several union arguments: the first one is expanded above, the remaining ones recursively (cartesian product).
+        return if (numUnionTypes > 1) result.flatMap(::generateOverloads) else result
     }
 }
 

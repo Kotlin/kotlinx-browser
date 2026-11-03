@@ -12,8 +12,7 @@ import org.jetbrains.dukat.astModel.*
 import org.jetbrains.dukat.astModel.modifiers.ExpectActualModifier
 import org.jetbrains.dukat.idlDeclarations.IDLOperationDeclaration
 import org.jetbrains.dukat.idlLowerings.*
-import org.jetbrains.dukat.idlParser.parseIDL
-import org.jetbrains.dukat.idlReferenceResolver.DirectoryReferencesResolver
+import org.jetbrains.dukat.idlDeclarations.IDLSourceSetDeclaration
 import org.jetbrains.dukat.model.commonLowerings.*
 import org.jetbrains.dukat.ownerContext.NodeOwner
 import org.jetbrains.dukat.stdlib.isDynamic
@@ -21,10 +20,10 @@ import org.jetbrains.kotlin.tools.dukat.wasm.addOverloadsForUnions
 import org.jetbrains.kotlin.tools.dukat.wasm.resolveTypesKeepingUnions
 import kotlin.collections.listOf
 
-fun translateIdlToJsSourceSet(fileName: String): SourceSetModel {
+fun translateIdlToJsSourceSet(idl: IDLSourceSetDeclaration): SourceSetModel {
     val translationContext = TranslationContext()
     val hiddenOverloads = hashSetOf<IDLOperationDeclaration>()
-    return parseIDL(fileName, DirectoryReferencesResolver())
+    return idl
         .resolvePartials()
         .addConstructors()
         .resolveTypedefs()

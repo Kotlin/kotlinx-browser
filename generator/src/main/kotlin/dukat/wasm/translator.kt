@@ -12,14 +12,13 @@ import org.jetbrains.dukat.astCommon.NameEntity
 import org.jetbrains.dukat.astModel.*
 import org.jetbrains.dukat.astModel.modifiers.ExpectActualModifier
 import org.jetbrains.dukat.idlLowerings.*
-import org.jetbrains.dukat.idlParser.parseIDL
-import org.jetbrains.dukat.idlReferenceResolver.DirectoryReferencesResolver
+import org.jetbrains.dukat.idlDeclarations.IDLSourceSetDeclaration
 import org.jetbrains.dukat.model.commonLowerings.*
 import org.jetbrains.dukat.ownerContext.NodeOwner
 
-fun translateIdlToWasmSourceSet(fileName: String): SourceSetModel {
+fun translateIdlToWasmSourceSet(idl: IDLSourceSetDeclaration): SourceSetModel {
     val translationContext = TranslationContext()
-    return parseIDL(fileName, DirectoryReferencesResolver())
+    return idl
         .voidifyEventHandlerReturnType()
         .resolvePartials()
         .addConstructors()

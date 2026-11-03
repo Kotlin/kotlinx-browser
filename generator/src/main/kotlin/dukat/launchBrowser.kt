@@ -11,24 +11,28 @@ import org.jetbrains.dukat.translatorString.compileUnits
 import org.jetbrains.dukat.translatorString.translateSourceSet
 import org.jetbrains.kotlin.tools.dukat.js.translateIdlToJsSourceSet
 import org.jetbrains.kotlin.tools.dukat.wasm.translateIdlToWasmSourceSet
+import org.jetbrains.kotlin.tools.idl.dukat.toDukat
+import org.jetbrains.kotlin.tools.idl.loadAllowlistedIdl
 import java.io.File
 
 fun main() {
-    val input = "../idl/org.w3c.dom.idl"
+    // Each translator gets its own copy: dukat lowerings are not guaranteed to be free of shared mutable state.
+    val ir = loadAllowlistedIdl()
+    fun input() = ir.toDukat()
 
     compileAndSaveResultInto(
         "../src/webMain/kotlin/org.w3c/",
-        translateIdlToCommonSourceSet(input)
+        translateIdlToCommonSourceSet(input())
     )
 
     compileAndSaveResultInto(
         "../src/wasmJsMain/kotlin/org.w3c/",
-        translateIdlToWasmSourceSet(input)
+        translateIdlToWasmSourceSet(input())
     )
 
     compileAndSaveResultInto(
         "../src/jsMain/kotlin/org.w3c/",
-        translateIdlToJsSourceSet(input)
+        translateIdlToJsSourceSet(input())
     )
 }
 
