@@ -210,7 +210,7 @@ public actual inline val RequestDestination.Companion.XSLT: RequestDestination g
 
 /* please, don't implement this interface! */
 @JsName("Object")
-@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE")
+@Suppress("NESTED_CLASS_IN_EXTERNAL_INTERFACE", "COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
 public actual external interface RequestMode : JsAny {
     actual companion object
 }

@@ -1,0 +1,719 @@
+// spec: html (org.w3c.dom)
+Document includes GlobalEventHandlers;
+// shape: abstract class : Element, GlobalEventHandlers, ElementContentEditable, HTMLOrSVGOrMathMLElement, ElementCSSInlineStyle
+//   copied constants: Node(18)
+[Exposed=Window]
+interface HTMLElement : Element {
+  [HTMLConstructor] constructor();
+  [CEReactions, Reflect] attribute DOMString title;
+  [CEReactions, Reflect] attribute DOMString lang;
+  [CEReactions] attribute boolean translate;
+  [CEReactions] attribute DOMString dir;
+  [CEReactions] attribute (boolean or unrestricted double or DOMString)? hidden;
+  [CEReactions, Reflect] attribute boolean inert;
+  undefined click();
+  [CEReactions, Reflect] attribute DOMString accessKey;
+  readonly attribute DOMString accessKeyLabel;
+  [CEReactions] attribute boolean draggable;
+  [CEReactions] attribute boolean spellcheck;
+  [CEReactions, ReflectSetter] attribute DOMString writingSuggestions;
+  [CEReactions, ReflectSetter] attribute DOMString autocapitalize;
+  [CEReactions] attribute boolean autocorrect;
+  [CEReactions] attribute [LegacyNullToEmptyString] DOMString innerText;
+  [CEReactions] attribute [LegacyNullToEmptyString] DOMString outerText;
+  ElementInternals attachInternals();
+  undefined showPopover(optional ShowPopoverOptions options = {});
+  undefined hidePopover();
+  boolean togglePopover(optional (TogglePopoverOptions or boolean) options = {});
+  [CEReactions] attribute DOMString? popover;
+  [CEReactions, Reflect, ReflectRange=(0, 8)] attribute unsigned long headingOffset;
+  [CEReactions, Reflect] attribute boolean headingReset;
+  readonly attribute Element? scrollParent;
+  readonly attribute Element? offsetParent;
+  readonly attribute long offsetTop;
+  readonly attribute long offsetLeft;
+  readonly attribute long offsetWidth;
+  readonly attribute long offsetHeight;
+};
+HTMLElement includes GlobalEventHandlers;
+HTMLElement includes ElementContentEditable;
+HTMLElement includes HTMLOrSVGOrMathMLElement;
+// shape: abstract class
+[Exposed=Window, LegacyOverrideBuiltIns]
+interface DOMStringMap {
+  getter DOMString (DOMString name);
+  [CEReactions] setter undefined (DOMString name, DOMString value);
+  [CEReactions] deleter undefined (DOMString name);
+};
+// shape: abstract class : HTMLElement, HyperlinkElementUtils, HTMLHyperlinkElementUtils
+//   copied constants: Node(18)
+[Exposed=Window]
+interface HTMLAnchorElement : HTMLElement {
+  [HTMLConstructor] constructor();
+  [CEReactions, Reflect] attribute DOMString download;
+  [CEReactions, Reflect] attribute USVString ping;
+  [CEReactions, Reflect] attribute DOMString rel;
+  [SameObject, PutForwards=value, Reflect="rel"] readonly attribute DOMTokenList relList;
+  [CEReactions] attribute DOMString text;
+  [CEReactions] attribute DOMString referrerPolicy;
+  [CEReactions, Reflect] attribute DOMString coords;
+  [CEReactions, Reflect] attribute DOMString charset;
+  [CEReactions, Reflect] attribute DOMString name;
+  [CEReactions, Reflect] attribute DOMString rev;
+  [CEReactions, Reflect] attribute DOMString shape;
+};
+HTMLAnchorElement includes HyperlinkElementUtils;
+HTMLAnchorElement includes HTMLHyperlinkElementUtils;
+// shape: abstract class : HTMLElement
+//   copied constants: Node(18)
+[Exposed=Window, LegacyFactoryFunction=Image(optional unsigned long width, optional unsigned long height)]
+interface HTMLImageElement : HTMLElement {
+  [HTMLConstructor] constructor();
+  [CEReactions, Reflect] attribute DOMString alt;
+  [CEReactions, ReflectURL] attribute USVString src;
+  [CEReactions, Reflect] attribute USVString srcset;
+  [CEReactions, Reflect] attribute DOMString sizes;
+  [CEReactions] attribute DOMString? crossOrigin;
+  [CEReactions, Reflect] attribute DOMString useMap;
+  [CEReactions, Reflect] attribute boolean isMap;
+  [CEReactions, Reflect] attribute boolean controls;
+  [CEReactions, ReflectSetter] attribute unsigned long width;
+  [CEReactions, ReflectSetter] attribute unsigned long height;
+  readonly attribute unsigned long naturalWidth;
+  readonly attribute unsigned long naturalHeight;
+  readonly attribute boolean complete;
+  readonly attribute USVString currentSrc;
+  [CEReactions] attribute DOMString referrerPolicy;
+  [CEReactions] attribute DOMString decoding;
+  [CEReactions] attribute DOMString loading;
+  [CEReactions] attribute DOMString fetchPriority;
+  Promise<undefined> decode();
+  [CEReactions, Reflect] attribute DOMString name;
+  [CEReactions, ReflectURL] attribute USVString lowsrc;
+  [CEReactions, Reflect] attribute DOMString align;
+  [CEReactions, Reflect] attribute unsigned long hspace;
+  [CEReactions, Reflect] attribute unsigned long vspace;
+  [CEReactions, ReflectURL] attribute USVString longDesc;
+  [CEReactions, Reflect] attribute [LegacyNullToEmptyString] DOMString border;
+  readonly attribute long x;
+  readonly attribute long y;
+};
+// factory class Image(optional unsigned long width, optional unsigned long height) : HTMLImageElement
+// shape: open class : HTMLImageElement
+//   copied constants: Node(18)
+// shape: abstract class : HTMLElement
+//   copied constants: Node(18)
+[Exposed=Window]
+interface HTMLTableCellElement : HTMLElement {
+  [HTMLConstructor] constructor();
+  [CEReactions, Reflect, ReflectDefault=1, ReflectRange=(1, 1000)] attribute unsigned long colSpan;
+  [CEReactions, Reflect, ReflectDefault=1, ReflectRange=(0, 65534)] attribute unsigned long rowSpan;
+  [CEReactions, Reflect] attribute DOMString headers;
+  readonly attribute long cellIndex;
+  [CEReactions] attribute DOMString scope;
+  [CEReactions, Reflect] attribute DOMString abbr;
+  [CEReactions, Reflect] attribute DOMString align;
+  [CEReactions, Reflect] attribute DOMString axis;
+  [CEReactions, Reflect] attribute DOMString height;
+  [CEReactions, Reflect] attribute DOMString width;
+  [CEReactions, Reflect="char"] attribute DOMString ch;
+  [CEReactions, Reflect="charoff"] attribute DOMString chOff;
+  [CEReactions, Reflect] attribute boolean noWrap;
+  [CEReactions, Reflect] attribute DOMString vAlign;
+  [CEReactions, Reflect] attribute [LegacyNullToEmptyString] DOMString bgColor;
+};
+// shape: abstract class : CanvasSettings, CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasUserInterface, CanvasText, CanvasDrawImage, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath
+[Exposed=Window]
+interface CanvasRenderingContext2D {
+  readonly attribute HTMLCanvasElement canvas;
+};
+CanvasRenderingContext2D includes CanvasSettings;
+CanvasRenderingContext2D includes CanvasState;
+CanvasRenderingContext2D includes CanvasTransform;
+CanvasRenderingContext2D includes CanvasCompositing;
+CanvasRenderingContext2D includes CanvasImageSmoothing;
+CanvasRenderingContext2D includes CanvasFillStrokeStyles;
+CanvasRenderingContext2D includes CanvasShadowStyles;
+CanvasRenderingContext2D includes CanvasFilters;
+CanvasRenderingContext2D includes CanvasRect;
+CanvasRenderingContext2D includes CanvasDrawPath;
+CanvasRenderingContext2D includes CanvasUserInterface;
+CanvasRenderingContext2D includes CanvasText;
+CanvasRenderingContext2D includes CanvasDrawImage;
+CanvasRenderingContext2D includes CanvasImageData;
+CanvasRenderingContext2D includes CanvasPathDrawingStyles;
+CanvasRenderingContext2D includes CanvasTextDrawingStyles;
+CanvasRenderingContext2D includes CanvasPath;
+// shape: interface
+interface mixin CanvasDrawImage {
+  undefined drawImage((HTMLImageElement or SVGImageElement or HTMLVideoElement or HTMLCanvasElement or ImageBitmap or OffscreenCanvas) image, unrestricted double dx, unrestricted double dy);
+  undefined drawImage((HTMLImageElement or SVGImageElement or HTMLVideoElement or HTMLCanvasElement or ImageBitmap or OffscreenCanvas) image, unrestricted double dx, unrestricted double dy, unrestricted double dw, unrestricted double dh);
+  undefined drawImage((HTMLImageElement or SVGImageElement or HTMLVideoElement or HTMLCanvasElement or ImageBitmap or OffscreenCanvas) image, unrestricted double sx, unrestricted double sy, unrestricted double sw, unrestricted double sh, unrestricted double dx, unrestricted double dy, unrestricted double dw, unrestricted double dh);
+};
+// shape: abstract class
+[Exposed=Window]
+interface CustomStateSet {
+  setlike<DOMString>;
+};
+[LegacyTreatNonObjectAsNull]
+callback EventHandlerNonNull = any (Event event);
+[LegacyTreatNonObjectAsNull]
+callback OnErrorEventHandlerNonNull = any ((Event or DOMString) event, optional DOMString source, optional unsigned long lineno, optional unsigned long colno, optional any error);
+// shape: interface
+interface mixin GlobalEventHandlers {
+  attribute EventHandlerNonNull? onabort;
+  attribute EventHandlerNonNull? onauxclick;
+  attribute EventHandlerNonNull? onbeforeinput;
+  attribute EventHandlerNonNull? onbeforematch;
+  attribute EventHandlerNonNull? onbeforetoggle;
+  attribute EventHandlerNonNull? onblur;
+  attribute EventHandlerNonNull? oncancel;
+  attribute EventHandlerNonNull? oncanplay;
+  attribute EventHandlerNonNull? oncanplaythrough;
+  attribute EventHandlerNonNull? onchange;
+  attribute EventHandlerNonNull? onclick;
+  attribute EventHandlerNonNull? onclose;
+  attribute EventHandlerNonNull? oncommand;
+  attribute EventHandlerNonNull? oncontextlost;
+  attribute EventHandlerNonNull? oncontextmenu;
+  attribute EventHandlerNonNull? oncontextrestored;
+  attribute EventHandlerNonNull? oncopy;
+  attribute EventHandlerNonNull? oncuechange;
+  attribute EventHandlerNonNull? oncut;
+  attribute EventHandlerNonNull? ondblclick;
+  attribute EventHandlerNonNull? ondrag;
+  attribute EventHandlerNonNull? ondragend;
+  attribute EventHandlerNonNull? ondragenter;
+  attribute EventHandlerNonNull? ondragleave;
+  attribute EventHandlerNonNull? ondragover;
+  attribute EventHandlerNonNull? ondragstart;
+  attribute EventHandlerNonNull? ondrop;
+  attribute EventHandlerNonNull? ondurationchange;
+  attribute EventHandlerNonNull? onemptied;
+  attribute EventHandlerNonNull? onended;
+  attribute OnErrorEventHandlerNonNull? onerror;
+  attribute EventHandlerNonNull? onfocus;
+  attribute EventHandlerNonNull? onformdata;
+  attribute EventHandlerNonNull? oninput;
+  attribute EventHandlerNonNull? oninvalid;
+  attribute EventHandlerNonNull? onkeydown;
+  attribute EventHandlerNonNull? onkeypress;
+  attribute EventHandlerNonNull? onkeyup;
+  attribute EventHandlerNonNull? onload;
+  attribute EventHandlerNonNull? onloadeddata;
+  attribute EventHandlerNonNull? onloadedmetadata;
+  attribute EventHandlerNonNull? onloadstart;
+  attribute EventHandlerNonNull? onmousedown;
+  [LegacyLenientThis] attribute EventHandlerNonNull? onmouseenter;
+  [LegacyLenientThis] attribute EventHandlerNonNull? onmouseleave;
+  attribute EventHandlerNonNull? onmousemove;
+  attribute EventHandlerNonNull? onmouseout;
+  attribute EventHandlerNonNull? onmouseover;
+  attribute EventHandlerNonNull? onmouseup;
+  attribute EventHandlerNonNull? onpaste;
+  attribute EventHandlerNonNull? onpause;
+  attribute EventHandlerNonNull? onplay;
+  attribute EventHandlerNonNull? onplaying;
+  attribute EventHandlerNonNull? onprogress;
+  attribute EventHandlerNonNull? onratechange;
+  attribute EventHandlerNonNull? onreset;
+  attribute EventHandlerNonNull? onresize;
+  attribute EventHandlerNonNull? onscroll;
+  attribute EventHandlerNonNull? onscrollend;
+  attribute EventHandlerNonNull? onsecuritypolicyviolation;
+  attribute EventHandlerNonNull? onseeked;
+  attribute EventHandlerNonNull? onseeking;
+  attribute EventHandlerNonNull? onselect;
+  attribute EventHandlerNonNull? onslotchange;
+  attribute EventHandlerNonNull? onstalled;
+  attribute EventHandlerNonNull? onsubmit;
+  attribute EventHandlerNonNull? onsuspend;
+  attribute EventHandlerNonNull? ontimeupdate;
+  attribute EventHandlerNonNull? ontoggle;
+  attribute EventHandlerNonNull? onvolumechange;
+  attribute EventHandlerNonNull? onwaiting;
+  attribute EventHandlerNonNull? onwebkitanimationend;
+  attribute EventHandlerNonNull? onwebkitanimationiteration;
+  attribute EventHandlerNonNull? onwebkitanimationstart;
+  attribute EventHandlerNonNull? onwebkittransitionend;
+  attribute EventHandlerNonNull? onwheel;
+  attribute EventHandlerNonNull? ontouchstart;
+  attribute EventHandlerNonNull? ontouchend;
+  attribute EventHandlerNonNull? ontouchmove;
+  attribute EventHandlerNonNull? ontouchcancel;
+  attribute EventHandlerNonNull? onpointerover;
+  attribute EventHandlerNonNull? onpointerenter;
+  attribute EventHandlerNonNull? onpointerdown;
+  attribute EventHandlerNonNull? onpointermove;
+  [SecureContext] attribute EventHandlerNonNull? onpointerrawupdate;
+  attribute EventHandlerNonNull? onpointerup;
+  attribute EventHandlerNonNull? onpointercancel;
+  attribute EventHandlerNonNull? onpointerout;
+  attribute EventHandlerNonNull? onpointerleave;
+  attribute EventHandlerNonNull? ongotpointercapture;
+  attribute EventHandlerNonNull? onlostpointercapture;
+};
+// shape: interface
+interface mixin WindowOrWorkerGlobalScope {
+  [Replaceable] readonly attribute USVString origin;
+  readonly attribute boolean isSecureContext;
+  readonly attribute boolean crossOriginIsolated;
+  undefined reportError(any e);
+  DOMString btoa(DOMString data);
+  ByteString atob(DOMString data);
+  long setTimeout((DOMString or Function) handler, optional long timeout = 0, any... arguments);
+  undefined clearTimeout(optional long id = 0);
+  long setInterval((DOMString or Function) handler, optional long timeout = 0, any... arguments);
+  undefined clearInterval(optional long id = 0);
+  undefined queueMicrotask(VoidFunction callback);
+  Promise<ImageBitmap> createImageBitmap((HTMLImageElement or SVGImageElement or HTMLVideoElement or HTMLCanvasElement or ImageBitmap or OffscreenCanvas or Blob or ImageData) image, optional ImageBitmapOptions options = {});
+  Promise<ImageBitmap> createImageBitmap((HTMLImageElement or SVGImageElement or HTMLVideoElement or HTMLCanvasElement or ImageBitmap or OffscreenCanvas or Blob or ImageData) image, long sx, long sy, long sw, long sh, optional ImageBitmapOptions options = {});
+  any structuredClone(any value, optional StructuredSerializeOptions options = {});
+  [NewObject] Promise<Response> fetch((Request or USVString) input, optional RequestInit init = {});
+  [Replaceable] readonly attribute Performance performance;
+  [SecureContext, SameObject] readonly attribute CacheStorage caches;
+};
+// spec: dom (org.w3c.dom)
+// shape: open class
+[Exposed=*]
+interface Event {
+  constructor(DOMString type, optional EventInit eventInitDict = {});
+  readonly attribute DOMString type;
+  readonly attribute EventTarget? target;
+  readonly attribute EventTarget? srcElement;
+  readonly attribute EventTarget? currentTarget;
+  sequence<EventTarget> composedPath();
+  const unsigned short NONE = 0;
+  const unsigned short CAPTURING_PHASE = 1;
+  const unsigned short AT_TARGET = 2;
+  const unsigned short BUBBLING_PHASE = 3;
+  readonly attribute unsigned short eventPhase;
+  undefined stopPropagation();
+  attribute boolean cancelBubble;
+  undefined stopImmediatePropagation();
+  readonly attribute boolean bubbles;
+  readonly attribute boolean cancelable;
+  attribute boolean returnValue;
+  undefined preventDefault();
+  readonly attribute boolean defaultPrevented;
+  readonly attribute boolean composed;
+  [LegacyUnforgeable] readonly attribute boolean isTrusted;
+  readonly attribute double timeStamp;
+  undefined initEvent(DOMString type, optional boolean bubbles = false, optional boolean cancelable = false);
+};
+dictionary EventInit {
+  boolean bubbles = false;
+  boolean cancelable = false;
+  boolean composed = false;
+};
+// shape: open class
+[Exposed=*]
+interface EventTarget {
+  constructor();
+  undefined addEventListener(DOMString type, EventListener? callback, optional (AddEventListenerOptions or boolean) options = {});
+  undefined removeEventListener(DOMString type, EventListener? callback, optional (EventListenerOptions or boolean) options = {});
+  boolean dispatchEvent(Event event);
+};
+// shape: interface
+callback interface EventListener {
+  undefined handleEvent(Event event);
+};
+// shape: abstract class : EventTarget
+[Exposed=*]
+interface AbortSignal : EventTarget {
+  [NewObject] static AbortSignal abort(optional any reason);
+  [Exposed=(Window, Worker), NewObject] static AbortSignal timeout([EnforceRange] unsigned long long milliseconds);
+  [NewObject] static AbortSignal _any(sequence<AbortSignal> signals);
+  readonly attribute boolean aborted;
+  readonly attribute any reason;
+  undefined throwIfAborted();
+  attribute EventHandlerNonNull? onabort;
+};
+// shape: interface
+interface mixin NonElementParentNode {
+  Element? getElementById(DOMString elementId);
+};
+Document includes NonElementParentNode;
+// shape: interface
+interface mixin DocumentOrShadowRoot {
+  readonly attribute CustomElementRegistry? customElementRegistry;
+  readonly attribute Element? activeElement;
+  [SameObject] readonly attribute StyleSheetList styleSheets;
+  attribute ObservableArray<CSSStyleSheet> adoptedStyleSheets;
+  [LegacyLenientSetter] readonly attribute Element? fullscreenElement;
+};
+Document includes DocumentOrShadowRoot;
+// shape: interface
+interface mixin ParentNode {
+  [SameObject] readonly attribute HTMLCollection children;
+  readonly attribute Element? firstElementChild;
+  readonly attribute Element? lastElementChild;
+  readonly attribute unsigned long childElementCount;
+  [CEReactions, Unscopable] undefined prepend((Node or DOMString)... nodes);
+  [CEReactions, Unscopable] undefined append((Node or DOMString)... nodes);
+  [CEReactions, Unscopable] undefined replaceChildren((Node or DOMString)... nodes);
+  [CEReactions] undefined moveBefore(Node node, Node? child);
+  Element? querySelector(DOMString selectors);
+  [NewObject] NodeList querySelectorAll(DOMString selectors);
+};
+Document includes ParentNode;
+Element includes ParentNode;
+Element includes NonDocumentTypeChildNode;
+Element includes ChildNode;
+Element includes Slottable;
+// shape: abstract class : EventTarget
+[Exposed=Window]
+interface Node : EventTarget {
+  const unsigned short ELEMENT_NODE = 1;
+  const unsigned short ATTRIBUTE_NODE = 2;
+  const unsigned short TEXT_NODE = 3;
+  const unsigned short CDATA_SECTION_NODE = 4;
+  const unsigned short ENTITY_REFERENCE_NODE = 5;
+  const unsigned short ENTITY_NODE = 6;
+  const unsigned short PROCESSING_INSTRUCTION_NODE = 7;
+  const unsigned short COMMENT_NODE = 8;
+  const unsigned short DOCUMENT_NODE = 9;
+  const unsigned short DOCUMENT_TYPE_NODE = 10;
+  const unsigned short DOCUMENT_FRAGMENT_NODE = 11;
+  const unsigned short NOTATION_NODE = 12;
+  readonly attribute unsigned short nodeType;
+  readonly attribute DOMString nodeName;
+  readonly attribute USVString baseURI;
+  readonly attribute boolean isConnected;
+  readonly attribute Document? ownerDocument;
+  Node getRootNode(optional GetRootNodeOptions options = {});
+  readonly attribute Node? parentNode;
+  readonly attribute Element? parentElement;
+  boolean hasChildNodes();
+  [SameObject] readonly attribute NodeList childNodes;
+  readonly attribute Node? firstChild;
+  readonly attribute Node? lastChild;
+  readonly attribute Node? previousSibling;
+  readonly attribute Node? nextSibling;
+  [CEReactions] attribute DOMString? nodeValue;
+  [CEReactions] attribute DOMString? textContent;
+  [CEReactions] undefined normalize();
+  [CEReactions, NewObject] Node cloneNode(optional boolean subtree = false);
+  boolean isEqualNode(Node? otherNode);
+  boolean isSameNode(Node? otherNode);
+  const unsigned short DOCUMENT_POSITION_DISCONNECTED = 0x01;
+  const unsigned short DOCUMENT_POSITION_PRECEDING = 0x02;
+  const unsigned short DOCUMENT_POSITION_FOLLOWING = 0x04;
+  const unsigned short DOCUMENT_POSITION_CONTAINS = 0x08;
+  const unsigned short DOCUMENT_POSITION_CONTAINED_BY = 0x10;
+  const unsigned short DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC = 0x20;
+  unsigned short compareDocumentPosition(Node other);
+  boolean contains(Node? other);
+  DOMString? lookupPrefix(DOMString? namespace);
+  DOMString? lookupNamespaceURI(DOMString? prefix);
+  boolean isDefaultNamespace(DOMString? namespace);
+  [CEReactions] Node insertBefore(Node node, Node? child);
+  [CEReactions] Node appendChild(Node node);
+  [CEReactions] Node replaceChild(Node node, Node child);
+  [CEReactions] Node removeChild(Node child);
+};
+// shape: open class : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin
+//   copied constants: Node(18)
+[Exposed=Window, LegacyOverrideBuiltIns]
+interface Document : Node {
+  constructor();
+  [SameObject] readonly attribute DOMImplementation implementation;
+  readonly attribute USVString URL;
+  readonly attribute USVString documentURI;
+  readonly attribute DOMString compatMode;
+  readonly attribute DOMString characterSet;
+  readonly attribute DOMString charset;
+  readonly attribute DOMString inputEncoding;
+  readonly attribute DOMString contentType;
+  readonly attribute DocumentType? doctype;
+  readonly attribute Element? documentElement;
+  HTMLCollection getElementsByTagName(DOMString qualifiedName);
+  HTMLCollection getElementsByTagNameNS(DOMString? namespace, DOMString localName);
+  HTMLCollection getElementsByClassName(DOMString classNames);
+  [CEReactions, NewObject] Element createElement(DOMString localName, optional (DOMString or ElementCreationOptions) options = {});
+  [CEReactions, NewObject] Element createElementNS(DOMString? namespace, DOMString qualifiedName, optional (DOMString or ElementCreationOptions) options = {});
+  [NewObject] DocumentFragment createDocumentFragment();
+  [NewObject] Text createTextNode(DOMString data);
+  [NewObject] CDATASection createCDATASection(DOMString data);
+  [NewObject] Comment createComment(DOMString data);
+  [NewObject] ProcessingInstruction createProcessingInstruction(DOMString target, DOMString data);
+  [CEReactions, NewObject] Node importNode(Node node, optional (boolean or ImportNodeOptions) options = false);
+  [CEReactions] Node adoptNode(Node node);
+  [NewObject] Attr createAttribute(DOMString localName);
+  [NewObject] Attr createAttributeNS(DOMString? namespace, DOMString qualifiedName);
+  [NewObject] Event createEvent(DOMString interface);
+  [NewObject] Range createRange();
+  [NewObject] NodeIterator createNodeIterator(Node root, optional unsigned long whatToShow = 0xFFFFFFFF, optional NodeFilter? filter = null);
+  [NewObject] TreeWalker createTreeWalker(Node root, optional unsigned long whatToShow = 0xFFFFFFFF, optional NodeFilter? filter = null);
+  static Document parseHTMLUnsafe(DOMString html, optional ParseHTMLUnsafeOptions options = {});
+  static Document parseHTML(DOMString html, optional SetHTMLOptions options = {});
+  [PutForwards=href, LegacyUnforgeable] readonly attribute Location? location;
+  attribute USVString domain;
+  readonly attribute USVString referrer;
+  attribute USVString cookie;
+  readonly attribute DOMString lastModified;
+  readonly attribute DocumentReadyState readyState;
+  getter object (DOMString name);
+  [CEReactions] attribute DOMString title;
+  [CEReactions] attribute DOMString dir;
+  [CEReactions] attribute HTMLElement? body;
+  readonly attribute HTMLHeadElement? head;
+  [SameObject] readonly attribute HTMLCollection images;
+  [SameObject] readonly attribute HTMLCollection embeds;
+  [SameObject] readonly attribute HTMLCollection plugins;
+  [SameObject] readonly attribute HTMLCollection links;
+  [SameObject] readonly attribute HTMLCollection forms;
+  [SameObject] readonly attribute HTMLCollection scripts;
+  NodeList getElementsByName(DOMString elementName);
+  readonly attribute (HTMLScriptElement or SVGScriptElement)? currentScript;
+  [CEReactions] Document open(optional DOMString unused1, optional DOMString unused2);
+  WindowProxy? open(USVString url, DOMString name, DOMString features);
+  [CEReactions] undefined close();
+  [CEReactions] undefined write(DOMString... text);
+  [CEReactions] undefined writeln(DOMString... text);
+  readonly attribute WindowProxy? defaultView;
+  boolean hasFocus();
+  [CEReactions] attribute DOMString designMode;
+  [CEReactions] boolean execCommand(DOMString commandId, optional boolean showUI = false, optional DOMString value = "");
+  boolean queryCommandEnabled(DOMString commandId);
+  boolean queryCommandIndeterm(DOMString commandId);
+  boolean queryCommandState(DOMString commandId);
+  boolean queryCommandSupported(DOMString commandId);
+  DOMString queryCommandValue(DOMString commandId);
+  readonly attribute boolean hidden;
+  readonly attribute DocumentVisibilityState visibilityState;
+  [LegacyLenientThis] attribute EventHandlerNonNull? onreadystatechange;
+  attribute EventHandlerNonNull? onvisibilitychange;
+  [CEReactions] attribute [LegacyNullToEmptyString] DOMString fgColor;
+  [CEReactions] attribute [LegacyNullToEmptyString] DOMString linkColor;
+  [CEReactions] attribute [LegacyNullToEmptyString] DOMString vlinkColor;
+  [CEReactions] attribute [LegacyNullToEmptyString] DOMString alinkColor;
+  [CEReactions] attribute [LegacyNullToEmptyString] DOMString bgColor;
+  [SameObject] readonly attribute HTMLCollection anchors;
+  [SameObject] readonly attribute HTMLCollection applets;
+  undefined clear();
+  undefined captureEvents();
+  undefined releaseEvents();
+  [SameObject] readonly attribute HTMLAllCollection all;
+  Element? elementFromPoint(double x, double y);
+  sequence<Element> elementsFromPoint(double x, double y);
+  CaretPosition? caretPositionFromPoint(double x, double y, optional CaretPositionFromPointOptions options = {});
+  readonly attribute Element? scrollingElement;
+  readonly attribute SVGSVGElement? rootElement;
+  [LegacyLenientSetter] readonly attribute boolean fullscreenEnabled;
+  [LegacyLenientSetter, Unscopable] readonly attribute boolean fullscreen;
+  Promise<undefined> exitFullscreen();
+  attribute EventHandlerNonNull? onfullscreenchange;
+  attribute EventHandlerNonNull? onfullscreenerror;
+};
+// shape: abstract class : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin
+//   copied constants: Node(18)
+[Exposed=Window]
+interface Element : Node {
+  readonly attribute DOMString? namespaceURI;
+  readonly attribute DOMString? prefix;
+  readonly attribute DOMString localName;
+  readonly attribute DOMString tagName;
+  [CEReactions] attribute DOMString id;
+  [CEReactions] attribute DOMString className;
+  [SameObject, PutForwards=value] readonly attribute DOMTokenList classList;
+  [CEReactions, Unscopable] attribute DOMString slot;
+  boolean hasAttributes();
+  [SameObject] readonly attribute NamedNodeMap attributes;
+  sequence<DOMString> getAttributeNames();
+  DOMString? getAttribute(DOMString qualifiedName);
+  DOMString? getAttributeNS(DOMString? namespace, DOMString localName);
+  [CEReactions] undefined setAttribute(DOMString qualifiedName, DOMString value);
+  [CEReactions] undefined setAttributeNS(DOMString? namespace, DOMString qualifiedName, DOMString value);
+  [CEReactions] undefined removeAttribute(DOMString qualifiedName);
+  [CEReactions] undefined removeAttributeNS(DOMString? namespace, DOMString localName);
+  [CEReactions] boolean toggleAttribute(DOMString qualifiedName, optional boolean force);
+  boolean hasAttribute(DOMString qualifiedName);
+  boolean hasAttributeNS(DOMString? namespace, DOMString localName);
+  Attr? getAttributeNode(DOMString qualifiedName);
+  Attr? getAttributeNodeNS(DOMString? namespace, DOMString localName);
+  [CEReactions] Attr? setAttributeNode(Attr attr);
+  [CEReactions] Attr? setAttributeNodeNS(Attr attr);
+  [CEReactions] Attr removeAttributeNode(Attr attr);
+  ShadowRoot attachShadow(ShadowRootInit init);
+  readonly attribute ShadowRoot? shadowRoot;
+  readonly attribute CustomElementRegistry? customElementRegistry;
+  Element? closest(DOMString selectors);
+  boolean matches(DOMString selectors);
+  boolean webkitMatchesSelector(DOMString selectors);
+  HTMLCollection getElementsByTagName(DOMString qualifiedName);
+  HTMLCollection getElementsByTagNameNS(DOMString? namespace, DOMString localName);
+  HTMLCollection getElementsByClassName(DOMString classNames);
+  [CEReactions] Element? insertAdjacentElement(DOMString where, Element element);
+  undefined insertAdjacentText(DOMString where, DOMString data);
+  [CEReactions] undefined setHTML(DOMString html, optional SetHTMLOptions options = {});
+  [CEReactions] undefined appendHTML(DOMString html, optional SetHTMLOptions options = {});
+  [CEReactions] undefined prependHTML(DOMString html, optional SetHTMLOptions options = {});
+  [CEReactions] undefined setHTMLUnsafe(DOMString html, optional SetHTMLUnsafeOptions options = {});
+  [CEReactions] undefined appendHTMLUnsafe(DOMString html, optional SetHTMLUnsafeOptions options = {});
+  [CEReactions] undefined prependHTMLUnsafe(DOMString html, optional SetHTMLUnsafeOptions options = {});
+  DOMString getHTML(optional GetHTMLOptions options = {});
+  [CEReactions] attribute [LegacyNullToEmptyString] DOMString innerHTML;
+  [CEReactions] attribute [LegacyNullToEmptyString] DOMString outerHTML;
+  [CEReactions] undefined insertAdjacentHTML(DOMString position, DOMString string);
+  DOMRectList getClientRects();
+  [NewObject] DOMRect getBoundingClientRect();
+  boolean checkVisibility(optional CheckVisibilityOptions options = {});
+  Promise<ScrollResult> scrollIntoView(optional (boolean or ScrollIntoViewOptions) arg = {});
+  Promise<ScrollResult> scroll(optional ScrollToOptions options = {});
+  Promise<ScrollResult> scroll(unrestricted double x, unrestricted double y);
+  Promise<ScrollResult> scrollTo(optional ScrollToOptions options = {});
+  Promise<ScrollResult> scrollTo(unrestricted double x, unrestricted double y);
+  Promise<ScrollResult> scrollBy(optional ScrollToOptions options = {});
+  Promise<ScrollResult> scrollBy(unrestricted double x, unrestricted double y);
+  attribute unrestricted double scrollTop;
+  attribute unrestricted double scrollLeft;
+  readonly attribute long scrollWidth;
+  readonly attribute long scrollHeight;
+  readonly attribute long clientTop;
+  readonly attribute long clientLeft;
+  readonly attribute long clientWidth;
+  readonly attribute long clientHeight;
+  readonly attribute double currentCSSZoom;
+  undefined setPointerCapture(long pointerId);
+  undefined releasePointerCapture(long pointerId);
+  boolean hasPointerCapture(long pointerId);
+  Promise<undefined> requestFullscreen(optional FullscreenOptions options = {});
+  attribute EventHandlerNonNull? onfullscreenchange;
+  attribute EventHandlerNonNull? onfullscreenerror;
+};
+Document includes XPathEvaluatorBase;
+// spec: cssom-view (org.w3c.dom)
+Element includes GeometryUtils;
+Document includes GeometryUtils;
+// spec: uievents (org.w3c.dom.events)
+dictionary UIEventInit : EventInit {
+  Window? view = null;
+  long detail = 0;
+  unsigned long which = 0;
+};
+dictionary EventModifierInit : UIEventInit {
+  boolean ctrlKey = false;
+  boolean shiftKey = false;
+  boolean altKey = false;
+  boolean metaKey = false;
+  boolean modifierAltGraph = false;
+  boolean modifierCapsLock = false;
+  boolean modifierFn = false;
+  boolean modifierFnLock = false;
+  boolean modifierHyper = false;
+  boolean modifierNumLock = false;
+  boolean modifierScrollLock = false;
+  boolean modifierSuper = false;
+  boolean modifierSymbol = false;
+  boolean modifierSymbolLock = false;
+};
+// spec: pointerevents (org.w3c.dom.pointerevents)
+dictionary MouseEventInit : EventModifierInit {
+  long screenX = 0;
+  long screenY = 0;
+  long clientX = 0;
+  long clientY = 0;
+  short button = 0;
+  unsigned short buttons = 0;
+  EventTarget? relatedTarget = null;
+};
+// spec: cssom (org.w3c.dom.css)
+HTMLElement includes ElementCSSInlineStyle;
+// shape: object
+[Exposed=Window]
+namespace CSS {
+  CSSOMString escape(CSSOMString ident);
+};
+// spec: clipboard-apis (org.w3c.dom.clipboard)
+// shape: open class : Event
+//   copied constants: Event(4)
+[Exposed=Window]
+interface ClipboardChangeEvent : Event {
+  constructor(DOMString type, optional ClipboardChangeEventInit eventInitDict = {});
+  readonly attribute FrozenArray<DOMString> types;
+  readonly attribute bigint changeId;
+};
+// spec: webgl1 (org.khronos.webgl)
+// shape: interface
+interface mixin WebGLRenderingContextOverloads {
+  undefined bufferData(unsigned long target, long long size, unsigned long usage);
+  undefined bufferData(unsigned long target, AllowSharedBufferSource? data, unsigned long usage);
+  undefined bufferSubData(unsigned long target, long long offset, AllowSharedBufferSource data);
+  undefined compressedTexImage2D(unsigned long target, long level, unsigned long internalformat, long width, long height, long border, [AllowShared] ArrayBufferView data);
+  undefined compressedTexSubImage2D(unsigned long target, long level, long xoffset, long yoffset, long width, long height, unsigned long format, [AllowShared] ArrayBufferView data);
+  undefined readPixels(long x, long y, long width, long height, unsigned long format, unsigned long type, [AllowShared] ArrayBufferView? pixels);
+  undefined texImage2D(unsigned long target, long level, long internalformat, long width, long height, long border, unsigned long format, unsigned long type, [AllowShared] ArrayBufferView? pixels);
+  undefined texImage2D(unsigned long target, long level, long internalformat, unsigned long format, unsigned long type, (ImageBitmap or ImageData or HTMLImageElement or HTMLCanvasElement or HTMLVideoElement or OffscreenCanvas) source);
+  undefined texSubImage2D(unsigned long target, long level, long xoffset, long yoffset, long width, long height, unsigned long format, unsigned long type, [AllowShared] ArrayBufferView? pixels);
+  undefined texSubImage2D(unsigned long target, long level, long xoffset, long yoffset, unsigned long format, unsigned long type, (ImageBitmap or ImageData or HTMLImageElement or HTMLCanvasElement or HTMLVideoElement or OffscreenCanvas) source);
+  undefined uniform1fv(WebGLUniformLocation? location, ([AllowShared] Float32Array or sequence<unrestricted float>) v);
+  undefined uniform2fv(WebGLUniformLocation? location, ([AllowShared] Float32Array or sequence<unrestricted float>) v);
+  undefined uniform3fv(WebGLUniformLocation? location, ([AllowShared] Float32Array or sequence<unrestricted float>) v);
+  undefined uniform4fv(WebGLUniformLocation? location, ([AllowShared] Float32Array or sequence<unrestricted float>) v);
+  undefined uniform1iv(WebGLUniformLocation? location, ([AllowShared] Int32Array or sequence<long>) v);
+  undefined uniform2iv(WebGLUniformLocation? location, ([AllowShared] Int32Array or sequence<long>) v);
+  undefined uniform3iv(WebGLUniformLocation? location, ([AllowShared] Int32Array or sequence<long>) v);
+  undefined uniform4iv(WebGLUniformLocation? location, ([AllowShared] Int32Array or sequence<long>) v);
+  undefined uniformMatrix2fv(WebGLUniformLocation? location, boolean transpose, ([AllowShared] Float32Array or sequence<unrestricted float>) value);
+  undefined uniformMatrix3fv(WebGLUniformLocation? location, boolean transpose, ([AllowShared] Float32Array or sequence<unrestricted float>) value);
+  undefined uniformMatrix4fv(WebGLUniformLocation? location, boolean transpose, ([AllowShared] Float32Array or sequence<unrestricted float>) value);
+};
+// shape: abstract class : WebGLRenderingContextBase, WebGLRenderingContextOverloads
+//   copied constants: WebGLRenderingContextBase(297)
+[Exposed=(Window, Worker)]
+interface WebGLRenderingContext {
+};
+WebGLRenderingContext includes WebGLRenderingContextBase;
+WebGLRenderingContext includes WebGLRenderingContextOverloads;
+// spec: xhr (org.w3c.xhr)
+// shape: open class
+[Exposed=(Window, Worker)]
+interface FormData {
+  constructor(optional HTMLFormElement form, optional HTMLElement? submitter = null);
+  undefined append(USVString name, USVString value);
+  undefined append(USVString name, Blob blobValue, optional USVString filename);
+  undefined delete(USVString name);
+  (File or USVString)? get(USVString name);
+  sequence<(File or USVString)> getAll(USVString name);
+  boolean has(USVString name);
+  undefined set(USVString name, USVString value);
+  undefined set(USVString name, Blob blobValue, optional USVString filename);
+  iterable<USVString, (File or USVString)>;
+};
+// spec: fetch (org.w3c.fetch)
+// shape: open class
+[Exposed=(Window, Worker)]
+interface Headers {
+  constructor(optional (sequence<sequence<ByteString>> or record<ByteString, ByteString>) init);
+  undefined append(ByteString name, ByteString value);
+  undefined delete(ByteString name);
+  ByteString? get(ByteString name);
+  sequence<ByteString> getSetCookie();
+  boolean has(ByteString name);
+  undefined set(ByteString name, ByteString value);
+  iterable<ByteString, ByteString>;
+};
+dictionary RequestInit {
+  ByteString method;
+  (sequence<sequence<ByteString>> or record<ByteString, ByteString>) headers;
+  (ReadableStream or Blob or BufferSource or FormData or URLSearchParams or USVString)? body;
+  USVString referrer;
+  ReferrerPolicy referrerPolicy;
+  RequestMode mode;
+  RequestCredentials credentials;
+  RequestCache cache;
+  RequestRedirect redirect;
+  DOMString integrity;
+  boolean keepalive;
+  AbortSignal? signal;
+  RequestDuplex duplex;
+  RequestPriority priority;
+  any window;
+};
+enum RequestMode { "navigate", "same-origin", "no-cors", "cors" };
+enum RequestCredentials { "omit", "same-origin", "include" };
+// spec: wai-aria (org.w3c.dom)
+Element includes ARIAMixin;
+Element includes ARIANotifyMixin;
+Document includes ARIANotifyMixin;
