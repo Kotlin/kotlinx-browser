@@ -197,8 +197,21 @@ class MergePartialsTest {
     fun duplicateMemberFails() {
         val e = assertFailsWith<LoweringException> {
             ir(
-                spec("main", iface("X", attr("a"))),
-                spec("b", iface("X", attr("a", t("DOMString")), partial = true))
+                spec(
+                    "main",
+                    iface(
+                        "X",
+                        attr("a")
+                    )
+                ),
+                spec(
+                    "b",
+                    iface(
+                        "X",
+                        attr("a", t("DOMString")),
+                        partial = true
+                    )
+                )
             ).mergePartials()
         }
         assertEquals(listOf("X: 'attribute a' is declared more than once"), e.problems)
@@ -207,18 +220,56 @@ class MergePartialsTest {
     @Test
     fun overloadsAreNotDuplicates() {
         val merged = ir(
-            spec("main", iface("X", Idl.op("f", t("undefined"), Idl.arg("a", t("long"))))),
-            spec("b", iface("X", Idl.op("f", t("undefined"), Idl.arg("a", t("DOMString"))), partial = true)),
+            spec(
+                "main",
+                iface(
+                    "X",
+                    Idl.op(
+                        "f",
+                        t("undefined"),
+                        Idl.arg("a", t("long"))
+                    )
+                )
+            ),
+            spec(
+                "b",
+                iface(
+                    "X",
+                    Idl.op(
+                        "f",
+                        t("undefined"),
+                        Idl.arg("a", t("DOMString"))
+                    ),
+                    partial = true
+                )
+            ),
         ).mergePartials()
+
         assertEquals(2, merged.find("X").members.size)
     }
 
     @Test
     fun orphanPartialFails() {
-        val e = assertFailsWith<LoweringException> { ir(spec("b", iface("X", partial = true))).mergePartials() }
+        val e = assertFailsWith<LoweringException> {
+            ir(
+                spec(
+                    "b",
+                    iface(
+                        "X",
+                        partial = true
+                    )
+                )
+            ).mergePartials()
+        }
         assertTrue(e.problems.single().startsWith("partial interface X has no main definition"), e.message)
     }
 
     private fun field(name: String) =
-        IdlField(name, t("long"), required = false, default = null, extAttrs = emptyList())
+        IdlField(
+            name,
+            t("long"),
+            required = false,
+            default = null,
+            extAttrs = emptyList()
+        )
 }
