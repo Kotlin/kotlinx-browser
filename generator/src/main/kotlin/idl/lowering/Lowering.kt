@@ -5,6 +5,7 @@
 
 package org.jetbrains.kotlin.tools.idl.lowering
 
+import org.jetbrains.kotlin.tools.idl.frontend.WebrefEvent
 import org.jetbrains.kotlin.tools.idl.ir.IdlIR
 import org.jetbrains.kotlin.tools.idl.ir.IdlInterface
 import org.jetbrains.kotlin.tools.idl.ir.IdlNamedDefinition
@@ -15,19 +16,22 @@ import org.jetbrains.kotlin.tools.idl.ir.render
  *
  * Invariants: no `partial` definitions, no typedefs, every `includes` names an interface and a mixin.
  */
-class LoweredIR(val ir: IdlIR, val shapes: Shapes)
+class LoweredIR(val ir: IdlIR, val shapes: Shapes, val eventHandlerTypes: EventHandlerTypes)
 
-/** The lowering pipeline, in order. Each pass is IR → IR and can be tested on its own. */
-fun IdlIR.lower(): LoweredIR {
+/**
+ * The lowering pipeline, in order. Each pass is IR → IR and can be tested on its own. [events] is `@webref/events`,
+ * read by [EventHandlerTypes].
+ */
+fun IdlIR.lower(events: List<WebrefEvent>): LoweredIR {
     val ir = this
         .mergePartials()
         .resolveTypedefs()
-    return LoweredIR(ir, Shapes.of(ir))
+    return LoweredIR(ir, Shapes.of(ir), EventHandlerTypes.of(ir, events))
 }
 
 /**
  * Renders the lowered IR as Web IDL, with each interface preceded by a `// shape:` comment holding the facts the
- * backend will act on (kind, supertypes, copied constants). Used for golden files.
+ * backend will act on (kind, supertypes, copied constants, narrowed event handler types). Used for golden files.
  */
 fun LoweredIR.render(): String = buildString {
     for ((val name, val packageName, val definitions) in ir.specs) {
@@ -36,6 +40,12 @@ fun LoweredIR.render(): String = buildString {
             if (d is IdlNamedDefinition) {
                 shapes.byName[d.name]?.let {
                     append(it.render())
+                }
+                val events = eventHandlerTypes.of(d.name)
+                if (events.isNotEmpty()) {
+                    append("//   event types: ")
+                    append(events.entries.sortedBy { it.key }.joinToString(", ") { "${it.key}=${it.value}" })
+                    append('\n')
                 }
             }
 

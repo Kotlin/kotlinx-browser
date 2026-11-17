@@ -7,7 +7,10 @@ package org.jetbrains.kotlin.tools.idl.lowering
 
 import org.jetbrains.dukat.idlDeclarations.IDLInterfaceDeclaration
 import org.jetbrains.dukat.idlDeclarations.InterfaceKind
+import org.jetbrains.dukat.idlLowerings.EventMapKey
 import org.jetbrains.dukat.idlLowerings.addConstructors
+import org.jetbrains.dukat.idlLowerings.eventSpecifierMapper
+import org.jetbrains.dukat.idlLowerings.eventSpecifierMapperWithContext
 import org.jetbrains.dukat.idlLowerings.markAbstractOrOpen
 import org.jetbrains.dukat.idlLowerings.resolvePartials
 import org.jetbrains.kotlin.tools.idl.Golden
@@ -15,6 +18,7 @@ import org.jetbrains.kotlin.tools.idl.GoldenSliceTest.Companion.GOLDEN_SLICE
 import org.jetbrains.kotlin.tools.idl.GoldenSliceTest.Companion.slice
 import org.jetbrains.kotlin.tools.idl.dukat.toDukat
 import org.jetbrains.kotlin.tools.idl.ir.*
+import org.jetbrains.kotlin.tools.idl.loadEvents
 import org.jetbrains.kotlin.tools.idl.loadSurface
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -24,7 +28,7 @@ import kotlin.test.assertTrue
 class RealLoweringTest {
 
     private val surface by lazy { loadSurface().ir }
-    private val lowered by lazy { surface.lower() }
+    private val lowered by lazy { surface.lower(loadEvents()) }
     private val shapes
         get() = lowered.shapes
 
@@ -203,10 +207,66 @@ class RealLoweringTest {
     }
 
     @Test
+    fun eventHandlerTypes() {
+        val events = lowered.eventHandlerTypes
+        assertEquals("PointerEvent", events["GlobalEventHandlers", "onclick"])
+        assertEquals("FocusEvent", events["GlobalEventHandlers", "onfocus"], "HTML's plain-Event index entry is covered by UI Events")
+        assertEquals("SubmitEvent", events["GlobalEventHandlers", "onsubmit"])
+        assertEquals(null, events["GlobalEventHandlers", "onprogress"], "media elements fire progress as a plain Event")
+        assertEquals(null, events["GlobalEventHandlers", "onerror"], "OnErrorEventHandler takes (Event or DOMString)")
+        assertEquals("BeforeUnloadEvent", events["WindowEventHandlers", "onbeforeunload"], "OnBeforeUnloadEventHandler takes Event too")
+        assertEquals("ProgressEvent", events["XMLHttpRequestEventTarget", "onload"])
+        assertEquals("MediaStreamTrackEvent", events["MediaStream", "onaddtrack"])
+        assertEquals("TrackEvent", events["AudioTrackList", "onaddtrack"])
+        assertEquals(null, events["Notification", "onclick"])
+        assertEquals("MediaKeyMessageEvent", events["MediaKeySession", "onmessage"])
+        assertEquals("ExtendableMessageEvent", events["ServiceWorkerGlobalScope", "onmessage"])
+        assertTrue("GlobalEventHandlers" to "onwebkitanimationend" in events.withoutEventData)
+    }
+
+    /**
+     * Every handler dukat's table narrowed is narrowed to the same type or a subtype of it, except where dukat was wrong.
+     * Dukat narrowed an attribute when its name was in the table and its callback took a plain `Event`.
+     */
+    @Test
+    fun eventHandlerTypesRefineDukatsTable() {
+        val events = lowered.eventHandlerTypes
+        val interfaces = lowered.ir.definitions.filterIsInstance<IdlInterface>().associateBy { it.name }
+        val takesEvent = lowered.ir.definitions.filterIsInstance<IdlCallback>()
+            .filter { cb -> cb.arguments.any { it.type == IdlNamedType("Event") } }.map { it.name }.toSet()
+        fun ancestors(n: String) = generateSequence(n) { interfaces[it]?.inheritance }.toList()
+        val dukatWrong = mapOf(
+            "GlobalEventHandlers.onloadstart" to null, // media elements fire loadstart as a plain Event
+            "GlobalEventHandlers.onprogress" to null, // media elements fire progress as a plain Event
+            "Notification.onclick" to null, // a notification click is a plain Event
+            "MediaKeySession.onmessage" to "MediaKeyMessageEvent", // not a MessageEvent
+            "ServiceWorkerGlobalScope.onmessage" to "ExtendableMessageEvent", // not a MessageEvent
+        )
+
+        var refined = 0
+        val unexplained = mutableListOf<String>()
+        for (owner in interfaces.values) for (a in owner.members.filterIsInstance<IdlAttribute>()) {
+            if ((a.type as? IdlNamedType)?.name !in takesEvent) continue
+            val dukat = eventSpecifierMapperWithContext[EventMapKey(a.name, owner.name)] ?: eventSpecifierMapper[a.name] ?: continue
+            val ours = events[owner.name, a.name]
+            val handler = "${owner.name}.${a.name}"
+            when {
+                ours == dukat -> {}
+                ours != null && dukat in ancestors(ours) -> refined++
+                handler in dukatWrong && ours == dukatWrong[handler] -> {}
+                else -> unexplained += "$handler: dukat $dukat, ours ${ours ?: "Event"}"
+            }
+        }
+        assertEquals(emptyList(), unexplained)
+        assertEquals(2, refined, "onclick and oncontextmenu: MouseEvent → PointerEvent")
+    }
+
+    @Test
     fun goldenLoweredSlice() {
         val slice = LoweredIR(
             lowered.ir.slice(GOLDEN_SLICE),
-            shapes
+            shapes,
+            lowered.eventHandlerTypes,
         )
         Golden.assertMatches("lowered-slice.idl", slice.render())
     }
