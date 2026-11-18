@@ -362,6 +362,13 @@ Element includes ParentNode;
 Element includes NonDocumentTypeChildNode;
 Element includes ChildNode;
 Element includes Slottable;
+// shape: abstract class : ItemArrayLike<Node>
+[Exposed=Window]
+interface NodeList {
+  getter Node? item(unsigned long index);
+  readonly attribute unsigned long length;
+  iterable<Node>;
+};
 // shape: abstract class : EventTarget
 [Exposed=Window]
 interface Node : EventTarget {

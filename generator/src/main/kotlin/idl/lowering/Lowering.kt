@@ -75,8 +75,9 @@ fun LoweredIR.render(): String = buildString {
 
 private fun Shape.render(): String = buildString {
     append("// shape: ").append(kind.name.lowercase().replace('_', ' '))
-    if (supertypes.isNotEmpty()) {
-        append(" : ").append(supertypes.joinToString(", "))
+    val all = supertypes + listOfNotNull(itemArrayLike?.let { "ItemArrayLike<${it.render()}>" })
+    if (all.isNotEmpty()) {
+        append(" : ").append(all.joinToString(", "))
     }
     append('\n')
     if (constants.isNotEmpty()) {

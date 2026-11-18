@@ -53,6 +53,8 @@ class GoldenSliceTest {
             "HTMLAnchorElement",
             // [ReflectRange=(1, 1000)], [ReflectDefault=1]
             "HTMLTableCellElement",
+            // length + getter item(unsigned long): ItemArrayLike<Node>
+            "NodeList",
             // [LegacyFactoryFunction=Image(...)]
             "HTMLImageElement",
             // [Exposed=*], constructor()

@@ -6,12 +6,15 @@
 package org.jetbrains.kotlin.tools.idl.lowering
 
 import org.jetbrains.dukat.idlDeclarations.IDLInterfaceDeclaration
+import org.jetbrains.dukat.idlDeclarations.IDLSingleTypeDeclaration
 import org.jetbrains.dukat.idlDeclarations.InterfaceKind
 import org.jetbrains.dukat.idlLowerings.EventMapKey
 import org.jetbrains.dukat.idlLowerings.addConstructors
+import org.jetbrains.dukat.idlLowerings.addItemArrayLike
 import org.jetbrains.dukat.idlLowerings.eventSpecifierMapper
 import org.jetbrains.dukat.idlLowerings.eventSpecifierMapperWithContext
 import org.jetbrains.dukat.idlLowerings.markAbstractOrOpen
+import org.jetbrains.dukat.idlLowerings.resolveMixins
 import org.jetbrains.dukat.idlLowerings.resolvePartials
 import org.jetbrains.kotlin.tools.idl.Golden
 import org.jetbrains.kotlin.tools.idl.GoldenSliceTest.Companion.GOLDEN_SLICE
@@ -204,6 +207,35 @@ class RealLoweringTest {
         )
         assertTrue("XMLHttpRequestUpload" in inheritedOnly)
         assertTrue("HTMLImageElement" in htmlConstructorOnly)
+    }
+
+    /** Same interfaces and element types as dukat's `addItemArrayLike`, which ran after inlining mixins. */
+    @Test
+    fun itemArrayLikeMatchesDukat() {
+        val dukat = surface
+            .toDukat()
+            .resolvePartials()
+            .resolveMixins()
+            .addItemArrayLike()
+            .files
+            .flatMap { it.declarations }
+            .filterIsInstance<IDLInterfaceDeclaration>()
+            .mapNotNull { d ->
+                d.parents
+                    .find { it.name == "ItemArrayLike" }
+                    ?.let { d.name to (it.typeParameter as IDLSingleTypeDeclaration).name }
+            }
+            .toMap()
+
+        val ours = shapes
+            .byName
+            .values
+            .mapNotNull { s -> s.itemArrayLike?.let { s.name to (it as IdlNamedType).name } }
+            .toMap()
+
+        assertEquals(dukat, ours)
+        assertEquals("Node", ours["NodeList"])
+        assertEquals(null, ours["AudioTrackList"], "an anonymous getter has no item() to call")
     }
 
     @Test

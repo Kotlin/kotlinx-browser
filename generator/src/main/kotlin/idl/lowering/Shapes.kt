@@ -43,6 +43,12 @@ data class Shape(
      * [Shapes.constantsWithoutClassHome].
      */
     val constants: List<ResolvedConstant>,
+    /**
+     * `T` when the interface also extends the hand-written `org.w3c.dom.ItemArrayLike<T>` (which gives `asList()`):
+     * it has its own `readonly attribute unsigned long length` and `getter T? item(unsigned long index)`, e.g.
+     * `NodeList` → `Node`. Not nullable. Port of dukat's `addItemArrayLike`.
+     */
+    val itemArrayLike: IdlType? = null,
 )
 
 /**
@@ -111,6 +117,30 @@ class Shapes private constructor(
                 else -> ShapeKind.ABSTRACT_CLASS
             }
 
+            val unsignedLong = IdlNamedType("unsigned long")
+            fun itemArrayLikeOf(i: IdlInterface): IdlType? {
+                val length = i.members
+                    .any {
+                        it is IdlAttribute &&
+                                it.name == "length" &&
+                                it.type == unsignedLong
+                    }
+
+                val item = i.members
+                    .filterIsInstance<IdlOperation>()
+                    .find {
+                        it.special == IdlOperationSpecial.GETTER &&
+                                it.name == "item" &&
+                                it.arguments.singleOrNull()?.type == unsignedLong
+                    }
+
+                return if (length) {
+                    item?.returnType?.withNullable(false)
+                } else {
+                    null
+                }
+            }
+
             /** Self and ancestors, nearest first; each followed by its mixins. */
             fun constantSources(i: IdlInterface): List<IdlInterface> {
                 val chain = generateSequence(i) { c ->
@@ -160,6 +190,7 @@ class Shapes private constructor(
                         } else {
                             constantsOf(i)
                         },
+                        itemArrayLike = itemArrayLikeOf(i),
                     )
                 }
 

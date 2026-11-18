@@ -7,6 +7,7 @@ package org.jetbrains.kotlin.tools.idl.lowering
 
 import org.jetbrains.kotlin.tools.idl.ir.*
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.arg
+import org.jetbrains.kotlin.tools.idl.lowering.Idl.attr
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.const
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.ctor
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.ext
@@ -96,6 +97,27 @@ class ShapesTest {
     fun callbackInterfaceConstantsHaveNoClassHome() {
         val s = shapes(iface("NodeFilter", const("FILTER_ACCEPT", "1"), kind = IdlInterfaceKind.CALLBACK_INTERFACE), mixin("Unused", const("U", "1")))
         assertEquals(setOf("NodeFilter", "Unused"), s.constantsWithoutClassHome.keys)
+    }
+
+    @Test
+    fun itemArrayLikeNeedsOwnLengthAndItemGetter() {
+        val unsignedLong = t("unsigned long")
+        val length = attr("length", unsignedLong)
+        fun getter(name: String?, returns: IdlType) =
+            IdlOperation(name, returns, listOf(arg("index", unsignedLong)), IdlOperationSpecial.GETTER, emptyList())
+
+        val s = shapes(
+            iface("NodeList", length, getter("item", t("Node", nullable = true))),
+            iface("RadioNodeList", inheritance = "NodeList"),
+            iface("AudioTrackList", length, getter(null, t("AudioTrack"))),
+            iface("SVGNumberList", length, getter("getItem", t("SVGNumber"))),
+            iface("NoLength", getter("item", t("Node", nullable = true))),
+        )
+        assertEquals(t("Node"), s["NodeList"].itemArrayLike, "the element type is not nullable")
+        assertEquals(null, s["RadioNodeList"].itemArrayLike, "inherited through NodeList")
+        assertEquals(null, s["AudioTrackList"].itemArrayLike, "anonymous getter: there is no item()")
+        assertEquals(null, s["SVGNumberList"].itemArrayLike)
+        assertEquals(null, s["NoLength"].itemArrayLike)
     }
 
     @Test

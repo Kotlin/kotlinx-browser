@@ -387,6 +387,12 @@ Element includes NonDocumentTypeChildNode;
 Element includes ChildNode;
 Element includes Slottable;
 [Exposed=Window]
+interface NodeList {
+  getter Node? item(unsigned long index);
+  readonly attribute unsigned long length;
+  iterable<Node>;
+};
+[Exposed=Window]
 interface Node : EventTarget {
   const unsigned short ELEMENT_NODE = 1;
   const unsigned short ATTRIBUTE_NODE = 2;
