@@ -9,33 +9,66 @@ import org.jetbrains.kotlin.tools.idl.frontend.WebrefEvent
 import org.jetbrains.kotlin.tools.idl.ir.IdlIR
 import org.jetbrains.kotlin.tools.idl.ir.IdlInterface
 import org.jetbrains.kotlin.tools.idl.ir.IdlNamedDefinition
+import org.jetbrains.kotlin.tools.idl.ir.IdlUnionType
+import org.jetbrains.kotlin.tools.idl.ir.allTypes
 import org.jetbrains.kotlin.tools.idl.ir.render
 
 /**
  * The input of the backend: the IR after all IR-to-IR lowerings, plus the analyses computed from it.
  *
- * Invariants: no `partial` definitions, no typedefs, every `includes` names an interface and a mixin.
+ * Invariants: no `partial` definitions, no typedefs, every `includes` names an interface and a mixin, and every union
+ * in an operation or constructor argument has a [UnionMarker].
  */
-class LoweredIR(val ir: IdlIR, val shapes: Shapes, val eventHandlerTypes: EventHandlerTypes)
+class LoweredIR(
+    val ir: IdlIR,
+    val shapes: Shapes,
+    val eventHandlerTypes: EventHandlerTypes,
+    val unionMarkers: UnionMarkers,
+)
 
 /**
  * The lowering pipeline, in order. Each pass is IR → IR and can be tested on its own. [events] is `@webref/events`,
  * read by [EventHandlerTypes].
  */
 fun IdlIR.lower(events: List<WebrefEvent>): LoweredIR {
-    val ir = this
+    val resolved = this
         .mergePartials()
         .resolveTypedefs()
-    return LoweredIR(ir, Shapes.of(ir), EventHandlerTypes.of(ir, events))
+
+    val markers = UnionMarkers.of(resolved)
+
+    val ir = resolved
+        .expandUnionOverloads(markers)
+
+    return LoweredIR(
+        ir,
+        Shapes.of(ir, markers),
+        EventHandlerTypes.of(ir, events),
+        markers
+    )
 }
 
 /**
  * Renders the lowered IR as Web IDL, with each interface preceded by a `// shape:` comment holding the facts the
- * backend will act on (kind, supertypes, copied constants, narrowed event handler types). Used for golden files.
+ * backend will act on (kind, supertypes, copied constants, narrowed event handler types), and each spec followed by the
+ * union markers it declares that its definitions use. Used for golden files.
  */
 fun LoweredIR.render(): String = buildString {
     for ((val name, val packageName, val definitions) in ir.specs) {
         append("// spec: ").append(name).append(" (").append(packageName).append(")\n")
+        definitions
+            .asSequence()
+            .flatMap { it.allTypes() }
+            .filterIsInstance<IdlUnionType>()
+            .mapNotNull { unionMarkers[it] }
+            .distinct()
+            .filter { it.spec == name }
+            .toList()
+            .forEach {
+                append("// union marker ").append(it.name)
+                if (it.supertypes.isNotEmpty()) append(" : ").append(it.supertypes.joinToString(", "))
+                append(" = ").append(it.members.joinToString(" | ")).append('\n')
+            }
         for (d in definitions) {
             if (d is IdlNamedDefinition) {
                 shapes.byName[d.name]?.let {

@@ -1,4 +1,6 @@
 // spec: html (org.w3c.dom)
+// union marker CanvasImageSource : ImageBitmapSource = HTMLImageElement | SVGImageElement | HTMLVideoElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas
+// union marker ImageBitmapSource = HTMLImageElement | SVGImageElement | HTMLVideoElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas | Blob | ImageData
 Document includes GlobalEventHandlers;
 // shape: abstract class : Element, GlobalEventHandlers, ElementContentEditable, HTMLOrSVGOrMathMLElement, ElementCSSInlineStyle
 //   copied constants: Node(18)
@@ -24,7 +26,9 @@ interface HTMLElement : Element {
   ElementInternals attachInternals();
   undefined showPopover(optional ShowPopoverOptions options = {});
   undefined hidePopover();
-  boolean togglePopover(optional (TogglePopoverOptions or boolean) options = {});
+  boolean togglePopover(TogglePopoverOptions options);
+  boolean togglePopover(boolean options);
+  boolean togglePopover();
   [CEReactions] attribute DOMString? popover;
   [CEReactions, Reflect, ReflectRange=(0, 8)] attribute unsigned long headingOffset;
   [CEReactions, Reflect] attribute boolean headingReset;
@@ -64,7 +68,7 @@ interface HTMLAnchorElement : HTMLElement {
 };
 HTMLAnchorElement includes HyperlinkElementUtils;
 HTMLAnchorElement includes HTMLHyperlinkElementUtils;
-// shape: abstract class : HTMLElement
+// shape: abstract class : HTMLElement, CanvasImageSource, TexImageSource
 //   copied constants: Node(18)
 [Exposed=Window, LegacyFactoryFunction=Image(optional unsigned long width, optional unsigned long height)]
 interface HTMLImageElement : HTMLElement {
@@ -122,7 +126,7 @@ interface HTMLTableCellElement : HTMLElement {
   [CEReactions, Reflect] attribute DOMString vAlign;
   [CEReactions, Reflect] attribute [LegacyNullToEmptyString] DOMString bgColor;
 };
-// shape: abstract class : CanvasSettings, CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasUserInterface, CanvasText, CanvasDrawImage, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath
+// shape: abstract class : CanvasSettings, CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasUserInterface, CanvasText, CanvasDrawImage, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath, RenderingContext
 [Exposed=Window]
 interface CanvasRenderingContext2D {
   readonly attribute HTMLCanvasElement canvas;
@@ -262,19 +266,23 @@ interface mixin WindowOrWorkerGlobalScope {
   undefined reportError(any e);
   DOMString btoa(DOMString data);
   ByteString atob(DOMString data);
-  long setTimeout((DOMString or Function) handler, optional long timeout = 0, any... arguments);
+  long setTimeout(DOMString handler, optional long timeout = 0, any... arguments);
+  long setTimeout(Function handler, optional long timeout = 0, any... arguments);
   undefined clearTimeout(optional long id = 0);
-  long setInterval((DOMString or Function) handler, optional long timeout = 0, any... arguments);
+  long setInterval(DOMString handler, optional long timeout = 0, any... arguments);
+  long setInterval(Function handler, optional long timeout = 0, any... arguments);
   undefined clearInterval(optional long id = 0);
   undefined queueMicrotask(VoidFunction callback);
   Promise<ImageBitmap> createImageBitmap((HTMLImageElement or SVGImageElement or HTMLVideoElement or HTMLCanvasElement or ImageBitmap or OffscreenCanvas or Blob or ImageData) image, optional ImageBitmapOptions options = {});
   Promise<ImageBitmap> createImageBitmap((HTMLImageElement or SVGImageElement or HTMLVideoElement or HTMLCanvasElement or ImageBitmap or OffscreenCanvas or Blob or ImageData) image, long sx, long sy, long sw, long sh, optional ImageBitmapOptions options = {});
   any structuredClone(any value, optional StructuredSerializeOptions options = {});
-  [NewObject] Promise<Response> fetch((Request or USVString) input, optional RequestInit init = {});
+  [NewObject] Promise<Response> fetch(Request input, optional RequestInit init = {});
+  [NewObject] Promise<Response> fetch(USVString input, optional RequestInit init = {});
   [Replaceable] readonly attribute Performance performance;
   [SecureContext, SameObject] readonly attribute CacheStorage caches;
 };
 // spec: dom (org.w3c.dom)
+// union marker HTMLOrSVGScriptElement = HTMLScriptElement | SVGScriptElement
 // shape: open class
 [Exposed=*]
 interface Event {
@@ -311,8 +319,12 @@ dictionary EventInit {
 [Exposed=*]
 interface EventTarget {
   constructor();
-  undefined addEventListener(DOMString type, EventListener? callback, optional (AddEventListenerOptions or boolean) options = {});
-  undefined removeEventListener(DOMString type, EventListener? callback, optional (EventListenerOptions or boolean) options = {});
+  undefined addEventListener(DOMString type, EventListener? callback, AddEventListenerOptions options);
+  undefined addEventListener(DOMString type, EventListener? callback, boolean options);
+  undefined addEventListener(DOMString type, EventListener? callback);
+  undefined removeEventListener(DOMString type, EventListener? callback, EventListenerOptions options);
+  undefined removeEventListener(DOMString type, EventListener? callback, boolean options);
+  undefined removeEventListener(DOMString type, EventListener? callback);
   boolean dispatchEvent(Event event);
 };
 // shape: interface
@@ -350,9 +362,12 @@ interface mixin ParentNode {
   readonly attribute Element? firstElementChild;
   readonly attribute Element? lastElementChild;
   readonly attribute unsigned long childElementCount;
-  [CEReactions, Unscopable] undefined prepend((Node or DOMString)... nodes);
-  [CEReactions, Unscopable] undefined append((Node or DOMString)... nodes);
-  [CEReactions, Unscopable] undefined replaceChildren((Node or DOMString)... nodes);
+  [CEReactions, Unscopable] undefined prepend(Node... nodes);
+  [CEReactions, Unscopable] undefined prepend(DOMString... nodes);
+  [CEReactions, Unscopable] undefined append(Node... nodes);
+  [CEReactions, Unscopable] undefined append(DOMString... nodes);
+  [CEReactions, Unscopable] undefined replaceChildren(Node... nodes);
+  [CEReactions, Unscopable] undefined replaceChildren(DOMString... nodes);
   [CEReactions] undefined moveBefore(Node node, Node? child);
   Element? querySelector(DOMString selectors);
   [NewObject] NodeList querySelectorAll(DOMString selectors);
@@ -420,7 +435,7 @@ interface Node : EventTarget {
   [CEReactions] Node replaceChild(Node node, Node child);
   [CEReactions] Node removeChild(Node child);
 };
-// shape: open class : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin
+// shape: open class : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, GeometryNode
 //   copied constants: Node(18)
 [Exposed=Window, LegacyOverrideBuiltIns]
 interface Document : Node {
@@ -438,14 +453,20 @@ interface Document : Node {
   HTMLCollection getElementsByTagName(DOMString qualifiedName);
   HTMLCollection getElementsByTagNameNS(DOMString? namespace, DOMString localName);
   HTMLCollection getElementsByClassName(DOMString classNames);
-  [CEReactions, NewObject] Element createElement(DOMString localName, optional (DOMString or ElementCreationOptions) options = {});
-  [CEReactions, NewObject] Element createElementNS(DOMString? namespace, DOMString qualifiedName, optional (DOMString or ElementCreationOptions) options = {});
+  [CEReactions, NewObject] Element createElement(DOMString localName, DOMString options);
+  [CEReactions, NewObject] Element createElement(DOMString localName, ElementCreationOptions options);
+  [CEReactions, NewObject] Element createElement(DOMString localName);
+  [CEReactions, NewObject] Element createElementNS(DOMString? namespace, DOMString qualifiedName, DOMString options);
+  [CEReactions, NewObject] Element createElementNS(DOMString? namespace, DOMString qualifiedName, ElementCreationOptions options);
+  [CEReactions, NewObject] Element createElementNS(DOMString? namespace, DOMString qualifiedName);
   [NewObject] DocumentFragment createDocumentFragment();
   [NewObject] Text createTextNode(DOMString data);
   [NewObject] CDATASection createCDATASection(DOMString data);
   [NewObject] Comment createComment(DOMString data);
   [NewObject] ProcessingInstruction createProcessingInstruction(DOMString target, DOMString data);
-  [CEReactions, NewObject] Node importNode(Node node, optional (boolean or ImportNodeOptions) options = false);
+  [CEReactions, NewObject] Node importNode(Node node, boolean options);
+  [CEReactions, NewObject] Node importNode(Node node, ImportNodeOptions options);
+  [CEReactions, NewObject] Node importNode(Node node);
   [CEReactions] Node adoptNode(Node node);
   [NewObject] Attr createAttribute(DOMString localName);
   [NewObject] Attr createAttributeNS(DOMString? namespace, DOMString qualifiedName);
@@ -514,7 +535,7 @@ interface Document : Node {
   attribute EventHandlerNonNull? onfullscreenchange;
   attribute EventHandlerNonNull? onfullscreenerror;
 };
-// shape: abstract class : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin
+// shape: abstract class : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction
 //   copied constants: Node(18)
 [Exposed=Window]
 interface Element : Node {
@@ -567,7 +588,9 @@ interface Element : Node {
   DOMRectList getClientRects();
   [NewObject] DOMRect getBoundingClientRect();
   boolean checkVisibility(optional CheckVisibilityOptions options = {});
-  Promise<ScrollResult> scrollIntoView(optional (boolean or ScrollIntoViewOptions) arg = {});
+  Promise<ScrollResult> scrollIntoView(boolean arg);
+  Promise<ScrollResult> scrollIntoView(ScrollIntoViewOptions arg);
+  Promise<ScrollResult> scrollIntoView();
   Promise<ScrollResult> scroll(optional ScrollToOptions options = {});
   Promise<ScrollResult> scroll(unrestricted double x, unrestricted double y);
   Promise<ScrollResult> scrollTo(optional ScrollToOptions options = {});
@@ -643,6 +666,7 @@ interface ClipboardChangeEvent : Event {
   readonly attribute bigint changeId;
 };
 // spec: webgl1 (org.khronos.webgl)
+// union marker TexImageSource : ImageBitmapSource = ImageBitmap | ImageData | HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | OffscreenCanvas
 // shape: interface
 interface mixin WebGLRenderingContextOverloads {
   undefined bufferData(unsigned long target, long long size, unsigned long usage);
@@ -655,19 +679,30 @@ interface mixin WebGLRenderingContextOverloads {
   undefined texImage2D(unsigned long target, long level, long internalformat, unsigned long format, unsigned long type, (ImageBitmap or ImageData or HTMLImageElement or HTMLCanvasElement or HTMLVideoElement or OffscreenCanvas) source);
   undefined texSubImage2D(unsigned long target, long level, long xoffset, long yoffset, long width, long height, unsigned long format, unsigned long type, [AllowShared] ArrayBufferView? pixels);
   undefined texSubImage2D(unsigned long target, long level, long xoffset, long yoffset, unsigned long format, unsigned long type, (ImageBitmap or ImageData or HTMLImageElement or HTMLCanvasElement or HTMLVideoElement or OffscreenCanvas) source);
-  undefined uniform1fv(WebGLUniformLocation? location, ([AllowShared] Float32Array or sequence<unrestricted float>) v);
-  undefined uniform2fv(WebGLUniformLocation? location, ([AllowShared] Float32Array or sequence<unrestricted float>) v);
-  undefined uniform3fv(WebGLUniformLocation? location, ([AllowShared] Float32Array or sequence<unrestricted float>) v);
-  undefined uniform4fv(WebGLUniformLocation? location, ([AllowShared] Float32Array or sequence<unrestricted float>) v);
-  undefined uniform1iv(WebGLUniformLocation? location, ([AllowShared] Int32Array or sequence<long>) v);
-  undefined uniform2iv(WebGLUniformLocation? location, ([AllowShared] Int32Array or sequence<long>) v);
-  undefined uniform3iv(WebGLUniformLocation? location, ([AllowShared] Int32Array or sequence<long>) v);
-  undefined uniform4iv(WebGLUniformLocation? location, ([AllowShared] Int32Array or sequence<long>) v);
-  undefined uniformMatrix2fv(WebGLUniformLocation? location, boolean transpose, ([AllowShared] Float32Array or sequence<unrestricted float>) value);
-  undefined uniformMatrix3fv(WebGLUniformLocation? location, boolean transpose, ([AllowShared] Float32Array or sequence<unrestricted float>) value);
-  undefined uniformMatrix4fv(WebGLUniformLocation? location, boolean transpose, ([AllowShared] Float32Array or sequence<unrestricted float>) value);
+  undefined uniform1fv(WebGLUniformLocation? location, [AllowShared] Float32Array v);
+  undefined uniform1fv(WebGLUniformLocation? location, sequence<unrestricted float> v);
+  undefined uniform2fv(WebGLUniformLocation? location, [AllowShared] Float32Array v);
+  undefined uniform2fv(WebGLUniformLocation? location, sequence<unrestricted float> v);
+  undefined uniform3fv(WebGLUniformLocation? location, [AllowShared] Float32Array v);
+  undefined uniform3fv(WebGLUniformLocation? location, sequence<unrestricted float> v);
+  undefined uniform4fv(WebGLUniformLocation? location, [AllowShared] Float32Array v);
+  undefined uniform4fv(WebGLUniformLocation? location, sequence<unrestricted float> v);
+  undefined uniform1iv(WebGLUniformLocation? location, [AllowShared] Int32Array v);
+  undefined uniform1iv(WebGLUniformLocation? location, sequence<long> v);
+  undefined uniform2iv(WebGLUniformLocation? location, [AllowShared] Int32Array v);
+  undefined uniform2iv(WebGLUniformLocation? location, sequence<long> v);
+  undefined uniform3iv(WebGLUniformLocation? location, [AllowShared] Int32Array v);
+  undefined uniform3iv(WebGLUniformLocation? location, sequence<long> v);
+  undefined uniform4iv(WebGLUniformLocation? location, [AllowShared] Int32Array v);
+  undefined uniform4iv(WebGLUniformLocation? location, sequence<long> v);
+  undefined uniformMatrix2fv(WebGLUniformLocation? location, boolean transpose, [AllowShared] Float32Array value);
+  undefined uniformMatrix2fv(WebGLUniformLocation? location, boolean transpose, sequence<unrestricted float> value);
+  undefined uniformMatrix3fv(WebGLUniformLocation? location, boolean transpose, [AllowShared] Float32Array value);
+  undefined uniformMatrix3fv(WebGLUniformLocation? location, boolean transpose, sequence<unrestricted float> value);
+  undefined uniformMatrix4fv(WebGLUniformLocation? location, boolean transpose, [AllowShared] Float32Array value);
+  undefined uniformMatrix4fv(WebGLUniformLocation? location, boolean transpose, sequence<unrestricted float> value);
 };
-// shape: abstract class : WebGLRenderingContextBase, WebGLRenderingContextOverloads
+// shape: abstract class : WebGLRenderingContextBase, WebGLRenderingContextOverloads, RenderingContext, OffscreenRenderingContext
 //   copied constants: WebGLRenderingContextBase(297)
 [Exposed=(Window, Worker)]
 interface WebGLRenderingContext {
@@ -693,7 +728,9 @@ interface FormData {
 // shape: open class
 [Exposed=(Window, Worker)]
 interface Headers {
-  constructor(optional (sequence<sequence<ByteString>> or record<ByteString, ByteString>) init);
+  constructor(sequence<sequence<ByteString>> init);
+  constructor(record<ByteString, ByteString> init);
+  constructor();
   undefined append(ByteString name, ByteString value);
   undefined delete(ByteString name);
   ByteString? get(ByteString name);

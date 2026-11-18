@@ -16,6 +16,11 @@ import org.jetbrains.dukat.idlLowerings.eventSpecifierMapperWithContext
 import org.jetbrains.dukat.idlLowerings.markAbstractOrOpen
 import org.jetbrains.dukat.idlLowerings.resolveMixins
 import org.jetbrains.dukat.idlLowerings.resolvePartials
+import org.jetbrains.dukat.idlLowerings.resolveTypedefs
+import org.jetbrains.kotlin.tools.dukat.wasm.addOverloadsForUnions
+import org.jetbrains.kotlin.tools.dukat.wasm.resolveTypesKeepingUnions
+import org.jetbrains.kotlin.tools.idl.mapping.TypePosition
+import org.jetbrains.kotlin.tools.idl.mapping.WasmTypeMapping
 import org.jetbrains.kotlin.tools.idl.Golden
 import org.jetbrains.kotlin.tools.idl.GoldenSliceTest.Companion.GOLDEN_SLICE
 import org.jetbrains.kotlin.tools.idl.GoldenSliceTest.Companion.slice
@@ -239,6 +244,81 @@ class RealLoweringTest {
     }
 
     @Test
+    fun unionMarkers() {
+        val markers = lowered.unionMarkers.byName
+        assertEquals(listOf("ImageBitmapSource"), markers.getValue("CanvasImageSource").supertypes)
+        assertEquals(listOf("ImageBitmapSource"), markers.getValue("TexImageSource").supertypes)
+        assertEquals(listOf("Window", "MessagePort", "ServiceWorker"), markers.getValue("MessageEventSource").members)
+        assertTrue("UnionElementOrRadioNodeList" in markers)
+        assertEquals("html", markers.getValue("CanvasImageSource").spec)
+        assertEquals(
+            listOf("HTMLElement", "CanvasImageSource", "TexImageSource"),
+            shapes["HTMLImageElement"].supertypes,
+            "ImageBitmapSource comes through both",
+        )
+    }
+
+    /** Operations get as many overloads as with dukat's `addOverloadsForUnions` (which left constructors alone). */
+    @Test
+    fun unionOverloadsMatchDukat() {
+        val dukat = surface
+            .toDukat()
+            .resolvePartials()
+            .resolveTypedefs()
+            .resolveTypesKeepingUnions()
+            .addOverloadsForUnions()
+            .files
+            .flatMap { it.declarations }
+            .filterIsInstance<IDLInterfaceDeclaration>()
+            .flatMap { d -> d.operations.map { "${d.name}.${it.name}" } }
+            .groupingBy { it }
+            .eachCount()
+
+        val operationsInDukat = setOf(null, IdlOperationSpecial.STATIC, IdlOperationSpecial.DELETER)
+        val ours = lowered
+            .ir
+            .definitions
+            .flatMap { d ->
+                val members = (d as? IdlInterface)?.members ?: (d as? IdlNamespace)?.members ?: emptyList()
+                members
+                    .filterIsInstance<IdlOperation>()
+                    .filter { it.name != null && it.special in operationsInDukat }
+                    .map { "${(d as IdlNamedDefinition).name}.${it.name}" }
+            }
+            .groupingBy { it }
+            .eachCount()
+
+        assertEquals(dukat, ours)
+        assertEquals(3, ours["CanvasDrawImage.drawImage"], "CanvasImageSource is a marker, not 6 overloads each")
+    }
+
+    /** No two overloads of a member have the same Kotlin/Wasm signature (CONFLICTING_OVERLOADS). */
+    @Test
+    fun overloadsHaveDistinctKotlinSignatures() {
+        val clashes = mutableListOf<String>()
+        for (d in lowered.ir.definitions) {
+            val members = (d as? IdlInterface)?.members ?: (d as? IdlNamespace)?.members ?: continue
+            members
+                .mapNotNull { m ->
+                    val [name, arguments] = when (m) {
+                        is IdlOperation -> "${m.special?.name.orEmpty()} ${m.name.orEmpty()}" to m.arguments
+                        is IdlConstructor -> "constructor" to m.arguments
+                        else -> return@mapNotNull null
+                    }
+                    name + arguments.joinToString(", ", "(", ")") {
+                        WasmTypeMapping.map(it.type, TypePosition.VALUE).toString() + if (it.variadic) "..." else ""
+                    }
+                }
+                .groupingBy { it }
+                .eachCount()
+                .filterValues { it > 1 }
+                .keys
+                .forEach { clashes += "${(d as IdlNamedDefinition).name}: $it" }
+        }
+        assertEquals(emptyList(), clashes)
+    }
+
+    @Test
     fun eventHandlerTypes() {
         val events = lowered.eventHandlerTypes
         assertEquals("PointerEvent", events["GlobalEventHandlers", "onclick"])
@@ -299,6 +379,7 @@ class RealLoweringTest {
             lowered.ir.slice(GOLDEN_SLICE),
             shapes,
             lowered.eventHandlerTypes,
+            lowered.unionMarkers,
         )
         Golden.assertMatches("lowered-slice.idl", slice.render())
     }

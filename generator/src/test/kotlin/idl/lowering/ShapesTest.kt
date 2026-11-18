@@ -17,6 +17,7 @@ import org.jetbrains.kotlin.tools.idl.lowering.Idl.ir
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.mixin
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.spec
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.t
+import org.jetbrains.kotlin.tools.idl.lowering.Idl.union
 import kotlin.test.*
 
 class ShapesTest {
@@ -118,6 +119,24 @@ class ShapesTest {
         assertEquals(null, s["AudioTrackList"].itemArrayLike, "anonymous getter: there is no item()")
         assertEquals(null, s["SVGNumberList"].itemArrayLike)
         assertEquals(null, s["NoLength"].itemArrayLike)
+    }
+
+    @Test
+    fun unionMarkersAreSupertypesUnlessInherited() {
+        val s = shapes(
+            iface("Node"),
+            iface("Element", inheritance = "Node"),
+            iface("HTMLElement", inheritance = "Element"),
+            iface("Text", inheritance = "Node"),
+            mixin("M"),
+            iface("Doc", inheritance = "Node"),
+            includes("Doc", "M"),
+            iface("Uses", attr("a", union(t("Element"), t("Text"))), attr("b", union(t("HTMLElement"), t("Element"), t("M")))),
+        )
+        assertEquals(listOf("Node", "UnionElementOrText", "UnionElementOrHTMLElementOrM"), s["Element"].supertypes)
+        assertEquals(listOf("Element"), s["HTMLElement"].supertypes, "inherited from Element")
+        assertEquals(listOf("Node", "M"), s["Doc"].supertypes, "inherited from mixin M")
+        assertEquals(listOf("UnionElementOrHTMLElementOrM"), s["M"].supertypes)
     }
 
     @Test

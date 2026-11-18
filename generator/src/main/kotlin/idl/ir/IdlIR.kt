@@ -234,6 +234,11 @@ data class IdlUnionType(
     val members: List<IdlType>,
     override val nullable: Boolean = false,
     override val extAttrs: List<IdlExtendedAttribute> = emptyList(),
+    /**
+     * The typedef this union was inlined from (`CanvasImageSource`), set by `resolveTypedefs`; `null` for a union
+     * written out in place. It names the union's marker interface, if it gets one.
+     */
+    val typedef: String? = null,
 ) : IdlType
 
 // ---------------------------------------------------------------------------------------------------------------------

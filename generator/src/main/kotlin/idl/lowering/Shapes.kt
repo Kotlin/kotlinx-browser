@@ -6,6 +6,7 @@
 package org.jetbrains.kotlin.tools.idl.lowering
 
 import org.jetbrains.kotlin.tools.idl.ir.*
+import org.jetbrains.kotlin.utils.addIfNotNull
 
 /** The Kotlin declaration kind an IDL interface-like definition becomes. Target-independent. */
 enum class ShapeKind {
@@ -34,7 +35,10 @@ data class ResolvedConstant(val constant: IdlConstant, val declaredIn: String)
 data class Shape(
     val name: String,
     val kind: ShapeKind,
-    /** Parent interface first (if any), then included mixins in `includes` order. */
+    /**
+     * Parent interface first (if any), then included mixins in `includes` order, then the [UnionMarker]s the interface
+     * is a member of and does not already get from an ancestor or a mixin.
+     */
     val supertypes: List<String>,
     /**
      * Constants a class exposes in its companion: own, then those of every ancestor and of every mixin included by
@@ -70,7 +74,7 @@ class Shapes private constructor(
     operator fun get(name: String): Shape = byName[name] ?: error("no shape for '$name'")
 
     companion object {
-        fun of(ir: IdlIR): Shapes {
+        fun of(ir: IdlIR, markers: UnionMarkers): Shapes {
             val interfaces = mutableMapOf<String, IdlInterface>()
             val namespaces = mutableListOf<IdlNamespace>()
             val problems = mutableListOf<String>()
@@ -175,6 +179,25 @@ class Shapes private constructor(
                 return seen.values.toList()
             }
 
+            /** Markers [i] does not inherit: those of its ancestors and of their and its own mixins are inherited. */
+            fun ownMarkers(i: IdlInterface): List<String> {
+                val chain = generateSequence(i) { c ->
+                    c.inheritance?.let { interfaces[it] }
+                }.toList()
+
+                val chainWithIncludes = chain
+                    .drop(1)
+                    .map { it.name } +
+                        chain
+                            .flatMap { includes[it.name].orEmpty() }
+
+                val inherited = chainWithIncludes
+                    .flatMap { markers.allOf(it) }
+                    .toSet()
+
+                return markers.of(i.name) - inherited
+            }
+
             val shapes = linkedMapOf<String, Shape>()
             interfaces
                 .values
@@ -184,7 +207,11 @@ class Shapes private constructor(
                     shapes[i.name] = Shape(
                         name = i.name,
                         kind = kind,
-                        supertypes = listOfNotNull(i.inheritance) + includes[i.name].orEmpty(),
+                        supertypes = buildList {
+                            addIfNotNull(i.inheritance)
+                            addAll(includes[i.name].orEmpty())
+                            addAll(ownMarkers(i))
+                        },
                         constants = if (kind == ShapeKind.INTERFACE) {
                             emptyList()
                         } else {

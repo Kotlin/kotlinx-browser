@@ -18,6 +18,8 @@ import org.jetbrains.kotlin.tools.idl.ir.*
  *    becomes nullable instead.
  *  - Type-level extended attributes of the reference come first, then those of the typedef's type.
  *  - Typedefs that reference typedefs are resolved transitively; a cycle is an error.
+ *  - A union keeps the name of the typedef it came from in [IdlUnionType.typedef] (the innermost one for a typedef of a
+ *    typedef). A union spliced into an outer union loses it: only the outer union is a type of its own.
  */
 fun IdlIR.resolveTypedefs(): IdlIR {
     val typedefs = definitions
@@ -59,7 +61,11 @@ private class TypedefResolver(private val typedefs: Map<String, IdlTypedef>) {
 
     private fun inline(reference: IdlNamedType, typedef: IdlTypedef): IdlType {
         val target = resolvedTarget(typedef) ?: return reference
-        return target
+        val named = if (target is IdlUnionType && target.typedef == null) {
+            target.copy(typedef = typedef.name)
+        } else target
+
+        return named
             .withNullable(target.nullable || reference.nullable)
             .withExtAttrs((reference.extAttrs + target.extAttrs).distinct())
     }

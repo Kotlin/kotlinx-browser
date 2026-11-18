@@ -111,8 +111,21 @@ class ResolveTypedefsTest {
             "a nullable flattened member makes the outer union nullable",
         )
         assertEquals(
-            union(t("Blob"), t("DOMString"), nullable = true),
-            resolveAttr(bodyInit, type = t("BodyInit", nullable = true))
+            union(t("Blob"), t("DOMString"), nullable = true).copy(typedef = "BodyInit"),
+            resolveAttr(bodyInit, type = t("BodyInit", nullable = true)),
+            "a union used on its own keeps its typedef's name",
+        )
+    }
+
+    @Test
+    fun aTypedefOfAUnionTypedefKeepsTheInnerName() {
+        val inner = typedef("Inner", union(t("A"), t("B")))
+        val outer = typedef("Outer", t("Inner"))
+        assertEquals(union(t("A"), t("B")).copy(typedef = "Inner"), resolveAttr(inner, outer, type = t("Outer")))
+        assertEquals(
+            union(t("A"), t("B"), t("C")),
+            resolveAttr(inner, type = union(t("Inner"), t("C"))),
+            "spliced into an outer union, the name is gone",
         )
     }
 
