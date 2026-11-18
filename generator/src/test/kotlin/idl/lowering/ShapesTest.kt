@@ -22,7 +22,10 @@ import kotlin.test.*
 
 class ShapesTest {
 
-    private fun shapes(vararg definitions: IdlDefinition) = Shapes.of(ir(spec("s", *definitions)))
+    private fun shapes(vararg definitions: IdlDefinition): Shapes {
+        val ir = ir(spec("s", *definitions))
+        return Shapes.of(ir, UnionMarkers.of(ir))
+    }
 
     @Test
     fun openOnlyWithOwnConstructor() {
