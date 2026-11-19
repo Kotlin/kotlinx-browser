@@ -13,7 +13,9 @@ import org.jetbrains.kotlin.tools.idl.ir.*
  * becomes `send(Document? body)`, `send(Blob? body)`, …, `send()`. Several such arguments give the cartesian product.
  *
  *  - An expanded argument is no longer optional and loses its default; an optional one also gives an overload that
- *    ends before it, as dukat did.
+ *    ends before it, as dukat did. So does a variadic one, unlike dukat: `append(Node... nodes)` and
+ *    `append(DOMString... nodes)` alone make `append()` ambiguous in Kotlin (both candidates are `vararg`), so
+ *    `append()` is added, and Kotlin prefers it over both (`replaceChildren()` clears the children).
  *  - The union's nullability goes to every member; `undefined` members are dropped and make them nullable instead.
  *  - The union's type-level extended attributes go to every member, before the member's own.
  *  - An overload equal to an earlier one of the same member (same name and argument types) is dropped, so a union
@@ -62,7 +64,7 @@ fun IdlIR.expandUnionOverloads(markers: UnionMarkers): IdlIR {
                     }
             }
 
-        val withoutIt = if (argument.optional) {
+        val withoutIt = if (argument.optional || argument.variadic) {
             listOf(arguments.subList(0, i))
         } else {
             emptyList()

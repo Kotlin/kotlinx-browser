@@ -364,10 +364,13 @@ interface mixin ParentNode {
   readonly attribute unsigned long childElementCount;
   [CEReactions, Unscopable] undefined prepend(Node... nodes);
   [CEReactions, Unscopable] undefined prepend(DOMString... nodes);
+  [CEReactions, Unscopable] undefined prepend();
   [CEReactions, Unscopable] undefined append(Node... nodes);
   [CEReactions, Unscopable] undefined append(DOMString... nodes);
+  [CEReactions, Unscopable] undefined append();
   [CEReactions, Unscopable] undefined replaceChildren(Node... nodes);
   [CEReactions, Unscopable] undefined replaceChildren(DOMString... nodes);
+  [CEReactions, Unscopable] undefined replaceChildren();
   [CEReactions] undefined moveBefore(Node node, Node? child);
   Element? querySelector(DOMString selectors);
   [NewObject] NodeList querySelectorAll(DOMString selectors);
@@ -438,7 +441,7 @@ interface Node : EventTarget {
 };
 // shape: open class : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, GeometryNode
 //   copied constants: Node(18)
-//   adds: GlobalEventHandlers(91); NonElementParentNode(1); DocumentOrShadowRoot(5); ParentNode(13); XPathEvaluatorBase(3); GeometryUtils(4); ARIANotifyMixin(1)
+//   adds: GlobalEventHandlers(91); NonElementParentNode(1); DocumentOrShadowRoot(5); ParentNode(16); XPathEvaluatorBase(3); GeometryUtils(4); ARIANotifyMixin(1)
 [Exposed=Window, LegacyOverrideBuiltIns]
 interface Document : Node {
   constructor();

@@ -288,7 +288,11 @@ class RealLoweringTest {
             .groupingBy { it }
             .eachCount()
 
-        assertEquals(dukat, ours)
+        // Unlike dukat, an expanded variadic union also gives an overload without it (`append()`), or a call with no
+        // arguments would be ambiguous between the varargs.
+        val withoutVariadic = listOf("prepend", "append", "replaceChildren").map { "ParentNode.$it" } +
+                listOf("before", "after", "replaceWith").map { "ChildNode.$it" }
+        assertEquals(dukat, ours.mapValues { [name, n] -> if (name in withoutVariadic) n - 1 else n })
         assertEquals(3, ours["CanvasDrawImage.drawImage"], "CanvasImageSource is a marker, not 6 overloads each")
     }
 

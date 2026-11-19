@@ -87,9 +87,9 @@ class ExpandUnionOverloadsTest {
         )
         val nodes = arg("nodes", union(t("A"), t("DOMString"))).copy(variadic = true)
         assertEquals(
-            listOf("undefined append(A... nodes);", "undefined append(DOMString... nodes);"),
+            listOf("undefined append(A... nodes);", "undefined append(DOMString... nodes);", "undefined append();"),
             expand(op("append", t("undefined"), nodes)),
-            "a variadic argument is not optional: no extra overload",
+            "without append(), a call with no arguments is ambiguous between the two varargs",
         )
     }
 
