@@ -92,7 +92,7 @@ object WasmTypeMapping {
 
     /** `undefined` inside a union (`(undefined or CSSStyleValue)`) reads as "absent" and becomes nullability. */
     private fun mapUnion(type: IdlUnionType, position: TypePosition): KotlinType {
-        val (undefined, members) = type.members.partition { it is IdlNamedType && it.name == "undefined" }
+        val [undefined, members] = type.members.partition { it is IdlNamedType && it.name == "undefined" }
         val nullable = type.nullable || undefined.isNotEmpty()
         return when {
             members.size == 1 -> map(members.single(), position).withNullability(nullable || members.single().nullable)

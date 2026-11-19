@@ -24,6 +24,7 @@ class LoweredIR(
     val shapes: Shapes,
     val eventHandlerTypes: EventHandlerTypes,
     val unionMarkers: UnionMarkers,
+    val overrides: Overrides,
 )
 
 /**
@@ -40,17 +41,20 @@ fun IdlIR.lower(events: List<WebrefEvent>): LoweredIR {
     val ir = resolved
         .expandUnionOverloads(markers)
 
+    val shapes = Shapes.of(ir, markers)
+
     return LoweredIR(
         ir,
-        Shapes.of(ir, markers),
+        shapes,
         EventHandlerTypes.of(ir, events),
-        markers
+        markers,
+        Overrides.of(ir, shapes, markers),
     )
 }
 
 /**
  * Renders the lowered IR as Web IDL, with each interface preceded by a `// shape:` comment holding the facts the
- * backend will act on (kind, supertypes, copied constants, narrowed event handler types), and each spec followed by the
+ * backend will act on (kind, supertypes, copied constants and statics, overrides, narrowed event handler types), and each spec followed by the
  * union markers it declares that its definitions use. Used for golden files.
  */
 fun LoweredIR.render(): String = buildString {
@@ -74,6 +78,7 @@ fun LoweredIR.render(): String = buildString {
                 shapes.byName[d.name]?.let {
                     append(it.render())
                 }
+                renderOverrides(overrides[d.name])
                 val events = eventHandlerTypes.of(d.name)
                 if (events.isNotEmpty()) {
                     append("//   event types: ")
@@ -106,6 +111,23 @@ fun LoweredIR.render(): String = buildString {
     }
 }
 
+private fun StringBuilder.renderOverrides(overrides: InterfaceOverrides) {
+    val [overriding, dropped, added] = overrides
+    if (overriding.isNotEmpty()) {
+        append("//   overrides: ").append(overriding.joinToString(", ") { memberKey(it) }).append('\n')
+    }
+    if (added.isNotEmpty()) {
+        append("//   adds: ")
+        append(added.groupBy { it.declaredIn }.entries.joinToString("; ") { [from, ms] -> "$from(${ms.size})" })
+        append('\n')
+    }
+    if (dropped.isNotEmpty()) {
+        append("//   dropped: ")
+        append(dropped.joinToString(", ") { memberKey(it) })
+        append('\n')
+    }
+}
+
 private fun Shape.render(): String = buildString {
     append("// shape: ").append(kind.name.lowercase().replace('_', ' '))
     val all = supertypes + listOfNotNull(itemArrayLike?.let { "ItemArrayLike<${it.render()}>" })
@@ -129,5 +151,17 @@ private fun Shape.render(): String = buildString {
             )
             append('\n')
         }
+    }
+    if (inheritedStatics.isNotEmpty()) {
+        append("//   copied statics: ")
+        append(
+            inheritedStatics
+                .groupBy { it.declaredIn }
+                .entries
+                .joinToString("; ") { [from, ms] ->
+                    "$from(${ms.size})"
+                }
+        )
+        append('\n')
     }
 }

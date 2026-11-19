@@ -32,6 +32,9 @@ data class FactoryClass(val name: String, val host: String, val arguments: List<
 /** Where a constant shown on a class comes from: its own body, an ancestor, or an included mixin. */
 data class ResolvedConstant(val constant: IdlConstant, val declaredIn: String)
 
+/** A member as seen from a subtype, with the interface or mixin that declares it. */
+data class InheritedMember(val member: IdlMember, val declaredIn: String)
+
 data class Shape(
     val name: String,
     val kind: ShapeKind,
@@ -53,10 +56,18 @@ data class Shape(
      * `NodeList` → `Node`. Not nullable. Port of dukat's `addItemArrayLike`.
      */
     val itemArrayLike: IdlType? = null,
+    /**
+     * Static attributes and operations of the ancestors a class re-declares in its companion, nearest first:
+     * `XMLDocument.parseHTML` from `Document`. In JS a subclass constructor inherits its parent's statics, while Kotlin
+     * companions are not inherited, so they are copied like [constants]. A static the class declares itself, or that a
+     * nearer ancestor declares, hides it (matched by [memberKey]). Mixins cannot have statics. Empty for
+     * [ShapeKind.INTERFACE].
+     */
+    val inheritedStatics: List<InheritedMember> = emptyList(),
 )
 
 /**
- * Port of dukat's `markAbstractOrOpen`, plus the mixin decision and constant copying, as a pure analysis over the
+ * Port of dukat's `markAbstractOrOpen`, plus the mixin decision and constant and static copying, as a pure analysis over the
  * merged IR (run [mergePartials] first). It does not rewrite the IR: shapes are facts the backend reads.
  *
  * Corrected rule (Step 3): a class is `open` only with an **own** `constructor`. Dukat also made it open when any
@@ -179,6 +190,32 @@ class Shapes private constructor(
                 return seen.values.toList()
             }
 
+            /** Statics of the ancestors of [i] (and of [i] itself if [includeSelf]) that [i] does not declare. */
+            fun inheritedStaticsOf(i: IdlInterface, includeSelf: Boolean = false): List<InheritedMember> {
+                val ancestors = generateSequence(i) { c ->
+                    c.inheritance?.let { interfaces[it] }
+                }.drop(if (includeSelf) 0 else 1)
+
+                val own = if (includeSelf) {
+                    emptySet()
+                } else {
+                    i.members
+                        .filter { it.isStatic() }
+                        .map { memberKey(it) }
+                        .toSet()
+                }
+
+                return ancestors
+                    .flatMap { (val name, val members) ->
+                        members
+                            .filter { it.isStatic() }
+                            .map { InheritedMember(it, name) }
+                    }
+                    .filter { memberKey(it.member) !in own }
+                    .distinctBy { memberKey(it.member) }
+                    .toList()
+            }
+
             /** Markers [i] does not inherit: those of its ancestors and of their and its own mixins are inherited. */
             fun ownMarkers(i: IdlInterface): List<String> {
                 val chain = generateSequence(i) { c ->
@@ -218,6 +255,11 @@ class Shapes private constructor(
                             constantsOf(i)
                         },
                         itemArrayLike = itemArrayLikeOf(i),
+                        inheritedStatics = if (kind == ShapeKind.INTERFACE) {
+                            emptyList()
+                        } else {
+                            inheritedStaticsOf(i)
+                        },
                     )
                 }
 
@@ -257,7 +299,8 @@ class Shapes private constructor(
                         name,
                         ShapeKind.OPEN_CLASS,
                         listOf(factory),
-                        constantsOf(host)
+                        constantsOf(host),
+                        inheritedStatics = inheritedStaticsOf(host, includeSelf = true),
                     )
                 }
 
@@ -286,3 +329,7 @@ class Shapes private constructor(
         }
     }
 }
+
+internal fun IdlMember.isStatic() =
+    (this as? IdlAttribute)?.special == IdlAttributeSpecial.STATIC ||
+            (this as? IdlOperation)?.special == IdlOperationSpecial.STATIC

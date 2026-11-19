@@ -15,6 +15,7 @@ import org.jetbrains.kotlin.tools.idl.lowering.Idl.iface
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.includes
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.ir
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.mixin
+import org.jetbrains.kotlin.tools.idl.lowering.Idl.op
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.spec
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.t
 import org.jetbrains.kotlin.tools.idl.lowering.Idl.union
@@ -140,6 +141,28 @@ class ShapesTest {
         assertEquals(listOf("Element"), s["HTMLElement"].supertypes, "inherited from Element")
         assertEquals(listOf("Node", "M"), s["Doc"].supertypes, "inherited from mixin M")
         assertEquals(listOf("UnionElementOrHTMLElementOrM"), s["M"].supertypes)
+    }
+
+    @Test
+    fun staticsAreCopiedFromAncestors() {
+        fun static(m: IdlOperation) = m.copy(special = IdlOperationSpecial.STATIC)
+        val parseHTML = static(op("parseHTML", t("Document"), arg("html", t("DOMString"))))
+        val ownParseHTML = static(op("parseHTML", t("Own"), arg("html", t("DOMString"))))
+        val s = shapes(
+            iface("Node"),
+            iface("Document", parseHTML, inheritance = "Node"),
+            iface("XMLDocument", inheritance = "Document"),
+            iface("Own", ownParseHTML, inheritance = "Document"),
+            iface("OwnChild", inheritance = "Own"),
+            mixin("M"),
+            iface("Doc", ctor(), extAttrs = listOf(ext("LegacyFactoryFunction", "Factory")), inheritance = "Document"),
+        )
+        assertEquals(emptyList(), s["Document"].inheritedStatics, "own statics are not copied")
+        assertEquals(listOf(InheritedMember(parseHTML, "Document")), s["XMLDocument"].inheritedStatics)
+        assertEquals(emptyList(), s["Own"].inheritedStatics, "declares its own")
+        assertEquals(listOf(InheritedMember(ownParseHTML, "Own")), s["OwnChild"].inheritedStatics, "nearest wins")
+        assertEquals(listOf(InheritedMember(parseHTML, "Document")), s["Factory"].inheritedStatics, "through the host")
+        assertEquals(emptyList(), s["M"].inheritedStatics)
     }
 
     @Test

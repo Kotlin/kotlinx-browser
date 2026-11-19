@@ -319,6 +319,41 @@ class RealLoweringTest {
     }
 
     @Test
+    fun overrides() {
+        val overrides = lowered.overrides
+        // Each conflicts with the member of the same name in: HTMLCollection, PerformanceEntry, Event, Element. Legacy
+        // dropped namedItem and className too. BeforeUnloadEvent.returnValue (a String in legacy) conflicts since Event
+        // gained the legacy `boolean returnValue`: an API loss.
+        assertEquals(
+            mapOf(
+                "HTMLFormControlsCollection" to listOf("getter namedItem(DOMString)"),
+                "VisibilityStateEntry" to listOf("attribute duration"),
+                "BeforeUnloadEvent" to listOf("attribute returnValue"),
+                "SVGElement" to listOf("attribute className"),
+            ),
+            overrides.byName
+                .filterValues { it.dropped.isNotEmpty() }
+                .mapValues { [_, o] -> o.dropped.map { memberKey(it) } },
+        )
+        fun added(name: String) = overrides[name].added.map { "${it.declaredIn}.${memberKey(it.member)}" }
+        assertTrue("GlobalEventHandlers.attribute onclick" in added("Document"))
+        assertTrue("GlobalEventHandlers.attribute onclick" in added("Image"))
+        assertEquals(listOf("Body"), overrides["Request"].added.map { it.declaredIn }.distinct())
+        assertEquals(emptyList(), overrides["XMLDocument"].added, "abstract; statics are in Shape.inheritedStatics")
+        assertEquals(emptyList(), overrides["HTMLElement"].added, "abstract")
+    }
+
+    @Test
+    fun inheritedStatics() {
+        fun statics(name: String) = lowered.shapes[name].inheritedStatics.map { "${it.declaredIn}.${memberKey(it.member)}" }
+        assertTrue("Document.static parseHTML(DOMString, SetHTMLOptions)" in statics("XMLDocument"), statics("XMLDocument").toString())
+        assertEquals(
+            listOf("MediaSource.static attribute canConstructInDedicatedWorker", "MediaSource.static isTypeSupported(DOMString)"),
+            statics("ManagedMediaSource"),
+        )
+    }
+
+    @Test
     fun eventHandlerTypes() {
         val events = lowered.eventHandlerTypes
         assertEquals("PointerEvent", events["GlobalEventHandlers", "onclick"])
@@ -380,6 +415,7 @@ class RealLoweringTest {
             shapes,
             lowered.eventHandlerTypes,
             lowered.unionMarkers,
+            lowered.overrides,
         )
         Golden.assertMatches("lowered-slice.idl", slice.render())
     }

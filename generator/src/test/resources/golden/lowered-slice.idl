@@ -378,6 +378,7 @@ Element includes NonDocumentTypeChildNode;
 Element includes ChildNode;
 Element includes Slottable;
 // shape: abstract class : ItemArrayLike<Node>
+//   overrides: getter item(unsigned long), attribute length
 [Exposed=Window]
 interface NodeList {
   getter Node? item(unsigned long index);
@@ -437,6 +438,7 @@ interface Node : EventTarget {
 };
 // shape: open class : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, GeometryNode
 //   copied constants: Node(18)
+//   adds: GlobalEventHandlers(91); NonElementParentNode(1); DocumentOrShadowRoot(5); ParentNode(13); XPathEvaluatorBase(3); GeometryUtils(4); ARIANotifyMixin(1)
 [Exposed=Window, LegacyOverrideBuiltIns]
 interface Document : Node {
   constructor();
