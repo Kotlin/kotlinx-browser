@@ -18,9 +18,10 @@ import org.jetbrains.kotlin.tools.idl.mapping.WasmTypeMapping
  * Every type goes through [WasmTypeMapping], unchanged; the backend only decides how a [KotlinType] is spelled.
  *
  * Printed so far: interfaces, mixins and callback interfaces (by [Shape]), `[LegacyFactoryFunction]` classes,
- * namespaces, union markers, and their attributes, operations, constructors, constants and statics, with `override`
- * and `open` from [LoweredIR.overrides]. Dictionaries, enums, `iterable`/`maplike`/`setlike` and anonymous special
- * operations are not printed yet; each leaves a `// not printed yet:` line, so the golden file shows what is missing.
+ * namespaces, union markers, dictionaries (with factory functions), enums, and their attributes, operations,
+ * constructors, constants and statics, with `override` and `open` from [LoweredIR.overrides]. `iterable`/`maplike`/
+ * `setlike` and anonymous special operations are not printed yet; each leaves a `// not printed yet:` line, so the
+ * golden file shows what is missing.
  */
 class KotlinBackend(internal val lowered: LoweredIR) {
 
@@ -52,6 +53,7 @@ class KotlinBackend(internal val lowered: LoweredIR) {
         }
 
         put(ITEM_ARRAY_LIKE, "org.w3c.dom")
+        put(NEW_JS_OBJECT, "org.w3c.dom")
     }
 
     /** The Kotlin source of [spec]: its union markers, then its definitions in order. To be written to [path]. */
@@ -60,12 +62,38 @@ class KotlinBackend(internal val lowered: LoweredIR) {
     /** Where [file] of [spec] goes, relative to the source root: `org/w3c/dom/events/pointerevents.kt`. */
     fun path(spec: IdlSpec): String = spec.packageName.replace('.', '/') + "/" + spec.name + ".kt"
 
+    /** The fields of [d] and of the dictionaries it inherits from, the least derived first. */
+    fun fieldsWithInherited(d: IdlDictionary): List<IdlField> {
+        val parent = d.inheritance
+            ?.let { definitions[it] as? IdlDictionary ?: error("${d.name}: '$it' is not a dictionary") }
+
+        return parent?.let(::fieldsWithInherited).orEmpty() + d.members
+    }
+}
+
+/**
+ * The Kotlin name of the enum value [value]: words split at non-alphanumerics and at camel-case humps, upper-cased
+ * (`same-origin` → `SAME_ORIGIN`, `flipY` → `FLIP_Y`); `EMPTY` for `""`, and a `_` before a leading digit (`2d` →
+ * `_2D`).
+ */
+internal fun enumValueName(value: String): String {
+    val words = value
+        .replace(Regex("([a-z])([A-Z])"), "$1_$2")
+        .replace(Regex("[^A-Za-z0-9]+"), "_")
+        .trim('_')
+        .uppercase()
+    return when {
+        words.isEmpty() -> "EMPTY"
+        words[0].isDigit() -> "_$words"
+        else -> words
+    }
 }
 
 /** A name as a Kotlin identifier: hard keywords are escaped with backticks. */
-private fun name(name: String): String = if (name in KOTLIN_HARD_KEYWORDS) {
-    "`$name`"
-} else name
+private fun name(name: String): String =
+    if (name in KOTLIN_HARD_KEYWORDS) {
+        "`$name`"
+    } else name
 
 private val KOTLIN_HARD_KEYWORDS = setOf(
     "as",
@@ -102,6 +130,9 @@ private val KOTLIN_HARD_KEYWORDS = setOf(
 private val EVENT_HANDLER_CALLBACKS = setOf("EventHandlerNonNull", "OnErrorEventHandlerNonNull")
 
 private const val ITEM_ARRAY_LIKE = "ItemArrayLike"
+
+/** `internal fun <T : JsAny> newJsObject(): T = js("({})")`, next to [ITEM_ARRAY_LIKE]. */
+private const val NEW_JS_OBJECT = "newJsObject"
 private const val JS_ANY = "kotlin.js.JsAny"
 private const val UNIT = "kotlin.Unit"
 
@@ -140,8 +171,8 @@ private class SpecFile(
                 }
 
                 is IdlNamespace -> printNamespace(d)
-                is IdlDictionary -> notPrinted("dictionary ${d.name}")
-                is IdlEnum -> notPrinted("enum ${d.name}")
+                is IdlDictionary -> printDictionary(d)
+                is IdlEnum -> printEnum(d)
                 // Printed as function types where used.
                 is IdlCallback -> continue
                 is IdlTypedef, is IdlIncludes -> continue
@@ -228,6 +259,63 @@ private class SpecFile(
                 }
             }
         }
+    }
+
+    /**
+     * A dictionary: an `external interface` with a `var` per field, and a factory function of the same name taking
+     * every field, inherited ones included. Required fields come first, without defaults. An optional field is
+     * nullable, defaults to `null`, and is only set when it is not `null`: an absent member must stay absent, or JS
+     * converts `null` instead of applying the member's default (`{cancelable: null}` is not `{}`).
+     */
+    private fun printDictionary(d: IdlDictionary) {
+        block("public external interface ${d.name} : ${supertypes(listOfNotNull(d.inheritance))}") {
+            for (f in d.members) {
+                line("var ${name(f.name)}: ${fieldType(f)}")
+            }
+        }
+
+        val fields = kotlinBackend.fieldsWithInherited(d).sortedBy { !it.required }
+        val parameters = fields.joinToString(", ") { f ->
+            "${name(f.name)}: ${fieldType(f)}" + if (f.required) "" else " = null"
+        }
+        val factory = "public fun ${d.name}($parameters): ${d.name} = ${reference(NEW_JS_OBJECT)}<${d.name}>()"
+        if (fields.isEmpty()) {
+            line(factory)
+            line()
+            return
+        }
+        block("$factory.apply") {
+            for (f in fields) {
+                val n = name(f.name)
+                line(if (f.required) "this.$n = $n" else "if ($n != null) this.$n = $n")
+            }
+        }
+    }
+
+    private fun fieldType(f: IdlField): String {
+        val kotlin = map(f.type, TypePosition.VALUE)
+        return type(if (f.required) kotlin else kotlin.withNullable())
+    }
+
+    /**
+     * An enum: an `external interface` whose values are `JsString`s, each an extension `val` on its companion
+     * (`RequestMode.CORS`). The companion of an external interface needs `COMPANION_OBJECT_IN_EXTERNAL_INTERFACE`
+     * suppressed (Key Decision 13).
+     */
+    private fun printEnum(e: IdlEnum) {
+        block("public external interface ${e.name} : ${type(KotlinType.Named(JS_ANY))}") {
+            line("@Suppress(\"COMPANION_OBJECT_IN_EXTERNAL_INTERFACE\")")
+            line("companion object")
+        }
+
+        val byName = e.values.groupBy(::enumValueName)
+        byName.values.firstOrNull { it.size > 1 }?.let { error("enum ${e.name}: values $it have the same Kotlin name") }
+        for (entry in byName) {
+            val n = entry.key
+            val literal = entry.value.single().replace("\\", "\\\\").replace("\"", "\\\"").replace("$", "\\$")
+            line("public inline val ${e.name}.Companion.$n: ${e.name} get() = \"$literal\".toJsString().unsafeCast<${e.name}>()")
+        }
+        line()
     }
 
     /**
@@ -411,6 +499,12 @@ private class SpecFile(
     }
 
     private fun nullability(t: KotlinType) = if (t.nullable) "?" else ""
+
+    private fun KotlinType.withNullable(): KotlinType = when (this) {
+        is KotlinType.Named -> copy(nullable = true)
+        is KotlinType.Reference -> copy(nullable = true)
+        is KotlinType.Union -> copy(nullable = true)
+    }
 
     private fun use(packageName: String) {
         if (packageName != spec.packageName) imports += packageName

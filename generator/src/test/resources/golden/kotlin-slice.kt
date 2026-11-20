@@ -628,7 +628,18 @@ public external open class Event : JsAny {
     }
 }
 
-// not printed yet: dictionary EventInit
+public external interface EventInit : JsAny {
+    var bubbles: Boolean?
+    var cancelable: Boolean?
+    var composed: Boolean?
+}
+
+public fun EventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): EventInit = newJsObject<EventInit>().apply {
+    if (bubbles != null) this.bubbles = bubbles
+    if (cancelable != null) this.cancelable = cancelable
+    if (composed != null) this.composed = composed
+}
+
 public external open class EventTarget : JsAny {
     constructor()
     open fun addEventListener(type: String, callback: EventListener?, options: AddEventListenerOptions)
@@ -1108,8 +1119,62 @@ public external interface GeometryNode : JsAny
 
 package org.w3c.dom.events
 
-// not printed yet: dictionary UIEventInit
-// not printed yet: dictionary EventModifierInit
+import org.w3c.dom.*
+
+public external interface UIEventInit : EventInit {
+    var view: Window?
+    var detail: Int?
+    var which: Int?
+}
+
+public fun UIEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null): UIEventInit = newJsObject<UIEventInit>().apply {
+    if (bubbles != null) this.bubbles = bubbles
+    if (cancelable != null) this.cancelable = cancelable
+    if (composed != null) this.composed = composed
+    if (view != null) this.view = view
+    if (detail != null) this.detail = detail
+    if (which != null) this.which = which
+}
+
+public external interface EventModifierInit : UIEventInit {
+    var ctrlKey: Boolean?
+    var shiftKey: Boolean?
+    var altKey: Boolean?
+    var metaKey: Boolean?
+    var modifierAltGraph: Boolean?
+    var modifierCapsLock: Boolean?
+    var modifierFn: Boolean?
+    var modifierFnLock: Boolean?
+    var modifierHyper: Boolean?
+    var modifierNumLock: Boolean?
+    var modifierScrollLock: Boolean?
+    var modifierSuper: Boolean?
+    var modifierSymbol: Boolean?
+    var modifierSymbolLock: Boolean?
+}
+
+public fun EventModifierInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null): EventModifierInit = newJsObject<EventModifierInit>().apply {
+    if (bubbles != null) this.bubbles = bubbles
+    if (cancelable != null) this.cancelable = cancelable
+    if (composed != null) this.composed = composed
+    if (view != null) this.view = view
+    if (detail != null) this.detail = detail
+    if (which != null) this.which = which
+    if (ctrlKey != null) this.ctrlKey = ctrlKey
+    if (shiftKey != null) this.shiftKey = shiftKey
+    if (altKey != null) this.altKey = altKey
+    if (metaKey != null) this.metaKey = metaKey
+    if (modifierAltGraph != null) this.modifierAltGraph = modifierAltGraph
+    if (modifierCapsLock != null) this.modifierCapsLock = modifierCapsLock
+    if (modifierFn != null) this.modifierFn = modifierFn
+    if (modifierFnLock != null) this.modifierFnLock = modifierFnLock
+    if (modifierHyper != null) this.modifierHyper = modifierHyper
+    if (modifierNumLock != null) this.modifierNumLock = modifierNumLock
+    if (modifierScrollLock != null) this.modifierScrollLock = modifierScrollLock
+    if (modifierSuper != null) this.modifierSuper = modifierSuper
+    if (modifierSymbol != null) this.modifierSymbol = modifierSymbol
+    if (modifierSymbolLock != null) this.modifierSymbolLock = modifierSymbolLock
+}
 
 // file: org/w3c/dom/pointerevents/pointerevents.kt
 /*
@@ -1121,7 +1186,48 @@ package org.w3c.dom.events
 
 package org.w3c.dom.pointerevents
 
-// not printed yet: dictionary MouseEventInit
+import org.w3c.dom.*
+import org.w3c.dom.events.*
+
+public external interface MouseEventInit : EventModifierInit {
+    var screenX: Int?
+    var screenY: Int?
+    var clientX: Int?
+    var clientY: Int?
+    var button: Short?
+    var buttons: Short?
+    var relatedTarget: EventTarget?
+}
+
+public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null): MouseEventInit = newJsObject<MouseEventInit>().apply {
+    if (bubbles != null) this.bubbles = bubbles
+    if (cancelable != null) this.cancelable = cancelable
+    if (composed != null) this.composed = composed
+    if (view != null) this.view = view
+    if (detail != null) this.detail = detail
+    if (which != null) this.which = which
+    if (ctrlKey != null) this.ctrlKey = ctrlKey
+    if (shiftKey != null) this.shiftKey = shiftKey
+    if (altKey != null) this.altKey = altKey
+    if (metaKey != null) this.metaKey = metaKey
+    if (modifierAltGraph != null) this.modifierAltGraph = modifierAltGraph
+    if (modifierCapsLock != null) this.modifierCapsLock = modifierCapsLock
+    if (modifierFn != null) this.modifierFn = modifierFn
+    if (modifierFnLock != null) this.modifierFnLock = modifierFnLock
+    if (modifierHyper != null) this.modifierHyper = modifierHyper
+    if (modifierNumLock != null) this.modifierNumLock = modifierNumLock
+    if (modifierScrollLock != null) this.modifierScrollLock = modifierScrollLock
+    if (modifierSuper != null) this.modifierSuper = modifierSuper
+    if (modifierSymbol != null) this.modifierSymbol = modifierSymbol
+    if (modifierSymbolLock != null) this.modifierSymbolLock = modifierSymbolLock
+    if (screenX != null) this.screenX = screenX
+    if (screenY != null) this.screenY = screenY
+    if (clientX != null) this.clientX = clientX
+    if (clientY != null) this.clientY = clientY
+    if (button != null) this.button = button
+    if (buttons != null) this.buttons = buttons
+    if (relatedTarget != null) this.relatedTarget = relatedTarget
+}
 
 // file: org/w3c/dom/css/cssom.kt
 /*
@@ -1558,6 +1664,7 @@ public external open class FormData : JsAny {
 package org.w3c.fetch
 
 import kotlin.js.*
+import org.w3c.dom.*
 
 public external open class Headers : JsAny {
     constructor(init: JsArray<JsArray<JsString>>)
@@ -1572,9 +1679,60 @@ public external open class Headers : JsAny {
     // not printed yet: iterable
 }
 
-// not printed yet: dictionary RequestInit
-// not printed yet: enum RequestMode
-// not printed yet: enum RequestCredentials
+public external interface RequestInit : JsAny {
+    var method: String?
+    var headers: JsAny?
+    var body: JsAny?
+    var referrer: String?
+    var referrerPolicy: ReferrerPolicy?
+    var mode: RequestMode?
+    var credentials: RequestCredentials?
+    var cache: RequestCache?
+    var redirect: RequestRedirect?
+    var integrity: String?
+    var keepalive: Boolean?
+    var signal: AbortSignal?
+    var duplex: RequestDuplex?
+    var priority: RequestPriority?
+    var window: JsAny?
+}
+
+public fun RequestInit(method: String? = null, headers: JsAny? = null, body: JsAny? = null, referrer: String? = null, referrerPolicy: ReferrerPolicy? = null, mode: RequestMode? = null, credentials: RequestCredentials? = null, cache: RequestCache? = null, redirect: RequestRedirect? = null, integrity: String? = null, keepalive: Boolean? = null, signal: AbortSignal? = null, duplex: RequestDuplex? = null, priority: RequestPriority? = null, window: JsAny? = null): RequestInit = newJsObject<RequestInit>().apply {
+    if (method != null) this.method = method
+    if (headers != null) this.headers = headers
+    if (body != null) this.body = body
+    if (referrer != null) this.referrer = referrer
+    if (referrerPolicy != null) this.referrerPolicy = referrerPolicy
+    if (mode != null) this.mode = mode
+    if (credentials != null) this.credentials = credentials
+    if (cache != null) this.cache = cache
+    if (redirect != null) this.redirect = redirect
+    if (integrity != null) this.integrity = integrity
+    if (keepalive != null) this.keepalive = keepalive
+    if (signal != null) this.signal = signal
+    if (duplex != null) this.duplex = duplex
+    if (priority != null) this.priority = priority
+    if (window != null) this.window = window
+}
+
+public external interface RequestMode : JsAny {
+    @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
+    companion object
+}
+
+public inline val RequestMode.Companion.NAVIGATE: RequestMode get() = "navigate".toJsString().unsafeCast<RequestMode>()
+public inline val RequestMode.Companion.SAME_ORIGIN: RequestMode get() = "same-origin".toJsString().unsafeCast<RequestMode>()
+public inline val RequestMode.Companion.NO_CORS: RequestMode get() = "no-cors".toJsString().unsafeCast<RequestMode>()
+public inline val RequestMode.Companion.CORS: RequestMode get() = "cors".toJsString().unsafeCast<RequestMode>()
+
+public external interface RequestCredentials : JsAny {
+    @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
+    companion object
+}
+
+public inline val RequestCredentials.Companion.OMIT: RequestCredentials get() = "omit".toJsString().unsafeCast<RequestCredentials>()
+public inline val RequestCredentials.Companion.SAME_ORIGIN: RequestCredentials get() = "same-origin".toJsString().unsafeCast<RequestCredentials>()
+public inline val RequestCredentials.Companion.INCLUDE: RequestCredentials get() = "include".toJsString().unsafeCast<RequestCredentials>()
 
 // file: org/w3c/dom/wai-aria.kt
 /*

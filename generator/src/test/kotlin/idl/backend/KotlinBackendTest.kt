@@ -12,6 +12,7 @@ import org.jetbrains.kotlin.tools.idl.loadEvents
 import org.jetbrains.kotlin.tools.idl.loadSurface
 import org.jetbrains.kotlin.tools.idl.lowering.lower
 import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class KotlinBackendTest {
     private val lowered by lazy { loadSurface().ir.lower(loadEvents()) }
@@ -25,5 +26,31 @@ class KotlinBackendTest {
             .specs
             .joinToString("\n") { spec -> "// file: ${backend.path(spec)}\n" + backend.file(spec) }
         Golden.assertMatches("kotlin-slice.kt", printed)
+    }
+
+    /** Fails on anything the backend cannot print, such as two enum values with the same Kotlin name. */
+    @Test
+    fun everySpecPrints() {
+        val backend = KotlinBackend(lowered)
+        lowered.ir.specs.forEach { backend.file(it) }
+    }
+
+    @Test
+    fun enumValueNames() {
+        val cases = mapOf(
+            "navigate" to "NAVIGATE",
+            "same-origin" to "SAME_ORIGIN",
+            "" to "EMPTY",
+            "flipY" to "FLIP_Y",
+            "keyID" to "KEY_ID",
+            "HRTF" to "HRTF",
+            "smpteSt2094-10" to "SMPTE_ST2094_10",
+            "2d" to "_2D",
+            "2d-array" to "_2D_ARRAY",
+            "application/xhtml+xml" to "APPLICATION_XHTML_XML",
+            "AES_128_GCM_SHA256_128" to "AES_128_GCM_SHA256_128",
+            "I420AP10" to "I420AP10",
+        )
+        assertEquals(cases, cases.mapValues { enumValueName(it.key) })
     }
 }
