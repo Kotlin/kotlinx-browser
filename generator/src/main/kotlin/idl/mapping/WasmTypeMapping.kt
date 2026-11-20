@@ -75,6 +75,7 @@ class UnmappableTypeException(message: String) : IllegalArgumentException(messag
  * | union                                     | [KotlinType.Union]  | `JsAny`              |
  * | `(undefined or T)`                        | `T?`                | `T?`                 |
  * | `WindowProxy`                              | `Window` reference  | same                 |
+ * | union named by `unionName` (a marker)     | [KotlinType.Reference] to it | same        |
  * | any other name                            | [KotlinType.Reference] | same              |
  *
  * `long long` deliberately maps to `Double`, not `JsBigInt`: per the Web IDL ECMAScript binding, `long long` and
@@ -84,21 +85,49 @@ class UnmappableTypeException(message: String) : IllegalArgumentException(messag
  */
 object WasmTypeMapping {
 
-    fun map(type: IdlType, position: TypePosition): KotlinType = when (type) {
+    /**
+     * [unionName] names the unions that are Kotlin types of their own (the union markers of the lowered IR); such a
+     * union maps to a reference to that name, in any position.
+     */
+    fun map(
+        type: IdlType,
+        position: TypePosition,
+        unionName: (IdlUnionType) -> String? = { null },
+    ): KotlinType = when (type) {
         is IdlNamedType -> mapNamed(type, position)
-        is IdlGenericType -> mapGeneric(type, position)
-        is IdlUnionType -> mapUnion(type, position)
+        is IdlGenericType -> mapGeneric(type, position, unionName)
+        is IdlUnionType -> mapUnion(type, position, unionName)
     }
 
     /** `undefined` inside a union (`(undefined or CSSStyleValue)`) reads as "absent" and becomes nullability. */
-    private fun mapUnion(type: IdlUnionType, position: TypePosition): KotlinType {
-        val [undefined, members] = type.members.partition { it is IdlNamedType && it.name == "undefined" }
+    private fun mapUnion(
+        type: IdlUnionType,
+        position: TypePosition,
+        unionName: (IdlUnionType) -> String?
+    ): KotlinType {
+
+        unionName(type)?.let { return KotlinType.Reference(it, type.nullable) }
+
+        val [undefined, members] = type.members
+            .partition { it is IdlNamedType && it.name == "undefined" }
+
         val nullable = type.nullable || undefined.isNotEmpty()
+
         return when {
-            members.size == 1 -> map(members.single(), position).withNullability(nullable || members.single().nullable)
+            members.size == 1 -> map(members.single(), position, unionName)
+                .withNullability(nullable || members.single().nullable)
+
             // A union inside a generic cannot become an overload set; the closest JsAny-bounded type is JsAny.
-            position == TypePosition.TYPE_ARGUMENT -> KotlinType.Named(JS_ANY, nullable = nullable || members.any { it.nullable })
-            else -> KotlinType.Union(members.map { map(it, TypePosition.VALUE) }, nullable)
+            position == TypePosition.TYPE_ARGUMENT ->
+                KotlinType.Named(
+                    JS_ANY,
+                    nullable = nullable || members.any { it.nullable }
+                )
+
+            else -> KotlinType.Union(
+                members.map { map(it, TypePosition.VALUE, unionName) },
+                nullable
+            )
         }
     }
 
@@ -132,8 +161,12 @@ object WasmTypeMapping {
         }
     }
 
-    private fun mapGeneric(type: IdlGenericType, position: TypePosition): KotlinType {
-        fun arg(i: Int) = map(type.arguments[i], TypePosition.TYPE_ARGUMENT)
+    private fun mapGeneric(
+        type: IdlGenericType,
+        position: TypePosition,
+        unionName: (IdlUnionType) -> String?
+    ): KotlinType {
+        fun arg(i: Int) = map(type.arguments[i], TypePosition.TYPE_ARGUMENT, unionName)
         return when (type.generic) {
             "sequence", "FrozenArray", "ObservableArray" ->
                 KotlinType.Named("kotlin.js.JsArray", listOf(arg(0)), type.nullable)

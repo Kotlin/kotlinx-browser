@@ -130,6 +130,21 @@ class ResolveTypedefsTest {
     }
 
     @Test
+    fun legacyWindowAliasesResolveToTheirInterface() {
+        val resolved =
+            ir(
+                spec(
+                    "s",
+                    iface("DOMRect", extAttrs = listOf(ext("LegacyWindowAlias", "SVGRect"))),
+                    iface("X", attr("a", t("SVGRect", nullable = true)))
+                )
+            ).resolveTypedefs()
+
+        assertEquals(t("DOMRect", nullable = true), (resolved.find("X").members.single() as IdlAttribute).type)
+        assertEquals(listOf("DOMRect", "X"), resolved.definitions.map { (it as IdlNamedDefinition).name }.toList())
+    }
+
+    @Test
     fun nestedPositionsAndTransitiveTypedefs() {
         val a = typedef(
             "A",

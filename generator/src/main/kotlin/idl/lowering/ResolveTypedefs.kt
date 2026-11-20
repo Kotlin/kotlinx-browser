@@ -6,6 +6,7 @@
 package org.jetbrains.kotlin.tools.idl.lowering
 
 import org.jetbrains.kotlin.tools.idl.ir.*
+import org.jetbrains.kotlin.tools.idl.surface.legacyWindowAliases
 
 /**
  * Port of dukat's `resolveTypedefs`. Every reference to a typedef is replaced by the type it names, and the typedef
@@ -20,10 +21,24 @@ import org.jetbrains.kotlin.tools.idl.ir.*
  *  - Typedefs that reference typedefs are resolved transitively; a cycle is an error.
  *  - A union keeps the name of the typedef it came from in [IdlUnionType.typedef] (the innermost one for a typedef of a
  *    typedef). A union spliced into an outer union loses it: only the outer union is a type of its own.
+ *
+ * A `[LegacyWindowAlias]` resolves like a typedef of its interface: `[LegacyWindowAlias=SVGRect] interface DOMRect`
+ * makes `SVGRect getBBox()` return a `DOMRect` (the alias is only another global name for the same constructor).
  */
 fun IdlIR.resolveTypedefs(): IdlIR {
-    val typedefs = definitions
-        .filterIsInstance<IdlTypedef>()
+    val aliases = definitions
+        .flatMap { d ->
+            d.legacyWindowAliases()
+                .map {
+                    IdlTypedef(
+                        it,
+                        IdlNamedType((d as IdlInterface).name),
+                        emptyList()
+                    )
+                }
+        }
+
+    val typedefs = (definitions.filterIsInstance<IdlTypedef>() + aliases)
         .associateBy { it.name }
 
     if (typedefs.isEmpty()) return this

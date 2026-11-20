@@ -36,6 +36,18 @@ class WasmTypeMappingTest {
     }
 
     @Test
+    fun aNamedUnionIsAReferenceInAnyPosition() {
+        val source = IdlUnionType(listOf(t("HTMLImageElement"), t("HTMLCanvasElement")))
+        val name = { u: IdlUnionType -> if (u == source) "CanvasImageSource" else null }
+        assertEquals(KotlinType.Reference("CanvasImageSource"), WasmTypeMapping.map(source, TypePosition.VALUE, name))
+        assertEquals(
+            named("kotlin.js.JsArray", false, KotlinType.Reference("CanvasImageSource")),
+            WasmTypeMapping.map(IdlGenericType("sequence", listOf(source)), TypePosition.VALUE, name),
+            "a type argument too, where an unnamed union is JsAny",
+        )
+    }
+
+    @Test
     fun noDynamicAnywhere() {
         assertEquals(named("kotlin.js.JsAny", nullable = true), value(t("any")))
         assertEquals(named("kotlin.js.JsAny"), value(t("object")))

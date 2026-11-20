@@ -333,14 +333,8 @@ private class OverrideAnalysis(
         }
 
     /** The Kotlin type of [type], with a union that has a marker as the marker. */
-    private fun kotlin(type: IdlType, position: TypePosition): KotlinType {
-        val marker = (type as? IdlUnionType)?.let { markers[it] }
-        return if (marker != null) {
-            KotlinType.Reference(marker.name, type.nullable)
-        } else {
-            WasmTypeMapping.map(type, position)
-        }
-    }
+    private fun kotlin(type: IdlType, position: TypePosition): KotlinType =
+        WasmTypeMapping.map(type, position) { markers[it]?.name }
 
     private fun isSubtype(a: KotlinType, b: KotlinType): Boolean = when {
         a.nullable && !b.nullable -> false
