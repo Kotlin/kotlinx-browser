@@ -98,10 +98,12 @@ public external abstract class HTMLElement : Element, GlobalEventHandlers, Eleme
 }
 
 public external abstract class DOMStringMap : JsAny {
-    // not printed yet: getter <anonymous>(DOMString)
-    // not printed yet: setter <anonymous>(DOMString, DOMString)
     // not printed yet: deleter <anonymous>(DOMString)
 }
+
+public operator fun DOMStringMap.get(name: String): String? = getStringProperty(this, name)
+
+public operator fun DOMStringMap.set(name: String, value: String) { setStringProperty(this, name, value) }
 
 public external abstract class HTMLAnchorElement : HTMLElement, HyperlinkElementUtils, HTMLHyperlinkElementUtils {
     open var download: String
@@ -705,6 +707,8 @@ public external abstract class NodeList : ItemArrayLike<Node> {
     // not printed yet: iterable
 }
 
+public operator fun NodeList.get(index: Int): Node? = getProperty(this, index)
+
 public external abstract class Node : EventTarget {
     open val nodeType: Short
     open val nodeName: String
@@ -800,7 +804,6 @@ public external open class Document : Node, GlobalEventHandlers, NonElementParen
     open var cookie: String
     open val lastModified: String
     open val readyState: DocumentReadyState
-    // not printed yet: getter <anonymous>(DOMString)
     open var title: String
     open var dir: String
     open var body: HTMLElement?
@@ -997,6 +1000,8 @@ public external open class Document : Node, GlobalEventHandlers, NonElementParen
         fun parseHTML(html: String, options: SetHTMLOptions = definedExternally): Document
     }
 }
+
+public operator fun Document.get(name: String): JsAny? = getProperty(this, name)
 
 public external abstract class Element : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction {
     open val namespaceURI: String?

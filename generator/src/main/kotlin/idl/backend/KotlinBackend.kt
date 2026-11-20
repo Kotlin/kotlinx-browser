@@ -18,10 +18,10 @@ import org.jetbrains.kotlin.tools.idl.mapping.WasmTypeMapping
  * Every type goes through [WasmTypeMapping], unchanged; the backend only decides how a [KotlinType] is spelled.
  *
  * Printed so far: interfaces, mixins and callback interfaces (by [Shape]), `[LegacyFactoryFunction]` classes,
- * namespaces, union markers, dictionaries (with factory functions), enums, and their attributes, operations,
- * constructors, constants and statics, with `override` and `open` from [LoweredIR.overrides]. `iterable`/`maplike`/
- * `setlike` and anonymous special operations are not printed yet; each leaves a `// not printed yet:` line, so the
- * golden file shows what is missing.
+ * namespaces, union markers, dictionaries (with factory functions), enums, special getters and setters (as
+ * `operator` extensions), and their attributes, operations, constructors, constants and statics, with `override` and
+ * `open` from [LoweredIR.overrides]. `iterable`/`maplike`/`setlike` and deleters are not printed yet; each leaves a
+ * `// not printed yet:` line, so the golden file shows what is missing.
  */
 class KotlinBackend(internal val lowered: LoweredIR) {
 
@@ -53,7 +53,15 @@ class KotlinBackend(internal val lowered: LoweredIR) {
         }
 
         put(ITEM_ARRAY_LIKE, "org.w3c.dom")
-        put(NEW_JS_OBJECT, "org.w3c.dom")
+        listOf(
+            NEW_JS_OBJECT,
+            "getProperty",
+            "getStringProperty",
+            "setProperty",
+            "setStringProperty"
+        ).forEach { helper ->
+            put(helper, "org.w3c.dom")
+        }
     }
 
     /** The Kotlin source of [spec]: its union markers, then its definitions in order. To be written to [path]. */
@@ -131,10 +139,23 @@ private val EVENT_HANDLER_CALLBACKS = setOf("EventHandlerNonNull", "OnErrorEvent
 
 private const val ITEM_ARRAY_LIKE = "ItemArrayLike"
 
-/** `internal fun <T : JsAny> newJsObject(): T = js("({})")`, next to [ITEM_ARRAY_LIKE]. */
+private val INDEXERS = setOf(IdlOperationSpecial.GETTER, IdlOperationSpecial.SETTER)
+
+/**
+ * Special operations that are specified as getters but are not ones in browsers; printed as plain members only.
+ *
+ * - `TouchEvent.getModifierState`: Touch Events declares `getter boolean getModifierState(DOMString keyArg)`, but no
+ *   engine exposes modifier keys as named properties (`touchEvent["Shift"]` is `undefined`). `UIEvent`-style
+ *   `getModifierState` elsewhere is a regular operation.
+ */
+internal val NOT_INDEXERS = setOf("TouchEvent.getModifierState")
+
+/** `internal fun <T : JsAny> newJsObject(): T = js("({})")`, in `JsObjects.kt` next to [ITEM_ARRAY_LIKE]. */
 private const val NEW_JS_OBJECT = "newJsObject"
 private const val JS_ANY = "kotlin.js.JsAny"
 private const val UNIT = "kotlin.Unit"
+private const val STRING = "kotlin.String"
+private val INDEXER_KEY_TYPES = setOf("kotlin.Int", STRING)
 
 private val HEADER = """
     |/*
@@ -168,6 +189,7 @@ private class SpecFile(
                 is IdlInterface -> {
                     printInterface(d)
                     factoriesByHost[d.name].orEmpty().forEach(::printFactory)
+                    printIndexers(d)
                 }
 
                 is IdlNamespace -> printNamespace(d)
@@ -319,6 +341,58 @@ private class SpecFile(
     }
 
     /**
+     * Special getters and setters, named or anonymous, as `operator get`/`set` extensions (`nodeList[0]`,
+     * `dataset["x"] = "y"`), because an external declaration cannot declare them: `obj[key]` is not a call. Each calls
+     * a shared `js("…")` helper next to `ItemArrayLike` (`getProperty`, `getStringProperty`, `setProperty`,
+     * `setStringProperty`), chosen by the Kotlin types at the boundary: on Wasm they decide the conversion. A getter
+     * returns a nullable type: a missing index or name is `undefined`. Named ones keep their member too
+     * (`item(index)`). An inherited one applies through the receiver type.
+     */
+    private fun printIndexers(i: IdlInterface) {
+        val indexers = i.members
+            .filterIsInstance<IdlOperation>()
+            .filter { it.special in INDEXERS && "${i.name}.${it.name}" !in NOT_INDEXERS }
+            .distinctBy { memberKey(it.copy(name = null)) }
+        for (op in indexers) {
+            val key = op.arguments[0]
+            val keyName = name(key.name)
+            val keyType = indexerKeyType(i, key)
+            if (op.special == IdlOperationSpecial.GETTER) {
+                val returnType = map(op.returnType!!, TypePosition.RETURN).withNullable()
+                val helper = reference(if (isString(returnType, i)) "getStringProperty" else "getProperty")
+                line("public operator fun ${i.name}.get($keyName: $keyType): ${type(returnType)} = $helper(this, $keyName)")
+            } else {
+                val value = op.arguments[1]
+                val valueName = name(value.name)
+                val valueType = map(value.type, TypePosition.VALUE)
+                val helper = reference(if (isString(valueType, i)) "setStringProperty" else "setProperty")
+                line("public operator fun ${i.name}.set($keyName: $keyType, $valueName: ${type(valueType)}) { $helper(this, $keyName, $valueName) }")
+            }
+            line()
+        }
+    }
+
+    /** `Int` (an index) or `String` (a name): the key types the shared helpers take. */
+    private fun indexerKeyType(i: IdlInterface, key: IdlArgument): String {
+        val kotlin = map(key.type, TypePosition.VALUE)
+        check(kotlin is KotlinType.Named && kotlin.fqName in INDEXER_KEY_TYPES && !kotlin.nullable) {
+            "${i.name}: indexer key $kotlin has no helper"
+        }
+        return type(kotlin)
+    }
+
+    /**
+     * Whether an indexer value is a `String`, which needs the string helper; otherwise it must be a `JsAny` (an
+     * external type), which the generic one passes as is.
+     */
+    private fun isString(value: KotlinType, i: IdlInterface): Boolean = when {
+        value is KotlinType.Named && value.fqName == STRING -> true
+        value is KotlinType.Named && value.fqName == JS_ANY -> false
+        value is KotlinType.Reference && kotlinBackend.definitions[value.idlName] !is IdlCallback -> false
+        else -> error("${i.name}: indexer value $value has no helper")
+    }
+
+    /**
      * The companion of a class: its constants and static members. On an interface (a callback interface with
      * constants, e.g. `NodeFilter`) it needs `COMPANION_OBJECT_IN_EXTERNAL_INTERFACE` suppressed (Key
      * Decision 13), on the companion only.
@@ -352,6 +426,10 @@ private class SpecFile(
             }
 
             is IdlOperation -> when {
+                // Printed by printIndexers.
+                member.name == null && member.special in INDEXERS -> {}
+                // `stringifier;` is JS `toString()`, which Kotlin's `toString()` already calls.
+                member.name == null && member.special == IdlOperationSpecial.STRINGIFIER -> {}
                 member.name == null -> notPrinted(memberKey(member))
                 else -> {
                     val returnType = if (shape?.itemArrayLike != null && isItemGetter(member)) {

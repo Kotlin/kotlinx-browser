@@ -10,6 +10,9 @@ import org.jetbrains.kotlin.tools.idl.GoldenSliceTest.Companion.GOLDEN_SLICE
 import org.jetbrains.kotlin.tools.idl.GoldenSliceTest.Companion.slice
 import org.jetbrains.kotlin.tools.idl.loadEvents
 import org.jetbrains.kotlin.tools.idl.loadSurface
+import org.jetbrains.kotlin.tools.idl.ir.IdlInterface
+import org.jetbrains.kotlin.tools.idl.ir.IdlOperation
+import org.jetbrains.kotlin.tools.idl.ir.IdlOperationSpecial
 import org.jetbrains.kotlin.tools.idl.lowering.lower
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -33,6 +36,20 @@ class KotlinBackendTest {
     fun everySpecPrints() {
         val backend = KotlinBackend(lowered)
         lowered.ir.specs.forEach { backend.file(it) }
+    }
+
+    /** Each exclusion still names a special getter or setter, so it goes away when the spec is fixed. */
+    @Test
+    fun notIndexersAreStillSpecial() {
+        val specials = lowered.ir.definitions
+            .filterIsInstance<IdlInterface>()
+            .flatMap { i ->
+                i.members
+                    .filterIsInstance<IdlOperation>()
+                    .filter { it.special == IdlOperationSpecial.GETTER || it.special == IdlOperationSpecial.SETTER }
+                    .map { "${i.name}.${it.name}" }
+            }
+        assertEquals(emptySet(), NOT_INDEXERS - specials.toSet())
     }
 
     @Test
