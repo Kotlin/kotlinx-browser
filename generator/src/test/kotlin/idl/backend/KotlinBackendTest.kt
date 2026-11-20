@@ -52,6 +52,17 @@ class KotlinBackendTest {
         assertEquals(emptySet(), NOT_INDEXERS - specials.toSet())
     }
 
+    /** Each registration names an operation taking a callback interface, and its removal exists. */
+    @Test
+    fun listenerRegistrationsExist() {
+        val operations = lowered.ir.definitions
+            .filterIsInstance<IdlInterface>()
+            .flatMap { i -> i.members.filterIsInstance<IdlOperation>().map { "${i.name}.${it.name}" } }
+            .toSet()
+        val missing = LISTENER_REGISTRATIONS.flatMap { (add, remove) -> listOf(add, add.substringBefore('.') + "." + remove) }
+        assertEquals(emptySet(), missing.toSet() - operations)
+    }
+
     @Test
     fun enumValueNames() {
         val cases = mapOf(

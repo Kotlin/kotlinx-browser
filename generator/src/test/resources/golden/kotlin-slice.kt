@@ -648,9 +648,32 @@ public external open class EventTarget : JsAny {
     open fun addEventListener(type: String, callback: EventListener?, options: Boolean)
     open fun addEventListener(type: String, callback: EventListener?)
     open fun removeEventListener(type: String, callback: EventListener?, options: EventListenerOptions)
+    open fun removeEventListener(type: String, callback: (Event) -> Unit, options: EventListenerOptions)
     open fun removeEventListener(type: String, callback: EventListener?, options: Boolean)
+    open fun removeEventListener(type: String, callback: (Event) -> Unit, options: Boolean)
     open fun removeEventListener(type: String, callback: EventListener?)
+    open fun removeEventListener(type: String, callback: (Event) -> Unit)
     open fun dispatchEvent(event: Event): Boolean
+}
+
+private fun toEventListener(callback: (Event) -> Unit): EventListener = js("callback")
+
+public fun EventTarget.addEventListener(type: String, callback: (Event) -> Unit, options: AddEventListenerOptions): () -> Unit {
+    val listener = toEventListener(callback)
+    addEventListener(type, listener, options)
+    return { removeEventListener(type, listener, options) }
+}
+
+public fun EventTarget.addEventListener(type: String, callback: (Event) -> Unit, options: Boolean): () -> Unit {
+    val listener = toEventListener(callback)
+    addEventListener(type, listener, options)
+    return { removeEventListener(type, listener, options) }
+}
+
+public fun EventTarget.addEventListener(type: String, callback: (Event) -> Unit): () -> Unit {
+    val listener = toEventListener(callback)
+    addEventListener(type, listener)
+    return { removeEventListener(type, listener) }
 }
 
 public external interface EventListener : JsAny {
@@ -797,7 +820,9 @@ public external open class Document : Node, GlobalEventHandlers, NonElementParen
     open fun createEvent(`interface`: String): Event
     open fun createRange(): Range
     open fun createNodeIterator(root: Node, whatToShow: Int = definedExternally, filter: NodeFilter? = definedExternally): NodeIterator
+    open fun createNodeIterator(root: Node, whatToShow: Int = definedExternally, filter: (Node) -> Short): NodeIterator
     open fun createTreeWalker(root: Node, whatToShow: Int = definedExternally, filter: NodeFilter? = definedExternally): TreeWalker
+    open fun createTreeWalker(root: Node, whatToShow: Int = definedExternally, filter: (Node) -> Short): TreeWalker
     open val location: Location?
     open var domain: String
     open val referrer: String
@@ -969,8 +994,10 @@ public external open class Document : Node, GlobalEventHandlers, NonElementParen
     override fun querySelector(selectors: String): Element?
     override fun querySelectorAll(selectors: String): NodeList
     override fun createExpression(expression: String, resolver: XPathNSResolver?): XPathExpression
+    override fun createExpression(expression: String, resolver: (String?) -> String?): XPathExpression
     override fun createNSResolver(nodeResolver: Node): Node
     override fun evaluate(expression: String, contextNode: Node, resolver: XPathNSResolver?, type: Short, result: XPathResult?): XPathResult
+    override fun evaluate(expression: String, contextNode: Node, resolver: (String?) -> String?, type: Short, result: XPathResult?): XPathResult
     override fun getBoxQuads(options: BoxQuadOptions): JsArray<DOMQuad>
     override fun convertQuadFromNode(quad: DOMQuadInit, from: GeometryNode, options: ConvertCoordinateOptions): DOMQuad
     override fun convertRectFromNode(rect: DOMRectReadOnly, from: GeometryNode, options: ConvertCoordinateOptions): DOMQuad

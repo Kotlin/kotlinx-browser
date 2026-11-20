@@ -19,7 +19,7 @@ import org.jetbrains.kotlin.tools.idl.mapping.WasmTypeMapping
  *
  * Printed so far: interfaces, mixins and callback interfaces (by [Shape]), `[LegacyFactoryFunction]` classes,
  * namespaces, union markers, dictionaries (with factory functions), enums, special getters and setters (as
- * `operator` extensions), and their attributes, operations, constructors, constants and statics, with `override` and
+ * `operator` extensions), function-typed twins of operations taking callback interfaces, and their attributes, operations, constructors, constants and statics, with `override` and
  * `open` from [LoweredIR.overrides]. `iterable`/`maplike`/`setlike` and deleters are not printed yet; each leaves a
  * `// not printed yet:` line, so the golden file shows what is missing.
  */
@@ -141,6 +141,12 @@ private const val ITEM_ARRAY_LIKE = "ItemArrayLike"
 
 private val INDEXERS = setOf(IdlOperationSpecial.GETTER, IdlOperationSpecial.SETTER)
 
+/** Operations adding a listener, and the operation removing it: printed as extensions returning the removal. */
+internal val LISTENER_REGISTRATIONS = mapOf(
+    "EventTarget.addEventListener" to "removeEventListener",
+    "MediaQueryList.addListener" to "removeListener",
+)
+
 /**
  * Special operations that are specified as getters but are not ones in browsers; printed as plain members only.
  *
@@ -172,6 +178,8 @@ private class SpecFile(
     private val spec: IdlSpec
 ) {
     private val imports = sortedSetOf<String>()
+    /** Callback interfaces whose private lambda converter is already printed in this file. */
+    private val converters = mutableSetOf<String>()
     private val out = StringBuilder()
     private var indent = 0
 
@@ -190,6 +198,7 @@ private class SpecFile(
                     printInterface(d)
                     factoriesByHost[d.name].orEmpty().forEach(::printFactory)
                     printIndexers(d)
+                    printListenerRegistrations(d)
                 }
 
                 is IdlNamespace -> printNamespace(d)
@@ -372,6 +381,44 @@ private class SpecFile(
         }
     }
 
+    /**
+     * The operations in [LISTENER_REGISTRATIONS] as extensions taking a Kotlin function and returning a function that
+     * removes the listener again, one per overload:
+     * ```
+     * val remove = target.addEventListener("click") { event -> … }
+     * remove()
+     * ```
+     * An external member cannot have a body, hence extensions; a member twin taking a function would shadow them.
+     * The function is converted to the callback interface once, so the removal passes the same JS function. Removing
+     * by the same Kotlin function (`removeEventListener(type, f)`) works too: its twin is a member.
+     */
+    private fun printListenerRegistrations(i: IdlInterface) {
+        for (op in i.members.filterIsInstance<IdlOperation>()) {
+            val remove = LISTENER_REGISTRATIONS["${i.name}.${op.name}"] ?: continue
+            val callback = op.arguments.single { callbackInterface(it.type) != null }
+            val callbackInterface = callbackInterface(callback.type)!!
+            check(op.arguments.none { it.optional || it.variadic } && op.arguments.none { it.name == "listener" }) {
+                "${i.name}.${op.name}: cannot print a listener registration for ${memberKey(op)}"
+            }
+            check(i.members.any { it is IdlOperation && it.name == remove && it.arguments.size == op.arguments.size }) {
+                "${i.name}.${op.name}: no $remove(${op.arguments.size} arguments) to remove the listener"
+            }
+
+            val converter = "to${callbackInterface.name}"
+            if (converters.add(callbackInterface.name)) {
+                line("private fun $converter(callback: ${lambdaType(callbackInterface)}): ${reference(callbackInterface.name)} = js(\"callback\")")
+                line()
+            }
+
+            val arguments = op.arguments.joinToString(", ") { if (it == callback) "listener" else name(it.name) }
+            block("public fun ${i.name}.${op.name}(${parameters(op.arguments, defaults = false, lambdas = true)}): () -> Unit") {
+                line("val listener = $converter(${name(callback.name)})")
+                line("${op.name}($arguments)")
+                line("return { $remove($arguments) }")
+            }
+        }
+    }
+
     /** `Int` (an index) or `String` (a name): the key types the shared helpers take. */
     private fun indexerKeyType(i: IdlInterface, key: IdlArgument): String {
         val kotlin = map(key.type, TypePosition.VALUE)
@@ -438,8 +485,14 @@ private class SpecFile(
                     } else {
                         returnType(member.returnType!!)
                     }
-                    val parameters = parameters(member.arguments, defaults = modifier != "override ")
-                    line("${modifier}fun ${name(member.name)}($parameters)$returnType")
+                    val defaults = modifier != "override "
+                    val signature = "${modifier}fun ${name(member.name)}"
+                    line("$signature(${parameters(member.arguments, defaults)})$returnType")
+                    if (member.arguments.any { callbackInterface(it.type) != null } &&
+                        "${m.declaredIn}.${member.name}" !in LISTENER_REGISTRATIONS
+                    ) {
+                        line("$signature(${parameters(member.arguments, defaults, lambdas = true)})$returnType")
+                    }
                 }
             }
 
@@ -457,17 +510,38 @@ private class SpecFile(
     /**
      * Kotlin does not allow an overriding function to declare default values, so [defaults] is false for
      * `override`s; the overridden declaration has them.
+     *
+     * [lambdas]: the twin of an operation taking a callback interface, which takes a Kotlin function instead (a JS
+     * function is a valid callback interface value). The function is required and not nullable, so a call that omits
+     * it, or passes `null`, still resolves to the original (`createNodeIterator(root)`).
      */
-    private fun parameters(arguments: List<IdlArgument>, defaults: Boolean): String =
+    private fun parameters(arguments: List<IdlArgument>, defaults: Boolean, lambdas: Boolean = false): String =
         arguments.joinToString(", ") { a ->
             buildString {
                 if (a.variadic) append("vararg ")
+                val callbackInterface = callbackInterface(a.type).takeIf { lambdas }
+                if (callbackInterface != null) {
+                    append(name(a.name)).append(": ").append(lambdaType(callbackInterface))
+                    return@buildString
+                }
                 append(name(a.name)).append(": ").append(type(map(a.type, TypePosition.VALUE)))
                 if (a.optional && !a.variadic && defaults) {
                     append(" = definedExternally")
                 }
             }
         }
+
+    /** The callback interface [t] refers to, if any (`EventListener`, `NodeFilter`, `XPathNSResolver`). */
+    private fun callbackInterface(t: IdlType): IdlInterface? =
+        ((t as? IdlNamedType)?.let { kotlinBackend.definitions[it.name] } as? IdlInterface)
+            ?.takeIf { it.kind == IdlInterfaceKind.CALLBACK_INTERFACE }
+
+    /** The Kotlin function type of a callback interface: the signature of its single operation. */
+    private fun lambdaType(i: IdlInterface): String {
+        val op = i.members.filterIsInstance<IdlOperation>().singleOrNull { it.special == null }
+            ?: error("${i.name}: a callback interface without exactly one operation")
+        return functionType(IdlCallback(i.name, op.returnType!!, op.arguments, emptyList()), nullable = false, eventType = null)
+    }
 
     private fun returnType(t: IdlType): String {
         val kotlin = map(t, TypePosition.RETURN)
