@@ -1,0 +1,203 @@
+# Development guide
+
+How kotlinx-browser is built: where the declarations come from, how to regenerate them, and what the checks protect.
+For the decision to read Web IDL through `webidl2.js`, see [front-end-decision.md](front-end-decision.md). For
+the changes users see coming from the dukat-generated versions, see [migration-guide.md](migration-guide.md).
+
+## What the library is
+
+The library is Kotlin `external` declarations for the browser APIs (`org.w3c.*`, `org.khronos.webgl`), plus a few
+hand-written helpers (`kotlinx.browser`, `kotlinx.dom`), for **Kotlin/JS and Kotlin/Wasm from one source set**. The
+declarations are generated from the specifications' Web IDL. There is one copy in `webMain`, with no `expect`/`actual`.
+
+## Repository layout
+
+| Path | What it is | Edit by hand? |
+|---|---|---|
+| `src/webMain/generated/` | Generated declarations, one file per spec, at `<package path>/<spec>.kt` | **No.** Regenerate |
+| `src/webMain/kotlin/kotlinx/browser/` | `window`, `document`, `localStorage`, `sessionStorage` | Yes |
+| `src/webMain/kotlin/kotlinx/dom/` | DOM helpers (`addClass`, `appendText`, …), `ItemArrayLike` and `asList()`, `JsObjects.kt` (internal helpers the generated code calls) | Yes |
+| `src/{web,js,wasmJs}Main/kotlin/org.w3c/org.khronos.webgl.typedarrays.kt` | ECMAScript built-ins Web IDL refers to (`ArrayBuffer`, typed arrays, `DataView`) | Yes |
+| `src/{web,js,wasmJs}Main/kotlin/arrayCopy*.kt`, `src/webTest/kotlin/arrayCopyTest.kt` | Typed-array ↔ Kotlin-array conversions and their test | **No.** `./gradlew :generator:generateUtils` |
+| `src/webTest/kotlin/` | Runtime tests run on Node for both targets (`InteropTest`, `SmokeTest`) | Yes |
+| `api/kotlinx-browser.klib.api` | ABI dump for both targets in one file | **No.** `./gradlew updateKotlinAbi` |
+| `generator/` | The generator (Kotlin/JVM, Gradle subproject `:generator`) | Yes |
+| `idl/`, `webref-idl.json`, `webref-events.json`, `webref-css.json` | Pinned inputs, written by `npm run ingest` | **No.** Ingest |
+| `surface-report.txt` | Everything pruned from the allowlisted specs, and why | **No.** Regenerate |
+| `scripts/`, `package.json` | Node scripts for the ingest chore only | Yes |
+| `docs/` | This guide, the migration guide, decision records | Yes |
+
+`./gradlew` needs neither Node nor the network for anything except the Kotlin toolchain itself. Node is only used to
+ingest a new webref release.
+
+## Commands
+
+| Task | Command |
+|---|---|
+| Everything: compile, Node tests on both targets, generator tests, ABI check | `./gradlew check` |
+| Library tests only | `./gradlew jsNodeTest wasmJsNodeTest` |
+| Generator tests only | `./gradlew :generator:test` |
+| Regenerate the declarations and `surface-report.txt` | `./gradlew :generator:generateWebApi` |
+| Regenerate the typed-array conversions | `./gradlew :generator:generateUtils` |
+| Update the golden files after an intended generator change | `./gradlew :generator:test -PupdateGolden=true` |
+| Update the ABI dump after an intended API change | `./gradlew updateKotlinAbi` |
+| Render the IR back as Web IDL into `generator/build/idl-ir` (debugging) | `./gradlew :generator:dumpIdlIr` |
+
+`check` fails when anything committed is stale:
+
+- **`GeneratedSourcesTest`:** `src/webMain/generated` differs from what the generator prints.
+- **`GeneratedUtilsTest`:** the `arrayCopy*` files differ.
+- **Golden tests:** a golden file in `generator/src/test/resources/golden/` differs.
+- **`checkKotlinAbi`:** the ABI dump differs from the compiled library.
+
+The committed files the generator tests read are declared as inputs of `:generator:test`, so a hand edit to any of
+them reruns the tests instead of being skipped as up to date.
+
+### After changing the generator
+
+```shell
+./gradlew :generator:generateWebApi
+./gradlew :generator:test -PupdateGolden=true
+./gradlew updateKotlinAbi
+./gradlew check
+```
+
+Then review the diffs of `src/webMain/generated`, the goldens, `surface-report.txt` and `api/kotlinx-browser.klib.api`.
+The ABI diff is the user-visible change.
+
+## The pipeline
+
+```
+@webref/idl, @webref/events, @webref/css   (exact versions in package.json, one crawl)
+        │  npm run ingest  (Node, only when bumping)
+        ▼
+idl/*.idl, webref-idl.json (parsed by webidl2.js), webref-events.json, webref-css.json   (committed)
+        │  ./gradlew :generator:generateWebApi  (JVM only)
+        ▼
+frontend ─► surface ─► lowering ─► backend ─► src/webMain/generated/**/*.kt
+```
+
+All generator code is under `generator/src/main/kotlin/idl/`.
+
+| Stage | Code | What it does |
+|---|---|---|
+| Inputs | `IdlInput.kt`, `Specs.kt` | Paths of the committed inputs; `SPEC_ALLOWLIST` (spec → Kotlin package), `EXCLUDED_SPECS`, `EXCLUDED_TYPES` |
+| Front-end | `frontend/WebIdl2JsonFrontend.kt` | Reads `webref-idl.json` into the IR (`ir/IdlIR.kt`). The IR is lossless: `npm run check:ir-roundtrip` prints it back and compares |
+| | `frontend/WebrefEvents.kt` | Which event each `on…` handler receives |
+| | `frontend/WebrefCss.kt` | Adds the CSS property attributes of `CSSStyleProperties`, which CSSOM defines in prose rather than IDL, as a partial interface |
+| Surface | `surface/Surface.kt`, `surface/Builtins.kt` | Starts from the whole corpus. Keeps the allowlisted specs and prunes references into excluded specs and types (recorded in `surface-report.txt`). Any reference left unresolved fails generation |
+| Lowering | `lowering/Lowering.kt` | In order: `mergePartials`, `resolveTypedefs`, `UnionMarkers`, `expandUnionOverloads`, `Shapes`, `EventHandlerTypes`, `Overrides` |
+| Type mapping | `mapping/WasmTypeMapping.kt` | IDL type → Kotlin type, depending on position (`String` in a signature, `JsString` as a type argument) |
+| Backend | `backend/KotlinBackend.kt` | Prints one Kotlin file per spec |
+
+The lowerings, briefly:
+
+- **`mergePartials`:** folds `partial interface`/`partial dictionary` declarations into the main definition.
+- **`resolveTypedefs`:** replaces every typedef with its type.
+- **`UnionMarkers`:** a union whose members are all interfaces becomes an empty marker interface that every member
+  extends. It is named after its typedef (`CanvasImageSource`) or after its members (`UnionElementOrText`).
+- **`expandUnionOverloads`:** any other union in an argument becomes a set of overloads. Elsewhere it becomes
+  `JsAny`.
+- **`Shapes`:** decides each Kotlin shape:
+  - an interface with its own constructor → `open class`, without one → `abstract class`
+  - mixins and callback interfaces → `interface`
+  - namespaces → `object`
+  - `[LegacyFactoryFunction]` → its own `open class` (`Image`, `Audio`, `Option`)
+
+  It also copies constants and statics into class companions, because Kotlin companions are not inherited.
+- **`EventHandlerTypes`:** narrows `on…: ((Event) -> Unit)?` to the event actually fired, for example
+  `(PointerEvent) -> Unit`.
+- **`Overrides`:** marks what must be `override`, adds members a class inherits through more than one path, and drops
+  members that clash with a supertype.
+
+### What the backend prints
+
+| IDL | Kotlin |
+|---|---|
+| interface | `external open/abstract class`, or `external interface` for mixins and callback interfaces |
+| dictionary | `external interface X : Parent` with a `var` per field, plus a factory `fun X(...)`. Inherited fields come first, least derived first; required fields have no default. The factory only sets the arguments that are not `null`, so absent members stay absent |
+| enum | `external interface X : JsAny` with an empty companion; each value is `inline val X.Companion.V: X` (`RequestMode.CORS`) |
+| constant on a class | `val` in the class companion, read from the JS class |
+| constant on an interface | `inline val X.Companion.NAME: T get() = <IDL value>`, because an external interface's companion is not usable on Wasm |
+| special getter/setter | `operator fun X.get/set` extension over the helpers in `JsObjects.kt` |
+| operation taking a callback interface | An extra overload taking a Kotlin function. `addEventListener` and `MediaQueryList.addListener` are instead extensions that return `() -> Unit`, which removes the listener |
+| namespace | `external object` |
+
+Not printed yet: `iterable`/`maplike`/`setlike` declarations and deleters. Each leaves a `// not printed yet:` line in
+the golden file.
+
+## Changing what is generated
+
+- **Add a spec:** add a `SpecEntry(spec, package)` to `SPEC_ALLOWLIST` in `Specs.kt`, then regenerate. Specs only
+  referenced by allowlisted ones go into the "dependencies" part of the list.
+- **Leave out a spec or a built-in type that an allowlisted spec references:** add it to `EXCLUDED_SPECS` or
+  `EXCLUDED_TYPES` with a reason. References into it are pruned and listed in `surface-report.txt`. An entry that no
+  longer prunes anything fails generation, so the lists can only shrink.
+- **Packages:** every definition goes into its spec's package; there are no per-definition overrides.
+- **A spec bug the backend must work around:** keep the workaround narrow, named and tested so that it fails once
+  the spec is fixed. Example: `NOT_INDEXERS` in the backend, guarded by `notIndexersAreStillSpecial`.
+
+## Bumping webref
+
+```shell
+# 1. Edit package.json. @webref/idl, @webref/events and @webref/css must come from the same crawl:
+#    compare their publish times with `npm view @webref/idl time`.
+npm install
+npm run ingest                    # idl/, webref-idl.json, webref-events.json, webref-css.json
+./gradlew :generator:dumpIdlIr
+npm run check:ir-roundtrip        # the IR still reads every spec losslessly
+./gradlew :generator:generateWebApi
+./gradlew :generator:test -PupdateGolden=true
+./gradlew updateKotlinAbi
+./gradlew check
+```
+
+Review in this order:
+1. The JSON diff: what changed upstream.
+2. `surface-report.txt`: what is pruned now.
+3. The ABI diff: what users get.
+
+Generation fails on anything unresolved or ambiguous, for example a new reference into a spec that isn't allowlisted,
+or two enum values with the same Kotlin name. Resolve these explicitly; don't silence them.
+
+## Tests
+
+| Test | Where | Checks |
+|---|---|---|
+| Unit tests per stage | `generator/src/test/kotlin/idl/{frontend,surface,lowering,mapping,backend}` | Each pass on small IR built with `LoweringTestDsl`, and facts about the real corpus (`Real*Test`) |
+| Golden slice | `GoldenSliceTest`, `RealLoweringTest`, `KotlinBackendTest` with `golden/*.idl`, `golden/kotlin-slice.kt` | A fixed set of definitions (`GOLDEN_SLICE`) as parsed IDL, as lowered IDL and as Kotlin |
+| Up to date | `GeneratedSourcesTest`, `GeneratedUtilsTest` | Committed generated files equal fresh output |
+| Runtime | `src/webTest/kotlin/InteropTest.kt` | The shapes the generator relies on actually work on JS and Wasm (Node) |
+| ABI | `checkKotlinAbi` | `api/kotlinx-browser.klib.api` |
+
+When adding a generated shape, add a runtime test to `InteropTest` if the shape depends on interop behavior. Node has
+no DOM, so stand in plain objects (`js("({})")`) or globals you install yourself.
+
+## Platform behavior to know
+
+These were all found by runtime tests; check them before relying on similar constructs.
+
+- **Interface companions on Wasm:** a `val` in the companion of an `external interface` is not read from JS at all
+  (it is `0`). On JS it is read from a global named after the interface. This is why interface constants are inline
+  extensions holding the IDL value.
+- **Casts on Wasm:** casting to an external *class* (`as`, or a generic `T` bound to one) is an `instanceof` check
+  against the class's JS global. It throws if the global does not exist, for example `CSSStyleProperties` on Node or
+  in browsers that have not shipped that name. Use `unsafeCast` where the object is known to be right.
+- **`js()` on Wasm:** the declared parameter and return types decide the conversion at the boundary. That is why
+  `JsObjects.kt` has one helper per key and value kind. In an expression-bodied function, a `js()` call must be a
+  single expression: `= js("a; b;")` is a JS syntax error on Wasm.
+- **Same function, same listener:** a Kotlin function passed twice is the same JS function on both targets, so the
+  member `removeEventListener(type, f)` removes what `addEventListener(type, f)` added.
+- **Node's `EventTarget` (22.0–26.2) does not remove capture listeners.** This is a Node bug, reproducible in plain
+  JS. Tests use `capture = false`.
+- **`COMPANION_OBJECT_IN_EXTERNAL_INTERFACE`:** the generated enums and interfaces with constants suppress it on the
+  companion only. The compiler warns that this behavior is unspecified (172 warnings: 86 companions × 2 targets).
+
+## Conventions
+
+- Never edit generated files. Change the generator or its inputs and regenerate.
+- Every generated file starts with `generatedFileHeader` (`generator/src/main/kotlin/helpers/header.kt`): fixed text
+  and `\n`, so output is byte-identical on every date and OS.
+- Source files carry the Apache 2.0 header pointing to "the LICENSE file" at the repository root.
+- Generator failures list every problem at once (`LoweringException`, `SurfaceException`) instead of stopping at the
+  first.

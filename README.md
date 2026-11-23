@@ -79,13 +79,23 @@ kotlin {
 ```
 
 
+## Documentation
+
+* [Migration guide](docs/migration-guide.md): moving from the dukat-generated declarations (kotlinx-browser 0.x,
+  `kotlin-dom-api-compat`).
+* [Development guide](docs/development.md): how the declarations are generated from Web IDL, how to regenerate them,
+  and what the checks protect.
+* [Front-end decision record](docs/front-end-decision.md): why the generator reads Web IDL through `webidl2.js`.
+
 ## Building
 
-The project requires Kotlin 2.2.20-Beta2 to build and to run tests.
+The build uses the Kotlin Gradle plugin version pinned in `build.gradle.kts`; no separate Kotlin installation is
+needed. Node is only needed to ingest a new webref release.
 
-After that, the project can be opened in IDEA and/or built with Gradle.
-
-To build and run tests, execute:
-```gradle
-./gradlew build
+To build and run all checks, execute:
+```shell
+./gradlew check
 ```
+
+The sources in `src/webMain/generated` are generated; see the [development guide](docs/development.md) before
+changing them.
