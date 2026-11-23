@@ -20,11 +20,13 @@
     "get-json": "node scripts/get-json.js",
     "parse:idl": "node scripts/get-json.js",
     "parse": "node scripts/get-json.js",
-    "ingest": "npm run copy:idl && npm run get:json && npm run copy:events",
+    "ingest": "npm run copy:idl && npm run get:json && npm run copy:events && npm run copy:css",
     "check:ir-roundtrip": "node scripts/check-ir-roundtrip.js",
-    "copy:events": "node scripts/copy-events.js"
+    "copy:events": "node scripts/copy-events.js",
+    "copy:css": "node scripts/copy-css.js"
   },
   "dependencies": {
+    "@webref/css": "8.7.8",
     "@webref/events": "1.27.1",
     "@webref/idl": "3.86.0",
     "webidl2": "24.5.0"

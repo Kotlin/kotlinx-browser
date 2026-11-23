@@ -1,0 +1,5816 @@
+[
+  {
+    "name": "-webkit-align-content",
+    "legacyAliasOf": "align-content",
+    "styleDeclaration": [
+      "-webkit-align-content",
+      "WebkitAlignContent",
+      "webkitAlignContent"
+    ]
+  },
+  {
+    "name": "-webkit-align-items",
+    "legacyAliasOf": "align-items",
+    "styleDeclaration": [
+      "-webkit-align-items",
+      "WebkitAlignItems",
+      "webkitAlignItems"
+    ]
+  },
+  {
+    "name": "-webkit-align-self",
+    "legacyAliasOf": "align-self",
+    "styleDeclaration": [
+      "-webkit-align-self",
+      "WebkitAlignSelf",
+      "webkitAlignSelf"
+    ]
+  },
+  {
+    "name": "-webkit-animation",
+    "legacyAliasOf": "animation",
+    "styleDeclaration": [
+      "-webkit-animation",
+      "WebkitAnimation",
+      "webkitAnimation"
+    ]
+  },
+  {
+    "name": "-webkit-animation-delay",
+    "legacyAliasOf": "animation-delay",
+    "styleDeclaration": [
+      "-webkit-animation-delay",
+      "WebkitAnimationDelay",
+      "webkitAnimationDelay"
+    ]
+  },
+  {
+    "name": "-webkit-animation-direction",
+    "legacyAliasOf": "animation-direction",
+    "styleDeclaration": [
+      "-webkit-animation-direction",
+      "WebkitAnimationDirection",
+      "webkitAnimationDirection"
+    ]
+  },
+  {
+    "name": "-webkit-animation-duration",
+    "legacyAliasOf": "animation-duration",
+    "styleDeclaration": [
+      "-webkit-animation-duration",
+      "WebkitAnimationDuration",
+      "webkitAnimationDuration"
+    ]
+  },
+  {
+    "name": "-webkit-animation-fill-mode",
+    "legacyAliasOf": "animation-fill-mode",
+    "styleDeclaration": [
+      "-webkit-animation-fill-mode",
+      "WebkitAnimationFillMode",
+      "webkitAnimationFillMode"
+    ]
+  },
+  {
+    "name": "-webkit-animation-iteration-count",
+    "legacyAliasOf": "animation-iteration-count",
+    "styleDeclaration": [
+      "-webkit-animation-iteration-count",
+      "WebkitAnimationIterationCount",
+      "webkitAnimationIterationCount"
+    ]
+  },
+  {
+    "name": "-webkit-animation-name",
+    "legacyAliasOf": "animation-name",
+    "styleDeclaration": [
+      "-webkit-animation-name",
+      "WebkitAnimationName",
+      "webkitAnimationName"
+    ]
+  },
+  {
+    "name": "-webkit-animation-play-state",
+    "legacyAliasOf": "animation-play-state",
+    "styleDeclaration": [
+      "-webkit-animation-play-state",
+      "WebkitAnimationPlayState",
+      "webkitAnimationPlayState"
+    ]
+  },
+  {
+    "name": "-webkit-animation-timing-function",
+    "legacyAliasOf": "animation-timing-function",
+    "styleDeclaration": [
+      "-webkit-animation-timing-function",
+      "WebkitAnimationTimingFunction",
+      "webkitAnimationTimingFunction"
+    ]
+  },
+  {
+    "name": "-webkit-appearance",
+    "legacyAliasOf": "appearance",
+    "styleDeclaration": [
+      "-webkit-appearance",
+      "WebkitAppearance",
+      "webkitAppearance"
+    ]
+  },
+  {
+    "name": "-webkit-backface-visibility",
+    "legacyAliasOf": "backface-visibility",
+    "styleDeclaration": [
+      "-webkit-backface-visibility",
+      "WebkitBackfaceVisibility",
+      "webkitBackfaceVisibility"
+    ]
+  },
+  {
+    "name": "-webkit-background-clip",
+    "legacyAliasOf": "background-clip",
+    "styleDeclaration": [
+      "-webkit-background-clip",
+      "WebkitBackgroundClip",
+      "webkitBackgroundClip"
+    ]
+  },
+  {
+    "name": "-webkit-background-origin",
+    "legacyAliasOf": "background-origin",
+    "styleDeclaration": [
+      "-webkit-background-origin",
+      "WebkitBackgroundOrigin",
+      "webkitBackgroundOrigin"
+    ]
+  },
+  {
+    "name": "-webkit-background-size",
+    "legacyAliasOf": "background-size",
+    "styleDeclaration": [
+      "-webkit-background-size",
+      "WebkitBackgroundSize",
+      "webkitBackgroundSize"
+    ]
+  },
+  {
+    "name": "-webkit-border-bottom-left-radius",
+    "legacyAliasOf": "border-bottom-left-radius",
+    "styleDeclaration": [
+      "-webkit-border-bottom-left-radius",
+      "WebkitBorderBottomLeftRadius",
+      "webkitBorderBottomLeftRadius"
+    ]
+  },
+  {
+    "name": "-webkit-border-bottom-right-radius",
+    "legacyAliasOf": "border-bottom-right-radius",
+    "styleDeclaration": [
+      "-webkit-border-bottom-right-radius",
+      "WebkitBorderBottomRightRadius",
+      "webkitBorderBottomRightRadius"
+    ]
+  },
+  {
+    "name": "-webkit-border-radius",
+    "legacyAliasOf": "border-radius",
+    "styleDeclaration": [
+      "-webkit-border-radius",
+      "WebkitBorderRadius",
+      "webkitBorderRadius"
+    ]
+  },
+  {
+    "name": "-webkit-border-top-left-radius",
+    "legacyAliasOf": "border-top-left-radius",
+    "styleDeclaration": [
+      "-webkit-border-top-left-radius",
+      "WebkitBorderTopLeftRadius",
+      "webkitBorderTopLeftRadius"
+    ]
+  },
+  {
+    "name": "-webkit-border-top-right-radius",
+    "legacyAliasOf": "border-top-right-radius",
+    "styleDeclaration": [
+      "-webkit-border-top-right-radius",
+      "WebkitBorderTopRightRadius",
+      "webkitBorderTopRightRadius"
+    ]
+  },
+  {
+    "name": "-webkit-box-align",
+    "styleDeclaration": [
+      "-webkit-box-align",
+      "WebkitBoxAlign",
+      "webkitBoxAlign"
+    ]
+  },
+  {
+    "name": "-webkit-box-flex",
+    "styleDeclaration": [
+      "-webkit-box-flex",
+      "WebkitBoxFlex",
+      "webkitBoxFlex"
+    ]
+  },
+  {
+    "name": "-webkit-box-ordinal-group",
+    "styleDeclaration": [
+      "-webkit-box-ordinal-group",
+      "WebkitBoxOrdinalGroup",
+      "webkitBoxOrdinalGroup"
+    ]
+  },
+  {
+    "name": "-webkit-box-orient",
+    "styleDeclaration": [
+      "-webkit-box-orient",
+      "WebkitBoxOrient",
+      "webkitBoxOrient"
+    ]
+  },
+  {
+    "name": "-webkit-box-pack",
+    "styleDeclaration": [
+      "-webkit-box-pack",
+      "WebkitBoxPack",
+      "webkitBoxPack"
+    ]
+  },
+  {
+    "name": "-webkit-box-shadow",
+    "legacyAliasOf": "box-shadow",
+    "styleDeclaration": [
+      "-webkit-box-shadow",
+      "WebkitBoxShadow",
+      "webkitBoxShadow"
+    ]
+  },
+  {
+    "name": "-webkit-box-sizing",
+    "legacyAliasOf": "box-sizing",
+    "styleDeclaration": [
+      "-webkit-box-sizing",
+      "WebkitBoxSizing",
+      "webkitBoxSizing"
+    ]
+  },
+  {
+    "name": "-webkit-filter",
+    "legacyAliasOf": "filter",
+    "styleDeclaration": [
+      "-webkit-filter",
+      "WebkitFilter",
+      "webkitFilter"
+    ]
+  },
+  {
+    "name": "-webkit-flex",
+    "legacyAliasOf": "flex",
+    "styleDeclaration": [
+      "-webkit-flex",
+      "WebkitFlex",
+      "webkitFlex"
+    ]
+  },
+  {
+    "name": "-webkit-flex-basis",
+    "legacyAliasOf": "flex-basis",
+    "styleDeclaration": [
+      "-webkit-flex-basis",
+      "WebkitFlexBasis",
+      "webkitFlexBasis"
+    ]
+  },
+  {
+    "name": "-webkit-flex-direction",
+    "legacyAliasOf": "flex-direction",
+    "styleDeclaration": [
+      "-webkit-flex-direction",
+      "WebkitFlexDirection",
+      "webkitFlexDirection"
+    ]
+  },
+  {
+    "name": "-webkit-flex-flow",
+    "legacyAliasOf": "flex-flow",
+    "styleDeclaration": [
+      "-webkit-flex-flow",
+      "WebkitFlexFlow",
+      "webkitFlexFlow"
+    ]
+  },
+  {
+    "name": "-webkit-flex-grow",
+    "legacyAliasOf": "flex-grow",
+    "styleDeclaration": [
+      "-webkit-flex-grow",
+      "WebkitFlexGrow",
+      "webkitFlexGrow"
+    ]
+  },
+  {
+    "name": "-webkit-flex-shrink",
+    "legacyAliasOf": "flex-shrink",
+    "styleDeclaration": [
+      "-webkit-flex-shrink",
+      "WebkitFlexShrink",
+      "webkitFlexShrink"
+    ]
+  },
+  {
+    "name": "-webkit-flex-wrap",
+    "legacyAliasOf": "flex-wrap",
+    "styleDeclaration": [
+      "-webkit-flex-wrap",
+      "WebkitFlexWrap",
+      "webkitFlexWrap"
+    ]
+  },
+  {
+    "name": "-webkit-justify-content",
+    "legacyAliasOf": "justify-content",
+    "styleDeclaration": [
+      "-webkit-justify-content",
+      "WebkitJustifyContent",
+      "webkitJustifyContent"
+    ]
+  },
+  {
+    "name": "-webkit-line-clamp",
+    "styleDeclaration": [
+      "-webkit-line-clamp",
+      "WebkitLineClamp",
+      "webkitLineClamp"
+    ]
+  },
+  {
+    "name": "-webkit-mask",
+    "legacyAliasOf": "mask",
+    "styleDeclaration": [
+      "-webkit-mask",
+      "WebkitMask",
+      "webkitMask"
+    ]
+  },
+  {
+    "name": "-webkit-mask-box-image",
+    "legacyAliasOf": "mask-border",
+    "styleDeclaration": [
+      "-webkit-mask-box-image",
+      "WebkitMaskBoxImage",
+      "webkitMaskBoxImage"
+    ]
+  },
+  {
+    "name": "-webkit-mask-box-image-outset",
+    "legacyAliasOf": "mask-border-outset",
+    "styleDeclaration": [
+      "-webkit-mask-box-image-outset",
+      "WebkitMaskBoxImageOutset",
+      "webkitMaskBoxImageOutset"
+    ]
+  },
+  {
+    "name": "-webkit-mask-box-image-repeat",
+    "legacyAliasOf": "mask-border-repeat",
+    "styleDeclaration": [
+      "-webkit-mask-box-image-repeat",
+      "WebkitMaskBoxImageRepeat",
+      "webkitMaskBoxImageRepeat"
+    ]
+  },
+  {
+    "name": "-webkit-mask-box-image-slice",
+    "legacyAliasOf": "mask-border-slice",
+    "styleDeclaration": [
+      "-webkit-mask-box-image-slice",
+      "WebkitMaskBoxImageSlice",
+      "webkitMaskBoxImageSlice"
+    ]
+  },
+  {
+    "name": "-webkit-mask-box-image-source",
+    "legacyAliasOf": "mask-border-source",
+    "styleDeclaration": [
+      "-webkit-mask-box-image-source",
+      "WebkitMaskBoxImageSource",
+      "webkitMaskBoxImageSource"
+    ]
+  },
+  {
+    "name": "-webkit-mask-box-image-width",
+    "legacyAliasOf": "mask-border-width",
+    "styleDeclaration": [
+      "-webkit-mask-box-image-width",
+      "WebkitMaskBoxImageWidth",
+      "webkitMaskBoxImageWidth"
+    ]
+  },
+  {
+    "name": "-webkit-mask-clip",
+    "legacyAliasOf": "mask-clip",
+    "styleDeclaration": [
+      "-webkit-mask-clip",
+      "WebkitMaskClip",
+      "webkitMaskClip"
+    ]
+  },
+  {
+    "name": "-webkit-mask-composite",
+    "legacyAliasOf": "mask-composite",
+    "styleDeclaration": [
+      "-webkit-mask-composite",
+      "WebkitMaskComposite",
+      "webkitMaskComposite"
+    ]
+  },
+  {
+    "name": "-webkit-mask-image",
+    "legacyAliasOf": "mask-image",
+    "styleDeclaration": [
+      "-webkit-mask-image",
+      "WebkitMaskImage",
+      "webkitMaskImage"
+    ]
+  },
+  {
+    "name": "-webkit-mask-origin",
+    "legacyAliasOf": "mask-origin",
+    "styleDeclaration": [
+      "-webkit-mask-origin",
+      "WebkitMaskOrigin",
+      "webkitMaskOrigin"
+    ]
+  },
+  {
+    "name": "-webkit-mask-position",
+    "legacyAliasOf": "mask-position",
+    "styleDeclaration": [
+      "-webkit-mask-position",
+      "WebkitMaskPosition",
+      "webkitMaskPosition"
+    ]
+  },
+  {
+    "name": "-webkit-mask-repeat",
+    "legacyAliasOf": "mask-repeat",
+    "styleDeclaration": [
+      "-webkit-mask-repeat",
+      "WebkitMaskRepeat",
+      "webkitMaskRepeat"
+    ]
+  },
+  {
+    "name": "-webkit-mask-size",
+    "legacyAliasOf": "mask-size",
+    "styleDeclaration": [
+      "-webkit-mask-size",
+      "WebkitMaskSize",
+      "webkitMaskSize"
+    ]
+  },
+  {
+    "name": "-webkit-order",
+    "legacyAliasOf": "order",
+    "styleDeclaration": [
+      "-webkit-order",
+      "WebkitOrder",
+      "webkitOrder"
+    ]
+  },
+  {
+    "name": "-webkit-perspective",
+    "legacyAliasOf": "perspective",
+    "styleDeclaration": [
+      "-webkit-perspective",
+      "WebkitPerspective",
+      "webkitPerspective"
+    ]
+  },
+  {
+    "name": "-webkit-perspective-origin",
+    "legacyAliasOf": "perspective-origin",
+    "styleDeclaration": [
+      "-webkit-perspective-origin",
+      "WebkitPerspectiveOrigin",
+      "webkitPerspectiveOrigin"
+    ]
+  },
+  {
+    "name": "-webkit-text-fill-color",
+    "styleDeclaration": [
+      "-webkit-text-fill-color",
+      "WebkitTextFillColor",
+      "webkitTextFillColor"
+    ]
+  },
+  {
+    "name": "-webkit-text-size-adjust",
+    "legacyAliasOf": "text-size-adjust",
+    "styleDeclaration": [
+      "-webkit-text-size-adjust",
+      "WebkitTextSizeAdjust",
+      "webkitTextSizeAdjust"
+    ]
+  },
+  {
+    "name": "-webkit-text-stroke",
+    "styleDeclaration": [
+      "-webkit-text-stroke",
+      "WebkitTextStroke",
+      "webkitTextStroke"
+    ]
+  },
+  {
+    "name": "-webkit-text-stroke-color",
+    "styleDeclaration": [
+      "-webkit-text-stroke-color",
+      "WebkitTextStrokeColor",
+      "webkitTextStrokeColor"
+    ]
+  },
+  {
+    "name": "-webkit-text-stroke-width",
+    "styleDeclaration": [
+      "-webkit-text-stroke-width",
+      "WebkitTextStrokeWidth",
+      "webkitTextStrokeWidth"
+    ]
+  },
+  {
+    "name": "-webkit-transform",
+    "legacyAliasOf": "transform",
+    "styleDeclaration": [
+      "-webkit-transform",
+      "WebkitTransform",
+      "webkitTransform"
+    ]
+  },
+  {
+    "name": "-webkit-transform-origin",
+    "legacyAliasOf": "transform-origin",
+    "styleDeclaration": [
+      "-webkit-transform-origin",
+      "WebkitTransformOrigin",
+      "webkitTransformOrigin"
+    ]
+  },
+  {
+    "name": "-webkit-transform-style",
+    "legacyAliasOf": "transform-style",
+    "styleDeclaration": [
+      "-webkit-transform-style",
+      "WebkitTransformStyle",
+      "webkitTransformStyle"
+    ]
+  },
+  {
+    "name": "-webkit-transition",
+    "legacyAliasOf": "transition",
+    "styleDeclaration": [
+      "-webkit-transition",
+      "WebkitTransition",
+      "webkitTransition"
+    ]
+  },
+  {
+    "name": "-webkit-transition-delay",
+    "legacyAliasOf": "transition-delay",
+    "styleDeclaration": [
+      "-webkit-transition-delay",
+      "WebkitTransitionDelay",
+      "webkitTransitionDelay"
+    ]
+  },
+  {
+    "name": "-webkit-transition-duration",
+    "legacyAliasOf": "transition-duration",
+    "styleDeclaration": [
+      "-webkit-transition-duration",
+      "WebkitTransitionDuration",
+      "webkitTransitionDuration"
+    ]
+  },
+  {
+    "name": "-webkit-transition-property",
+    "legacyAliasOf": "transition-property",
+    "styleDeclaration": [
+      "-webkit-transition-property",
+      "WebkitTransitionProperty",
+      "webkitTransitionProperty"
+    ]
+  },
+  {
+    "name": "-webkit-transition-timing-function",
+    "legacyAliasOf": "transition-timing-function",
+    "styleDeclaration": [
+      "-webkit-transition-timing-function",
+      "WebkitTransitionTimingFunction",
+      "webkitTransitionTimingFunction"
+    ]
+  },
+  {
+    "name": "-webkit-user-select",
+    "styleDeclaration": [
+      "-webkit-user-select",
+      "WebkitUserSelect",
+      "webkitUserSelect"
+    ]
+  },
+  {
+    "name": "accent-color",
+    "styleDeclaration": [
+      "accent-color",
+      "accentColor"
+    ]
+  },
+  {
+    "name": "align-content",
+    "styleDeclaration": [
+      "align-content",
+      "alignContent"
+    ]
+  },
+  {
+    "name": "align-items",
+    "styleDeclaration": [
+      "align-items",
+      "alignItems"
+    ]
+  },
+  {
+    "name": "align-self",
+    "styleDeclaration": [
+      "align-self",
+      "alignSelf"
+    ]
+  },
+  {
+    "name": "alignment-baseline",
+    "styleDeclaration": [
+      "alignment-baseline",
+      "alignmentBaseline"
+    ]
+  },
+  {
+    "name": "all",
+    "styleDeclaration": [
+      "all"
+    ]
+  },
+  {
+    "name": "anchor-name",
+    "styleDeclaration": [
+      "anchor-name",
+      "anchorName"
+    ]
+  },
+  {
+    "name": "anchor-scope",
+    "styleDeclaration": [
+      "anchor-scope",
+      "anchorScope"
+    ]
+  },
+  {
+    "name": "animation",
+    "styleDeclaration": [
+      "animation"
+    ]
+  },
+  {
+    "name": "animation-composition",
+    "styleDeclaration": [
+      "animation-composition",
+      "animationComposition"
+    ]
+  },
+  {
+    "name": "animation-delay",
+    "styleDeclaration": [
+      "animation-delay",
+      "animationDelay"
+    ]
+  },
+  {
+    "name": "animation-delay-end",
+    "styleDeclaration": [
+      "animation-delay-end",
+      "animationDelayEnd"
+    ]
+  },
+  {
+    "name": "animation-delay-start",
+    "styleDeclaration": [
+      "animation-delay-start",
+      "animationDelayStart"
+    ]
+  },
+  {
+    "name": "animation-direction",
+    "styleDeclaration": [
+      "animation-direction",
+      "animationDirection"
+    ]
+  },
+  {
+    "name": "animation-duration",
+    "styleDeclaration": [
+      "animation-duration",
+      "animationDuration"
+    ]
+  },
+  {
+    "name": "animation-fill-mode",
+    "styleDeclaration": [
+      "animation-fill-mode",
+      "animationFillMode"
+    ]
+  },
+  {
+    "name": "animation-iteration-count",
+    "styleDeclaration": [
+      "animation-iteration-count",
+      "animationIterationCount"
+    ]
+  },
+  {
+    "name": "animation-name",
+    "styleDeclaration": [
+      "animation-name",
+      "animationName"
+    ]
+  },
+  {
+    "name": "animation-play-state",
+    "styleDeclaration": [
+      "animation-play-state",
+      "animationPlayState"
+    ]
+  },
+  {
+    "name": "animation-range",
+    "styleDeclaration": [
+      "animation-range",
+      "animationRange"
+    ]
+  },
+  {
+    "name": "animation-range-center",
+    "styleDeclaration": [
+      "animation-range-center",
+      "animationRangeCenter"
+    ]
+  },
+  {
+    "name": "animation-range-end",
+    "styleDeclaration": [
+      "animation-range-end",
+      "animationRangeEnd"
+    ]
+  },
+  {
+    "name": "animation-range-start",
+    "styleDeclaration": [
+      "animation-range-start",
+      "animationRangeStart"
+    ]
+  },
+  {
+    "name": "animation-timeline",
+    "styleDeclaration": [
+      "animation-timeline",
+      "animationTimeline"
+    ]
+  },
+  {
+    "name": "animation-timing-function",
+    "styleDeclaration": [
+      "animation-timing-function",
+      "animationTimingFunction"
+    ]
+  },
+  {
+    "name": "animation-trigger",
+    "styleDeclaration": [
+      "animation-trigger",
+      "animationTrigger"
+    ]
+  },
+  {
+    "name": "appearance",
+    "styleDeclaration": [
+      "appearance"
+    ]
+  },
+  {
+    "name": "aspect-ratio",
+    "styleDeclaration": [
+      "aspect-ratio",
+      "aspectRatio"
+    ]
+  },
+  {
+    "name": "backdrop-filter",
+    "styleDeclaration": [
+      "backdrop-filter",
+      "backdropFilter"
+    ]
+  },
+  {
+    "name": "backface-visibility",
+    "styleDeclaration": [
+      "backface-visibility",
+      "backfaceVisibility"
+    ]
+  },
+  {
+    "name": "background",
+    "styleDeclaration": [
+      "background"
+    ]
+  },
+  {
+    "name": "background-attachment",
+    "styleDeclaration": [
+      "background-attachment",
+      "backgroundAttachment"
+    ]
+  },
+  {
+    "name": "background-blend-mode",
+    "styleDeclaration": [
+      "background-blend-mode",
+      "backgroundBlendMode"
+    ]
+  },
+  {
+    "name": "background-clip",
+    "styleDeclaration": [
+      "background-clip",
+      "backgroundClip"
+    ]
+  },
+  {
+    "name": "background-color",
+    "styleDeclaration": [
+      "background-color",
+      "backgroundColor"
+    ]
+  },
+  {
+    "name": "background-image",
+    "styleDeclaration": [
+      "background-image",
+      "backgroundImage"
+    ]
+  },
+  {
+    "name": "background-origin",
+    "styleDeclaration": [
+      "background-origin",
+      "backgroundOrigin"
+    ]
+  },
+  {
+    "name": "background-position",
+    "styleDeclaration": [
+      "background-position",
+      "backgroundPosition"
+    ]
+  },
+  {
+    "name": "background-position-block",
+    "styleDeclaration": [
+      "background-position-block",
+      "backgroundPositionBlock"
+    ]
+  },
+  {
+    "name": "background-position-inline",
+    "styleDeclaration": [
+      "background-position-inline",
+      "backgroundPositionInline"
+    ]
+  },
+  {
+    "name": "background-position-x",
+    "styleDeclaration": [
+      "background-position-x",
+      "backgroundPositionX"
+    ]
+  },
+  {
+    "name": "background-position-y",
+    "styleDeclaration": [
+      "background-position-y",
+      "backgroundPositionY"
+    ]
+  },
+  {
+    "name": "background-repeat",
+    "styleDeclaration": [
+      "background-repeat",
+      "backgroundRepeat"
+    ]
+  },
+  {
+    "name": "background-repeat-block",
+    "styleDeclaration": [
+      "background-repeat-block",
+      "backgroundRepeatBlock"
+    ]
+  },
+  {
+    "name": "background-repeat-inline",
+    "styleDeclaration": [
+      "background-repeat-inline",
+      "backgroundRepeatInline"
+    ]
+  },
+  {
+    "name": "background-repeat-x",
+    "styleDeclaration": [
+      "background-repeat-x",
+      "backgroundRepeatX"
+    ]
+  },
+  {
+    "name": "background-repeat-y",
+    "styleDeclaration": [
+      "background-repeat-y",
+      "backgroundRepeatY"
+    ]
+  },
+  {
+    "name": "background-size",
+    "styleDeclaration": [
+      "background-size",
+      "backgroundSize"
+    ]
+  },
+  {
+    "name": "background-tbd",
+    "styleDeclaration": [
+      "background-tbd",
+      "backgroundTbd"
+    ]
+  },
+  {
+    "name": "baseline-shift",
+    "styleDeclaration": [
+      "baseline-shift",
+      "baselineShift"
+    ]
+  },
+  {
+    "name": "baseline-source",
+    "styleDeclaration": [
+      "baseline-source",
+      "baselineSource"
+    ]
+  },
+  {
+    "name": "block-ellipsis",
+    "styleDeclaration": [
+      "block-ellipsis",
+      "blockEllipsis"
+    ]
+  },
+  {
+    "name": "block-size",
+    "styleDeclaration": [
+      "block-size",
+      "blockSize"
+    ]
+  },
+  {
+    "name": "block-step",
+    "styleDeclaration": [
+      "block-step",
+      "blockStep"
+    ]
+  },
+  {
+    "name": "block-step-align",
+    "styleDeclaration": [
+      "block-step-align",
+      "blockStepAlign"
+    ]
+  },
+  {
+    "name": "block-step-insert",
+    "styleDeclaration": [
+      "block-step-insert",
+      "blockStepInsert"
+    ]
+  },
+  {
+    "name": "block-step-round",
+    "styleDeclaration": [
+      "block-step-round",
+      "blockStepRound"
+    ]
+  },
+  {
+    "name": "block-step-size",
+    "styleDeclaration": [
+      "block-step-size",
+      "blockStepSize"
+    ]
+  },
+  {
+    "name": "bookmark-label",
+    "styleDeclaration": [
+      "bookmark-label",
+      "bookmarkLabel"
+    ]
+  },
+  {
+    "name": "bookmark-level",
+    "styleDeclaration": [
+      "bookmark-level",
+      "bookmarkLevel"
+    ]
+  },
+  {
+    "name": "bookmark-state",
+    "styleDeclaration": [
+      "bookmark-state",
+      "bookmarkState"
+    ]
+  },
+  {
+    "name": "border",
+    "styleDeclaration": [
+      "border"
+    ]
+  },
+  {
+    "name": "border-block",
+    "styleDeclaration": [
+      "border-block",
+      "borderBlock"
+    ]
+  },
+  {
+    "name": "border-block-clip",
+    "styleDeclaration": [
+      "border-block-clip",
+      "borderBlockClip"
+    ]
+  },
+  {
+    "name": "border-block-color",
+    "styleDeclaration": [
+      "border-block-color",
+      "borderBlockColor"
+    ]
+  },
+  {
+    "name": "border-block-end",
+    "styleDeclaration": [
+      "border-block-end",
+      "borderBlockEnd"
+    ]
+  },
+  {
+    "name": "border-block-end-clip",
+    "styleDeclaration": [
+      "border-block-end-clip",
+      "borderBlockEndClip"
+    ]
+  },
+  {
+    "name": "border-block-end-color",
+    "styleDeclaration": [
+      "border-block-end-color",
+      "borderBlockEndColor"
+    ]
+  },
+  {
+    "name": "border-block-end-radius",
+    "styleDeclaration": [
+      "border-block-end-radius",
+      "borderBlockEndRadius"
+    ]
+  },
+  {
+    "name": "border-block-end-style",
+    "styleDeclaration": [
+      "border-block-end-style",
+      "borderBlockEndStyle"
+    ]
+  },
+  {
+    "name": "border-block-end-width",
+    "styleDeclaration": [
+      "border-block-end-width",
+      "borderBlockEndWidth"
+    ]
+  },
+  {
+    "name": "border-block-start",
+    "styleDeclaration": [
+      "border-block-start",
+      "borderBlockStart"
+    ]
+  },
+  {
+    "name": "border-block-start-clip",
+    "styleDeclaration": [
+      "border-block-start-clip",
+      "borderBlockStartClip"
+    ]
+  },
+  {
+    "name": "border-block-start-color",
+    "styleDeclaration": [
+      "border-block-start-color",
+      "borderBlockStartColor"
+    ]
+  },
+  {
+    "name": "border-block-start-radius",
+    "styleDeclaration": [
+      "border-block-start-radius",
+      "borderBlockStartRadius"
+    ]
+  },
+  {
+    "name": "border-block-start-style",
+    "styleDeclaration": [
+      "border-block-start-style",
+      "borderBlockStartStyle"
+    ]
+  },
+  {
+    "name": "border-block-start-width",
+    "styleDeclaration": [
+      "border-block-start-width",
+      "borderBlockStartWidth"
+    ]
+  },
+  {
+    "name": "border-block-style",
+    "styleDeclaration": [
+      "border-block-style",
+      "borderBlockStyle"
+    ]
+  },
+  {
+    "name": "border-block-width",
+    "styleDeclaration": [
+      "border-block-width",
+      "borderBlockWidth"
+    ]
+  },
+  {
+    "name": "border-bottom",
+    "styleDeclaration": [
+      "border-bottom",
+      "borderBottom"
+    ]
+  },
+  {
+    "name": "border-bottom-clip",
+    "styleDeclaration": [
+      "border-bottom-clip",
+      "borderBottomClip"
+    ]
+  },
+  {
+    "name": "border-bottom-color",
+    "styleDeclaration": [
+      "border-bottom-color",
+      "borderBottomColor"
+    ]
+  },
+  {
+    "name": "border-bottom-left-radius",
+    "styleDeclaration": [
+      "border-bottom-left-radius",
+      "borderBottomLeftRadius"
+    ]
+  },
+  {
+    "name": "border-bottom-radius",
+    "styleDeclaration": [
+      "border-bottom-radius",
+      "borderBottomRadius"
+    ]
+  },
+  {
+    "name": "border-bottom-right-radius",
+    "styleDeclaration": [
+      "border-bottom-right-radius",
+      "borderBottomRightRadius"
+    ]
+  },
+  {
+    "name": "border-bottom-style",
+    "styleDeclaration": [
+      "border-bottom-style",
+      "borderBottomStyle"
+    ]
+  },
+  {
+    "name": "border-bottom-width",
+    "styleDeclaration": [
+      "border-bottom-width",
+      "borderBottomWidth"
+    ]
+  },
+  {
+    "name": "border-boundary",
+    "styleDeclaration": [
+      "border-boundary",
+      "borderBoundary"
+    ]
+  },
+  {
+    "name": "border-clip",
+    "styleDeclaration": [
+      "border-clip",
+      "borderClip"
+    ]
+  },
+  {
+    "name": "border-collapse",
+    "styleDeclaration": [
+      "border-collapse",
+      "borderCollapse"
+    ]
+  },
+  {
+    "name": "border-color",
+    "styleDeclaration": [
+      "border-color",
+      "borderColor"
+    ]
+  },
+  {
+    "name": "border-end-end-radius",
+    "styleDeclaration": [
+      "border-end-end-radius",
+      "borderEndEndRadius"
+    ]
+  },
+  {
+    "name": "border-end-start-radius",
+    "styleDeclaration": [
+      "border-end-start-radius",
+      "borderEndStartRadius"
+    ]
+  },
+  {
+    "name": "border-image",
+    "styleDeclaration": [
+      "border-image",
+      "borderImage"
+    ]
+  },
+  {
+    "name": "border-image-outset",
+    "styleDeclaration": [
+      "border-image-outset",
+      "borderImageOutset"
+    ]
+  },
+  {
+    "name": "border-image-repeat",
+    "styleDeclaration": [
+      "border-image-repeat",
+      "borderImageRepeat"
+    ]
+  },
+  {
+    "name": "border-image-slice",
+    "styleDeclaration": [
+      "border-image-slice",
+      "borderImageSlice"
+    ]
+  },
+  {
+    "name": "border-image-source",
+    "styleDeclaration": [
+      "border-image-source",
+      "borderImageSource"
+    ]
+  },
+  {
+    "name": "border-image-width",
+    "styleDeclaration": [
+      "border-image-width",
+      "borderImageWidth"
+    ]
+  },
+  {
+    "name": "border-inline",
+    "styleDeclaration": [
+      "border-inline",
+      "borderInline"
+    ]
+  },
+  {
+    "name": "border-inline-clip",
+    "styleDeclaration": [
+      "border-inline-clip",
+      "borderInlineClip"
+    ]
+  },
+  {
+    "name": "border-inline-color",
+    "styleDeclaration": [
+      "border-inline-color",
+      "borderInlineColor"
+    ]
+  },
+  {
+    "name": "border-inline-end",
+    "styleDeclaration": [
+      "border-inline-end",
+      "borderInlineEnd"
+    ]
+  },
+  {
+    "name": "border-inline-end-clip",
+    "styleDeclaration": [
+      "border-inline-end-clip",
+      "borderInlineEndClip"
+    ]
+  },
+  {
+    "name": "border-inline-end-color",
+    "styleDeclaration": [
+      "border-inline-end-color",
+      "borderInlineEndColor"
+    ]
+  },
+  {
+    "name": "border-inline-end-radius",
+    "styleDeclaration": [
+      "border-inline-end-radius",
+      "borderInlineEndRadius"
+    ]
+  },
+  {
+    "name": "border-inline-end-style",
+    "styleDeclaration": [
+      "border-inline-end-style",
+      "borderInlineEndStyle"
+    ]
+  },
+  {
+    "name": "border-inline-end-width",
+    "styleDeclaration": [
+      "border-inline-end-width",
+      "borderInlineEndWidth"
+    ]
+  },
+  {
+    "name": "border-inline-start",
+    "styleDeclaration": [
+      "border-inline-start",
+      "borderInlineStart"
+    ]
+  },
+  {
+    "name": "border-inline-start-clip",
+    "styleDeclaration": [
+      "border-inline-start-clip",
+      "borderInlineStartClip"
+    ]
+  },
+  {
+    "name": "border-inline-start-color",
+    "styleDeclaration": [
+      "border-inline-start-color",
+      "borderInlineStartColor"
+    ]
+  },
+  {
+    "name": "border-inline-start-radius",
+    "styleDeclaration": [
+      "border-inline-start-radius",
+      "borderInlineStartRadius"
+    ]
+  },
+  {
+    "name": "border-inline-start-style",
+    "styleDeclaration": [
+      "border-inline-start-style",
+      "borderInlineStartStyle"
+    ]
+  },
+  {
+    "name": "border-inline-start-width",
+    "styleDeclaration": [
+      "border-inline-start-width",
+      "borderInlineStartWidth"
+    ]
+  },
+  {
+    "name": "border-inline-style",
+    "styleDeclaration": [
+      "border-inline-style",
+      "borderInlineStyle"
+    ]
+  },
+  {
+    "name": "border-inline-width",
+    "styleDeclaration": [
+      "border-inline-width",
+      "borderInlineWidth"
+    ]
+  },
+  {
+    "name": "border-left",
+    "styleDeclaration": [
+      "border-left",
+      "borderLeft"
+    ]
+  },
+  {
+    "name": "border-left-clip",
+    "styleDeclaration": [
+      "border-left-clip",
+      "borderLeftClip"
+    ]
+  },
+  {
+    "name": "border-left-color",
+    "styleDeclaration": [
+      "border-left-color",
+      "borderLeftColor"
+    ]
+  },
+  {
+    "name": "border-left-radius",
+    "styleDeclaration": [
+      "border-left-radius",
+      "borderLeftRadius"
+    ]
+  },
+  {
+    "name": "border-left-style",
+    "styleDeclaration": [
+      "border-left-style",
+      "borderLeftStyle"
+    ]
+  },
+  {
+    "name": "border-left-width",
+    "styleDeclaration": [
+      "border-left-width",
+      "borderLeftWidth"
+    ]
+  },
+  {
+    "name": "border-limit",
+    "styleDeclaration": [
+      "border-limit",
+      "borderLimit"
+    ]
+  },
+  {
+    "name": "border-radius",
+    "styleDeclaration": [
+      "border-radius",
+      "borderRadius"
+    ]
+  },
+  {
+    "name": "border-right",
+    "styleDeclaration": [
+      "border-right",
+      "borderRight"
+    ]
+  },
+  {
+    "name": "border-right-clip",
+    "styleDeclaration": [
+      "border-right-clip",
+      "borderRightClip"
+    ]
+  },
+  {
+    "name": "border-right-color",
+    "styleDeclaration": [
+      "border-right-color",
+      "borderRightColor"
+    ]
+  },
+  {
+    "name": "border-right-radius",
+    "styleDeclaration": [
+      "border-right-radius",
+      "borderRightRadius"
+    ]
+  },
+  {
+    "name": "border-right-style",
+    "styleDeclaration": [
+      "border-right-style",
+      "borderRightStyle"
+    ]
+  },
+  {
+    "name": "border-right-width",
+    "styleDeclaration": [
+      "border-right-width",
+      "borderRightWidth"
+    ]
+  },
+  {
+    "name": "border-shape",
+    "styleDeclaration": [
+      "border-shape",
+      "borderShape"
+    ]
+  },
+  {
+    "name": "border-spacing",
+    "styleDeclaration": [
+      "border-spacing",
+      "borderSpacing"
+    ]
+  },
+  {
+    "name": "border-start-end-radius",
+    "styleDeclaration": [
+      "border-start-end-radius",
+      "borderStartEndRadius"
+    ]
+  },
+  {
+    "name": "border-start-start-radius",
+    "styleDeclaration": [
+      "border-start-start-radius",
+      "borderStartStartRadius"
+    ]
+  },
+  {
+    "name": "border-style",
+    "styleDeclaration": [
+      "border-style",
+      "borderStyle"
+    ]
+  },
+  {
+    "name": "border-top",
+    "styleDeclaration": [
+      "border-top",
+      "borderTop"
+    ]
+  },
+  {
+    "name": "border-top-clip",
+    "styleDeclaration": [
+      "border-top-clip",
+      "borderTopClip"
+    ]
+  },
+  {
+    "name": "border-top-color",
+    "styleDeclaration": [
+      "border-top-color",
+      "borderTopColor"
+    ]
+  },
+  {
+    "name": "border-top-left-radius",
+    "styleDeclaration": [
+      "border-top-left-radius",
+      "borderTopLeftRadius"
+    ]
+  },
+  {
+    "name": "border-top-radius",
+    "styleDeclaration": [
+      "border-top-radius",
+      "borderTopRadius"
+    ]
+  },
+  {
+    "name": "border-top-right-radius",
+    "styleDeclaration": [
+      "border-top-right-radius",
+      "borderTopRightRadius"
+    ]
+  },
+  {
+    "name": "border-top-style",
+    "styleDeclaration": [
+      "border-top-style",
+      "borderTopStyle"
+    ]
+  },
+  {
+    "name": "border-top-width",
+    "styleDeclaration": [
+      "border-top-width",
+      "borderTopWidth"
+    ]
+  },
+  {
+    "name": "border-width",
+    "styleDeclaration": [
+      "border-width",
+      "borderWidth"
+    ]
+  },
+  {
+    "name": "bottom",
+    "styleDeclaration": [
+      "bottom"
+    ]
+  },
+  {
+    "name": "box-decoration-break",
+    "styleDeclaration": [
+      "box-decoration-break",
+      "boxDecorationBreak"
+    ]
+  },
+  {
+    "name": "box-shadow",
+    "styleDeclaration": [
+      "box-shadow",
+      "boxShadow"
+    ]
+  },
+  {
+    "name": "box-shadow-blur",
+    "styleDeclaration": [
+      "box-shadow-blur",
+      "boxShadowBlur"
+    ]
+  },
+  {
+    "name": "box-shadow-color",
+    "styleDeclaration": [
+      "box-shadow-color",
+      "boxShadowColor"
+    ]
+  },
+  {
+    "name": "box-shadow-offset",
+    "styleDeclaration": [
+      "box-shadow-offset",
+      "boxShadowOffset"
+    ]
+  },
+  {
+    "name": "box-shadow-position",
+    "styleDeclaration": [
+      "box-shadow-position",
+      "boxShadowPosition"
+    ]
+  },
+  {
+    "name": "box-shadow-spread",
+    "styleDeclaration": [
+      "box-shadow-spread",
+      "boxShadowSpread"
+    ]
+  },
+  {
+    "name": "box-sizing",
+    "styleDeclaration": [
+      "box-sizing",
+      "boxSizing"
+    ]
+  },
+  {
+    "name": "box-snap",
+    "styleDeclaration": [
+      "box-snap",
+      "boxSnap"
+    ]
+  },
+  {
+    "name": "break-after",
+    "styleDeclaration": [
+      "break-after",
+      "breakAfter"
+    ]
+  },
+  {
+    "name": "break-before",
+    "styleDeclaration": [
+      "break-before",
+      "breakBefore"
+    ]
+  },
+  {
+    "name": "break-inside",
+    "styleDeclaration": [
+      "break-inside",
+      "breakInside"
+    ]
+  },
+  {
+    "name": "caption-side",
+    "styleDeclaration": [
+      "caption-side",
+      "captionSide"
+    ]
+  },
+  {
+    "name": "caret",
+    "styleDeclaration": [
+      "caret"
+    ]
+  },
+  {
+    "name": "caret-animation",
+    "styleDeclaration": [
+      "caret-animation",
+      "caretAnimation"
+    ]
+  },
+  {
+    "name": "caret-color",
+    "styleDeclaration": [
+      "caret-color",
+      "caretColor"
+    ]
+  },
+  {
+    "name": "caret-shape",
+    "styleDeclaration": [
+      "caret-shape",
+      "caretShape"
+    ]
+  },
+  {
+    "name": "clear",
+    "styleDeclaration": [
+      "clear"
+    ]
+  },
+  {
+    "name": "clip",
+    "styleDeclaration": [
+      "clip"
+    ]
+  },
+  {
+    "name": "clip-path",
+    "styleDeclaration": [
+      "clip-path",
+      "clipPath"
+    ]
+  },
+  {
+    "name": "clip-rule",
+    "styleDeclaration": [
+      "clip-rule",
+      "clipRule"
+    ]
+  },
+  {
+    "name": "color",
+    "styleDeclaration": [
+      "color"
+    ]
+  },
+  {
+    "name": "color-adjust",
+    "styleDeclaration": [
+      "color-adjust",
+      "colorAdjust"
+    ]
+  },
+  {
+    "name": "color-interpolation",
+    "styleDeclaration": [
+      "color-interpolation",
+      "colorInterpolation"
+    ]
+  },
+  {
+    "name": "color-interpolation-filters",
+    "styleDeclaration": [
+      "color-interpolation-filters",
+      "colorInterpolationFilters"
+    ]
+  },
+  {
+    "name": "color-scheme",
+    "styleDeclaration": [
+      "color-scheme",
+      "colorScheme"
+    ]
+  },
+  {
+    "name": "column-count",
+    "styleDeclaration": [
+      "column-count",
+      "columnCount"
+    ]
+  },
+  {
+    "name": "column-fill",
+    "styleDeclaration": [
+      "column-fill",
+      "columnFill"
+    ]
+  },
+  {
+    "name": "column-gap",
+    "styleDeclaration": [
+      "column-gap",
+      "columnGap"
+    ]
+  },
+  {
+    "name": "column-height",
+    "styleDeclaration": [
+      "column-height",
+      "columnHeight"
+    ]
+  },
+  {
+    "name": "column-rule",
+    "styleDeclaration": [
+      "column-rule",
+      "columnRule"
+    ]
+  },
+  {
+    "name": "column-rule-break",
+    "styleDeclaration": [
+      "column-rule-break",
+      "columnRuleBreak"
+    ]
+  },
+  {
+    "name": "column-rule-color",
+    "styleDeclaration": [
+      "column-rule-color",
+      "columnRuleColor"
+    ]
+  },
+  {
+    "name": "column-rule-inset",
+    "styleDeclaration": [
+      "column-rule-inset",
+      "columnRuleInset"
+    ]
+  },
+  {
+    "name": "column-rule-inset-cap",
+    "styleDeclaration": [
+      "column-rule-inset-cap",
+      "columnRuleInsetCap"
+    ]
+  },
+  {
+    "name": "column-rule-inset-cap-end",
+    "styleDeclaration": [
+      "column-rule-inset-cap-end",
+      "columnRuleInsetCapEnd"
+    ]
+  },
+  {
+    "name": "column-rule-inset-cap-start",
+    "styleDeclaration": [
+      "column-rule-inset-cap-start",
+      "columnRuleInsetCapStart"
+    ]
+  },
+  {
+    "name": "column-rule-inset-end",
+    "styleDeclaration": [
+      "column-rule-inset-end",
+      "columnRuleInsetEnd"
+    ]
+  },
+  {
+    "name": "column-rule-inset-junction",
+    "styleDeclaration": [
+      "column-rule-inset-junction",
+      "columnRuleInsetJunction"
+    ]
+  },
+  {
+    "name": "column-rule-inset-junction-end",
+    "styleDeclaration": [
+      "column-rule-inset-junction-end",
+      "columnRuleInsetJunctionEnd"
+    ]
+  },
+  {
+    "name": "column-rule-inset-junction-start",
+    "styleDeclaration": [
+      "column-rule-inset-junction-start",
+      "columnRuleInsetJunctionStart"
+    ]
+  },
+  {
+    "name": "column-rule-inset-start",
+    "styleDeclaration": [
+      "column-rule-inset-start",
+      "columnRuleInsetStart"
+    ]
+  },
+  {
+    "name": "column-rule-style",
+    "styleDeclaration": [
+      "column-rule-style",
+      "columnRuleStyle"
+    ]
+  },
+  {
+    "name": "column-rule-visibility-items",
+    "styleDeclaration": [
+      "column-rule-visibility-items",
+      "columnRuleVisibilityItems"
+    ]
+  },
+  {
+    "name": "column-rule-width",
+    "styleDeclaration": [
+      "column-rule-width",
+      "columnRuleWidth"
+    ]
+  },
+  {
+    "name": "column-span",
+    "styleDeclaration": [
+      "column-span",
+      "columnSpan"
+    ]
+  },
+  {
+    "name": "column-width",
+    "styleDeclaration": [
+      "column-width",
+      "columnWidth"
+    ]
+  },
+  {
+    "name": "column-wrap",
+    "styleDeclaration": [
+      "column-wrap",
+      "columnWrap"
+    ]
+  },
+  {
+    "name": "columns",
+    "styleDeclaration": [
+      "columns"
+    ]
+  },
+  {
+    "name": "contain",
+    "styleDeclaration": [
+      "contain"
+    ]
+  },
+  {
+    "name": "contain-intrinsic-block-size",
+    "styleDeclaration": [
+      "contain-intrinsic-block-size",
+      "containIntrinsicBlockSize"
+    ]
+  },
+  {
+    "name": "contain-intrinsic-height",
+    "styleDeclaration": [
+      "contain-intrinsic-height",
+      "containIntrinsicHeight"
+    ]
+  },
+  {
+    "name": "contain-intrinsic-inline-size",
+    "styleDeclaration": [
+      "contain-intrinsic-inline-size",
+      "containIntrinsicInlineSize"
+    ]
+  },
+  {
+    "name": "contain-intrinsic-size",
+    "styleDeclaration": [
+      "contain-intrinsic-size",
+      "containIntrinsicSize"
+    ]
+  },
+  {
+    "name": "contain-intrinsic-width",
+    "styleDeclaration": [
+      "contain-intrinsic-width",
+      "containIntrinsicWidth"
+    ]
+  },
+  {
+    "name": "container",
+    "styleDeclaration": [
+      "container"
+    ]
+  },
+  {
+    "name": "container-name",
+    "styleDeclaration": [
+      "container-name",
+      "containerName"
+    ]
+  },
+  {
+    "name": "container-type",
+    "styleDeclaration": [
+      "container-type",
+      "containerType"
+    ]
+  },
+  {
+    "name": "content",
+    "styleDeclaration": [
+      "content"
+    ]
+  },
+  {
+    "name": "content-visibility",
+    "styleDeclaration": [
+      "content-visibility",
+      "contentVisibility"
+    ]
+  },
+  {
+    "name": "continue",
+    "styleDeclaration": [
+      "continue"
+    ]
+  },
+  {
+    "name": "copy-into",
+    "styleDeclaration": [
+      "copy-into",
+      "copyInto"
+    ]
+  },
+  {
+    "name": "corner",
+    "styleDeclaration": [
+      "corner"
+    ]
+  },
+  {
+    "name": "corner-block-end",
+    "styleDeclaration": [
+      "corner-block-end",
+      "cornerBlockEnd"
+    ]
+  },
+  {
+    "name": "corner-block-end-shape",
+    "styleDeclaration": [
+      "corner-block-end-shape",
+      "cornerBlockEndShape"
+    ]
+  },
+  {
+    "name": "corner-block-start",
+    "styleDeclaration": [
+      "corner-block-start",
+      "cornerBlockStart"
+    ]
+  },
+  {
+    "name": "corner-block-start-shape",
+    "styleDeclaration": [
+      "corner-block-start-shape",
+      "cornerBlockStartShape"
+    ]
+  },
+  {
+    "name": "corner-bottom",
+    "styleDeclaration": [
+      "corner-bottom",
+      "cornerBottom"
+    ]
+  },
+  {
+    "name": "corner-bottom-left",
+    "styleDeclaration": [
+      "corner-bottom-left",
+      "cornerBottomLeft"
+    ]
+  },
+  {
+    "name": "corner-bottom-left-shape",
+    "styleDeclaration": [
+      "corner-bottom-left-shape",
+      "cornerBottomLeftShape"
+    ]
+  },
+  {
+    "name": "corner-bottom-right",
+    "styleDeclaration": [
+      "corner-bottom-right",
+      "cornerBottomRight"
+    ]
+  },
+  {
+    "name": "corner-bottom-right-shape",
+    "styleDeclaration": [
+      "corner-bottom-right-shape",
+      "cornerBottomRightShape"
+    ]
+  },
+  {
+    "name": "corner-bottom-shape",
+    "styleDeclaration": [
+      "corner-bottom-shape",
+      "cornerBottomShape"
+    ]
+  },
+  {
+    "name": "corner-end-end",
+    "styleDeclaration": [
+      "corner-end-end",
+      "cornerEndEnd"
+    ]
+  },
+  {
+    "name": "corner-end-end-shape",
+    "styleDeclaration": [
+      "corner-end-end-shape",
+      "cornerEndEndShape"
+    ]
+  },
+  {
+    "name": "corner-end-start",
+    "styleDeclaration": [
+      "corner-end-start",
+      "cornerEndStart"
+    ]
+  },
+  {
+    "name": "corner-end-start-shape",
+    "styleDeclaration": [
+      "corner-end-start-shape",
+      "cornerEndStartShape"
+    ]
+  },
+  {
+    "name": "corner-inline-end",
+    "styleDeclaration": [
+      "corner-inline-end",
+      "cornerInlineEnd"
+    ]
+  },
+  {
+    "name": "corner-inline-end-shape",
+    "styleDeclaration": [
+      "corner-inline-end-shape",
+      "cornerInlineEndShape"
+    ]
+  },
+  {
+    "name": "corner-inline-start",
+    "styleDeclaration": [
+      "corner-inline-start",
+      "cornerInlineStart"
+    ]
+  },
+  {
+    "name": "corner-inline-start-shape",
+    "styleDeclaration": [
+      "corner-inline-start-shape",
+      "cornerInlineStartShape"
+    ]
+  },
+  {
+    "name": "corner-left",
+    "styleDeclaration": [
+      "corner-left",
+      "cornerLeft"
+    ]
+  },
+  {
+    "name": "corner-left-shape",
+    "styleDeclaration": [
+      "corner-left-shape",
+      "cornerLeftShape"
+    ]
+  },
+  {
+    "name": "corner-right",
+    "styleDeclaration": [
+      "corner-right",
+      "cornerRight"
+    ]
+  },
+  {
+    "name": "corner-right-shape",
+    "styleDeclaration": [
+      "corner-right-shape",
+      "cornerRightShape"
+    ]
+  },
+  {
+    "name": "corner-shape",
+    "styleDeclaration": [
+      "corner-shape",
+      "cornerShape"
+    ]
+  },
+  {
+    "name": "corner-start-end",
+    "styleDeclaration": [
+      "corner-start-end",
+      "cornerStartEnd"
+    ]
+  },
+  {
+    "name": "corner-start-end-shape",
+    "styleDeclaration": [
+      "corner-start-end-shape",
+      "cornerStartEndShape"
+    ]
+  },
+  {
+    "name": "corner-start-start",
+    "styleDeclaration": [
+      "corner-start-start",
+      "cornerStartStart"
+    ]
+  },
+  {
+    "name": "corner-start-start-shape",
+    "styleDeclaration": [
+      "corner-start-start-shape",
+      "cornerStartStartShape"
+    ]
+  },
+  {
+    "name": "corner-top",
+    "styleDeclaration": [
+      "corner-top",
+      "cornerTop"
+    ]
+  },
+  {
+    "name": "corner-top-left",
+    "styleDeclaration": [
+      "corner-top-left",
+      "cornerTopLeft"
+    ]
+  },
+  {
+    "name": "corner-top-left-shape",
+    "styleDeclaration": [
+      "corner-top-left-shape",
+      "cornerTopLeftShape"
+    ]
+  },
+  {
+    "name": "corner-top-right",
+    "styleDeclaration": [
+      "corner-top-right",
+      "cornerTopRight"
+    ]
+  },
+  {
+    "name": "corner-top-right-shape",
+    "styleDeclaration": [
+      "corner-top-right-shape",
+      "cornerTopRightShape"
+    ]
+  },
+  {
+    "name": "corner-top-shape",
+    "styleDeclaration": [
+      "corner-top-shape",
+      "cornerTopShape"
+    ]
+  },
+  {
+    "name": "counter-increment",
+    "styleDeclaration": [
+      "counter-increment",
+      "counterIncrement"
+    ]
+  },
+  {
+    "name": "counter-reset",
+    "styleDeclaration": [
+      "counter-reset",
+      "counterReset"
+    ]
+  },
+  {
+    "name": "counter-set",
+    "styleDeclaration": [
+      "counter-set",
+      "counterSet"
+    ]
+  },
+  {
+    "name": "cue",
+    "styleDeclaration": [
+      "cue"
+    ]
+  },
+  {
+    "name": "cue-after",
+    "styleDeclaration": [
+      "cue-after",
+      "cueAfter"
+    ]
+  },
+  {
+    "name": "cue-before",
+    "styleDeclaration": [
+      "cue-before",
+      "cueBefore"
+    ]
+  },
+  {
+    "name": "cursor",
+    "styleDeclaration": [
+      "cursor"
+    ]
+  },
+  {
+    "name": "cx",
+    "styleDeclaration": [
+      "cx"
+    ]
+  },
+  {
+    "name": "cy",
+    "styleDeclaration": [
+      "cy"
+    ]
+  },
+  {
+    "name": "d",
+    "styleDeclaration": [
+      "d"
+    ]
+  },
+  {
+    "name": "direction",
+    "styleDeclaration": [
+      "direction"
+    ]
+  },
+  {
+    "name": "display",
+    "styleDeclaration": [
+      "display"
+    ]
+  },
+  {
+    "name": "dominant-baseline",
+    "styleDeclaration": [
+      "dominant-baseline",
+      "dominantBaseline"
+    ]
+  },
+  {
+    "name": "dynamic-range-limit",
+    "styleDeclaration": [
+      "dynamic-range-limit",
+      "dynamicRangeLimit"
+    ]
+  },
+  {
+    "name": "empty-cells",
+    "styleDeclaration": [
+      "empty-cells",
+      "emptyCells"
+    ]
+  },
+  {
+    "name": "event-trigger",
+    "styleDeclaration": [
+      "event-trigger",
+      "eventTrigger"
+    ]
+  },
+  {
+    "name": "event-trigger-name",
+    "styleDeclaration": [
+      "event-trigger-name",
+      "eventTriggerName"
+    ]
+  },
+  {
+    "name": "event-trigger-source",
+    "styleDeclaration": [
+      "event-trigger-source",
+      "eventTriggerSource"
+    ]
+  },
+  {
+    "name": "field-sizing",
+    "styleDeclaration": [
+      "field-sizing",
+      "fieldSizing"
+    ]
+  },
+  {
+    "name": "fill",
+    "styleDeclaration": [
+      "fill"
+    ]
+  },
+  {
+    "name": "fill-break",
+    "styleDeclaration": [
+      "fill-break",
+      "fillBreak"
+    ]
+  },
+  {
+    "name": "fill-color",
+    "styleDeclaration": [
+      "fill-color",
+      "fillColor"
+    ]
+  },
+  {
+    "name": "fill-image",
+    "styleDeclaration": [
+      "fill-image",
+      "fillImage"
+    ]
+  },
+  {
+    "name": "fill-opacity",
+    "styleDeclaration": [
+      "fill-opacity",
+      "fillOpacity"
+    ]
+  },
+  {
+    "name": "fill-origin",
+    "styleDeclaration": [
+      "fill-origin",
+      "fillOrigin"
+    ]
+  },
+  {
+    "name": "fill-position",
+    "styleDeclaration": [
+      "fill-position",
+      "fillPosition"
+    ]
+  },
+  {
+    "name": "fill-repeat",
+    "styleDeclaration": [
+      "fill-repeat",
+      "fillRepeat"
+    ]
+  },
+  {
+    "name": "fill-rule",
+    "styleDeclaration": [
+      "fill-rule",
+      "fillRule"
+    ]
+  },
+  {
+    "name": "fill-size",
+    "styleDeclaration": [
+      "fill-size",
+      "fillSize"
+    ]
+  },
+  {
+    "name": "filter",
+    "styleDeclaration": [
+      "filter"
+    ]
+  },
+  {
+    "name": "fit-tolerance",
+    "styleDeclaration": [
+      "fit-tolerance",
+      "fitTolerance"
+    ]
+  },
+  {
+    "name": "flex",
+    "styleDeclaration": [
+      "flex"
+    ]
+  },
+  {
+    "name": "flex-basis",
+    "styleDeclaration": [
+      "flex-basis",
+      "flexBasis"
+    ]
+  },
+  {
+    "name": "flex-direction",
+    "styleDeclaration": [
+      "flex-direction",
+      "flexDirection"
+    ]
+  },
+  {
+    "name": "flex-flow",
+    "styleDeclaration": [
+      "flex-flow",
+      "flexFlow"
+    ]
+  },
+  {
+    "name": "flex-grow",
+    "styleDeclaration": [
+      "flex-grow",
+      "flexGrow"
+    ]
+  },
+  {
+    "name": "flex-line-count",
+    "styleDeclaration": [
+      "flex-line-count",
+      "flexLineCount"
+    ]
+  },
+  {
+    "name": "flex-shrink",
+    "styleDeclaration": [
+      "flex-shrink",
+      "flexShrink"
+    ]
+  },
+  {
+    "name": "flex-wrap",
+    "styleDeclaration": [
+      "flex-wrap",
+      "flexWrap"
+    ]
+  },
+  {
+    "name": "float",
+    "styleDeclaration": [
+      "float"
+    ]
+  },
+  {
+    "name": "float-defer",
+    "styleDeclaration": [
+      "float-defer",
+      "floatDefer"
+    ]
+  },
+  {
+    "name": "float-offset",
+    "styleDeclaration": [
+      "float-offset",
+      "floatOffset"
+    ]
+  },
+  {
+    "name": "float-reference",
+    "styleDeclaration": [
+      "float-reference",
+      "floatReference"
+    ]
+  },
+  {
+    "name": "flood-color",
+    "styleDeclaration": [
+      "flood-color",
+      "floodColor"
+    ]
+  },
+  {
+    "name": "flood-opacity",
+    "styleDeclaration": [
+      "flood-opacity",
+      "floodOpacity"
+    ]
+  },
+  {
+    "name": "flow-from",
+    "styleDeclaration": [
+      "flow-from",
+      "flowFrom"
+    ]
+  },
+  {
+    "name": "flow-into",
+    "styleDeclaration": [
+      "flow-into",
+      "flowInto"
+    ]
+  },
+  {
+    "name": "font",
+    "styleDeclaration": [
+      "font"
+    ]
+  },
+  {
+    "name": "font-family",
+    "styleDeclaration": [
+      "font-family",
+      "fontFamily"
+    ]
+  },
+  {
+    "name": "font-feature-settings",
+    "styleDeclaration": [
+      "font-feature-settings",
+      "fontFeatureSettings"
+    ]
+  },
+  {
+    "name": "font-kerning",
+    "styleDeclaration": [
+      "font-kerning",
+      "fontKerning"
+    ]
+  },
+  {
+    "name": "font-language-override",
+    "styleDeclaration": [
+      "font-language-override",
+      "fontLanguageOverride"
+    ]
+  },
+  {
+    "name": "font-optical-sizing",
+    "styleDeclaration": [
+      "font-optical-sizing",
+      "fontOpticalSizing"
+    ]
+  },
+  {
+    "name": "font-palette",
+    "styleDeclaration": [
+      "font-palette",
+      "fontPalette"
+    ]
+  },
+  {
+    "name": "font-size",
+    "styleDeclaration": [
+      "font-size",
+      "fontSize"
+    ]
+  },
+  {
+    "name": "font-size-adjust",
+    "styleDeclaration": [
+      "font-size-adjust",
+      "fontSizeAdjust"
+    ]
+  },
+  {
+    "name": "font-stretch",
+    "legacyAliasOf": "font-width",
+    "styleDeclaration": [
+      "font-stretch",
+      "fontStretch"
+    ]
+  },
+  {
+    "name": "font-style",
+    "styleDeclaration": [
+      "font-style",
+      "fontStyle"
+    ]
+  },
+  {
+    "name": "font-synthesis",
+    "styleDeclaration": [
+      "font-synthesis",
+      "fontSynthesis"
+    ]
+  },
+  {
+    "name": "font-synthesis-position",
+    "styleDeclaration": [
+      "font-synthesis-position",
+      "fontSynthesisPosition"
+    ]
+  },
+  {
+    "name": "font-synthesis-small-caps",
+    "styleDeclaration": [
+      "font-synthesis-small-caps",
+      "fontSynthesisSmallCaps"
+    ]
+  },
+  {
+    "name": "font-synthesis-style",
+    "styleDeclaration": [
+      "font-synthesis-style",
+      "fontSynthesisStyle"
+    ]
+  },
+  {
+    "name": "font-synthesis-weight",
+    "styleDeclaration": [
+      "font-synthesis-weight",
+      "fontSynthesisWeight"
+    ]
+  },
+  {
+    "name": "font-variant",
+    "styleDeclaration": [
+      "font-variant",
+      "fontVariant"
+    ]
+  },
+  {
+    "name": "font-variant-alternates",
+    "styleDeclaration": [
+      "font-variant-alternates",
+      "fontVariantAlternates"
+    ]
+  },
+  {
+    "name": "font-variant-caps",
+    "styleDeclaration": [
+      "font-variant-caps",
+      "fontVariantCaps"
+    ]
+  },
+  {
+    "name": "font-variant-east-asian",
+    "styleDeclaration": [
+      "font-variant-east-asian",
+      "fontVariantEastAsian"
+    ]
+  },
+  {
+    "name": "font-variant-emoji",
+    "styleDeclaration": [
+      "font-variant-emoji",
+      "fontVariantEmoji"
+    ]
+  },
+  {
+    "name": "font-variant-ligatures",
+    "styleDeclaration": [
+      "font-variant-ligatures",
+      "fontVariantLigatures"
+    ]
+  },
+  {
+    "name": "font-variant-numeric",
+    "styleDeclaration": [
+      "font-variant-numeric",
+      "fontVariantNumeric"
+    ]
+  },
+  {
+    "name": "font-variant-position",
+    "styleDeclaration": [
+      "font-variant-position",
+      "fontVariantPosition"
+    ]
+  },
+  {
+    "name": "font-variation-settings",
+    "styleDeclaration": [
+      "font-variation-settings",
+      "fontVariationSettings"
+    ]
+  },
+  {
+    "name": "font-weight",
+    "styleDeclaration": [
+      "font-weight",
+      "fontWeight"
+    ]
+  },
+  {
+    "name": "font-width",
+    "styleDeclaration": [
+      "font-width",
+      "fontWidth"
+    ]
+  },
+  {
+    "name": "footnote-display",
+    "styleDeclaration": [
+      "footnote-display",
+      "footnoteDisplay"
+    ]
+  },
+  {
+    "name": "footnote-policy",
+    "styleDeclaration": [
+      "footnote-policy",
+      "footnotePolicy"
+    ]
+  },
+  {
+    "name": "forced-color-adjust",
+    "styleDeclaration": [
+      "forced-color-adjust",
+      "forcedColorAdjust"
+    ]
+  },
+  {
+    "name": "frame-sizing",
+    "styleDeclaration": [
+      "frame-sizing",
+      "frameSizing"
+    ]
+  },
+  {
+    "name": "gap",
+    "styleDeclaration": [
+      "gap"
+    ]
+  },
+  {
+    "name": "glyph-orientation-vertical",
+    "styleDeclaration": [
+      "glyph-orientation-vertical",
+      "glyphOrientationVertical"
+    ]
+  },
+  {
+    "name": "grid",
+    "styleDeclaration": [
+      "grid"
+    ]
+  },
+  {
+    "name": "grid-area",
+    "styleDeclaration": [
+      "grid-area",
+      "gridArea"
+    ]
+  },
+  {
+    "name": "grid-auto-columns",
+    "styleDeclaration": [
+      "grid-auto-columns",
+      "gridAutoColumns"
+    ]
+  },
+  {
+    "name": "grid-auto-flow",
+    "styleDeclaration": [
+      "grid-auto-flow",
+      "gridAutoFlow"
+    ]
+  },
+  {
+    "name": "grid-auto-rows",
+    "styleDeclaration": [
+      "grid-auto-rows",
+      "gridAutoRows"
+    ]
+  },
+  {
+    "name": "grid-column",
+    "styleDeclaration": [
+      "grid-column",
+      "gridColumn"
+    ]
+  },
+  {
+    "name": "grid-column-end",
+    "styleDeclaration": [
+      "grid-column-end",
+      "gridColumnEnd"
+    ]
+  },
+  {
+    "name": "grid-column-gap",
+    "legacyAliasOf": "column-gap",
+    "styleDeclaration": [
+      "grid-column-gap",
+      "gridColumnGap"
+    ]
+  },
+  {
+    "name": "grid-column-start",
+    "styleDeclaration": [
+      "grid-column-start",
+      "gridColumnStart"
+    ]
+  },
+  {
+    "name": "grid-gap",
+    "legacyAliasOf": "gap",
+    "styleDeclaration": [
+      "grid-gap",
+      "gridGap"
+    ]
+  },
+  {
+    "name": "grid-row",
+    "styleDeclaration": [
+      "grid-row",
+      "gridRow"
+    ]
+  },
+  {
+    "name": "grid-row-end",
+    "styleDeclaration": [
+      "grid-row-end",
+      "gridRowEnd"
+    ]
+  },
+  {
+    "name": "grid-row-gap",
+    "legacyAliasOf": "row-gap",
+    "styleDeclaration": [
+      "grid-row-gap",
+      "gridRowGap"
+    ]
+  },
+  {
+    "name": "grid-row-start",
+    "styleDeclaration": [
+      "grid-row-start",
+      "gridRowStart"
+    ]
+  },
+  {
+    "name": "grid-template",
+    "styleDeclaration": [
+      "grid-template",
+      "gridTemplate"
+    ]
+  },
+  {
+    "name": "grid-template-areas",
+    "styleDeclaration": [
+      "grid-template-areas",
+      "gridTemplateAreas"
+    ]
+  },
+  {
+    "name": "grid-template-columns",
+    "styleDeclaration": [
+      "grid-template-columns",
+      "gridTemplateColumns"
+    ]
+  },
+  {
+    "name": "grid-template-rows",
+    "styleDeclaration": [
+      "grid-template-rows",
+      "gridTemplateRows"
+    ]
+  },
+  {
+    "name": "hanging-punctuation",
+    "styleDeclaration": [
+      "hanging-punctuation",
+      "hangingPunctuation"
+    ]
+  },
+  {
+    "name": "height",
+    "styleDeclaration": [
+      "height"
+    ]
+  },
+  {
+    "name": "hyphenate-character",
+    "styleDeclaration": [
+      "hyphenate-character",
+      "hyphenateCharacter"
+    ]
+  },
+  {
+    "name": "hyphenate-limit-chars",
+    "styleDeclaration": [
+      "hyphenate-limit-chars",
+      "hyphenateLimitChars"
+    ]
+  },
+  {
+    "name": "hyphenate-limit-last",
+    "styleDeclaration": [
+      "hyphenate-limit-last",
+      "hyphenateLimitLast"
+    ]
+  },
+  {
+    "name": "hyphenate-limit-lines",
+    "styleDeclaration": [
+      "hyphenate-limit-lines",
+      "hyphenateLimitLines"
+    ]
+  },
+  {
+    "name": "hyphenate-limit-zone",
+    "styleDeclaration": [
+      "hyphenate-limit-zone",
+      "hyphenateLimitZone"
+    ]
+  },
+  {
+    "name": "hyphens",
+    "styleDeclaration": [
+      "hyphens"
+    ]
+  },
+  {
+    "name": "image-animation",
+    "styleDeclaration": [
+      "image-animation",
+      "imageAnimation"
+    ]
+  },
+  {
+    "name": "image-orientation",
+    "styleDeclaration": [
+      "image-orientation",
+      "imageOrientation"
+    ]
+  },
+  {
+    "name": "image-rendering",
+    "styleDeclaration": [
+      "image-rendering",
+      "imageRendering"
+    ]
+  },
+  {
+    "name": "image-resolution",
+    "styleDeclaration": [
+      "image-resolution",
+      "imageResolution"
+    ]
+  },
+  {
+    "name": "initial-letter",
+    "styleDeclaration": [
+      "initial-letter",
+      "initialLetter"
+    ]
+  },
+  {
+    "name": "initial-letter-align",
+    "styleDeclaration": [
+      "initial-letter-align",
+      "initialLetterAlign"
+    ]
+  },
+  {
+    "name": "initial-letter-wrap",
+    "styleDeclaration": [
+      "initial-letter-wrap",
+      "initialLetterWrap"
+    ]
+  },
+  {
+    "name": "inline-size",
+    "styleDeclaration": [
+      "inline-size",
+      "inlineSize"
+    ]
+  },
+  {
+    "name": "inline-sizing",
+    "styleDeclaration": [
+      "inline-sizing",
+      "inlineSizing"
+    ]
+  },
+  {
+    "name": "input-security",
+    "styleDeclaration": [
+      "input-security",
+      "inputSecurity"
+    ]
+  },
+  {
+    "name": "inset",
+    "styleDeclaration": [
+      "inset"
+    ]
+  },
+  {
+    "name": "inset-block",
+    "styleDeclaration": [
+      "inset-block",
+      "insetBlock"
+    ]
+  },
+  {
+    "name": "inset-block-end",
+    "styleDeclaration": [
+      "inset-block-end",
+      "insetBlockEnd"
+    ]
+  },
+  {
+    "name": "inset-block-start",
+    "styleDeclaration": [
+      "inset-block-start",
+      "insetBlockStart"
+    ]
+  },
+  {
+    "name": "inset-inline",
+    "styleDeclaration": [
+      "inset-inline",
+      "insetInline"
+    ]
+  },
+  {
+    "name": "inset-inline-end",
+    "styleDeclaration": [
+      "inset-inline-end",
+      "insetInlineEnd"
+    ]
+  },
+  {
+    "name": "inset-inline-start",
+    "styleDeclaration": [
+      "inset-inline-start",
+      "insetInlineStart"
+    ]
+  },
+  {
+    "name": "interactivity",
+    "styleDeclaration": [
+      "interactivity"
+    ]
+  },
+  {
+    "name": "interest-delay",
+    "styleDeclaration": [
+      "interest-delay",
+      "interestDelay"
+    ]
+  },
+  {
+    "name": "interest-delay-end",
+    "styleDeclaration": [
+      "interest-delay-end",
+      "interestDelayEnd"
+    ]
+  },
+  {
+    "name": "interest-delay-start",
+    "styleDeclaration": [
+      "interest-delay-start",
+      "interestDelayStart"
+    ]
+  },
+  {
+    "name": "interpolate-size",
+    "styleDeclaration": [
+      "interpolate-size",
+      "interpolateSize"
+    ]
+  },
+  {
+    "name": "isolation",
+    "styleDeclaration": [
+      "isolation"
+    ]
+  },
+  {
+    "name": "justify-content",
+    "styleDeclaration": [
+      "justify-content",
+      "justifyContent"
+    ]
+  },
+  {
+    "name": "justify-items",
+    "styleDeclaration": [
+      "justify-items",
+      "justifyItems"
+    ]
+  },
+  {
+    "name": "justify-self",
+    "styleDeclaration": [
+      "justify-self",
+      "justifySelf"
+    ]
+  },
+  {
+    "name": "left",
+    "styleDeclaration": [
+      "left"
+    ]
+  },
+  {
+    "name": "letter-spacing",
+    "styleDeclaration": [
+      "letter-spacing",
+      "letterSpacing"
+    ]
+  },
+  {
+    "name": "lighting-color",
+    "styleDeclaration": [
+      "lighting-color",
+      "lightingColor"
+    ]
+  },
+  {
+    "name": "line-break",
+    "styleDeclaration": [
+      "line-break",
+      "lineBreak"
+    ]
+  },
+  {
+    "name": "line-clamp",
+    "styleDeclaration": [
+      "line-clamp",
+      "lineClamp"
+    ]
+  },
+  {
+    "name": "line-fit-edge",
+    "styleDeclaration": [
+      "line-fit-edge",
+      "lineFitEdge"
+    ]
+  },
+  {
+    "name": "line-grid",
+    "styleDeclaration": [
+      "line-grid",
+      "lineGrid"
+    ]
+  },
+  {
+    "name": "line-height",
+    "styleDeclaration": [
+      "line-height",
+      "lineHeight"
+    ]
+  },
+  {
+    "name": "line-height-step",
+    "styleDeclaration": [
+      "line-height-step",
+      "lineHeightStep"
+    ]
+  },
+  {
+    "name": "line-padding",
+    "styleDeclaration": [
+      "line-padding",
+      "linePadding"
+    ]
+  },
+  {
+    "name": "line-snap",
+    "styleDeclaration": [
+      "line-snap",
+      "lineSnap"
+    ]
+  },
+  {
+    "name": "link-parameters",
+    "styleDeclaration": [
+      "link-parameters",
+      "linkParameters"
+    ]
+  },
+  {
+    "name": "list-style",
+    "styleDeclaration": [
+      "list-style",
+      "listStyle"
+    ]
+  },
+  {
+    "name": "list-style-image",
+    "styleDeclaration": [
+      "list-style-image",
+      "listStyleImage"
+    ]
+  },
+  {
+    "name": "list-style-position",
+    "styleDeclaration": [
+      "list-style-position",
+      "listStylePosition"
+    ]
+  },
+  {
+    "name": "list-style-type",
+    "styleDeclaration": [
+      "list-style-type",
+      "listStyleType"
+    ]
+  },
+  {
+    "name": "margin",
+    "styleDeclaration": [
+      "margin"
+    ]
+  },
+  {
+    "name": "margin-block",
+    "styleDeclaration": [
+      "margin-block",
+      "marginBlock"
+    ]
+  },
+  {
+    "name": "margin-block-end",
+    "styleDeclaration": [
+      "margin-block-end",
+      "marginBlockEnd"
+    ]
+  },
+  {
+    "name": "margin-block-start",
+    "styleDeclaration": [
+      "margin-block-start",
+      "marginBlockStart"
+    ]
+  },
+  {
+    "name": "margin-bottom",
+    "styleDeclaration": [
+      "margin-bottom",
+      "marginBottom"
+    ]
+  },
+  {
+    "name": "margin-break",
+    "styleDeclaration": [
+      "margin-break",
+      "marginBreak"
+    ]
+  },
+  {
+    "name": "margin-inline",
+    "styleDeclaration": [
+      "margin-inline",
+      "marginInline"
+    ]
+  },
+  {
+    "name": "margin-inline-end",
+    "styleDeclaration": [
+      "margin-inline-end",
+      "marginInlineEnd"
+    ]
+  },
+  {
+    "name": "margin-inline-start",
+    "styleDeclaration": [
+      "margin-inline-start",
+      "marginInlineStart"
+    ]
+  },
+  {
+    "name": "margin-left",
+    "styleDeclaration": [
+      "margin-left",
+      "marginLeft"
+    ]
+  },
+  {
+    "name": "margin-right",
+    "styleDeclaration": [
+      "margin-right",
+      "marginRight"
+    ]
+  },
+  {
+    "name": "margin-top",
+    "styleDeclaration": [
+      "margin-top",
+      "marginTop"
+    ]
+  },
+  {
+    "name": "margin-trim",
+    "styleDeclaration": [
+      "margin-trim",
+      "marginTrim"
+    ]
+  },
+  {
+    "name": "marker",
+    "styleDeclaration": [
+      "marker"
+    ]
+  },
+  {
+    "name": "marker-end",
+    "styleDeclaration": [
+      "marker-end",
+      "markerEnd"
+    ]
+  },
+  {
+    "name": "marker-mid",
+    "styleDeclaration": [
+      "marker-mid",
+      "markerMid"
+    ]
+  },
+  {
+    "name": "marker-side",
+    "styleDeclaration": [
+      "marker-side",
+      "markerSide"
+    ]
+  },
+  {
+    "name": "marker-start",
+    "styleDeclaration": [
+      "marker-start",
+      "markerStart"
+    ]
+  },
+  {
+    "name": "mask",
+    "styleDeclaration": [
+      "mask"
+    ]
+  },
+  {
+    "name": "mask-border",
+    "styleDeclaration": [
+      "mask-border",
+      "maskBorder"
+    ]
+  },
+  {
+    "name": "mask-border-mode",
+    "styleDeclaration": [
+      "mask-border-mode",
+      "maskBorderMode"
+    ]
+  },
+  {
+    "name": "mask-border-outset",
+    "styleDeclaration": [
+      "mask-border-outset",
+      "maskBorderOutset"
+    ]
+  },
+  {
+    "name": "mask-border-repeat",
+    "styleDeclaration": [
+      "mask-border-repeat",
+      "maskBorderRepeat"
+    ]
+  },
+  {
+    "name": "mask-border-slice",
+    "styleDeclaration": [
+      "mask-border-slice",
+      "maskBorderSlice"
+    ]
+  },
+  {
+    "name": "mask-border-source",
+    "styleDeclaration": [
+      "mask-border-source",
+      "maskBorderSource"
+    ]
+  },
+  {
+    "name": "mask-border-width",
+    "styleDeclaration": [
+      "mask-border-width",
+      "maskBorderWidth"
+    ]
+  },
+  {
+    "name": "mask-clip",
+    "styleDeclaration": [
+      "mask-clip",
+      "maskClip"
+    ]
+  },
+  {
+    "name": "mask-composite",
+    "styleDeclaration": [
+      "mask-composite",
+      "maskComposite"
+    ]
+  },
+  {
+    "name": "mask-image",
+    "styleDeclaration": [
+      "mask-image",
+      "maskImage"
+    ]
+  },
+  {
+    "name": "mask-mode",
+    "styleDeclaration": [
+      "mask-mode",
+      "maskMode"
+    ]
+  },
+  {
+    "name": "mask-origin",
+    "styleDeclaration": [
+      "mask-origin",
+      "maskOrigin"
+    ]
+  },
+  {
+    "name": "mask-position",
+    "styleDeclaration": [
+      "mask-position",
+      "maskPosition"
+    ]
+  },
+  {
+    "name": "mask-repeat",
+    "styleDeclaration": [
+      "mask-repeat",
+      "maskRepeat"
+    ]
+  },
+  {
+    "name": "mask-size",
+    "styleDeclaration": [
+      "mask-size",
+      "maskSize"
+    ]
+  },
+  {
+    "name": "mask-type",
+    "styleDeclaration": [
+      "mask-type",
+      "maskType"
+    ]
+  },
+  {
+    "name": "math-depth",
+    "styleDeclaration": [
+      "math-depth",
+      "mathDepth"
+    ]
+  },
+  {
+    "name": "math-shift",
+    "styleDeclaration": [
+      "math-shift",
+      "mathShift"
+    ]
+  },
+  {
+    "name": "math-style",
+    "styleDeclaration": [
+      "math-style",
+      "mathStyle"
+    ]
+  },
+  {
+    "name": "max-block-size",
+    "styleDeclaration": [
+      "max-block-size",
+      "maxBlockSize"
+    ]
+  },
+  {
+    "name": "max-height",
+    "styleDeclaration": [
+      "max-height",
+      "maxHeight"
+    ]
+  },
+  {
+    "name": "max-inline-size",
+    "styleDeclaration": [
+      "max-inline-size",
+      "maxInlineSize"
+    ]
+  },
+  {
+    "name": "max-lines",
+    "styleDeclaration": [
+      "max-lines",
+      "maxLines"
+    ]
+  },
+  {
+    "name": "max-size",
+    "styleDeclaration": [
+      "max-size",
+      "maxSize"
+    ]
+  },
+  {
+    "name": "max-width",
+    "styleDeclaration": [
+      "max-width",
+      "maxWidth"
+    ]
+  },
+  {
+    "name": "min-block-size",
+    "styleDeclaration": [
+      "min-block-size",
+      "minBlockSize"
+    ]
+  },
+  {
+    "name": "min-height",
+    "styleDeclaration": [
+      "min-height",
+      "minHeight"
+    ]
+  },
+  {
+    "name": "min-inline-size",
+    "styleDeclaration": [
+      "min-inline-size",
+      "minInlineSize"
+    ]
+  },
+  {
+    "name": "min-intrinsic-sizing",
+    "styleDeclaration": [
+      "min-intrinsic-sizing",
+      "minIntrinsicSizing"
+    ]
+  },
+  {
+    "name": "min-size",
+    "styleDeclaration": [
+      "min-size",
+      "minSize"
+    ]
+  },
+  {
+    "name": "min-width",
+    "styleDeclaration": [
+      "min-width",
+      "minWidth"
+    ]
+  },
+  {
+    "name": "mix-blend-mode",
+    "styleDeclaration": [
+      "mix-blend-mode",
+      "mixBlendMode"
+    ]
+  },
+  {
+    "name": "nav-down",
+    "styleDeclaration": [
+      "nav-down",
+      "navDown"
+    ]
+  },
+  {
+    "name": "nav-left",
+    "styleDeclaration": [
+      "nav-left",
+      "navLeft"
+    ]
+  },
+  {
+    "name": "nav-right",
+    "styleDeclaration": [
+      "nav-right",
+      "navRight"
+    ]
+  },
+  {
+    "name": "nav-up",
+    "styleDeclaration": [
+      "nav-up",
+      "navUp"
+    ]
+  },
+  {
+    "name": "object-fit",
+    "styleDeclaration": [
+      "object-fit",
+      "objectFit"
+    ]
+  },
+  {
+    "name": "object-position",
+    "styleDeclaration": [
+      "object-position",
+      "objectPosition"
+    ]
+  },
+  {
+    "name": "object-view-box",
+    "styleDeclaration": [
+      "object-view-box",
+      "objectViewBox"
+    ]
+  },
+  {
+    "name": "offset",
+    "styleDeclaration": [
+      "offset"
+    ]
+  },
+  {
+    "name": "offset-anchor",
+    "styleDeclaration": [
+      "offset-anchor",
+      "offsetAnchor"
+    ]
+  },
+  {
+    "name": "offset-distance",
+    "styleDeclaration": [
+      "offset-distance",
+      "offsetDistance"
+    ]
+  },
+  {
+    "name": "offset-path",
+    "styleDeclaration": [
+      "offset-path",
+      "offsetPath"
+    ]
+  },
+  {
+    "name": "offset-position",
+    "styleDeclaration": [
+      "offset-position",
+      "offsetPosition"
+    ]
+  },
+  {
+    "name": "offset-rotate",
+    "styleDeclaration": [
+      "offset-rotate",
+      "offsetRotate"
+    ]
+  },
+  {
+    "name": "opacity",
+    "styleDeclaration": [
+      "opacity"
+    ]
+  },
+  {
+    "name": "order",
+    "styleDeclaration": [
+      "order"
+    ]
+  },
+  {
+    "name": "orphans",
+    "styleDeclaration": [
+      "orphans"
+    ]
+  },
+  {
+    "name": "outline",
+    "styleDeclaration": [
+      "outline"
+    ]
+  },
+  {
+    "name": "outline-color",
+    "styleDeclaration": [
+      "outline-color",
+      "outlineColor"
+    ]
+  },
+  {
+    "name": "outline-offset",
+    "styleDeclaration": [
+      "outline-offset",
+      "outlineOffset"
+    ]
+  },
+  {
+    "name": "outline-style",
+    "styleDeclaration": [
+      "outline-style",
+      "outlineStyle"
+    ]
+  },
+  {
+    "name": "outline-width",
+    "styleDeclaration": [
+      "outline-width",
+      "outlineWidth"
+    ]
+  },
+  {
+    "name": "overflow",
+    "styleDeclaration": [
+      "overflow"
+    ]
+  },
+  {
+    "name": "overflow-anchor",
+    "styleDeclaration": [
+      "overflow-anchor",
+      "overflowAnchor"
+    ]
+  },
+  {
+    "name": "overflow-block",
+    "styleDeclaration": [
+      "overflow-block",
+      "overflowBlock"
+    ]
+  },
+  {
+    "name": "overflow-clip-margin",
+    "styleDeclaration": [
+      "overflow-clip-margin",
+      "overflowClipMargin"
+    ]
+  },
+  {
+    "name": "overflow-clip-margin-block",
+    "styleDeclaration": [
+      "overflow-clip-margin-block",
+      "overflowClipMarginBlock"
+    ]
+  },
+  {
+    "name": "overflow-clip-margin-block-end",
+    "styleDeclaration": [
+      "overflow-clip-margin-block-end",
+      "overflowClipMarginBlockEnd"
+    ]
+  },
+  {
+    "name": "overflow-clip-margin-block-start",
+    "styleDeclaration": [
+      "overflow-clip-margin-block-start",
+      "overflowClipMarginBlockStart"
+    ]
+  },
+  {
+    "name": "overflow-clip-margin-bottom",
+    "styleDeclaration": [
+      "overflow-clip-margin-bottom",
+      "overflowClipMarginBottom"
+    ]
+  },
+  {
+    "name": "overflow-clip-margin-inline",
+    "styleDeclaration": [
+      "overflow-clip-margin-inline",
+      "overflowClipMarginInline"
+    ]
+  },
+  {
+    "name": "overflow-clip-margin-inline-end",
+    "styleDeclaration": [
+      "overflow-clip-margin-inline-end",
+      "overflowClipMarginInlineEnd"
+    ]
+  },
+  {
+    "name": "overflow-clip-margin-inline-start",
+    "styleDeclaration": [
+      "overflow-clip-margin-inline-start",
+      "overflowClipMarginInlineStart"
+    ]
+  },
+  {
+    "name": "overflow-clip-margin-left",
+    "styleDeclaration": [
+      "overflow-clip-margin-left",
+      "overflowClipMarginLeft"
+    ]
+  },
+  {
+    "name": "overflow-clip-margin-right",
+    "styleDeclaration": [
+      "overflow-clip-margin-right",
+      "overflowClipMarginRight"
+    ]
+  },
+  {
+    "name": "overflow-clip-margin-top",
+    "styleDeclaration": [
+      "overflow-clip-margin-top",
+      "overflowClipMarginTop"
+    ]
+  },
+  {
+    "name": "overflow-inline",
+    "styleDeclaration": [
+      "overflow-inline",
+      "overflowInline"
+    ]
+  },
+  {
+    "name": "overflow-wrap",
+    "styleDeclaration": [
+      "overflow-wrap",
+      "overflowWrap"
+    ]
+  },
+  {
+    "name": "overflow-x",
+    "styleDeclaration": [
+      "overflow-x",
+      "overflowX"
+    ]
+  },
+  {
+    "name": "overflow-y",
+    "styleDeclaration": [
+      "overflow-y",
+      "overflowY"
+    ]
+  },
+  {
+    "name": "overlay",
+    "styleDeclaration": [
+      "overlay"
+    ]
+  },
+  {
+    "name": "overscroll-behavior",
+    "styleDeclaration": [
+      "overscroll-behavior",
+      "overscrollBehavior"
+    ]
+  },
+  {
+    "name": "overscroll-behavior-block",
+    "styleDeclaration": [
+      "overscroll-behavior-block",
+      "overscrollBehaviorBlock"
+    ]
+  },
+  {
+    "name": "overscroll-behavior-inline",
+    "styleDeclaration": [
+      "overscroll-behavior-inline",
+      "overscrollBehaviorInline"
+    ]
+  },
+  {
+    "name": "overscroll-behavior-x",
+    "styleDeclaration": [
+      "overscroll-behavior-x",
+      "overscrollBehaviorX"
+    ]
+  },
+  {
+    "name": "overscroll-behavior-y",
+    "styleDeclaration": [
+      "overscroll-behavior-y",
+      "overscrollBehaviorY"
+    ]
+  },
+  {
+    "name": "padding",
+    "styleDeclaration": [
+      "padding"
+    ]
+  },
+  {
+    "name": "padding-block",
+    "styleDeclaration": [
+      "padding-block",
+      "paddingBlock"
+    ]
+  },
+  {
+    "name": "padding-block-end",
+    "styleDeclaration": [
+      "padding-block-end",
+      "paddingBlockEnd"
+    ]
+  },
+  {
+    "name": "padding-block-start",
+    "styleDeclaration": [
+      "padding-block-start",
+      "paddingBlockStart"
+    ]
+  },
+  {
+    "name": "padding-bottom",
+    "styleDeclaration": [
+      "padding-bottom",
+      "paddingBottom"
+    ]
+  },
+  {
+    "name": "padding-inline",
+    "styleDeclaration": [
+      "padding-inline",
+      "paddingInline"
+    ]
+  },
+  {
+    "name": "padding-inline-end",
+    "styleDeclaration": [
+      "padding-inline-end",
+      "paddingInlineEnd"
+    ]
+  },
+  {
+    "name": "padding-inline-start",
+    "styleDeclaration": [
+      "padding-inline-start",
+      "paddingInlineStart"
+    ]
+  },
+  {
+    "name": "padding-left",
+    "styleDeclaration": [
+      "padding-left",
+      "paddingLeft"
+    ]
+  },
+  {
+    "name": "padding-right",
+    "styleDeclaration": [
+      "padding-right",
+      "paddingRight"
+    ]
+  },
+  {
+    "name": "padding-top",
+    "styleDeclaration": [
+      "padding-top",
+      "paddingTop"
+    ]
+  },
+  {
+    "name": "page",
+    "styleDeclaration": [
+      "page"
+    ]
+  },
+  {
+    "name": "page-break-after",
+    "styleDeclaration": [
+      "page-break-after",
+      "pageBreakAfter"
+    ]
+  },
+  {
+    "name": "page-break-before",
+    "styleDeclaration": [
+      "page-break-before",
+      "pageBreakBefore"
+    ]
+  },
+  {
+    "name": "page-break-inside",
+    "styleDeclaration": [
+      "page-break-inside",
+      "pageBreakInside"
+    ]
+  },
+  {
+    "name": "paint-order",
+    "styleDeclaration": [
+      "paint-order",
+      "paintOrder"
+    ]
+  },
+  {
+    "name": "path-length",
+    "styleDeclaration": [
+      "path-length",
+      "pathLength"
+    ]
+  },
+  {
+    "name": "pause",
+    "styleDeclaration": [
+      "pause"
+    ]
+  },
+  {
+    "name": "pause-after",
+    "styleDeclaration": [
+      "pause-after",
+      "pauseAfter"
+    ]
+  },
+  {
+    "name": "pause-before",
+    "styleDeclaration": [
+      "pause-before",
+      "pauseBefore"
+    ]
+  },
+  {
+    "name": "perspective",
+    "styleDeclaration": [
+      "perspective"
+    ]
+  },
+  {
+    "name": "perspective-origin",
+    "styleDeclaration": [
+      "perspective-origin",
+      "perspectiveOrigin"
+    ]
+  },
+  {
+    "name": "place-content",
+    "styleDeclaration": [
+      "place-content",
+      "placeContent"
+    ]
+  },
+  {
+    "name": "place-items",
+    "styleDeclaration": [
+      "place-items",
+      "placeItems"
+    ]
+  },
+  {
+    "name": "place-self",
+    "styleDeclaration": [
+      "place-self",
+      "placeSelf"
+    ]
+  },
+  {
+    "name": "pointer-events",
+    "styleDeclaration": [
+      "pointer-events",
+      "pointerEvents"
+    ]
+  },
+  {
+    "name": "pointer-timeline",
+    "styleDeclaration": [
+      "pointer-timeline",
+      "pointerTimeline"
+    ]
+  },
+  {
+    "name": "pointer-timeline-axis",
+    "styleDeclaration": [
+      "pointer-timeline-axis",
+      "pointerTimelineAxis"
+    ]
+  },
+  {
+    "name": "pointer-timeline-name",
+    "styleDeclaration": [
+      "pointer-timeline-name",
+      "pointerTimelineName"
+    ]
+  },
+  {
+    "name": "position",
+    "styleDeclaration": [
+      "position"
+    ]
+  },
+  {
+    "name": "position-anchor",
+    "styleDeclaration": [
+      "position-anchor",
+      "positionAnchor"
+    ]
+  },
+  {
+    "name": "position-area",
+    "styleDeclaration": [
+      "position-area",
+      "positionArea"
+    ]
+  },
+  {
+    "name": "position-try",
+    "styleDeclaration": [
+      "position-try",
+      "positionTry"
+    ]
+  },
+  {
+    "name": "position-try-fallbacks",
+    "styleDeclaration": [
+      "position-try-fallbacks",
+      "positionTryFallbacks"
+    ]
+  },
+  {
+    "name": "position-try-order",
+    "styleDeclaration": [
+      "position-try-order",
+      "positionTryOrder"
+    ]
+  },
+  {
+    "name": "position-visibility",
+    "styleDeclaration": [
+      "position-visibility",
+      "positionVisibility"
+    ]
+  },
+  {
+    "name": "print-color-adjust",
+    "styleDeclaration": [
+      "print-color-adjust",
+      "printColorAdjust"
+    ]
+  },
+  {
+    "name": "quotes",
+    "styleDeclaration": [
+      "quotes"
+    ]
+  },
+  {
+    "name": "r",
+    "styleDeclaration": [
+      "r"
+    ]
+  },
+  {
+    "name": "reading-flow",
+    "styleDeclaration": [
+      "reading-flow",
+      "readingFlow"
+    ]
+  },
+  {
+    "name": "reading-order",
+    "styleDeclaration": [
+      "reading-order",
+      "readingOrder"
+    ]
+  },
+  {
+    "name": "region-fragment",
+    "styleDeclaration": [
+      "region-fragment",
+      "regionFragment"
+    ]
+  },
+  {
+    "name": "resize",
+    "styleDeclaration": [
+      "resize"
+    ]
+  },
+  {
+    "name": "rest",
+    "styleDeclaration": [
+      "rest"
+    ]
+  },
+  {
+    "name": "rest-after",
+    "styleDeclaration": [
+      "rest-after",
+      "restAfter"
+    ]
+  },
+  {
+    "name": "rest-before",
+    "styleDeclaration": [
+      "rest-before",
+      "restBefore"
+    ]
+  },
+  {
+    "name": "right",
+    "styleDeclaration": [
+      "right"
+    ]
+  },
+  {
+    "name": "rotate",
+    "styleDeclaration": [
+      "rotate"
+    ]
+  },
+  {
+    "name": "row-gap",
+    "styleDeclaration": [
+      "row-gap",
+      "rowGap"
+    ]
+  },
+  {
+    "name": "row-rule",
+    "styleDeclaration": [
+      "row-rule",
+      "rowRule"
+    ]
+  },
+  {
+    "name": "row-rule-break",
+    "styleDeclaration": [
+      "row-rule-break",
+      "rowRuleBreak"
+    ]
+  },
+  {
+    "name": "row-rule-color",
+    "styleDeclaration": [
+      "row-rule-color",
+      "rowRuleColor"
+    ]
+  },
+  {
+    "name": "row-rule-inset",
+    "styleDeclaration": [
+      "row-rule-inset",
+      "rowRuleInset"
+    ]
+  },
+  {
+    "name": "row-rule-inset-cap",
+    "styleDeclaration": [
+      "row-rule-inset-cap",
+      "rowRuleInsetCap"
+    ]
+  },
+  {
+    "name": "row-rule-inset-cap-end",
+    "styleDeclaration": [
+      "row-rule-inset-cap-end",
+      "rowRuleInsetCapEnd"
+    ]
+  },
+  {
+    "name": "row-rule-inset-cap-start",
+    "styleDeclaration": [
+      "row-rule-inset-cap-start",
+      "rowRuleInsetCapStart"
+    ]
+  },
+  {
+    "name": "row-rule-inset-end",
+    "styleDeclaration": [
+      "row-rule-inset-end",
+      "rowRuleInsetEnd"
+    ]
+  },
+  {
+    "name": "row-rule-inset-junction",
+    "styleDeclaration": [
+      "row-rule-inset-junction",
+      "rowRuleInsetJunction"
+    ]
+  },
+  {
+    "name": "row-rule-inset-junction-end",
+    "styleDeclaration": [
+      "row-rule-inset-junction-end",
+      "rowRuleInsetJunctionEnd"
+    ]
+  },
+  {
+    "name": "row-rule-inset-junction-start",
+    "styleDeclaration": [
+      "row-rule-inset-junction-start",
+      "rowRuleInsetJunctionStart"
+    ]
+  },
+  {
+    "name": "row-rule-inset-start",
+    "styleDeclaration": [
+      "row-rule-inset-start",
+      "rowRuleInsetStart"
+    ]
+  },
+  {
+    "name": "row-rule-style",
+    "styleDeclaration": [
+      "row-rule-style",
+      "rowRuleStyle"
+    ]
+  },
+  {
+    "name": "row-rule-visibility-items",
+    "styleDeclaration": [
+      "row-rule-visibility-items",
+      "rowRuleVisibilityItems"
+    ]
+  },
+  {
+    "name": "row-rule-width",
+    "styleDeclaration": [
+      "row-rule-width",
+      "rowRuleWidth"
+    ]
+  },
+  {
+    "name": "ruby-align",
+    "styleDeclaration": [
+      "ruby-align",
+      "rubyAlign"
+    ]
+  },
+  {
+    "name": "ruby-merge",
+    "styleDeclaration": [
+      "ruby-merge",
+      "rubyMerge"
+    ]
+  },
+  {
+    "name": "ruby-overhang",
+    "styleDeclaration": [
+      "ruby-overhang",
+      "rubyOverhang"
+    ]
+  },
+  {
+    "name": "ruby-position",
+    "styleDeclaration": [
+      "ruby-position",
+      "rubyPosition"
+    ]
+  },
+  {
+    "name": "rule",
+    "styleDeclaration": [
+      "rule"
+    ]
+  },
+  {
+    "name": "rule-break",
+    "styleDeclaration": [
+      "rule-break",
+      "ruleBreak"
+    ]
+  },
+  {
+    "name": "rule-color",
+    "styleDeclaration": [
+      "rule-color",
+      "ruleColor"
+    ]
+  },
+  {
+    "name": "rule-inset",
+    "styleDeclaration": [
+      "rule-inset",
+      "ruleInset"
+    ]
+  },
+  {
+    "name": "rule-inset-cap",
+    "styleDeclaration": [
+      "rule-inset-cap",
+      "ruleInsetCap"
+    ]
+  },
+  {
+    "name": "rule-inset-end",
+    "styleDeclaration": [
+      "rule-inset-end",
+      "ruleInsetEnd"
+    ]
+  },
+  {
+    "name": "rule-inset-junction",
+    "styleDeclaration": [
+      "rule-inset-junction",
+      "ruleInsetJunction"
+    ]
+  },
+  {
+    "name": "rule-inset-start",
+    "styleDeclaration": [
+      "rule-inset-start",
+      "ruleInsetStart"
+    ]
+  },
+  {
+    "name": "rule-overlap",
+    "styleDeclaration": [
+      "rule-overlap",
+      "ruleOverlap"
+    ]
+  },
+  {
+    "name": "rule-style",
+    "styleDeclaration": [
+      "rule-style",
+      "ruleStyle"
+    ]
+  },
+  {
+    "name": "rule-visibility-items",
+    "styleDeclaration": [
+      "rule-visibility-items",
+      "ruleVisibilityItems"
+    ]
+  },
+  {
+    "name": "rule-width",
+    "styleDeclaration": [
+      "rule-width",
+      "ruleWidth"
+    ]
+  },
+  {
+    "name": "rx",
+    "styleDeclaration": [
+      "rx"
+    ]
+  },
+  {
+    "name": "ry",
+    "styleDeclaration": [
+      "ry"
+    ]
+  },
+  {
+    "name": "scale",
+    "styleDeclaration": [
+      "scale"
+    ]
+  },
+  {
+    "name": "scroll-axis-lock",
+    "styleDeclaration": [
+      "scroll-axis-lock",
+      "scrollAxisLock"
+    ]
+  },
+  {
+    "name": "scroll-behavior",
+    "styleDeclaration": [
+      "scroll-behavior",
+      "scrollBehavior"
+    ]
+  },
+  {
+    "name": "scroll-initial-target",
+    "styleDeclaration": [
+      "scroll-initial-target",
+      "scrollInitialTarget"
+    ]
+  },
+  {
+    "name": "scroll-margin",
+    "styleDeclaration": [
+      "scroll-margin",
+      "scrollMargin"
+    ]
+  },
+  {
+    "name": "scroll-margin-block",
+    "styleDeclaration": [
+      "scroll-margin-block",
+      "scrollMarginBlock"
+    ]
+  },
+  {
+    "name": "scroll-margin-block-end",
+    "styleDeclaration": [
+      "scroll-margin-block-end",
+      "scrollMarginBlockEnd"
+    ]
+  },
+  {
+    "name": "scroll-margin-block-start",
+    "styleDeclaration": [
+      "scroll-margin-block-start",
+      "scrollMarginBlockStart"
+    ]
+  },
+  {
+    "name": "scroll-margin-bottom",
+    "styleDeclaration": [
+      "scroll-margin-bottom",
+      "scrollMarginBottom"
+    ]
+  },
+  {
+    "name": "scroll-margin-inline",
+    "styleDeclaration": [
+      "scroll-margin-inline",
+      "scrollMarginInline"
+    ]
+  },
+  {
+    "name": "scroll-margin-inline-end",
+    "styleDeclaration": [
+      "scroll-margin-inline-end",
+      "scrollMarginInlineEnd"
+    ]
+  },
+  {
+    "name": "scroll-margin-inline-start",
+    "styleDeclaration": [
+      "scroll-margin-inline-start",
+      "scrollMarginInlineStart"
+    ]
+  },
+  {
+    "name": "scroll-margin-left",
+    "styleDeclaration": [
+      "scroll-margin-left",
+      "scrollMarginLeft"
+    ]
+  },
+  {
+    "name": "scroll-margin-right",
+    "styleDeclaration": [
+      "scroll-margin-right",
+      "scrollMarginRight"
+    ]
+  },
+  {
+    "name": "scroll-margin-top",
+    "styleDeclaration": [
+      "scroll-margin-top",
+      "scrollMarginTop"
+    ]
+  },
+  {
+    "name": "scroll-marker-group",
+    "styleDeclaration": [
+      "scroll-marker-group",
+      "scrollMarkerGroup"
+    ]
+  },
+  {
+    "name": "scroll-padding",
+    "styleDeclaration": [
+      "scroll-padding",
+      "scrollPadding"
+    ]
+  },
+  {
+    "name": "scroll-padding-block",
+    "styleDeclaration": [
+      "scroll-padding-block",
+      "scrollPaddingBlock"
+    ]
+  },
+  {
+    "name": "scroll-padding-block-end",
+    "styleDeclaration": [
+      "scroll-padding-block-end",
+      "scrollPaddingBlockEnd"
+    ]
+  },
+  {
+    "name": "scroll-padding-block-start",
+    "styleDeclaration": [
+      "scroll-padding-block-start",
+      "scrollPaddingBlockStart"
+    ]
+  },
+  {
+    "name": "scroll-padding-bottom",
+    "styleDeclaration": [
+      "scroll-padding-bottom",
+      "scrollPaddingBottom"
+    ]
+  },
+  {
+    "name": "scroll-padding-inline",
+    "styleDeclaration": [
+      "scroll-padding-inline",
+      "scrollPaddingInline"
+    ]
+  },
+  {
+    "name": "scroll-padding-inline-end",
+    "styleDeclaration": [
+      "scroll-padding-inline-end",
+      "scrollPaddingInlineEnd"
+    ]
+  },
+  {
+    "name": "scroll-padding-inline-start",
+    "styleDeclaration": [
+      "scroll-padding-inline-start",
+      "scrollPaddingInlineStart"
+    ]
+  },
+  {
+    "name": "scroll-padding-left",
+    "styleDeclaration": [
+      "scroll-padding-left",
+      "scrollPaddingLeft"
+    ]
+  },
+  {
+    "name": "scroll-padding-right",
+    "styleDeclaration": [
+      "scroll-padding-right",
+      "scrollPaddingRight"
+    ]
+  },
+  {
+    "name": "scroll-padding-top",
+    "styleDeclaration": [
+      "scroll-padding-top",
+      "scrollPaddingTop"
+    ]
+  },
+  {
+    "name": "scroll-snap-align",
+    "styleDeclaration": [
+      "scroll-snap-align",
+      "scrollSnapAlign"
+    ]
+  },
+  {
+    "name": "scroll-snap-stop",
+    "styleDeclaration": [
+      "scroll-snap-stop",
+      "scrollSnapStop"
+    ]
+  },
+  {
+    "name": "scroll-snap-type",
+    "styleDeclaration": [
+      "scroll-snap-type",
+      "scrollSnapType"
+    ]
+  },
+  {
+    "name": "scroll-target-group",
+    "styleDeclaration": [
+      "scroll-target-group",
+      "scrollTargetGroup"
+    ]
+  },
+  {
+    "name": "scroll-timeline",
+    "styleDeclaration": [
+      "scroll-timeline",
+      "scrollTimeline"
+    ]
+  },
+  {
+    "name": "scroll-timeline-axis",
+    "styleDeclaration": [
+      "scroll-timeline-axis",
+      "scrollTimelineAxis"
+    ]
+  },
+  {
+    "name": "scroll-timeline-name",
+    "styleDeclaration": [
+      "scroll-timeline-name",
+      "scrollTimelineName"
+    ]
+  },
+  {
+    "name": "scrollbar-color",
+    "styleDeclaration": [
+      "scrollbar-color",
+      "scrollbarColor"
+    ]
+  },
+  {
+    "name": "scrollbar-gutter",
+    "styleDeclaration": [
+      "scrollbar-gutter",
+      "scrollbarGutter"
+    ]
+  },
+  {
+    "name": "scrollbar-width",
+    "styleDeclaration": [
+      "scrollbar-width",
+      "scrollbarWidth"
+    ]
+  },
+  {
+    "name": "shape-image-threshold",
+    "styleDeclaration": [
+      "shape-image-threshold",
+      "shapeImageThreshold"
+    ]
+  },
+  {
+    "name": "shape-inside",
+    "styleDeclaration": [
+      "shape-inside",
+      "shapeInside"
+    ]
+  },
+  {
+    "name": "shape-margin",
+    "styleDeclaration": [
+      "shape-margin",
+      "shapeMargin"
+    ]
+  },
+  {
+    "name": "shape-outside",
+    "styleDeclaration": [
+      "shape-outside",
+      "shapeOutside"
+    ]
+  },
+  {
+    "name": "shape-padding",
+    "styleDeclaration": [
+      "shape-padding",
+      "shapePadding"
+    ]
+  },
+  {
+    "name": "shape-rendering",
+    "styleDeclaration": [
+      "shape-rendering",
+      "shapeRendering"
+    ]
+  },
+  {
+    "name": "size",
+    "styleDeclaration": [
+      "size"
+    ]
+  },
+  {
+    "name": "slider-orientation",
+    "styleDeclaration": [
+      "slider-orientation",
+      "sliderOrientation"
+    ]
+  },
+  {
+    "name": "spatial-navigation-action",
+    "styleDeclaration": [
+      "spatial-navigation-action",
+      "spatialNavigationAction"
+    ]
+  },
+  {
+    "name": "spatial-navigation-contain",
+    "styleDeclaration": [
+      "spatial-navigation-contain",
+      "spatialNavigationContain"
+    ]
+  },
+  {
+    "name": "spatial-navigation-function",
+    "styleDeclaration": [
+      "spatial-navigation-function",
+      "spatialNavigationFunction"
+    ]
+  },
+  {
+    "name": "speak",
+    "styleDeclaration": [
+      "speak"
+    ]
+  },
+  {
+    "name": "speak-as",
+    "styleDeclaration": [
+      "speak-as",
+      "speakAs"
+    ]
+  },
+  {
+    "name": "stop-color",
+    "styleDeclaration": [
+      "stop-color",
+      "stopColor"
+    ]
+  },
+  {
+    "name": "stop-opacity",
+    "styleDeclaration": [
+      "stop-opacity",
+      "stopOpacity"
+    ]
+  },
+  {
+    "name": "string-set",
+    "styleDeclaration": [
+      "string-set",
+      "stringSet"
+    ]
+  },
+  {
+    "name": "stroke",
+    "styleDeclaration": [
+      "stroke"
+    ]
+  },
+  {
+    "name": "stroke-align",
+    "styleDeclaration": [
+      "stroke-align",
+      "strokeAlign"
+    ]
+  },
+  {
+    "name": "stroke-alignment",
+    "styleDeclaration": [
+      "stroke-alignment",
+      "strokeAlignment"
+    ]
+  },
+  {
+    "name": "stroke-break",
+    "styleDeclaration": [
+      "stroke-break",
+      "strokeBreak"
+    ]
+  },
+  {
+    "name": "stroke-color",
+    "styleDeclaration": [
+      "stroke-color",
+      "strokeColor"
+    ]
+  },
+  {
+    "name": "stroke-dash-corner",
+    "styleDeclaration": [
+      "stroke-dash-corner",
+      "strokeDashCorner"
+    ]
+  },
+  {
+    "name": "stroke-dash-justify",
+    "styleDeclaration": [
+      "stroke-dash-justify",
+      "strokeDashJustify"
+    ]
+  },
+  {
+    "name": "stroke-dashadjust",
+    "styleDeclaration": [
+      "stroke-dashadjust",
+      "strokeDashadjust"
+    ]
+  },
+  {
+    "name": "stroke-dasharray",
+    "styleDeclaration": [
+      "stroke-dasharray",
+      "strokeDasharray"
+    ]
+  },
+  {
+    "name": "stroke-dashcorner",
+    "styleDeclaration": [
+      "stroke-dashcorner",
+      "strokeDashcorner"
+    ]
+  },
+  {
+    "name": "stroke-dashoffset",
+    "styleDeclaration": [
+      "stroke-dashoffset",
+      "strokeDashoffset"
+    ]
+  },
+  {
+    "name": "stroke-image",
+    "styleDeclaration": [
+      "stroke-image",
+      "strokeImage"
+    ]
+  },
+  {
+    "name": "stroke-linecap",
+    "styleDeclaration": [
+      "stroke-linecap",
+      "strokeLinecap"
+    ]
+  },
+  {
+    "name": "stroke-linejoin",
+    "styleDeclaration": [
+      "stroke-linejoin",
+      "strokeLinejoin"
+    ]
+  },
+  {
+    "name": "stroke-miterlimit",
+    "styleDeclaration": [
+      "stroke-miterlimit",
+      "strokeMiterlimit"
+    ]
+  },
+  {
+    "name": "stroke-opacity",
+    "styleDeclaration": [
+      "stroke-opacity",
+      "strokeOpacity"
+    ]
+  },
+  {
+    "name": "stroke-origin",
+    "styleDeclaration": [
+      "stroke-origin",
+      "strokeOrigin"
+    ]
+  },
+  {
+    "name": "stroke-position",
+    "styleDeclaration": [
+      "stroke-position",
+      "strokePosition"
+    ]
+  },
+  {
+    "name": "stroke-repeat",
+    "styleDeclaration": [
+      "stroke-repeat",
+      "strokeRepeat"
+    ]
+  },
+  {
+    "name": "stroke-size",
+    "styleDeclaration": [
+      "stroke-size",
+      "strokeSize"
+    ]
+  },
+  {
+    "name": "stroke-width",
+    "styleDeclaration": [
+      "stroke-width",
+      "strokeWidth"
+    ]
+  },
+  {
+    "name": "tab-size",
+    "styleDeclaration": [
+      "tab-size",
+      "tabSize"
+    ]
+  },
+  {
+    "name": "table-layout",
+    "styleDeclaration": [
+      "table-layout",
+      "tableLayout"
+    ]
+  },
+  {
+    "name": "text-align",
+    "styleDeclaration": [
+      "text-align",
+      "textAlign"
+    ]
+  },
+  {
+    "name": "text-align-all",
+    "styleDeclaration": [
+      "text-align-all",
+      "textAlignAll"
+    ]
+  },
+  {
+    "name": "text-align-last",
+    "styleDeclaration": [
+      "text-align-last",
+      "textAlignLast"
+    ]
+  },
+  {
+    "name": "text-anchor",
+    "styleDeclaration": [
+      "text-anchor",
+      "textAnchor"
+    ]
+  },
+  {
+    "name": "text-autospace",
+    "styleDeclaration": [
+      "text-autospace",
+      "textAutospace"
+    ]
+  },
+  {
+    "name": "text-box",
+    "styleDeclaration": [
+      "text-box",
+      "textBox"
+    ]
+  },
+  {
+    "name": "text-box-edge",
+    "styleDeclaration": [
+      "text-box-edge",
+      "textBoxEdge"
+    ]
+  },
+  {
+    "name": "text-box-trim",
+    "styleDeclaration": [
+      "text-box-trim",
+      "textBoxTrim"
+    ]
+  },
+  {
+    "name": "text-combine-upright",
+    "styleDeclaration": [
+      "text-combine-upright",
+      "textCombineUpright"
+    ]
+  },
+  {
+    "name": "text-decoration",
+    "styleDeclaration": [
+      "text-decoration",
+      "textDecoration"
+    ]
+  },
+  {
+    "name": "text-decoration-color",
+    "styleDeclaration": [
+      "text-decoration-color",
+      "textDecorationColor"
+    ]
+  },
+  {
+    "name": "text-decoration-inset",
+    "styleDeclaration": [
+      "text-decoration-inset",
+      "textDecorationInset"
+    ]
+  },
+  {
+    "name": "text-decoration-line",
+    "styleDeclaration": [
+      "text-decoration-line",
+      "textDecorationLine"
+    ]
+  },
+  {
+    "name": "text-decoration-skip",
+    "styleDeclaration": [
+      "text-decoration-skip",
+      "textDecorationSkip"
+    ]
+  },
+  {
+    "name": "text-decoration-skip-box",
+    "styleDeclaration": [
+      "text-decoration-skip-box",
+      "textDecorationSkipBox"
+    ]
+  },
+  {
+    "name": "text-decoration-skip-ink",
+    "styleDeclaration": [
+      "text-decoration-skip-ink",
+      "textDecorationSkipInk"
+    ]
+  },
+  {
+    "name": "text-decoration-skip-self",
+    "styleDeclaration": [
+      "text-decoration-skip-self",
+      "textDecorationSkipSelf"
+    ]
+  },
+  {
+    "name": "text-decoration-skip-spaces",
+    "styleDeclaration": [
+      "text-decoration-skip-spaces",
+      "textDecorationSkipSpaces"
+    ]
+  },
+  {
+    "name": "text-decoration-style",
+    "styleDeclaration": [
+      "text-decoration-style",
+      "textDecorationStyle"
+    ]
+  },
+  {
+    "name": "text-decoration-thickness",
+    "styleDeclaration": [
+      "text-decoration-thickness",
+      "textDecorationThickness"
+    ]
+  },
+  {
+    "name": "text-emphasis",
+    "styleDeclaration": [
+      "text-emphasis",
+      "textEmphasis"
+    ]
+  },
+  {
+    "name": "text-emphasis-color",
+    "styleDeclaration": [
+      "text-emphasis-color",
+      "textEmphasisColor"
+    ]
+  },
+  {
+    "name": "text-emphasis-position",
+    "styleDeclaration": [
+      "text-emphasis-position",
+      "textEmphasisPosition"
+    ]
+  },
+  {
+    "name": "text-emphasis-skip",
+    "styleDeclaration": [
+      "text-emphasis-skip",
+      "textEmphasisSkip"
+    ]
+  },
+  {
+    "name": "text-emphasis-style",
+    "styleDeclaration": [
+      "text-emphasis-style",
+      "textEmphasisStyle"
+    ]
+  },
+  {
+    "name": "text-fit",
+    "styleDeclaration": [
+      "text-fit",
+      "textFit"
+    ]
+  },
+  {
+    "name": "text-group-align",
+    "styleDeclaration": [
+      "text-group-align",
+      "textGroupAlign"
+    ]
+  },
+  {
+    "name": "text-indent",
+    "styleDeclaration": [
+      "text-indent",
+      "textIndent"
+    ]
+  },
+  {
+    "name": "text-justify",
+    "styleDeclaration": [
+      "text-justify",
+      "textJustify"
+    ]
+  },
+  {
+    "name": "text-orientation",
+    "styleDeclaration": [
+      "text-orientation",
+      "textOrientation"
+    ]
+  },
+  {
+    "name": "text-overflow",
+    "styleDeclaration": [
+      "text-overflow",
+      "textOverflow"
+    ]
+  },
+  {
+    "name": "text-rendering",
+    "styleDeclaration": [
+      "text-rendering",
+      "textRendering"
+    ]
+  },
+  {
+    "name": "text-shadow",
+    "styleDeclaration": [
+      "text-shadow",
+      "textShadow"
+    ]
+  },
+  {
+    "name": "text-size-adjust",
+    "styleDeclaration": [
+      "text-size-adjust",
+      "textSizeAdjust"
+    ]
+  },
+  {
+    "name": "text-spacing",
+    "styleDeclaration": [
+      "text-spacing",
+      "textSpacing"
+    ]
+  },
+  {
+    "name": "text-spacing-trim",
+    "styleDeclaration": [
+      "text-spacing-trim",
+      "textSpacingTrim"
+    ]
+  },
+  {
+    "name": "text-transform",
+    "styleDeclaration": [
+      "text-transform",
+      "textTransform"
+    ]
+  },
+  {
+    "name": "text-underline-offset",
+    "styleDeclaration": [
+      "text-underline-offset",
+      "textUnderlineOffset"
+    ]
+  },
+  {
+    "name": "text-underline-position",
+    "styleDeclaration": [
+      "text-underline-position",
+      "textUnderlinePosition"
+    ]
+  },
+  {
+    "name": "text-wrap",
+    "styleDeclaration": [
+      "text-wrap",
+      "textWrap"
+    ]
+  },
+  {
+    "name": "text-wrap-mode",
+    "styleDeclaration": [
+      "text-wrap-mode",
+      "textWrapMode"
+    ]
+  },
+  {
+    "name": "text-wrap-style",
+    "styleDeclaration": [
+      "text-wrap-style",
+      "textWrapStyle"
+    ]
+  },
+  {
+    "name": "timeline-scope",
+    "styleDeclaration": [
+      "timeline-scope",
+      "timelineScope"
+    ]
+  },
+  {
+    "name": "timeline-trigger",
+    "styleDeclaration": [
+      "timeline-trigger",
+      "timelineTrigger"
+    ]
+  },
+  {
+    "name": "timeline-trigger-activation-range",
+    "styleDeclaration": [
+      "timeline-trigger-activation-range",
+      "timelineTriggerActivationRange"
+    ]
+  },
+  {
+    "name": "timeline-trigger-activation-range-end",
+    "styleDeclaration": [
+      "timeline-trigger-activation-range-end",
+      "timelineTriggerActivationRangeEnd"
+    ]
+  },
+  {
+    "name": "timeline-trigger-activation-range-start",
+    "styleDeclaration": [
+      "timeline-trigger-activation-range-start",
+      "timelineTriggerActivationRangeStart"
+    ]
+  },
+  {
+    "name": "timeline-trigger-active-range",
+    "styleDeclaration": [
+      "timeline-trigger-active-range",
+      "timelineTriggerActiveRange"
+    ]
+  },
+  {
+    "name": "timeline-trigger-active-range-end",
+    "styleDeclaration": [
+      "timeline-trigger-active-range-end",
+      "timelineTriggerActiveRangeEnd"
+    ]
+  },
+  {
+    "name": "timeline-trigger-active-range-start",
+    "styleDeclaration": [
+      "timeline-trigger-active-range-start",
+      "timelineTriggerActiveRangeStart"
+    ]
+  },
+  {
+    "name": "timeline-trigger-name",
+    "styleDeclaration": [
+      "timeline-trigger-name",
+      "timelineTriggerName"
+    ]
+  },
+  {
+    "name": "timeline-trigger-range",
+    "styleDeclaration": [
+      "timeline-trigger-range",
+      "timelineTriggerRange"
+    ]
+  },
+  {
+    "name": "timeline-trigger-source",
+    "styleDeclaration": [
+      "timeline-trigger-source",
+      "timelineTriggerSource"
+    ]
+  },
+  {
+    "name": "top",
+    "styleDeclaration": [
+      "top"
+    ]
+  },
+  {
+    "name": "touch-action",
+    "styleDeclaration": [
+      "touch-action",
+      "touchAction"
+    ]
+  },
+  {
+    "name": "transform",
+    "styleDeclaration": [
+      "transform"
+    ]
+  },
+  {
+    "name": "transform-box",
+    "styleDeclaration": [
+      "transform-box",
+      "transformBox"
+    ]
+  },
+  {
+    "name": "transform-origin",
+    "styleDeclaration": [
+      "transform-origin",
+      "transformOrigin"
+    ]
+  },
+  {
+    "name": "transform-style",
+    "styleDeclaration": [
+      "transform-style",
+      "transformStyle"
+    ]
+  },
+  {
+    "name": "transition",
+    "styleDeclaration": [
+      "transition"
+    ]
+  },
+  {
+    "name": "transition-behavior",
+    "styleDeclaration": [
+      "transition-behavior",
+      "transitionBehavior"
+    ]
+  },
+  {
+    "name": "transition-delay",
+    "styleDeclaration": [
+      "transition-delay",
+      "transitionDelay"
+    ]
+  },
+  {
+    "name": "transition-duration",
+    "styleDeclaration": [
+      "transition-duration",
+      "transitionDuration"
+    ]
+  },
+  {
+    "name": "transition-property",
+    "styleDeclaration": [
+      "transition-property",
+      "transitionProperty"
+    ]
+  },
+  {
+    "name": "transition-timing-function",
+    "styleDeclaration": [
+      "transition-timing-function",
+      "transitionTimingFunction"
+    ]
+  },
+  {
+    "name": "translate",
+    "styleDeclaration": [
+      "translate"
+    ]
+  },
+  {
+    "name": "trigger-scope",
+    "styleDeclaration": [
+      "trigger-scope",
+      "triggerScope"
+    ]
+  },
+  {
+    "name": "unicode-bidi",
+    "styleDeclaration": [
+      "unicode-bidi",
+      "unicodeBidi"
+    ]
+  },
+  {
+    "name": "user-select",
+    "styleDeclaration": [
+      "user-select",
+      "userSelect"
+    ]
+  },
+  {
+    "name": "vector-effect",
+    "styleDeclaration": [
+      "vector-effect",
+      "vectorEffect"
+    ]
+  },
+  {
+    "name": "vertical-align",
+    "styleDeclaration": [
+      "vertical-align",
+      "verticalAlign"
+    ]
+  },
+  {
+    "name": "view-timeline",
+    "styleDeclaration": [
+      "view-timeline",
+      "viewTimeline"
+    ]
+  },
+  {
+    "name": "view-timeline-axis",
+    "styleDeclaration": [
+      "view-timeline-axis",
+      "viewTimelineAxis"
+    ]
+  },
+  {
+    "name": "view-timeline-inset",
+    "styleDeclaration": [
+      "view-timeline-inset",
+      "viewTimelineInset"
+    ]
+  },
+  {
+    "name": "view-timeline-name",
+    "styleDeclaration": [
+      "view-timeline-name",
+      "viewTimelineName"
+    ]
+  },
+  {
+    "name": "view-transition-class",
+    "styleDeclaration": [
+      "view-transition-class",
+      "viewTransitionClass"
+    ]
+  },
+  {
+    "name": "view-transition-group",
+    "styleDeclaration": [
+      "view-transition-group",
+      "viewTransitionGroup"
+    ]
+  },
+  {
+    "name": "view-transition-name",
+    "styleDeclaration": [
+      "view-transition-name",
+      "viewTransitionName"
+    ]
+  },
+  {
+    "name": "view-transition-scope",
+    "styleDeclaration": [
+      "view-transition-scope",
+      "viewTransitionScope"
+    ]
+  },
+  {
+    "name": "visibility",
+    "styleDeclaration": [
+      "visibility"
+    ]
+  },
+  {
+    "name": "voice-balance",
+    "styleDeclaration": [
+      "voice-balance",
+      "voiceBalance"
+    ]
+  },
+  {
+    "name": "voice-duration",
+    "styleDeclaration": [
+      "voice-duration",
+      "voiceDuration"
+    ]
+  },
+  {
+    "name": "voice-family",
+    "styleDeclaration": [
+      "voice-family",
+      "voiceFamily"
+    ]
+  },
+  {
+    "name": "voice-pitch",
+    "styleDeclaration": [
+      "voice-pitch",
+      "voicePitch"
+    ]
+  },
+  {
+    "name": "voice-range",
+    "styleDeclaration": [
+      "voice-range",
+      "voiceRange"
+    ]
+  },
+  {
+    "name": "voice-rate",
+    "styleDeclaration": [
+      "voice-rate",
+      "voiceRate"
+    ]
+  },
+  {
+    "name": "voice-stress",
+    "styleDeclaration": [
+      "voice-stress",
+      "voiceStress"
+    ]
+  },
+  {
+    "name": "voice-volume",
+    "styleDeclaration": [
+      "voice-volume",
+      "voiceVolume"
+    ]
+  },
+  {
+    "name": "white-space",
+    "styleDeclaration": [
+      "white-space",
+      "whiteSpace"
+    ]
+  },
+  {
+    "name": "white-space-collapse",
+    "styleDeclaration": [
+      "white-space-collapse",
+      "whiteSpaceCollapse"
+    ]
+  },
+  {
+    "name": "white-space-trim",
+    "styleDeclaration": [
+      "white-space-trim",
+      "whiteSpaceTrim"
+    ]
+  },
+  {
+    "name": "widows",
+    "styleDeclaration": [
+      "widows"
+    ]
+  },
+  {
+    "name": "width",
+    "styleDeclaration": [
+      "width"
+    ]
+  },
+  {
+    "name": "will-change",
+    "styleDeclaration": [
+      "will-change",
+      "willChange"
+    ]
+  },
+  {
+    "name": "window-drag",
+    "styleDeclaration": [
+      "window-drag",
+      "windowDrag"
+    ]
+  },
+  {
+    "name": "word-break",
+    "styleDeclaration": [
+      "word-break",
+      "wordBreak"
+    ]
+  },
+  {
+    "name": "word-space-transform",
+    "styleDeclaration": [
+      "word-space-transform",
+      "wordSpaceTransform"
+    ]
+  },
+  {
+    "name": "word-spacing",
+    "styleDeclaration": [
+      "word-spacing",
+      "wordSpacing"
+    ]
+  },
+  {
+    "name": "word-wrap",
+    "legacyAliasOf": "overflow-wrap",
+    "styleDeclaration": [
+      "word-wrap",
+      "wordWrap"
+    ]
+  },
+  {
+    "name": "wrap-after",
+    "styleDeclaration": [
+      "wrap-after",
+      "wrapAfter"
+    ]
+  },
+  {
+    "name": "wrap-before",
+    "styleDeclaration": [
+      "wrap-before",
+      "wrapBefore"
+    ]
+  },
+  {
+    "name": "wrap-flow",
+    "styleDeclaration": [
+      "wrap-flow",
+      "wrapFlow"
+    ]
+  },
+  {
+    "name": "wrap-inside",
+    "styleDeclaration": [
+      "wrap-inside",
+      "wrapInside"
+    ]
+  },
+  {
+    "name": "wrap-through",
+    "styleDeclaration": [
+      "wrap-through",
+      "wrapThrough"
+    ]
+  },
+  {
+    "name": "writing-mode",
+    "styleDeclaration": [
+      "writing-mode",
+      "writingMode"
+    ]
+  },
+  {
+    "name": "x",
+    "styleDeclaration": [
+      "x"
+    ]
+  },
+  {
+    "name": "y",
+    "styleDeclaration": [
+      "y"
+    ]
+  },
+  {
+    "name": "z-index",
+    "styleDeclaration": [
+      "z-index",
+      "zIndex"
+    ]
+  },
+  {
+    "name": "zoom",
+    "styleDeclaration": [
+      "zoom"
+    ]
+  }
+]

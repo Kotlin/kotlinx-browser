@@ -14,9 +14,12 @@ pinned @webref/idl (exact version) → webidl2.js (Node, `npm run ingest` only) 
 ```
 
 - Versions are pinned exactly in `package.json`: `@webref/idl@3.86.0`, `webidl2@24.5.0`, and `@webref/events@1.27.1`
-  from the same crawl.
+  and `@webref/css@8.7.8` from the same crawl.
 - `./gradlew` needs neither Node nor the network. Node is only used by the ingest chore, and its output (`idl/`,
-  `webref-idl.json`, `webref-events.json`) is a reviewable diff.
+  `webref-idl.json`, `webref-events.json`, `webref-css.json`) is a reviewable diff.
+- CSSOM defines the per-property attributes of `CSSStyleProperties` (`style.color`) in prose, not in IDL. The
+  front-end adds them as the partial interface that prose describes, from the property names in `@webref/css`
+  (`idl/frontend/WebrefCss.kt`), so they go through the lowerings and the backend like any other IDL.
 - The JSON is read by `generator/src/main/kotlin/idl/frontend/WebIdl2JsonFrontend.kt` into the generator's own IR
   (`idl/ir/`). The IR is lossless: `npm run check:ir-roundtrip` prints all 346 specs back and compares them.
 - dukat's IDL **lowerings** are kept, ported onto that IR (`idl/lowering/`). Its parser, `convertToModel`, `astModel`

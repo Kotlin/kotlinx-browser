@@ -4,6 +4,7 @@
  */
 
 import org.w3c.dom.*
+import org.w3c.dom.css.*
 import org.w3c.fetch.*
 import kotlin.test.*
 
@@ -72,5 +73,16 @@ class InteropTest {
         setStringProperty(o, "z", "w")
         assertEquals("w", getStringProperty(o, "z"))
         assertEquals("x,z", keys(o))
+    }
+
+    /** The `@webref/css` attributes are the camel-cased JS property names (Node has no DOM: a plain object stands in). */
+    @Test
+    fun cssPropertyNames() {
+        val style = obj().unsafeCast<CSSStyleProperties>()
+        style.color = "red"
+        style.backgroundColor = "blue"
+        style.cssFloat = "left"
+        assertEquals("x,color,backgroundColor,cssFloat", keys(style))
+        assertEquals("red", style.color)
     }
 }
