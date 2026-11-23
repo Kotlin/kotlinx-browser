@@ -11,14 +11,14 @@ package org.khronos.webgl
 /** Returns a new [UByteArray] containing all the elements of this [Uint8Array]. */
 @ExperimentalUnsignedTypes
 public actual fun Uint8Array.toUByteArray(): UByteArray =
-    UByteArray(this.length) { this[it].toUByte() }
+    UByteArray(this.length) { this[it] }
 
 /** Returns a new [Uint8Array] containing all the elements of this [UByteArray]. */
 @ExperimentalUnsignedTypes
 public actual fun UByteArray.toUint8Array(): Uint8Array {
     val result = Uint8Array(this.size)
     for (index in this.indices) {
-        result[index] = this[index].toByte()
+        result[index] = this[index]
     }
     return result
 }
@@ -39,14 +39,14 @@ public actual fun ByteArray.toInt8Array(): Int8Array {
 /** Returns a new [UShortArray] containing all the elements of this [Uint16Array]. */
 @ExperimentalUnsignedTypes
 public actual fun Uint16Array.toUShortArray(): UShortArray =
-    UShortArray(this.length) { this[it].toUShort() }
+    UShortArray(this.length) { this[it] }
 
 /** Returns a new [Uint16Array] containing all the elements of this [UShortArray]. */
 @ExperimentalUnsignedTypes
 public actual fun UShortArray.toUint16Array(): Uint16Array {
     val result = Uint16Array(this.size)
     for (index in this.indices) {
-        result[index] = this[index].toShort()
+        result[index] = this[index]
     }
     return result
 }
@@ -67,14 +67,14 @@ public actual fun ShortArray.toInt16Array(): Int16Array {
 /** Returns a new [UIntArray] containing all the elements of this [Uint32Array]. */
 @ExperimentalUnsignedTypes
 public actual fun Uint32Array.toUIntArray(): UIntArray =
-    UIntArray(this.length) { this[it].toUInt() }
+    UIntArray(this.length) { this[it] }
 
 /** Returns a new [Uint32Array] containing all the elements of this [UIntArray]. */
 @ExperimentalUnsignedTypes
 public actual fun UIntArray.toUint32Array(): Uint32Array {
     val result = Uint32Array(this.size)
     for (index in this.indices) {
-        result[index] = this[index].toInt()
+        result[index] = this[index]
     }
     return result
 }

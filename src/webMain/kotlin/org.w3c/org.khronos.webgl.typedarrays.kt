@@ -79,9 +79,9 @@ public expect open class Uint8Array : ArrayBufferView, JsAny {
     }
 }
 
-public expect operator fun Uint8Array.get(index: Int): Byte
+public expect operator fun Uint8Array.get(index: Int): UByte
 
-public expect operator fun Uint8Array.set(index: Int, value: Byte)
+public expect operator fun Uint8Array.set(index: Int, value: UByte)
 
 /**
  * Exposes the JavaScript [Uint8ClampedArray](https://developer.mozilla.org/en/docs/Web/API/Uint8ClampedArray) to Kotlin
@@ -104,9 +104,9 @@ public expect open class Uint8ClampedArray : ArrayBufferView, JsAny {
     }
 }
 
-public expect operator fun Uint8ClampedArray.get(index: Int): Byte
+public expect operator fun Uint8ClampedArray.get(index: Int): UByte
 
-public expect operator fun Uint8ClampedArray.set(index: Int, value: Byte)
+public expect operator fun Uint8ClampedArray.set(index: Int, value: UByte)
 
 /**
  * Exposes the JavaScript [Int16Array](https://developer.mozilla.org/en/docs/Web/API/Int16Array) to Kotlin
@@ -154,9 +154,9 @@ public expect open class Uint16Array : ArrayBufferView, JsAny {
     }
 }
 
-public expect operator fun Uint16Array.get(index: Int): Short
+public expect operator fun Uint16Array.get(index: Int): UShort
 
-public expect operator fun Uint16Array.set(index: Int, value: Short)
+public expect operator fun Uint16Array.set(index: Int, value: UShort)
 
 /**
  * Exposes the JavaScript [Int32Array](https://developer.mozilla.org/en/docs/Web/API/Int32Array) to Kotlin
@@ -204,9 +204,9 @@ public expect open class Uint32Array : ArrayBufferView, JsAny {
     }
 }
 
-public expect operator fun Uint32Array.get(index: Int): Int
+public expect operator fun Uint32Array.get(index: Int): UInt
 
-public expect operator fun Uint32Array.set(index: Int, value: Int)
+public expect operator fun Uint32Array.set(index: Int, value: UInt)
 
 /**
  * Exposes the JavaScript [Float32Array](https://developer.mozilla.org/en/docs/Web/API/Float32Array) to Kotlin

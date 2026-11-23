@@ -12,105 +12,195 @@ import org.khronos.webgl.*
 import kotlin.test.*
 
 private fun testJsRoundTrip(array: ByteArray) {
-    
     val jsArray = array.toInt8Array()
+    assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
         assertEquals(array[i], jsArray[i])
     }
-    
-    assertEquals(array.size, jsArray.length)
     val roundTrippedArray = jsArray.toByteArray()
     assertContentEquals(array, roundTrippedArray)
+
+    // A view converts only its own elements.
+    if (array.size >= 3) {
+        val view = Int8Array(jsArray.buffer, Int8Array.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toByteArray())
+    }
+
+    // Both conversions copy: changing one side leaves the other as it was.
+    if (array.size >= 2 && array[0] != array[1]) {
+        val first = jsArray[0]
+        array[0] = array[1]
+        roundTrippedArray[0] = array[1]
+        assertEquals(first, jsArray[0])
+    }
 }
 
 private fun testJsRoundTrip(array: UByteArray) {
-    
-   val jsArray = array.toUint8Array()
-   // It never worked in JS since there is a bug in the implementation and we can't drop it because of ABI compatibility.
-   // The bug is simple, we declare that get operator returns Byte/Short/Int, while it's not true (it always returns Int).
-   //  for (i in array.indices) {
-   //     assertEquals(array[i], jsArray[i].toUByte())
-   // }
-    
+    val jsArray = array.toUint8Array()
     assertEquals(array.size, jsArray.length)
+    for (i in array.indices) {
+        assertEquals(array[i], jsArray[i])
+    }
     val roundTrippedArray = jsArray.toUByteArray()
     assertContentEquals(array, roundTrippedArray)
+
+    // A view converts only its own elements.
+    if (array.size >= 3) {
+        val view = Uint8Array(jsArray.buffer, Uint8Array.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toUByteArray())
+    }
+
+    // Both conversions copy: changing one side leaves the other as it was.
+    if (array.size >= 2 && array[0] != array[1]) {
+        val first = jsArray[0]
+        array[0] = array[1]
+        roundTrippedArray[0] = array[1]
+        assertEquals(first, jsArray[0])
+    }
 }
 
 private fun testJsRoundTrip(array: ShortArray) {
-    
     val jsArray = array.toInt16Array()
+    assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
         assertEquals(array[i], jsArray[i])
     }
-    
-    assertEquals(array.size, jsArray.length)
     val roundTrippedArray = jsArray.toShortArray()
     assertContentEquals(array, roundTrippedArray)
+
+    // A view converts only its own elements.
+    if (array.size >= 3) {
+        val view = Int16Array(jsArray.buffer, Int16Array.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toShortArray())
+    }
+
+    // Both conversions copy: changing one side leaves the other as it was.
+    if (array.size >= 2 && array[0] != array[1]) {
+        val first = jsArray[0]
+        array[0] = array[1]
+        roundTrippedArray[0] = array[1]
+        assertEquals(first, jsArray[0])
+    }
 }
 
 private fun testJsRoundTrip(array: UShortArray) {
-    
-   val jsArray = array.toUint16Array()
-   // It never worked in JS since there is a bug in the implementation and we can't drop it because of ABI compatibility.
-   // The bug is simple, we declare that get operator returns Byte/Short/Int, while it's not true (it always returns Int).
-   //  for (i in array.indices) {
-   //     assertEquals(array[i], jsArray[i].toUShort())
-   // }
-    
+    val jsArray = array.toUint16Array()
     assertEquals(array.size, jsArray.length)
+    for (i in array.indices) {
+        assertEquals(array[i], jsArray[i])
+    }
     val roundTrippedArray = jsArray.toUShortArray()
     assertContentEquals(array, roundTrippedArray)
+
+    // A view converts only its own elements.
+    if (array.size >= 3) {
+        val view = Uint16Array(jsArray.buffer, Uint16Array.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toUShortArray())
+    }
+
+    // Both conversions copy: changing one side leaves the other as it was.
+    if (array.size >= 2 && array[0] != array[1]) {
+        val first = jsArray[0]
+        array[0] = array[1]
+        roundTrippedArray[0] = array[1]
+        assertEquals(first, jsArray[0])
+    }
 }
 
 private fun testJsRoundTrip(array: IntArray) {
-    
     val jsArray = array.toInt32Array()
+    assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
         assertEquals(array[i], jsArray[i])
     }
-    
-    assertEquals(array.size, jsArray.length)
     val roundTrippedArray = jsArray.toIntArray()
     assertContentEquals(array, roundTrippedArray)
+
+    // A view converts only its own elements.
+    if (array.size >= 3) {
+        val view = Int32Array(jsArray.buffer, Int32Array.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toIntArray())
+    }
+
+    // Both conversions copy: changing one side leaves the other as it was.
+    if (array.size >= 2 && array[0] != array[1]) {
+        val first = jsArray[0]
+        array[0] = array[1]
+        roundTrippedArray[0] = array[1]
+        assertEquals(first, jsArray[0])
+    }
 }
 
 private fun testJsRoundTrip(array: UIntArray) {
-    
-   val jsArray = array.toUint32Array()
-   // It never worked in JS since there is a bug in the implementation and we can't drop it because of ABI compatibility.
-   // The bug is simple, we declare that get operator returns Byte/Short/Int, while it's not true (it always returns Int).
-   //  for (i in array.indices) {
-   //     assertEquals(array[i], jsArray[i].toUInt())
-   // }
-    
+    val jsArray = array.toUint32Array()
     assertEquals(array.size, jsArray.length)
+    for (i in array.indices) {
+        assertEquals(array[i], jsArray[i])
+    }
     val roundTrippedArray = jsArray.toUIntArray()
     assertContentEquals(array, roundTrippedArray)
+
+    // A view converts only its own elements.
+    if (array.size >= 3) {
+        val view = Uint32Array(jsArray.buffer, Uint32Array.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toUIntArray())
+    }
+
+    // Both conversions copy: changing one side leaves the other as it was.
+    if (array.size >= 2 && array[0] != array[1]) {
+        val first = jsArray[0]
+        array[0] = array[1]
+        roundTrippedArray[0] = array[1]
+        assertEquals(first, jsArray[0])
+    }
 }
 
 private fun testJsRoundTrip(array: FloatArray) {
-    
     val jsArray = array.toFloat32Array()
+    assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
         assertEquals(array[i], jsArray[i])
     }
-    
-    assertEquals(array.size, jsArray.length)
     val roundTrippedArray = jsArray.toFloatArray()
     assertContentEquals(array, roundTrippedArray)
+
+    // A view converts only its own elements.
+    if (array.size >= 3) {
+        val view = Float32Array(jsArray.buffer, Float32Array.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toFloatArray())
+    }
+
+    // Both conversions copy: changing one side leaves the other as it was.
+    if (array.size >= 2 && array[0] != array[1]) {
+        val first = jsArray[0]
+        array[0] = array[1]
+        roundTrippedArray[0] = array[1]
+        assertEquals(first, jsArray[0])
+    }
 }
 
 private fun testJsRoundTrip(array: DoubleArray) {
-    
     val jsArray = array.toFloat64Array()
+    assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
         assertEquals(array[i], jsArray[i])
     }
-    
-    assertEquals(array.size, jsArray.length)
     val roundTrippedArray = jsArray.toDoubleArray()
     assertContentEquals(array, roundTrippedArray)
+
+    // A view converts only its own elements.
+    if (array.size >= 3) {
+        val view = Float64Array(jsArray.buffer, Float64Array.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toDoubleArray())
+    }
+
+    // Both conversions copy: changing one side leaves the other as it was.
+    if (array.size >= 2 && array[0] != array[1]) {
+        val first = jsArray[0]
+        array[0] = array[1]
+        roundTrippedArray[0] = array[1]
+        assertEquals(first, jsArray[0])
+    }
 }
 
 class JsArrayConversionTest {

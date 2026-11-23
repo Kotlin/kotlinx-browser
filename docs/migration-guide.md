@@ -107,6 +107,24 @@ declared; use the standard name. `wordWrap`, `fontStretch` and `gridGap` are kep
 | `ImageOrientation.FLIPY` | `ImageOrientation.FLIP_Y` | Enum names now split camel case |
 | Dictionary fields declared `open var` | `abstract var` | A Kotlin object implementing a dictionary interface must implement every field; use the factory instead |
 
+## Typed arrays
+
+- **Unsigned element types.** Elements of unsigned typed arrays now have unsigned types: `Uint8Array` and
+  `Uint8ClampedArray` use `UByte`, `Uint16Array` uses `UShort`, `Uint32Array` uses `UInt`, for both `get` and `set`.
+  They were `Byte`, `Short` and `Int`. On JS those held the unconverted JS number (`200` in a `Byte`), which broke
+  comparisons and arithmetic; on Wasm they were wrapped (`-56`). This includes `ImageData.data`:
+
+  ```kotlin
+  val red: UByte = imageData.data[0]   // was Byte
+  val value: Int = imageData.data[0].toInt()
+  imageData.data[0] = 255u
+  ```
+
+- **Conversions copy on JS.** `toByteArray()`, `toInt8Array()`, `toFloat32Array()`, … and their unsigned versions
+  always return a new array containing exactly the elements of the view (`byteOffset`, `length`), as on Wasm. On JS
+  the signed ones used to return the same object, so writes went to both. The unsigned ones used to convert the
+  whole underlying buffer, ignoring the view, and did not compare equal (KT-79776).
+
 ## WebGL
 
 - The constants are available as before, on `WebGLRenderingContext`, `WebGL2RenderingContext` and

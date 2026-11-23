@@ -88,6 +88,11 @@ private fun StringBuilder.appendExpectConversionsForType(
 }
 
 
+/**
+ * On JS a Kotlin primitive array is the typed array of the same kind (`ByteArray` is an `Int8Array`), so a conversion
+ * is a copy of exactly the elements of the view (`byteOffset`, `length`), never the object itself or its whole buffer.
+ * An unsigned array goes through the signed one (`UByteArray` ↔ `ByteArray` ↔ `Int8Array`) with public API only.
+ */
 private fun StringBuilder.appendJsConversionsForType(
     ktType: String,
     jsType: String,
@@ -103,26 +108,22 @@ private fun StringBuilder.appendJsConversionsForType(
     appendLine("/** Returns a new [$kotlinArrayType] containing all the elements of this [$jsArrayType]. */")
     if (isUnsigned) {
         appendLine("@ExperimentalUnsignedTypes")
-        appendLine("@Suppress(\"INVISIBLE_REFERENCE\")")
-    }
-    appendLine("public actual inline fun $jsArrayType.to$kotlinArrayType(): $kotlinArrayType =")
-    if (isUnsigned) {
-        appendLine("    $kotlinArrayType($signedJsArrayType(buffer).unsafeCast<$signedKotlinArrayType>())")
+        appendLine("public actual inline fun $jsArrayType.to$kotlinArrayType(): $kotlinArrayType =")
+        appendLine("    $signedJsArrayType(buffer, byteOffset, length).unsafeCast<$signedKotlinArrayType>().copyOf().as$kotlinArrayType()")
     } else {
-        appendLine("    unsafeCast<$kotlinArrayType>()")
+        appendLine("public actual inline fun $jsArrayType.to$kotlinArrayType(): $kotlinArrayType =")
+        appendLine("    unsafeCast<$kotlinArrayType>().copyOf()")
     }
 
     appendLine()
     appendLine("/** Returns a new [$jsArrayType] containing all the elements of this [$kotlinArrayType]. */")
     if (isUnsigned) {
         appendLine("@ExperimentalUnsignedTypes")
-        appendLine("@Suppress(\"INVISIBLE_REFERENCE\")")
-    }
-    appendLine("public actual inline fun $kotlinArrayType.to$jsArrayType(): $jsArrayType =")
-    if (isUnsigned) {
-        appendLine("    $jsArrayType(storage.unsafeCast<$signedJsArrayType>().buffer)")
+        appendLine("public actual inline fun $kotlinArrayType.to$jsArrayType(): $jsArrayType =")
+        appendLine("    $jsArrayType(as$signedKotlinArrayType().copyOf().unsafeCast<$signedJsArrayType>().buffer)")
     } else {
-        appendLine("    unsafeCast<$jsArrayType>()")
+        appendLine("public actual inline fun $kotlinArrayType.to$jsArrayType(): $jsArrayType =")
+        appendLine("    copyOf().unsafeCast<$jsArrayType>()")
     }
 }
 
@@ -141,11 +142,7 @@ private fun StringBuilder.appendWasmConversionsForType(
         appendLine("@ExperimentalUnsignedTypes")
     }
     appendLine("public actual fun $jsArrayType.to$kotlinArrayType(): $kotlinArrayType =")
-    if (isUnsigned) {
-        appendLine("    $kotlinArrayType(this.length) { this[it].to$ktType() }")
-    } else {
-        appendLine("    $kotlinArrayType(this.length) { this[it] }")
-    }
+    appendLine("    $kotlinArrayType(this.length) { this[it] }")
 
     appendLine()
     appendLine("/** Returns a new [$jsArrayType] containing all the elements of this [$kotlinArrayType]. */")
@@ -155,12 +152,7 @@ private fun StringBuilder.appendWasmConversionsForType(
     appendLine("public actual fun $kotlinArrayType.to$jsArrayType(): $jsArrayType {")
     appendLine("    val result = $jsArrayType(this.size)")
     appendLine("    for (index in this.indices) {")
-    if (isUnsigned) {
-        val signedType = ktType.drop(1)
-        appendLine("        result[index] = this[index].to$signedType()")
-    } else {
-        appendLine("        result[index] = this[index]")
-    }
+    appendLine("        result[index] = this[index]")
     appendLine("    }")
     appendLine("    return result")
     appendLine("}")
@@ -174,11 +166,11 @@ private fun StringBuilder.appendTests() {
 
 
     appendTestJsRoundTripHelper("Byte", "Int8")
-    appendTestJsRoundTripHelper("UByte", "Uint8", isUnsigned = true)
+    appendTestJsRoundTripHelper("UByte", "Uint8")
     appendTestJsRoundTripHelper("Short", "Int16")
-    appendTestJsRoundTripHelper("UShort", "Uint16", isUnsigned = true)
+    appendTestJsRoundTripHelper("UShort", "Uint16")
     appendTestJsRoundTripHelper("Int", "Int32")
-    appendTestJsRoundTripHelper("UInt", "Uint32", isUnsigned = true)
+    appendTestJsRoundTripHelper("UInt", "Uint32")
     appendTestJsRoundTripHelper("Float", "Float32")
     appendTestJsRoundTripHelper("Double", "Float64")
 
@@ -200,7 +192,6 @@ private fun StringBuilder.appendTests() {
 private fun StringBuilder.appendTestJsRoundTripHelper(
     ktType: String,
     jsType: String,
-    isUnsigned: Boolean = false,
 ) {
     val kotlinArrayType = "${ktType}Array"
     val jsArrayType = "${jsType}Array"
@@ -209,37 +200,34 @@ private fun StringBuilder.appendTestJsRoundTripHelper(
         """
             
             private fun testJsRoundTrip(array: $kotlinArrayType) {
-                ${
-                    if (isUnsigned) {
-               """
-               val jsArray = array.to$jsArrayType()
-               // It never worked in JS since there is a bug in the implementation and we can't drop it because of ABI compatibility.
-               // The bug is simple, we declare that get operator returns Byte/Short/Int, while it's not true (it always returns Int).
-               //  for (i in array.indices) {
-               //     assertEquals(array[i], jsArray[i]${if (isUnsigned) ".to$ktType()" else ""})
-               // }
-                """
-                    } else {
-                """
                 val jsArray = array.to$jsArrayType()
-                for (i in array.indices) {
-                    assertEquals(array[i], jsArray[i]${if (isUnsigned) ".to$ktType()" else ""})
-                }
-                """
-                    } 
-                }
                 assertEquals(array.size, jsArray.length)
+                for (i in array.indices) {
+                    assertEquals(array[i], jsArray[i])
+                }
                 val roundTrippedArray = jsArray.to$kotlinArrayType()
                 assertContentEquals(array, roundTrippedArray)
+
+                // A view converts only its own elements.
+                if (array.size >= 3) {
+                    val view = $jsArrayType(jsArray.buffer, $jsArrayType.BYTES_PER_ELEMENT, array.size - 2)
+                    assertContentEquals(array.copyOfRange(1, array.size - 1), view.to$kotlinArrayType())
+                }
+
+                // Both conversions copy: changing one side leaves the other as it was.
+                if (array.size >= 2 && array[0] != array[1]) {
+                    val first = jsArray[0]
+                    array[0] = array[1]
+                    roundTrippedArray[0] = array[1]
+                    assertEquals(first, jsArray[0])
+                }
             }
         """.trimIndent()
     )
 }
 
-/** [ignored]: the unsigned round trips fail on JS (KT-79776). */
 private fun StringBuilder.appendTestFunction(
     ktType: String,
-    ignored: Boolean = false,
 ) {
     val kotlinArrayType = "${ktType}Array"
     val ktArrayOf = "${ktType.lowercase()}ArrayOf"

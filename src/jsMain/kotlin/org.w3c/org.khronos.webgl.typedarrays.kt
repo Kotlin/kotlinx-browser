@@ -89,11 +89,11 @@ actual external open class Uint8Array : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint8Array.get(index: Int): Byte = asDynamic()[index]
+actual inline operator fun Uint8Array.get(index: Int): UByte = asDynamic()[index].unsafeCast<Int>().toUByte()
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint8Array.set(index: Int, value: Byte) { asDynamic()[index] = value }
+actual inline operator fun Uint8Array.set(index: Int, value: UByte) { asDynamic()[index] = value.toInt() }
 
 /**
  * Exposes the JavaScript [Uint8ClampedArray](https://developer.mozilla.org/en/docs/Web/API/Uint8ClampedArray) to Kotlin
@@ -120,11 +120,11 @@ actual external open class Uint8ClampedArray : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint8ClampedArray.get(index: Int): Byte = asDynamic()[index]
+actual inline operator fun Uint8ClampedArray.get(index: Int): UByte = asDynamic()[index].unsafeCast<Int>().toUByte()
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint8ClampedArray.set(index: Int, value: Byte) { asDynamic()[index] = value }
+actual inline operator fun Uint8ClampedArray.set(index: Int, value: UByte) { asDynamic()[index] = value.toInt() }
 
 /**
  * Exposes the JavaScript [Int16Array](https://developer.mozilla.org/en/docs/Web/API/Int16Array) to Kotlin
@@ -182,11 +182,11 @@ actual external open class Uint16Array : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint16Array.get(index: Int): Short = asDynamic()[index]
+actual inline operator fun Uint16Array.get(index: Int): UShort = asDynamic()[index].unsafeCast<Int>().toUShort()
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint16Array.set(index: Int, value: Short) { asDynamic()[index] = value }
+actual inline operator fun Uint16Array.set(index: Int, value: UShort) { asDynamic()[index] = value.toInt() }
 
 /**
  * Exposes the JavaScript [Int32Array](https://developer.mozilla.org/en/docs/Web/API/Int32Array) to Kotlin
@@ -244,11 +244,11 @@ actual external open class Uint32Array : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint32Array.get(index: Int): Int = asDynamic()[index]
+actual inline operator fun Uint32Array.get(index: Int): UInt = asDynamic()[index].unsafeCast<Double>().toUInt()
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint32Array.set(index: Int, value: Int) { asDynamic()[index] = value }
+actual inline operator fun Uint32Array.set(index: Int, value: UInt) { asDynamic()[index] = value.toInt() }
 
 /**
  * Exposes the JavaScript [Float32Array](https://developer.mozilla.org/en/docs/Web/API/Float32Array) to Kotlin
