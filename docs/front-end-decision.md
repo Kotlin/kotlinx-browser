@@ -107,5 +107,5 @@ converter as a product dependency.
   JSON diff.
 - A spec that fails to parse, or a reference that does not resolve, fails generation. It is not silently dropped
   (surface pass, `surface-report.txt`).
-- `dukat:0.5.8-rc.6` stays on the classpath only until the new backend replaces the temporary `IrToDukat` adapter.
-  `jsoup` is already gone with the spec-page scraping.
+- `dukat:0.5.8-rc.6` is gone from the classpath (2026-11): the new backend replaced the dukat chain and its
+  temporary `IrToDukat` adapter. `jsoup` went earlier with the spec-page scraping.

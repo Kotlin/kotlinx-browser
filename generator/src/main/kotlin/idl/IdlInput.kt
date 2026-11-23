@@ -5,9 +5,6 @@
 
 package org.jetbrains.kotlin.tools.idl
 
-import org.jetbrains.kotlin.tools.dukat.EXCLUDED_SPECS
-import org.jetbrains.kotlin.tools.dukat.EXCLUDED_TYPES
-import org.jetbrains.kotlin.tools.dukat.SPEC_ALLOWLIST
 import org.jetbrains.kotlin.tools.idl.frontend.IdlFrontend
 import org.jetbrains.kotlin.tools.idl.frontend.IdlSource
 import org.jetbrains.kotlin.tools.idl.frontend.WebIdl2JsonFrontend

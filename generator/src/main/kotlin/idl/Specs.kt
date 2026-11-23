@@ -1,9 +1,9 @@
 /*
- * Copyright 2010-2024 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
 
-package org.jetbrains.kotlin.tools.dukat
+package org.jetbrains.kotlin.tools.idl
 
 data class SpecEntry(
     val spec: String,
@@ -11,8 +11,8 @@ data class SpecEntry(
 )
 
 /**
- * Explicit specification allowlist mapped to Kotlin package names,
- * preserving the mapping from the original IDL URLs table.
+ * The specs the generator processes, mapped to Kotlin package names; a definition is generated into its spec's
+ * package (no per-definition overrides).
  */
 val SPEC_ALLOWLIST: List<SpecEntry> = listOf(
     SpecEntry("html", "org.w3c.dom"),
@@ -88,19 +88,4 @@ val EXCLUDED_TYPES: List<ExcludedType> = listOf(
         "Float16Array",
         "Not provided by the hand-written typed arrays yet; ImageData.data stays Uint8ClampedArray as in the legacy API."
     ),
-)
-
-/**
- * Definitions generated into a different package than their spec's, to keep their legacy Kotlin package after
- * upstream moved them between specs (MouseEvent and WheelEvent moved from uievents to pointerevents, DOMParser and
- * XMLSerializer from DOM-Parsing to html). Partials follow
- * their main definition. An unknown or redundant entry fails generation.
- */
-val PACKAGE_OVERRIDES: Map<String, String> = mapOf(
-    "MouseEvent" to "org.w3c.dom.events",
-    "MouseEventInit" to "org.w3c.dom.events",
-    "WheelEvent" to "org.w3c.dom.events",
-    "WheelEventInit" to "org.w3c.dom.events",
-    "DOMParser" to "org.w3c.dom.parsing",
-    "XMLSerializer" to "org.w3c.dom.parsing",
 )

@@ -1,9 +1,9 @@
 /*
- * Copyright 2010-2019 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
 
-package org.jetbrains.kotlin.tools.dukat
+package org.jetbrains.kotlin.generators.helpers
 
 import org.xml.sax.InputSource
 import java.io.File
@@ -28,34 +28,11 @@ private fun readCopyrightNoticeFromProfile(copyrightProfile: File): String {
         }
 }
 
-internal fun getHeader(seeDetailsAt: String = "github.com/kotlin/dukat"): String {
+internal fun getHeader(seeDetailsAt: String): String {
     val copyrightNotice = readCopyrightNoticeFromProfile(
         File(".idea/copyright/apache.xml")
     )
     val note = "// NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!$LINE_SEPARATOR" +
             "// See $seeDetailsAt for details$LINE_SEPARATOR"
     return copyrightNotice + LINE_SEPARATOR + note + LINE_SEPARATOR
-}
-
-internal fun launch(outputDirectory: String, dynamicAsType: Boolean, useStaticGetters: Boolean) {
-    val input = "../idl/org.w3c.dom.idl"
-
-    val args = mutableListOf<String>()
-    args.add("-d")
-    args.add(outputDirectory)
-    args.add(input)
-    if (dynamicAsType) {
-        args.add("--dynamic-as-type")
-    }
-    if (useStaticGetters) {
-        args.add("--use-static-getters")
-    }
-
-    org.jetbrains.dukat.cli.main(*args.toTypedArray())
-
-    for (file in File(outputDirectory).listFiles { name ->
-        name.extension == "kt"
-    }.orEmpty()) {
-        file.writeBytes((getHeader() + file.readText()).toByteArray())
-    }
 }

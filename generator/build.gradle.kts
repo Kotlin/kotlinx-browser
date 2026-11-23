@@ -4,12 +4,9 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven("https://redirector.kotlinlang.org/maven/kotlin-dependencies")
 }
 
 dependencies {
-    implementation("org.jetbrains.dukat:dukat:0.5.8-rc.6")
-    // Gson rather than kotlinx.serialization: the dukat fat jar bundles an old, incompatible kotlinx.serialization.
     implementation("com.google.code.gson:gson:2.11.0")
 
     testImplementation(kotlin("test"))

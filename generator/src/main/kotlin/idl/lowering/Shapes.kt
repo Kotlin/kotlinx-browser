@@ -6,7 +6,6 @@
 package org.jetbrains.kotlin.tools.idl.lowering
 
 import org.jetbrains.kotlin.tools.idl.ir.*
-import org.jetbrains.kotlin.utils.addIfNotNull
 
 /** The Kotlin declaration kind an IDL interface-like definition becomes. Target-independent. */
 enum class ShapeKind {
@@ -245,7 +244,7 @@ class Shapes private constructor(
                         name = i.name,
                         kind = kind,
                         supertypes = buildList {
-                            addIfNotNull(i.inheritance)
+                            i.inheritance?.let(::add)
                             addAll(includes[i.name].orEmpty())
                             addAll(ownMarkers(i))
                         },

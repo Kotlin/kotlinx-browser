@@ -5,7 +5,6 @@
 
 package org.jetbrains.kotlin.generators.helpers
 
-import org.jetbrains.kotlin.tools.dukat.getHeader
 import java.io.File
 import java.io.FileWriter
 
