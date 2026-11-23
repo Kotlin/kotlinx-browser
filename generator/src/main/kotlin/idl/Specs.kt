@@ -41,6 +41,10 @@ val SPEC_ALLOWLIST: List<SpecEntry> = listOf(
     SpecEntry("service-workers", "org.w3c.workers"),
     SpecEntry("media-source", "org.w3c.dom.mediasource"),
     SpecEntry("encrypted-media", "org.w3c.dom.encryptedmedia"),
+    // Split out of html, SVG and cssom after the legacy IDL snapshot; generated into the packages they had there.
+    SpecEntry("websockets", "org.w3c.dom"),
+    SpecEntry("svg-paths", "org.w3c.dom.svg"),
+    SpecEntry("css-conditional", "org.w3c.dom.css"),
     // Dependencies of the specs above, generated so references to them resolve.
     SpecEntry("webidl", "org.w3c.dom"),
     SpecEntry("wai-aria", "org.w3c.dom"),

@@ -359,6 +359,18 @@ abstract interface org.w3c.dom/AddEventListenerOptions : org.w3c.dom/EventListen
 
 abstract interface org.w3c.dom/CanvasImageSource : org.w3c.dom/ImageBitmapSource // org.w3c.dom/CanvasImageSource|null[0]
 
+abstract interface org.w3c.dom/CloseEventInit : org.w3c.dom/EventInit { // org.w3c.dom/CloseEventInit|null[0]
+    abstract var code // org.w3c.dom/CloseEventInit.code|{}code[0]
+        abstract fun <get-code>(): kotlin/Short? // org.w3c.dom/CloseEventInit.code.<get-code>|<get-code>(){}[0]
+        abstract fun <set-code>(kotlin/Short?) // org.w3c.dom/CloseEventInit.code.<set-code>|<set-code>(kotlin.Short?){}[0]
+    abstract var reason // org.w3c.dom/CloseEventInit.reason|{}reason[0]
+        abstract fun <get-reason>(): kotlin/String? // org.w3c.dom/CloseEventInit.reason.<get-reason>|<get-reason>(){}[0]
+        abstract fun <set-reason>(kotlin/String?) // org.w3c.dom/CloseEventInit.reason.<set-reason>|<set-reason>(kotlin.String?){}[0]
+    abstract var wasClean // org.w3c.dom/CloseEventInit.wasClean|{}wasClean[0]
+        abstract fun <get-wasClean>(): kotlin/Boolean? // org.w3c.dom/CloseEventInit.wasClean.<get-wasClean>|<get-wasClean>(){}[0]
+        abstract fun <set-wasClean>(kotlin/Boolean?) // org.w3c.dom/CloseEventInit.wasClean.<set-wasClean>|<set-wasClean>(kotlin.Boolean?){}[0]
+}
+
 abstract interface org.w3c.dom/CommandEventInit : org.w3c.dom/EventInit { // org.w3c.dom/CommandEventInit|null[0]
     abstract var command // org.w3c.dom/CommandEventInit.command|{}command[0]
         abstract fun <get-command>(): kotlin/String? // org.w3c.dom/CommandEventInit.command.<get-command>|<get-command>(){}[0]
@@ -2827,6 +2839,34 @@ abstract class org.w3c.dom.clipboard/Clipboard : org.w3c.dom/EventTarget { // or
     open fun writeText(kotlin/String): kotlin.js/Promise<kotlin.js/JsAny?> // org.w3c.dom.clipboard/Clipboard.writeText|writeText(kotlin.String){}[0]
 }
 
+abstract class org.w3c.dom.css/CSSConditionRule : org.w3c.dom.css/CSSGroupingRule { // org.w3c.dom.css/CSSConditionRule|null[0]
+    constructor <init>() // org.w3c.dom.css/CSSConditionRule.<init>|<init>(){}[0]
+
+    open val conditionText // org.w3c.dom.css/CSSConditionRule.conditionText|{}conditionText[0]
+        open fun <get-conditionText>(): kotlin/String // org.w3c.dom.css/CSSConditionRule.conditionText.<get-conditionText>|<get-conditionText>(){}[0]
+
+    final object Companion { // org.w3c.dom.css/CSSConditionRule.Companion|null[0]
+        final val CHARSET_RULE // org.w3c.dom.css/CSSConditionRule.Companion.CHARSET_RULE|{}CHARSET_RULE[0]
+            final fun <get-CHARSET_RULE>(): kotlin/Short // org.w3c.dom.css/CSSConditionRule.Companion.CHARSET_RULE.<get-CHARSET_RULE>|<get-CHARSET_RULE>(){}[0]
+        final val FONT_FACE_RULE // org.w3c.dom.css/CSSConditionRule.Companion.FONT_FACE_RULE|{}FONT_FACE_RULE[0]
+            final fun <get-FONT_FACE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSConditionRule.Companion.FONT_FACE_RULE.<get-FONT_FACE_RULE>|<get-FONT_FACE_RULE>(){}[0]
+        final val IMPORT_RULE // org.w3c.dom.css/CSSConditionRule.Companion.IMPORT_RULE|{}IMPORT_RULE[0]
+            final fun <get-IMPORT_RULE>(): kotlin/Short // org.w3c.dom.css/CSSConditionRule.Companion.IMPORT_RULE.<get-IMPORT_RULE>|<get-IMPORT_RULE>(){}[0]
+        final val MARGIN_RULE // org.w3c.dom.css/CSSConditionRule.Companion.MARGIN_RULE|{}MARGIN_RULE[0]
+            final fun <get-MARGIN_RULE>(): kotlin/Short // org.w3c.dom.css/CSSConditionRule.Companion.MARGIN_RULE.<get-MARGIN_RULE>|<get-MARGIN_RULE>(){}[0]
+        final val MEDIA_RULE // org.w3c.dom.css/CSSConditionRule.Companion.MEDIA_RULE|{}MEDIA_RULE[0]
+            final fun <get-MEDIA_RULE>(): kotlin/Short // org.w3c.dom.css/CSSConditionRule.Companion.MEDIA_RULE.<get-MEDIA_RULE>|<get-MEDIA_RULE>(){}[0]
+        final val NAMESPACE_RULE // org.w3c.dom.css/CSSConditionRule.Companion.NAMESPACE_RULE|{}NAMESPACE_RULE[0]
+            final fun <get-NAMESPACE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSConditionRule.Companion.NAMESPACE_RULE.<get-NAMESPACE_RULE>|<get-NAMESPACE_RULE>(){}[0]
+        final val PAGE_RULE // org.w3c.dom.css/CSSConditionRule.Companion.PAGE_RULE|{}PAGE_RULE[0]
+            final fun <get-PAGE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSConditionRule.Companion.PAGE_RULE.<get-PAGE_RULE>|<get-PAGE_RULE>(){}[0]
+        final val STYLE_RULE // org.w3c.dom.css/CSSConditionRule.Companion.STYLE_RULE|{}STYLE_RULE[0]
+            final fun <get-STYLE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSConditionRule.Companion.STYLE_RULE.<get-STYLE_RULE>|<get-STYLE_RULE>(){}[0]
+        final val SUPPORTS_RULE // org.w3c.dom.css/CSSConditionRule.Companion.SUPPORTS_RULE|{}SUPPORTS_RULE[0]
+            final fun <get-SUPPORTS_RULE>(): kotlin/Short // org.w3c.dom.css/CSSConditionRule.Companion.SUPPORTS_RULE.<get-SUPPORTS_RULE>|<get-SUPPORTS_RULE>(){}[0]
+    }
+}
+
 abstract class org.w3c.dom.css/CSSGroupingRule : org.w3c.dom.css/CSSRule { // org.w3c.dom.css/CSSGroupingRule|null[0]
     constructor <init>() // org.w3c.dom.css/CSSGroupingRule.<init>|<init>(){}[0]
 
@@ -2853,6 +2893,8 @@ abstract class org.w3c.dom.css/CSSGroupingRule : org.w3c.dom.css/CSSRule { // or
             final fun <get-PAGE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSGroupingRule.Companion.PAGE_RULE.<get-PAGE_RULE>|<get-PAGE_RULE>(){}[0]
         final val STYLE_RULE // org.w3c.dom.css/CSSGroupingRule.Companion.STYLE_RULE|{}STYLE_RULE[0]
             final fun <get-STYLE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSGroupingRule.Companion.STYLE_RULE.<get-STYLE_RULE>|<get-STYLE_RULE>(){}[0]
+        final val SUPPORTS_RULE // org.w3c.dom.css/CSSGroupingRule.Companion.SUPPORTS_RULE|{}SUPPORTS_RULE[0]
+            final fun <get-SUPPORTS_RULE>(): kotlin/Short // org.w3c.dom.css/CSSGroupingRule.Companion.SUPPORTS_RULE.<get-SUPPORTS_RULE>|<get-SUPPORTS_RULE>(){}[0]
     }
 }
 
@@ -2887,6 +2929,8 @@ abstract class org.w3c.dom.css/CSSImportRule : org.w3c.dom.css/CSSRule { // org.
             final fun <get-PAGE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSImportRule.Companion.PAGE_RULE.<get-PAGE_RULE>|<get-PAGE_RULE>(){}[0]
         final val STYLE_RULE // org.w3c.dom.css/CSSImportRule.Companion.STYLE_RULE|{}STYLE_RULE[0]
             final fun <get-STYLE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSImportRule.Companion.STYLE_RULE.<get-STYLE_RULE>|<get-STYLE_RULE>(){}[0]
+        final val SUPPORTS_RULE // org.w3c.dom.css/CSSImportRule.Companion.SUPPORTS_RULE|{}SUPPORTS_RULE[0]
+            final fun <get-SUPPORTS_RULE>(): kotlin/Short // org.w3c.dom.css/CSSImportRule.Companion.SUPPORTS_RULE.<get-SUPPORTS_RULE>|<get-SUPPORTS_RULE>(){}[0]
     }
 }
 
@@ -2915,6 +2959,38 @@ abstract class org.w3c.dom.css/CSSMarginRule : org.w3c.dom.css/CSSRule { // org.
             final fun <get-PAGE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMarginRule.Companion.PAGE_RULE.<get-PAGE_RULE>|<get-PAGE_RULE>(){}[0]
         final val STYLE_RULE // org.w3c.dom.css/CSSMarginRule.Companion.STYLE_RULE|{}STYLE_RULE[0]
             final fun <get-STYLE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMarginRule.Companion.STYLE_RULE.<get-STYLE_RULE>|<get-STYLE_RULE>(){}[0]
+        final val SUPPORTS_RULE // org.w3c.dom.css/CSSMarginRule.Companion.SUPPORTS_RULE|{}SUPPORTS_RULE[0]
+            final fun <get-SUPPORTS_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMarginRule.Companion.SUPPORTS_RULE.<get-SUPPORTS_RULE>|<get-SUPPORTS_RULE>(){}[0]
+    }
+}
+
+abstract class org.w3c.dom.css/CSSMediaRule : org.w3c.dom.css/CSSConditionRule { // org.w3c.dom.css/CSSMediaRule|null[0]
+    constructor <init>() // org.w3c.dom.css/CSSMediaRule.<init>|<init>(){}[0]
+
+    open val matches // org.w3c.dom.css/CSSMediaRule.matches|{}matches[0]
+        open fun <get-matches>(): kotlin/Boolean // org.w3c.dom.css/CSSMediaRule.matches.<get-matches>|<get-matches>(){}[0]
+    open val media // org.w3c.dom.css/CSSMediaRule.media|{}media[0]
+        open fun <get-media>(): org.w3c.dom.css/MediaList // org.w3c.dom.css/CSSMediaRule.media.<get-media>|<get-media>(){}[0]
+
+    final object Companion { // org.w3c.dom.css/CSSMediaRule.Companion|null[0]
+        final val CHARSET_RULE // org.w3c.dom.css/CSSMediaRule.Companion.CHARSET_RULE|{}CHARSET_RULE[0]
+            final fun <get-CHARSET_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMediaRule.Companion.CHARSET_RULE.<get-CHARSET_RULE>|<get-CHARSET_RULE>(){}[0]
+        final val FONT_FACE_RULE // org.w3c.dom.css/CSSMediaRule.Companion.FONT_FACE_RULE|{}FONT_FACE_RULE[0]
+            final fun <get-FONT_FACE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMediaRule.Companion.FONT_FACE_RULE.<get-FONT_FACE_RULE>|<get-FONT_FACE_RULE>(){}[0]
+        final val IMPORT_RULE // org.w3c.dom.css/CSSMediaRule.Companion.IMPORT_RULE|{}IMPORT_RULE[0]
+            final fun <get-IMPORT_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMediaRule.Companion.IMPORT_RULE.<get-IMPORT_RULE>|<get-IMPORT_RULE>(){}[0]
+        final val MARGIN_RULE // org.w3c.dom.css/CSSMediaRule.Companion.MARGIN_RULE|{}MARGIN_RULE[0]
+            final fun <get-MARGIN_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMediaRule.Companion.MARGIN_RULE.<get-MARGIN_RULE>|<get-MARGIN_RULE>(){}[0]
+        final val MEDIA_RULE // org.w3c.dom.css/CSSMediaRule.Companion.MEDIA_RULE|{}MEDIA_RULE[0]
+            final fun <get-MEDIA_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMediaRule.Companion.MEDIA_RULE.<get-MEDIA_RULE>|<get-MEDIA_RULE>(){}[0]
+        final val NAMESPACE_RULE // org.w3c.dom.css/CSSMediaRule.Companion.NAMESPACE_RULE|{}NAMESPACE_RULE[0]
+            final fun <get-NAMESPACE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMediaRule.Companion.NAMESPACE_RULE.<get-NAMESPACE_RULE>|<get-NAMESPACE_RULE>(){}[0]
+        final val PAGE_RULE // org.w3c.dom.css/CSSMediaRule.Companion.PAGE_RULE|{}PAGE_RULE[0]
+            final fun <get-PAGE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMediaRule.Companion.PAGE_RULE.<get-PAGE_RULE>|<get-PAGE_RULE>(){}[0]
+        final val STYLE_RULE // org.w3c.dom.css/CSSMediaRule.Companion.STYLE_RULE|{}STYLE_RULE[0]
+            final fun <get-STYLE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMediaRule.Companion.STYLE_RULE.<get-STYLE_RULE>|<get-STYLE_RULE>(){}[0]
+        final val SUPPORTS_RULE // org.w3c.dom.css/CSSMediaRule.Companion.SUPPORTS_RULE|{}SUPPORTS_RULE[0]
+            final fun <get-SUPPORTS_RULE>(): kotlin/Short // org.w3c.dom.css/CSSMediaRule.Companion.SUPPORTS_RULE.<get-SUPPORTS_RULE>|<get-SUPPORTS_RULE>(){}[0]
     }
 }
 
@@ -2943,6 +3019,8 @@ abstract class org.w3c.dom.css/CSSNamespaceRule : org.w3c.dom.css/CSSRule { // o
             final fun <get-PAGE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSNamespaceRule.Companion.PAGE_RULE.<get-PAGE_RULE>|<get-PAGE_RULE>(){}[0]
         final val STYLE_RULE // org.w3c.dom.css/CSSNamespaceRule.Companion.STYLE_RULE|{}STYLE_RULE[0]
             final fun <get-STYLE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSNamespaceRule.Companion.STYLE_RULE.<get-STYLE_RULE>|<get-STYLE_RULE>(){}[0]
+        final val SUPPORTS_RULE // org.w3c.dom.css/CSSNamespaceRule.Companion.SUPPORTS_RULE|{}SUPPORTS_RULE[0]
+            final fun <get-SUPPORTS_RULE>(): kotlin/Short // org.w3c.dom.css/CSSNamespaceRule.Companion.SUPPORTS_RULE.<get-SUPPORTS_RULE>|<get-SUPPORTS_RULE>(){}[0]
     }
 }
 
@@ -3005,6 +3083,8 @@ abstract class org.w3c.dom.css/CSSPageRule : org.w3c.dom.css/CSSGroupingRule { /
             final fun <get-PAGE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSPageRule.Companion.PAGE_RULE.<get-PAGE_RULE>|<get-PAGE_RULE>(){}[0]
         final val STYLE_RULE // org.w3c.dom.css/CSSPageRule.Companion.STYLE_RULE|{}STYLE_RULE[0]
             final fun <get-STYLE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSPageRule.Companion.STYLE_RULE.<get-STYLE_RULE>|<get-STYLE_RULE>(){}[0]
+        final val SUPPORTS_RULE // org.w3c.dom.css/CSSPageRule.Companion.SUPPORTS_RULE|{}SUPPORTS_RULE[0]
+            final fun <get-SUPPORTS_RULE>(): kotlin/Short // org.w3c.dom.css/CSSPageRule.Companion.SUPPORTS_RULE.<get-SUPPORTS_RULE>|<get-SUPPORTS_RULE>(){}[0]
     }
 }
 
@@ -3052,6 +3132,36 @@ abstract class org.w3c.dom.css/CSSStyleRule : org.w3c.dom.css/CSSGroupingRule { 
             final fun <get-PAGE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSStyleRule.Companion.PAGE_RULE.<get-PAGE_RULE>|<get-PAGE_RULE>(){}[0]
         final val STYLE_RULE // org.w3c.dom.css/CSSStyleRule.Companion.STYLE_RULE|{}STYLE_RULE[0]
             final fun <get-STYLE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSStyleRule.Companion.STYLE_RULE.<get-STYLE_RULE>|<get-STYLE_RULE>(){}[0]
+        final val SUPPORTS_RULE // org.w3c.dom.css/CSSStyleRule.Companion.SUPPORTS_RULE|{}SUPPORTS_RULE[0]
+            final fun <get-SUPPORTS_RULE>(): kotlin/Short // org.w3c.dom.css/CSSStyleRule.Companion.SUPPORTS_RULE.<get-SUPPORTS_RULE>|<get-SUPPORTS_RULE>(){}[0]
+    }
+}
+
+abstract class org.w3c.dom.css/CSSSupportsRule : org.w3c.dom.css/CSSConditionRule { // org.w3c.dom.css/CSSSupportsRule|null[0]
+    constructor <init>() // org.w3c.dom.css/CSSSupportsRule.<init>|<init>(){}[0]
+
+    open val matches // org.w3c.dom.css/CSSSupportsRule.matches|{}matches[0]
+        open fun <get-matches>(): kotlin/Boolean // org.w3c.dom.css/CSSSupportsRule.matches.<get-matches>|<get-matches>(){}[0]
+
+    final object Companion { // org.w3c.dom.css/CSSSupportsRule.Companion|null[0]
+        final val CHARSET_RULE // org.w3c.dom.css/CSSSupportsRule.Companion.CHARSET_RULE|{}CHARSET_RULE[0]
+            final fun <get-CHARSET_RULE>(): kotlin/Short // org.w3c.dom.css/CSSSupportsRule.Companion.CHARSET_RULE.<get-CHARSET_RULE>|<get-CHARSET_RULE>(){}[0]
+        final val FONT_FACE_RULE // org.w3c.dom.css/CSSSupportsRule.Companion.FONT_FACE_RULE|{}FONT_FACE_RULE[0]
+            final fun <get-FONT_FACE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSSupportsRule.Companion.FONT_FACE_RULE.<get-FONT_FACE_RULE>|<get-FONT_FACE_RULE>(){}[0]
+        final val IMPORT_RULE // org.w3c.dom.css/CSSSupportsRule.Companion.IMPORT_RULE|{}IMPORT_RULE[0]
+            final fun <get-IMPORT_RULE>(): kotlin/Short // org.w3c.dom.css/CSSSupportsRule.Companion.IMPORT_RULE.<get-IMPORT_RULE>|<get-IMPORT_RULE>(){}[0]
+        final val MARGIN_RULE // org.w3c.dom.css/CSSSupportsRule.Companion.MARGIN_RULE|{}MARGIN_RULE[0]
+            final fun <get-MARGIN_RULE>(): kotlin/Short // org.w3c.dom.css/CSSSupportsRule.Companion.MARGIN_RULE.<get-MARGIN_RULE>|<get-MARGIN_RULE>(){}[0]
+        final val MEDIA_RULE // org.w3c.dom.css/CSSSupportsRule.Companion.MEDIA_RULE|{}MEDIA_RULE[0]
+            final fun <get-MEDIA_RULE>(): kotlin/Short // org.w3c.dom.css/CSSSupportsRule.Companion.MEDIA_RULE.<get-MEDIA_RULE>|<get-MEDIA_RULE>(){}[0]
+        final val NAMESPACE_RULE // org.w3c.dom.css/CSSSupportsRule.Companion.NAMESPACE_RULE|{}NAMESPACE_RULE[0]
+            final fun <get-NAMESPACE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSSupportsRule.Companion.NAMESPACE_RULE.<get-NAMESPACE_RULE>|<get-NAMESPACE_RULE>(){}[0]
+        final val PAGE_RULE // org.w3c.dom.css/CSSSupportsRule.Companion.PAGE_RULE|{}PAGE_RULE[0]
+            final fun <get-PAGE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSSupportsRule.Companion.PAGE_RULE.<get-PAGE_RULE>|<get-PAGE_RULE>(){}[0]
+        final val STYLE_RULE // org.w3c.dom.css/CSSSupportsRule.Companion.STYLE_RULE|{}STYLE_RULE[0]
+            final fun <get-STYLE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSSupportsRule.Companion.STYLE_RULE.<get-STYLE_RULE>|<get-STYLE_RULE>(){}[0]
+        final val SUPPORTS_RULE // org.w3c.dom.css/CSSSupportsRule.Companion.SUPPORTS_RULE|{}SUPPORTS_RULE[0]
+            final fun <get-SUPPORTS_RULE>(): kotlin/Short // org.w3c.dom.css/CSSSupportsRule.Companion.SUPPORTS_RULE.<get-SUPPORTS_RULE>|<get-SUPPORTS_RULE>(){}[0]
     }
 }
 
@@ -4110,6 +4220,56 @@ abstract class org.w3c.dom.svg/SVGMetadataElement : org.w3c.dom.svg/SVGElement {
             final fun <get-PROCESSING_INSTRUCTION_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGMetadataElement.Companion.PROCESSING_INSTRUCTION_NODE.<get-PROCESSING_INSTRUCTION_NODE>|<get-PROCESSING_INSTRUCTION_NODE>(){}[0]
         final val TEXT_NODE // org.w3c.dom.svg/SVGMetadataElement.Companion.TEXT_NODE|{}TEXT_NODE[0]
             final fun <get-TEXT_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGMetadataElement.Companion.TEXT_NODE.<get-TEXT_NODE>|<get-TEXT_NODE>(){}[0]
+    }
+}
+
+abstract class org.w3c.dom.svg/SVGPathElement : org.w3c.dom.svg/SVGGeometryElement, org.w3c.dom.svg/SVGPathData { // org.w3c.dom.svg/SVGPathElement|null[0]
+    constructor <init>() // org.w3c.dom.svg/SVGPathElement.<init>|<init>(){}[0]
+
+    open val pathLength // org.w3c.dom.svg/SVGPathElement.pathLength|{}pathLength[0]
+        open fun <get-pathLength>(): org.w3c.dom.svg/SVGAnimatedNumber // org.w3c.dom.svg/SVGPathElement.pathLength.<get-pathLength>|<get-pathLength>(){}[0]
+
+    open fun getPathSegmentAtLength(kotlin/Float): org.w3c.dom.svg/SVGPathSegment? // org.w3c.dom.svg/SVGPathElement.getPathSegmentAtLength|getPathSegmentAtLength(kotlin.Float){}[0]
+    open fun getPointAtLength(kotlin/Float): org.w3c.dom/DOMPoint // org.w3c.dom.svg/SVGPathElement.getPointAtLength|getPointAtLength(kotlin.Float){}[0]
+    open fun getTotalLength(): kotlin/Float // org.w3c.dom.svg/SVGPathElement.getTotalLength|getTotalLength(){}[0]
+
+    final object Companion { // org.w3c.dom.svg/SVGPathElement.Companion|null[0]
+        final val ATTRIBUTE_NODE // org.w3c.dom.svg/SVGPathElement.Companion.ATTRIBUTE_NODE|{}ATTRIBUTE_NODE[0]
+            final fun <get-ATTRIBUTE_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.ATTRIBUTE_NODE.<get-ATTRIBUTE_NODE>|<get-ATTRIBUTE_NODE>(){}[0]
+        final val CDATA_SECTION_NODE // org.w3c.dom.svg/SVGPathElement.Companion.CDATA_SECTION_NODE|{}CDATA_SECTION_NODE[0]
+            final fun <get-CDATA_SECTION_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.CDATA_SECTION_NODE.<get-CDATA_SECTION_NODE>|<get-CDATA_SECTION_NODE>(){}[0]
+        final val COMMENT_NODE // org.w3c.dom.svg/SVGPathElement.Companion.COMMENT_NODE|{}COMMENT_NODE[0]
+            final fun <get-COMMENT_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.COMMENT_NODE.<get-COMMENT_NODE>|<get-COMMENT_NODE>(){}[0]
+        final val DOCUMENT_FRAGMENT_NODE // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_FRAGMENT_NODE|{}DOCUMENT_FRAGMENT_NODE[0]
+            final fun <get-DOCUMENT_FRAGMENT_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_FRAGMENT_NODE.<get-DOCUMENT_FRAGMENT_NODE>|<get-DOCUMENT_FRAGMENT_NODE>(){}[0]
+        final val DOCUMENT_NODE // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_NODE|{}DOCUMENT_NODE[0]
+            final fun <get-DOCUMENT_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_NODE.<get-DOCUMENT_NODE>|<get-DOCUMENT_NODE>(){}[0]
+        final val DOCUMENT_POSITION_CONTAINED_BY // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_CONTAINED_BY|{}DOCUMENT_POSITION_CONTAINED_BY[0]
+            final fun <get-DOCUMENT_POSITION_CONTAINED_BY>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_CONTAINED_BY.<get-DOCUMENT_POSITION_CONTAINED_BY>|<get-DOCUMENT_POSITION_CONTAINED_BY>(){}[0]
+        final val DOCUMENT_POSITION_CONTAINS // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_CONTAINS|{}DOCUMENT_POSITION_CONTAINS[0]
+            final fun <get-DOCUMENT_POSITION_CONTAINS>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_CONTAINS.<get-DOCUMENT_POSITION_CONTAINS>|<get-DOCUMENT_POSITION_CONTAINS>(){}[0]
+        final val DOCUMENT_POSITION_DISCONNECTED // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_DISCONNECTED|{}DOCUMENT_POSITION_DISCONNECTED[0]
+            final fun <get-DOCUMENT_POSITION_DISCONNECTED>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_DISCONNECTED.<get-DOCUMENT_POSITION_DISCONNECTED>|<get-DOCUMENT_POSITION_DISCONNECTED>(){}[0]
+        final val DOCUMENT_POSITION_FOLLOWING // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_FOLLOWING|{}DOCUMENT_POSITION_FOLLOWING[0]
+            final fun <get-DOCUMENT_POSITION_FOLLOWING>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_FOLLOWING.<get-DOCUMENT_POSITION_FOLLOWING>|<get-DOCUMENT_POSITION_FOLLOWING>(){}[0]
+        final val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC|{}DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC[0]
+            final fun <get-DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC.<get-DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC>|<get-DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC>(){}[0]
+        final val DOCUMENT_POSITION_PRECEDING // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_PRECEDING|{}DOCUMENT_POSITION_PRECEDING[0]
+            final fun <get-DOCUMENT_POSITION_PRECEDING>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_POSITION_PRECEDING.<get-DOCUMENT_POSITION_PRECEDING>|<get-DOCUMENT_POSITION_PRECEDING>(){}[0]
+        final val DOCUMENT_TYPE_NODE // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_TYPE_NODE|{}DOCUMENT_TYPE_NODE[0]
+            final fun <get-DOCUMENT_TYPE_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.DOCUMENT_TYPE_NODE.<get-DOCUMENT_TYPE_NODE>|<get-DOCUMENT_TYPE_NODE>(){}[0]
+        final val ELEMENT_NODE // org.w3c.dom.svg/SVGPathElement.Companion.ELEMENT_NODE|{}ELEMENT_NODE[0]
+            final fun <get-ELEMENT_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.ELEMENT_NODE.<get-ELEMENT_NODE>|<get-ELEMENT_NODE>(){}[0]
+        final val ENTITY_NODE // org.w3c.dom.svg/SVGPathElement.Companion.ENTITY_NODE|{}ENTITY_NODE[0]
+            final fun <get-ENTITY_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.ENTITY_NODE.<get-ENTITY_NODE>|<get-ENTITY_NODE>(){}[0]
+        final val ENTITY_REFERENCE_NODE // org.w3c.dom.svg/SVGPathElement.Companion.ENTITY_REFERENCE_NODE|{}ENTITY_REFERENCE_NODE[0]
+            final fun <get-ENTITY_REFERENCE_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.ENTITY_REFERENCE_NODE.<get-ENTITY_REFERENCE_NODE>|<get-ENTITY_REFERENCE_NODE>(){}[0]
+        final val NOTATION_NODE // org.w3c.dom.svg/SVGPathElement.Companion.NOTATION_NODE|{}NOTATION_NODE[0]
+            final fun <get-NOTATION_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.NOTATION_NODE.<get-NOTATION_NODE>|<get-NOTATION_NODE>(){}[0]
+        final val PROCESSING_INSTRUCTION_NODE // org.w3c.dom.svg/SVGPathElement.Companion.PROCESSING_INSTRUCTION_NODE|{}PROCESSING_INSTRUCTION_NODE[0]
+            final fun <get-PROCESSING_INSTRUCTION_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.PROCESSING_INSTRUCTION_NODE.<get-PROCESSING_INSTRUCTION_NODE>|<get-PROCESSING_INSTRUCTION_NODE>(){}[0]
+        final val TEXT_NODE // org.w3c.dom.svg/SVGPathElement.Companion.TEXT_NODE|{}TEXT_NODE[0]
+            final fun <get-TEXT_NODE>(): kotlin/Short // org.w3c.dom.svg/SVGPathElement.Companion.TEXT_NODE.<get-TEXT_NODE>|<get-TEXT_NODE>(){}[0]
     }
 }
 
@@ -13040,6 +13200,28 @@ open class org.w3c.dom/BroadcastChannel : org.w3c.dom/EventTarget { // org.w3c.d
     open fun postMessage(kotlin.js/JsAny?) // org.w3c.dom/BroadcastChannel.postMessage|postMessage(kotlin.js.JsAny?){}[0]
 }
 
+open class org.w3c.dom/CloseEvent : org.w3c.dom/Event { // org.w3c.dom/CloseEvent|null[0]
+    constructor <init>(kotlin/String, org.w3c.dom/CloseEventInit = ...) // org.w3c.dom/CloseEvent.<init>|<init>(kotlin.String;org.w3c.dom.CloseEventInit){}[0]
+
+    open val code // org.w3c.dom/CloseEvent.code|{}code[0]
+        open fun <get-code>(): kotlin/Short // org.w3c.dom/CloseEvent.code.<get-code>|<get-code>(){}[0]
+    open val reason // org.w3c.dom/CloseEvent.reason|{}reason[0]
+        open fun <get-reason>(): kotlin/String // org.w3c.dom/CloseEvent.reason.<get-reason>|<get-reason>(){}[0]
+    open val wasClean // org.w3c.dom/CloseEvent.wasClean|{}wasClean[0]
+        open fun <get-wasClean>(): kotlin/Boolean // org.w3c.dom/CloseEvent.wasClean.<get-wasClean>|<get-wasClean>(){}[0]
+
+    final object Companion { // org.w3c.dom/CloseEvent.Companion|null[0]
+        final val AT_TARGET // org.w3c.dom/CloseEvent.Companion.AT_TARGET|{}AT_TARGET[0]
+            final fun <get-AT_TARGET>(): kotlin/Short // org.w3c.dom/CloseEvent.Companion.AT_TARGET.<get-AT_TARGET>|<get-AT_TARGET>(){}[0]
+        final val BUBBLING_PHASE // org.w3c.dom/CloseEvent.Companion.BUBBLING_PHASE|{}BUBBLING_PHASE[0]
+            final fun <get-BUBBLING_PHASE>(): kotlin/Short // org.w3c.dom/CloseEvent.Companion.BUBBLING_PHASE.<get-BUBBLING_PHASE>|<get-BUBBLING_PHASE>(){}[0]
+        final val CAPTURING_PHASE // org.w3c.dom/CloseEvent.Companion.CAPTURING_PHASE|{}CAPTURING_PHASE[0]
+            final fun <get-CAPTURING_PHASE>(): kotlin/Short // org.w3c.dom/CloseEvent.Companion.CAPTURING_PHASE.<get-CAPTURING_PHASE>|<get-CAPTURING_PHASE>(){}[0]
+        final val NONE // org.w3c.dom/CloseEvent.Companion.NONE|{}NONE[0]
+            final fun <get-NONE>(): kotlin/Short // org.w3c.dom/CloseEvent.Companion.NONE.<get-NONE>|<get-NONE>(){}[0]
+    }
+}
+
 open class org.w3c.dom/CloseWatcher : org.w3c.dom/EventTarget { // org.w3c.dom/CloseWatcher|null[0]
     constructor <init>(org.w3c.dom/CloseWatcherOptions = ...) // org.w3c.dom/CloseWatcher.<init>|<init>(org.w3c.dom.CloseWatcherOptions){}[0]
 
@@ -15988,6 +16170,60 @@ open class org.w3c.dom/TrackEvent : org.w3c.dom/Event { // org.w3c.dom/TrackEven
     }
 }
 
+open class org.w3c.dom/WebSocket : org.w3c.dom/EventTarget { // org.w3c.dom/WebSocket|null[0]
+    constructor <init>(kotlin/String) // org.w3c.dom/WebSocket.<init>|<init>(kotlin.String){}[0]
+    constructor <init>(kotlin/String, kotlin/String) // org.w3c.dom/WebSocket.<init>|<init>(kotlin.String;kotlin.String){}[0]
+
+    open val bufferedAmount // org.w3c.dom/WebSocket.bufferedAmount|{}bufferedAmount[0]
+        open fun <get-bufferedAmount>(): kotlin/Double // org.w3c.dom/WebSocket.bufferedAmount.<get-bufferedAmount>|<get-bufferedAmount>(){}[0]
+    open val extensions // org.w3c.dom/WebSocket.extensions|{}extensions[0]
+        open fun <get-extensions>(): kotlin/String // org.w3c.dom/WebSocket.extensions.<get-extensions>|<get-extensions>(){}[0]
+    open val protocol // org.w3c.dom/WebSocket.protocol|{}protocol[0]
+        open fun <get-protocol>(): kotlin/String // org.w3c.dom/WebSocket.protocol.<get-protocol>|<get-protocol>(){}[0]
+    open val readyState // org.w3c.dom/WebSocket.readyState|{}readyState[0]
+        open fun <get-readyState>(): kotlin/Short // org.w3c.dom/WebSocket.readyState.<get-readyState>|<get-readyState>(){}[0]
+    open val url // org.w3c.dom/WebSocket.url|{}url[0]
+        open fun <get-url>(): kotlin/String // org.w3c.dom/WebSocket.url.<get-url>|<get-url>(){}[0]
+
+    open var binaryType // org.w3c.dom/WebSocket.binaryType|{}binaryType[0]
+        open fun <get-binaryType>(): org.w3c.dom/BinaryType // org.w3c.dom/WebSocket.binaryType.<get-binaryType>|<get-binaryType>(){}[0]
+        open fun <set-binaryType>(org.w3c.dom/BinaryType) // org.w3c.dom/WebSocket.binaryType.<set-binaryType>|<set-binaryType>(org.w3c.dom.BinaryType){}[0]
+    open var onclose // org.w3c.dom/WebSocket.onclose|{}onclose[0]
+        open fun <get-onclose>(): kotlin/Function1<org.w3c.dom/CloseEvent, kotlin/Unit>? // org.w3c.dom/WebSocket.onclose.<get-onclose>|<get-onclose>(){}[0]
+        open fun <set-onclose>(kotlin/Function1<org.w3c.dom/CloseEvent, kotlin/Unit>?) // org.w3c.dom/WebSocket.onclose.<set-onclose>|<set-onclose>(kotlin.Function1<org.w3c.dom.CloseEvent,kotlin.Unit>?){}[0]
+    open var onerror // org.w3c.dom/WebSocket.onerror|{}onerror[0]
+        open fun <get-onerror>(): kotlin/Function1<org.w3c.dom/Event, kotlin/Unit>? // org.w3c.dom/WebSocket.onerror.<get-onerror>|<get-onerror>(){}[0]
+        open fun <set-onerror>(kotlin/Function1<org.w3c.dom/Event, kotlin/Unit>?) // org.w3c.dom/WebSocket.onerror.<set-onerror>|<set-onerror>(kotlin.Function1<org.w3c.dom.Event,kotlin.Unit>?){}[0]
+    open var onmessage // org.w3c.dom/WebSocket.onmessage|{}onmessage[0]
+        open fun <get-onmessage>(): kotlin/Function1<org.w3c.dom/MessageEvent, kotlin/Unit>? // org.w3c.dom/WebSocket.onmessage.<get-onmessage>|<get-onmessage>(){}[0]
+        open fun <set-onmessage>(kotlin/Function1<org.w3c.dom/MessageEvent, kotlin/Unit>?) // org.w3c.dom/WebSocket.onmessage.<set-onmessage>|<set-onmessage>(kotlin.Function1<org.w3c.dom.MessageEvent,kotlin.Unit>?){}[0]
+    open var onopen // org.w3c.dom/WebSocket.onopen|{}onopen[0]
+        open fun <get-onopen>(): kotlin/Function1<org.w3c.dom/Event, kotlin/Unit>? // org.w3c.dom/WebSocket.onopen.<get-onopen>|<get-onopen>(){}[0]
+        open fun <set-onopen>(kotlin/Function1<org.w3c.dom/Event, kotlin/Unit>?) // org.w3c.dom/WebSocket.onopen.<set-onopen>|<set-onopen>(kotlin.Function1<org.w3c.dom.Event,kotlin.Unit>?){}[0]
+
+    open fun close(kotlin/Short = ..., kotlin/String = ...) // org.w3c.dom/WebSocket.close|close(kotlin.Short;kotlin.String){}[0]
+    open fun send(kotlin/String) // org.w3c.dom/WebSocket.send|send(kotlin.String){}[0]
+    open fun send(org.khronos.webgl/BufferDataSource) // org.w3c.dom/WebSocket.send|send(org.khronos.webgl.BufferDataSource){}[0]
+    open fun send(org.w3c.files/Blob) // org.w3c.dom/WebSocket.send|send(org.w3c.files.Blob){}[0]
+
+    final object Companion { // org.w3c.dom/WebSocket.Companion|null[0]
+        final val CLOSED // org.w3c.dom/WebSocket.Companion.CLOSED|{}CLOSED[0]
+            final fun <get-CLOSED>(): kotlin/Short // org.w3c.dom/WebSocket.Companion.CLOSED.<get-CLOSED>|<get-CLOSED>(){}[0]
+        final val CLOSING // org.w3c.dom/WebSocket.Companion.CLOSING|{}CLOSING[0]
+            final fun <get-CLOSING>(): kotlin/Short // org.w3c.dom/WebSocket.Companion.CLOSING.<get-CLOSING>|<get-CLOSING>(){}[0]
+        final val CONNECTING // org.w3c.dom/WebSocket.Companion.CONNECTING|{}CONNECTING[0]
+            final fun <get-CONNECTING>(): kotlin/Short // org.w3c.dom/WebSocket.Companion.CONNECTING.<get-CONNECTING>|<get-CONNECTING>(){}[0]
+        final val OPEN // org.w3c.dom/WebSocket.Companion.OPEN|{}OPEN[0]
+            final fun <get-OPEN>(): kotlin/Short // org.w3c.dom/WebSocket.Companion.OPEN.<get-OPEN>|<get-OPEN>(){}[0]
+    }
+
+    // Targets: [js]
+    constructor <init>(kotlin/String, kotlin/Array<kotlin/String>) // org.w3c.dom/WebSocket.<init>|<init>(kotlin.String;kotlin.Array<kotlin.String>){}[0]
+
+    // Targets: [wasmJs]
+    constructor <init>(kotlin/String, kotlin.js/JsArray<kotlin.js/JsString>) // org.w3c.dom/WebSocket.<init>|<init>(kotlin.String;kotlin.js.JsArray<kotlin.js.JsString>){}[0]
+}
+
 open class org.w3c.dom/Worker : org.w3c.dom/AbstractWorker, org.w3c.dom/EventTarget, org.w3c.dom/MessageEventTarget { // org.w3c.dom/Worker|null[0]
     constructor <init>(kotlin/String, org.w3c.dom/WorkerOptions = ...) // org.w3c.dom/Worker.<init>|<init>(kotlin.String;org.w3c.dom.WorkerOptions){}[0]
 
@@ -16570,6 +16806,8 @@ open class org.w3c.xhr/XMLHttpRequest : org.w3c.xhr/XMLHttpRequestEventTarget { 
 
 final object org.w3c.dom.css/CSS { // org.w3c.dom.css/CSS|null[0]
     final fun escape(kotlin/String): kotlin/String // org.w3c.dom.css/CSS.escape|escape(kotlin.String){}[0]
+    final fun supports(kotlin/String): kotlin/Boolean // org.w3c.dom.css/CSS.supports|supports(kotlin.String){}[0]
+    final fun supports(kotlin/String, kotlin/String): kotlin/Boolean // org.w3c.dom.css/CSS.supports|supports(kotlin.String;kotlin.String){}[0]
 }
 
 final val kotlinx.browser/document // kotlinx.browser/document|{}document[0]
@@ -16696,6 +16934,8 @@ final val org.w3c.dom/APPLICATION_XHTML_XML // org.w3c.dom/APPLICATION_XHTML_XML
     final inline fun (org.w3c.dom/DOMParserSupportedType.Companion).<get-APPLICATION_XHTML_XML>(): org.w3c.dom/DOMParserSupportedType // org.w3c.dom/APPLICATION_XHTML_XML.<get-APPLICATION_XHTML_XML>|<get-APPLICATION_XHTML_XML>@org.w3c.dom.DOMParserSupportedType.Companion(){}[0]
 final val org.w3c.dom/APPLICATION_XML // org.w3c.dom/APPLICATION_XML|@org.w3c.dom.DOMParserSupportedType.Companion{}APPLICATION_XML[0]
     final inline fun (org.w3c.dom/DOMParserSupportedType.Companion).<get-APPLICATION_XML>(): org.w3c.dom/DOMParserSupportedType // org.w3c.dom/APPLICATION_XML.<get-APPLICATION_XML>|<get-APPLICATION_XML>@org.w3c.dom.DOMParserSupportedType.Companion(){}[0]
+final val org.w3c.dom/ARRAYBUFFER // org.w3c.dom/ARRAYBUFFER|@org.w3c.dom.BinaryType.Companion{}ARRAYBUFFER[0]
+    final inline fun (org.w3c.dom/BinaryType.Companion).<get-ARRAYBUFFER>(): org.w3c.dom/BinaryType // org.w3c.dom/ARRAYBUFFER.<get-ARRAYBUFFER>|<get-ARRAYBUFFER>@org.w3c.dom.BinaryType.Companion(){}[0]
 final val org.w3c.dom/AUTO // org.w3c.dom/AUTO|@org.w3c.dom.CanvasFontKerning.Companion{}AUTO[0]
     final inline fun (org.w3c.dom/CanvasFontKerning.Companion).<get-AUTO>(): org.w3c.dom/CanvasFontKerning // org.w3c.dom/AUTO.<get-AUTO>|<get-AUTO>@org.w3c.dom.CanvasFontKerning.Companion(){}[0]
 final val org.w3c.dom/AUTO // org.w3c.dom/AUTO|@org.w3c.dom.CanvasTextRendering.Companion{}AUTO[0]
@@ -16710,6 +16950,8 @@ final val org.w3c.dom/BEVEL // org.w3c.dom/BEVEL|@org.w3c.dom.CanvasLineJoin.Com
     final inline fun (org.w3c.dom/CanvasLineJoin.Companion).<get-BEVEL>(): org.w3c.dom/CanvasLineJoin // org.w3c.dom/BEVEL.<get-BEVEL>|<get-BEVEL>@org.w3c.dom.CanvasLineJoin.Companion(){}[0]
 final val org.w3c.dom/BITMAPRENDERER // org.w3c.dom/BITMAPRENDERER|@org.w3c.dom.OffscreenRenderingContextId.Companion{}BITMAPRENDERER[0]
     final inline fun (org.w3c.dom/OffscreenRenderingContextId.Companion).<get-BITMAPRENDERER>(): org.w3c.dom/OffscreenRenderingContextId // org.w3c.dom/BITMAPRENDERER.<get-BITMAPRENDERER>|<get-BITMAPRENDERER>@org.w3c.dom.OffscreenRenderingContextId.Companion(){}[0]
+final val org.w3c.dom/BLOB // org.w3c.dom/BLOB|@org.w3c.dom.BinaryType.Companion{}BLOB[0]
+    final inline fun (org.w3c.dom/BinaryType.Companion).<get-BLOB>(): org.w3c.dom/BinaryType // org.w3c.dom/BLOB.<get-BLOB>|<get-BLOB>@org.w3c.dom.BinaryType.Companion(){}[0]
 final val org.w3c.dom/BORDER // org.w3c.dom/BORDER|@org.w3c.dom.CSSBoxType.Companion{}BORDER[0]
     final inline fun (org.w3c.dom/CSSBoxType.Companion).<get-BORDER>(): org.w3c.dom/CSSBoxType // org.w3c.dom/BORDER.<get-BORDER>|<get-BORDER>@org.w3c.dom.CSSBoxType.Companion(){}[0]
 final val org.w3c.dom/BOTTOM // org.w3c.dom/BOTTOM|@org.w3c.dom.CanvasTextBaseline.Companion{}BOTTOM[0]
@@ -17251,12 +17493,14 @@ final fun org.w3c.dom.mediasource/BufferedChangeEventInit(kotlin/Boolean? = ...,
 final fun org.w3c.dom.pointerevents/MouseEventInit(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., org.w3c.dom/Window? = ..., kotlin/Int? = ..., kotlin/Int? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Int? = ..., kotlin/Int? = ..., kotlin/Int? = ..., kotlin/Int? = ..., kotlin/Short? = ..., kotlin/Short? = ..., org.w3c.dom/EventTarget? = ...): org.w3c.dom.pointerevents/MouseEventInit // org.w3c.dom.pointerevents/MouseEventInit|MouseEventInit(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;org.w3c.dom.Window?;kotlin.Int?;kotlin.Int?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Int?;kotlin.Int?;kotlin.Int?;kotlin.Int?;kotlin.Short?;kotlin.Short?;org.w3c.dom.EventTarget?){}[0]
 final fun org.w3c.dom.pointerevents/WheelEventInit(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., org.w3c.dom/Window? = ..., kotlin/Int? = ..., kotlin/Int? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Int? = ..., kotlin/Int? = ..., kotlin/Int? = ..., kotlin/Int? = ..., kotlin/Short? = ..., kotlin/Short? = ..., org.w3c.dom/EventTarget? = ..., kotlin/Double? = ..., kotlin/Double? = ..., kotlin/Double? = ..., kotlin/Int? = ..., kotlin/Boolean? = ...): org.w3c.dom.pointerevents/WheelEventInit // org.w3c.dom.pointerevents/WheelEventInit|WheelEventInit(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;org.w3c.dom.Window?;kotlin.Int?;kotlin.Int?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Int?;kotlin.Int?;kotlin.Int?;kotlin.Int?;kotlin.Short?;kotlin.Short?;org.w3c.dom.EventTarget?;kotlin.Double?;kotlin.Double?;kotlin.Double?;kotlin.Int?;kotlin.Boolean?){}[0]
 final fun org.w3c.dom.svg/SVGBoundingBoxOptions(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ...): org.w3c.dom.svg/SVGBoundingBoxOptions // org.w3c.dom.svg/SVGBoundingBoxOptions|SVGBoundingBoxOptions(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?){}[0]
+final fun org.w3c.dom.svg/SVGPathDataSettings(kotlin/Boolean? = ...): org.w3c.dom.svg/SVGPathDataSettings // org.w3c.dom.svg/SVGPathDataSettings|SVGPathDataSettings(kotlin.Boolean?){}[0]
 final fun org.w3c.dom/AddEventListenerOptions(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., org.w3c.dom/AbortSignal? = ...): org.w3c.dom/AddEventListenerOptions // org.w3c.dom/AddEventListenerOptions|AddEventListenerOptions(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;org.w3c.dom.AbortSignal?){}[0]
 final fun org.w3c.dom/AriaNotificationOptions(org.w3c.dom/AriaNotifyPriority? = ...): org.w3c.dom/AriaNotificationOptions // org.w3c.dom/AriaNotificationOptions|AriaNotificationOptions(org.w3c.dom.AriaNotifyPriority?){}[0]
 final fun org.w3c.dom/AssignedNodesOptions(kotlin/Boolean? = ...): org.w3c.dom/AssignedNodesOptions // org.w3c.dom/AssignedNodesOptions|AssignedNodesOptions(kotlin.Boolean?){}[0]
 final fun org.w3c.dom/BoxQuadOptions(org.w3c.dom/CSSBoxType? = ..., org.w3c.dom/GeometryNode? = ...): org.w3c.dom/BoxQuadOptions // org.w3c.dom/BoxQuadOptions|BoxQuadOptions(org.w3c.dom.CSSBoxType?;org.w3c.dom.GeometryNode?){}[0]
 final fun org.w3c.dom/CanvasRenderingContext2DSettings(kotlin/Boolean? = ..., kotlin/Boolean? = ..., org.w3c.dom/PredefinedColorSpace? = ..., org.w3c.dom/CanvasColorType? = ..., kotlin/Boolean? = ...): org.w3c.dom/CanvasRenderingContext2DSettings // org.w3c.dom/CanvasRenderingContext2DSettings|CanvasRenderingContext2DSettings(kotlin.Boolean?;kotlin.Boolean?;org.w3c.dom.PredefinedColorSpace?;org.w3c.dom.CanvasColorType?;kotlin.Boolean?){}[0]
 final fun org.w3c.dom/CheckVisibilityOptions(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ...): org.w3c.dom/CheckVisibilityOptions // org.w3c.dom/CheckVisibilityOptions|CheckVisibilityOptions(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?){}[0]
+final fun org.w3c.dom/CloseEventInit(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Short? = ..., kotlin/String? = ...): org.w3c.dom/CloseEventInit // org.w3c.dom/CloseEventInit|CloseEventInit(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Short?;kotlin.String?){}[0]
 final fun org.w3c.dom/CloseWatcherOptions(org.w3c.dom/AbortSignal? = ...): org.w3c.dom/CloseWatcherOptions // org.w3c.dom/CloseWatcherOptions|CloseWatcherOptions(org.w3c.dom.AbortSignal?){}[0]
 final fun org.w3c.dom/CommandEventInit(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., org.w3c.dom/Element? = ..., kotlin/String? = ...): org.w3c.dom/CommandEventInit // org.w3c.dom/CommandEventInit|CommandEventInit(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;org.w3c.dom.Element?;kotlin.String?){}[0]
 final fun org.w3c.dom/ConvertCoordinateOptions(org.w3c.dom/CSSBoxType? = ..., org.w3c.dom/CSSBoxType? = ...): org.w3c.dom/ConvertCoordinateOptions // org.w3c.dom/ConvertCoordinateOptions|ConvertCoordinateOptions(org.w3c.dom.CSSBoxType?;org.w3c.dom.CSSBoxType?){}[0]
@@ -18187,6 +18431,19 @@ abstract interface org.w3c.dom.svg/SVGFitToViewBox { // org.w3c.dom.svg/SVGFitTo
 }
 
 // Targets: [js]
+abstract interface org.w3c.dom.svg/SVGPathData { // org.w3c.dom.svg/SVGPathData|null[0]
+    abstract fun getPathData(org.w3c.dom.svg/SVGPathDataSettings = ...): kotlin/Array<org.w3c.dom.svg/SVGPathSegment> // org.w3c.dom.svg/SVGPathData.getPathData|getPathData(org.w3c.dom.svg.SVGPathDataSettings){}[0]
+    abstract fun setPathData(kotlin/Array<org.w3c.dom.svg/SVGPathSegment>) // org.w3c.dom.svg/SVGPathData.setPathData|setPathData(kotlin.Array<org.w3c.dom.svg.SVGPathSegment>){}[0]
+}
+
+// Targets: [js]
+abstract interface org.w3c.dom.svg/SVGPathDataSettings { // org.w3c.dom.svg/SVGPathDataSettings|null[0]
+    abstract var normalize // org.w3c.dom.svg/SVGPathDataSettings.normalize|{}normalize[0]
+        abstract fun <get-normalize>(): kotlin/Boolean? // org.w3c.dom.svg/SVGPathDataSettings.normalize.<get-normalize>|<get-normalize>(){}[0]
+        abstract fun <set-normalize>(kotlin/Boolean?) // org.w3c.dom.svg/SVGPathDataSettings.normalize.<set-normalize>|<set-normalize>(kotlin.Boolean?){}[0]
+}
+
+// Targets: [js]
 abstract interface org.w3c.dom.svg/SVGTests { // org.w3c.dom.svg/SVGTests|null[0]
     abstract val requiredExtensions // org.w3c.dom.svg/SVGTests.requiredExtensions|{}requiredExtensions[0]
         abstract fun <get-requiredExtensions>(): org.w3c.dom.svg/SVGStringList // org.w3c.dom.svg/SVGTests.requiredExtensions.<get-requiredExtensions>|<get-requiredExtensions>(){}[0]
@@ -18395,6 +18652,11 @@ abstract interface org.w3c.dom/AssignedNodesOptions { // org.w3c.dom/AssignedNod
     abstract var flatten // org.w3c.dom/AssignedNodesOptions.flatten|{}flatten[0]
         abstract fun <get-flatten>(): kotlin/Boolean? // org.w3c.dom/AssignedNodesOptions.flatten.<get-flatten>|<get-flatten>(){}[0]
         abstract fun <set-flatten>(kotlin/Boolean?) // org.w3c.dom/AssignedNodesOptions.flatten.<set-flatten>|<set-flatten>(kotlin.Boolean?){}[0]
+}
+
+// Targets: [js]
+abstract interface org.w3c.dom/BinaryType { // org.w3c.dom/BinaryType|null[0]
+    final object Companion // org.w3c.dom/BinaryType.Companion|null[0]
 }
 
 // Targets: [js]
@@ -20790,6 +21052,8 @@ abstract class org.w3c.dom.css/CSSRule { // org.w3c.dom.css/CSSRule|null[0]
             final fun <get-PAGE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSRule.Companion.PAGE_RULE.<get-PAGE_RULE>|<get-PAGE_RULE>(){}[0]
         final val STYLE_RULE // org.w3c.dom.css/CSSRule.Companion.STYLE_RULE|{}STYLE_RULE[0]
             final fun <get-STYLE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSRule.Companion.STYLE_RULE.<get-STYLE_RULE>|<get-STYLE_RULE>(){}[0]
+        final val SUPPORTS_RULE // org.w3c.dom.css/CSSRule.Companion.SUPPORTS_RULE|{}SUPPORTS_RULE[0]
+            final fun <get-SUPPORTS_RULE>(): kotlin/Short // org.w3c.dom.css/CSSRule.Companion.SUPPORTS_RULE.<get-SUPPORTS_RULE>|<get-SUPPORTS_RULE>(){}[0]
     }
 }
 
@@ -21156,6 +21420,18 @@ abstract class org.w3c.dom.svg/SVGNumberList { // org.w3c.dom.svg/SVGNumberList|
     open fun insertItemBefore(org.w3c.dom.svg/SVGNumber, kotlin/Int): org.w3c.dom.svg/SVGNumber // org.w3c.dom.svg/SVGNumberList.insertItemBefore|insertItemBefore(org.w3c.dom.svg.SVGNumber;kotlin.Int){}[0]
     open fun removeItem(kotlin/Int): org.w3c.dom.svg/SVGNumber // org.w3c.dom.svg/SVGNumberList.removeItem|removeItem(kotlin.Int){}[0]
     open fun replaceItem(org.w3c.dom.svg/SVGNumber, kotlin/Int): org.w3c.dom.svg/SVGNumber // org.w3c.dom.svg/SVGNumberList.replaceItem|replaceItem(org.w3c.dom.svg.SVGNumber;kotlin.Int){}[0]
+}
+
+// Targets: [js]
+abstract class org.w3c.dom.svg/SVGPathSegment { // org.w3c.dom.svg/SVGPathSegment|null[0]
+    constructor <init>() // org.w3c.dom.svg/SVGPathSegment.<init>|<init>(){}[0]
+
+    open var type // org.w3c.dom.svg/SVGPathSegment.type|{}type[0]
+        open fun <get-type>(): kotlin/String // org.w3c.dom.svg/SVGPathSegment.type.<get-type>|<get-type>(){}[0]
+        open fun <set-type>(kotlin/String) // org.w3c.dom.svg/SVGPathSegment.type.<set-type>|<set-type>(kotlin.String){}[0]
+    open var values // org.w3c.dom.svg/SVGPathSegment.values|{}values[0]
+        open fun <get-values>(): kotlin/Array<kotlin/Double> // org.w3c.dom.svg/SVGPathSegment.values.<get-values>|<get-values>(){}[0]
+        open fun <set-values>(kotlin/Array<kotlin/Double>) // org.w3c.dom.svg/SVGPathSegment.values.<set-values>|<set-values>(kotlin.Array<kotlin.Double>){}[0]
 }
 
 // Targets: [js]
@@ -24195,6 +24471,19 @@ abstract interface org.w3c.dom.svg/SVGFitToViewBox : kotlin.js/JsAny { // org.w3
 }
 
 // Targets: [wasmJs]
+abstract interface org.w3c.dom.svg/SVGPathData : kotlin.js/JsAny { // org.w3c.dom.svg/SVGPathData|null[0]
+    abstract fun getPathData(org.w3c.dom.svg/SVGPathDataSettings = ...): kotlin.js/JsArray<org.w3c.dom.svg/SVGPathSegment> // org.w3c.dom.svg/SVGPathData.getPathData|getPathData(org.w3c.dom.svg.SVGPathDataSettings){}[0]
+    abstract fun setPathData(kotlin.js/JsArray<org.w3c.dom.svg/SVGPathSegment>) // org.w3c.dom.svg/SVGPathData.setPathData|setPathData(kotlin.js.JsArray<org.w3c.dom.svg.SVGPathSegment>){}[0]
+}
+
+// Targets: [wasmJs]
+abstract interface org.w3c.dom.svg/SVGPathDataSettings : kotlin.js/JsAny { // org.w3c.dom.svg/SVGPathDataSettings|null[0]
+    abstract var normalize // org.w3c.dom.svg/SVGPathDataSettings.normalize|{}normalize[0]
+        abstract fun <get-normalize>(): kotlin/Boolean? // org.w3c.dom.svg/SVGPathDataSettings.normalize.<get-normalize>|<get-normalize>(){}[0]
+        abstract fun <set-normalize>(kotlin/Boolean?) // org.w3c.dom.svg/SVGPathDataSettings.normalize.<set-normalize>|<set-normalize>(kotlin.Boolean?){}[0]
+}
+
+// Targets: [wasmJs]
 abstract interface org.w3c.dom.svg/SVGTests : kotlin.js/JsAny { // org.w3c.dom.svg/SVGTests|null[0]
     abstract val requiredExtensions // org.w3c.dom.svg/SVGTests.requiredExtensions|{}requiredExtensions[0]
         abstract fun <get-requiredExtensions>(): org.w3c.dom.svg/SVGStringList // org.w3c.dom.svg/SVGTests.requiredExtensions.<get-requiredExtensions>|<get-requiredExtensions>(){}[0]
@@ -24403,6 +24692,11 @@ abstract interface org.w3c.dom/AssignedNodesOptions : kotlin.js/JsAny { // org.w
     abstract var flatten // org.w3c.dom/AssignedNodesOptions.flatten|{}flatten[0]
         abstract fun <get-flatten>(): kotlin/Boolean? // org.w3c.dom/AssignedNodesOptions.flatten.<get-flatten>|<get-flatten>(){}[0]
         abstract fun <set-flatten>(kotlin/Boolean?) // org.w3c.dom/AssignedNodesOptions.flatten.<set-flatten>|<set-flatten>(kotlin.Boolean?){}[0]
+}
+
+// Targets: [wasmJs]
+abstract interface org.w3c.dom/BinaryType : kotlin.js/JsAny { // org.w3c.dom/BinaryType|null[0]
+    final object Companion // org.w3c.dom/BinaryType.Companion|null[0]
 }
 
 // Targets: [wasmJs]
@@ -26798,6 +27092,8 @@ abstract class org.w3c.dom.css/CSSRule : kotlin.js/JsAny { // org.w3c.dom.css/CS
             final fun <get-PAGE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSRule.Companion.PAGE_RULE.<get-PAGE_RULE>|<get-PAGE_RULE>(){}[0]
         final val STYLE_RULE // org.w3c.dom.css/CSSRule.Companion.STYLE_RULE|{}STYLE_RULE[0]
             final fun <get-STYLE_RULE>(): kotlin/Short // org.w3c.dom.css/CSSRule.Companion.STYLE_RULE.<get-STYLE_RULE>|<get-STYLE_RULE>(){}[0]
+        final val SUPPORTS_RULE // org.w3c.dom.css/CSSRule.Companion.SUPPORTS_RULE|{}SUPPORTS_RULE[0]
+            final fun <get-SUPPORTS_RULE>(): kotlin/Short // org.w3c.dom.css/CSSRule.Companion.SUPPORTS_RULE.<get-SUPPORTS_RULE>|<get-SUPPORTS_RULE>(){}[0]
     }
 }
 
@@ -27164,6 +27460,18 @@ abstract class org.w3c.dom.svg/SVGNumberList : kotlin.js/JsAny { // org.w3c.dom.
     open fun insertItemBefore(org.w3c.dom.svg/SVGNumber, kotlin/Int): org.w3c.dom.svg/SVGNumber // org.w3c.dom.svg/SVGNumberList.insertItemBefore|insertItemBefore(org.w3c.dom.svg.SVGNumber;kotlin.Int){}[0]
     open fun removeItem(kotlin/Int): org.w3c.dom.svg/SVGNumber // org.w3c.dom.svg/SVGNumberList.removeItem|removeItem(kotlin.Int){}[0]
     open fun replaceItem(org.w3c.dom.svg/SVGNumber, kotlin/Int): org.w3c.dom.svg/SVGNumber // org.w3c.dom.svg/SVGNumberList.replaceItem|replaceItem(org.w3c.dom.svg.SVGNumber;kotlin.Int){}[0]
+}
+
+// Targets: [wasmJs]
+abstract class org.w3c.dom.svg/SVGPathSegment : kotlin.js/JsAny { // org.w3c.dom.svg/SVGPathSegment|null[0]
+    constructor <init>() // org.w3c.dom.svg/SVGPathSegment.<init>|<init>(){}[0]
+
+    open var type // org.w3c.dom.svg/SVGPathSegment.type|{}type[0]
+        open fun <get-type>(): kotlin/String // org.w3c.dom.svg/SVGPathSegment.type.<get-type>|<get-type>(){}[0]
+        open fun <set-type>(kotlin/String) // org.w3c.dom.svg/SVGPathSegment.type.<set-type>|<set-type>(kotlin.String){}[0]
+    open var values // org.w3c.dom.svg/SVGPathSegment.values|{}values[0]
+        open fun <get-values>(): kotlin.js/JsArray<kotlin.js/JsNumber> // org.w3c.dom.svg/SVGPathSegment.values.<get-values>|<get-values>(){}[0]
+        open fun <set-values>(kotlin.js/JsArray<kotlin.js/JsNumber>) // org.w3c.dom.svg/SVGPathSegment.values.<set-values>|<set-values>(kotlin.js.JsArray<kotlin.js.JsNumber>){}[0]
 }
 
 // Targets: [wasmJs]

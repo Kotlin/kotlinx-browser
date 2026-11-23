@@ -660,6 +660,8 @@ HTMLElement includes ElementCSSInlineStyle;
 [Exposed=Window]
 namespace CSS {
   CSSOMString escape(CSSOMString ident);
+  boolean supports(CSSOMString property, CSSOMString value);
+  boolean supports(CSSOMString conditionText);
 };
 // spec: clipboard-apis (org.w3c.dom.clipboard)
 // shape: open class : Event

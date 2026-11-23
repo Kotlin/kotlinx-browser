@@ -90,6 +90,7 @@ public external abstract class CSSRule : JsAny {
         val PAGE_RULE: Short
         val MARGIN_RULE: Short
         val NAMESPACE_RULE: Short
+        val SUPPORTS_RULE: Short
     }
 }
 
@@ -106,6 +107,7 @@ public external abstract class CSSStyleRule : CSSGroupingRule {
         val PAGE_RULE: Short
         val MARGIN_RULE: Short
         val NAMESPACE_RULE: Short
+        val SUPPORTS_RULE: Short
     }
 }
 
@@ -125,6 +127,7 @@ public external abstract class CSSImportRule : CSSRule {
         val PAGE_RULE: Short
         val MARGIN_RULE: Short
         val NAMESPACE_RULE: Short
+        val SUPPORTS_RULE: Short
     }
 }
 
@@ -142,6 +145,7 @@ public external abstract class CSSGroupingRule : CSSRule {
         val PAGE_RULE: Short
         val MARGIN_RULE: Short
         val NAMESPACE_RULE: Short
+        val SUPPORTS_RULE: Short
     }
 }
 
@@ -170,6 +174,7 @@ public external abstract class CSSPageRule : CSSGroupingRule {
         val PAGE_RULE: Short
         val MARGIN_RULE: Short
         val NAMESPACE_RULE: Short
+        val SUPPORTS_RULE: Short
     }
 }
 
@@ -186,6 +191,7 @@ public external abstract class CSSMarginRule : CSSRule {
         val PAGE_RULE: Short
         val MARGIN_RULE: Short
         val NAMESPACE_RULE: Short
+        val SUPPORTS_RULE: Short
     }
 }
 
@@ -202,6 +208,7 @@ public external abstract class CSSNamespaceRule : CSSRule {
         val PAGE_RULE: Short
         val MARGIN_RULE: Short
         val NAMESPACE_RULE: Short
+        val SUPPORTS_RULE: Short
     }
 }
 
@@ -228,4 +235,6 @@ public external interface ElementCSSInlineStyle : JsAny {
 
 public external object CSS {
     fun escape(ident: String): String
+    fun supports(property: String, value: String): Boolean
+    fun supports(conditionText: String): Boolean
 }

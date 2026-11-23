@@ -744,6 +744,11 @@ partial interface mixin WindowOrWorkerGlobalScope {
 partial interface mixin WindowOrWorkerGlobalScope {
   [SecureContext, SameObject] readonly attribute CacheStorage caches;
 };
+// spec: css-conditional (org.w3c.dom.css)
+partial namespace CSS {
+  boolean supports(CSSOMString property, CSSOMString value);
+  boolean supports(CSSOMString conditionText);
+};
 // spec: wai-aria (org.w3c.dom)
 Element includes ARIAMixin;
 Element includes ARIANotifyMixin;

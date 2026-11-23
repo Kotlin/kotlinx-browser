@@ -1277,6 +1277,8 @@ public external interface UnionElementOrProcessingInstruction : JsAny
 
 public external object CSS {
     fun escape(ident: String): String
+    fun supports(property: String, value: String): Boolean
+    fun supports(conditionText: String): Boolean
 }
 
 // file: org/w3c/dom/clipboard/clipboard-apis.kt
