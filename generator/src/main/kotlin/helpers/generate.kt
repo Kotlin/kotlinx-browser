@@ -186,11 +186,11 @@ private fun StringBuilder.appendTests() {
     appendLine("class JsArrayConversionTest {")
 
     appendTestFunction("Byte")
-    appendTestFunction("UByte", ignored = true)
+    appendTestFunction("UByte")
     appendTestFunction("Short")
-    appendTestFunction("UShort", ignored = true)
+    appendTestFunction("UShort")
     appendTestFunction("Int")
-    appendTestFunction("UInt", ignored = true)
+    appendTestFunction("UInt")
     appendTestFunction("Float")
     appendTestFunction("Double")
 
@@ -246,7 +246,6 @@ private fun StringBuilder.appendTestFunction(
 
     appendLine()
     appendLine("    @Test")
-    if (ignored) appendLine("    @Ignore // KT-79776")
     appendLine("    fun test$kotlinArrayType() {")
     appendLine("        testJsRoundTrip($ktArrayOf())")
     appendLine("        testJsRoundTrip($ktArrayOf(0.to$ktType(), (-42).to$ktType(), $ktType.MIN_VALUE, $ktType.MAX_VALUE))")
