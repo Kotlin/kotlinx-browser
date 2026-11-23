@@ -3,6 +3,7 @@
  * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
  */
 
+import org.khronos.webgl.*
 import org.w3c.dom.*
 import org.w3c.dom.css.*
 import org.w3c.fetch.*
@@ -84,5 +85,14 @@ class InteropTest {
         style.cssFloat = "left"
         assertEquals("x,color,backgroundColor,cssFloat", keys(style))
         assertEquals("red", style.color)
+    }
+
+    /** Interface constants hold their IDL values: no JS object is read (Node has neither global). */
+    @Test
+    fun interfaceConstants() {
+        assertEquals(1, NodeFilter.FILTER_ACCEPT.toInt())
+        assertEquals(-1, NodeFilter.SHOW_ALL, "0xFFFFFFFF")
+        assertEquals(0x4000, WebGLRenderingContextBase.COLOR_BUFFER_BIT)
+        assertEquals(-1.0, WebGL2RenderingContextBase.TIMEOUT_IGNORED)
     }
 }

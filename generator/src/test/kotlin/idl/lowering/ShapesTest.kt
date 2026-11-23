@@ -87,7 +87,6 @@ class ShapesTest {
         )
         assertEquals(listOf("COLOR_BUFFER_BIT"), s["GL"].constants.map { it.constant.name })
         assertEquals(emptyList(), s["Base"].constants, "interfaces get no companion constants")
-        assertEquals(emptyMap(), s.constantsWithoutClassHome, "Base is included by a class")
     }
 
     @Test
@@ -96,12 +95,6 @@ class ShapesTest {
             shapes(iface("A", const("X", "1")), iface("B", const("X", "2"), inheritance = "A"))
         }
         assertEquals(listOf("B: constant X is 2 in B but 1 in A"), e.problems)
-    }
-
-    @Test
-    fun callbackInterfaceConstantsHaveNoClassHome() {
-        val s = shapes(iface("NodeFilter", const("FILTER_ACCEPT", "1"), kind = IdlInterfaceKind.CALLBACK_INTERFACE), mixin("Unused", const("U", "1")))
-        assertEquals(setOf("NodeFilter", "Unused"), s.constantsWithoutClassHome.keys)
     }
 
     @Test

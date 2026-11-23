@@ -1210,25 +1210,25 @@ public external interface NodeFilter : JsAny {
     fun acceptNode(node: Node): Short
 
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object {
-        val FILTER_ACCEPT: Short
-        val FILTER_REJECT: Short
-        val FILTER_SKIP: Short
-        val SHOW_ALL: Int
-        val SHOW_ELEMENT: Int
-        val SHOW_ATTRIBUTE: Int
-        val SHOW_TEXT: Int
-        val SHOW_CDATA_SECTION: Int
-        val SHOW_ENTITY_REFERENCE: Int
-        val SHOW_ENTITY: Int
-        val SHOW_PROCESSING_INSTRUCTION: Int
-        val SHOW_COMMENT: Int
-        val SHOW_DOCUMENT: Int
-        val SHOW_DOCUMENT_TYPE: Int
-        val SHOW_DOCUMENT_FRAGMENT: Int
-        val SHOW_NOTATION: Int
-    }
+    companion object
 }
+
+public inline val NodeFilter.Companion.FILTER_ACCEPT: Short get() = 1
+public inline val NodeFilter.Companion.FILTER_REJECT: Short get() = 2
+public inline val NodeFilter.Companion.FILTER_SKIP: Short get() = 3
+public inline val NodeFilter.Companion.SHOW_ALL: Int get() = 0xFFFFFFFF.toInt()
+public inline val NodeFilter.Companion.SHOW_ELEMENT: Int get() = 0x1
+public inline val NodeFilter.Companion.SHOW_ATTRIBUTE: Int get() = 0x2
+public inline val NodeFilter.Companion.SHOW_TEXT: Int get() = 0x4
+public inline val NodeFilter.Companion.SHOW_CDATA_SECTION: Int get() = 0x8
+public inline val NodeFilter.Companion.SHOW_ENTITY_REFERENCE: Int get() = 0x10
+public inline val NodeFilter.Companion.SHOW_ENTITY: Int get() = 0x20
+public inline val NodeFilter.Companion.SHOW_PROCESSING_INSTRUCTION: Int get() = 0x40
+public inline val NodeFilter.Companion.SHOW_COMMENT: Int get() = 0x80
+public inline val NodeFilter.Companion.SHOW_DOCUMENT: Int get() = 0x100
+public inline val NodeFilter.Companion.SHOW_DOCUMENT_TYPE: Int get() = 0x200
+public inline val NodeFilter.Companion.SHOW_DOCUMENT_FRAGMENT: Int get() = 0x400
+public inline val NodeFilter.Companion.SHOW_NOTATION: Int get() = 0x800
 
 public external abstract class DOMTokenList : ItemArrayLike<JsString> {
     override val length: Int

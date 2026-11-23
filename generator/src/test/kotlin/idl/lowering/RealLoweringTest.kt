@@ -123,8 +123,6 @@ class RealLoweringTest {
         assertTrue("COLOR_BUFFER_BIT" in names("WebGLRenderingContext"))
         assertTrue("COLOR_BUFFER_BIT" in names("WebGL2RenderingContext"))
         assertTrue("READ_BUFFER" in names("WebGL2RenderingContext"))
-        // The only constants that cannot be copied anywhere. Needs a decision (Key Decision 13 covers classes only).
-        assertEquals(setOf("NodeFilter"), shapes.constantsWithoutClassHome.keys)
     }
 
     @Test

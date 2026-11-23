@@ -45,8 +45,8 @@ data class Shape(
     /**
      * Constants a class exposes in its companion: own, then those of every ancestor and of every mixin included by
      * the class or an ancestor (Key Decision 13: copied, because a companion of an external interface is not usable
-     * on wasm, and Kotlin companions are not inherited). Empty for [ShapeKind.INTERFACE] — see
-     * [Shapes.constantsWithoutClassHome].
+     * on wasm, and Kotlin companions are not inherited). Empty for [ShapeKind.INTERFACE]: the
+     * backend prints an interface's own constants as extensions on its companion, with their IDL values.
      */
     val constants: List<ResolvedConstant>,
     /**
@@ -78,8 +78,6 @@ data class Shape(
 class Shapes private constructor(
     val byName: Map<String, Shape>,
     val factoryClasses: List<FactoryClass>,
-    /** Interfaces whose constants have no class to be copied into (e.g. callback interface `NodeFilter`). */
-    val constantsWithoutClassHome: Map<String, List<IdlConstant>>,
 ) {
     operator fun get(name: String): Shape = byName[name] ?: error("no shape for '$name'")
 
@@ -303,28 +301,9 @@ class Shapes private constructor(
                     )
                 }
 
-            val classMixins = shapes
-                .values
-                .filter { it.kind != ShapeKind.INTERFACE }
-                .flatMap { includes[it.name].orEmpty() }
-                .toSet()
-
-            val homeless = interfaces
-                .values
-                .filter {
-                    kindOf(it) == ShapeKind.INTERFACE &&
-                            !(it.kind == IdlInterfaceKind.MIXIN && it.name in classMixins)
-                }
-                .associate { it.name to it.members.filterIsInstance<IdlConstant>() }
-                .filterValues { it.isNotEmpty() }
-
             if (problems.isNotEmpty()) throw LoweringException(problems)
 
-            return Shapes(
-                shapes,
-                factories,
-                homeless
-            )
+            return Shapes(shapes, factories)
         }
     }
 }

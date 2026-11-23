@@ -258,14 +258,67 @@ private class SpecFile(
                 member(added, modifier = "override ", shape = shape)
             }
 
-            val constants = if (isClass) {
-                shape.constants.map { it.constant }
-            } else {
-                kotlinBackend.lowered.shapes.constantsWithoutClassHome[i.name].orEmpty()
+            when {
+                isClass -> {
+                    val statics = i.members.filter { it.isStatic() }.map { InheritedMember(it, i.name) } +
+                            shape.inheritedStatics
+                    companion(shape.constants.map { it.constant }, statics)
+                }
+
+                i.members.any { it is IdlConstant } -> {
+                    line()
+                    line("@Suppress(\"COMPANION_OBJECT_IN_EXTERNAL_INTERFACE\")")
+                    line("companion object")
+                }
             }
-            val statics = i.members.filter { it.isStatic() }.map { InheritedMember(it, i.name) } +
-                    shape.inheritedStatics
-            companion(constants, statics, suppress = !isClass)
+        }
+
+        if (!isClass) printInterfaceConstants(i)
+    }
+
+    /**
+     * The constants of an interface (a mixin such as `WebGLRenderingContextBase`, or a callback interface such as
+     * `NodeFilter`), as `inline` extensions on its empty companion holding the IDL value:
+     * `public inline val NodeFilter.Companion.FILTER_ACCEPT: Short get() = 1`.
+     *
+     * Not `external` companion members as on classes: on Wasm a member of an external interface's companion is not
+     * read from JS at all (it is `0`), and on JS it is read from a global of the interface's name, which a mixin does
+     * not have. The value is known from the IDL, so it needs no JS object.
+     */
+    private fun printInterfaceConstants(i: IdlInterface) {
+        val constants = i.members.filterIsInstance<IdlConstant>()
+        if (constants.isEmpty()) return
+        for (c in constants) {
+            val type = map(c.type, TypePosition.VALUE)
+            val literal = constantLiteral(c, type) ?: error("${i.name}.${c.name}: no Kotlin literal for ${c.value} as $type")
+            line("public inline val ${i.name}.Companion.${name(c.name)}: ${type(type)} get() = $literal")
+        }
+        line()
+    }
+
+    /** The Kotlin expression of [c]'s value as [type]: `1`, `0x8D48`, `0xFFFFFFFF.toInt()` (above `Int.MAX_VALUE`), `-1.0`. */
+    private fun constantLiteral(c: IdlConstant, type: KotlinType): String? {
+        val literal = (c.value as? IdlValue.Num)?.literal ?: return null
+        val integer = literal.removePrefix("-").let { digits ->
+            when {
+                digits.startsWith("0x") || digits.startsWith("0X") -> digits.drop(2).toBigIntegerOrNull(16)
+                else -> digits.toBigIntegerOrNull()
+            }
+        }?.let { if (literal.startsWith("-")) it.negate() else it }
+        fun fits(min: Long, max: Long) = integer != null && integer >= min.toBigInteger() && integer <= max.toBigInteger()
+        return when ((type as? KotlinType.Named)?.fqName) {
+            "kotlin.Int" -> when {
+                fits(Int.MIN_VALUE.toLong(), Int.MAX_VALUE.toLong()) -> literal
+                fits(0, 0xFFFFFFFFL) -> "$literal.toInt()"
+                else -> null
+            }
+            "kotlin.Short" -> when {
+                fits(Short.MIN_VALUE.toLong(), Short.MAX_VALUE.toLong()) -> literal
+                fits(0, 0xFFFFL) -> "$literal.toShort()"
+                else -> null
+            }
+            "kotlin.Double" -> integer?.let { "$it.0" } ?: literal
+            else -> null
         }
     }
 
@@ -276,7 +329,7 @@ private class SpecFile(
             for (added in kotlinBackend.lowered.overrides[factory.name].added) {
                 member(added, modifier = "override ", shape = shape)
             }
-            companion(shape.constants.map { it.constant }, shape.inheritedStatics, suppress = false)
+            companion(shape.constants.map { it.constant }, shape.inheritedStatics)
         }
     }
 
@@ -439,15 +492,10 @@ private class SpecFile(
         else -> error("${i.name}: indexer value $value has no helper")
     }
 
-    /**
-     * The companion of a class: its constants and static members. On an interface (a callback interface with
-     * constants, e.g. `NodeFilter`) it needs `COMPANION_OBJECT_IN_EXTERNAL_INTERFACE` suppressed (Key
-     * Decision 13), on the companion only.
-     */
-    private fun companion(constants: List<IdlConstant>, statics: List<InheritedMember>, suppress: Boolean) {
+    /** The companion of a class: its constants and static members, read from the JS class. */
+    private fun companion(constants: List<IdlConstant>, statics: List<InheritedMember>) {
         if (constants.isEmpty() && statics.isEmpty()) return
         line()
-        if (suppress) line("@Suppress(\"COMPANION_OBJECT_IN_EXTERNAL_INTERFACE\")")
         block("companion object") {
             constants.forEach(::constant)
             statics.forEach { member(it, modifier = "", shape = null) }
