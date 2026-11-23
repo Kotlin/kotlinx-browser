@@ -1,10 +1,11 @@
 // file: org/w3c/dom/html.kt
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'html', DO NOT EDIT!
+// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
 
 package org.w3c.dom
 
@@ -584,10 +585,11 @@ public external interface WindowOrWorkerGlobalScope : JsAny {
 // file: org/w3c/dom/dom.kt
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'dom', DO NOT EDIT!
+// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
 
 package org.w3c.dom
 
@@ -1130,10 +1132,11 @@ public external abstract class Element : Node, ParentNode, NonDocumentTypeChildN
 // file: org/w3c/dom/cssom-view.kt
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'cssom-view', DO NOT EDIT!
+// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
 
 package org.w3c.dom
 
@@ -1144,10 +1147,11 @@ public external interface GeometryNode : JsAny
 // file: org/w3c/dom/events/uievents.kt
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'uievents', DO NOT EDIT!
+// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
 
 package org.w3c.dom.events
 
@@ -1211,10 +1215,11 @@ public fun EventModifierInit(bubbles: Boolean? = null, cancelable: Boolean? = nu
 // file: org/w3c/dom/pointerevents/pointerevents.kt
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'pointerevents', DO NOT EDIT!
+// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
 
 package org.w3c.dom.pointerevents
 
@@ -1264,10 +1269,11 @@ public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
 // file: org/w3c/dom/css/cssom.kt
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'cssom', DO NOT EDIT!
+// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
 
 package org.w3c.dom.css
 
@@ -1284,10 +1290,11 @@ public external object CSS {
 // file: org/w3c/dom/clipboard/clipboard-apis.kt
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'clipboard-apis', DO NOT EDIT!
+// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
 
 package org.w3c.dom.clipboard
 
@@ -1310,10 +1317,11 @@ public external open class ClipboardChangeEvent : Event {
 // file: org/khronos/webgl/webgl1.kt
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'webgl1', DO NOT EDIT!
+// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
 
 package org.khronos.webgl
 
@@ -1663,10 +1671,11 @@ public external abstract class WebGLRenderingContext : WebGLRenderingContextBase
 // file: org/w3c/xhr/xhr.kt
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'xhr', DO NOT EDIT!
+// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
 
 package org.w3c.xhr
 
@@ -1690,10 +1699,11 @@ public external open class FormData : JsAny {
 // file: org/w3c/fetch/fetch.kt
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'fetch', DO NOT EDIT!
+// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
 
 package org.w3c.fetch
 
@@ -1771,10 +1781,11 @@ public inline val RequestCredentials.Companion.INCLUDE: RequestCredentials get()
 // file: org/w3c/dom/wai-aria.kt
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'wai-aria', DO NOT EDIT!
+// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
 
 package org.w3c.dom
 

@@ -1,10 +1,10 @@
 /*
- * Copyright 2010-2025 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
-// See generator/src/main/kotlin/helpers/generate.kt for details
+// See generator/src/main/kotlin/helpers/generate.kt for details.
 
 
 @file:OptIn(ExperimentalUnsignedTypes::class)
@@ -123,7 +123,7 @@ class JsArrayConversionTest {
     }
 
     @Test
-    @Ignore
+    @Ignore // KT-79776
     fun testUByteArray() {
         testJsRoundTrip(ubyteArrayOf())
         testJsRoundTrip(ubyteArrayOf(0.toUByte(), (-42).toUByte(), UByte.MIN_VALUE, UByte.MAX_VALUE))
@@ -138,7 +138,7 @@ class JsArrayConversionTest {
     }
 
     @Test
-    @Ignore
+    @Ignore // KT-79776
     fun testUShortArray() {
         testJsRoundTrip(ushortArrayOf())
         testJsRoundTrip(ushortArrayOf(0.toUShort(), (-42).toUShort(), UShort.MIN_VALUE, UShort.MAX_VALUE))
@@ -153,7 +153,7 @@ class JsArrayConversionTest {
     }
 
     @Test
-    @Ignore
+    @Ignore // KT-79776
     fun testUIntArray() {
         testJsRoundTrip(uintArrayOf())
         testJsRoundTrip(uintArrayOf(0.toUInt(), (-42).toUInt(), UInt.MIN_VALUE, UInt.MAX_VALUE))

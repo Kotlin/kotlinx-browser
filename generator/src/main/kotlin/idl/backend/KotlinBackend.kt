@@ -1,10 +1,11 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 package org.jetbrains.kotlin.tools.idl.backend
 
+import org.jetbrains.kotlin.generators.helpers.generatedFileHeader
 import org.jetbrains.kotlin.tools.idl.ir.*
 import org.jetbrains.kotlin.tools.idl.lowering.*
 import org.jetbrains.kotlin.tools.idl.mapping.KotlinType
@@ -163,16 +164,6 @@ private const val UNIT = "kotlin.Unit"
 private const val STRING = "kotlin.String"
 private val INDEXER_KEY_TYPES = setOf("kotlin.Int", STRING)
 
-private val HEADER = """
-    |/*
-    | * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
-    | * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
-    | */
-    |
-    |// NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF '{spec}', DO NOT EDIT!
-    |
-    |""".trimMargin()
-
 private class SpecFile(
     private val kotlinBackend: KotlinBackend,
     private val spec: IdlSpec
@@ -211,7 +202,7 @@ private class SpecFile(
         }
 
         return buildString {
-            append(HEADER.replace("{spec}", spec.name))
+            append(generatedFileHeader(seeDetailsAt = "generator/src/main/kotlin/idl/generateWebApi.kt", generatedFrom = "THE WEB IDL OF '${spec.name}'"))
             append("package ").append(spec.packageName).append("\n\n")
             imports.forEach { append("import ").append(it).append(".*\n") }
             if (imports.isNotEmpty()) append('\n')

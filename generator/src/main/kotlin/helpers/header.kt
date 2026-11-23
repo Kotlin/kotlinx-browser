@@ -1,38 +1,24 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
- * Use of this source code is governed by the Apache 2.0 license that can be found in the license/LICENSE.txt file.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
 package org.jetbrains.kotlin.generators.helpers
 
-import org.xml.sax.InputSource
-import java.io.File
-import javax.xml.xpath.XPathFactory
-
-private val LINE_SEPARATOR = System.lineSeparator()
-
-private fun readCopyrightNoticeFromProfile(copyrightProfile: File): String {
-    val template = copyrightProfile.reader().use { reader ->
-        XPathFactory.newInstance().newXPath().evaluate(
-            "/component/copyright/option[@name='notice']/@value",
-            InputSource(reader)
-        )
-    }
-    val yearTemplate = "&#36;today.year"
-    val year = java.time.LocalDate.now().year.toString()
-    assert(yearTemplate in template)
-
-    return template.replace(yearTemplate, year).lines()
-        .joinToString("", prefix = "/*$LINE_SEPARATOR", postfix = " */$LINE_SEPARATOR") {
-            " * $it$LINE_SEPARATOR"
-        }
-}
-
-internal fun getHeader(seeDetailsAt: String): String {
-    val copyrightNotice = readCopyrightNoticeFromProfile(
-        File(".idea/copyright/apache.xml")
-    )
-    val note = "// NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!$LINE_SEPARATOR" +
-            "// See $seeDetailsAt for details$LINE_SEPARATOR"
-    return copyrightNotice + LINE_SEPARATOR + note + LINE_SEPARATOR
-}
+/**
+ * The header of every generated source file: the copyright notice, then a note naming what the file is generated from
+ * (`the Web IDL of 'dom'`; omitted when it is the generator itself) and where to look for details, then a blank line.
+ *
+ * Fixed text and `\n` line breaks, so a regeneration gives the same bytes on every date and OS: the committed files
+ * are compared with fresh output by `GeneratedSourcesTest` and `GeneratedUtilsTest`.
+ */
+fun generatedFileHeader(seeDetailsAt: String, generatedFrom: String? = null): String = """
+    |/*
+    | * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
+    | * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+    | */
+    |
+    |// NOTE: THIS FILE IS AUTO-GENERATED${generatedFrom?.let { " FROM $it" }.orEmpty()}, DO NOT EDIT!
+    |// See $seeDetailsAt for details.
+    |
+    |""".trimMargin()
