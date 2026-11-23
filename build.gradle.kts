@@ -58,6 +58,10 @@ kotlin {
 
     sourceSets {
         val commonMain by getting
+        val webMain by getting {
+            // Generated from Web IDL by `./gradlew :generator:generateWebApi`; do not edit.
+            kotlin.srcDir("src/webMain/generated")
+        }
         val webTest by getting {
             dependencies {
                 implementation(kotlin("test"))

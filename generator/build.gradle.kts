@@ -20,10 +20,10 @@ tasks.test {
     systemProperty("kotlinx.browser.updateGolden", providers.gradleProperty("updateGolden").getOrElse("false"))
 }
 
-task("generateStdlibFromIDL", JavaExec::class) {
-    mainClass = "org.jetbrains.kotlin.tools.dukat.LaunchBrowserKt"
+task("generateWebApi", JavaExec::class) {
+    description = "Regenerates src/webMain/generated and surface-report.txt from the pinned Web IDL."
+    mainClass = "org.jetbrains.kotlin.tools.idl.GenerateWebApiKt"
     classpath = sourceSets["main"].runtimeClasspath
-    dependsOn("build")
     systemProperty("line.separator", "\n")
 }
 
