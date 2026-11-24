@@ -1,17 +1,15 @@
 // Verifies that the generator's IR is lossless: the IR of every spec, rendered back as Web IDL by
-// `./gradlew :generator:dumpIdlIr`, must re-parse with webidl2 into exactly the committed webref-idl.json.
-// Run after `npm run ingest` when bumping @webref/idl or webidl2: `npm run check:ir-roundtrip`.
+// `./gradlew :generator:dumpIdlIr`, must re-parse with webidl2 into exactly the parsed corpus.
+// Run by `./gradlew :generator:checkIrRoundTrip` (part of `check`):
+// node scripts/check-ir-roundtrip.js <webref-idl.json> <directory of rendered .idl files>
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {fileURLToPath} from 'node:url';
 import {parse} from 'webidl2';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const rootDir = path.resolve(__dirname, '..');
-const renderedDir = path.resolve(rootDir, 'generator/build/idl-ir');
-
 async function main() {
-    const corpus = JSON.parse(await fs.readFile(path.resolve(rootDir, 'webref-idl.json'), 'utf-8'));
+    const [corpusPath, renderedDir] = process.argv.slice(2);
+    if (!corpusPath || !renderedDir) throw new Error('usage: node scripts/check-ir-roundtrip.js <webref-idl.json> <rendered dir>');
+    const corpus = JSON.parse(await fs.readFile(corpusPath, 'utf-8'));
     let problems = 0;
     for (const spec of Object.keys(corpus)) {
         let rendered;

@@ -5,23 +5,24 @@ lowerings are not part of this decision.
 
 ## Decision
 
-The generator reads **Web IDL pre-parsed by [`webidl2.js`](https://github.com/w3c/webidl2.js), committed to the
-repository as JSON**:
+The generator reads **Web IDL pre-parsed by [`webidl2.js`](https://github.com/w3c/webidl2.js) into JSON**, produced
+by the build from exactly pinned packages (amended 2026-11-23, see [Amendment](#amendment-2026-11-23-parsed-inputs-are-built-not-committed)):
 
 ```
-pinned @webref/idl (exact version) → webidl2.js (Node, `npm run ingest` only) → webref-idl.json (committed)
+pinned @webref/idl (package-lock.json) → webidl2.js (Node, Gradle task prepareWebref) → generator/build/webref/webref-idl.json
   → IdlFrontend → IR → lowerings → backend
 ```
 
-- Versions are pinned exactly in `package.json`: `@webref/idl@3.86.0`, `webidl2@24.5.0`, and `@webref/events@1.27.1`
-  and `@webref/css@8.7.8` from the same crawl.
-- `./gradlew` needs neither Node nor the network. Node is only used by the ingest chore, and its output (`idl/`,
-  `webref-idl.json`, `webref-events.json`, `webref-css.json`) is a reviewable diff.
+- Versions are pinned exactly in `package.json`, with integrity hashes in `package-lock.json`: `@webref/idl@3.86.0`,
+  `webidl2@24.5.0`, and `@webref/events@1.27.1` and `@webref/css@8.7.8` from the same crawl.
+- Gradle installs them (`npm ci`) and parses them (`scripts/prepare-webref.js`) with the Node.js the Kotlin Gradle
+  plugin downloads for the JS and Wasm tests. The parsed inputs are build outputs; the generated Kotlin,
+  `surface-report.txt` and the ABI dump are committed and are what a version bump is reviewed by.
 - CSSOM defines the per-property attributes of `CSSStyleProperties` (`style.color`) in prose, not in IDL. The
   front-end adds them as the partial interface that prose describes, from the property names in `@webref/css`
   (`idl/frontend/WebrefCss.kt`), so they go through the lowerings and the backend like any other IDL.
 - The JSON is read by `generator/src/main/kotlin/idl/frontend/WebIdl2JsonFrontend.kt` into the generator's own IR
-  (`idl/ir/`). The IR is lossless: `npm run check:ir-roundtrip` prints all 346 specs back and compares them.
+  (`idl/ir/`). The IR is lossless: `checkIrRoundTrip` (part of `check`) prints all 346 specs back and compares them.
 - dukat's IDL **lowerings** are kept, ported onto that IR (`idl/lowering/`). Its parser, `convertToModel`, `astModel`
   and string translator are not.
 
@@ -112,3 +113,24 @@ converter as a product dependency.
   (surface pass, `surface-report.txt`).
 - `dukat:0.5.8-rc.6` is gone from the classpath (2026-11): the new backend replaced the dukat chain and its
   temporary `IrToDukat` adapter. `jsoup` went earlier with the spec-page scraping.
+
+## Amendment (2026-11-23): parsed inputs are built, not committed
+
+The original decision committed the IDL files (`idl/`, 346 files) and the parsed JSON (`webref-idl.json`, 8.4 MB, and
+the events and CSS JSON), so that `./gradlew` would need neither Node nor the network. That reason no longer held:
+
+- `./gradlew check` runs the library's `jsNodeTest` and `wasmJsNodeTest`, for which the Kotlin Gradle plugin already
+  downloads Node.js and installs npm packages. The build needed both anyway, and gradle-node-plugin downloads a
+  pinned Node.js just as reliably.
+- Nobody reviews an 8.4 MB webidl2 AST diff. A version bump is reviewed by the committed generated Kotlin,
+  `surface-report.txt` and the ABI dump.
+- `idl/` was only an intermediate step of the ingest scripts; the generator never read it.
+- Pinning stays exact: `package-lock.json` has versions and integrity hashes, and `npm ci` installs exactly them. The
+  first build after this change produced byte-identical JSON, and regeneration produced identical Kotlin.
+
+So the inputs are now built into `generator/build/webref/` by Gradle tasks (`npmInstall`, `prepareWebref`) using the
+Node.js of gradle-node-plugin (pinned in `generator/build.gradle.kts`), and the generator receives every location as a system property instead of looking
+for files at fixed places in the repository. The IR round-trip check became the Gradle task `checkIrRoundTrip`, part
+of `check`. What was given up: a fresh clone's first build needs the npm registry (as it already did for the
+library's tests), and the raw upstream change is no longer a committed diff (compare `generator/build/webref/`
+before and after a bump to see it).

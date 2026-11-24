@@ -1,5 +1,8 @@
+import com.github.gradle.node.task.NodeTask
+
 plugins {
     kotlin("jvm")
+    id("com.github.node-gradle.node") version "7.1.0"
 }
 
 repositories {
@@ -12,40 +15,115 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
-tasks.test {
-    useJUnitPlatform()
-    systemProperty("kotlinx.browser.updateGolden", providers.gradleProperty("updateGolden").getOrElse("false"))
-    // Read by the tests from the repository root (inputs, and committed outputs compared with fresh generation), so
-    // an edit to any of them reruns the tests instead of leaving them up to date.
-    val root = rootProject.layout.projectDirectory
-    inputs.files(
-        root.file("webref-idl.json"),
-        root.file("webref-events.json"),
-        root.file("webref-css.json"),
-        root.file("surface-report.txt"),
-        root.file("src/webMain/kotlin/arrayCopy.kt"),
-        root.file("src/jsMain/kotlin/arrayCopy.js.kt"),
-        root.file("src/wasmJsMain/kotlin/arrayCopy.wasm.kt"),
-        root.file("src/webTest/kotlin/arrayCopyTest.kt"),
-    ).withPathSensitivity(PathSensitivity.RELATIVE)
-    inputs.dir(root.dir("src/webMain/generated")).withPathSensitivity(PathSensitivity.RELATIVE)
+val repositoryRoot = rootProject.layout.projectDirectory
+
+node {
+    download = true
+    version = "26.13.1"
+    npmInstallCommand = "ci"
+    nodeProjectDir = repositoryRoot
 }
 
-tasks.register("generateWebApi", JavaExec::class) {
+val webrefDir = layout.buildDirectory.dir("webref")
+val idlIrDir = layout.buildDirectory.dir("idl-ir")
+
+val prepareWebref by tasks.registering(NodeTask::class) {
+    description =
+        "Parses the pinned @webref/idl with webidl2 and writes it, @webref/events and @webref/css to build/webref."
+    dependsOn(tasks.npmInstall)
+    script = repositoryRoot.file("scripts/prepare-webref.js")
+
+    args.add(webrefDir.map { it.asFile.path })
+
+    inputs.file(
+        repositoryRoot.file("package-lock.json")
+    )
+        .withPropertyName("packages")
+        .withPathSensitivity(
+            PathSensitivity.RELATIVE
+        )
+
+    outputs.dir(webrefDir)
+}
+
+val webref: Provider<Directory> = prepareWebref.map { webrefDir.get() }
+
+val generateWebApi by tasks.registering(JavaExec::class) {
     description = "Regenerates src/webMain/generated and surface-report.txt from the pinned Web IDL."
     mainClass = "org.jetbrains.kotlin.tools.idl.GenerateWebApiKt"
     classpath = sourceSets["main"].runtimeClasspath
-    systemProperty("line.separator", "\n")
+    webrefProperties()
+
+    locationProperty(
+        "kotlinx.browser.generatedSources",
+        repositoryRoot.dir("src/webMain/generated")
+    )
+
+    locationProperty(
+        "kotlinx.browser.surfaceReport",
+        repositoryRoot.file("surface-report.txt")
+    )
 }
 
-tasks.register("generateUtils", JavaExec::class) {
+val generateUtils by tasks.registering(JavaExec::class) {
     description = "Regenerates the typed-array conversion helpers (arrayCopy*.kt) and their test."
     mainClass = "org.jetbrains.kotlin.generators.helpers.GenerateKt"
     classpath = sourceSets["main"].runtimeClasspath
+
+    locationProperty("kotlinx.browser.repositoryRoot", repositoryRoot)
 }
 
-tasks.register("dumpIdlIr", JavaExec::class) {
-    description = "Renders the IR of the whole webref corpus back as Web IDL into build/idl-ir (debugging aid)."
+val dumpIdlIr by tasks.registering(JavaExec::class) {
+    description = "Renders the IR of the whole webref corpus back as Web IDL into build/idl-ir."
     mainClass = "org.jetbrains.kotlin.tools.idl.DumpIdlIrKt"
     classpath = sourceSets["main"].runtimeClasspath
+    webrefProperties()
+
+    outputDirectoryArgument(idlIrDir)
+}
+
+val checkIrRoundTrip by tasks.registering(NodeTask::class) {
+    description = "Checks that the IR is lossless: dumpIdlIr's output re-parses with webidl2 into the parsed corpus."
+    dependsOn(tasks.npmInstall)
+    script = repositoryRoot.file("scripts/check-ir-roundtrip.js")
+
+    args.add(webref.map { it.file("webref-idl.json").asFile.path })
+    args.add(idlIrDir.map { it.asFile.path })
+
+    inputs.files(dumpIdlIr).withPropertyName("rendered").withPathSensitivity(PathSensitivity.RELATIVE)
+    inputs.files(prepareWebref).withPropertyName("webref").withPathSensitivity(PathSensitivity.RELATIVE)
+
+    val marker = layout.buildDirectory.file("checkIrRoundTrip/passed")
+    outputs.file(marker)
+
+    doLast { marker.get().asFile.writeText("") }
+}
+
+tasks.check {
+    dependsOn(checkIrRoundTrip)
+}
+
+tasks.test {
+    useJUnitPlatform()
+    webrefProperties()
+
+    property("kotlinx.browser.generatedSources", repositoryRoot.dir("src/webMain/generated"))
+    property("kotlinx.browser.surfaceReport", repositoryRoot.file("surface-report.txt"))
+    property("kotlinx.browser.goldenDir", layout.projectDirectory.dir("src/test/resources/golden"))
+    inputProperty("kotlinx.browser.updateGolden", providers.gradleProperty("updateGolden").orElse("false"))
+
+    locationProperty("kotlinx.browser.repositoryRoot", repositoryRoot)
+
+    inputs.files(
+        repositoryRoot.file("src/webMain/kotlin/arrayCopy.kt"),
+        repositoryRoot.file("src/jsMain/kotlin/arrayCopy.js.kt"),
+        repositoryRoot.file("src/wasmJsMain/kotlin/arrayCopy.wasm.kt"),
+        repositoryRoot.file("src/webTest/kotlin/arrayCopyTest.kt"),
+    ).withPropertyName("arrayCopy").withPathSensitivity(PathSensitivity.RELATIVE)
+}
+
+fun <T> T.webrefProperties() where T : Task, T : JavaForkOptions {
+    property("kotlinx.browser.webrefIdl", webref.map { it.file("webref-idl.json") })
+    property("kotlinx.browser.webrefEvents", webref.map { it.file("webref-events.json") })
+    property("kotlinx.browser.webrefCss", webref.map { it.file("webref-css.json") })
 }

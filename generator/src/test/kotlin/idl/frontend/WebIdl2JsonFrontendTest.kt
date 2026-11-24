@@ -6,13 +6,13 @@
 package org.jetbrains.kotlin.tools.idl.frontend
 
 import org.jetbrains.kotlin.tools.idl.ALLOWLISTED_SOURCES
-import org.jetbrains.kotlin.tools.idl.RepoPaths
+import org.jetbrains.kotlin.tools.idl.GeneratorPaths
 import org.jetbrains.kotlin.tools.idl.ir.*
 import kotlin.test.*
 
 class WebIdl2JsonFrontendTest {
 
-    private val frontend by lazy { WebIdl2JsonFrontend.fromFile(RepoPaths.webrefJson) }
+    private val frontend by lazy { WebIdl2JsonFrontend.fromFile(GeneratorPaths.webrefIdl) }
     private val allowlisted by lazy { frontend.parse(ALLOWLISTED_SOURCES) }
 
     private inline fun <reified T : IdlNamedDefinition> IdlIR.definitions(name: String): List<T> =

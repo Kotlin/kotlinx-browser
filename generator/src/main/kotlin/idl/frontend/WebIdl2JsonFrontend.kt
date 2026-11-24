@@ -14,8 +14,8 @@ import java.nio.file.Files
 import java.nio.file.Path
 
 /**
- * Reads the committed `webref-idl.json` — a map from webref spec shortname to the `webidl2.js` AST of that spec
- * (produced by `npm run ingest`) — into [IdlIR]. JVM-only and offline.
+ * Reads `webref-idl.json` — a map from webref spec shortname to the `webidl2.js` AST of that spec, written by the
+ * `prepareWebref` Gradle task from the pinned `@webref/idl` — into [IdlIR].
  *
  * The reader is strict: an unknown node `type`, an unexpected key, or a value of the wrong JSON shape is reported as a
  * problem rather than skipped, so a `webidl2` upgrade that changes the AST cannot silently shrink the generated API.

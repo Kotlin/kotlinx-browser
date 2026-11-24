@@ -5,7 +5,7 @@
 
 package org.jetbrains.kotlin.generators.helpers
 
-import org.jetbrains.kotlin.tools.idl.RepoPaths
+import org.jetbrains.kotlin.tools.idl.GeneratorPaths
 import java.nio.file.Files
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -15,7 +15,7 @@ class GeneratedUtilsTest {
     @Test
     fun generatedUtilsAreUpToDate() {
         for ((path, content) in generateUtils()) {
-            val file = RepoPaths.root.resolve(path)
+            val file = GeneratorPaths.repositoryRoot.resolve(path)
             val committed = if (Files.isRegularFile(file)) Files.readString(file) else null
             assertEquals(content, committed, "$path is out of date; run ./gradlew :generator:generateUtils")
         }

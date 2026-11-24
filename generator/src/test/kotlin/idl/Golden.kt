@@ -7,11 +7,12 @@ package org.jetbrains.kotlin.tools.idl
 
 import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.Paths
 import kotlin.test.assertEquals
 
 /** Golden files live in `generator/src/test/resources/golden`; regenerate with `./gradlew :generator:test -PupdateGolden=true`. */
 object Golden {
-    private val dir: Path get() = RepoPaths.root.resolve("generator/src/test/resources/golden")
+    private val dir: Path get() = Paths.get(System.getProperty("kotlinx.browser.goldenDir") ?: error("System property 'kotlinx.browser.goldenDir' is not set"))
 
     private val update: Boolean get() = System.getProperty("kotlinx.browser.updateGolden") == "true"
 

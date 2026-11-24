@@ -23,7 +23,7 @@ data class WebrefEvent(
     val href: String = "",
 )
 
-/** Reader of `@webref/events` (`events.json`, committed as `webref-events.json`). */
+/** Reader of `@webref/events` (`events.json`, written by `prepareWebref` as `webref-events.json`). */
 object WebrefEvents {
     fun fromFile(path: Path): List<WebrefEvent> =
         Files.newBufferedReader(path).use { fromJson(JsonParser.parseReader(it), path.toString()) }

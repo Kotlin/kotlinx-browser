@@ -10,7 +10,7 @@ import org.jetbrains.kotlin.tools.idl.lowering.lower
 import java.nio.file.Files
 import java.nio.file.Path
 
-/** The generated `webMain` sources: path relative to [RepoPaths.generatedSources] → content, sorted by path. */
+/** The generated `webMain` sources: path relative to [GeneratorPaths.generatedSources] → content, sorted by path. */
 fun generateWebApi(): Map<String, String> {
     val lowered = loadSurface().ir.lower(loadEvents())
     val backend = KotlinBackend(lowered)
@@ -20,7 +20,7 @@ fun generateWebApi(): Map<String, String> {
 }
 
 /** The committed generated sources, in the shape of [generateWebApi]. */
-fun committedWebApi(root: Path = RepoPaths.generatedSources): Map<String, String> {
+fun committedWebApi(root: Path = GeneratorPaths.generatedSources): Map<String, String> {
     if (!Files.isDirectory(root)) return emptyMap()
     return Files.walk(root).use { paths ->
         paths.filter { Files.isRegularFile(it) }
@@ -36,7 +36,7 @@ fun committedWebApi(root: Path = RepoPaths.generatedSources): Map<String, String
  * `GeneratedSourcesTest` fails while the committed files differ from this output.
  */
 fun main() {
-    val root = RepoPaths.generatedSources
+    val root = GeneratorPaths.generatedSources
     val files = generateWebApi()
     if (Files.isDirectory(root)) {
         Files.walk(root).use { paths -> paths.sorted(Comparator.reverseOrder()).forEach(Files::delete) }
@@ -46,6 +46,6 @@ fun main() {
         Files.createDirectories(file.parent)
         Files.writeString(file, content)
     }
-    Files.writeString(RepoPaths.surfaceReport, loadSurface().report())
+    Files.writeString(GeneratorPaths.surfaceReport, loadSurface().report())
     println("Generated ${files.size} files into $root")
 }

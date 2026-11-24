@@ -6,7 +6,7 @@
 package org.jetbrains.kotlin.tools.idl.surface
 
 import org.jetbrains.kotlin.tools.idl.Golden
-import org.jetbrains.kotlin.tools.idl.RepoPaths
+import org.jetbrains.kotlin.tools.idl.GeneratorPaths
 import org.jetbrains.kotlin.tools.idl.ir.*
 import org.jetbrains.kotlin.tools.idl.loadSurface
 import kotlin.test.Test
@@ -19,7 +19,7 @@ class RealSurfaceTest {
 
     @Test
     fun surfaceReportIsUpToDate() {
-        Golden.assertMatchesFile(RepoPaths.surfaceReport, surface.report())
+        Golden.assertMatchesFile(GeneratorPaths.surfaceReport, surface.report())
     }
 
     @Test

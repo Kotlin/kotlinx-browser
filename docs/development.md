@@ -22,13 +22,17 @@ declarations are generated from the specifications' Web IDL. There is one copy i
 | `src/webTest/kotlin/` | Runtime tests run on Node for both targets (`InteropTest`, `SmokeTest`) | Yes |
 | `api/kotlinx-browser.klib.api` | ABI dump for both targets in one file | **No.** `./gradlew updateKotlinAbi` |
 | `generator/` | The generator (Kotlin/JVM, Gradle subproject `:generator`) | Yes |
-| `idl/`, `webref-idl.json`, `webref-events.json`, `webref-css.json` | Pinned inputs, written by `npm run ingest` | **No.** Ingest |
+| `package.json`, `package-lock.json` | The pinned generator inputs: `@webref/idl`, `@webref/events`, `@webref/css`, `webidl2` | Only to bump them (see [Bumping webref](#bumping-webref)) |
+| `scripts/` | `prepare-webref.js` (parses the pinned packages into JSON) and `check-ir-roundtrip.js`, run by Gradle | Yes |
 | `surface-report.txt` | Everything pruned from the allowlisted specs, and why | **No.** Regenerate |
-| `scripts/`, `package.json` | Node scripts for the ingest chore only | Yes |
 | `docs/` | This guide, the migration guide, decision records | Yes |
 
-`./gradlew` needs neither Node nor the network for anything except the Kotlin toolchain itself. Node is only used to
-ingest a new webref release.
+The webref inputs are not committed. Before the generator runs, Gradle installs the packages pinned in
+`package-lock.json` (`npmInstall`, which runs `npm ci`) and parses them into `generator/build/webref/`
+(`prepareWebref`). Both tasks come from [gradle-node-plugin](https://github.com/node-gradle/gradle-node-plugin), which
+downloads the Node.js version pinned in `generator/build.gradle.kts` into `generator/.gradle/nodejs/`, so no separate
+Node installation is needed. A first build needs the npm registry; after that, the tasks are up to date until `package-lock.json` or the scripts
+change.
 
 ## Commands
 
@@ -41,7 +45,9 @@ ingest a new webref release.
 | Regenerate the typed-array conversions | `./gradlew :generator:generateUtils` |
 | Update the golden files after an intended generator change | `./gradlew :generator:test -PupdateGolden=true` |
 | Update the ABI dump after an intended API change | `./gradlew updateKotlinAbi` |
-| Render the IR back as Web IDL into `generator/build/idl-ir` (debugging) | `./gradlew :generator:dumpIdlIr` |
+| Install and parse the pinned webref packages into `generator/build/webref` | `./gradlew :generator:prepareWebref` (run automatically) |
+| Render the IR back as Web IDL into `generator/build/idl-ir` | `./gradlew :generator:dumpIdlIr` |
+| Check that the IR is lossless (part of `check`) | `./gradlew :generator:checkIrRoundTrip` |
 
 `check` fails when anything committed is stale:
 
@@ -49,9 +55,13 @@ ingest a new webref release.
 - **`GeneratedUtilsTest`:** the `arrayCopy*` files differ.
 - **Golden tests:** a golden file in `generator/src/test/resources/golden/` differs.
 - **`checkKotlinAbi`:** the ABI dump differs from the compiled library.
+- **`checkIrRoundTrip`:** the IR, rendered back as Web IDL, no longer re-parses into the same webidl2 output.
 
-The committed files the generator tests read are declared as inputs of `:generator:test`, so a hand edit to any of
-them reruns the tests instead of being skipped as up to date.
+The generator gets every location it reads or writes as a system property (`kotlinx.browser.webrefIdl`,
+`…generatedSources`, `…surfaceReport`, …; see `GeneratorPaths` and `generator/build.gradle.kts`), so it does not
+depend on the working directory. Run it and its tests through Gradle; outside Gradle, pass the properties with
+`-D`. The committed files the generator tests read are declared as inputs of `:generator:test`, so a hand edit to any
+of them reruns the tests instead of being skipped as up to date.
 
 ### After changing the generator
 
@@ -68,21 +78,21 @@ The ABI diff is the user-visible change.
 ## The pipeline
 
 ```
-@webref/idl, @webref/events, @webref/css   (exact versions in package.json, one crawl)
-        │  npm run ingest  (Node, only when bumping)
+@webref/idl, @webref/events, @webref/css, webidl2   (package-lock.json: exact versions and integrity hashes)
+        │  :generator:npmInstall, :generator:prepareWebref   (gradle-node-plugin)
         ▼
-idl/*.idl, webref-idl.json (parsed by webidl2.js), webref-events.json, webref-css.json   (committed)
-        │  ./gradlew :generator:generateWebApi  (JVM only)
+generator/build/webref/webref-idl.json (parsed by webidl2.js), webref-events.json, webref-css.json   (not committed)
+        │  :generator:generateWebApi   (JVM)
         ▼
-frontend ─► surface ─► lowering ─► backend ─► src/webMain/generated/**/*.kt
+frontend ─► surface ─► lowering ─► backend ─► src/webMain/generated/**/*.kt, surface-report.txt   (committed)
 ```
 
 All generator code is under `generator/src/main/kotlin/idl/`.
 
 | Stage | Code | What it does |
 |---|---|---|
-| Inputs | `IdlInput.kt`, `Specs.kt` | Paths of the committed inputs; `SPEC_ALLOWLIST` (spec → Kotlin package), `EXCLUDED_SPECS`, `EXCLUDED_TYPES` |
-| Front-end | `frontend/WebIdl2JsonFrontend.kt` | Reads `webref-idl.json` into the IR (`ir/IdlIR.kt`). The IR is lossless: `npm run check:ir-roundtrip` prints it back and compares |
+| Inputs | `IdlInput.kt`, `Specs.kt` | `GeneratorPaths` (locations from system properties); `SPEC_ALLOWLIST` (spec → Kotlin package), `EXCLUDED_SPECS`, `EXCLUDED_TYPES` |
+| Front-end | `frontend/WebIdl2JsonFrontend.kt` | Reads `webref-idl.json` into the IR (`ir/IdlIR.kt`). The IR is lossless: `checkIrRoundTrip` prints it back and compares |
 | | `frontend/WebrefEvents.kt` | Which event each `on…` handler receives |
 | | `frontend/WebrefCss.kt` | Adds the CSS property attributes of `CSSStyleProperties`, which CSSOM defines in prose rather than IDL, as a partial interface |
 | Surface | `surface/Surface.kt`, `surface/Builtins.kt` | Starts from the whole corpus. Keeps the allowlisted specs and prunes references into excluded specs and types (recorded in `surface-report.txt`). Any reference left unresolved fails generation |
@@ -140,22 +150,22 @@ the golden file.
 ## Bumping webref
 
 ```shell
-# 1. Edit package.json. @webref/idl, @webref/events and @webref/css must come from the same crawl:
-#    compare their publish times with `npm view @webref/idl time`.
-npm install
-npm run ingest                    # idl/, webref-idl.json, webref-events.json, webref-css.json
-./gradlew :generator:dumpIdlIr
-npm run check:ir-roundtrip        # the IR still reads every spec losslessly
+# 1. Set the new exact versions in package.json. @webref/idl, @webref/events and @webref/css must come from the
+#    same crawl: compare their publish times with `npm view @webref/idl time` (and the same for the others).
+# 2. Update package-lock.json; any npm works:
+npm install --package-lock-only
+# 3. Regenerate and check; prepareWebref reruns because package-lock.json changed:
 ./gradlew :generator:generateWebApi
 ./gradlew :generator:test -PupdateGolden=true
 ./gradlew updateKotlinAbi
-./gradlew check
+./gradlew check                   # includes checkIrRoundTrip: the IR still reads every spec losslessly
 ```
 
 Review in this order:
-1. The JSON diff: what changed upstream.
-2. `surface-report.txt`: what is pruned now.
-3. The ABI diff: what users get.
+1. `src/webMain/generated` and `surface-report.txt`: what changed upstream, and what is pruned now.
+2. The ABI diff: what users get.
+
+To see the raw upstream change, compare `generator/build/webref/` before and after the bump.
 
 Generation fails on anything unresolved or ambiguous, for example a new reference into a spec that isn't allowlisted,
 or two enum values with the same Kotlin name. Resolve these explicitly; don't silence them.

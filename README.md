@@ -90,7 +90,8 @@ kotlin {
 ## Building
 
 The build uses the Kotlin Gradle plugin version pinned in `build.gradle.kts`; no separate Kotlin installation is
-needed. Node is only needed to ingest a new webref release.
+needed. The generator's Web IDL inputs are npm packages pinned in `package-lock.json`; Gradle installs and parses
+them with the Node.js that gradle-node-plugin downloads.
 
 To build and run all checks, execute:
 ```shell

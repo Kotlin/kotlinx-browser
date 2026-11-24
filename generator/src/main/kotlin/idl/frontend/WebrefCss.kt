@@ -22,7 +22,7 @@ data class WebrefCssProperty(
     val legacyAliasOf: String? = null,
 )
 
-/** Reader of the properties of `@webref/css` (`css.json`, trimmed and committed as `webref-css.json`). */
+/** Reader of the properties of `@webref/css` (`css.json`, trimmed by `prepareWebref` into `webref-css.json`). */
 object WebrefCss {
     fun fromFile(path: Path): List<WebrefCssProperty> =
         Files.newBufferedReader(path).use { fromJson(JsonParser.parseReader(it), path.toString()) }

@@ -12,12 +12,13 @@ import java.nio.file.Files
 import java.nio.file.Paths
 
 /**
- * Debugging aid: renders the IR of the whole pinned corpus back as Web IDL, one file per spec, into the given
- * directory (default `generator/build/idl-ir`). Feeding the output back into webidl2 must reproduce `webref-idl.json`.
+ * Renders the IR of the whole pinned corpus back as Web IDL, one file per spec, into the directory given as the only
+ * argument (`./gradlew :generator:dumpIdlIr` passes `generator/build/idl-ir`). Feeding the output back into webidl2
+ * must reproduce the parsed corpus: `checkIrRoundTrip`.
  */
 fun main(args: Array<String>) {
-    val out = Paths.get(args.firstOrNull() ?: RepoPaths.root.resolve("generator/build/idl-ir").toString())
-    val frontend = WebIdl2JsonFrontend.fromFile(RepoPaths.webrefJson)
+    val out = Paths.get(args.singleOrNull() ?: error("usage: dumpIdlIr <output directory>"))
+    val frontend = WebIdl2JsonFrontend.fromFile(GeneratorPaths.webrefIdl)
     val ir = frontend.parse(frontend.availableSpecs.map { IdlSource(it, "corpus") })
     Files.createDirectories(out)
     for (spec in ir.specs) {
