@@ -111,7 +111,7 @@ object SurfaceBuilder {
         var specs = included.map { source ->
             val definitions = corpusSpecs.getValue(source.spec).definitions.filter { definition ->
                 val builtin = definition is IdlNamedDefinition && Builtins.isBuiltin(definition.name)
-                if (builtin) replacedByBuiltins += "${source.spec}: ${(definition as IdlNamedDefinition).name}"
+                if (builtin) replacedByBuiltins += "${source.spec}: ${definition.name}"
                 !builtin
             }
             IdlSpec(source.spec, source.packageName, definitions)
