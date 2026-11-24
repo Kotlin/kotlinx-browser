@@ -4,7 +4,7 @@
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'performance-timeline', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.performance
 

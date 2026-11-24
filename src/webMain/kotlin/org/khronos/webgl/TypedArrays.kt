@@ -5,7 +5,7 @@
 
 // NOTE: HAND-WRITTEN, NOT GENERATED.
 // ECMAScript built-ins (ArrayBuffer, typed arrays, DataView) that Web IDL references but does not define.
-// The generator treats these names as built-ins; see generator/src/main/kotlin/idl/surface/Builtins.kt.
+// The generator treats these names as built-ins; see generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/surface/Builtins.kt.
 
 package org.khronos.webgl
 

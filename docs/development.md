@@ -91,7 +91,7 @@ generator/build/webref/webref-idl.json (parsed by webidl2.js), webref-events.jso
 frontend ─► surface ─► lowering ─► backend ─► src/webMain/generated/**/*.kt, surface-report.txt   (committed)
 ```
 
-All generator code is under `generator/src/main/kotlin/idl/`.
+All generator code is under `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/`.
 
 | Stage | Code | What it does |
 |---|---|---|
@@ -204,7 +204,7 @@ or two enum values with the same Kotlin name. Resolve these explicitly; don't si
 
 | Test | Where | Checks |
 |---|---|---|
-| Unit tests per stage | `generator/src/test/kotlin/idl/{frontend,surface,lowering,mapping,backend}` | Each pass on small IR built with `LoweringTestDsl`, and facts about the real corpus (`Real*Test`) |
+| Unit tests per stage | `generator/src/test/kotlin/org/jetbrains/kotlin/tools/idl/{frontend,surface,lowering,mapping,backend}` | Each pass on small IR built with `LoweringTestDsl`, and facts about the real corpus (`Real*Test`) |
 | Golden slice | `GoldenSliceTest`, `RealLoweringTest`, `KotlinBackendTest` with `golden/*.idl`, `golden/kotlin-slice.kt` | A fixed set of definitions (`GOLDEN_SLICE`) as parsed IDL, as lowered IDL and as Kotlin |
 | Up to date | `GeneratedSourcesTest`, `GeneratedUtilsTest` | Committed generated files equal fresh output |
 | Runtime | `src/webTest/kotlin/InteropTest.kt` | The shapes the generator relies on actually work on JS and Wasm (Node and Chromium) |
@@ -240,7 +240,7 @@ These were all found by runtime tests; check them before relying on similar cons
 ## Conventions
 
 - Never edit generated files. Change the generator or its inputs and regenerate.
-- Every generated file starts with `generatedFileHeader` (`generator/src/main/kotlin/helpers/header.kt`): fixed text
+- Every generated file starts with `generatedFileHeader` (`generator/src/main/kotlin/org/jetbrains/kotlin/generators/helpers/header.kt`): fixed text
   and `\n`, so output is byte-identical on every date and OS.
 - Source files carry the Apache 2.0 header pointing to "the LICENSE file" at the repository root.
 - The library compiles in explicit API mode (`explicitApi()`): public declarations and members, generated or not,

@@ -8,7 +8,7 @@ package org.jetbrains.kotlin.generators.helpers
 import org.jetbrains.kotlin.tools.idl.GeneratorPaths
 import java.nio.file.Files
 
-private const val SEE_DETAILS_AT = "generator/src/main/kotlin/helpers/generate.kt"
+private const val SEE_DETAILS_AT = "generator/src/main/kotlin/org/jetbrains/kotlin/generators/helpers/generate.kt"
 
 /** Rewrites the typed-array conversion helpers and their test. `GeneratedUtilsTest` fails while the committed files differ. */
 fun main() {

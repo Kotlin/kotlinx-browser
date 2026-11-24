@@ -43,7 +43,7 @@ built-ins, `ItemArrayLike` and `JsObjects.kt`.
    only at runtime (see below).
 5. **Generated output must be deterministic:** no clock, no `System.lineSeparator()`, no map iteration order that
    isn't sorted or insertion-ordered. Headers come from `generatedFileHeader` in
-   `generator/src/main/kotlin/helpers/header.kt`.
+   `generator/src/main/kotlin/org/jetbrains/kotlin/generators/helpers/header.kt`.
 6. **Follow the spec.** Each definition goes into its spec's package and members go where the IDL puts them.
    Legacy (dukat-era) shapes are not a reason to diverge; when a spec change breaks users, record it in
    [docs/migration-guide.md](docs/migration-guide.md).
@@ -56,14 +56,14 @@ built-ins, `ItemArrayLike` and `JsObjects.kt`.
 
 | To change | Edit |
 |---|---|
-| Which specs are generated, their packages, exclusions | `generator/src/main/kotlin/idl/Specs.kt` |
-| How IDL types map to Kotlin types | `generator/src/main/kotlin/idl/mapping/WasmTypeMapping.kt` |
-| Class/interface/object shape, copied constants and statics, supertypes | `generator/src/main/kotlin/idl/lowering/Shapes.kt` |
-| `override`/`open`, members inherited through several paths, dropped clashes | `generator/src/main/kotlin/idl/lowering/Overrides.kt` |
+| Which specs are generated, their packages, exclusions | `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/Specs.kt` |
+| How IDL types map to Kotlin types | `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/mapping/WasmTypeMapping.kt` |
+| Class/interface/object shape, copied constants and statics, supertypes | `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/lowering/Shapes.kt` |
+| `override`/`open`, members inherited through several paths, dropped clashes | `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/lowering/Overrides.kt` |
 | Union handling | `lowering/UnionMarkers.kt`, `lowering/ExpandUnionOverloads.kt` |
 | Event handler types (`onclick: (PointerEvent) -> Unit`) | `lowering/EventHandlerTypes.kt` |
-| How anything is printed | `generator/src/main/kotlin/idl/backend/KotlinBackend.kt` |
-| Inputs outside Web IDL (CSS properties, events) | `generator/src/main/kotlin/idl/frontend/WebrefCss.kt`, `WebrefEvents.kt` |
+| How anything is printed | `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/backend/KotlinBackend.kt` |
+| Inputs outside Web IDL (CSS properties, events) | `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/frontend/WebrefCss.kt`, `WebrefEvents.kt` |
 | KDoc (MDN summaries and links, which declaration gets which page) | `frontend/WebDocs.kt`, `backend/DocComments.kt` |
 | Helpers the generated code calls (`newJsObject`, `getProperty`, …) | `src/webMain/kotlin/org/w3c/dom/JsObjects.kt` |
 

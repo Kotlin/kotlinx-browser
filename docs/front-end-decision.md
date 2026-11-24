@@ -21,7 +21,7 @@ pinned @webref/idl (package-lock.json) → webidl2.js (Node, Gradle task prepare
 - CSSOM defines the per-property attributes of `CSSStyleProperties` (`style.color`) in prose, not in IDL. The
   front-end adds them as the partial interface that prose describes, from the property names in `@webref/css`
   (`idl/frontend/WebrefCss.kt`), so they go through the lowerings and the backend like any other IDL.
-- The JSON is read by `generator/src/main/kotlin/idl/frontend/WebIdl2JsonFrontend.kt` into the generator's own IR
+- The JSON is read by `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/frontend/WebIdl2JsonFrontend.kt` into the generator's own IR
   (`idl/ir/`). The IR is lossless: `checkIrRoundTrip` (part of `check`) prints all 346 specs back and compares them.
 - dukat's IDL **lowerings** are kept, ported onto that IR (`idl/lowering/`). Its parser, `convertToModel`, `astModel`
   and string translator are not.

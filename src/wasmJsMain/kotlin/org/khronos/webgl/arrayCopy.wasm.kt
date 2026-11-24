@@ -4,7 +4,7 @@
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
-// See generator/src/main/kotlin/helpers/generate.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/generators/helpers/generate.kt for details.
 
 package org.khronos.webgl
 

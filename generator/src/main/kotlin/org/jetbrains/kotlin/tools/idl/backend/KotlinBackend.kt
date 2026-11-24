@@ -207,7 +207,7 @@ private class SpecFile(
         }
 
         return buildString {
-            append(generatedFileHeader(seeDetailsAt = "generator/src/main/kotlin/idl/generateWebApi.kt", generatedFrom = "THE WEB IDL OF '${spec.name}'"))
+            append(generatedFileHeader(seeDetailsAt = "generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt", generatedFrom = "THE WEB IDL OF '${spec.name}'"))
             append("package ").append(spec.packageName).append("\n\n")
             imports.forEach { append("import ").append(it).append(".*\n") }
             if (imports.isNotEmpty()) append('\n')

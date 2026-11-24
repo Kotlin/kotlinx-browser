@@ -5,7 +5,7 @@
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'html', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.dom
 
@@ -2681,7 +2681,7 @@ public external interface WindowOrWorkerGlobalScope : JsAny {
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'dom', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.dom
 
@@ -5643,7 +5643,7 @@ public abstract external class Element : Node, ParentNode, NonDocumentTypeChildN
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'cssom-view', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.dom
 
@@ -5658,7 +5658,7 @@ public external interface GeometryNode : JsAny
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'uievents', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.dom.events
 
@@ -5726,7 +5726,7 @@ public fun EventModifierInit(bubbles: Boolean? = null, cancelable: Boolean? = nu
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'pointerevents', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.dom.pointerevents
 
@@ -5780,7 +5780,7 @@ public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'cssom', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.dom.css
 
@@ -5807,7 +5807,7 @@ public external object CSS {
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'clipboard-apis', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.dom.clipboard
 
@@ -5862,7 +5862,7 @@ public open external class ClipboardChangeEvent : Event {
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'webgl1', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.khronos.webgl
 
@@ -6477,7 +6477,7 @@ public abstract external class WebGLRenderingContext : WebGLRenderingContextBase
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'xhr', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.xhr
 
@@ -6571,7 +6571,7 @@ public open external class FormData : JsAny {
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'fetch', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.fetch
 
@@ -6718,7 +6718,7 @@ public inline val RequestCredentials.Companion.INCLUDE: RequestCredentials get()
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'wai-aria', DO NOT EDIT!
-// See generator/src/main/kotlin/idl/generateWebApi.kt for details.
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.dom
 
