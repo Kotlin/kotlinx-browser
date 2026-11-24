@@ -5,10 +5,13 @@
 
 package org.jetbrains.kotlin.tools.idl.frontend
 
-import com.google.gson.JsonArray
-import com.google.gson.JsonElement
-import com.google.gson.JsonObject
-import com.google.gson.JsonParser
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
+import kotlinx.serialization.json.JsonElement
+import kotlinx.serialization.json.JsonNull
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.booleanOrNull
 import org.jetbrains.kotlin.tools.idl.ir.*
 import java.nio.file.Files
 import java.nio.file.Path
@@ -24,13 +27,13 @@ import java.nio.file.Path
 class WebIdl2JsonFrontend(private val root: JsonObject) : IdlFrontend {
 
     /** Spec shortnames present in the JSON, in file order. */
-    val availableSpecs: List<String> get() = root.keySet().toList()
+    val availableSpecs: List<String> get() = root.keys.toList()
 
     override fun parse(sources: List<IdlSource>): IdlIR {
         val problems = mutableListOf<String>()
         val reader = AstReader(problems)
         val specs = sources.mapNotNull { source ->
-            val definitions = root.get(source.spec)
+            val definitions = root[source.spec]
             if (definitions == null) {
                 problems += "spec '${source.spec}' is not present in the webref JSON"
                 return@mapNotNull null
@@ -49,13 +52,13 @@ class WebIdl2JsonFrontend(private val root: JsonObject) : IdlFrontend {
 
     companion object {
         fun fromFile(path: Path): WebIdl2JsonFrontend =
-            Files.newBufferedReader(path).use { fromJson(JsonParser.parseReader(it), path.toString()) }
+            fromJson(Json.parseToJsonElement(Files.readString(path)), path.toString())
 
-        fun fromString(json: String): WebIdl2JsonFrontend = fromJson(JsonParser.parseString(json), "<string>")
+        fun fromString(json: String): WebIdl2JsonFrontend = fromJson(Json.parseToJsonElement(json), "<string>")
 
         private fun fromJson(element: JsonElement, origin: String): WebIdl2JsonFrontend {
-            require(element.isJsonObject) { "$origin: expected a JSON object mapping spec shortname to webidl2 AST" }
-            return WebIdl2JsonFrontend(element.asJsonObject)
+            require(element is JsonObject) { "$origin: expected a JSON object mapping spec shortname to webidl2 AST" }
+            return WebIdl2JsonFrontend(element)
         }
     }
 }
@@ -71,7 +74,7 @@ private class AstReader(private val problems: MutableList<String>) {
     fun definition(element: JsonElement, path: String): IdlDefinition? {
         val o = obj(element, path) ?: return null
         val type = string(o, "type", path) ?: return null
-        val at = "$path ($type ${o.get("name")?.takeIf { it.isJsonPrimitive }?.asString ?: o.get("target")?.asString ?: ""})"
+        val at = "$path ($type ${label(o, "name") ?: label(o, "target") ?: ""})"
         return when (type) {
             "interface", "interface mixin", "callback interface" -> {
                 keys(o, at, "type", "name", "inheritance", "members", "extAttrs", "partial")
@@ -106,7 +109,7 @@ private class AstReader(private val problems: MutableList<String>) {
                     name = string(o, "name", at) ?: "",
                     partial = bool(o, "partial", at),
                     inheritance = nullableString(o, "inheritance", at),
-                    members = array(o.get("members"), "$at.members").mapIndexedNotNull { i, m ->
+                    members = array(o["members"], "$at.members").mapIndexedNotNull { i, m ->
                         field(m, "$at.members[$i]")
                     },
                     extAttrs = extAttrs(o, at),
@@ -117,7 +120,7 @@ private class AstReader(private val problems: MutableList<String>) {
                 keys(o, at, "type", "name", "idlType", "arguments", "extAttrs")
                 IdlCallback(
                     name = string(o, "name", at) ?: "",
-                    returnType = type(o.get("idlType"), "$at.idlType"),
+                    returnType = type(o["idlType"], "$at.idlType"),
                     arguments = arguments(o, at),
                     extAttrs = extAttrs(o, at),
                 )
@@ -127,7 +130,7 @@ private class AstReader(private val problems: MutableList<String>) {
                 keys(o, at, "type", "name", "values", "extAttrs")
                 IdlEnum(
                     name = string(o, "name", at) ?: "",
-                    values = array(o.get("values"), "$at.values").mapIndexedNotNull { i, v ->
+                    values = array(o["values"], "$at.values").mapIndexedNotNull { i, v ->
                         val vp = "$at.values[$i]"
                         val vo = obj(v, vp) ?: return@mapIndexedNotNull null
                         keys(vo, vp, "type", "value")
@@ -142,7 +145,7 @@ private class AstReader(private val problems: MutableList<String>) {
                 keys(o, at, "type", "name", "idlType", "extAttrs")
                 IdlTypedef(
                     name = string(o, "name", at) ?: "",
-                    type = type(o.get("idlType"), "$at.idlType"),
+                    type = type(o["idlType"], "$at.idlType"),
                     extAttrs = extAttrs(o, at),
                 )
             }
@@ -166,19 +169,19 @@ private class AstReader(private val problems: MutableList<String>) {
     // ---- members ----------------------------------------------------------------------------------------------------
 
     private fun members(o: JsonObject, path: String): List<IdlMember> =
-        array(o.get("members"), "$path.members").mapIndexedNotNull { i, m -> member(m, "$path.members[$i]") }
+        array(o["members"], "$path.members").mapIndexedNotNull { i, m -> member(m, "$path.members[$i]") }
 
     private fun member(element: JsonElement, path: String): IdlMember? {
         val o = obj(element, path) ?: return null
         val type = string(o, "type", path) ?: return null
-        val at = "$path ($type ${o.get("name")?.takeIf { it.isJsonPrimitive }?.asString ?: ""})"
+        val at = "$path ($type ${label(o, "name") ?: ""})"
         return when (type) {
             "const" -> {
                 keys(o, at, "type", "name", "idlType", "extAttrs", "value")
                 IdlConstant(
                     name = string(o, "name", at) ?: "",
-                    type = type(o.get("idlType"), "$at.idlType"),
-                    value = value(o.get("value"), "$at.value") ?: IdlValue.Null,
+                    type = type(o["idlType"], "$at.idlType"),
+                    value = value(o["value"], "$at.value") ?: IdlValue.Null,
                     extAttrs = extAttrs(o, at),
                 )
             }
@@ -187,7 +190,7 @@ private class AstReader(private val problems: MutableList<String>) {
                 keys(o, at, "type", "name", "idlType", "extAttrs", "readonly", "special")
                 IdlAttribute(
                     name = string(o, "name", at) ?: "",
-                    type = type(o.get("idlType"), "$at.idlType"),
+                    type = type(o["idlType"], "$at.idlType"),
                     readonly = bool(o, "readonly", at),
                     special = when (val s = special(o, at)) {
                         null -> null
@@ -211,7 +214,7 @@ private class AstReader(private val problems: MutableList<String>) {
                     "stringifier" -> IdlOperationSpecial.STRINGIFIER
                     else -> null.also { problems += "$at: unknown operation special '$s'" }
                 }
-                val returnType = o.get("idlType")?.takeUnless { it.isJsonNull }?.let { type(it, "$at.idlType") }
+                val returnType = o["idlType"]?.takeUnless { it is JsonNull }?.let { type(it, "$at.idlType") }
                 if (returnType == null && special != IdlOperationSpecial.STRINGIFIER) {
                     problems += "$at: operation without a return type"
                 }
@@ -241,7 +244,7 @@ private class AstReader(private val problems: MutableList<String>) {
                 if (async && kind != IdlDeclarationMemberKind.ASYNC_ITERABLE) problems += "$at: async $type"
                 IdlDeclarationMember(
                     kind = kind,
-                    typeArguments = array(o.get("idlType"), "$at.idlType").mapIndexed { i, t ->
+                    typeArguments = array(o["idlType"], "$at.idlType").mapIndexed { i, t ->
                         type(t, "$at.idlType[$i]", allowNullNodeType = true)
                     },
                     readonly = bool(o, "readonly", at),
@@ -262,32 +265,32 @@ private class AstReader(private val problems: MutableList<String>) {
 
     private fun field(element: JsonElement, path: String): IdlField? {
         val o = obj(element, path) ?: return null
-        val at = "$path (field ${o.get("name")?.takeIf { it.isJsonPrimitive }?.asString ?: ""})"
+        val at = "$path (field ${label(o, "name") ?: ""})"
         keys(o, at, "type", "name", "idlType", "extAttrs", "default", "required")
         if (string(o, "type", at) != "field") problems += "$at: expected a dictionary field"
         return IdlField(
             name = string(o, "name", at) ?: "",
-            type = type(o.get("idlType"), "$at.idlType"),
+            type = type(o["idlType"], "$at.idlType"),
             required = bool(o, "required", at),
-            default = value(o.get("default"), "$at.default"),
+            default = value(o["default"], "$at.default"),
             extAttrs = extAttrs(o, at),
         )
     }
 
     private fun arguments(o: JsonObject, path: String): List<IdlArgument> =
-        array(o.get("arguments"), "$path.arguments").mapIndexedNotNull { i, a -> argument(a, "$path.arguments[$i]") }
+        array(o["arguments"], "$path.arguments").mapIndexedNotNull { i, a -> argument(a, "$path.arguments[$i]") }
 
     private fun argument(element: JsonElement, path: String): IdlArgument? {
         val o = obj(element, path) ?: return null
-        val at = "$path (${o.get("name")?.takeIf { it.isJsonPrimitive }?.asString ?: ""})"
+        val at = "$path (${label(o, "name") ?: ""})"
         keys(o, at, "type", "name", "idlType", "extAttrs", "default", "optional", "variadic")
         if (string(o, "type", at) != "argument") problems += "$at: expected an argument"
         return IdlArgument(
             name = string(o, "name", at) ?: "",
-            type = type(o.get("idlType"), "$at.idlType"),
+            type = type(o["idlType"], "$at.idlType"),
             optional = bool(o, "optional", at),
             variadic = bool(o, "variadic", at),
-            default = value(o.get("default"), "$at.default"),
+            default = value(o["default"], "$at.default"),
             extAttrs = extAttrs(o, at),
         )
     }
@@ -306,10 +309,10 @@ private class AstReader(private val problems: MutableList<String>) {
         val fallback = IdlNamedType("<error>")
         val o = obj(element, path) ?: return fallback
         keys(o, path, "type", "extAttrs", "generic", "nullable", "union", "idlType")
-        val nodeType = o.get("type")
-        if (nodeType == null || nodeType.isJsonNull) {
+        val nodeType = o["type"]
+        if (nodeType == null || nodeType is JsonNull) {
             if (!allowNullNodeType) problems += "$path: type node without 'type'"
-        } else if (!nodeType.isJsonPrimitive || nodeType.asString !in typeNodeTypes) {
+        } else if (nodeType !is JsonPrimitive || !nodeType.isString || nodeType.content !in typeNodeTypes) {
             problems += "$path: unknown type node '$nodeType'"
         }
 
@@ -317,7 +320,7 @@ private class AstReader(private val problems: MutableList<String>) {
         val extAttrs = extAttrs(o, path)
         val generic = string(o, "generic", path) ?: ""
         val union = bool(o, "union", path)
-        val inner = o.get("idlType")
+        val inner = o["idlType"]
 
         return when {
             union -> {
@@ -338,7 +341,7 @@ private class AstReader(private val problems: MutableList<String>) {
             }
 
             else -> {
-                val name = if (inner != null && inner.isJsonPrimitive && inner.asJsonPrimitive.isString) inner.asString else {
+                val name = if (inner is JsonPrimitive && inner.isString) inner.content else {
                     problems += "$path: expected a type name, got $inner"
                     "<error>"
                 }
@@ -350,7 +353,7 @@ private class AstReader(private val problems: MutableList<String>) {
     // ---- values -----------------------------------------------------------------------------------------------------
 
     private fun value(element: JsonElement?, path: String): IdlValue? {
-        if (element == null || element.isJsonNull) return null
+        if (element == null || element is JsonNull) return null
         val o = obj(element, path) ?: return null
         val type = string(o, "type", path) ?: return null
         return when (type) {
@@ -362,7 +365,7 @@ private class AstReader(private val problems: MutableList<String>) {
             "Infinity" -> keys(o, path, "type", "negative").let { IdlValue.Infinity(bool(o, "negative", path)) }
             "sequence" -> {
                 keys(o, path, "type", "value")
-                if (array(o.get("value"), "$path.value").size() != 0) problems += "$path: non-empty sequence default"
+                if (array(o["value"], "$path.value").isNotEmpty()) problems += "$path: non-empty sequence default"
                 IdlValue.EmptySequence
             }
 
@@ -374,25 +377,25 @@ private class AstReader(private val problems: MutableList<String>) {
     // ---- extended attributes ----------------------------------------------------------------------------------------
 
     private fun extAttrs(o: JsonObject, path: String): List<IdlExtendedAttribute> =
-        array(o.get("extAttrs"), "$path.extAttrs").mapIndexedNotNull { i, e -> extAttr(e, "$path.extAttrs[$i]") }
+        array(o["extAttrs"], "$path.extAttrs").mapIndexedNotNull { i, e -> extAttr(e, "$path.extAttrs[$i]") }
 
     private fun extAttr(element: JsonElement, path: String): IdlExtendedAttribute? {
         val o = obj(element, path) ?: return null
-        val at = "$path [${o.get("name")?.takeIf { it.isJsonPrimitive }?.asString ?: ""}]"
+        val at = "$path [${label(o, "name") ?: ""}]"
         keys(o, at, "type", "name", "rhs", "arguments")
         if (string(o, "type", at) != "extended-attribute") problems += "$at: expected an extended-attribute"
         return IdlExtendedAttribute(
             name = string(o, "name", at) ?: "",
-            rhs = extAttrValue(o.get("rhs"), "$at.rhs"),
+            rhs = extAttrValue(o["rhs"], "$at.rhs"),
             arguments = arguments(o, at),
         )
     }
 
     private fun extAttrValue(element: JsonElement?, path: String): IdlExtendedAttributeValue? {
-        if (element == null || element.isJsonNull) return null
+        if (element == null || element is JsonNull) return null
         val o = obj(element, path) ?: return null
         keys(o, path, "type", "value")
-        fun items(): List<String> = array(o.get("value"), "$path.value").mapIndexedNotNull { i, item ->
+        fun items(): List<String> = array(o["value"], "$path.value").mapIndexedNotNull { i, item ->
             val ip = "$path.value[$i]"
             obj(item, ip)?.let { keys(it, ip, "value"); string(it, "value", ip) }
         }
@@ -424,38 +427,41 @@ private class AstReader(private val problems: MutableList<String>) {
     // ---- strict JSON access -----------------------------------------------------------------------------------------
 
     private fun keys(o: JsonObject, path: String, vararg allowed: String) {
-        val unknown = o.keySet() - allowed.toSet()
+        val unknown = o.keys - allowed.toSet()
         if (unknown.isNotEmpty()) problems += "$path: unexpected key(s) ${unknown.sorted()}"
     }
 
     private fun obj(element: JsonElement?, path: String): JsonObject? {
-        if (element != null && element.isJsonObject) return element.asJsonObject
+        if (element is JsonObject) return element
         problems += "$path: expected an object, got $element"
         return null
     }
 
     fun array(element: JsonElement?, path: String): JsonArray {
-        if (element != null && element.isJsonArray) return element.asJsonArray
+        if (element is JsonArray) return element
         problems += "$path: expected an array, got $element"
-        return JsonArray()
+        return JsonArray(emptyList())
     }
 
     private fun string(o: JsonObject, key: String, path: String): String? {
-        val e = o.get(key)
-        if (e != null && e.isJsonPrimitive && e.asJsonPrimitive.isString) return e.asString
+        val e = o[key]
+        if (e is JsonPrimitive && e.isString) return e.content
         problems += "$path.$key: expected a string, got $e"
         return null
     }
 
+    /** The string under [key], to name a location in a problem message; never reports a problem itself. */
+    private fun label(o: JsonObject, key: String): String? = (o[key] as? JsonPrimitive)?.takeIf { it.isString }?.content
+
     private fun nullableString(o: JsonObject, key: String, path: String): String? {
-        val e = o.get(key)
-        if (e == null || e.isJsonNull) return null
+        val e = o[key]
+        if (e == null || e is JsonNull) return null
         return string(o, key, path)
     }
 
     private fun bool(o: JsonObject, key: String, path: String): Boolean {
-        val e = o.get(key)
-        if (e != null && e.isJsonPrimitive && e.asJsonPrimitive.isBoolean) return e.asBoolean
+        val e = o[key]
+        if (e is JsonPrimitive && !e.isString) e.booleanOrNull?.let { return it }
         problems += "$path.$key: expected a boolean, got $e"
         return false
     }

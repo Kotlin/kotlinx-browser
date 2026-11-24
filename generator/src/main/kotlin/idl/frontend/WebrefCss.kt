@@ -5,8 +5,7 @@
 
 package org.jetbrains.kotlin.tools.idl.frontend
 
-import com.google.gson.JsonElement
-import com.google.gson.JsonParser
+import kotlinx.serialization.Serializable
 import org.jetbrains.kotlin.tools.idl.ir.*
 import java.nio.file.Files
 import java.nio.file.Path
@@ -16,32 +15,18 @@ import java.nio.file.Path
  * `CSSStyleProperties` ([styleDeclaration]: `align-content`, `alignContent`), and, for a legacy alias from the Compat
  * spec (`-webkit-align-content`), the property it aliases.
  */
+@Serializable
 data class WebrefCssProperty(
     val name: String,
     val styleDeclaration: List<String>,
     val legacyAliasOf: String? = null,
 )
 
-/** Reader of the properties of `@webref/css` (`css.json`, trimmed by `prepareWebref` into `webref-css.json`). */
+/** Reader of the properties of `@webref/css` (`css.json`, written by `prepareWebref` as `webref-css.json`). */
 object WebrefCss {
-    fun fromFile(path: Path): List<WebrefCssProperty> =
-        Files.newBufferedReader(path).use { fromJson(JsonParser.parseReader(it), path.toString()) }
+    fun fromFile(path: Path): List<WebrefCssProperty> = fromString(Files.readString(path))
 
-    fun fromString(json: String): List<WebrefCssProperty> = fromJson(JsonParser.parseString(json), "<string>")
-
-    private fun fromJson(element: JsonElement, origin: String): List<WebrefCssProperty> {
-        require(element.isJsonArray) { "$origin: expected a JSON array of properties" }
-        return element.asJsonArray.mapIndexed { i, e ->
-            val o = e.asJsonObject
-            val name = o.get("name")?.asString ?: throw IllegalArgumentException("$origin: property #$i has no 'name'")
-            WebrefCssProperty(
-                name = name,
-                styleDeclaration = o.getAsJsonArray("styleDeclaration")?.map { it.asString }
-                    ?: throw IllegalArgumentException("$origin: property '$name' has no 'styleDeclaration'"),
-                legacyAliasOf = o.get("legacyAliasOf")?.takeIf { !it.isJsonNull }?.asString,
-            )
-        }
-    }
+    fun fromString(json: String): List<WebrefCssProperty> = WEBREF_JSON.decodeFromString(json)
 }
 
 /** The spec whose prose defines the CSS property attributes, and the interface it defines them on. */
