@@ -169,6 +169,22 @@ Declarations that are no longer in any spec are not generated. The most likely t
 
 `SVGNameList` (and its indexer) and the foreign-fetch service-worker API are gone too.
 
+## `kotlinx.dom` helpers removed
+
+The `kotlinx.dom` extensions are gone. They predate APIs every browser now has; use those directly:
+
+| Removed | Use instead |
+|---|---|
+| `element.addClass("a", "b")`, `removeClass(...)` | `element.classList.add("a", "b")`, `classList.remove(...)` |
+| `element.hasClass("a")` | `element.classList.contains("a")` |
+| `document.createElement("div") { ... }` | `(document.createElement("div") as HTMLDivElement).apply { ... }` |
+| `element.appendElement("p") { ... }` | `element.append(document.createElement("p").apply { ... })` |
+| `element.appendText("x")` | `element.append("x")` |
+| `node.clear()` | `element.replaceChildren()`, or `node.textContent = ""` |
+| `node.isElement`, `node.isText` | `node is Element`, `node is Text`, or `node.nodeType == Node.ELEMENT_NODE` |
+
+`kotlinx.browser` (`window`, `document`, `localStorage`, `sessionStorage`) stays.
+
 ## Kotlin/Wasm: casts to external classes
 
 On Wasm, casting to an external class (`x as CSSStyleProperties`, or a generic `T` bound to one) is an `instanceof`

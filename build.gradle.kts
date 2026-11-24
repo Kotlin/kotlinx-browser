@@ -1,4 +1,4 @@
-@file:OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
+import org.jetbrains.kotlin.gradle.ExperimentalJsTestDsl
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -61,16 +61,21 @@ kotlin {
 
     js {
         nodejs()
+        browser {
+            @OptIn(ExperimentalJsTestDsl::class)
+            test { chromium("chromium") }
+        }
     }
 
     wasmJs {
         nodejs()
+        @OptIn(ExperimentalJsTestDsl::class)
+        browser { test { chromium("chromium") } }
     }
 
     applyDefaultHierarchyTemplate()
 
     sourceSets {
-        val commonMain by getting
         val webMain by getting {
             // Generated from Web IDL by `./gradlew :generator:generateWebApi`; do not edit.
             kotlin.srcDir("src/webMain/generated")

@@ -13,7 +13,9 @@ private const val SEE_DETAILS_AT = "generator/src/main/kotlin/helpers/generate.k
 /** Rewrites the typed-array conversion helpers and their test. `GeneratedUtilsTest` fails while the committed files differ. */
 fun main() {
     for ((path, content) in generateUtils()) {
-        Files.writeString(GeneratorPaths.repositoryRoot.resolve(path), content)
+        val file = GeneratorPaths.repositoryRoot.resolve(path)
+        Files.createDirectories(file.parent)
+        Files.writeString(file, content)
     }
 }
 
@@ -42,19 +44,19 @@ fun generateUtils(): Map<String, String> {
     }
 
     return sortedMapOf(
-        "src/webMain/kotlin/arrayCopy.kt" to file {
+        "src/webMain/kotlin/org/khronos/webgl/arrayCopy.kt" to file {
             appendLine("package org.khronos.webgl")
             conversions.forEach { (ktType, jsType, signedConversion) ->
                 appendExpectConversionsForType(ktType, jsType, signedConversion)
             }
         },
-        "src/jsMain/kotlin/arrayCopy.js.kt" to file {
+        "src/jsMain/kotlin/org/khronos/webgl/arrayCopy.js.kt" to file {
             appendLine("package org.khronos.webgl")
             conversions.forEach { (ktType, jsType, signedConversion) ->
                 appendJsConversionsForType(ktType, jsType, signedConversion)
             }
         },
-        "src/wasmJsMain/kotlin/arrayCopy.wasm.kt" to file {
+        "src/wasmJsMain/kotlin/org/khronos/webgl/arrayCopy.wasm.kt" to file {
             appendLine("package org.khronos.webgl")
             conversions.forEach { (ktType, jsType, signedConversion) ->
                 appendWasmConversionsForType(ktType, jsType, signedConversion)
@@ -242,4 +244,3 @@ private fun StringBuilder.appendTestFunction(
 }
 
 data class Conversion(val ktType: String, val jsType: String, val signedConversion: Conversion? = null)
-data class InteropCorrespondence(val interopType: String, val wasmType: String, val jsType: String)

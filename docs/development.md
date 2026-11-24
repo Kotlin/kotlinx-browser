@@ -6,8 +6,8 @@ the changes users see coming from the dukat-generated versions, see [migration-g
 
 ## What the library is
 
-The library is Kotlin `external` declarations for the browser APIs (`org.w3c.*`, `org.khronos.webgl`), plus a few
-hand-written helpers (`kotlinx.browser`, `kotlinx.dom`), for **Kotlin/JS and Kotlin/Wasm from one source set**. The
+The library is Kotlin `external` declarations for the browser APIs (`org.w3c.*`, `org.khronos.webgl`), plus the
+hand-written `kotlinx.browser` globals, for **Kotlin/JS and Kotlin/Wasm from one source set**. The
 declarations are generated from the specifications' Web IDL. There is one copy in `webMain`, with no `expect`/`actual`.
 
 ## Repository layout
@@ -16,11 +16,11 @@ declarations are generated from the specifications' Web IDL. There is one copy i
 |---|---|---|
 | `src/webMain/generated/` | Generated declarations, one file per spec, at `<package path>/<spec>.kt` | **No.** Regenerate |
 | `src/webMain/kotlin/kotlinx/browser/` | `window`, `document`, `localStorage`, `sessionStorage` | Yes |
-| `src/webMain/kotlin/kotlinx/dom/` | DOM helpers (`addClass`, `appendText`, …), `ItemArrayLike` and `asList()`, `JsObjects.kt` (internal helpers the generated code calls) | Yes |
-| `src/webMain/kotlin/org.w3c/org.khronos.webgl.typedarrays.kt` | ECMAScript built-ins Web IDL refers to (`ArrayBuffer`, typed arrays, `DataView`), external declarations for both targets | Yes |
-| `src/jsMain/kotlin/org.w3c/org.khronos.webgl.typedarrays.kt` | JS-only factories and `set` overloads taking a Kotlin array (`Int8Array(arrayOf<Byte>(1))`), kept from the Kotlin/JS declarations | Yes |
-| `src/{web,js,wasmJs}Main/kotlin/arrayCopy*.kt`, `src/webTest/kotlin/arrayCopyTest.kt` | Typed-array ↔ Kotlin-array conversions and their test | **No.** `./gradlew :generator:generateUtils` |
-| `src/webTest/kotlin/` | Runtime tests run on Node for both targets (`InteropTest`, `SmokeTest`) | Yes |
+| `src/webMain/kotlin/org/w3c/dom/` | `ItemArrayLike` and `asList()`, `JsObjects.kt` (internal helpers the generated code calls) | Yes |
+| `src/webMain/kotlin/org/khronos/webgl/TypedArrays.kt` | ECMAScript built-ins Web IDL refers to (`ArrayBuffer`, typed arrays, `DataView`), external declarations for both targets | Yes |
+| `src/jsMain/kotlin/org/khronos/webgl/TypedArrays.js.kt` | JS-only factories and `set` overloads taking a Kotlin array (`Int8Array(arrayOf<Byte>(1))`), kept from the Kotlin/JS declarations | Yes |
+| `src/{web,js,wasmJs}Main/kotlin/org/khronos/webgl/arrayCopy*.kt`, `src/webTest/kotlin/arrayCopyTest.kt` | Typed-array ↔ Kotlin-array conversions and their test | **No.** `./gradlew :generator:generateUtils` |
+| `src/webTest/kotlin/` | Runtime tests for both targets, on Node and in Playwright Chromium (`InteropTest`, `DomTest`, `SmokeTest`) | Yes |
 | `api/kotlinx-browser.klib.api` | ABI dump for both targets in one file | **No.** `./gradlew updateKotlinAbi` |
 | `generator/` | The generator (Kotlin/JVM, Gradle subproject `:generator`) | Yes |
 | `package.json`, `package-lock.json` | The pinned generator inputs: `@webref/idl`, `@webref/events`, `@webref/css`, `webidl2`, `@mdn/browser-compat-data` | Only to bump them (see [Bumping webref](#bumping-webref)) |
@@ -42,7 +42,7 @@ change.
 | Task | Command |
 |---|---|
 | Everything: compile, Node tests on both targets, generator tests, ABI check | `./gradlew check` |
-| Library tests only | `./gradlew jsNodeTest wasmJsNodeTest` |
+| Library tests only | `./gradlew jsNodeTest wasmJsNodeTest jsBrowserTest wasmJsBrowserTest` |
 | Generator tests only | `./gradlew :generator:test` |
 | Regenerate the declarations and `surface-report.txt` | `./gradlew :generator:generateWebApi` |
 | Regenerate the typed-array conversions | `./gradlew :generator:generateUtils` |
@@ -207,11 +207,15 @@ or two enum values with the same Kotlin name. Resolve these explicitly; don't si
 | Unit tests per stage | `generator/src/test/kotlin/idl/{frontend,surface,lowering,mapping,backend}` | Each pass on small IR built with `LoweringTestDsl`, and facts about the real corpus (`Real*Test`) |
 | Golden slice | `GoldenSliceTest`, `RealLoweringTest`, `KotlinBackendTest` with `golden/*.idl`, `golden/kotlin-slice.kt` | A fixed set of definitions (`GOLDEN_SLICE`) as parsed IDL, as lowered IDL and as Kotlin |
 | Up to date | `GeneratedSourcesTest`, `GeneratedUtilsTest` | Committed generated files equal fresh output |
-| Runtime | `src/webTest/kotlin/InteropTest.kt` | The shapes the generator relies on actually work on JS and Wasm (Node) |
+| Runtime | `src/webTest/kotlin/InteropTest.kt` | The shapes the generator relies on actually work on JS and Wasm (Node and Chromium) |
+| Browser | `src/webTest/kotlin/DomTest.kt` | The same against real DOM objects: casts to DOM classes, collections, events, dictionaries, CSS, enums (Chromium only) |
 | ABI | `checkKotlinAbi` | `api/kotlinx-browser.klib.api` |
 
-When adding a generated shape, add a runtime test to `InteropTest` if the shape depends on interop behavior. Node has
-no DOM, so stand in plain objects (`js("({})")`) or globals you install yourself.
+When adding a generated shape, add a runtime test if the shape depends on interop behavior: to `InteropTest` when
+plain objects (`js("({})")`) or globals you install yourself can show it, to `DomTest` when it needs the real DOM.
+The browser tests run in headless Chromium through Playwright (`browser { test { chromium(...) } }` of the Kotlin
+Gradle plugin, no Karma); `kotlinInstallPlaywrightChromium` downloads the browser on first use, so a CI agent needs
+network access or a cached Gradle user home.
 
 ## Platform behavior to know
 
