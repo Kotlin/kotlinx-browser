@@ -14,7 +14,7 @@ import org.w3c.dom.*
 
 public external interface MediaKeysRequirement : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val MediaKeysRequirement.Companion.REQUIRED: MediaKeysRequirement get() = "required".toJsString().unsafeCast<MediaKeysRequirement>()
@@ -22,13 +22,13 @@ public inline val MediaKeysRequirement.Companion.OPTIONAL: MediaKeysRequirement 
 public inline val MediaKeysRequirement.Companion.NOT_ALLOWED: MediaKeysRequirement get() = "not-allowed".toJsString().unsafeCast<MediaKeysRequirement>()
 
 public external interface MediaKeySystemConfiguration : JsAny {
-    var label: String?
-    var initDataTypes: JsArray<JsString>?
-    var audioCapabilities: JsArray<MediaKeySystemMediaCapability>?
-    var videoCapabilities: JsArray<MediaKeySystemMediaCapability>?
-    var distinctiveIdentifier: MediaKeysRequirement?
-    var persistentState: MediaKeysRequirement?
-    var sessionTypes: JsArray<JsString>?
+    public var label: String?
+    public var initDataTypes: JsArray<JsString>?
+    public var audioCapabilities: JsArray<MediaKeySystemMediaCapability>?
+    public var videoCapabilities: JsArray<MediaKeySystemMediaCapability>?
+    public var distinctiveIdentifier: MediaKeysRequirement?
+    public var persistentState: MediaKeysRequirement?
+    public var sessionTypes: JsArray<JsString>?
 }
 
 public fun MediaKeySystemConfiguration(label: String? = null, initDataTypes: JsArray<JsString>? = null, audioCapabilities: JsArray<MediaKeySystemMediaCapability>? = null, videoCapabilities: JsArray<MediaKeySystemMediaCapability>? = null, distinctiveIdentifier: MediaKeysRequirement? = null, persistentState: MediaKeysRequirement? = null, sessionTypes: JsArray<JsString>? = null): MediaKeySystemConfiguration = newJsObject<MediaKeySystemConfiguration>().apply {
@@ -42,9 +42,9 @@ public fun MediaKeySystemConfiguration(label: String? = null, initDataTypes: JsA
 }
 
 public external interface MediaKeySystemMediaCapability : JsAny {
-    var contentType: String?
-    var encryptionScheme: String?
-    var robustness: String?
+    public var contentType: String?
+    public var encryptionScheme: String?
+    public var robustness: String?
 }
 
 public fun MediaKeySystemMediaCapability(contentType: String? = null, encryptionScheme: String? = null, robustness: String? = null): MediaKeySystemMediaCapability = newJsObject<MediaKeySystemMediaCapability>().apply {
@@ -69,24 +69,24 @@ public abstract external class MediaKeySystemAccess : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/keySystem)
      */
-    open val keySystem: String
+    public open val keySystem: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/getConfiguration)
      */
-    open fun getConfiguration(): MediaKeySystemConfiguration
+    public open fun getConfiguration(): MediaKeySystemConfiguration
 
     /**
      * The MediaKeySystemAccess.createMediaKeys() method returns a Promise that resolves to a new MediaKeys object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
      */
-    open fun createMediaKeys(): Promise<MediaKeys>
+    public open fun createMediaKeys(): Promise<MediaKeys>
 }
 
 public external interface MediaKeySessionType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val MediaKeySessionType.Companion.TEMPORARY: MediaKeySessionType get() = "temporary".toJsString().unsafeCast<MediaKeySessionType>()
@@ -107,7 +107,7 @@ public abstract external class MediaKeys : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/createSession)
      */
-    open fun createSession(sessionType: MediaKeySessionType = definedExternally): MediaKeySession
+    public open fun createSession(sessionType: MediaKeySessionType = definedExternally): MediaKeySession
 
     /**
      * The getStatusForPolicy() method of the MediaKeys interface is used to check whether the Content Decryption Module
@@ -116,7 +116,7 @@ public abstract external class MediaKeys : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
      */
-    open fun getStatusForPolicy(policy: MediaKeysPolicy = definedExternally): Promise<MediaKeyStatus>
+    public open fun getStatusForPolicy(policy: MediaKeysPolicy = definedExternally): Promise<MediaKeyStatus>
 
     /**
      * The setServerCertificate() method of the MediaKeys interface provides a server certificate to be used to encrypt
@@ -124,11 +124,11 @@ public abstract external class MediaKeys : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate)
      */
-    open fun setServerCertificate(serverCertificate: BufferDataSource): Promise<JsBoolean>
+    public open fun setServerCertificate(serverCertificate: BufferDataSource): Promise<JsBoolean>
 }
 
 public external interface MediaKeysPolicy : JsAny {
-    var minHdcpVersion: String?
+    public var minHdcpVersion: String?
 }
 
 public fun MediaKeysPolicy(minHdcpVersion: String? = null): MediaKeysPolicy = newJsObject<MediaKeysPolicy>().apply {
@@ -137,7 +137,7 @@ public fun MediaKeysPolicy(minHdcpVersion: String? = null): MediaKeysPolicy = ne
 
 public external interface MediaKeySessionClosedReason : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val MediaKeySessionClosedReason.Companion.INTERNAL_ERROR: MediaKeySessionClosedReason get() = "internal-error".toJsString().unsafeCast<MediaKeySessionClosedReason>()
@@ -161,7 +161,7 @@ public abstract external class MediaKeySession : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/sessionId)
      */
-    open val sessionId: String
+    public open val sessionId: String
 
     /**
      * The expiration read-only property of the MediaKeySession interface returns the time after which the keys in the
@@ -169,7 +169,7 @@ public abstract external class MediaKeySession : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/expiration)
      */
-    open val expiration: Double
+    public open val expiration: Double
 
     /**
      * The closed read-only property of the MediaKeySession interface returns a Promise signaling when a MediaKeySession
@@ -178,7 +178,7 @@ public abstract external class MediaKeySession : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/closed)
      */
-    open val closed: Promise<MediaKeySessionClosedReason>
+    public open val closed: Promise<MediaKeySessionClosedReason>
 
     /**
      * The keyStatuses read-only property of the MediaKeySession interface returns a reference to a read-only
@@ -186,7 +186,7 @@ public abstract external class MediaKeySession : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/keyStatuses)
      */
-    open val keyStatuses: MediaKeyStatusMap
+    public open val keyStatuses: MediaKeyStatusMap
 
     /**
      * The keystatuseschange event of the MediaKeySession API fires when there has been a change in the keys or their
@@ -194,7 +194,7 @@ public abstract external class MediaKeySession : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/keystatuseschange_event)
      */
-    open var onkeystatuseschange: ((Event) -> Unit)?
+    public open var onkeystatuseschange: ((Event) -> Unit)?
 
     /**
      * The message event of the MediaKeySession interface fires when a message is generated by the content decryption
@@ -202,7 +202,7 @@ public abstract external class MediaKeySession : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/message_event)
      */
-    open var onmessage: ((MediaKeyMessageEvent) -> Unit)?
+    public open var onmessage: ((MediaKeyMessageEvent) -> Unit)?
 
     /**
      * The generateRequest() method of the MediaKeySession interface returns a Promise after generating a license
@@ -210,7 +210,7 @@ public abstract external class MediaKeySession : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/generateRequest)
      */
-    open fun generateRequest(initDataType: String, initData: BufferDataSource): Promise<JsAny?>
+    public open fun generateRequest(initDataType: String, initData: BufferDataSource): Promise<JsAny?>
 
     /**
      * The load() method of the MediaKeySession interface returns a Promise that resolves to a boolean value after
@@ -218,7 +218,7 @@ public abstract external class MediaKeySession : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/load)
      */
-    open fun load(sessionId: String): Promise<JsBoolean>
+    public open fun load(sessionId: String): Promise<JsBoolean>
 
     /**
      * The update() method of the MediaKeySession interface loads messages and licenses to the CDM, and then returns a
@@ -226,7 +226,7 @@ public abstract external class MediaKeySession : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/update)
      */
-    open fun update(response: BufferDataSource): Promise<JsAny?>
+    public open fun update(response: BufferDataSource): Promise<JsAny?>
 
     /**
      * The close() method of the MediaKeySession interface notifies that the current media session is no longer needed,
@@ -235,7 +235,7 @@ public abstract external class MediaKeySession : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/close)
      */
-    open fun close(): Promise<JsAny?>
+    public open fun close(): Promise<JsAny?>
 
     /**
      * The remove() method of the MediaKeySession interface returns a Promise after removing any session data associated
@@ -243,7 +243,7 @@ public abstract external class MediaKeySession : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/remove)
      */
-    open fun remove(): Promise<JsAny?>
+    public open fun remove(): Promise<JsAny?>
 }
 
 /**
@@ -263,7 +263,7 @@ public abstract external class MediaKeyStatusMap : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/size)
      */
-    open val size: Int
+    public open val size: Int
 
     /**
      * The has() method of the MediaKeyStatusMap interface returns a Boolean, asserting whether a value has been
@@ -271,7 +271,7 @@ public abstract external class MediaKeyStatusMap : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/has)
      */
-    open fun has(keyId: BufferDataSource): Boolean
+    public open fun has(keyId: BufferDataSource): Boolean
 
     /**
      * The get() method of the MediaKeyStatusMap interface returns the status value associated with the given key, or
@@ -279,12 +279,12 @@ public abstract external class MediaKeyStatusMap : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/get)
      */
-    open fun get(keyId: BufferDataSource): MediaKeyStatus?
+    public open fun get(keyId: BufferDataSource): MediaKeyStatus?
 }
 
 public external interface MediaKeyStatus : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val MediaKeyStatus.Companion.USABLE: MediaKeyStatus get() = "usable".toJsString().unsafeCast<MediaKeyStatus>()
@@ -298,7 +298,7 @@ public inline val MediaKeyStatus.Companion.INTERNAL_ERROR: MediaKeyStatus get() 
 
 public external interface MediaKeyMessageType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val MediaKeyMessageType.Companion.LICENSE_REQUEST: MediaKeyMessageType get() = "license-request".toJsString().unsafeCast<MediaKeyMessageType>()
@@ -320,7 +320,7 @@ public open external class MediaKeyMessageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/MediaKeyMessageEvent)
      */
-    constructor(type: String, eventInitDict: MediaKeyMessageEventInit)
+    public constructor(type: String, eventInitDict: MediaKeyMessageEventInit)
 
     /**
      * The MediaKeyMessageEvent.messageType read-only property indicates the type of message. It may be one of
@@ -328,7 +328,7 @@ public open external class MediaKeyMessageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/messageType)
      */
-    open val messageType: MediaKeyMessageType
+    public open val messageType: MediaKeyMessageType
 
     /**
      * The MediaKeyMessageEvent.message read-only property returns an ArrayBuffer with a message from the content
@@ -336,19 +336,19 @@ public open external class MediaKeyMessageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/message)
      */
-    open val message: ArrayBuffer
+    public open val message: ArrayBuffer
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface MediaKeyMessageEventInit : EventInit {
-    var messageType: MediaKeyMessageType
-    var message: ArrayBuffer
+    public var messageType: MediaKeyMessageType
+    public var message: ArrayBuffer
 }
 
 public fun MediaKeyMessageEventInit(messageType: MediaKeyMessageType, message: ArrayBuffer, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): MediaKeyMessageEventInit = newJsObject<MediaKeyMessageEventInit>().apply {
@@ -371,7 +371,7 @@ public open external class MediaEncryptedEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/MediaEncryptedEvent)
      */
-    constructor(type: String, eventInitDict: MediaEncryptedEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: MediaEncryptedEventInit = definedExternally)
 
     /**
      * The read-only initDataType property of the MediaKeyMessageEvent returns a case-sensitive string describing the
@@ -379,7 +379,7 @@ public open external class MediaEncryptedEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initDataType)
      */
-    open val initDataType: String
+    public open val initDataType: String
 
     /**
      * The read-only initData property of the MediaKeyMessageEvent returns the initialization data contained in this
@@ -387,19 +387,19 @@ public open external class MediaEncryptedEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initData)
      */
-    open val initData: ArrayBuffer?
+    public open val initData: ArrayBuffer?
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface MediaEncryptedEventInit : EventInit {
-    var initDataType: String?
-    var initData: ArrayBuffer?
+    public var initDataType: String?
+    public var initData: ArrayBuffer?
 }
 
 public fun MediaEncryptedEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, initDataType: String? = null, initData: ArrayBuffer? = null): MediaEncryptedEventInit = newJsObject<MediaEncryptedEventInit>().apply {

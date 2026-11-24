@@ -22,7 +22,7 @@ public open external class UIEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/UIEvent)
      */
-    constructor(type: String, eventInitDict: UIEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: UIEventInit = definedExternally)
 
     /**
      * The UIEvent.view read-only property returns the WindowProxy object from which the event was generated. In
@@ -30,7 +30,7 @@ public open external class UIEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/view)
      */
-    open val view: Window?
+    public open val view: Window?
 
     /**
      * The UIEvent.detail read-only property, when non-zero, provides the current (or next, depending on the event)
@@ -38,7 +38,7 @@ public open external class UIEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/detail)
      */
-    open val detail: Int
+    public open val detail: Int
 
     /**
      * The UIEvent.initUIEvent() method initializes a UI event once it's been created.
@@ -47,7 +47,7 @@ public open external class UIEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/initUIEvent)
      */
-    open fun initUIEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, detailArg: Int = definedExternally)
+    public open fun initUIEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, detailArg: Int = definedExternally)
 
     /**
      * The UIEvent.which read-only property of the UIEvent interface returns a number that indicates which button was
@@ -57,20 +57,20 @@ public open external class UIEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/which)
      */
-    open val which: Int
+    public open val which: Int
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface UIEventInit : EventInit {
-    var view: Window?
-    var detail: Int?
-    var which: Int?
+    public var view: Window?
+    public var detail: Int?
+    public var which: Int?
 }
 
 public fun UIEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null): UIEventInit = newJsObject<UIEventInit>().apply {
@@ -94,23 +94,23 @@ public open external class FocusEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent/FocusEvent)
      */
-    constructor(type: String, eventInitDict: FocusEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: FocusEventInit = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent/relatedTarget)
      */
-    open val relatedTarget: EventTarget?
+    public open val relatedTarget: EventTarget?
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface FocusEventInit : UIEventInit {
-    var relatedTarget: EventTarget?
+    public var relatedTarget: EventTarget?
 }
 
 public fun FocusEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, relatedTarget: EventTarget? = null): FocusEventInit = newJsObject<FocusEventInit>().apply {
@@ -134,7 +134,7 @@ public open external class InputEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/InputEvent)
      */
-    constructor(type: String, eventInitDict: InputEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: InputEventInit = definedExternally)
 
     /**
      * The data read-only property of the InputEvent interface returns a string with inserted characters. This may be an
@@ -142,7 +142,7 @@ public open external class InputEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/data)
      */
-    open val data: String?
+    public open val data: String?
 
     /**
      * The InputEvent.isComposing read-only property returns a boolean value indicating if the event is fired after
@@ -150,7 +150,7 @@ public open external class InputEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/isComposing)
      */
-    open val isComposing: Boolean
+    public open val isComposing: Boolean
 
     /**
      * The inputType read-only property of the InputEvent interface returns the type of change made to editable content.
@@ -158,20 +158,20 @@ public open external class InputEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/inputType)
      */
-    open val inputType: String
+    public open val inputType: String
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface InputEventInit : UIEventInit {
-    var data: String?
-    var isComposing: Boolean?
-    var inputType: String?
+    public var data: String?
+    public var isComposing: Boolean?
+    public var inputType: String?
 }
 
 public fun InputEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, data: String? = null, isComposing: Boolean? = null, inputType: String? = null): InputEventInit = newJsObject<InputEventInit>().apply {
@@ -199,7 +199,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/KeyboardEvent)
      */
-    constructor(type: String, eventInitDict: KeyboardEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: KeyboardEventInit = definedExternally)
 
     /**
      * The KeyboardEvent interface's key read-only property returns the value of the key pressed by the user, taking
@@ -207,7 +207,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/key)
      */
-    open val key: String
+    public open val key: String
 
     /**
      * The code read-only property of the KeyboardEvent interface represents a physical key on the keyboard (as opposed
@@ -216,7 +216,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/code)
      */
-    open val code: String
+    public open val code: String
 
     /**
      * The KeyboardEvent.location read-only property returns an unsigned long representing the location of the key on
@@ -224,7 +224,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/location)
      */
-    open val location: Int
+    public open val location: Int
 
     /**
      * The KeyboardEvent.ctrlKey read-only property returns a boolean value that indicates if the control key was
@@ -232,7 +232,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/ctrlKey)
      */
-    open val ctrlKey: Boolean
+    public open val ctrlKey: Boolean
 
     /**
      * The KeyboardEvent.shiftKey read-only property is a boolean value that indicates if the shift key was pressed
@@ -240,7 +240,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/shiftKey)
      */
-    open val shiftKey: Boolean
+    public open val shiftKey: Boolean
 
     /**
      * The KeyboardEvent.altKey read-only property is a boolean value that indicates if the alt key (Option or ⌥ on
@@ -248,7 +248,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/altKey)
      */
-    open val altKey: Boolean
+    public open val altKey: Boolean
 
     /**
      * The KeyboardEvent.metaKey read-only property returning a boolean value that indicates if the Meta key was pressed
@@ -257,7 +257,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/metaKey)
      */
-    open val metaKey: Boolean
+    public open val metaKey: Boolean
 
     /**
      * The repeat read-only property of the KeyboardEvent interface returns a boolean value that is true if the given
@@ -265,7 +265,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/repeat)
      */
-    open val repeat: Boolean
+    public open val repeat: Boolean
 
     /**
      * The KeyboardEvent.isComposing read-only property returns a boolean value indicating if the event is fired within
@@ -273,7 +273,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/isComposing)
      */
-    open val isComposing: Boolean
+    public open val isComposing: Boolean
 
     /**
      * The KeyboardEvent.getModifierState() method returns the current state of the specified modifier key: true if the
@@ -281,7 +281,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/getModifierState)
      */
-    open fun getModifierState(keyArg: String): Boolean
+    public open fun getModifierState(keyArg: String): Boolean
 
     /**
      * The KeyboardEvent.initKeyboardEvent() method initializes the attributes of a keyboard event object. This method
@@ -293,7 +293,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/initKeyboardEvent)
      */
-    open fun initKeyboardEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, keyArg: String = definedExternally, locationArg: Int = definedExternally, ctrlKey: Boolean = definedExternally, altKey: Boolean = definedExternally, shiftKey: Boolean = definedExternally, metaKey: Boolean = definedExternally)
+    public open fun initKeyboardEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, keyArg: String = definedExternally, locationArg: Int = definedExternally, ctrlKey: Boolean = definedExternally, altKey: Boolean = definedExternally, shiftKey: Boolean = definedExternally, metaKey: Boolean = definedExternally)
 
     /**
      * The charCode read-only property of the KeyboardEvent interface returns the Unicode value of a character key
@@ -303,7 +303,7 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/charCode)
      */
-    open val charCode: Int
+    public open val charCode: Int
 
     /**
      * The deprecated KeyboardEvent.keyCode read-only property represents a system and implementation dependent
@@ -313,28 +313,28 @@ public open external class KeyboardEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/keyCode)
      */
-    open val keyCode: Int
+    public open val keyCode: Int
 
-    companion object {
-        val DOM_KEY_LOCATION_STANDARD: Int
-        val DOM_KEY_LOCATION_LEFT: Int
-        val DOM_KEY_LOCATION_RIGHT: Int
-        val DOM_KEY_LOCATION_NUMPAD: Int
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val DOM_KEY_LOCATION_STANDARD: Int
+        public val DOM_KEY_LOCATION_LEFT: Int
+        public val DOM_KEY_LOCATION_RIGHT: Int
+        public val DOM_KEY_LOCATION_NUMPAD: Int
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface KeyboardEventInit : EventModifierInit {
-    var key: String?
-    var code: String?
-    var location: Int?
-    var repeat: Boolean?
-    var isComposing: Boolean?
-    var charCode: Int?
-    var keyCode: Int?
+    public var key: String?
+    public var code: String?
+    public var location: Int?
+    public var repeat: Boolean?
+    public var isComposing: Boolean?
+    public var charCode: Int?
+    public var keyCode: Int?
 }
 
 public fun KeyboardEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, key: String? = null, code: String? = null, location: Int? = null, repeat: Boolean? = null, isComposing: Boolean? = null, charCode: Int? = null, keyCode: Int? = null): KeyboardEventInit = newJsObject<KeyboardEventInit>().apply {
@@ -368,20 +368,20 @@ public fun KeyboardEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nu
 }
 
 public external interface EventModifierInit : UIEventInit {
-    var ctrlKey: Boolean?
-    var shiftKey: Boolean?
-    var altKey: Boolean?
-    var metaKey: Boolean?
-    var modifierAltGraph: Boolean?
-    var modifierCapsLock: Boolean?
-    var modifierFn: Boolean?
-    var modifierFnLock: Boolean?
-    var modifierHyper: Boolean?
-    var modifierNumLock: Boolean?
-    var modifierScrollLock: Boolean?
-    var modifierSuper: Boolean?
-    var modifierSymbol: Boolean?
-    var modifierSymbolLock: Boolean?
+    public var ctrlKey: Boolean?
+    public var shiftKey: Boolean?
+    public var altKey: Boolean?
+    public var metaKey: Boolean?
+    public var modifierAltGraph: Boolean?
+    public var modifierCapsLock: Boolean?
+    public var modifierFn: Boolean?
+    public var modifierFnLock: Boolean?
+    public var modifierHyper: Boolean?
+    public var modifierNumLock: Boolean?
+    public var modifierScrollLock: Boolean?
+    public var modifierSuper: Boolean?
+    public var modifierSymbol: Boolean?
+    public var modifierSymbolLock: Boolean?
 }
 
 public fun EventModifierInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null): EventModifierInit = newJsObject<EventModifierInit>().apply {
@@ -418,7 +418,7 @@ public open external class CompositionEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/CompositionEvent)
      */
-    constructor(type: String, eventInitDict: CompositionEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: CompositionEventInit = definedExternally)
 
     /**
      * The data read-only property of the CompositionEvent interface returns the characters generated by the input
@@ -427,7 +427,7 @@ public open external class CompositionEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/data)
      */
-    open val data: String
+    public open val data: String
 
     /**
      * The initCompositionEvent() method of the CompositionEvent interface initializes the attributes of a
@@ -437,18 +437,18 @@ public open external class CompositionEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/initCompositionEvent)
      */
-    open fun initCompositionEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, dataArg: String = definedExternally)
+    public open fun initCompositionEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, dataArg: String = definedExternally)
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface CompositionEventInit : UIEventInit {
-    var data: String?
+    public var data: String?
 }
 
 public fun CompositionEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, data: String? = null): CompositionEventInit = newJsObject<CompositionEventInit>().apply {
@@ -476,7 +476,7 @@ public abstract external class TextEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEvent/data)
      */
-    open val data: String
+    public open val data: String
 
     /**
      * The initTextEventEvent() method of the TextEvent interface initializes the value of a TextEvent after it has been
@@ -486,12 +486,12 @@ public abstract external class TextEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEvent/initTextEvent)
      */
-    open fun initTextEvent(type: String, bubbles: Boolean = definedExternally, cancelable: Boolean = definedExternally, view: Window? = definedExternally, data: String = definedExternally)
+    public open fun initTextEvent(type: String, bubbles: Boolean = definedExternally, cancelable: Boolean = definedExternally, view: Window? = definedExternally, data: String = definedExternally)
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }

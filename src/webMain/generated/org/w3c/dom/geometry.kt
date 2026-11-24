@@ -24,7 +24,7 @@ public open external class DOMPointReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/DOMPointReadOnly)
      */
-    constructor(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, w: Double = definedExternally)
+    public constructor(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, w: Double = definedExternally)
 
     /**
      * The DOMPointReadOnly interface's x property holds the horizontal coordinate, x, for a read-only point in space.
@@ -32,21 +32,21 @@ public open external class DOMPointReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/x)
      */
-    open val x: Double
+    public open val x: Double
 
     /**
      * The DOMPointReadOnly interface's y property holds the vertical coordinate, y, for a read-only point in space.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/y)
      */
-    open val y: Double
+    public open val y: Double
 
     /**
      * The DOMPointReadOnly interface's z property holds the depth coordinate, z, for a read-only point in space.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/z)
      */
-    open val z: Double
+    public open val z: Double
 
     /**
      * The DOMPointReadOnly interface's w property holds the point's perspective value, w, for a read-only point in
@@ -54,7 +54,7 @@ public open external class DOMPointReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/w)
      */
-    open val w: Double
+    public open val w: Double
 
     /**
      * The matrixTransform() method of the DOMPointReadOnly interface applies a matrix transform specified as an object
@@ -63,7 +63,7 @@ public open external class DOMPointReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/matrixTransform)
      */
-    open fun matrixTransform(matrix: DOMMatrixInit = definedExternally): DOMPoint
+    public open fun matrixTransform(matrix: DOMMatrixInit = definedExternally): DOMPoint
 
     /**
      * The toJSON() method of the DOMPointReadOnly interface returns a JSON-serializable plain object representing the
@@ -71,16 +71,16 @@ public open external class DOMPointReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 
-    companion object {
+    public companion object {
         /**
          * The static DOMPointReadOnly method fromPoint() creates and returns a new DOMPointReadOnly object given a
          * source point.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/fromPoint_static)
          */
-        fun fromPoint(other: DOMPointInit = definedExternally): DOMPointReadOnly
+        public fun fromPoint(other: DOMPointInit = definedExternally): DOMPointReadOnly
     }
 }
 
@@ -98,7 +98,7 @@ public open external class DOMPoint : DOMPointReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/DOMPoint)
      */
-    constructor(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, w: Double = definedExternally)
+    public constructor(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, w: Double = definedExternally)
 
     /**
      * The DOMPoint interface's x property holds the horizontal coordinate, x, for a point in space.
@@ -128,22 +128,22 @@ public open external class DOMPoint : DOMPointReadOnly {
      */
     override var w: Double
 
-    companion object {
+    public companion object {
         /**
          * The fromPoint() static method of the DOMPoint interface creates and returns a new mutable DOMPoint object
          * given a source point.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/fromPoint_static)
          */
-        fun fromPoint(other: DOMPointInit = definedExternally): DOMPoint
+        public fun fromPoint(other: DOMPointInit = definedExternally): DOMPoint
     }
 }
 
 public external interface DOMPointInit : JsAny {
-    var x: Double?
-    var y: Double?
-    var z: Double?
-    var w: Double?
+    public var x: Double?
+    public var y: Double?
+    public var z: Double?
+    public var w: Double?
 }
 
 public fun DOMPointInit(x: Double? = null, y: Double? = null, z: Double? = null, w: Double? = null): DOMPointInit = newJsObject<DOMPointInit>().apply {
@@ -165,35 +165,35 @@ public open external class DOMRectReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/DOMRectReadOnly)
      */
-    constructor(x: Double = definedExternally, y: Double = definedExternally, width: Double = definedExternally, height: Double = definedExternally)
+    public constructor(x: Double = definedExternally, y: Double = definedExternally, width: Double = definedExternally, height: Double = definedExternally)
 
     /**
      * The x read-only property of the DOMRectReadOnly interface represents the x coordinate of the DOMRect's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/x)
      */
-    open val x: Double
+    public open val x: Double
 
     /**
      * The y read-only property of the DOMRectReadOnly interface represents the y coordinate of the DOMRect's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/y)
      */
-    open val y: Double
+    public open val y: Double
 
     /**
      * The width read-only property of the DOMRectReadOnly interface represents the width of the DOMRect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/width)
      */
-    open val width: Double
+    public open val width: Double
 
     /**
      * The height read-only property of the DOMRectReadOnly interface represents the height of the DOMRect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/height)
      */
-    open val height: Double
+    public open val height: Double
 
     /**
      * The top read-only property of the DOMRectReadOnly interface returns the top coordinate value of the DOMRect. (Has
@@ -201,7 +201,7 @@ public open external class DOMRectReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/top)
      */
-    open val top: Double
+    public open val top: Double
 
     /**
      * The right read-only property of the DOMRectReadOnly interface returns the right coordinate value of the DOMRect.
@@ -209,7 +209,7 @@ public open external class DOMRectReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/right)
      */
-    open val right: Double
+    public open val right: Double
 
     /**
      * The bottom read-only property of the DOMRectReadOnly interface returns the bottom coordinate value of the
@@ -217,7 +217,7 @@ public open external class DOMRectReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/bottom)
      */
-    open val bottom: Double
+    public open val bottom: Double
 
     /**
      * The left read-only property of the DOMRectReadOnly interface returns the left coordinate value of the DOMRect.
@@ -225,7 +225,7 @@ public open external class DOMRectReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/left)
      */
-    open val left: Double
+    public open val left: Double
 
     /**
      * The toJSON() method of the DOMRectReadOnly interface returns a JSON-serializable plain object representing the
@@ -233,16 +233,16 @@ public open external class DOMRectReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 
-    companion object {
+    public companion object {
         /**
          * The fromRect() static method of the DOMRectReadOnly object creates a new DOMRectReadOnly object with a given
          * location and dimensions.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/fromRect_static)
          */
-        fun fromRect(other: DOMRectInit = definedExternally): DOMRectReadOnly
+        public fun fromRect(other: DOMRectInit = definedExternally): DOMRectReadOnly
     }
 }
 
@@ -257,7 +257,7 @@ public open external class DOMRect : DOMRectReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/DOMRect)
      */
-    constructor(x: Double = definedExternally, y: Double = definedExternally, width: Double = definedExternally, height: Double = definedExternally)
+    public constructor(x: Double = definedExternally, y: Double = definedExternally, width: Double = definedExternally, height: Double = definedExternally)
 
     /**
      * The x property of the DOMRect interface represents the x-coordinate of the rectangle, which is the horizontal
@@ -289,22 +289,22 @@ public open external class DOMRect : DOMRectReadOnly {
      */
     override var height: Double
 
-    companion object {
+    public companion object {
         /**
          * The fromRect() static method of the DOMRect object creates a new DOMRect object with a given location and
          * dimensions.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/fromRect_static)
          */
-        fun fromRect(other: DOMRectInit = definedExternally): DOMRect
+        public fun fromRect(other: DOMRectInit = definedExternally): DOMRect
     }
 }
 
 public external interface DOMRectInit : JsAny {
-    var x: Double?
-    var y: Double?
-    var width: Double?
-    var height: Double?
+    public var x: Double?
+    public var y: Double?
+    public var width: Double?
+    public var height: Double?
 }
 
 public fun DOMRectInit(x: Double? = null, y: Double? = null, width: Double? = null, height: Double? = null): DOMRectInit = newJsObject<DOMRectInit>().apply {
@@ -355,7 +355,7 @@ public open external class DOMQuad : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/DOMQuad)
      */
-    constructor(p1: DOMPointInit = definedExternally, p2: DOMPointInit = definedExternally, p3: DOMPointInit = definedExternally, p4: DOMPointInit = definedExternally)
+    public constructor(p1: DOMPointInit = definedExternally, p2: DOMPointInit = definedExternally, p3: DOMPointInit = definedExternally, p4: DOMPointInit = definedExternally)
 
     /**
      * The DOMQuad interface's p1 property holds the DOMPoint object that represents one of the four corners of the
@@ -363,7 +363,7 @@ public open external class DOMQuad : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p1)
      */
-    open val p1: DOMPoint
+    public open val p1: DOMPoint
 
     /**
      * The DOMQuad interface's p2 property holds the DOMPoint object that represents one of the four corners of the
@@ -371,7 +371,7 @@ public open external class DOMQuad : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p2)
      */
-    open val p2: DOMPoint
+    public open val p2: DOMPoint
 
     /**
      * The DOMQuad interface's p3 property holds the DOMPoint object that represents one of the four corners of the
@@ -379,7 +379,7 @@ public open external class DOMQuad : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p3)
      */
-    open val p3: DOMPoint
+    public open val p3: DOMPoint
 
     /**
      * The DOMQuad interface's p4 property holds the DOMPoint object that represents one of the four corners of the
@@ -387,7 +387,7 @@ public open external class DOMQuad : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p4)
      */
-    open val p4: DOMPoint
+    public open val p4: DOMPoint
 
     /**
      * The DOMQuad method getBounds() returns a DOMRect object representing the smallest rectangle that fully contains
@@ -395,7 +395,7 @@ public open external class DOMQuad : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/getBounds)
      */
-    open fun getBounds(): DOMRect
+    public open fun getBounds(): DOMRect
 
     /**
      * The toJSON() method of the DOMQuad interface returns a JSON-serializable plain object representing the DOMQuad
@@ -403,16 +403,16 @@ public open external class DOMQuad : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 
-    companion object {
+    public companion object {
         /**
          * The fromRect() static method of the DOMQuad interface returns a new DOMQuad object based on the provided set
          * of coordinates in the shape of a DOMRect object.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/fromRect_static)
          */
-        fun fromRect(other: DOMRectInit = definedExternally): DOMQuad
+        public fun fromRect(other: DOMRectInit = definedExternally): DOMQuad
 
         /**
          * The fromQuad() static method of the DOMQuad interface returns a new DOMQuad object based on the provided set
@@ -420,15 +420,15 @@ public open external class DOMQuad : JsAny {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/fromQuad_static)
          */
-        fun fromQuad(other: DOMQuadInit = definedExternally): DOMQuad
+        public fun fromQuad(other: DOMQuadInit = definedExternally): DOMQuad
     }
 }
 
 public external interface DOMQuadInit : JsAny {
-    var p1: DOMPointInit?
-    var p2: DOMPointInit?
-    var p3: DOMPointInit?
-    var p4: DOMPointInit?
+    public var p1: DOMPointInit?
+    public var p2: DOMPointInit?
+    public var p3: DOMPointInit?
+    public var p4: DOMPointInit?
 }
 
 public fun DOMQuadInit(p1: DOMPointInit? = null, p2: DOMPointInit? = null, p3: DOMPointInit? = null, p4: DOMPointInit? = null): DOMQuadInit = newJsObject<DOMQuadInit>().apply {
@@ -452,7 +452,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/DOMMatrixReadOnly)
      */
-    constructor(init: String)
+    public constructor(init: String)
 
     /**
      * The DOMMatrixReadOnly() constructor creates a new DOMMatrixReadOnly object which represents a 4x4 matrix,
@@ -460,7 +460,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/DOMMatrixReadOnly)
      */
-    constructor(init: JsArray<JsNumber>)
+    public constructor(init: JsArray<JsNumber>)
 
     /**
      * The DOMMatrixReadOnly() constructor creates a new DOMMatrixReadOnly object which represents a 4x4 matrix,
@@ -468,7 +468,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/DOMMatrixReadOnly)
      */
-    constructor()
+    public constructor()
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -477,7 +477,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val a: Double
+    public open val a: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -486,7 +486,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val b: Double
+    public open val b: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -495,7 +495,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val c: Double
+    public open val c: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -504,7 +504,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val d: Double
+    public open val d: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -513,7 +513,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val e: Double
+    public open val e: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -522,7 +522,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val f: Double
+    public open val f: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -531,7 +531,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m11: Double
+    public open val m11: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -540,7 +540,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m12: Double
+    public open val m12: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -549,7 +549,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m13: Double
+    public open val m13: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -558,7 +558,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m14: Double
+    public open val m14: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -567,7 +567,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m21: Double
+    public open val m21: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -576,7 +576,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m22: Double
+    public open val m22: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -585,7 +585,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m23: Double
+    public open val m23: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -594,7 +594,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m24: Double
+    public open val m24: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -603,7 +603,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m31: Double
+    public open val m31: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -612,7 +612,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m32: Double
+    public open val m32: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -621,7 +621,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m33: Double
+    public open val m33: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -630,7 +630,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m34: Double
+    public open val m34: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -639,7 +639,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m41: Double
+    public open val m41: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -648,7 +648,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m42: Double
+    public open val m42: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -657,7 +657,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m43: Double
+    public open val m43: Double
 
     /**
      * The DOMMatrixReadOnly interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The
@@ -666,7 +666,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
      */
-    open val m44: Double
+    public open val m44: Double
 
     /**
      * The readonly is2D property of the DOMMatrixReadOnly interface is a Boolean flag that is true when the matrix is
@@ -675,7 +675,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/is2D)
      */
-    open val is2D: Boolean
+    public open val is2D: Boolean
 
     /**
      * The readonly isIdentity property of the DOMMatrixReadOnly interface is a Boolean whose value is true if the
@@ -683,7 +683,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/isIdentity)
      */
-    open val isIdentity: Boolean
+    public open val isIdentity: Boolean
 
     /**
      * The translate() method of the DOMMatrixReadOnly interface creates a new matrix being the result of the original
@@ -691,7 +691,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/translate)
      */
-    open fun translate(tx: Double = definedExternally, ty: Double = definedExternally, tz: Double = definedExternally): DOMMatrix
+    public open fun translate(tx: Double = definedExternally, ty: Double = definedExternally, tz: Double = definedExternally): DOMMatrix
 
     /**
      * The scale() method of the DOMMatrixReadOnly interface creates a new matrix being the result of the original
@@ -699,8 +699,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale)
      */
-    open fun scale(scaleX: Double = definedExternally, scaleY: Double = definedExternally, scaleZ: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
-    open fun scaleNonUniform(scaleX: Double = definedExternally, scaleY: Double = definedExternally): DOMMatrix
+    public open fun scale(scaleX: Double = definedExternally, scaleY: Double = definedExternally, scaleZ: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
+    public open fun scaleNonUniform(scaleX: Double = definedExternally, scaleY: Double = definedExternally): DOMMatrix
 
     /**
      * The scale3d() method of the DOMMatrixReadOnly interface creates a new matrix which is the result of a 3D scale
@@ -710,7 +710,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale3d)
      */
-    open fun scale3d(scale: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
+    public open fun scale3d(scale: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
 
     /**
      * The rotate() method of the DOMMatrixReadOnly interface returns a new DOMMatrix created by rotating the source
@@ -718,7 +718,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotate)
      */
-    open fun rotate(rotX: Double = definedExternally, rotY: Double = definedExternally, rotZ: Double = definedExternally): DOMMatrix
+    public open fun rotate(rotX: Double = definedExternally, rotY: Double = definedExternally, rotZ: Double = definedExternally): DOMMatrix
 
     /**
      * The rotateFromVector() method of the DOMMatrixReadOnly interface is returns a new DOMMatrix created by rotating
@@ -728,7 +728,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateFromVector)
      */
-    open fun rotateFromVector(x: Double = definedExternally, y: Double = definedExternally): DOMMatrix
+    public open fun rotateFromVector(x: Double = definedExternally, y: Double = definedExternally): DOMMatrix
 
     /**
      * The rotateAxisAngle() method of the DOMMatrixReadOnly interface returns a new DOMMatrix created by rotating the
@@ -736,7 +736,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateAxisAngle)
      */
-    open fun rotateAxisAngle(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, angle: Double = definedExternally): DOMMatrix
+    public open fun rotateAxisAngle(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, angle: Double = definedExternally): DOMMatrix
 
     /**
      * The skewX() method of the DOMMatrixReadOnly interface returns a new DOMMatrix created by applying the specified
@@ -744,7 +744,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewX)
      */
-    open fun skewX(sx: Double = definedExternally): DOMMatrix
+    public open fun skewX(sx: Double = definedExternally): DOMMatrix
 
     /**
      * The skewY() method of the DOMMatrixReadOnly interface returns a new DOMMatrix created by applying the specified
@@ -752,7 +752,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewY)
      */
-    open fun skewY(sy: Double = definedExternally): DOMMatrix
+    public open fun skewY(sy: Double = definedExternally): DOMMatrix
 
     /**
      * The multiply() method of the DOMMatrixReadOnly interface creates and returns a new matrix which is the dot
@@ -762,7 +762,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/multiply)
      */
-    open fun multiply(other: DOMMatrixInit = definedExternally): DOMMatrix
+    public open fun multiply(other: DOMMatrixInit = definedExternally): DOMMatrix
 
     /**
      * The flipX() method of the DOMMatrixReadOnly interface creates a new matrix being the result of the original
@@ -771,7 +771,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipX)
      */
-    open fun flipX(): DOMMatrix
+    public open fun flipX(): DOMMatrix
 
     /**
      * The flipY() method of the DOMMatrixReadOnly interface creates a new matrix being the result of the original
@@ -780,7 +780,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipY)
      */
-    open fun flipY(): DOMMatrix
+    public open fun flipY(): DOMMatrix
 
     /**
      * The inverse() method of the DOMMatrixReadOnly interface creates a new matrix which is the inverse of the original
@@ -789,7 +789,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/inverse)
      */
-    open fun inverse(): DOMMatrix
+    public open fun inverse(): DOMMatrix
 
     /**
      * The transformPoint method of the DOMMatrixReadOnly interface creates a new DOMPoint object, transforming a
@@ -797,7 +797,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/transformPoint)
      */
-    open fun transformPoint(point: DOMPointInit = definedExternally): DOMPoint
+    public open fun transformPoint(point: DOMPointInit = definedExternally): DOMPoint
 
     /**
      * The toFloat32Array() method of the DOMMatrixReadOnly interface returns a new Float32Array containing all 16
@@ -808,7 +808,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat32Array)
      */
-    open fun toFloat32Array(): Float32Array
+    public open fun toFloat32Array(): Float32Array
 
     /**
      * The toFloat64Array() method of the DOMMatrixReadOnly interface returns a new Float64Array containing all 16
@@ -819,7 +819,7 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat64Array)
      */
-    open fun toFloat64Array(): Float64Array
+    public open fun toFloat64Array(): Float64Array
 
     /**
      * The toJSON() method of the DOMMatrixReadOnly interface returns a JSON-serializable plain object representing the
@@ -827,16 +827,16 @@ public open external class DOMMatrixReadOnly : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 
-    companion object {
+    public companion object {
         /**
          * The fromMatrix() static method of the DOMMatrixReadOnly interface creates a new DOMMatrixReadOnly object
          * given an existing matrix or an object which provides the values for its properties.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/fromMatrix_static)
          */
-        fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrixReadOnly
+        public fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrixReadOnly
 
         /**
          * The fromFloat32Array() static method of the DOMMatrixReadOnly interface creates a new DOMMatrixReadOnly
@@ -844,7 +844,7 @@ public open external class DOMMatrixReadOnly : JsAny {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/fromFloat32Array_static)
          */
-        fun fromFloat32Array(array32: Float32Array): DOMMatrixReadOnly
+        public fun fromFloat32Array(array32: Float32Array): DOMMatrixReadOnly
 
         /**
          * The fromFloat64Array() static method of the DOMMatrixReadOnly interface creates a new DOMMatrixReadOnly
@@ -852,7 +852,7 @@ public open external class DOMMatrixReadOnly : JsAny {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/fromFloat64Array_static)
          */
-        fun fromFloat64Array(array64: Float64Array): DOMMatrixReadOnly
+        public fun fromFloat64Array(array64: Float64Array): DOMMatrixReadOnly
     }
 }
 
@@ -870,7 +870,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/DOMMatrix)
      */
-    constructor(init: String)
+    public constructor(init: String)
 
     /**
      * The DOMMatrix() constructor creates a new DOMMatrix object which represents a 4x4 matrix, suitable for 2D and 3D
@@ -878,7 +878,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/DOMMatrix)
      */
-    constructor(init: JsArray<JsNumber>)
+    public constructor(init: JsArray<JsNumber>)
 
     /**
      * The DOMMatrix() constructor creates a new DOMMatrix object which represents a 4x4 matrix, suitable for 2D and 3D
@@ -886,7 +886,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/DOMMatrix)
      */
-    constructor()
+    public constructor()
 
     /**
      * The DOMMatrix interface represents 4×4 matrices, suitable for 2D and 3D operations including rotation and
@@ -1094,7 +1094,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/multiplySelf)
      */
-    open fun multiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
+    public open fun multiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
 
     /**
      * The preMultiplySelf() method of the DOMMatrix interface modifies the matrix by pre-multiplying it with the
@@ -1105,7 +1105,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/preMultiplySelf)
      */
-    open fun preMultiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
+    public open fun preMultiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
 
     /**
      * The translateSelf() method of the DOMMatrix interface is a mutable transformation method that modifies a matrix.
@@ -1113,7 +1113,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/translateSelf)
      */
-    open fun translateSelf(tx: Double = definedExternally, ty: Double = definedExternally, tz: Double = definedExternally): DOMMatrix
+    public open fun translateSelf(tx: Double = definedExternally, ty: Double = definedExternally, tz: Double = definedExternally): DOMMatrix
 
     /**
      * The scaleSelf() method of the DOMMatrix interface is a mutable transformation method that modifies a matrix by
@@ -1122,7 +1122,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf)
      */
-    open fun scaleSelf(scaleX: Double = definedExternally, scaleY: Double = definedExternally, scaleZ: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
+    public open fun scaleSelf(scaleX: Double = definedExternally, scaleY: Double = definedExternally, scaleZ: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
 
     /**
      * The scale3dSelf() method of the DOMMatrix interface is a mutable transformation method that modifies a matrix by
@@ -1131,7 +1131,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf)
      */
-    open fun scale3dSelf(scale: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
+    public open fun scale3dSelf(scale: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
 
     /**
      * The rotateSelf() method of the DOMMatrix interface is a mutable transformation method that modifies a matrix. It
@@ -1140,7 +1140,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateSelf)
      */
-    open fun rotateSelf(rotX: Double = definedExternally, rotY: Double = definedExternally, rotZ: Double = definedExternally): DOMMatrix
+    public open fun rotateSelf(rotX: Double = definedExternally, rotY: Double = definedExternally, rotZ: Double = definedExternally): DOMMatrix
 
     /**
      * The rotateFromVectorSelf() method of the DOMMatrix interface is a mutable transformation method that modifies a
@@ -1150,7 +1150,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateFromVectorSelf)
      */
-    open fun rotateFromVectorSelf(x: Double = definedExternally, y: Double = definedExternally): DOMMatrix
+    public open fun rotateFromVectorSelf(x: Double = definedExternally, y: Double = definedExternally): DOMMatrix
 
     /**
      * The rotateAxisAngleSelf() method of the DOMMatrix interface is a transformation method that rotates the source
@@ -1158,7 +1158,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateAxisAngleSelf)
      */
-    open fun rotateAxisAngleSelf(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, angle: Double = definedExternally): DOMMatrix
+    public open fun rotateAxisAngleSelf(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, angle: Double = definedExternally): DOMMatrix
 
     /**
      * The skewXSelf() method of the DOMMatrix interface is a mutable transformation method that modifies a matrix. It
@@ -1167,7 +1167,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/skewXSelf)
      */
-    open fun skewXSelf(sx: Double = definedExternally): DOMMatrix
+    public open fun skewXSelf(sx: Double = definedExternally): DOMMatrix
 
     /**
      * The skewYSelf() method of the DOMMatrix interface is a mutable transformation method that modifies a matrix. It
@@ -1176,7 +1176,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/skewYSelf)
      */
-    open fun skewYSelf(sy: Double = definedExternally): DOMMatrix
+    public open fun skewYSelf(sy: Double = definedExternally): DOMMatrix
 
     /**
      * The invertSelf() method of the DOMMatrix interface inverts the original matrix. If the matrix cannot be inverted,
@@ -1184,7 +1184,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/invertSelf)
      */
-    open fun invertSelf(): DOMMatrix
+    public open fun invertSelf(): DOMMatrix
 
     /**
      * The setMatrixValue() method of the DOMMatrix interface replaces the contents of the matrix with the matrix
@@ -1192,16 +1192,16 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/setMatrixValue)
      */
-    open fun setMatrixValue(transformList: String): DOMMatrix
+    public open fun setMatrixValue(transformList: String): DOMMatrix
 
-    companion object {
+    public companion object {
         /**
          * The fromMatrix() static method of the DOMMatrix interface creates a new DOMMatrix object given an existing
          * matrix or an object which provides the values for its properties.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/fromMatrix_static)
          */
-        fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrix
+        public fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrix
 
         /**
          * The fromFloat32Array() static method of the DOMMatrix interface creates a new DOMMatrix object given an array
@@ -1209,7 +1209,7 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/fromFloat32Array_static)
          */
-        fun fromFloat32Array(array32: Float32Array): DOMMatrix
+        public fun fromFloat32Array(array32: Float32Array): DOMMatrix
 
         /**
          * The fromFloat64Array() static method of the DOMMatrix interface creates a new DOMMatrix object given an array
@@ -1217,23 +1217,23 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/fromFloat64Array_static)
          */
-        fun fromFloat64Array(array64: Float64Array): DOMMatrix
+        public fun fromFloat64Array(array64: Float64Array): DOMMatrix
     }
 }
 
 public external interface DOMMatrix2DInit : JsAny {
-    var a: Double?
-    var b: Double?
-    var c: Double?
-    var d: Double?
-    var e: Double?
-    var f: Double?
-    var m11: Double?
-    var m12: Double?
-    var m21: Double?
-    var m22: Double?
-    var m41: Double?
-    var m42: Double?
+    public var a: Double?
+    public var b: Double?
+    public var c: Double?
+    public var d: Double?
+    public var e: Double?
+    public var f: Double?
+    public var m11: Double?
+    public var m12: Double?
+    public var m21: Double?
+    public var m22: Double?
+    public var m41: Double?
+    public var m42: Double?
 }
 
 public fun DOMMatrix2DInit(a: Double? = null, b: Double? = null, c: Double? = null, d: Double? = null, e: Double? = null, f: Double? = null, m11: Double? = null, m12: Double? = null, m21: Double? = null, m22: Double? = null, m41: Double? = null, m42: Double? = null): DOMMatrix2DInit = newJsObject<DOMMatrix2DInit>().apply {
@@ -1252,17 +1252,17 @@ public fun DOMMatrix2DInit(a: Double? = null, b: Double? = null, c: Double? = nu
 }
 
 public external interface DOMMatrixInit : DOMMatrix2DInit {
-    var m13: Double?
-    var m14: Double?
-    var m23: Double?
-    var m24: Double?
-    var m31: Double?
-    var m32: Double?
-    var m33: Double?
-    var m34: Double?
-    var m43: Double?
-    var m44: Double?
-    var is2D: Boolean?
+    public var m13: Double?
+    public var m14: Double?
+    public var m23: Double?
+    public var m24: Double?
+    public var m31: Double?
+    public var m32: Double?
+    public var m33: Double?
+    public var m34: Double?
+    public var m43: Double?
+    public var m44: Double?
+    public var is2D: Boolean?
 }
 
 public fun DOMMatrixInit(a: Double? = null, b: Double? = null, c: Double? = null, d: Double? = null, e: Double? = null, f: Double? = null, m11: Double? = null, m12: Double? = null, m21: Double? = null, m22: Double? = null, m41: Double? = null, m42: Double? = null, m13: Double? = null, m14: Double? = null, m23: Double? = null, m24: Double? = null, m31: Double? = null, m32: Double? = null, m33: Double? = null, m34: Double? = null, m43: Double? = null, m44: Double? = null, is2D: Boolean? = null): DOMMatrixInit = newJsObject<DOMMatrixInit>().apply {

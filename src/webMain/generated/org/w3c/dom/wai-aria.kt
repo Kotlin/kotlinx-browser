@@ -18,7 +18,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/role)
      */
-    var role: String?
+    public var role: String?
 
     /**
      * The ariaActiveDescendantElement property of the ElementInternals interface represents the current active element
@@ -26,7 +26,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaActiveDescendantElement)
      */
-    var ariaActiveDescendantElement: Element?
+    public var ariaActiveDescendantElement: Element?
 
     /**
      * The ariaAtomic property of the ElementInternals interface reflects the value of the aria-atomic attribute, which
@@ -35,7 +35,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaAtomic)
      */
-    var ariaAtomic: String?
+    public var ariaAtomic: String?
 
     /**
      * The ariaAutoComplete property of the ElementInternals interface reflects the value of the aria-autocomplete
@@ -45,7 +45,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaAutoComplete)
      */
-    var ariaAutoComplete: String?
+    public var ariaAutoComplete: String?
 
     /**
      * The ariaBrailleLabel property of the ElementInternals interface reflects the value of the aria-braillelabel
@@ -53,7 +53,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBrailleLabel)
      */
-    var ariaBrailleLabel: String?
+    public var ariaBrailleLabel: String?
 
     /**
      * The ariaBrailleRoleDescription property of the ElementInternals interface reflects the value of the
@@ -61,7 +61,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBrailleRoleDescription)
      */
-    var ariaBrailleRoleDescription: String?
+    public var ariaBrailleRoleDescription: String?
 
     /**
      * The ariaBusy property of the ElementInternals interface reflects the value of the aria-busy attribute, which
@@ -70,7 +70,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBusy)
      */
-    var ariaBusy: String?
+    public var ariaBusy: String?
 
     /**
      * The ariaChecked property of the ElementInternals interface reflects the value of the aria-checked attribute,
@@ -79,7 +79,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaChecked)
      */
-    var ariaChecked: String?
+    public var ariaChecked: String?
 
     /**
      * The ariaColCount property of the ElementInternals interface reflects the value of the aria-colcount attribute,
@@ -87,7 +87,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColCount)
      */
-    var ariaColCount: String?
+    public var ariaColCount: String?
 
     /**
      * The ariaColIndex property of the ElementInternals interface reflects the value of the aria-colindex attribute,
@@ -96,7 +96,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColIndex)
      */
-    var ariaColIndex: String?
+    public var ariaColIndex: String?
 
     /**
      * The ariaColIndexText property of the ElementInternals interface reflects the value of the aria-colindextext
@@ -104,7 +104,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColIndexText)
      */
-    var ariaColIndexText: String?
+    public var ariaColIndexText: String?
 
     /**
      * The ariaColSpan property of the ElementInternals interface reflects the value of the aria-colspan attribute,
@@ -112,7 +112,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColSpan)
      */
-    var ariaColSpan: String?
+    public var ariaColSpan: String?
 
     /**
      * The ariaControlsElements property of the ElementInternals interface is an array containing the element (or
@@ -121,7 +121,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaControlsElements)
      */
-    var ariaControlsElements: JsArray<Element>?
+    public var ariaControlsElements: JsArray<Element>?
 
     /**
      * The ariaCurrent property of the ElementInternals interface reflects the value of the aria-current attribute,
@@ -129,7 +129,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaCurrent)
      */
-    var ariaCurrent: String?
+    public var ariaCurrent: String?
 
     /**
      * The ariaDescribedByElements property of the ElementInternals interface is an array containing the element (or
@@ -138,7 +138,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDescribedByElements)
      */
-    var ariaDescribedByElements: JsArray<Element>?
+    public var ariaDescribedByElements: JsArray<Element>?
 
     /**
      * The ariaDescription property of the ElementInternals interface reflects the value of the aria-description
@@ -146,7 +146,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDescription)
      */
-    var ariaDescription: String?
+    public var ariaDescription: String?
 
     /**
      * The ariaDetailsElements property of the ElementInternals interface is an array containing the element (or
@@ -155,7 +155,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDetailsElements)
      */
-    var ariaDetailsElements: JsArray<Element>?
+    public var ariaDetailsElements: JsArray<Element>?
 
     /**
      * The ariaDisabled property of the ElementInternals interface reflects the value of the aria-disabled attribute,
@@ -163,7 +163,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDisabled)
      */
-    var ariaDisabled: String?
+    public var ariaDisabled: String?
 
     /**
      * The ariaErrorMessageElements property of the ElementInternals interface is an array containing the element (or
@@ -171,7 +171,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaErrorMessageElements)
      */
-    var ariaErrorMessageElements: JsArray<Element>?
+    public var ariaErrorMessageElements: JsArray<Element>?
 
     /**
      * The ariaExpanded property of the ElementInternals interface reflects the value of the aria-expanded attribute,
@@ -179,7 +179,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaExpanded)
      */
-    var ariaExpanded: String?
+    public var ariaExpanded: String?
 
     /**
      * The ariaFlowToElements property of the ElementInternals interface is an array containing the element (or
@@ -190,7 +190,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaFlowToElements)
      */
-    var ariaFlowToElements: JsArray<Element>?
+    public var ariaFlowToElements: JsArray<Element>?
 
     /**
      * The ariaHasPopup property of the ElementInternals interface reflects the value of the aria-haspopup attribute,
@@ -199,7 +199,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaHasPopup)
      */
-    var ariaHasPopup: String?
+    public var ariaHasPopup: String?
 
     /**
      * The ariaHidden property of the ElementInternals interface reflects the value of the aria-hidden attribute, which
@@ -207,7 +207,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaHidden)
      */
-    var ariaHidden: String?
+    public var ariaHidden: String?
 
     /**
      * The ariaInvalid property of the ElementInternals interface reflects the value of the aria-invalid attribute.
@@ -217,7 +217,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaInvalid)
      */
-    var ariaInvalid: String?
+    public var ariaInvalid: String?
 
     /**
      * The ariaKeyShortcuts property of the ElementInternals interface reflects the value of the aria-keyshortcuts
@@ -226,7 +226,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaKeyShortcuts)
      */
-    var ariaKeyShortcuts: String?
+    public var ariaKeyShortcuts: String?
 
     /**
      * The ariaLabel property of the ElementInternals interface reflects the value of the aria-label attribute, which
@@ -234,7 +234,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLabel)
      */
-    var ariaLabel: String?
+    public var ariaLabel: String?
 
     /**
      * The ariaLabelledByElements property of the ElementInternals interface is an array containing the element (or
@@ -242,7 +242,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLabelledByElements)
      */
-    var ariaLabelledByElements: JsArray<Element>?
+    public var ariaLabelledByElements: JsArray<Element>?
 
     /**
      * The ariaLevel property of the ElementInternals interface reflects the value of the aria-level attribute, which
@@ -250,7 +250,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLevel)
      */
-    var ariaLevel: String?
+    public var ariaLevel: String?
 
     /**
      * The ariaLive property of the ElementInternals interface reflects the value of the aria-live attribute, which
@@ -259,7 +259,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLive)
      */
-    var ariaLive: String?
+    public var ariaLive: String?
 
     /**
      * The ariaModal property of the ElementInternals interface reflects the value of the aria-modal attribute, which
@@ -267,7 +267,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaModal)
      */
-    var ariaModal: String?
+    public var ariaModal: String?
 
     /**
      * The ariaMultiLine property of the ElementInternals interface reflects the value of the aria-multiline attribute,
@@ -275,7 +275,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaMultiLine)
      */
-    var ariaMultiLine: String?
+    public var ariaMultiLine: String?
 
     /**
      * The ariaMultiSelectable property of the ElementInternals interface reflects the value of the aria-multiselectable
@@ -283,7 +283,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaMultiSelectable)
      */
-    var ariaMultiSelectable: String?
+    public var ariaMultiSelectable: String?
 
     /**
      * The ariaOrientation property of the ElementInternals interface reflects the value of the aria-orientation
@@ -291,7 +291,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaOrientation)
      */
-    var ariaOrientation: String?
+    public var ariaOrientation: String?
 
     /**
      * The ariaOwnsElements property of the ElementInternals interface is an array containing the element (or elements)
@@ -301,7 +301,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaOwnsElements)
      */
-    var ariaOwnsElements: JsArray<Element>?
+    public var ariaOwnsElements: JsArray<Element>?
 
     /**
      * The ariaPlaceholder property of the ElementInternals interface reflects the value of the aria-placeholder
@@ -309,7 +309,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPlaceholder)
      */
-    var ariaPlaceholder: String?
+    public var ariaPlaceholder: String?
 
     /**
      * The ariaPosInSet property of the ElementInternals interface reflects the value of the aria-posinset attribute,
@@ -317,7 +317,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPosInSet)
      */
-    var ariaPosInSet: String?
+    public var ariaPosInSet: String?
 
     /**
      * The ariaPressed property of the ElementInternals interface reflects the value of the aria-pressed attribute,
@@ -325,7 +325,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPressed)
      */
-    var ariaPressed: String?
+    public var ariaPressed: String?
 
     /**
      * The ariaReadOnly property of the ElementInternals interface reflects the value of the aria-readonly attribute,
@@ -333,7 +333,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaReadOnly)
      */
-    var ariaReadOnly: String?
+    public var ariaReadOnly: String?
 
     /**
      * The ariaRelevant property of the ElementInternals interface reflects the value of the aria-relevant attribute,
@@ -342,7 +342,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRelevant)
      */
-    var ariaRelevant: String?
+    public var ariaRelevant: String?
 
     /**
      * The ariaRequired property of the ElementInternals interface reflects the value of the aria-required attribute,
@@ -350,7 +350,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRequired)
      */
-    var ariaRequired: String?
+    public var ariaRequired: String?
 
     /**
      * The ariaRoleDescription property of the ElementInternals interface reflects the value of the aria-roledescription
@@ -358,7 +358,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRoleDescription)
      */
-    var ariaRoleDescription: String?
+    public var ariaRoleDescription: String?
 
     /**
      * The ariaRowCount property of the ElementInternals interface reflects the value of the aria-rowcount attribute,
@@ -366,7 +366,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowCount)
      */
-    var ariaRowCount: String?
+    public var ariaRowCount: String?
 
     /**
      * The ariaRowIndex property of the ElementInternals interface reflects the value of the aria-rowindex attribute,
@@ -375,7 +375,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowIndex)
      */
-    var ariaRowIndex: String?
+    public var ariaRowIndex: String?
 
     /**
      * The ariaRowIndexText property of the ElementInternals interface reflects the value of the aria-rowindextext
@@ -383,7 +383,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowIndexText)
      */
-    var ariaRowIndexText: String?
+    public var ariaRowIndexText: String?
 
     /**
      * The ariaRowSpan property of the ElementInternals interface reflects the value of the aria-rowspan attribute,
@@ -391,7 +391,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowSpan)
      */
-    var ariaRowSpan: String?
+    public var ariaRowSpan: String?
 
     /**
      * The ariaSelected property of the ElementInternals interface reflects the value of the aria-selected attribute,
@@ -399,7 +399,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSelected)
      */
-    var ariaSelected: String?
+    public var ariaSelected: String?
 
     /**
      * The ariaSetSize property of the ElementInternals interface reflects the value of the aria-setsize attribute,
@@ -407,7 +407,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSetSize)
      */
-    var ariaSetSize: String?
+    public var ariaSetSize: String?
 
     /**
      * The ariaSort property of the ElementInternals interface reflects the value of the aria-sort attribute, which
@@ -415,7 +415,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSort)
      */
-    var ariaSort: String?
+    public var ariaSort: String?
 
     /**
      * The ariaValueMax property of the ElementInternals interface reflects the value of the aria-valuemax attribute,
@@ -423,7 +423,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueMax)
      */
-    var ariaValueMax: String?
+    public var ariaValueMax: String?
 
     /**
      * The ariaValueMin property of the ElementInternals interface reflects the value of the aria-valuemin attribute,
@@ -431,7 +431,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueMin)
      */
-    var ariaValueMin: String?
+    public var ariaValueMin: String?
 
     /**
      * The ariaValueNow property of the ElementInternals interface reflects the value of the aria-valuenow attribute,
@@ -439,7 +439,7 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueNow)
      */
-    var ariaValueNow: String?
+    public var ariaValueNow: String?
 
     /**
      * The ariaValueText property of the ElementInternals interface reflects the value of the aria-valuetext attribute,
@@ -447,19 +447,19 @@ public external interface ARIAMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueText)
      */
-    var ariaValueText: String?
+    public var ariaValueText: String?
 }
 
 public external interface AriaNotifyPriority : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val AriaNotifyPriority.Companion.NORMAL: AriaNotifyPriority get() = "normal".toJsString().unsafeCast<AriaNotifyPriority>()
 public inline val AriaNotifyPriority.Companion.HIGH: AriaNotifyPriority get() = "high".toJsString().unsafeCast<AriaNotifyPriority>()
 
 public external interface AriaNotificationOptions : JsAny {
-    var priority: AriaNotifyPriority?
+    public var priority: AriaNotifyPriority?
 }
 
 public fun AriaNotificationOptions(priority: AriaNotifyPriority? = null): AriaNotificationOptions = newJsObject<AriaNotificationOptions>().apply {
@@ -472,5 +472,5 @@ public external interface ARIANotifyMixin : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaNotify)
      */
-    fun ariaNotify(announcement: String, options: AriaNotificationOptions = definedExternally)
+    public fun ariaNotify(announcement: String, options: AriaNotificationOptions = definedExternally)
 }

@@ -49,6 +49,9 @@ if (!versionSuffix.isNullOrBlank()) {
 }
 
 kotlin {
+    // Every public declaration says so, generated ones included: the ABI is what users get (see api/).
+    explicitApi()
+
     @OptIn(org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation::class)
     abiValidation()
 

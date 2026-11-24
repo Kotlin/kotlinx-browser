@@ -59,7 +59,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/copyBufferSubData)
      */
-    fun copyBufferSubData(readTarget: Int, writeTarget: Int, readOffset: Double, writeOffset: Double, size: Double)
+    public fun copyBufferSubData(readTarget: Int, writeTarget: Int, readOffset: Double, writeOffset: Double, size: Double)
 
     /**
      * The WebGL2RenderingContext.getBufferSubData() method of the WebGL 2 API reads data from a buffer binding point
@@ -67,7 +67,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getBufferSubData)
      */
-    fun getBufferSubData(target: Int, srcByteOffset: Double, dstBuffer: ArrayBufferView, dstOffset: Double = definedExternally, length: Int = definedExternally)
+    public fun getBufferSubData(target: Int, srcByteOffset: Double, dstBuffer: ArrayBufferView, dstOffset: Double = definedExternally, length: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.blitFramebuffer() method of the WebGL 2 API transfers a block of pixels from the read
@@ -76,7 +76,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/blitFramebuffer)
      */
-    fun blitFramebuffer(srcX0: Int, srcY0: Int, srcX1: Int, srcY1: Int, dstX0: Int, dstY0: Int, dstX1: Int, dstY1: Int, mask: Int, filter: Int)
+    public fun blitFramebuffer(srcX0: Int, srcY0: Int, srcX1: Int, srcY1: Int, dstX0: Int, dstY0: Int, dstX1: Int, dstY1: Int, mask: Int, filter: Int)
 
     /**
      * The WebGL2RenderingContext.framebufferTextureLayer() method of the WebGL 2 API attaches a single layer of a
@@ -84,7 +84,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/framebufferTextureLayer)
      */
-    fun framebufferTextureLayer(target: Int, attachment: Int, texture: WebGLTexture?, level: Int, layer: Int)
+    public fun framebufferTextureLayer(target: Int, attachment: Int, texture: WebGLTexture?, level: Int, layer: Int)
 
     /**
      * The WebGL2RenderingContext.invalidateFramebuffer() method of the WebGL 2 API invalidates the contents of
@@ -92,7 +92,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/invalidateFramebuffer)
      */
-    fun invalidateFramebuffer(target: Int, attachments: JsArray<JsNumber>)
+    public fun invalidateFramebuffer(target: Int, attachments: JsArray<JsNumber>)
 
     /**
      * The WebGL2RenderingContext.invalidateSubFramebuffer() method of the WebGL 2 API invalidates portions of the
@@ -100,7 +100,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/invalidateSubFramebuffer)
      */
-    fun invalidateSubFramebuffer(target: Int, attachments: JsArray<JsNumber>, x: Int, y: Int, width: Int, height: Int)
+    public fun invalidateSubFramebuffer(target: Int, attachments: JsArray<JsNumber>, x: Int, y: Int, width: Int, height: Int)
 
     /**
      * The WebGL2RenderingContext.readBuffer() method of the WebGL 2 API selects a color buffer as the source for pixels
@@ -108,7 +108,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/readBuffer)
      */
-    fun readBuffer(src: Int)
+    public fun readBuffer(src: Int)
 
     /**
      * The WebGL2RenderingContext.getInternalformatParameter() method of the WebGL 2 API returns information about
@@ -116,7 +116,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getInternalformatParameter)
      */
-    fun getInternalformatParameter(target: Int, internalformat: Int, pname: Int): JsAny?
+    public fun getInternalformatParameter(target: Int, internalformat: Int, pname: Int): JsAny?
 
     /**
      * The WebGL2RenderingContext.renderbufferStorageMultisample() method of the WebGL 2 API returns creates and
@@ -124,7 +124,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/renderbufferStorageMultisample)
      */
-    fun renderbufferStorageMultisample(target: Int, samples: Int, internalformat: Int, width: Int, height: Int)
+    public fun renderbufferStorageMultisample(target: Int, samples: Int, internalformat: Int, width: Int, height: Int)
 
     /**
      * The texStorage2D() method of the WebGL2RenderingContext of the WebGL API specifies all levels of two-dimensional
@@ -132,7 +132,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texStorage2D)
      */
-    fun texStorage2D(target: Int, levels: Int, internalformat: Int, width: Int, height: Int)
+    public fun texStorage2D(target: Int, levels: Int, internalformat: Int, width: Int, height: Int)
 
     /**
      * The texStorage3D() method of the WebGL2RenderingContext of the WebGL API specifies all levels of
@@ -140,7 +140,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texStorage3D)
      */
-    fun texStorage3D(target: Int, levels: Int, internalformat: Int, width: Int, height: Int, depth: Int)
+    public fun texStorage3D(target: Int, levels: Int, internalformat: Int, width: Int, height: Int, depth: Int)
 
     /**
      * The texImage3D() method of the WebGL2RenderingContext interface of the WebGL API specifies a three-dimensional
@@ -148,7 +148,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texImage3D)
      */
-    fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, pboOffset: Double)
+    public fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, pboOffset: Double)
 
     /**
      * The texImage3D() method of the WebGL2RenderingContext interface of the WebGL API specifies a three-dimensional
@@ -156,7 +156,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texImage3D)
      */
-    fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, source: TexImageSource)
+    public fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, source: TexImageSource)
 
     /**
      * The texImage3D() method of the WebGL2RenderingContext interface of the WebGL API specifies a three-dimensional
@@ -164,7 +164,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texImage3D)
      */
-    fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, srcData: ArrayBufferView?)
+    public fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, srcData: ArrayBufferView?)
 
     /**
      * The texImage3D() method of the WebGL2RenderingContext interface of the WebGL API specifies a three-dimensional
@@ -172,7 +172,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texImage3D)
      */
-    fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, srcData: ArrayBufferView, srcOffset: Double)
+    public fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, srcData: ArrayBufferView, srcOffset: Double)
 
     /**
      * The texSubImage3D() method of the WebGL2RenderingContext interface of the WebGL API specifies a three-dimensional
@@ -180,7 +180,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texSubImage3D)
      */
-    fun texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, type: Int, pboOffset: Double)
+    public fun texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, type: Int, pboOffset: Double)
 
     /**
      * The texSubImage3D() method of the WebGL2RenderingContext interface of the WebGL API specifies a three-dimensional
@@ -188,7 +188,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texSubImage3D)
      */
-    fun texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, type: Int, source: TexImageSource)
+    public fun texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, type: Int, source: TexImageSource)
 
     /**
      * The texSubImage3D() method of the WebGL2RenderingContext interface of the WebGL API specifies a three-dimensional
@@ -196,7 +196,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texSubImage3D)
      */
-    fun texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, type: Int, srcData: ArrayBufferView?, srcOffset: Double = definedExternally)
+    public fun texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, type: Int, srcData: ArrayBufferView?, srcOffset: Double = definedExternally)
 
     /**
      * The copyTexSubImage3D() method of the WebGL2RenderingContext interface of the WebGL API copies pixels from the
@@ -204,7 +204,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/copyTexSubImage3D)
      */
-    fun copyTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, x: Int, y: Int, width: Int, height: Int)
+    public fun copyTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, x: Int, y: Int, width: Int, height: Int)
 
     /**
      * The compressedTexImage3D() method of the WebGL2RenderingContext interface of the WebGL API specifies a
@@ -212,7 +212,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexImage3D)
      */
-    fun compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, imageSize: Int, offset: Double)
+    public fun compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, imageSize: Int, offset: Double)
 
     /**
      * The compressedTexImage3D() method of the WebGL2RenderingContext interface of the WebGL API specifies a
@@ -220,7 +220,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexImage3D)
      */
-    fun compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
+    public fun compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
 
     /**
      * The compressedTexSubImage3D() method of the WebGL2RenderingContext interface of the WebGL API specifies a
@@ -228,7 +228,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexSubImage3D)
      */
-    fun compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, imageSize: Int, offset: Double)
+    public fun compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, imageSize: Int, offset: Double)
 
     /**
      * The compressedTexSubImage3D() method of the WebGL2RenderingContext interface of the WebGL API specifies a
@@ -236,7 +236,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexSubImage3D)
      */
-    fun compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
+    public fun compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.getFragDataLocation() method of the WebGL 2 API returns the binding of color numbers
@@ -244,7 +244,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getFragDataLocation)
      */
-    fun getFragDataLocation(program: WebGLProgram, name: String): Int
+    public fun getFragDataLocation(program: WebGLProgram, name: String): Int
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -252,7 +252,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform1ui(location: WebGLUniformLocation?, v0: Int)
+    public fun uniform1ui(location: WebGLUniformLocation?, v0: Int)
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -260,7 +260,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform2ui(location: WebGLUniformLocation?, v0: Int, v1: Int)
+    public fun uniform2ui(location: WebGLUniformLocation?, v0: Int, v1: Int)
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -268,7 +268,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform3ui(location: WebGLUniformLocation?, v0: Int, v1: Int, v2: Int)
+    public fun uniform3ui(location: WebGLUniformLocation?, v0: Int, v1: Int, v2: Int)
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -276,7 +276,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform4ui(location: WebGLUniformLocation?, v0: Int, v1: Int, v2: Int, v3: Int)
+    public fun uniform4ui(location: WebGLUniformLocation?, v0: Int, v1: Int, v2: Int, v3: Int)
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -284,7 +284,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform1uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform1uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -292,7 +292,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform1uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform1uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -300,7 +300,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform2uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform2uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -308,7 +308,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform2uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform2uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -316,7 +316,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform3uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform3uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -324,7 +324,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform3uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform3uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -332,7 +332,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform4uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform4uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniform\[1234\]\[uif\]\[v\]() methods of the WebGL API specify values of uniform
@@ -340,7 +340,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
      */
-    fun uniform4uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform4uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -348,7 +348,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix3x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix3x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -356,7 +356,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix3x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix3x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -364,7 +364,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix4x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix4x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -372,7 +372,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix4x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix4x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -380,7 +380,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix2x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix2x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -388,7 +388,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix2x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix2x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -396,7 +396,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix4x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix4x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -404,7 +404,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix4x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix4x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -412,7 +412,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix2x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix2x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -420,7 +420,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix2x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix2x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -428,7 +428,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix3x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix3x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -436,7 +436,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix3x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix3x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.vertexAttribI4\[u\]i\[v\]() methods of the WebGL 2 API specify integer values for
@@ -444,7 +444,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
      */
-    fun vertexAttribI4i(index: Int, x: Int, y: Int, z: Int, w: Int)
+    public fun vertexAttribI4i(index: Int, x: Int, y: Int, z: Int, w: Int)
 
     /**
      * The WebGL2RenderingContext.vertexAttribI4\[u\]i\[v\]() methods of the WebGL 2 API specify integer values for
@@ -452,7 +452,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
      */
-    fun vertexAttribI4iv(index: Int, values: Int32Array)
+    public fun vertexAttribI4iv(index: Int, values: Int32Array)
 
     /**
      * The WebGL2RenderingContext.vertexAttribI4\[u\]i\[v\]() methods of the WebGL 2 API specify integer values for
@@ -460,7 +460,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
      */
-    fun vertexAttribI4iv(index: Int, values: JsArray<JsNumber>)
+    public fun vertexAttribI4iv(index: Int, values: JsArray<JsNumber>)
 
     /**
      * The WebGL2RenderingContext.vertexAttribI4\[u\]i\[v\]() methods of the WebGL 2 API specify integer values for
@@ -468,7 +468,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
      */
-    fun vertexAttribI4ui(index: Int, x: Int, y: Int, z: Int, w: Int)
+    public fun vertexAttribI4ui(index: Int, x: Int, y: Int, z: Int, w: Int)
 
     /**
      * The WebGL2RenderingContext.vertexAttribI4\[u\]i\[v\]() methods of the WebGL 2 API specify integer values for
@@ -476,7 +476,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
      */
-    fun vertexAttribI4uiv(index: Int, values: Uint32Array)
+    public fun vertexAttribI4uiv(index: Int, values: Uint32Array)
 
     /**
      * The WebGL2RenderingContext.vertexAttribI4\[u\]i\[v\]() methods of the WebGL 2 API specify integer values for
@@ -484,7 +484,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
      */
-    fun vertexAttribI4uiv(index: Int, values: JsArray<JsNumber>)
+    public fun vertexAttribI4uiv(index: Int, values: JsArray<JsNumber>)
 
     /**
      * The WebGL2RenderingContext.vertexAttribIPointer() method of the WebGL 2 API specifies integer data formats and
@@ -492,7 +492,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribIPointer)
      */
-    fun vertexAttribIPointer(index: Int, size: Int, type: Int, stride: Int, offset: Double)
+    public fun vertexAttribIPointer(index: Int, size: Int, type: Int, stride: Int, offset: Double)
 
     /**
      * The WebGL2RenderingContext.vertexAttribDivisor() method of the WebGL 2 API modifies the rate at which generic
@@ -501,7 +501,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribDivisor)
      */
-    fun vertexAttribDivisor(index: Int, divisor: Int)
+    public fun vertexAttribDivisor(index: Int, divisor: Int)
 
     /**
      * The WebGL2RenderingContext.drawArraysInstanced() method of the WebGL 2 API renders primitives from array data
@@ -509,7 +509,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawArraysInstanced)
      */
-    fun drawArraysInstanced(mode: Int, first: Int, count: Int, instanceCount: Int)
+    public fun drawArraysInstanced(mode: Int, first: Int, count: Int, instanceCount: Int)
 
     /**
      * The WebGL2RenderingContext.drawElementsInstanced() method of the WebGL 2 API renders primitives from array data
@@ -517,7 +517,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawElementsInstanced)
      */
-    fun drawElementsInstanced(mode: Int, count: Int, type: Int, offset: Double, instanceCount: Int)
+    public fun drawElementsInstanced(mode: Int, count: Int, type: Int, offset: Double, instanceCount: Int)
 
     /**
      * The WebGL2RenderingContext.drawRangeElements() method of the WebGL API renders primitives from array data in a
@@ -525,7 +525,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawRangeElements)
      */
-    fun drawRangeElements(mode: Int, start: Int, end: Int, count: Int, type: Int, offset: Double)
+    public fun drawRangeElements(mode: Int, start: Int, end: Int, count: Int, type: Int, offset: Double)
 
     /**
      * The WebGL2RenderingContext.drawBuffers() method of the WebGL 2 API defines draw buffers to which fragment colors
@@ -534,7 +534,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawBuffers)
      */
-    fun drawBuffers(buffers: JsArray<JsNumber>)
+    public fun drawBuffers(buffers: JsArray<JsNumber>)
 
     /**
      * The WebGL2RenderingContext.clearBuffer\[fiuv\]() methods of the WebGL 2 API clear buffers from the currently
@@ -542,7 +542,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
      */
-    fun clearBufferfv(buffer: Int, drawbuffer: Int, values: Float32Array, srcOffset: Double = definedExternally)
+    public fun clearBufferfv(buffer: Int, drawbuffer: Int, values: Float32Array, srcOffset: Double = definedExternally)
 
     /**
      * The WebGL2RenderingContext.clearBuffer\[fiuv\]() methods of the WebGL 2 API clear buffers from the currently
@@ -550,7 +550,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
      */
-    fun clearBufferfv(buffer: Int, drawbuffer: Int, values: JsArray<JsNumber>, srcOffset: Double = definedExternally)
+    public fun clearBufferfv(buffer: Int, drawbuffer: Int, values: JsArray<JsNumber>, srcOffset: Double = definedExternally)
 
     /**
      * The WebGL2RenderingContext.clearBuffer\[fiuv\]() methods of the WebGL 2 API clear buffers from the currently
@@ -558,7 +558,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
      */
-    fun clearBufferiv(buffer: Int, drawbuffer: Int, values: Int32Array, srcOffset: Double = definedExternally)
+    public fun clearBufferiv(buffer: Int, drawbuffer: Int, values: Int32Array, srcOffset: Double = definedExternally)
 
     /**
      * The WebGL2RenderingContext.clearBuffer\[fiuv\]() methods of the WebGL 2 API clear buffers from the currently
@@ -566,7 +566,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
      */
-    fun clearBufferiv(buffer: Int, drawbuffer: Int, values: JsArray<JsNumber>, srcOffset: Double = definedExternally)
+    public fun clearBufferiv(buffer: Int, drawbuffer: Int, values: JsArray<JsNumber>, srcOffset: Double = definedExternally)
 
     /**
      * The WebGL2RenderingContext.clearBuffer\[fiuv\]() methods of the WebGL 2 API clear buffers from the currently
@@ -574,7 +574,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
      */
-    fun clearBufferuiv(buffer: Int, drawbuffer: Int, values: Uint32Array, srcOffset: Double = definedExternally)
+    public fun clearBufferuiv(buffer: Int, drawbuffer: Int, values: Uint32Array, srcOffset: Double = definedExternally)
 
     /**
      * The WebGL2RenderingContext.clearBuffer\[fiuv\]() methods of the WebGL 2 API clear buffers from the currently
@@ -582,7 +582,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
      */
-    fun clearBufferuiv(buffer: Int, drawbuffer: Int, values: JsArray<JsNumber>, srcOffset: Double = definedExternally)
+    public fun clearBufferuiv(buffer: Int, drawbuffer: Int, values: JsArray<JsNumber>, srcOffset: Double = definedExternally)
 
     /**
      * The WebGL2RenderingContext.clearBuffer\[fiuv\]() methods of the WebGL 2 API clear buffers from the currently
@@ -590,7 +590,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
      */
-    fun clearBufferfi(buffer: Int, drawbuffer: Int, depth: Float, stencil: Int)
+    public fun clearBufferfi(buffer: Int, drawbuffer: Int, depth: Float, stencil: Int)
 
     /**
      * The WebGL2RenderingContext.createQuery() method of the WebGL 2 API creates and initializes WebGLQuery objects,
@@ -598,14 +598,14 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createQuery)
      */
-    fun createQuery(): WebGLQuery
+    public fun createQuery(): WebGLQuery
 
     /**
      * The WebGL2RenderingContext.deleteQuery() method of the WebGL 2 API deletes a given WebGLQuery object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteQuery)
      */
-    fun deleteQuery(query: WebGLQuery?)
+    public fun deleteQuery(query: WebGLQuery?)
 
     /**
      * The WebGL2RenderingContext.isQuery() method of the WebGL 2 API returns true if the passed object is a valid
@@ -613,7 +613,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isQuery)
      */
-    fun isQuery(query: WebGLQuery?): Boolean
+    public fun isQuery(query: WebGLQuery?): Boolean
 
     /**
      * The WebGL2RenderingContext.beginQuery() method of the WebGL 2 API starts an asynchronous query. The target
@@ -621,14 +621,14 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/beginQuery)
      */
-    fun beginQuery(target: Int, query: WebGLQuery)
+    public fun beginQuery(target: Int, query: WebGLQuery)
 
     /**
      * The WebGL2RenderingContext.endQuery() method of the WebGL 2 API marks the end of a given query target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/endQuery)
      */
-    fun endQuery(target: Int)
+    public fun endQuery(target: Int)
 
     /**
      * The WebGL2RenderingContext.getQuery() method of the WebGL 2 API returns the currently active WebGLQuery for the
@@ -636,7 +636,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQuery)
      */
-    fun getQuery(target: Int, pname: Int): WebGLQuery?
+    public fun getQuery(target: Int, pname: Int): WebGLQuery?
 
     /**
      * The WebGL2RenderingContext.getQueryParameter() method of the WebGL 2 API returns parameter information of a
@@ -644,7 +644,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQueryParameter)
      */
-    fun getQueryParameter(query: WebGLQuery, pname: Int): JsAny?
+    public fun getQueryParameter(query: WebGLQuery, pname: Int): JsAny?
 
     /**
      * The WebGL2RenderingContext.createSampler() method of the WebGL 2 API creates and initializes WebGLSampler
@@ -652,14 +652,14 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createSampler)
      */
-    fun createSampler(): WebGLSampler
+    public fun createSampler(): WebGLSampler
 
     /**
      * The WebGL2RenderingContext.deleteSampler() method of the WebGL 2 API deletes a given WebGLSampler object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteSampler)
      */
-    fun deleteSampler(sampler: WebGLSampler?)
+    public fun deleteSampler(sampler: WebGLSampler?)
 
     /**
      * The WebGL2RenderingContext.isSampler() method of the WebGL 2 API returns true if the passed object is a valid
@@ -667,7 +667,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isSampler)
      */
-    fun isSampler(sampler: WebGLSampler?): Boolean
+    public fun isSampler(sampler: WebGLSampler?): Boolean
 
     /**
      * The WebGL2RenderingContext.bindSampler() method of the WebGL 2 API binds a passed WebGLSampler object to the
@@ -675,21 +675,21 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindSampler)
      */
-    fun bindSampler(unit: Int, sampler: WebGLSampler?)
+    public fun bindSampler(unit: Int, sampler: WebGLSampler?)
 
     /**
      * The WebGL2RenderingContext.samplerParameter\[if\]() methods of the WebGL 2 API set WebGLSampler parameters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/samplerParameter)
      */
-    fun samplerParameteri(sampler: WebGLSampler, pname: Int, param: Int)
+    public fun samplerParameteri(sampler: WebGLSampler, pname: Int, param: Int)
 
     /**
      * The WebGL2RenderingContext.samplerParameter\[if\]() methods of the WebGL 2 API set WebGLSampler parameters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/samplerParameter)
      */
-    fun samplerParameterf(sampler: WebGLSampler, pname: Int, param: Float)
+    public fun samplerParameterf(sampler: WebGLSampler, pname: Int, param: Float)
 
     /**
      * The WebGL2RenderingContext.getSamplerParameter() method of the WebGL 2 API returns parameter information of a
@@ -697,7 +697,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSamplerParameter)
      */
-    fun getSamplerParameter(sampler: WebGLSampler, pname: Int): JsAny?
+    public fun getSamplerParameter(sampler: WebGLSampler, pname: Int): JsAny?
 
     /**
      * The WebGL2RenderingContext.fenceSync() method of the WebGL 2 API creates a new WebGLSync object and inserts it
@@ -705,7 +705,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/fenceSync)
      */
-    fun fenceSync(condition: Int, flags: Int): WebGLSync?
+    public fun fenceSync(condition: Int, flags: Int): WebGLSync?
 
     /**
      * The WebGL2RenderingContext.isSync() method of the WebGL 2 API returns true if the passed object is a valid
@@ -713,14 +713,14 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isSync)
      */
-    fun isSync(sync: WebGLSync?): Boolean
+    public fun isSync(sync: WebGLSync?): Boolean
 
     /**
      * The WebGL2RenderingContext.deleteSync() method of the WebGL 2 API deletes a given WebGLSync object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteSync)
      */
-    fun deleteSync(sync: WebGLSync?)
+    public fun deleteSync(sync: WebGLSync?)
 
     /**
      * The WebGL2RenderingContext.clientWaitSync() method of the WebGL 2 API blocks and waits for a WebGLSync object to
@@ -728,7 +728,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clientWaitSync)
      */
-    fun clientWaitSync(sync: WebGLSync, flags: Int, timeout: Double): Int
+    public fun clientWaitSync(sync: WebGLSync, flags: Int, timeout: Double): Int
 
     /**
      * The WebGL2RenderingContext.waitSync() method of the WebGL 2 API returns immediately, but waits on the GL server
@@ -736,7 +736,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/waitSync)
      */
-    fun waitSync(sync: WebGLSync, flags: Int, timeout: Double)
+    public fun waitSync(sync: WebGLSync, flags: Int, timeout: Double)
 
     /**
      * The WebGL2RenderingContext.getSyncParameter() method of the WebGL 2 API returns parameter information of a
@@ -744,7 +744,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSyncParameter)
      */
-    fun getSyncParameter(sync: WebGLSync, pname: Int): JsAny?
+    public fun getSyncParameter(sync: WebGLSync, pname: Int): JsAny?
 
     /**
      * The WebGL2RenderingContext.createTransformFeedback() method of the WebGL 2 API creates and initializes
@@ -752,7 +752,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createTransformFeedback)
      */
-    fun createTransformFeedback(): WebGLTransformFeedback
+    public fun createTransformFeedback(): WebGLTransformFeedback
 
     /**
      * The WebGL2RenderingContext.deleteTransformFeedback() method of the WebGL 2 API deletes a given
@@ -760,7 +760,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteTransformFeedback)
      */
-    fun deleteTransformFeedback(tf: WebGLTransformFeedback?)
+    public fun deleteTransformFeedback(tf: WebGLTransformFeedback?)
 
     /**
      * The WebGL2RenderingContext.isTransformFeedback() method of the WebGL 2 API returns true if the passed object is a
@@ -768,7 +768,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isTransformFeedback)
      */
-    fun isTransformFeedback(tf: WebGLTransformFeedback?): Boolean
+    public fun isTransformFeedback(tf: WebGLTransformFeedback?): Boolean
 
     /**
      * The WebGL2RenderingContext.bindTransformFeedback() method of the WebGL 2 API binds a passed
@@ -776,7 +776,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindTransformFeedback)
      */
-    fun bindTransformFeedback(target: Int, tf: WebGLTransformFeedback?)
+    public fun bindTransformFeedback(target: Int, tf: WebGLTransformFeedback?)
 
     /**
      * The WebGL2RenderingContext.beginTransformFeedback() method of the WebGL 2 API starts a transform feedback
@@ -784,14 +784,14 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/beginTransformFeedback)
      */
-    fun beginTransformFeedback(primitiveMode: Int)
+    public fun beginTransformFeedback(primitiveMode: Int)
 
     /**
      * The WebGL2RenderingContext.endTransformFeedback() method of the WebGL 2 API ends a transform feedback operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/endTransformFeedback)
      */
-    fun endTransformFeedback()
+    public fun endTransformFeedback()
 
     /**
      * The WebGL2RenderingContext.transformFeedbackVaryings() method of the WebGL 2 API specifies values to record in
@@ -799,7 +799,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/transformFeedbackVaryings)
      */
-    fun transformFeedbackVaryings(program: WebGLProgram, varyings: JsArray<JsString>, bufferMode: Int)
+    public fun transformFeedbackVaryings(program: WebGLProgram, varyings: JsArray<JsString>, bufferMode: Int)
 
     /**
      * The WebGL2RenderingContext.getTransformFeedbackVarying() method of the WebGL 2 API returns information about
@@ -807,7 +807,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getTransformFeedbackVarying)
      */
-    fun getTransformFeedbackVarying(program: WebGLProgram, index: Int): WebGLActiveInfo?
+    public fun getTransformFeedbackVarying(program: WebGLProgram, index: Int): WebGLActiveInfo?
 
     /**
      * The WebGL2RenderingContext.pauseTransformFeedback() method of the WebGL 2 API pauses a transform feedback
@@ -815,7 +815,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/pauseTransformFeedback)
      */
-    fun pauseTransformFeedback()
+    public fun pauseTransformFeedback()
 
     /**
      * The WebGL2RenderingContext.resumeTransformFeedback() method of the WebGL 2 API resumes a transform feedback
@@ -823,7 +823,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/resumeTransformFeedback)
      */
-    fun resumeTransformFeedback()
+    public fun resumeTransformFeedback()
 
     /**
      * The WebGL2RenderingContext.bindBufferBase() method of the WebGL 2 API binds a given WebGLBuffer to a given
@@ -831,7 +831,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindBufferBase)
      */
-    fun bindBufferBase(target: Int, index: Int, buffer: WebGLBuffer?)
+    public fun bindBufferBase(target: Int, index: Int, buffer: WebGLBuffer?)
 
     /**
      * The WebGL2RenderingContext.bindBufferRange() method of the WebGL 2 API binds a range of a given WebGLBuffer to a
@@ -839,7 +839,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindBufferRange)
      */
-    fun bindBufferRange(target: Int, index: Int, buffer: WebGLBuffer?, offset: Double, size: Double)
+    public fun bindBufferRange(target: Int, index: Int, buffer: WebGLBuffer?, offset: Double, size: Double)
 
     /**
      * The WebGL2RenderingContext.getIndexedParameter() method of the WebGL 2 API returns indexed information about a
@@ -847,7 +847,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getIndexedParameter)
      */
-    fun getIndexedParameter(target: Int, index: Int): JsAny?
+    public fun getIndexedParameter(target: Int, index: Int): JsAny?
 
     /**
      * The WebGL2RenderingContext.getUniformIndices() method of the WebGL 2 API retrieves the indices of a number of
@@ -855,7 +855,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getUniformIndices)
      */
-    fun getUniformIndices(program: WebGLProgram, uniformNames: JsArray<JsString>): JsArray<JsNumber>?
+    public fun getUniformIndices(program: WebGLProgram, uniformNames: JsArray<JsString>): JsArray<JsNumber>?
 
     /**
      * The WebGL2RenderingContext.getActiveUniforms() method of the WebGL 2 API retrieves information about active
@@ -863,7 +863,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniforms)
      */
-    fun getActiveUniforms(program: WebGLProgram, uniformIndices: JsArray<JsNumber>, pname: Int): JsAny?
+    public fun getActiveUniforms(program: WebGLProgram, uniformIndices: JsArray<JsNumber>, pname: Int): JsAny?
 
     /**
      * The WebGL2RenderingContext.getUniformBlockIndex() method of the WebGL 2 API retrieves the index of a uniform
@@ -871,7 +871,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getUniformBlockIndex)
      */
-    fun getUniformBlockIndex(program: WebGLProgram, uniformBlockName: String): Int
+    public fun getUniformBlockIndex(program: WebGLProgram, uniformBlockName: String): Int
 
     /**
      * The WebGL2RenderingContext.getActiveUniformBlockParameter() method of the WebGL 2 API retrieves information about
@@ -879,7 +879,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockParameter)
      */
-    fun getActiveUniformBlockParameter(program: WebGLProgram, uniformBlockIndex: Int, pname: Int): JsAny?
+    public fun getActiveUniformBlockParameter(program: WebGLProgram, uniformBlockIndex: Int, pname: Int): JsAny?
 
     /**
      * The WebGL2RenderingContext.getActiveUniformBlockName() method of the WebGL 2 API retrieves the name of the active
@@ -887,7 +887,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockName)
      */
-    fun getActiveUniformBlockName(program: WebGLProgram, uniformBlockIndex: Int): String?
+    public fun getActiveUniformBlockName(program: WebGLProgram, uniformBlockIndex: Int): String?
 
     /**
      * The WebGL2RenderingContext.uniformBlockBinding() method of the WebGL 2 API assigns binding points for active
@@ -895,7 +895,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformBlockBinding)
      */
-    fun uniformBlockBinding(program: WebGLProgram, uniformBlockIndex: Int, uniformBlockBinding: Int)
+    public fun uniformBlockBinding(program: WebGLProgram, uniformBlockIndex: Int, uniformBlockBinding: Int)
 
     /**
      * The WebGL2RenderingContext.createVertexArray() method of the WebGL 2 API creates and initializes a
@@ -904,7 +904,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createVertexArray)
      */
-    fun createVertexArray(): WebGLVertexArrayObject
+    public fun createVertexArray(): WebGLVertexArrayObject
 
     /**
      * The WebGL2RenderingContext.deleteVertexArray() method of the WebGL 2 API deletes a given WebGLVertexArrayObject
@@ -912,7 +912,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteVertexArray)
      */
-    fun deleteVertexArray(vertexArray: WebGLVertexArrayObject?)
+    public fun deleteVertexArray(vertexArray: WebGLVertexArrayObject?)
 
     /**
      * The WebGL2RenderingContext.isVertexArray() method of the WebGL API returns true if the passed object is a valid
@@ -920,7 +920,7 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isVertexArray)
      */
-    fun isVertexArray(vertexArray: WebGLVertexArrayObject?): Boolean
+    public fun isVertexArray(vertexArray: WebGLVertexArrayObject?): Boolean
 
     /**
      * The WebGL2RenderingContext.bindVertexArray() method of the WebGL 2 API binds a passed WebGLVertexArrayObject
@@ -928,10 +928,10 @@ public external interface WebGL2RenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindVertexArray)
      */
-    fun bindVertexArray(array: WebGLVertexArrayObject?)
+    public fun bindVertexArray(array: WebGLVertexArrayObject?)
 
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val WebGL2RenderingContextBase.Companion.READ_BUFFER: Int get() = 0x0C02
@@ -1204,7 +1204,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferData)
      */
-    fun bufferData(target: Int, size: Double, usage: Int)
+    public fun bufferData(target: Int, size: Double, usage: Int)
 
     /**
      * The WebGL2RenderingContext.bufferData() method of the WebGL API creates and initializes the buffer object's data
@@ -1212,7 +1212,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferData)
      */
-    fun bufferData(target: Int, srcData: BufferDataSource?, usage: Int)
+    public fun bufferData(target: Int, srcData: BufferDataSource?, usage: Int)
 
     /**
      * The WebGL2RenderingContext.bufferSubData() method of the WebGL API updates a subset of a buffer object's data
@@ -1220,7 +1220,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferSubData)
      */
-    fun bufferSubData(target: Int, dstByteOffset: Double, srcData: BufferDataSource)
+    public fun bufferSubData(target: Int, dstByteOffset: Double, srcData: BufferDataSource)
 
     /**
      * The WebGL2RenderingContext.bufferData() method of the WebGL API creates and initializes the buffer object's data
@@ -1228,7 +1228,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferData)
      */
-    fun bufferData(target: Int, srcData: ArrayBufferView, usage: Int, srcOffset: Double, length: Int = definedExternally)
+    public fun bufferData(target: Int, srcData: ArrayBufferView, usage: Int, srcOffset: Double, length: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.bufferSubData() method of the WebGL API updates a subset of a buffer object's data
@@ -1236,7 +1236,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferSubData)
      */
-    fun bufferSubData(target: Int, dstByteOffset: Double, srcData: ArrayBufferView, srcOffset: Double, length: Int = definedExternally)
+    public fun bufferSubData(target: Int, dstByteOffset: Double, srcData: ArrayBufferView, srcOffset: Double, length: Int = definedExternally)
 
     /**
      * The texImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1244,7 +1244,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
      */
-    fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, pixels: ArrayBufferView?)
+    public fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, pixels: ArrayBufferView?)
 
     /**
      * The texImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1252,7 +1252,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
      */
-    fun texImage2D(target: Int, level: Int, internalformat: Int, format: Int, type: Int, source: TexImageSource)
+    public fun texImage2D(target: Int, level: Int, internalformat: Int, format: Int, type: Int, source: TexImageSource)
 
     /**
      * The texSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1260,7 +1260,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
      */
-    fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?)
+    public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?)
 
     /**
      * The texSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1268,7 +1268,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
      */
-    fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, type: Int, source: TexImageSource)
+    public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, type: Int, source: TexImageSource)
 
     /**
      * The texImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1276,7 +1276,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
      */
-    fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, pboOffset: Double)
+    public fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, pboOffset: Double)
 
     /**
      * The texImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1284,7 +1284,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
      */
-    fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, source: TexImageSource)
+    public fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, source: TexImageSource)
 
     /**
      * The texImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1292,7 +1292,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
      */
-    fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, srcData: ArrayBufferView, srcOffset: Double)
+    public fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, srcData: ArrayBufferView, srcOffset: Double)
 
     /**
      * The texSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1300,7 +1300,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
      */
-    fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, pboOffset: Double)
+    public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, pboOffset: Double)
 
     /**
      * The texSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1308,7 +1308,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
      */
-    fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, source: TexImageSource)
+    public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, source: TexImageSource)
 
     /**
      * The texSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1316,7 +1316,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
      */
-    fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, srcData: ArrayBufferView, srcOffset: Double)
+    public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, srcData: ArrayBufferView, srcOffset: Double)
 
     /**
      * The compressedTexImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a
@@ -1324,7 +1324,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexImage2D)
      */
-    fun compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, imageSize: Int, offset: Double)
+    public fun compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, imageSize: Int, offset: Double)
 
     /**
      * The compressedTexImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a
@@ -1332,7 +1332,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexImage2D)
      */
-    fun compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
+    public fun compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
 
     /**
      * The compressedTexSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a
@@ -1340,7 +1340,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexSubImage2D)
      */
-    fun compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, imageSize: Int, offset: Double)
+    public fun compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, imageSize: Int, offset: Double)
 
     /**
      * The compressedTexSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a
@@ -1348,7 +1348,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexSubImage2D)
      */
-    fun compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
+    public fun compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1358,7 +1358,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform1fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform1fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1368,7 +1368,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform1fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform1fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1378,7 +1378,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform2fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform2fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1388,7 +1388,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform2fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform2fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1398,7 +1398,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform3fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform3fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1408,7 +1408,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform3fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform3fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1418,7 +1418,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform4fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform4fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1428,7 +1428,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform4fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform4fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1438,7 +1438,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform1iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform1iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1448,7 +1448,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform1iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform1iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1458,7 +1458,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform2iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform2iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1468,7 +1468,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform2iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform2iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1478,7 +1478,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform3iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform3iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1488,7 +1488,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform3iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform3iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1498,7 +1498,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform4iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform4iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1508,7 +1508,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform4iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniform4iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -1516,7 +1516,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGL2RenderingContext.uniformMatrix\[234\]x\[234\]fv() methods of the WebGL 2 API specify matrix values for
@@ -1524,7 +1524,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
      */
-    fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
@@ -1532,7 +1532,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
      */
-    fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
@@ -1540,7 +1540,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
      */
-    fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
@@ -1548,7 +1548,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
      */
-    fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
@@ -1556,7 +1556,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
      */
-    fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
+    public fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
     /**
      * The WebGLRenderingContext.readPixels() method of the WebGL API reads a block of pixels from a specified rectangle
@@ -1564,7 +1564,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/readPixels)
      */
-    fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, dstData: ArrayBufferView?)
+    public fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, dstData: ArrayBufferView?)
 
     /**
      * The WebGLRenderingContext.readPixels() method of the WebGL API reads a block of pixels from a specified rectangle
@@ -1572,7 +1572,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/readPixels)
      */
-    fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, offset: Double)
+    public fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, offset: Double)
 
     /**
      * The WebGLRenderingContext.readPixels() method of the WebGL API reads a block of pixels from a specified rectangle
@@ -1580,7 +1580,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/readPixels)
      */
-    fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, dstData: ArrayBufferView, dstOffset: Double)
+    public fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, dstData: ArrayBufferView, dstOffset: Double)
 }
 
 /**
@@ -1591,565 +1591,565 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
  */
 public abstract external class WebGL2RenderingContext : WebGLRenderingContextBase, WebGL2RenderingContextBase, WebGL2RenderingContextOverloads, RenderingContext, OffscreenRenderingContext {
 
-    companion object {
-        val DEPTH_BUFFER_BIT: Int
-        val STENCIL_BUFFER_BIT: Int
-        val COLOR_BUFFER_BIT: Int
-        val POINTS: Int
-        val LINES: Int
-        val LINE_LOOP: Int
-        val LINE_STRIP: Int
-        val TRIANGLES: Int
-        val TRIANGLE_STRIP: Int
-        val TRIANGLE_FAN: Int
-        val ZERO: Int
-        val ONE: Int
-        val SRC_COLOR: Int
-        val ONE_MINUS_SRC_COLOR: Int
-        val SRC_ALPHA: Int
-        val ONE_MINUS_SRC_ALPHA: Int
-        val DST_ALPHA: Int
-        val ONE_MINUS_DST_ALPHA: Int
-        val DST_COLOR: Int
-        val ONE_MINUS_DST_COLOR: Int
-        val SRC_ALPHA_SATURATE: Int
-        val FUNC_ADD: Int
-        val BLEND_EQUATION: Int
-        val BLEND_EQUATION_RGB: Int
-        val BLEND_EQUATION_ALPHA: Int
-        val FUNC_SUBTRACT: Int
-        val FUNC_REVERSE_SUBTRACT: Int
-        val BLEND_DST_RGB: Int
-        val BLEND_SRC_RGB: Int
-        val BLEND_DST_ALPHA: Int
-        val BLEND_SRC_ALPHA: Int
-        val CONSTANT_COLOR: Int
-        val ONE_MINUS_CONSTANT_COLOR: Int
-        val CONSTANT_ALPHA: Int
-        val ONE_MINUS_CONSTANT_ALPHA: Int
-        val BLEND_COLOR: Int
-        val ARRAY_BUFFER: Int
-        val ELEMENT_ARRAY_BUFFER: Int
-        val ARRAY_BUFFER_BINDING: Int
-        val ELEMENT_ARRAY_BUFFER_BINDING: Int
-        val STREAM_DRAW: Int
-        val STATIC_DRAW: Int
-        val DYNAMIC_DRAW: Int
-        val BUFFER_SIZE: Int
-        val BUFFER_USAGE: Int
-        val CURRENT_VERTEX_ATTRIB: Int
-        val FRONT: Int
-        val BACK: Int
-        val FRONT_AND_BACK: Int
-        val CULL_FACE: Int
-        val BLEND: Int
-        val DITHER: Int
-        val STENCIL_TEST: Int
-        val DEPTH_TEST: Int
-        val SCISSOR_TEST: Int
-        val POLYGON_OFFSET_FILL: Int
-        val SAMPLE_ALPHA_TO_COVERAGE: Int
-        val SAMPLE_COVERAGE: Int
-        val NO_ERROR: Int
-        val INVALID_ENUM: Int
-        val INVALID_VALUE: Int
-        val INVALID_OPERATION: Int
-        val OUT_OF_MEMORY: Int
-        val CW: Int
-        val CCW: Int
-        val LINE_WIDTH: Int
-        val ALIASED_POINT_SIZE_RANGE: Int
-        val ALIASED_LINE_WIDTH_RANGE: Int
-        val CULL_FACE_MODE: Int
-        val FRONT_FACE: Int
-        val DEPTH_RANGE: Int
-        val DEPTH_WRITEMASK: Int
-        val DEPTH_CLEAR_VALUE: Int
-        val DEPTH_FUNC: Int
-        val STENCIL_CLEAR_VALUE: Int
-        val STENCIL_FUNC: Int
-        val STENCIL_FAIL: Int
-        val STENCIL_PASS_DEPTH_FAIL: Int
-        val STENCIL_PASS_DEPTH_PASS: Int
-        val STENCIL_REF: Int
-        val STENCIL_VALUE_MASK: Int
-        val STENCIL_WRITEMASK: Int
-        val STENCIL_BACK_FUNC: Int
-        val STENCIL_BACK_FAIL: Int
-        val STENCIL_BACK_PASS_DEPTH_FAIL: Int
-        val STENCIL_BACK_PASS_DEPTH_PASS: Int
-        val STENCIL_BACK_REF: Int
-        val STENCIL_BACK_VALUE_MASK: Int
-        val STENCIL_BACK_WRITEMASK: Int
-        val VIEWPORT: Int
-        val SCISSOR_BOX: Int
-        val COLOR_CLEAR_VALUE: Int
-        val COLOR_WRITEMASK: Int
-        val UNPACK_ALIGNMENT: Int
-        val PACK_ALIGNMENT: Int
-        val MAX_TEXTURE_SIZE: Int
-        val MAX_VIEWPORT_DIMS: Int
-        val SUBPIXEL_BITS: Int
-        val RED_BITS: Int
-        val GREEN_BITS: Int
-        val BLUE_BITS: Int
-        val ALPHA_BITS: Int
-        val DEPTH_BITS: Int
-        val STENCIL_BITS: Int
-        val POLYGON_OFFSET_UNITS: Int
-        val POLYGON_OFFSET_FACTOR: Int
-        val TEXTURE_BINDING_2D: Int
-        val SAMPLE_BUFFERS: Int
-        val SAMPLES: Int
-        val SAMPLE_COVERAGE_VALUE: Int
-        val SAMPLE_COVERAGE_INVERT: Int
-        val COMPRESSED_TEXTURE_FORMATS: Int
-        val DONT_CARE: Int
-        val FASTEST: Int
-        val NICEST: Int
-        val GENERATE_MIPMAP_HINT: Int
-        val BYTE: Int
-        val UNSIGNED_BYTE: Int
-        val SHORT: Int
-        val UNSIGNED_SHORT: Int
-        val INT: Int
-        val UNSIGNED_INT: Int
-        val FLOAT: Int
-        val DEPTH_COMPONENT: Int
-        val ALPHA: Int
-        val RGB: Int
-        val RGBA: Int
-        val LUMINANCE: Int
-        val LUMINANCE_ALPHA: Int
-        val UNSIGNED_SHORT_4_4_4_4: Int
-        val UNSIGNED_SHORT_5_5_5_1: Int
-        val UNSIGNED_SHORT_5_6_5: Int
-        val FRAGMENT_SHADER: Int
-        val VERTEX_SHADER: Int
-        val MAX_VERTEX_ATTRIBS: Int
-        val MAX_VERTEX_UNIFORM_VECTORS: Int
-        val MAX_VARYING_VECTORS: Int
-        val MAX_COMBINED_TEXTURE_IMAGE_UNITS: Int
-        val MAX_VERTEX_TEXTURE_IMAGE_UNITS: Int
-        val MAX_TEXTURE_IMAGE_UNITS: Int
-        val MAX_FRAGMENT_UNIFORM_VECTORS: Int
-        val SHADER_TYPE: Int
-        val DELETE_STATUS: Int
-        val LINK_STATUS: Int
-        val VALIDATE_STATUS: Int
-        val ATTACHED_SHADERS: Int
-        val ACTIVE_UNIFORMS: Int
-        val ACTIVE_ATTRIBUTES: Int
-        val SHADING_LANGUAGE_VERSION: Int
-        val CURRENT_PROGRAM: Int
-        val NEVER: Int
-        val LESS: Int
-        val EQUAL: Int
-        val LEQUAL: Int
-        val GREATER: Int
-        val NOTEQUAL: Int
-        val GEQUAL: Int
-        val ALWAYS: Int
-        val KEEP: Int
-        val REPLACE: Int
-        val INCR: Int
-        val DECR: Int
-        val INVERT: Int
-        val INCR_WRAP: Int
-        val DECR_WRAP: Int
-        val VENDOR: Int
-        val RENDERER: Int
-        val VERSION: Int
-        val NEAREST: Int
-        val LINEAR: Int
-        val NEAREST_MIPMAP_NEAREST: Int
-        val LINEAR_MIPMAP_NEAREST: Int
-        val NEAREST_MIPMAP_LINEAR: Int
-        val LINEAR_MIPMAP_LINEAR: Int
-        val TEXTURE_MAG_FILTER: Int
-        val TEXTURE_MIN_FILTER: Int
-        val TEXTURE_WRAP_S: Int
-        val TEXTURE_WRAP_T: Int
-        val TEXTURE_2D: Int
-        val TEXTURE: Int
-        val TEXTURE_CUBE_MAP: Int
-        val TEXTURE_BINDING_CUBE_MAP: Int
-        val TEXTURE_CUBE_MAP_POSITIVE_X: Int
-        val TEXTURE_CUBE_MAP_NEGATIVE_X: Int
-        val TEXTURE_CUBE_MAP_POSITIVE_Y: Int
-        val TEXTURE_CUBE_MAP_NEGATIVE_Y: Int
-        val TEXTURE_CUBE_MAP_POSITIVE_Z: Int
-        val TEXTURE_CUBE_MAP_NEGATIVE_Z: Int
-        val MAX_CUBE_MAP_TEXTURE_SIZE: Int
-        val TEXTURE0: Int
-        val TEXTURE1: Int
-        val TEXTURE2: Int
-        val TEXTURE3: Int
-        val TEXTURE4: Int
-        val TEXTURE5: Int
-        val TEXTURE6: Int
-        val TEXTURE7: Int
-        val TEXTURE8: Int
-        val TEXTURE9: Int
-        val TEXTURE10: Int
-        val TEXTURE11: Int
-        val TEXTURE12: Int
-        val TEXTURE13: Int
-        val TEXTURE14: Int
-        val TEXTURE15: Int
-        val TEXTURE16: Int
-        val TEXTURE17: Int
-        val TEXTURE18: Int
-        val TEXTURE19: Int
-        val TEXTURE20: Int
-        val TEXTURE21: Int
-        val TEXTURE22: Int
-        val TEXTURE23: Int
-        val TEXTURE24: Int
-        val TEXTURE25: Int
-        val TEXTURE26: Int
-        val TEXTURE27: Int
-        val TEXTURE28: Int
-        val TEXTURE29: Int
-        val TEXTURE30: Int
-        val TEXTURE31: Int
-        val ACTIVE_TEXTURE: Int
-        val REPEAT: Int
-        val CLAMP_TO_EDGE: Int
-        val MIRRORED_REPEAT: Int
-        val FLOAT_VEC2: Int
-        val FLOAT_VEC3: Int
-        val FLOAT_VEC4: Int
-        val INT_VEC2: Int
-        val INT_VEC3: Int
-        val INT_VEC4: Int
-        val BOOL: Int
-        val BOOL_VEC2: Int
-        val BOOL_VEC3: Int
-        val BOOL_VEC4: Int
-        val FLOAT_MAT2: Int
-        val FLOAT_MAT3: Int
-        val FLOAT_MAT4: Int
-        val SAMPLER_2D: Int
-        val SAMPLER_CUBE: Int
-        val VERTEX_ATTRIB_ARRAY_ENABLED: Int
-        val VERTEX_ATTRIB_ARRAY_SIZE: Int
-        val VERTEX_ATTRIB_ARRAY_STRIDE: Int
-        val VERTEX_ATTRIB_ARRAY_TYPE: Int
-        val VERTEX_ATTRIB_ARRAY_NORMALIZED: Int
-        val VERTEX_ATTRIB_ARRAY_POINTER: Int
-        val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING: Int
-        val IMPLEMENTATION_COLOR_READ_TYPE: Int
-        val IMPLEMENTATION_COLOR_READ_FORMAT: Int
-        val COMPILE_STATUS: Int
-        val LOW_FLOAT: Int
-        val MEDIUM_FLOAT: Int
-        val HIGH_FLOAT: Int
-        val LOW_INT: Int
-        val MEDIUM_INT: Int
-        val HIGH_INT: Int
-        val FRAMEBUFFER: Int
-        val RENDERBUFFER: Int
-        val RGBA4: Int
-        val RGB5_A1: Int
-        val RGBA8: Int
-        val RGB565: Int
-        val DEPTH_COMPONENT16: Int
-        val STENCIL_INDEX8: Int
-        val DEPTH_STENCIL: Int
-        val RENDERBUFFER_WIDTH: Int
-        val RENDERBUFFER_HEIGHT: Int
-        val RENDERBUFFER_INTERNAL_FORMAT: Int
-        val RENDERBUFFER_RED_SIZE: Int
-        val RENDERBUFFER_GREEN_SIZE: Int
-        val RENDERBUFFER_BLUE_SIZE: Int
-        val RENDERBUFFER_ALPHA_SIZE: Int
-        val RENDERBUFFER_DEPTH_SIZE: Int
-        val RENDERBUFFER_STENCIL_SIZE: Int
-        val FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE: Int
-        val FRAMEBUFFER_ATTACHMENT_OBJECT_NAME: Int
-        val FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL: Int
-        val FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE: Int
-        val COLOR_ATTACHMENT0: Int
-        val DEPTH_ATTACHMENT: Int
-        val STENCIL_ATTACHMENT: Int
-        val DEPTH_STENCIL_ATTACHMENT: Int
-        val NONE: Int
-        val FRAMEBUFFER_COMPLETE: Int
-        val FRAMEBUFFER_INCOMPLETE_ATTACHMENT: Int
-        val FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT: Int
-        val FRAMEBUFFER_INCOMPLETE_DIMENSIONS: Int
-        val FRAMEBUFFER_UNSUPPORTED: Int
-        val FRAMEBUFFER_BINDING: Int
-        val RENDERBUFFER_BINDING: Int
-        val MAX_RENDERBUFFER_SIZE: Int
-        val INVALID_FRAMEBUFFER_OPERATION: Int
-        val UNPACK_FLIP_Y_WEBGL: Int
-        val UNPACK_PREMULTIPLY_ALPHA_WEBGL: Int
-        val CONTEXT_LOST_WEBGL: Int
-        val UNPACK_COLORSPACE_CONVERSION_WEBGL: Int
-        val BROWSER_DEFAULT_WEBGL: Int
-        val READ_BUFFER: Int
-        val UNPACK_ROW_LENGTH: Int
-        val UNPACK_SKIP_ROWS: Int
-        val UNPACK_SKIP_PIXELS: Int
-        val PACK_ROW_LENGTH: Int
-        val PACK_SKIP_ROWS: Int
-        val PACK_SKIP_PIXELS: Int
-        val COLOR: Int
-        val DEPTH: Int
-        val STENCIL: Int
-        val RED: Int
-        val RGB8: Int
-        val RGB10_A2: Int
-        val TEXTURE_BINDING_3D: Int
-        val UNPACK_SKIP_IMAGES: Int
-        val UNPACK_IMAGE_HEIGHT: Int
-        val TEXTURE_3D: Int
-        val TEXTURE_WRAP_R: Int
-        val MAX_3D_TEXTURE_SIZE: Int
-        val UNSIGNED_INT_2_10_10_10_REV: Int
-        val MAX_ELEMENTS_VERTICES: Int
-        val MAX_ELEMENTS_INDICES: Int
-        val TEXTURE_MIN_LOD: Int
-        val TEXTURE_MAX_LOD: Int
-        val TEXTURE_BASE_LEVEL: Int
-        val TEXTURE_MAX_LEVEL: Int
-        val MIN: Int
-        val MAX: Int
-        val DEPTH_COMPONENT24: Int
-        val MAX_TEXTURE_LOD_BIAS: Int
-        val TEXTURE_COMPARE_MODE: Int
-        val TEXTURE_COMPARE_FUNC: Int
-        val CURRENT_QUERY: Int
-        val QUERY_RESULT: Int
-        val QUERY_RESULT_AVAILABLE: Int
-        val STREAM_READ: Int
-        val STREAM_COPY: Int
-        val STATIC_READ: Int
-        val STATIC_COPY: Int
-        val DYNAMIC_READ: Int
-        val DYNAMIC_COPY: Int
-        val MAX_DRAW_BUFFERS: Int
-        val DRAW_BUFFER0: Int
-        val DRAW_BUFFER1: Int
-        val DRAW_BUFFER2: Int
-        val DRAW_BUFFER3: Int
-        val DRAW_BUFFER4: Int
-        val DRAW_BUFFER5: Int
-        val DRAW_BUFFER6: Int
-        val DRAW_BUFFER7: Int
-        val DRAW_BUFFER8: Int
-        val DRAW_BUFFER9: Int
-        val DRAW_BUFFER10: Int
-        val DRAW_BUFFER11: Int
-        val DRAW_BUFFER12: Int
-        val DRAW_BUFFER13: Int
-        val DRAW_BUFFER14: Int
-        val DRAW_BUFFER15: Int
-        val MAX_FRAGMENT_UNIFORM_COMPONENTS: Int
-        val MAX_VERTEX_UNIFORM_COMPONENTS: Int
-        val SAMPLER_3D: Int
-        val SAMPLER_2D_SHADOW: Int
-        val FRAGMENT_SHADER_DERIVATIVE_HINT: Int
-        val PIXEL_PACK_BUFFER: Int
-        val PIXEL_UNPACK_BUFFER: Int
-        val PIXEL_PACK_BUFFER_BINDING: Int
-        val PIXEL_UNPACK_BUFFER_BINDING: Int
-        val FLOAT_MAT2x3: Int
-        val FLOAT_MAT2x4: Int
-        val FLOAT_MAT3x2: Int
-        val FLOAT_MAT3x4: Int
-        val FLOAT_MAT4x2: Int
-        val FLOAT_MAT4x3: Int
-        val SRGB: Int
-        val SRGB8: Int
-        val SRGB8_ALPHA8: Int
-        val COMPARE_REF_TO_TEXTURE: Int
-        val RGBA32F: Int
-        val RGB32F: Int
-        val RGBA16F: Int
-        val RGB16F: Int
-        val VERTEX_ATTRIB_ARRAY_INTEGER: Int
-        val MAX_ARRAY_TEXTURE_LAYERS: Int
-        val MIN_PROGRAM_TEXEL_OFFSET: Int
-        val MAX_PROGRAM_TEXEL_OFFSET: Int
-        val MAX_VARYING_COMPONENTS: Int
-        val TEXTURE_2D_ARRAY: Int
-        val TEXTURE_BINDING_2D_ARRAY: Int
-        val R11F_G11F_B10F: Int
-        val UNSIGNED_INT_10F_11F_11F_REV: Int
-        val RGB9_E5: Int
-        val UNSIGNED_INT_5_9_9_9_REV: Int
-        val TRANSFORM_FEEDBACK_BUFFER_MODE: Int
-        val MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS: Int
-        val TRANSFORM_FEEDBACK_VARYINGS: Int
-        val TRANSFORM_FEEDBACK_BUFFER_START: Int
-        val TRANSFORM_FEEDBACK_BUFFER_SIZE: Int
-        val TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN: Int
-        val RASTERIZER_DISCARD: Int
-        val MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS: Int
-        val MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS: Int
-        val INTERLEAVED_ATTRIBS: Int
-        val SEPARATE_ATTRIBS: Int
-        val TRANSFORM_FEEDBACK_BUFFER: Int
-        val TRANSFORM_FEEDBACK_BUFFER_BINDING: Int
-        val RGBA32UI: Int
-        val RGB32UI: Int
-        val RGBA16UI: Int
-        val RGB16UI: Int
-        val RGBA8UI: Int
-        val RGB8UI: Int
-        val RGBA32I: Int
-        val RGB32I: Int
-        val RGBA16I: Int
-        val RGB16I: Int
-        val RGBA8I: Int
-        val RGB8I: Int
-        val RED_INTEGER: Int
-        val RGB_INTEGER: Int
-        val RGBA_INTEGER: Int
-        val SAMPLER_2D_ARRAY: Int
-        val SAMPLER_2D_ARRAY_SHADOW: Int
-        val SAMPLER_CUBE_SHADOW: Int
-        val UNSIGNED_INT_VEC2: Int
-        val UNSIGNED_INT_VEC3: Int
-        val UNSIGNED_INT_VEC4: Int
-        val INT_SAMPLER_2D: Int
-        val INT_SAMPLER_3D: Int
-        val INT_SAMPLER_CUBE: Int
-        val INT_SAMPLER_2D_ARRAY: Int
-        val UNSIGNED_INT_SAMPLER_2D: Int
-        val UNSIGNED_INT_SAMPLER_3D: Int
-        val UNSIGNED_INT_SAMPLER_CUBE: Int
-        val UNSIGNED_INT_SAMPLER_2D_ARRAY: Int
-        val DEPTH_COMPONENT32F: Int
-        val DEPTH32F_STENCIL8: Int
-        val FLOAT_32_UNSIGNED_INT_24_8_REV: Int
-        val FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING: Int
-        val FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE: Int
-        val FRAMEBUFFER_ATTACHMENT_RED_SIZE: Int
-        val FRAMEBUFFER_ATTACHMENT_GREEN_SIZE: Int
-        val FRAMEBUFFER_ATTACHMENT_BLUE_SIZE: Int
-        val FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE: Int
-        val FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE: Int
-        val FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE: Int
-        val FRAMEBUFFER_DEFAULT: Int
-        val UNSIGNED_INT_24_8: Int
-        val DEPTH24_STENCIL8: Int
-        val UNSIGNED_NORMALIZED: Int
-        val DRAW_FRAMEBUFFER_BINDING: Int
-        val READ_FRAMEBUFFER: Int
-        val DRAW_FRAMEBUFFER: Int
-        val READ_FRAMEBUFFER_BINDING: Int
-        val RENDERBUFFER_SAMPLES: Int
-        val FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER: Int
-        val MAX_COLOR_ATTACHMENTS: Int
-        val COLOR_ATTACHMENT1: Int
-        val COLOR_ATTACHMENT2: Int
-        val COLOR_ATTACHMENT3: Int
-        val COLOR_ATTACHMENT4: Int
-        val COLOR_ATTACHMENT5: Int
-        val COLOR_ATTACHMENT6: Int
-        val COLOR_ATTACHMENT7: Int
-        val COLOR_ATTACHMENT8: Int
-        val COLOR_ATTACHMENT9: Int
-        val COLOR_ATTACHMENT10: Int
-        val COLOR_ATTACHMENT11: Int
-        val COLOR_ATTACHMENT12: Int
-        val COLOR_ATTACHMENT13: Int
-        val COLOR_ATTACHMENT14: Int
-        val COLOR_ATTACHMENT15: Int
-        val FRAMEBUFFER_INCOMPLETE_MULTISAMPLE: Int
-        val MAX_SAMPLES: Int
-        val HALF_FLOAT: Int
-        val RG: Int
-        val RG_INTEGER: Int
-        val R8: Int
-        val RG8: Int
-        val R16F: Int
-        val R32F: Int
-        val RG16F: Int
-        val RG32F: Int
-        val R8I: Int
-        val R8UI: Int
-        val R16I: Int
-        val R16UI: Int
-        val R32I: Int
-        val R32UI: Int
-        val RG8I: Int
-        val RG8UI: Int
-        val RG16I: Int
-        val RG16UI: Int
-        val RG32I: Int
-        val RG32UI: Int
-        val VERTEX_ARRAY_BINDING: Int
-        val R8_SNORM: Int
-        val RG8_SNORM: Int
-        val RGB8_SNORM: Int
-        val RGBA8_SNORM: Int
-        val SIGNED_NORMALIZED: Int
-        val COPY_READ_BUFFER: Int
-        val COPY_WRITE_BUFFER: Int
-        val COPY_READ_BUFFER_BINDING: Int
-        val COPY_WRITE_BUFFER_BINDING: Int
-        val UNIFORM_BUFFER: Int
-        val UNIFORM_BUFFER_BINDING: Int
-        val UNIFORM_BUFFER_START: Int
-        val UNIFORM_BUFFER_SIZE: Int
-        val MAX_VERTEX_UNIFORM_BLOCKS: Int
-        val MAX_FRAGMENT_UNIFORM_BLOCKS: Int
-        val MAX_COMBINED_UNIFORM_BLOCKS: Int
-        val MAX_UNIFORM_BUFFER_BINDINGS: Int
-        val MAX_UNIFORM_BLOCK_SIZE: Int
-        val MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS: Int
-        val MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS: Int
-        val UNIFORM_BUFFER_OFFSET_ALIGNMENT: Int
-        val ACTIVE_UNIFORM_BLOCKS: Int
-        val UNIFORM_TYPE: Int
-        val UNIFORM_SIZE: Int
-        val UNIFORM_BLOCK_INDEX: Int
-        val UNIFORM_OFFSET: Int
-        val UNIFORM_ARRAY_STRIDE: Int
-        val UNIFORM_MATRIX_STRIDE: Int
-        val UNIFORM_IS_ROW_MAJOR: Int
-        val UNIFORM_BLOCK_BINDING: Int
-        val UNIFORM_BLOCK_DATA_SIZE: Int
-        val UNIFORM_BLOCK_ACTIVE_UNIFORMS: Int
-        val UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES: Int
-        val UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER: Int
-        val UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER: Int
-        val INVALID_INDEX: Int
-        val MAX_VERTEX_OUTPUT_COMPONENTS: Int
-        val MAX_FRAGMENT_INPUT_COMPONENTS: Int
-        val MAX_SERVER_WAIT_TIMEOUT: Int
-        val OBJECT_TYPE: Int
-        val SYNC_CONDITION: Int
-        val SYNC_STATUS: Int
-        val SYNC_FLAGS: Int
-        val SYNC_FENCE: Int
-        val SYNC_GPU_COMMANDS_COMPLETE: Int
-        val UNSIGNALED: Int
-        val SIGNALED: Int
-        val ALREADY_SIGNALED: Int
-        val TIMEOUT_EXPIRED: Int
-        val CONDITION_SATISFIED: Int
-        val WAIT_FAILED: Int
-        val SYNC_FLUSH_COMMANDS_BIT: Int
-        val VERTEX_ATTRIB_ARRAY_DIVISOR: Int
-        val ANY_SAMPLES_PASSED: Int
-        val ANY_SAMPLES_PASSED_CONSERVATIVE: Int
-        val SAMPLER_BINDING: Int
-        val RGB10_A2UI: Int
-        val INT_2_10_10_10_REV: Int
-        val TRANSFORM_FEEDBACK: Int
-        val TRANSFORM_FEEDBACK_PAUSED: Int
-        val TRANSFORM_FEEDBACK_ACTIVE: Int
-        val TRANSFORM_FEEDBACK_BINDING: Int
-        val TEXTURE_IMMUTABLE_FORMAT: Int
-        val MAX_ELEMENT_INDEX: Int
-        val TEXTURE_IMMUTABLE_LEVELS: Int
-        val TIMEOUT_IGNORED: Double
-        val MAX_CLIENT_WAIT_TIMEOUT_WEBGL: Int
+    public companion object {
+        public val DEPTH_BUFFER_BIT: Int
+        public val STENCIL_BUFFER_BIT: Int
+        public val COLOR_BUFFER_BIT: Int
+        public val POINTS: Int
+        public val LINES: Int
+        public val LINE_LOOP: Int
+        public val LINE_STRIP: Int
+        public val TRIANGLES: Int
+        public val TRIANGLE_STRIP: Int
+        public val TRIANGLE_FAN: Int
+        public val ZERO: Int
+        public val ONE: Int
+        public val SRC_COLOR: Int
+        public val ONE_MINUS_SRC_COLOR: Int
+        public val SRC_ALPHA: Int
+        public val ONE_MINUS_SRC_ALPHA: Int
+        public val DST_ALPHA: Int
+        public val ONE_MINUS_DST_ALPHA: Int
+        public val DST_COLOR: Int
+        public val ONE_MINUS_DST_COLOR: Int
+        public val SRC_ALPHA_SATURATE: Int
+        public val FUNC_ADD: Int
+        public val BLEND_EQUATION: Int
+        public val BLEND_EQUATION_RGB: Int
+        public val BLEND_EQUATION_ALPHA: Int
+        public val FUNC_SUBTRACT: Int
+        public val FUNC_REVERSE_SUBTRACT: Int
+        public val BLEND_DST_RGB: Int
+        public val BLEND_SRC_RGB: Int
+        public val BLEND_DST_ALPHA: Int
+        public val BLEND_SRC_ALPHA: Int
+        public val CONSTANT_COLOR: Int
+        public val ONE_MINUS_CONSTANT_COLOR: Int
+        public val CONSTANT_ALPHA: Int
+        public val ONE_MINUS_CONSTANT_ALPHA: Int
+        public val BLEND_COLOR: Int
+        public val ARRAY_BUFFER: Int
+        public val ELEMENT_ARRAY_BUFFER: Int
+        public val ARRAY_BUFFER_BINDING: Int
+        public val ELEMENT_ARRAY_BUFFER_BINDING: Int
+        public val STREAM_DRAW: Int
+        public val STATIC_DRAW: Int
+        public val DYNAMIC_DRAW: Int
+        public val BUFFER_SIZE: Int
+        public val BUFFER_USAGE: Int
+        public val CURRENT_VERTEX_ATTRIB: Int
+        public val FRONT: Int
+        public val BACK: Int
+        public val FRONT_AND_BACK: Int
+        public val CULL_FACE: Int
+        public val BLEND: Int
+        public val DITHER: Int
+        public val STENCIL_TEST: Int
+        public val DEPTH_TEST: Int
+        public val SCISSOR_TEST: Int
+        public val POLYGON_OFFSET_FILL: Int
+        public val SAMPLE_ALPHA_TO_COVERAGE: Int
+        public val SAMPLE_COVERAGE: Int
+        public val NO_ERROR: Int
+        public val INVALID_ENUM: Int
+        public val INVALID_VALUE: Int
+        public val INVALID_OPERATION: Int
+        public val OUT_OF_MEMORY: Int
+        public val CW: Int
+        public val CCW: Int
+        public val LINE_WIDTH: Int
+        public val ALIASED_POINT_SIZE_RANGE: Int
+        public val ALIASED_LINE_WIDTH_RANGE: Int
+        public val CULL_FACE_MODE: Int
+        public val FRONT_FACE: Int
+        public val DEPTH_RANGE: Int
+        public val DEPTH_WRITEMASK: Int
+        public val DEPTH_CLEAR_VALUE: Int
+        public val DEPTH_FUNC: Int
+        public val STENCIL_CLEAR_VALUE: Int
+        public val STENCIL_FUNC: Int
+        public val STENCIL_FAIL: Int
+        public val STENCIL_PASS_DEPTH_FAIL: Int
+        public val STENCIL_PASS_DEPTH_PASS: Int
+        public val STENCIL_REF: Int
+        public val STENCIL_VALUE_MASK: Int
+        public val STENCIL_WRITEMASK: Int
+        public val STENCIL_BACK_FUNC: Int
+        public val STENCIL_BACK_FAIL: Int
+        public val STENCIL_BACK_PASS_DEPTH_FAIL: Int
+        public val STENCIL_BACK_PASS_DEPTH_PASS: Int
+        public val STENCIL_BACK_REF: Int
+        public val STENCIL_BACK_VALUE_MASK: Int
+        public val STENCIL_BACK_WRITEMASK: Int
+        public val VIEWPORT: Int
+        public val SCISSOR_BOX: Int
+        public val COLOR_CLEAR_VALUE: Int
+        public val COLOR_WRITEMASK: Int
+        public val UNPACK_ALIGNMENT: Int
+        public val PACK_ALIGNMENT: Int
+        public val MAX_TEXTURE_SIZE: Int
+        public val MAX_VIEWPORT_DIMS: Int
+        public val SUBPIXEL_BITS: Int
+        public val RED_BITS: Int
+        public val GREEN_BITS: Int
+        public val BLUE_BITS: Int
+        public val ALPHA_BITS: Int
+        public val DEPTH_BITS: Int
+        public val STENCIL_BITS: Int
+        public val POLYGON_OFFSET_UNITS: Int
+        public val POLYGON_OFFSET_FACTOR: Int
+        public val TEXTURE_BINDING_2D: Int
+        public val SAMPLE_BUFFERS: Int
+        public val SAMPLES: Int
+        public val SAMPLE_COVERAGE_VALUE: Int
+        public val SAMPLE_COVERAGE_INVERT: Int
+        public val COMPRESSED_TEXTURE_FORMATS: Int
+        public val DONT_CARE: Int
+        public val FASTEST: Int
+        public val NICEST: Int
+        public val GENERATE_MIPMAP_HINT: Int
+        public val BYTE: Int
+        public val UNSIGNED_BYTE: Int
+        public val SHORT: Int
+        public val UNSIGNED_SHORT: Int
+        public val INT: Int
+        public val UNSIGNED_INT: Int
+        public val FLOAT: Int
+        public val DEPTH_COMPONENT: Int
+        public val ALPHA: Int
+        public val RGB: Int
+        public val RGBA: Int
+        public val LUMINANCE: Int
+        public val LUMINANCE_ALPHA: Int
+        public val UNSIGNED_SHORT_4_4_4_4: Int
+        public val UNSIGNED_SHORT_5_5_5_1: Int
+        public val UNSIGNED_SHORT_5_6_5: Int
+        public val FRAGMENT_SHADER: Int
+        public val VERTEX_SHADER: Int
+        public val MAX_VERTEX_ATTRIBS: Int
+        public val MAX_VERTEX_UNIFORM_VECTORS: Int
+        public val MAX_VARYING_VECTORS: Int
+        public val MAX_COMBINED_TEXTURE_IMAGE_UNITS: Int
+        public val MAX_VERTEX_TEXTURE_IMAGE_UNITS: Int
+        public val MAX_TEXTURE_IMAGE_UNITS: Int
+        public val MAX_FRAGMENT_UNIFORM_VECTORS: Int
+        public val SHADER_TYPE: Int
+        public val DELETE_STATUS: Int
+        public val LINK_STATUS: Int
+        public val VALIDATE_STATUS: Int
+        public val ATTACHED_SHADERS: Int
+        public val ACTIVE_UNIFORMS: Int
+        public val ACTIVE_ATTRIBUTES: Int
+        public val SHADING_LANGUAGE_VERSION: Int
+        public val CURRENT_PROGRAM: Int
+        public val NEVER: Int
+        public val LESS: Int
+        public val EQUAL: Int
+        public val LEQUAL: Int
+        public val GREATER: Int
+        public val NOTEQUAL: Int
+        public val GEQUAL: Int
+        public val ALWAYS: Int
+        public val KEEP: Int
+        public val REPLACE: Int
+        public val INCR: Int
+        public val DECR: Int
+        public val INVERT: Int
+        public val INCR_WRAP: Int
+        public val DECR_WRAP: Int
+        public val VENDOR: Int
+        public val RENDERER: Int
+        public val VERSION: Int
+        public val NEAREST: Int
+        public val LINEAR: Int
+        public val NEAREST_MIPMAP_NEAREST: Int
+        public val LINEAR_MIPMAP_NEAREST: Int
+        public val NEAREST_MIPMAP_LINEAR: Int
+        public val LINEAR_MIPMAP_LINEAR: Int
+        public val TEXTURE_MAG_FILTER: Int
+        public val TEXTURE_MIN_FILTER: Int
+        public val TEXTURE_WRAP_S: Int
+        public val TEXTURE_WRAP_T: Int
+        public val TEXTURE_2D: Int
+        public val TEXTURE: Int
+        public val TEXTURE_CUBE_MAP: Int
+        public val TEXTURE_BINDING_CUBE_MAP: Int
+        public val TEXTURE_CUBE_MAP_POSITIVE_X: Int
+        public val TEXTURE_CUBE_MAP_NEGATIVE_X: Int
+        public val TEXTURE_CUBE_MAP_POSITIVE_Y: Int
+        public val TEXTURE_CUBE_MAP_NEGATIVE_Y: Int
+        public val TEXTURE_CUBE_MAP_POSITIVE_Z: Int
+        public val TEXTURE_CUBE_MAP_NEGATIVE_Z: Int
+        public val MAX_CUBE_MAP_TEXTURE_SIZE: Int
+        public val TEXTURE0: Int
+        public val TEXTURE1: Int
+        public val TEXTURE2: Int
+        public val TEXTURE3: Int
+        public val TEXTURE4: Int
+        public val TEXTURE5: Int
+        public val TEXTURE6: Int
+        public val TEXTURE7: Int
+        public val TEXTURE8: Int
+        public val TEXTURE9: Int
+        public val TEXTURE10: Int
+        public val TEXTURE11: Int
+        public val TEXTURE12: Int
+        public val TEXTURE13: Int
+        public val TEXTURE14: Int
+        public val TEXTURE15: Int
+        public val TEXTURE16: Int
+        public val TEXTURE17: Int
+        public val TEXTURE18: Int
+        public val TEXTURE19: Int
+        public val TEXTURE20: Int
+        public val TEXTURE21: Int
+        public val TEXTURE22: Int
+        public val TEXTURE23: Int
+        public val TEXTURE24: Int
+        public val TEXTURE25: Int
+        public val TEXTURE26: Int
+        public val TEXTURE27: Int
+        public val TEXTURE28: Int
+        public val TEXTURE29: Int
+        public val TEXTURE30: Int
+        public val TEXTURE31: Int
+        public val ACTIVE_TEXTURE: Int
+        public val REPEAT: Int
+        public val CLAMP_TO_EDGE: Int
+        public val MIRRORED_REPEAT: Int
+        public val FLOAT_VEC2: Int
+        public val FLOAT_VEC3: Int
+        public val FLOAT_VEC4: Int
+        public val INT_VEC2: Int
+        public val INT_VEC3: Int
+        public val INT_VEC4: Int
+        public val BOOL: Int
+        public val BOOL_VEC2: Int
+        public val BOOL_VEC3: Int
+        public val BOOL_VEC4: Int
+        public val FLOAT_MAT2: Int
+        public val FLOAT_MAT3: Int
+        public val FLOAT_MAT4: Int
+        public val SAMPLER_2D: Int
+        public val SAMPLER_CUBE: Int
+        public val VERTEX_ATTRIB_ARRAY_ENABLED: Int
+        public val VERTEX_ATTRIB_ARRAY_SIZE: Int
+        public val VERTEX_ATTRIB_ARRAY_STRIDE: Int
+        public val VERTEX_ATTRIB_ARRAY_TYPE: Int
+        public val VERTEX_ATTRIB_ARRAY_NORMALIZED: Int
+        public val VERTEX_ATTRIB_ARRAY_POINTER: Int
+        public val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING: Int
+        public val IMPLEMENTATION_COLOR_READ_TYPE: Int
+        public val IMPLEMENTATION_COLOR_READ_FORMAT: Int
+        public val COMPILE_STATUS: Int
+        public val LOW_FLOAT: Int
+        public val MEDIUM_FLOAT: Int
+        public val HIGH_FLOAT: Int
+        public val LOW_INT: Int
+        public val MEDIUM_INT: Int
+        public val HIGH_INT: Int
+        public val FRAMEBUFFER: Int
+        public val RENDERBUFFER: Int
+        public val RGBA4: Int
+        public val RGB5_A1: Int
+        public val RGBA8: Int
+        public val RGB565: Int
+        public val DEPTH_COMPONENT16: Int
+        public val STENCIL_INDEX8: Int
+        public val DEPTH_STENCIL: Int
+        public val RENDERBUFFER_WIDTH: Int
+        public val RENDERBUFFER_HEIGHT: Int
+        public val RENDERBUFFER_INTERNAL_FORMAT: Int
+        public val RENDERBUFFER_RED_SIZE: Int
+        public val RENDERBUFFER_GREEN_SIZE: Int
+        public val RENDERBUFFER_BLUE_SIZE: Int
+        public val RENDERBUFFER_ALPHA_SIZE: Int
+        public val RENDERBUFFER_DEPTH_SIZE: Int
+        public val RENDERBUFFER_STENCIL_SIZE: Int
+        public val FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE: Int
+        public val FRAMEBUFFER_ATTACHMENT_OBJECT_NAME: Int
+        public val FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL: Int
+        public val FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE: Int
+        public val COLOR_ATTACHMENT0: Int
+        public val DEPTH_ATTACHMENT: Int
+        public val STENCIL_ATTACHMENT: Int
+        public val DEPTH_STENCIL_ATTACHMENT: Int
+        public val NONE: Int
+        public val FRAMEBUFFER_COMPLETE: Int
+        public val FRAMEBUFFER_INCOMPLETE_ATTACHMENT: Int
+        public val FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT: Int
+        public val FRAMEBUFFER_INCOMPLETE_DIMENSIONS: Int
+        public val FRAMEBUFFER_UNSUPPORTED: Int
+        public val FRAMEBUFFER_BINDING: Int
+        public val RENDERBUFFER_BINDING: Int
+        public val MAX_RENDERBUFFER_SIZE: Int
+        public val INVALID_FRAMEBUFFER_OPERATION: Int
+        public val UNPACK_FLIP_Y_WEBGL: Int
+        public val UNPACK_PREMULTIPLY_ALPHA_WEBGL: Int
+        public val CONTEXT_LOST_WEBGL: Int
+        public val UNPACK_COLORSPACE_CONVERSION_WEBGL: Int
+        public val BROWSER_DEFAULT_WEBGL: Int
+        public val READ_BUFFER: Int
+        public val UNPACK_ROW_LENGTH: Int
+        public val UNPACK_SKIP_ROWS: Int
+        public val UNPACK_SKIP_PIXELS: Int
+        public val PACK_ROW_LENGTH: Int
+        public val PACK_SKIP_ROWS: Int
+        public val PACK_SKIP_PIXELS: Int
+        public val COLOR: Int
+        public val DEPTH: Int
+        public val STENCIL: Int
+        public val RED: Int
+        public val RGB8: Int
+        public val RGB10_A2: Int
+        public val TEXTURE_BINDING_3D: Int
+        public val UNPACK_SKIP_IMAGES: Int
+        public val UNPACK_IMAGE_HEIGHT: Int
+        public val TEXTURE_3D: Int
+        public val TEXTURE_WRAP_R: Int
+        public val MAX_3D_TEXTURE_SIZE: Int
+        public val UNSIGNED_INT_2_10_10_10_REV: Int
+        public val MAX_ELEMENTS_VERTICES: Int
+        public val MAX_ELEMENTS_INDICES: Int
+        public val TEXTURE_MIN_LOD: Int
+        public val TEXTURE_MAX_LOD: Int
+        public val TEXTURE_BASE_LEVEL: Int
+        public val TEXTURE_MAX_LEVEL: Int
+        public val MIN: Int
+        public val MAX: Int
+        public val DEPTH_COMPONENT24: Int
+        public val MAX_TEXTURE_LOD_BIAS: Int
+        public val TEXTURE_COMPARE_MODE: Int
+        public val TEXTURE_COMPARE_FUNC: Int
+        public val CURRENT_QUERY: Int
+        public val QUERY_RESULT: Int
+        public val QUERY_RESULT_AVAILABLE: Int
+        public val STREAM_READ: Int
+        public val STREAM_COPY: Int
+        public val STATIC_READ: Int
+        public val STATIC_COPY: Int
+        public val DYNAMIC_READ: Int
+        public val DYNAMIC_COPY: Int
+        public val MAX_DRAW_BUFFERS: Int
+        public val DRAW_BUFFER0: Int
+        public val DRAW_BUFFER1: Int
+        public val DRAW_BUFFER2: Int
+        public val DRAW_BUFFER3: Int
+        public val DRAW_BUFFER4: Int
+        public val DRAW_BUFFER5: Int
+        public val DRAW_BUFFER6: Int
+        public val DRAW_BUFFER7: Int
+        public val DRAW_BUFFER8: Int
+        public val DRAW_BUFFER9: Int
+        public val DRAW_BUFFER10: Int
+        public val DRAW_BUFFER11: Int
+        public val DRAW_BUFFER12: Int
+        public val DRAW_BUFFER13: Int
+        public val DRAW_BUFFER14: Int
+        public val DRAW_BUFFER15: Int
+        public val MAX_FRAGMENT_UNIFORM_COMPONENTS: Int
+        public val MAX_VERTEX_UNIFORM_COMPONENTS: Int
+        public val SAMPLER_3D: Int
+        public val SAMPLER_2D_SHADOW: Int
+        public val FRAGMENT_SHADER_DERIVATIVE_HINT: Int
+        public val PIXEL_PACK_BUFFER: Int
+        public val PIXEL_UNPACK_BUFFER: Int
+        public val PIXEL_PACK_BUFFER_BINDING: Int
+        public val PIXEL_UNPACK_BUFFER_BINDING: Int
+        public val FLOAT_MAT2x3: Int
+        public val FLOAT_MAT2x4: Int
+        public val FLOAT_MAT3x2: Int
+        public val FLOAT_MAT3x4: Int
+        public val FLOAT_MAT4x2: Int
+        public val FLOAT_MAT4x3: Int
+        public val SRGB: Int
+        public val SRGB8: Int
+        public val SRGB8_ALPHA8: Int
+        public val COMPARE_REF_TO_TEXTURE: Int
+        public val RGBA32F: Int
+        public val RGB32F: Int
+        public val RGBA16F: Int
+        public val RGB16F: Int
+        public val VERTEX_ATTRIB_ARRAY_INTEGER: Int
+        public val MAX_ARRAY_TEXTURE_LAYERS: Int
+        public val MIN_PROGRAM_TEXEL_OFFSET: Int
+        public val MAX_PROGRAM_TEXEL_OFFSET: Int
+        public val MAX_VARYING_COMPONENTS: Int
+        public val TEXTURE_2D_ARRAY: Int
+        public val TEXTURE_BINDING_2D_ARRAY: Int
+        public val R11F_G11F_B10F: Int
+        public val UNSIGNED_INT_10F_11F_11F_REV: Int
+        public val RGB9_E5: Int
+        public val UNSIGNED_INT_5_9_9_9_REV: Int
+        public val TRANSFORM_FEEDBACK_BUFFER_MODE: Int
+        public val MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS: Int
+        public val TRANSFORM_FEEDBACK_VARYINGS: Int
+        public val TRANSFORM_FEEDBACK_BUFFER_START: Int
+        public val TRANSFORM_FEEDBACK_BUFFER_SIZE: Int
+        public val TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN: Int
+        public val RASTERIZER_DISCARD: Int
+        public val MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS: Int
+        public val MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS: Int
+        public val INTERLEAVED_ATTRIBS: Int
+        public val SEPARATE_ATTRIBS: Int
+        public val TRANSFORM_FEEDBACK_BUFFER: Int
+        public val TRANSFORM_FEEDBACK_BUFFER_BINDING: Int
+        public val RGBA32UI: Int
+        public val RGB32UI: Int
+        public val RGBA16UI: Int
+        public val RGB16UI: Int
+        public val RGBA8UI: Int
+        public val RGB8UI: Int
+        public val RGBA32I: Int
+        public val RGB32I: Int
+        public val RGBA16I: Int
+        public val RGB16I: Int
+        public val RGBA8I: Int
+        public val RGB8I: Int
+        public val RED_INTEGER: Int
+        public val RGB_INTEGER: Int
+        public val RGBA_INTEGER: Int
+        public val SAMPLER_2D_ARRAY: Int
+        public val SAMPLER_2D_ARRAY_SHADOW: Int
+        public val SAMPLER_CUBE_SHADOW: Int
+        public val UNSIGNED_INT_VEC2: Int
+        public val UNSIGNED_INT_VEC3: Int
+        public val UNSIGNED_INT_VEC4: Int
+        public val INT_SAMPLER_2D: Int
+        public val INT_SAMPLER_3D: Int
+        public val INT_SAMPLER_CUBE: Int
+        public val INT_SAMPLER_2D_ARRAY: Int
+        public val UNSIGNED_INT_SAMPLER_2D: Int
+        public val UNSIGNED_INT_SAMPLER_3D: Int
+        public val UNSIGNED_INT_SAMPLER_CUBE: Int
+        public val UNSIGNED_INT_SAMPLER_2D_ARRAY: Int
+        public val DEPTH_COMPONENT32F: Int
+        public val DEPTH32F_STENCIL8: Int
+        public val FLOAT_32_UNSIGNED_INT_24_8_REV: Int
+        public val FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING: Int
+        public val FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE: Int
+        public val FRAMEBUFFER_ATTACHMENT_RED_SIZE: Int
+        public val FRAMEBUFFER_ATTACHMENT_GREEN_SIZE: Int
+        public val FRAMEBUFFER_ATTACHMENT_BLUE_SIZE: Int
+        public val FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE: Int
+        public val FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE: Int
+        public val FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE: Int
+        public val FRAMEBUFFER_DEFAULT: Int
+        public val UNSIGNED_INT_24_8: Int
+        public val DEPTH24_STENCIL8: Int
+        public val UNSIGNED_NORMALIZED: Int
+        public val DRAW_FRAMEBUFFER_BINDING: Int
+        public val READ_FRAMEBUFFER: Int
+        public val DRAW_FRAMEBUFFER: Int
+        public val READ_FRAMEBUFFER_BINDING: Int
+        public val RENDERBUFFER_SAMPLES: Int
+        public val FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER: Int
+        public val MAX_COLOR_ATTACHMENTS: Int
+        public val COLOR_ATTACHMENT1: Int
+        public val COLOR_ATTACHMENT2: Int
+        public val COLOR_ATTACHMENT3: Int
+        public val COLOR_ATTACHMENT4: Int
+        public val COLOR_ATTACHMENT5: Int
+        public val COLOR_ATTACHMENT6: Int
+        public val COLOR_ATTACHMENT7: Int
+        public val COLOR_ATTACHMENT8: Int
+        public val COLOR_ATTACHMENT9: Int
+        public val COLOR_ATTACHMENT10: Int
+        public val COLOR_ATTACHMENT11: Int
+        public val COLOR_ATTACHMENT12: Int
+        public val COLOR_ATTACHMENT13: Int
+        public val COLOR_ATTACHMENT14: Int
+        public val COLOR_ATTACHMENT15: Int
+        public val FRAMEBUFFER_INCOMPLETE_MULTISAMPLE: Int
+        public val MAX_SAMPLES: Int
+        public val HALF_FLOAT: Int
+        public val RG: Int
+        public val RG_INTEGER: Int
+        public val R8: Int
+        public val RG8: Int
+        public val R16F: Int
+        public val R32F: Int
+        public val RG16F: Int
+        public val RG32F: Int
+        public val R8I: Int
+        public val R8UI: Int
+        public val R16I: Int
+        public val R16UI: Int
+        public val R32I: Int
+        public val R32UI: Int
+        public val RG8I: Int
+        public val RG8UI: Int
+        public val RG16I: Int
+        public val RG16UI: Int
+        public val RG32I: Int
+        public val RG32UI: Int
+        public val VERTEX_ARRAY_BINDING: Int
+        public val R8_SNORM: Int
+        public val RG8_SNORM: Int
+        public val RGB8_SNORM: Int
+        public val RGBA8_SNORM: Int
+        public val SIGNED_NORMALIZED: Int
+        public val COPY_READ_BUFFER: Int
+        public val COPY_WRITE_BUFFER: Int
+        public val COPY_READ_BUFFER_BINDING: Int
+        public val COPY_WRITE_BUFFER_BINDING: Int
+        public val UNIFORM_BUFFER: Int
+        public val UNIFORM_BUFFER_BINDING: Int
+        public val UNIFORM_BUFFER_START: Int
+        public val UNIFORM_BUFFER_SIZE: Int
+        public val MAX_VERTEX_UNIFORM_BLOCKS: Int
+        public val MAX_FRAGMENT_UNIFORM_BLOCKS: Int
+        public val MAX_COMBINED_UNIFORM_BLOCKS: Int
+        public val MAX_UNIFORM_BUFFER_BINDINGS: Int
+        public val MAX_UNIFORM_BLOCK_SIZE: Int
+        public val MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS: Int
+        public val MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS: Int
+        public val UNIFORM_BUFFER_OFFSET_ALIGNMENT: Int
+        public val ACTIVE_UNIFORM_BLOCKS: Int
+        public val UNIFORM_TYPE: Int
+        public val UNIFORM_SIZE: Int
+        public val UNIFORM_BLOCK_INDEX: Int
+        public val UNIFORM_OFFSET: Int
+        public val UNIFORM_ARRAY_STRIDE: Int
+        public val UNIFORM_MATRIX_STRIDE: Int
+        public val UNIFORM_IS_ROW_MAJOR: Int
+        public val UNIFORM_BLOCK_BINDING: Int
+        public val UNIFORM_BLOCK_DATA_SIZE: Int
+        public val UNIFORM_BLOCK_ACTIVE_UNIFORMS: Int
+        public val UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES: Int
+        public val UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER: Int
+        public val UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER: Int
+        public val INVALID_INDEX: Int
+        public val MAX_VERTEX_OUTPUT_COMPONENTS: Int
+        public val MAX_FRAGMENT_INPUT_COMPONENTS: Int
+        public val MAX_SERVER_WAIT_TIMEOUT: Int
+        public val OBJECT_TYPE: Int
+        public val SYNC_CONDITION: Int
+        public val SYNC_STATUS: Int
+        public val SYNC_FLAGS: Int
+        public val SYNC_FENCE: Int
+        public val SYNC_GPU_COMMANDS_COMPLETE: Int
+        public val UNSIGNALED: Int
+        public val SIGNALED: Int
+        public val ALREADY_SIGNALED: Int
+        public val TIMEOUT_EXPIRED: Int
+        public val CONDITION_SATISFIED: Int
+        public val WAIT_FAILED: Int
+        public val SYNC_FLUSH_COMMANDS_BIT: Int
+        public val VERTEX_ATTRIB_ARRAY_DIVISOR: Int
+        public val ANY_SAMPLES_PASSED: Int
+        public val ANY_SAMPLES_PASSED_CONSERVATIVE: Int
+        public val SAMPLER_BINDING: Int
+        public val RGB10_A2UI: Int
+        public val INT_2_10_10_10_REV: Int
+        public val TRANSFORM_FEEDBACK: Int
+        public val TRANSFORM_FEEDBACK_PAUSED: Int
+        public val TRANSFORM_FEEDBACK_ACTIVE: Int
+        public val TRANSFORM_FEEDBACK_BINDING: Int
+        public val TEXTURE_IMMUTABLE_FORMAT: Int
+        public val MAX_ELEMENT_INDEX: Int
+        public val TEXTURE_IMMUTABLE_LEVELS: Int
+        public val TIMEOUT_IGNORED: Double
+        public val MAX_CLIENT_WAIT_TIMEOUT_WEBGL: Int
     }
 }

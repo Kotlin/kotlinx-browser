@@ -24,7 +24,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/initiatorType)
      */
-    open val initiatorType: String
+    public open val initiatorType: String
 
     /**
      * The deliveryType read-only property is a string indicating how the resource was delivered — for example from the
@@ -32,7 +32,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/deliveryType)
      */
-    open val deliveryType: String
+    public open val deliveryType: String
 
     /**
      * The nextHopProtocol read-only property is a string representing the network protocol used to fetch the resource,
@@ -40,7 +40,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/nextHopProtocol)
      */
-    open val nextHopProtocol: String
+    public open val nextHopProtocol: String
 
     /**
      * The workerStart read-only property of the PerformanceResourceTiming interface returns a DOMHighResTimeStamp
@@ -50,7 +50,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/workerStart)
      */
-    open val workerStart: Double
+    public open val workerStart: Double
 
     /**
      * The redirectStart read-only property returns a timestamp representing the start time of the fetch which that
@@ -58,7 +58,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/redirectStart)
      */
-    open val redirectStart: Double
+    public open val redirectStart: Double
 
     /**
      * The redirectEnd read-only property returns a timestamp immediately after receiving the last byte of the response
@@ -66,7 +66,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/redirectEnd)
      */
-    open val redirectEnd: Double
+    public open val redirectEnd: Double
 
     /**
      * The fetchStart read-only property represents a timestamp immediately before the browser starts to fetch the
@@ -74,7 +74,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/fetchStart)
      */
-    open val fetchStart: Double
+    public open val fetchStart: Double
 
     /**
      * The domainLookupStart read-only property returns the timestamp immediately before the browser starts the domain
@@ -82,7 +82,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/domainLookupStart)
      */
-    open val domainLookupStart: Double
+    public open val domainLookupStart: Double
 
     /**
      * The domainLookupEnd read-only property returns the timestamp immediately after the browser finishes the
@@ -90,7 +90,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/domainLookupEnd)
      */
-    open val domainLookupEnd: Double
+    public open val domainLookupEnd: Double
 
     /**
      * The connectStart read-only property returns the timestamp immediately before the user agent starts establishing
@@ -98,7 +98,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/connectStart)
      */
-    open val connectStart: Double
+    public open val connectStart: Double
 
     /**
      * The connectEnd read-only property returns the timestamp immediately after the browser finishes establishing the
@@ -107,7 +107,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/connectEnd)
      */
-    open val connectEnd: Double
+    public open val connectEnd: Double
 
     /**
      * The secureConnectionStart read-only property returns a timestamp immediately before the browser starts the
@@ -116,7 +116,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/secureConnectionStart)
      */
-    open val secureConnectionStart: Double
+    public open val secureConnectionStart: Double
 
     /**
      * The requestStart read-only property returns a timestamp of the time immediately before the browser starts
@@ -125,7 +125,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/requestStart)
      */
-    open val requestStart: Double
+    public open val requestStart: Double
 
     /**
      * The finalResponseHeadersStart read-only property returns a timestamp immediately after the browser receives the
@@ -133,7 +133,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/finalResponseHeadersStart)
      */
-    open val finalResponseHeadersStart: Double
+    public open val finalResponseHeadersStart: Double
 
     /**
      * The firstInterimResponseStart read-only property returns a timestamp immediately after the browser receives the
@@ -141,7 +141,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/firstInterimResponseStart)
      */
-    open val firstInterimResponseStart: Double
+    public open val firstInterimResponseStart: Double
 
     /**
      * The responseStart read-only property returns a timestamp immediately after the browser receives the first byte of
@@ -149,7 +149,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/responseStart)
      */
-    open val responseStart: Double
+    public open val responseStart: Double
 
     /**
      * The responseEnd read-only property returns a timestamp immediately after the browser receives the last byte of
@@ -157,11 +157,11 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/responseEnd)
      */
-    open val responseEnd: Double
-    open val workerRouterEvaluationStart: Double
-    open val workerCacheLookupStart: Double
-    open val workerMatchedRouterSource: String
-    open val workerFinalRouterSource: String
+    public open val responseEnd: Double
+    public open val workerRouterEvaluationStart: Double
+    public open val workerCacheLookupStart: Double
+    public open val workerMatchedRouterSource: String
+    public open val workerFinalRouterSource: String
 
     /**
      * The transferSize read-only property represents the size (in octets) of the fetched resource. This is the size of
@@ -169,7 +169,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/transferSize)
      */
-    open val transferSize: Double
+    public open val transferSize: Double
 
     /**
      * The encodedBodySize read-only property represents the size (in octets) received from the fetch (HTTP or cache) of
@@ -177,7 +177,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/encodedBodySize)
      */
-    open val encodedBodySize: Double
+    public open val encodedBodySize: Double
 
     /**
      * The decodedBodySize read-only property returns the size (in octets) received from the fetch (HTTP or cache) of
@@ -185,7 +185,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/decodedBodySize)
      */
-    open val decodedBodySize: Double
+    public open val decodedBodySize: Double
 
     /**
      * The responseStatus read-only property represents the HTTP response status code returned when fetching the
@@ -193,14 +193,14 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/responseStatus)
      */
-    open val responseStatus: Short
+    public open val responseStatus: Short
 
     /**
      * The renderBlockingStatus read-only property returns the render-blocking status of the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/renderBlockingStatus)
      */
-    open val renderBlockingStatus: RenderBlockingStatusType
+    public open val renderBlockingStatus: RenderBlockingStatusType
 
     /**
      * The contentType read-only property of the PerformanceResourceTiming interface is a string indicating the content
@@ -208,7 +208,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/contentType)
      */
-    open val contentType: String
+    public open val contentType: String
 
     /**
      * The contentEncoding read-only property of the PerformanceResourceTiming interface is a string indicating the
@@ -216,7 +216,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/contentEncoding)
      */
-    open val contentEncoding: String
+    public open val contentEncoding: String
 
     /**
      * The toJSON() method of the PerformanceResourceTiming interface returns a JSON-serializable plain object
@@ -229,7 +229,7 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
 
 public external interface RenderBlockingStatusType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val RenderBlockingStatusType.Companion.BLOCKING: RenderBlockingStatusType get() = "blocking".toJsString().unsafeCast<RenderBlockingStatusType>()

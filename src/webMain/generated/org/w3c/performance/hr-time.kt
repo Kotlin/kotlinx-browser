@@ -24,7 +24,7 @@ public abstract external class Performance : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/now)
      */
-    open fun now(): Double
+    public open fun now(): Double
 
     /**
      * The timeOrigin read-only property of the Performance interface returns the high resolution timestamp that is used
@@ -32,7 +32,7 @@ public abstract external class Performance : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/timeOrigin)
      */
-    open val timeOrigin: Double
+    public open val timeOrigin: Double
 
     /**
      * The toJSON() method of the Performance interface returns a JSON-serializable plain object representing the
@@ -40,7 +40,7 @@ public abstract external class Performance : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 
     /**
      * The legacy Performance.timing read-only property returns a PerformanceTiming object containing latency-related
@@ -50,7 +50,7 @@ public abstract external class Performance : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/timing)
      */
-    open val timing: PerformanceTiming
+    public open val timing: PerformanceTiming
 
     /**
      * The legacy Performance.navigation read-only property returns a PerformanceNavigation object representing the type
@@ -61,7 +61,7 @@ public abstract external class Performance : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/navigation)
      */
-    open val navigation: PerformanceNavigation
+    public open val navigation: PerformanceNavigation
 
     /**
      * The getEntries() method returns an array of all PerformanceEntry objects currently present in the performance
@@ -69,7 +69,7 @@ public abstract external class Performance : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntries)
      */
-    open fun getEntries(): JsArray<PerformanceEntry>
+    public open fun getEntries(): JsArray<PerformanceEntry>
 
     /**
      * The getEntriesByType() method returns an array of PerformanceEntry objects currently present in the performance
@@ -77,7 +77,7 @@ public abstract external class Performance : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByType)
      */
-    open fun getEntriesByType(type: String): JsArray<PerformanceEntry>
+    public open fun getEntriesByType(type: String): JsArray<PerformanceEntry>
 
     /**
      * The getEntriesByName() method returns an array of PerformanceEntry objects currently present in the performance
@@ -85,7 +85,7 @@ public abstract external class Performance : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByName)
      */
-    open fun getEntriesByName(name: String, type: String = definedExternally): JsArray<PerformanceEntry>
+    public open fun getEntriesByName(name: String, type: String = definedExternally): JsArray<PerformanceEntry>
 
     /**
      * The clearResourceTimings() method removes all performance entries with an entryType of "resource" from the
@@ -93,7 +93,7 @@ public abstract external class Performance : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/clearResourceTimings)
      */
-    open fun clearResourceTimings()
+    public open fun clearResourceTimings()
 
     /**
      * The setResourceTimingBufferSize() method sets the desired size of the browser's resource timing buffer which
@@ -101,12 +101,12 @@ public abstract external class Performance : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/setResourceTimingBufferSize)
      */
-    open fun setResourceTimingBufferSize(maxSize: Int)
+    public open fun setResourceTimingBufferSize(maxSize: Int)
 
     /**
      * The resourcetimingbufferfull event is fired when the browser's resource timing buffer is full.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/resourcetimingbufferfull_event)
      */
-    open var onresourcetimingbufferfull: ((Event) -> Unit)?
+    public open var onresourcetimingbufferfull: ((Event) -> Unit)?
 }

@@ -18,7 +18,7 @@ import org.w3c.dom.*
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)
  */
 public abstract external class PerformanceEntry : JsAny {
-    open val id: Double
+    public open val id: Double
 
     /**
      * The read-only name property of the PerformanceEntry interface is a string representing the name for a performance
@@ -26,7 +26,7 @@ public abstract external class PerformanceEntry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/name)
      */
-    open val name: String
+    public open val name: String
 
     /**
      * The read-only entryType property returns a string representing the type of performance metric that this entry
@@ -34,7 +34,7 @@ public abstract external class PerformanceEntry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/entryType)
      */
-    open val entryType: String
+    public open val entryType: String
 
     /**
      * The read-only startTime property returns the first timestamp recorded for this PerformanceEntry. The meaning of
@@ -42,7 +42,7 @@ public abstract external class PerformanceEntry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/startTime)
      */
-    open val startTime: Double
+    public open val startTime: Double
 
     /**
      * The read-only duration property returns a timestamp that is the duration of the performance entry. The meaning of
@@ -50,7 +50,7 @@ public abstract external class PerformanceEntry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/duration)
      */
-    open val duration: Double
+    public open val duration: Double
 
     /**
      * The navigationId read-only property of the PerformanceEntry interface returns the ID of the navigation that this
@@ -58,7 +58,7 @@ public abstract external class PerformanceEntry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/navigationId)
      */
-    open val navigationId: Double
+    public open val navigationId: Double
 
     /**
      * The toJSON() method of the PerformanceEntry interface returns a JSON-serializable plain object representing the
@@ -66,7 +66,7 @@ public abstract external class PerformanceEntry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 }
 
 /**
@@ -83,7 +83,7 @@ public open external class PerformanceObserver : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/PerformanceObserver)
      */
-    constructor(callback: (PerformanceObserverEntryList, PerformanceObserver, PerformanceObserverCallbackOptions) -> Unit)
+    public constructor(callback: (PerformanceObserverEntryList, PerformanceObserver, PerformanceObserverCallbackOptions) -> Unit)
 
     /**
      * The observe() method of the PerformanceObserver interface is used to specify the set of performance entry types
@@ -91,7 +91,7 @@ public open external class PerformanceObserver : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/observe)
      */
-    open fun observe(options: PerformanceObserverInit = definedExternally)
+    public open fun observe(options: PerformanceObserverInit = definedExternally)
 
     /**
      * The disconnect() method of the PerformanceObserver interface is used to stop the performance observer from
@@ -99,7 +99,7 @@ public open external class PerformanceObserver : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/disconnect)
      */
-    open fun disconnect()
+    public open fun disconnect()
 
     /**
      * The takeRecords() method of the PerformanceObserver interface returns the current list of PerformanceEntry
@@ -107,21 +107,21 @@ public open external class PerformanceObserver : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/takeRecords)
      */
-    open fun takeRecords(): JsArray<PerformanceEntry>
+    public open fun takeRecords(): JsArray<PerformanceEntry>
 
-    companion object {
+    public companion object {
         /**
          * The static supportedEntryTypes read-only property of the PerformanceObserver interface returns an array of
          * the entryType values supported by the user agent.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/supportedEntryTypes_static)
          */
-        val supportedEntryTypes: JsArray<JsString>
+        public val supportedEntryTypes: JsArray<JsString>
     }
 }
 
 public external interface PerformanceObserverCallbackOptions : JsAny {
-    var droppedEntriesCount: Double?
+    public var droppedEntriesCount: Double?
 }
 
 public fun PerformanceObserverCallbackOptions(droppedEntriesCount: Double? = null): PerformanceObserverCallbackOptions = newJsObject<PerformanceObserverCallbackOptions>().apply {
@@ -129,9 +129,9 @@ public fun PerformanceObserverCallbackOptions(droppedEntriesCount: Double? = nul
 }
 
 public external interface PerformanceObserverInit : JsAny {
-    var entryTypes: JsArray<JsString>?
-    var type: String?
-    var buffered: Boolean?
+    public var entryTypes: JsArray<JsString>?
+    public var type: String?
+    public var buffered: Boolean?
 }
 
 public fun PerformanceObserverInit(entryTypes: JsArray<JsString>? = null, type: String? = null, buffered: Boolean? = null): PerformanceObserverInit = newJsObject<PerformanceObserverInit>().apply {
@@ -155,7 +155,7 @@ public abstract external class PerformanceObserverEntryList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntries)
      */
-    open fun getEntries(): JsArray<PerformanceEntry>
+    public open fun getEntries(): JsArray<PerformanceEntry>
 
     /**
      * The getEntriesByType() method of the PerformanceObserverEntryList returns a list of explicitly observed
@@ -165,7 +165,7 @@ public abstract external class PerformanceObserverEntryList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntriesByType)
      */
-    open fun getEntriesByType(type: String): JsArray<PerformanceEntry>
+    public open fun getEntriesByType(type: String): JsArray<PerformanceEntry>
 
     /**
      * The getEntriesByName() method of the PerformanceObserverEntryList interface returns a list of explicitly observed
@@ -175,5 +175,5 @@ public abstract external class PerformanceObserverEntryList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntriesByName)
      */
-    open fun getEntriesByName(name: String, type: String = definedExternally): JsArray<PerformanceEntry>
+    public open fun getEntriesByName(name: String, type: String = definedExternally): JsArray<PerformanceEntry>
 }

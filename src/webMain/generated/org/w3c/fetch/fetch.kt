@@ -28,21 +28,21 @@ public open external class Headers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/Headers)
      */
-    constructor(init: JsArray<JsArray<JsString>>)
+    public constructor(init: JsArray<JsArray<JsString>>)
 
     /**
      * The Headers() constructor creates a new Headers object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/Headers)
      */
-    constructor(init: JsAny)
+    public constructor(init: JsAny)
 
     /**
      * The Headers() constructor creates a new Headers object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/Headers)
      */
-    constructor()
+    public constructor()
 
     /**
      * The append() method of the Headers interface appends a new value onto an existing header inside a Headers object,
@@ -50,14 +50,14 @@ public open external class Headers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/append)
      */
-    open fun append(name: String, value: String)
+    public open fun append(name: String, value: String)
 
     /**
      * The delete() method of the Headers interface deletes a header from the current Headers object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/delete)
      */
-    open fun delete(name: String)
+    public open fun delete(name: String)
 
     /**
      * The get() method of the Headers interface returns a byte string of all the values of a header within a Headers
@@ -65,7 +65,7 @@ public open external class Headers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/get)
      */
-    open fun get(name: String): String?
+    public open fun get(name: String): String?
 
     /**
      * The getSetCookie() method of the Headers interface returns an array containing the values of all Set-Cookie
@@ -74,7 +74,7 @@ public open external class Headers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/getSetCookie)
      */
-    open fun getSetCookie(): JsArray<JsString>
+    public open fun getSetCookie(): JsArray<JsString>
 
     /**
      * The has() method of the Headers interface returns a boolean stating whether a Headers object contains a certain
@@ -82,7 +82,7 @@ public open external class Headers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/has)
      */
-    open fun has(name: String): Boolean
+    public open fun has(name: String): Boolean
 
     /**
      * The set() method of the Headers interface sets a new value for an existing header inside a Headers object, or
@@ -90,7 +90,7 @@ public open external class Headers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/set)
      */
-    open fun set(name: String, value: String)
+    public open fun set(name: String, value: String)
     // not printed yet: iterable
 }
 
@@ -102,7 +102,7 @@ public external interface Body : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/body)
      */
-    val body: ReadableStream?
+    public val body: ReadableStream?
 
     /**
      * The bodyUsed read-only property of the Request interface is a boolean value that indicates whether the request
@@ -110,7 +110,7 @@ public external interface Body : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bodyUsed)
      */
-    val bodyUsed: Boolean
+    public val bodyUsed: Boolean
 
     /**
      * The arrayBuffer() method of the Request interface reads the request body and returns it as a promise that
@@ -118,7 +118,7 @@ public external interface Body : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
      */
-    fun arrayBuffer(): Promise<ArrayBuffer>
+    public fun arrayBuffer(): Promise<ArrayBuffer>
 
     /**
      * The blob() method of the Request interface reads the request body and returns it as a promise that resolves with
@@ -126,7 +126,7 @@ public external interface Body : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
      */
-    fun blob(): Promise<Blob>
+    public fun blob(): Promise<Blob>
 
     /**
      * The bytes() method of the Request interface reads the request body and returns it as a promise that resolves with
@@ -134,7 +134,7 @@ public external interface Body : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
      */
-    fun bytes(): Promise<Uint8Array>
+    public fun bytes(): Promise<Uint8Array>
 
     /**
      * The formData() method of the Request interface reads the request body and returns it as a promise that resolves
@@ -142,7 +142,7 @@ public external interface Body : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
      */
-    fun formData(): Promise<FormData>
+    public fun formData(): Promise<FormData>
 
     /**
      * The json() method of the Request interface reads the request body and returns it as a promise that resolves with
@@ -150,7 +150,7 @@ public external interface Body : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
      */
-    fun json(): Promise<JsAny?>
+    public fun json(): Promise<JsAny?>
 
     /**
      * The text() method of the Request interface reads the request body and returns it as a promise that resolves with
@@ -158,7 +158,7 @@ public external interface Body : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
      */
-    fun text(): Promise<JsString>
+    public fun text(): Promise<JsString>
 
     /**
      * The textStream() method of the Request interface returns a ReadableStream that can be used to read the contents
@@ -166,7 +166,7 @@ public external interface Body : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/textStream)
      */
-    fun textStream(): ReadableStream
+    public fun textStream(): ReadableStream
 }
 
 /**
@@ -180,35 +180,35 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/Request)
      */
-    constructor(input: Request, init: RequestInit = definedExternally)
+    public constructor(input: Request, init: RequestInit = definedExternally)
 
     /**
      * The Request() constructor creates a new Request object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/Request)
      */
-    constructor(input: String, init: RequestInit = definedExternally)
+    public constructor(input: String, init: RequestInit = definedExternally)
 
     /**
      * The method read-only property of the Request interface contains the request's method (GET, POST, etc.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/method)
      */
-    open val method: String
+    public open val method: String
 
     /**
      * The url read-only property of the Request interface contains the URL of the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/url)
      */
-    open val url: String
+    public open val url: String
 
     /**
      * The headers read-only property of the Request interface contains the Headers object associated with the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/headers)
      */
-    open val headers: Headers
+    public open val headers: Headers
 
     /**
      * The destination read-only property of the Request interface returns a string describing the type of content being
@@ -216,7 +216,7 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/destination)
      */
-    open val destination: RequestDestination
+    public open val destination: RequestDestination
 
     /**
      * The referrer read-only property of the Request interface is set by the user agent to be the referrer of the
@@ -224,7 +224,7 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/referrer)
      */
-    open val referrer: String
+    public open val referrer: String
 
     /**
      * The referrerPolicy read-only property of the Request interface returns the referrer policy, which governs what
@@ -232,7 +232,7 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/referrerPolicy)
      */
-    open val referrerPolicy: ReferrerPolicy
+    public open val referrerPolicy: ReferrerPolicy
 
     /**
      * The mode read-only property of the Request interface contains the mode of the request (e.g., cors, no-cors,
@@ -241,7 +241,7 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/mode)
      */
-    open val mode: RequestMode
+    public open val mode: RequestMode
 
     /**
      * The credentials read-only property of the Request interface reflects the value given to the Request() constructor
@@ -250,7 +250,7 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/credentials)
      */
-    open val credentials: RequestCredentials
+    public open val credentials: RequestCredentials
 
     /**
      * The cache read-only property of the Request interface contains the cache mode of the request. It controls how the
@@ -258,14 +258,14 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/cache)
      */
-    open val cache: RequestCache
+    public open val cache: RequestCache
 
     /**
      * The redirect read-only property of the Request interface contains the mode for how redirects are handled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/redirect)
      */
-    open val redirect: RequestRedirect
+    public open val redirect: RequestRedirect
 
     /**
      * The integrity read-only property of the Request interface contains the subresource integrity value of the
@@ -273,7 +273,7 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/integrity)
      */
-    open val integrity: String
+    public open val integrity: String
 
     /**
      * The keepalive read-only property of the Request interface contains the request's keepalive setting (true or
@@ -282,7 +282,7 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/keepalive)
      */
-    open val keepalive: Boolean
+    public open val keepalive: Boolean
 
     /**
      * The isReloadNavigation read-only property of the Request interface is a boolean indicating whether the request is
@@ -290,7 +290,7 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/isReloadNavigation)
      */
-    open val isReloadNavigation: Boolean
+    public open val isReloadNavigation: Boolean
 
     /**
      * The isHistoryNavigation read-only property of the Request interface is a boolean indicating whether the request
@@ -298,14 +298,14 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/isHistoryNavigation)
      */
-    open val isHistoryNavigation: Boolean
+    public open val isHistoryNavigation: Boolean
 
     /**
      * The read-only signal property of the Request interface returns the AbortSignal associated with the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/signal)
      */
-    open val signal: AbortSignal
+    public open val signal: AbortSignal
 
     /**
      * The duplex read-only property of the Request interface returns the duplex mode of the request, which determines
@@ -313,14 +313,14 @@ public open external class Request : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/duplex)
      */
-    open val duplex: RequestDuplex
+    public open val duplex: RequestDuplex
 
     /**
      * The clone() method of the Request interface creates a copy of the current Request object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/clone)
      */
-    open fun clone(): Request
+    public open fun clone(): Request
 
     /**
      * The body read-only property of the Request interface contains a ReadableStream with the body contents that have
@@ -397,21 +397,21 @@ public open external class Request : Body {
 }
 
 public external interface RequestInit : JsAny {
-    var method: String?
-    var headers: JsAny?
-    var body: JsAny?
-    var referrer: String?
-    var referrerPolicy: ReferrerPolicy?
-    var mode: RequestMode?
-    var credentials: RequestCredentials?
-    var cache: RequestCache?
-    var redirect: RequestRedirect?
-    var integrity: String?
-    var keepalive: Boolean?
-    var signal: AbortSignal?
-    var duplex: RequestDuplex?
-    var priority: RequestPriority?
-    var window: JsAny?
+    public var method: String?
+    public var headers: JsAny?
+    public var body: JsAny?
+    public var referrer: String?
+    public var referrerPolicy: ReferrerPolicy?
+    public var mode: RequestMode?
+    public var credentials: RequestCredentials?
+    public var cache: RequestCache?
+    public var redirect: RequestRedirect?
+    public var integrity: String?
+    public var keepalive: Boolean?
+    public var signal: AbortSignal?
+    public var duplex: RequestDuplex?
+    public var priority: RequestPriority?
+    public var window: JsAny?
 }
 
 public fun RequestInit(method: String? = null, headers: JsAny? = null, body: JsAny? = null, referrer: String? = null, referrerPolicy: ReferrerPolicy? = null, mode: RequestMode? = null, credentials: RequestCredentials? = null, cache: RequestCache? = null, redirect: RequestRedirect? = null, integrity: String? = null, keepalive: Boolean? = null, signal: AbortSignal? = null, duplex: RequestDuplex? = null, priority: RequestPriority? = null, window: JsAny? = null): RequestInit = newJsObject<RequestInit>().apply {
@@ -434,7 +434,7 @@ public fun RequestInit(method: String? = null, headers: JsAny? = null, body: JsA
 
 public external interface RequestDestination : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val RequestDestination.Companion.EMPTY: RequestDestination get() = "".toJsString().unsafeCast<RequestDestination>()
@@ -462,7 +462,7 @@ public inline val RequestDestination.Companion.XSLT: RequestDestination get() = 
 
 public external interface RequestMode : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val RequestMode.Companion.NAVIGATE: RequestMode get() = "navigate".toJsString().unsafeCast<RequestMode>()
@@ -472,7 +472,7 @@ public inline val RequestMode.Companion.CORS: RequestMode get() = "cors".toJsStr
 
 public external interface RequestCredentials : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val RequestCredentials.Companion.OMIT: RequestCredentials get() = "omit".toJsString().unsafeCast<RequestCredentials>()
@@ -481,7 +481,7 @@ public inline val RequestCredentials.Companion.INCLUDE: RequestCredentials get()
 
 public external interface RequestCache : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val RequestCache.Companion.DEFAULT: RequestCache get() = "default".toJsString().unsafeCast<RequestCache>()
@@ -493,7 +493,7 @@ public inline val RequestCache.Companion.ONLY_IF_CACHED: RequestCache get() = "o
 
 public external interface RequestRedirect : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val RequestRedirect.Companion.FOLLOW: RequestRedirect get() = "follow".toJsString().unsafeCast<RequestRedirect>()
@@ -502,14 +502,14 @@ public inline val RequestRedirect.Companion.MANUAL: RequestRedirect get() = "man
 
 public external interface RequestDuplex : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val RequestDuplex.Companion.HALF: RequestDuplex get() = "half".toJsString().unsafeCast<RequestDuplex>()
 
 public external interface RequestPriority : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val RequestPriority.Companion.HIGH: RequestPriority get() = "high".toJsString().unsafeCast<RequestPriority>()
@@ -527,49 +527,49 @@ public open external class Response : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
      */
-    constructor(body: ReadableStream?, init: ResponseInit = definedExternally)
+    public constructor(body: ReadableStream?, init: ResponseInit = definedExternally)
 
     /**
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
      */
-    constructor(body: Blob?, init: ResponseInit = definedExternally)
+    public constructor(body: Blob?, init: ResponseInit = definedExternally)
 
     /**
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
      */
-    constructor(body: BufferDataSource?, init: ResponseInit = definedExternally)
+    public constructor(body: BufferDataSource?, init: ResponseInit = definedExternally)
 
     /**
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
      */
-    constructor(body: FormData?, init: ResponseInit = definedExternally)
+    public constructor(body: FormData?, init: ResponseInit = definedExternally)
 
     /**
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
      */
-    constructor(body: URLSearchParams?, init: ResponseInit = definedExternally)
+    public constructor(body: URLSearchParams?, init: ResponseInit = definedExternally)
 
     /**
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
      */
-    constructor(body: String?, init: ResponseInit = definedExternally)
+    public constructor(body: String?, init: ResponseInit = definedExternally)
 
     /**
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
      */
-    constructor()
+    public constructor()
 
     /**
      * The type read-only property of the Response interface contains the type of the response. The type determines
@@ -577,7 +577,7 @@ public open external class Response : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/type)
      */
-    open val type: ResponseType
+    public open val type: ResponseType
 
     /**
      * The url read-only property of the Response interface contains the URL of the response. The value of the url
@@ -585,7 +585,7 @@ public open external class Response : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/url)
      */
-    open val url: String
+    public open val url: String
 
     /**
      * The redirected read-only property of the Response interface indicates whether or not the response is the result
@@ -593,14 +593,14 @@ public open external class Response : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/redirected)
      */
-    open val redirected: Boolean
+    public open val redirected: Boolean
 
     /**
      * The status read-only property of the Response interface contains the HTTP status code of the response.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/status)
      */
-    open val status: Short
+    public open val status: Short
 
     /**
      * The ok read-only property of the Response interface contains a Boolean stating whether the response was
@@ -608,7 +608,7 @@ public open external class Response : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/ok)
      */
-    open val ok: Boolean
+    public open val ok: Boolean
 
     /**
      * The statusText read-only property of the Response interface contains the status message corresponding to the HTTP
@@ -616,7 +616,7 @@ public open external class Response : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/statusText)
      */
-    open val statusText: String
+    public open val statusText: String
 
     /**
      * The headers read-only property of the Response interface contains the Headers object associated with the
@@ -624,7 +624,7 @@ public open external class Response : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/headers)
      */
-    open val headers: Headers
+    public open val headers: Headers
 
     /**
      * The clone() method of the Response interface creates a clone of a response object, identical in every way, but
@@ -632,7 +632,7 @@ public open external class Response : Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/clone)
      */
-    open fun clone(): Response
+    public open fun clone(): Response
 
     /**
      * The body read-only property of the Response interface is a ReadableStream of the body contents.
@@ -705,14 +705,14 @@ public open external class Response : Body {
      */
     override fun textStream(): ReadableStream
 
-    companion object {
+    public companion object {
         /**
          * The error() static method of the Response interface returns a new Response object associated with a network
          * error.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/error_static)
          */
-        fun error(): Response
+        public fun error(): Response
 
         /**
          * The redirect() static method of the Response interface returns a Response resulting in a redirect to the
@@ -720,7 +720,7 @@ public open external class Response : Body {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/redirect_static)
          */
-        fun redirect(url: String, status: Short = definedExternally): Response
+        public fun redirect(url: String, status: Short = definedExternally): Response
 
         /**
          * The json() static method of the Response interface returns a Response that contains the provided JSON data as
@@ -729,14 +729,14 @@ public open external class Response : Body {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/json_static)
          */
-        fun json(data: JsAny?, init: ResponseInit = definedExternally): Response
+        public fun json(data: JsAny?, init: ResponseInit = definedExternally): Response
     }
 }
 
 public external interface ResponseInit : JsAny {
-    var status: Short?
-    var statusText: String?
-    var headers: JsAny?
+    public var status: Short?
+    public var statusText: String?
+    public var headers: JsAny?
 }
 
 public fun ResponseInit(status: Short? = null, statusText: String? = null, headers: JsAny? = null): ResponseInit = newJsObject<ResponseInit>().apply {
@@ -747,7 +747,7 @@ public fun ResponseInit(status: Short? = null, statusText: String? = null, heade
 
 public external interface ResponseType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ResponseType.Companion.BASIC: ResponseType get() = "basic".toJsString().unsafeCast<ResponseType>()
@@ -758,7 +758,7 @@ public inline val ResponseType.Companion.OPAQUE: ResponseType get() = "opaque".t
 public inline val ResponseType.Companion.OPAQUEREDIRECT: ResponseType get() = "opaqueredirect".toJsString().unsafeCast<ResponseType>()
 
 public external interface DeferredRequestInit : RequestInit {
-    var activateAfter: Double?
+    public var activateAfter: Double?
 }
 
 public fun DeferredRequestInit(method: String? = null, headers: JsAny? = null, body: JsAny? = null, referrer: String? = null, referrerPolicy: ReferrerPolicy? = null, mode: RequestMode? = null, credentials: RequestCredentials? = null, cache: RequestCache? = null, redirect: RequestRedirect? = null, integrity: String? = null, keepalive: Boolean? = null, signal: AbortSignal? = null, duplex: RequestDuplex? = null, priority: RequestPriority? = null, window: JsAny? = null, activateAfter: Double? = null): DeferredRequestInit = newJsObject<DeferredRequestInit>().apply {
@@ -793,5 +793,5 @@ public abstract external class FetchLaterResult : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchLaterResult/activated)
      */
-    open val activated: Boolean
+    public open val activated: Boolean
 }

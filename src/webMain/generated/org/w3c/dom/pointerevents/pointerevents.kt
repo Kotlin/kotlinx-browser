@@ -13,21 +13,21 @@ import org.w3c.dom.*
 import org.w3c.dom.events.*
 
 public external interface PointerEventInit : MouseEventInit {
-    var pointerId: Int?
-    var width: Double?
-    var height: Double?
-    var pressure: Float?
-    var tangentialPressure: Float?
-    var tiltX: Int?
-    var tiltY: Int?
-    var twist: Int?
-    var altitudeAngle: Double?
-    var azimuthAngle: Double?
-    var pointerType: String?
-    var isPrimary: Boolean?
-    var persistentDeviceId: Int?
-    var coalescedEvents: JsArray<PointerEvent>?
-    var predictedEvents: JsArray<PointerEvent>?
+    public var pointerId: Int?
+    public var width: Double?
+    public var height: Double?
+    public var pressure: Float?
+    public var tangentialPressure: Float?
+    public var tiltX: Int?
+    public var tiltY: Int?
+    public var twist: Int?
+    public var altitudeAngle: Double?
+    public var azimuthAngle: Double?
+    public var pointerType: String?
+    public var isPrimary: Boolean?
+    public var persistentDeviceId: Int?
+    public var coalescedEvents: JsArray<PointerEvent>?
+    public var predictedEvents: JsArray<PointerEvent>?
 }
 
 public fun PointerEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null, pointerId: Int? = null, width: Double? = null, height: Double? = null, pressure: Float? = null, tangentialPressure: Float? = null, tiltX: Int? = null, tiltY: Int? = null, twist: Int? = null, altitudeAngle: Double? = null, azimuthAngle: Double? = null, pointerType: String? = null, isPrimary: Boolean? = null, persistentDeviceId: Int? = null, coalescedEvents: JsArray<PointerEvent>? = null, predictedEvents: JsArray<PointerEvent>? = null): PointerEventInit = newJsObject<PointerEventInit>().apply {
@@ -88,7 +88,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/PointerEvent)
      */
-    constructor(type: String, eventInitDict: PointerEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: PointerEventInit = definedExternally)
 
     /**
      * The pointerId read-only property of the PointerEvent interface is an identifier assigned to the pointer that
@@ -97,7 +97,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId)
      */
-    open val pointerId: Int
+    public open val pointerId: Int
 
     /**
      * The width read-only property of the PointerEvent interface represents the width of the pointer's contact geometry
@@ -106,7 +106,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/width)
      */
-    open val width: Double
+    public open val width: Double
 
     /**
      * The height read-only property of the PointerEvent interface represents the height of the pointer's contact
@@ -115,7 +115,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/height)
      */
-    open val height: Double
+    public open val height: Double
 
     /**
      * The pressure read-only property of the PointerEvent interface indicates the normalized pressure of the pointer
@@ -123,7 +123,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pressure)
      */
-    open val pressure: Float
+    public open val pressure: Float
 
     /**
      * The tangentialPressure read-only property of the PointerEvent interface represents the normalized tangential
@@ -131,7 +131,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tangentialPressure)
      */
-    open val tangentialPressure: Float
+    public open val tangentialPressure: Float
 
     /**
      * The tiltX read-only property of the PointerEvent interface is the angle (in degrees) between the Y-Z plane of the
@@ -139,7 +139,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltX)
      */
-    open val tiltX: Int
+    public open val tiltX: Int
 
     /**
      * The tiltY read-only property of the PointerEvent interface is the angle (in degrees) between the X-Z plane of the
@@ -147,7 +147,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltY)
      */
-    open val tiltY: Int
+    public open val tiltY: Int
 
     /**
      * The twist read-only property of the PointerEvent interface represents the clockwise rotation of the pointer
@@ -155,7 +155,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/twist)
      */
-    open val twist: Int
+    public open val twist: Int
 
     /**
      * The altitudeAngle read-only property of the PointerEvent interface represents the angle between a transducer (a
@@ -164,7 +164,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/altitudeAngle)
      */
-    open val altitudeAngle: Double
+    public open val altitudeAngle: Double
 
     /**
      * The azimuthAngle read-only property of the PointerEvent interface represents the angle between the Y-Z plane and
@@ -172,7 +172,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/azimuthAngle)
      */
-    open val azimuthAngle: Double
+    public open val azimuthAngle: Double
 
     /**
      * The pointerType read-only property of the PointerEvent interface indicates the device type (mouse, pen, or touch)
@@ -180,7 +180,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerType)
      */
-    open val pointerType: String
+    public open val pointerType: String
 
     /**
      * The isPrimary read-only property of the PointerEvent interface indicates whether or not the pointer device that
@@ -189,7 +189,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/isPrimary)
      */
-    open val isPrimary: Boolean
+    public open val isPrimary: Boolean
 
     /**
      * The persistentDeviceId read-only property of the PointerEvent interface is a unique identifier for the pointing
@@ -198,7 +198,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/persistentDeviceId)
      */
-    open val persistentDeviceId: Int
+    public open val persistentDeviceId: Int
 
     /**
      * The getCoalescedEvents() method of the PointerEvent interface returns a sequence of PointerEvent instances that
@@ -211,7 +211,7 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getCoalescedEvents)
      */
-    open fun getCoalescedEvents(): JsArray<PointerEvent>
+    public open fun getCoalescedEvents(): JsArray<PointerEvent>
 
     /**
      * The getPredictedEvents() method of the PointerEvent interface returns a sequence of PointerEvent instances that
@@ -220,24 +220,24 @@ public open external class PointerEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getPredictedEvents)
      */
-    open fun getPredictedEvents(): JsArray<PointerEvent>
+    public open fun getPredictedEvents(): JsArray<PointerEvent>
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface MouseEventInit : EventModifierInit {
-    var screenX: Int?
-    var screenY: Int?
-    var clientX: Int?
-    var clientY: Int?
-    var button: Short?
-    var buttons: Short?
-    var relatedTarget: EventTarget?
+    public var screenX: Int?
+    public var screenY: Int?
+    public var clientX: Int?
+    public var clientY: Int?
+    public var button: Short?
+    public var buttons: Short?
+    public var relatedTarget: EventTarget?
 }
 
 public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null): MouseEventInit = newJsObject<MouseEventInit>().apply {
@@ -282,7 +282,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/MouseEvent)
      */
-    constructor(type: String, eventInitDict: MouseEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: MouseEventInit = definedExternally)
 
     /**
      * The screenX read-only property of the MouseEvent interface provides the horizontal coordinate (offset) of the
@@ -290,7 +290,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenX)
      */
-    open val screenX: Int
+    public open val screenX: Int
 
     /**
      * The screenY read-only property of the MouseEvent interface provides the vertical coordinate (offset) of the mouse
@@ -298,7 +298,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenY)
      */
-    open val screenY: Int
+    public open val screenY: Int
 
     /**
      * The clientX read-only property of the MouseEvent interface provides the horizontal coordinate within the
@@ -306,7 +306,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientX)
      */
-    open val clientX: Int
+    public open val clientX: Int
 
     /**
      * The clientY read-only property of the MouseEvent interface provides the vertical coordinate within the
@@ -314,7 +314,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientY)
      */
-    open val clientY: Int
+    public open val clientY: Int
 
     /**
      * The MouseEvent.layerX read-only property returns the horizontal coordinate of the event relative to the current
@@ -322,7 +322,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerX)
      */
-    open val layerX: Int
+    public open val layerX: Int
 
     /**
      * The MouseEvent.layerY read-only property returns the vertical coordinate of the event relative to the current
@@ -330,7 +330,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerY)
      */
-    open val layerY: Int
+    public open val layerY: Int
 
     /**
      * The MouseEvent.ctrlKey read-only property is a boolean value that indicates whether the ctrl key was pressed or
@@ -338,7 +338,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/ctrlKey)
      */
-    open val ctrlKey: Boolean
+    public open val ctrlKey: Boolean
 
     /**
      * The MouseEvent.shiftKey read-only property is a boolean value that indicates whether the shift key was pressed or
@@ -346,7 +346,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/shiftKey)
      */
-    open val shiftKey: Boolean
+    public open val shiftKey: Boolean
 
     /**
      * The MouseEvent.altKey read-only property is a boolean value that indicates whether the alt key was pressed or not
@@ -354,7 +354,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/altKey)
      */
-    open val altKey: Boolean
+    public open val altKey: Boolean
 
     /**
      * The MouseEvent.metaKey read-only property is a boolean value that indicates whether the meta key was pressed or
@@ -362,7 +362,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/metaKey)
      */
-    open val metaKey: Boolean
+    public open val metaKey: Boolean
 
     /**
      * The MouseEvent.button read-only property indicates which button was pressed or released on the mouse to trigger
@@ -370,7 +370,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/button)
      */
-    open val button: Short
+    public open val button: Short
 
     /**
      * The MouseEvent.buttons read-only property indicates which buttons are pressed on the mouse (or other input
@@ -378,14 +378,14 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/buttons)
      */
-    open val buttons: Short
+    public open val buttons: Short
 
     /**
      * The MouseEvent.relatedTarget read-only property is the secondary target for the mouse event, if there is one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/relatedTarget)
      */
-    open val relatedTarget: EventTarget?
+    public open val relatedTarget: EventTarget?
 
     /**
      * The MouseEvent.getModifierState() method returns the current state of the specified modifier key: true if the
@@ -393,7 +393,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/getModifierState)
      */
-    open fun getModifierState(keyArg: String): Boolean
+    public open fun getModifierState(keyArg: String): Boolean
 
     /**
      * The pageX read-only property of the MouseEvent interface returns the X (horizontal) coordinate (in pixels) at
@@ -402,7 +402,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageX)
      */
-    open val pageX: Double
+    public open val pageX: Double
 
     /**
      * The pageY read-only property of the MouseEvent interface returns the Y (vertical) coordinate (in pixels) at which
@@ -411,21 +411,21 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageY)
      */
-    open val pageY: Double
+    public open val pageY: Double
 
     /**
      * The x read-only property of the MouseEvent interface is an alias for the MouseEvent.clientX property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/x)
      */
-    open val x: Double
+    public open val x: Double
 
     /**
      * The y read-only property of the MouseEvent interface is an alias for the MouseEvent.clientY property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/y)
      */
-    open val y: Double
+    public open val y: Double
 
     /**
      * The offsetX read-only property of the MouseEvent interface provides the offset in the X coordinate of the mouse
@@ -433,7 +433,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/offsetX)
      */
-    open val offsetX: Double
+    public open val offsetX: Double
 
     /**
      * The offsetY read-only property of the MouseEvent interface provides the offset in the Y coordinate of the mouse
@@ -441,7 +441,7 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/offsetY)
      */
-    open val offsetY: Double
+    public open val offsetY: Double
 
     /**
      * The MouseEvent.initMouseEvent() method initializes the value of a mouse event once it's been created (normally
@@ -451,22 +451,22 @@ public open external class MouseEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/initMouseEvent)
      */
-    open fun initMouseEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, detailArg: Int = definedExternally, screenXArg: Int = definedExternally, screenYArg: Int = definedExternally, clientXArg: Int = definedExternally, clientYArg: Int = definedExternally, ctrlKeyArg: Boolean = definedExternally, altKeyArg: Boolean = definedExternally, shiftKeyArg: Boolean = definedExternally, metaKeyArg: Boolean = definedExternally, buttonArg: Short = definedExternally, relatedTargetArg: EventTarget? = definedExternally)
+    public open fun initMouseEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, detailArg: Int = definedExternally, screenXArg: Int = definedExternally, screenYArg: Int = definedExternally, clientXArg: Int = definedExternally, clientYArg: Int = definedExternally, ctrlKeyArg: Boolean = definedExternally, altKeyArg: Boolean = definedExternally, shiftKeyArg: Boolean = definedExternally, metaKeyArg: Boolean = definedExternally, buttonArg: Short = definedExternally, relatedTargetArg: EventTarget? = definedExternally)
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface WheelEventInit : MouseEventInit {
-    var deltaX: Double?
-    var deltaY: Double?
-    var deltaZ: Double?
-    var deltaMode: Int?
-    var momentum: Boolean?
+    public var deltaX: Double?
+    public var deltaY: Double?
+    public var deltaZ: Double?
+    public var deltaMode: Int?
+    public var momentum: Boolean?
 }
 
 public fun WheelEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null, deltaX: Double? = null, deltaY: Double? = null, deltaZ: Double? = null, deltaMode: Int? = null, momentum: Boolean? = null): WheelEventInit = newJsObject<WheelEventInit>().apply {
@@ -515,7 +515,7 @@ public open external class WheelEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/WheelEvent)
      */
-    constructor(type: String, eventInitDict: WheelEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: WheelEventInit = definedExternally)
 
     /**
      * The WheelEvent.deltaX read-only property is a double representing the horizontal scroll amount in the
@@ -523,7 +523,7 @@ public open external class WheelEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaX)
      */
-    open val deltaX: Double
+    public open val deltaX: Double
 
     /**
      * The WheelEvent.deltaY read-only property is a double representing the vertical scroll amount in the
@@ -531,7 +531,7 @@ public open external class WheelEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaY)
      */
-    open val deltaY: Double
+    public open val deltaY: Double
 
     /**
      * The WheelEvent.deltaZ read-only property is a double representing the scroll amount along the z-axis, in the
@@ -539,7 +539,7 @@ public open external class WheelEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaZ)
      */
-    open val deltaZ: Double
+    public open val deltaZ: Double
 
     /**
      * The WheelEvent.deltaMode read-only property returns an unsigned long representing the unit of the delta values
@@ -547,16 +547,16 @@ public open external class WheelEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaMode)
      */
-    open val deltaMode: Int
-    open val momentum: Boolean
+    public open val deltaMode: Int
+    public open val momentum: Boolean
 
-    companion object {
-        val DOM_DELTA_PIXEL: Int
-        val DOM_DELTA_LINE: Int
-        val DOM_DELTA_PAGE: Int
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val DOM_DELTA_PIXEL: Int
+        public val DOM_DELTA_LINE: Int
+        public val DOM_DELTA_PAGE: Int
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }

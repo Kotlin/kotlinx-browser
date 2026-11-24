@@ -63,7 +63,7 @@ public abstract external class HTMLAllCollection : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAllCollection/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The namedItem() method of the HTMLAllCollection interface returns the first Element in the collection whose id or
@@ -73,7 +73,7 @@ public abstract external class HTMLAllCollection : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAllCollection/namedItem)
      */
-    open fun namedItem(name: String): UnionElementOrHTMLCollection?
+    public open fun namedItem(name: String): UnionElementOrHTMLCollection?
 
     /**
      * The item() method of the HTMLAllCollection interface returns the element located at the specified offset into the
@@ -83,7 +83,7 @@ public abstract external class HTMLAllCollection : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAllCollection/item)
      */
-    open fun item(nameOrIndex: String = definedExternally): UnionElementOrHTMLCollection?
+    public open fun item(nameOrIndex: String = definedExternally): UnionElementOrHTMLCollection?
 }
 
 public operator fun HTMLAllCollection.get(index: Int): Element? = getProperty(this, index)
@@ -116,7 +116,7 @@ public abstract external class RadioNodeList : NodeList, UnionElementOrRadioNode
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RadioNodeList/value)
      */
-    open var value: String
+    public open var value: String
 }
 
 /**
@@ -141,7 +141,7 @@ public abstract external class HTMLOptionsCollection : HTMLCollection {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
-    open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: HTMLElement?)
+    public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: HTMLElement?)
 
     /**
      * The add() method of the HTMLOptionsCollection interface adds an HTMLOptionElement or HTMLOptGroupElement to this
@@ -149,7 +149,7 @@ public abstract external class HTMLOptionsCollection : HTMLCollection {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
-    open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: Int?)
+    public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: Int?)
 
     /**
      * The add() method of the HTMLOptionsCollection interface adds an HTMLOptionElement or HTMLOptGroupElement to this
@@ -157,7 +157,7 @@ public abstract external class HTMLOptionsCollection : HTMLCollection {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
-    open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement)
+    public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement)
 
     /**
      * The remove() method of the HTMLOptionsCollection interface removes the &lt;option&gt; element specified by the
@@ -165,7 +165,7 @@ public abstract external class HTMLOptionsCollection : HTMLCollection {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/remove)
      */
-    open fun remove(index: Int)
+    public open fun remove(index: Int)
 
     /**
      * The selectedIndex property of the HTMLOptionsCollection interface is the numeric index of the first selected
@@ -176,7 +176,7 @@ public abstract external class HTMLOptionsCollection : HTMLCollection {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/selectedIndex)
      */
-    open var selectedIndex: Int
+    public open var selectedIndex: Int
 }
 
 public operator fun HTMLOptionsCollection.set(index: Int, option: HTMLOptionElement?) { setProperty(this, index, option) }
@@ -207,14 +207,14 @@ public abstract external class DOMStringList : ItemArrayLike<JsString> {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/contains)
      */
-    open fun contains(string: String): Boolean
+    public open fun contains(string: String): Boolean
 }
 
 public operator fun DOMStringList.get(index: Int): String? = getStringProperty(this, index)
 
 public external interface DocumentReadyState : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val DocumentReadyState.Companion.LOADING: DocumentReadyState get() = "loading".toJsString().unsafeCast<DocumentReadyState>()
@@ -223,7 +223,7 @@ public inline val DocumentReadyState.Companion.COMPLETE: DocumentReadyState get(
 
 public external interface DocumentVisibilityState : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val DocumentVisibilityState.Companion.VISIBLE: DocumentVisibilityState get() = "visible".toJsString().unsafeCast<DocumentVisibilityState>()
@@ -242,7 +242,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/title)
      */
-    open var title: String
+    public open var title: String
 
     /**
      * The lang property of the HTMLElement interface indicates the base language of an element's attribute values and
@@ -251,7 +251,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/lang)
      */
-    open var lang: String
+    public open var lang: String
 
     /**
      * The translate property of the HTMLElement interface indicates whether an element's attribute values and the
@@ -260,7 +260,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/translate)
      */
-    open var translate: Boolean
+    public open var translate: Boolean
 
     /**
      * The HTMLElement.dir property indicates the text writing directionality of the content of the current element. It
@@ -268,14 +268,14 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dir)
      */
-    open var dir: String
+    public open var dir: String
 
     /**
      * The HTMLElement property hidden reflects the value of the element's hidden attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/hidden)
      */
-    open var hidden: JsAny?
+    public open var hidden: JsAny?
 
     /**
      * The HTMLElement property inert reflects the value of the element's inert attribute. It is a boolean value that,
@@ -286,7 +286,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/inert)
      */
-    open var inert: Boolean
+    public open var inert: Boolean
 
     /**
      * The HTMLElement.click() method simulates a mouse click on an element. When called on an element, the element's
@@ -294,14 +294,14 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/click)
      */
-    open fun click()
+    public open fun click()
 
     /**
      * The HTMLElement.accessKey property sets the keystroke which a user can press to jump to a given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/accessKey)
      */
-    open var accessKey: String
+    public open var accessKey: String
 
     /**
      * The HTMLElement.accessKeyLabel read-only property returns a string containing the element's browser-assigned
@@ -309,7 +309,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/accessKeyLabel)
      */
-    open val accessKeyLabel: String
+    public open val accessKeyLabel: String
 
     /**
      * The draggable property of the HTMLElement interface gets and sets a Boolean primitive indicating if the element
@@ -317,7 +317,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/draggable)
      */
-    open var draggable: Boolean
+    public open var draggable: Boolean
 
     /**
      * The spellcheck property of the HTMLElement interface represents a boolean value that controls the spell-checking
@@ -325,7 +325,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/spellcheck)
      */
-    open var spellcheck: Boolean
+    public open var spellcheck: Boolean
 
     /**
      * The writingSuggestions property of the HTMLElement interface is a string indicating if browser-provided writing
@@ -333,7 +333,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/writingSuggestions)
      */
-    open var writingSuggestions: String
+    public open var writingSuggestions: String
 
     /**
      * The autocapitalize property of the HTMLElement interface represents the element's capitalization behavior for
@@ -341,7 +341,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autocapitalize)
      */
-    open var autocapitalize: String
+    public open var autocapitalize: String
 
     /**
      * The autocorrect property of the HTMLElement interface controls whether or not autocorrection of editable text is
@@ -349,7 +349,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autocorrect)
      */
-    open var autocorrect: Boolean
+    public open var autocorrect: Boolean
 
     /**
      * The innerText property of the HTMLElement interface represents the rendered text content of a node and its
@@ -357,7 +357,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/innerText)
      */
-    open var innerText: String
+    public open var innerText: String
 
     /**
      * The outerText property of the HTMLElement interface returns the same value as HTMLElement.innerText. When used as
@@ -366,7 +366,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/outerText)
      */
-    open var outerText: String
+    public open var outerText: String
 
     /**
      * The HTMLElement.attachInternals() method returns an ElementInternals object. This method allows a custom element
@@ -376,7 +376,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/attachInternals)
      */
-    open fun attachInternals(): ElementInternals
+    public open fun attachInternals(): ElementInternals
 
     /**
      * The showPopover() method of the HTMLElement interface shows a popover element (i.e., one that has a valid popover
@@ -384,7 +384,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/showPopover)
      */
-    open fun showPopover(options: ShowPopoverOptions = definedExternally)
+    public open fun showPopover(options: ShowPopoverOptions = definedExternally)
 
     /**
      * The hidePopover() method of the HTMLElement interface hides a popover element (i.e., one that has a valid popover
@@ -392,7 +392,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/hidePopover)
      */
-    open fun hidePopover()
+    public open fun hidePopover()
 
     /**
      * The togglePopover() method of the HTMLElement interface toggles a popover element (i.e., one that has a valid
@@ -400,7 +400,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */
-    open fun togglePopover(options: TogglePopoverOptions): Boolean
+    public open fun togglePopover(options: TogglePopoverOptions): Boolean
 
     /**
      * The togglePopover() method of the HTMLElement interface toggles a popover element (i.e., one that has a valid
@@ -408,7 +408,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */
-    open fun togglePopover(options: Boolean): Boolean
+    public open fun togglePopover(options: Boolean): Boolean
 
     /**
      * The togglePopover() method of the HTMLElement interface toggles a popover element (i.e., one that has a valid
@@ -416,7 +416,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */
-    open fun togglePopover(): Boolean
+    public open fun togglePopover(): Boolean
 
     /**
      * The popover property of the HTMLElement interface gets and sets an element's popover state via JavaScript
@@ -424,10 +424,10 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/popover)
      */
-    open var popover: String?
-    open var headingOffset: Int
-    open var headingReset: Boolean
-    open val scrollParent: Element?
+    public open var popover: String?
+    public open var headingOffset: Int
+    public open var headingReset: Boolean
+    public open val scrollParent: Element?
 
     /**
      * The HTMLElement.offsetParent read-only property returns a reference to the element which is the closest (nearest
@@ -435,7 +435,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetParent)
      */
-    open val offsetParent: Element?
+    public open val offsetParent: Element?
 
     /**
      * The offsetTop read-only property of the HTMLElement interface returns the distance from the outer border of the
@@ -444,7 +444,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetTop)
      */
-    open val offsetTop: Int
+    public open val offsetTop: Int
 
     /**
      * The offsetLeft read-only property of the HTMLElement interface returns the number of pixels that the upper left
@@ -452,7 +452,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetLeft)
      */
-    open val offsetLeft: Int
+    public open val offsetLeft: Int
 
     /**
      * The offsetWidth read-only property of the HTMLElement interface returns the layout width of an element as an
@@ -460,7 +460,7 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetWidth)
      */
-    open val offsetWidth: Int
+    public open val offsetWidth: Int
 
     /**
      * The offsetHeight read-only property of the HTMLElement interface returns the height of an element, including
@@ -468,32 +468,32 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetHeight)
      */
-    open val offsetHeight: Int
+    public open val offsetHeight: Int
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public external interface ShowPopoverOptions : JsAny {
-    var source: HTMLElement?
+    public var source: HTMLElement?
 }
 
 public fun ShowPopoverOptions(source: HTMLElement? = null): ShowPopoverOptions = newJsObject<ShowPopoverOptions>().apply {
@@ -501,7 +501,7 @@ public fun ShowPopoverOptions(source: HTMLElement? = null): ShowPopoverOptions =
 }
 
 public external interface TogglePopoverOptions : ShowPopoverOptions {
-    var force: Boolean?
+    public var force: Boolean?
 }
 
 public fun TogglePopoverOptions(source: HTMLElement? = null, force: Boolean? = null): TogglePopoverOptions = newJsObject<TogglePopoverOptions>().apply {
@@ -517,25 +517,25 @@ public fun TogglePopoverOptions(source: HTMLElement? = null, force: Boolean? = n
  */
 public abstract external class HTMLUnknownElement : HTMLElement {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -546,7 +546,7 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset)
      */
-    val dataset: DOMStringMap
+    public val dataset: DOMStringMap
 
     /**
      * The nonce property of the HTMLElement interface returns the cryptographic number used once that is used by
@@ -554,7 +554,7 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/nonce)
      */
-    var nonce: String
+    public var nonce: String
 
     /**
      * The autofocus property of the HTMLElement interface represents a boolean value reflecting the autofocus HTML
@@ -563,14 +563,14 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autofocus)
      */
-    var autofocus: Boolean
+    public var autofocus: Boolean
 
     /**
      * The tabIndex property of the HTMLElement interface represents the tab order of the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/tabIndex)
      */
-    var tabIndex: Int
+    public var tabIndex: Int
 
     /**
      * The HTMLElement.focus() method sets focus on the specified element, if it can be focused. The focused element is
@@ -578,14 +578,14 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/focus)
      */
-    fun focus(options: FocusOptions = definedExternally)
+    public fun focus(options: FocusOptions = definedExternally)
 
     /**
      * The HTMLElement.blur() method removes keyboard focus from the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/blur)
      */
-    fun blur()
+    public fun blur()
 }
 
 /**
@@ -617,27 +617,27 @@ public abstract external class HTMLHtmlElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHtmlElement/version)
      */
-    open var version: String
+    public open var version: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -649,25 +649,25 @@ public abstract external class HTMLHtmlElement : HTMLElement {
  */
 public abstract external class HTMLHeadElement : HTMLElement {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -685,27 +685,27 @@ public abstract external class HTMLTitleElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTitleElement/text)
      */
-    open var text: String
+    public open var text: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -722,7 +722,7 @@ public abstract external class HTMLBaseElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement/href)
      */
-    open var href: String
+    public open var href: String
 
     /**
      * The target property of the HTMLBaseElement interface is a string that represents the default target tab to show
@@ -730,27 +730,27 @@ public abstract external class HTMLBaseElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement/target)
      */
-    open var target: String
+    public open var target: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -768,7 +768,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/href)
      */
-    open var href: String
+    public open var href: String
 
     /**
      * The crossOrigin property of the HTMLLinkElement interface specifies the Cross-Origin Resource Sharing (CORS)
@@ -776,7 +776,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/crossOrigin)
      */
-    open var crossOrigin: String?
+    public open var crossOrigin: String?
 
     /**
      * The rel property of the HTMLLinkElement interface reflects the rel attribute. It is a string containing a
@@ -785,7 +785,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/rel)
      */
-    open var rel: String
+    public open var rel: String
 
     /**
      * The as property of the HTMLLinkElement interface returns a string representing the type of content to be
@@ -793,7 +793,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/as)
      */
-    open var `as`: String
+    public open var `as`: String
 
     /**
      * The read-only relList property of the HTMLLinkElement returns a live DOMTokenList object containing the set of
@@ -802,7 +802,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/relList)
      */
-    open val relList: DOMTokenList
+    public open val relList: DOMTokenList
 
     /**
      * The media property of the HTMLLinkElement interface is a string representing a list of one or more media formats
@@ -810,7 +810,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/media)
      */
-    open var media: String
+    public open var media: String
 
     /**
      * The integrity property of the HTMLLinkElement interface is a string containing inline metadata that a browser can
@@ -818,7 +818,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/integrity)
      */
-    open var integrity: String
+    public open var integrity: String
 
     /**
      * The hreflang property of the HTMLLinkElement interface is used to indicate the language and the geographical
@@ -826,7 +826,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/hreflang)
      */
-    open var hreflang: String
+    public open var hreflang: String
 
     /**
      * The type property of the HTMLLinkElement interface is a string that reflects the MIME type of the linked
@@ -834,7 +834,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/type)
      */
-    open var type: String
+    public open var type: String
 
     /**
      * The read-only sizes property of the HTMLLinkElement interface defines the sizes of the icons for visual media
@@ -843,7 +843,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sizes)
      */
-    open val sizes: DOMTokenList
+    public open val sizes: DOMTokenList
 
     /**
      * The imageSrcset property of the HTMLLinkElement interface is a string which identifies one or more
@@ -852,7 +852,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/imageSrcset)
      */
-    open var imageSrcset: String
+    public open var imageSrcset: String
 
     /**
      * The imageSizes property of the HTMLLinkElement interface indicates the size and conditions for the preloaded
@@ -861,7 +861,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/imageSizes)
      */
-    open var imageSizes: String
+    public open var imageSizes: String
 
     /**
      * The referrerPolicy property of the HTMLLinkElement interface reflects the HTML referrerpolicy attribute of the
@@ -869,7 +869,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/referrerPolicy)
      */
-    open var referrerPolicy: String
+    public open var referrerPolicy: String
 
     /**
      * The read-only blocking property of the HTMLLinkElement returns a live DOMTokenList object containing the
@@ -878,7 +878,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/blocking)
      */
-    open val blocking: DOMTokenList
+    public open val blocking: DOMTokenList
 
     /**
      * The disabled property of the HTMLLinkElement interface is a boolean value that represents whether the link is
@@ -886,7 +886,7 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/disabled)
      */
-    open var disabled: Boolean
+    public open var disabled: Boolean
 
     /**
      * The fetchPriority property of the HTMLLinkElement interface represents a hint to the browser indicating how it
@@ -895,30 +895,30 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/fetchPriority)
      */
-    open var fetchPriority: String
-    open var charset: String
-    open var rev: String
-    open var target: String
+    public open var fetchPriority: String
+    public open var charset: String
+    public open var rev: String
+    public open var target: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -936,7 +936,7 @@ public abstract external class HTMLMetaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The HTMLMetaElement.httpEquiv property gets or sets the pragma directive or an HTTP response header name for the
@@ -944,7 +944,7 @@ public abstract external class HTMLMetaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/httpEquiv)
      */
-    open var httpEquiv: String
+    public open var httpEquiv: String
 
     /**
      * The HTMLMetaElement.content property gets or sets the content attribute of pragma directives and named
@@ -953,14 +953,14 @@ public abstract external class HTMLMetaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/content)
      */
-    open var content: String
+    public open var content: String
 
     /**
      * The HTMLMetaElement.media property enables specifying the media for theme-color metadata.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/media)
      */
-    open var media: String
+    public open var media: String
 
     /**
      * The HTMLMetaElement.scheme property defines the scheme of the value in the HTMLMetaElement.content attribute. The
@@ -974,27 +974,27 @@ public abstract external class HTMLMetaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/scheme)
      */
-    open var scheme: String
+    public open var scheme: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1011,14 +1011,14 @@ public abstract external class HTMLStyleElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/disabled)
      */
-    open var disabled: Boolean
+    public open var disabled: Boolean
 
     /**
      * The HTMLStyleElement.media property specifies the intended destination medium for style information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/media)
      */
-    open var media: String
+    public open var media: String
 
     /**
      * The read-only blocking property of the HTMLStyleElement returns a live DOMTokenList object containing the
@@ -1027,7 +1027,7 @@ public abstract external class HTMLStyleElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/blocking)
      */
-    open val blocking: DOMTokenList
+    public open val blocking: DOMTokenList
 
     /**
      * The HTMLStyleElement.type property returns the type of the current style. The value mirrors the HTML
@@ -1037,27 +1037,27 @@ public abstract external class HTMLStyleElement : HTMLElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/type)
      */
-    open var type: String
+    public open var type: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1068,32 +1068,32 @@ public abstract external class HTMLStyleElement : HTMLElement, LinkStyle {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBodyElement)
  */
 public abstract external class HTMLBodyElement : HTMLElement, WindowEventHandlers {
-    open var text: String
-    open var link: String
-    open var vLink: String
-    open var aLink: String
-    open var bgColor: String
-    open var background: String
+    public open var text: String
+    public open var link: String
+    public open var vLink: String
+    public open var aLink: String
+    public open var bgColor: String
+    public open var background: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1104,27 +1104,27 @@ public abstract external class HTMLBodyElement : HTMLElement, WindowEventHandler
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHeadingElement)
  */
 public abstract external class HTMLHeadingElement : HTMLElement {
-    open var align: String
+    public open var align: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1135,27 +1135,27 @@ public abstract external class HTMLHeadingElement : HTMLElement {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLParagraphElement)
  */
 public abstract external class HTMLParagraphElement : HTMLElement {
-    open var align: String
+    public open var align: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1166,31 +1166,31 @@ public abstract external class HTMLParagraphElement : HTMLElement {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHRElement)
  */
 public abstract external class HTMLHRElement : HTMLElement {
-    open var align: String
-    open var color: String
-    open var noShade: Boolean
-    open var size: String
-    open var width: String
+    public open var align: String
+    public open var color: String
+    public open var noShade: Boolean
+    public open var size: String
+    public open var width: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1201,27 +1201,27 @@ public abstract external class HTMLHRElement : HTMLElement {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLPreElement)
  */
 public abstract external class HTMLPreElement : HTMLElement {
-    open var width: Int
+    public open var width: Int
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1239,27 +1239,27 @@ public abstract external class HTMLQuoteElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLQuoteElement/cite)
      */
-    open var cite: String
+    public open var cite: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1275,7 +1275,7 @@ public abstract external class HTMLOListElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/reversed)
      */
-    open var reversed: Boolean
+    public open var reversed: Boolean
 
     /**
      * The start property of the HTMLOListElement interface indicates starting value of the ordered list, with default
@@ -1283,7 +1283,7 @@ public abstract external class HTMLOListElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/start)
      */
-    open var start: Int
+    public open var start: Int
 
     /**
      * The type property of the HTMLOListElement interface indicates the kind of marker to be used to display ordered
@@ -1291,7 +1291,7 @@ public abstract external class HTMLOListElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/type)
      */
-    open var type: String
+    public open var type: String
 
     /**
      * The compact property of the HTMLOListElement interface indicates that spacing between list items should be
@@ -1302,27 +1302,27 @@ public abstract external class HTMLOListElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/compact)
      */
-    open var compact: Boolean
+    public open var compact: Boolean
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1342,28 +1342,28 @@ public abstract external class HTMLUListElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLUListElement/compact)
      */
-    open var compact: Boolean
-    open var type: String
+    public open var compact: Boolean
+    public open var type: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1383,27 +1383,27 @@ public abstract external class HTMLMenuElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMenuElement/compact)
      */
-    open var compact: Boolean
+    public open var compact: Boolean
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1421,28 +1421,28 @@ public abstract external class HTMLLIElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLIElement/value)
      */
-    open var value: Int
-    open var type: String
+    public open var value: Int
+    public open var type: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1462,27 +1462,27 @@ public abstract external class HTMLDListElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDListElement/compact)
      */
-    open var compact: Boolean
+    public open var compact: Boolean
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1493,27 +1493,27 @@ public abstract external class HTMLDListElement : HTMLElement {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDivElement)
  */
 public abstract external class HTMLDivElement : HTMLElement {
-    open var align: String
+    public open var align: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1533,7 +1533,7 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/download)
      */
-    open var download: String
+    public open var download: String
 
     /**
      * The ping property of the HTMLAnchorElement interface is a space-separated list of URLs. When the link is
@@ -1541,7 +1541,7 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/ping)
      */
-    open var ping: String
+    public open var ping: String
 
     /**
      * The HTMLAnchorElement.rel property reflects the rel attribute. It is a string containing a space-separated list
@@ -1550,7 +1550,7 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/rel)
      */
-    open var rel: String
+    public open var rel: String
 
     /**
      * The read-only relList property of the HTMLAnchorElement returns a live DOMTokenList object containing the set of
@@ -1559,7 +1559,7 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/relList)
      */
-    open val relList: DOMTokenList
+    public open val relList: DOMTokenList
 
     /**
      * The text property of the HTMLAnchorElement represents the text inside the element. This property represents the
@@ -1567,7 +1567,7 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/text)
      */
-    open var text: String
+    public open var text: String
 
     /**
      * The HTMLAnchorElement.referrerPolicy property reflect the HTML referrerpolicy attribute of the &lt;a&gt; element
@@ -1575,32 +1575,32 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/referrerPolicy)
      */
-    open var referrerPolicy: String
-    open var coords: String
-    open var charset: String
-    open var name: String
-    open var rev: String
-    open var shape: String
+    public open var referrerPolicy: String
+    public open var coords: String
+    public open var charset: String
+    public open var name: String
+    public open var rev: String
+    public open var shape: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1616,27 +1616,27 @@ public abstract external class HTMLDataElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataElement/value)
      */
-    open var value: String
+    public open var value: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1653,27 +1653,27 @@ public abstract external class HTMLTimeElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTimeElement/dateTime)
      */
-    open var dateTime: String
+    public open var dateTime: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1685,25 +1685,25 @@ public abstract external class HTMLTimeElement : HTMLElement {
  */
 public abstract external class HTMLSpanElement : HTMLElement {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1713,27 +1713,27 @@ public abstract external class HTMLSpanElement : HTMLElement {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBRElement)
  */
 public abstract external class HTMLBRElement : HTMLElement {
-    open var clear: String
+    public open var clear: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1744,7 +1744,7 @@ public external interface HyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/origin)
      */
-    val origin: String
+    public val origin: String
 
     /**
      * The protocol property of the HTMLAnchorElement interface is a string containing the protocol or scheme of the
@@ -1752,7 +1752,7 @@ public external interface HyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/protocol)
      */
-    var protocol: String
+    public var protocol: String
 
     /**
      * The username property of the HTMLAnchorElement interface is a string containing the username component of the
@@ -1760,7 +1760,7 @@ public external interface HyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/username)
      */
-    var username: String
+    public var username: String
 
     /**
      * The password property of the HTMLAnchorElement interface is a string containing the password component of the
@@ -1768,7 +1768,7 @@ public external interface HyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/password)
      */
-    var password: String
+    public var password: String
 
     /**
      * The host property of the HTMLAnchorElement interface is a string containing the host, which is the hostname, and
@@ -1777,7 +1777,7 @@ public external interface HyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/host)
      */
-    var host: String
+    public var host: String
 
     /**
      * The hostname property of the HTMLAnchorElement interface is a string containing either the domain name or IP
@@ -1787,7 +1787,7 @@ public external interface HyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/hostname)
      */
-    var hostname: String
+    public var hostname: String
 
     /**
      * The port property of the HTMLAnchorElement interface is a string containing the port number of the &lt;a&gt;
@@ -1796,7 +1796,7 @@ public external interface HyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/port)
      */
-    var port: String
+    public var port: String
 
     /**
      * The HTMLAnchorElement.pathname property is a string containing an initial '/' followed by the path of the URL not
@@ -1804,7 +1804,7 @@ public external interface HyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/pathname)
      */
-    var pathname: String
+    public var pathname: String
 
     /**
      * The search property of the HTMLAnchorElement interface is a search string, also called a query string, that is a
@@ -1813,7 +1813,7 @@ public external interface HyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/search)
      */
-    var search: String
+    public var search: String
 
     /**
      * The hash property of the HTMLAnchorElement interface is a string containing a "#" followed by the fragment
@@ -1822,14 +1822,14 @@ public external interface HyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/hash)
      */
-    var hash: String
+    public var hash: String
 
     /**
      * The hreflang property of the HTMLAnchorElement interface is a string that is the language of the linked resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/hreflang)
      */
-    var hreflang: String
+    public var hreflang: String
 
     /**
      * The type property of the HTMLAnchorElement interface is a string that indicates the MIME type of the linked
@@ -1837,7 +1837,7 @@ public external interface HyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/type)
      */
-    var type: String
+    public var type: String
 }
 
 public external interface HTMLHyperlinkElementUtils : JsAny {
@@ -1848,7 +1848,7 @@ public external interface HTMLHyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/href)
      */
-    var href: String
+    public var href: String
 
     /**
      * The target property of the HTMLAnchorElement interface is a string that indicates where to display the linked
@@ -1856,7 +1856,7 @@ public external interface HTMLHyperlinkElementUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/target)
      */
-    var target: String
+    public var target: String
 }
 
 /**
@@ -1873,7 +1873,7 @@ public abstract external class HTMLModElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement/cite)
      */
-    open var cite: String
+    public open var cite: String
 
     /**
      * The dateTime property of the HTMLModElement interface is a string containing a machine-readable date with an
@@ -1881,27 +1881,27 @@ public abstract external class HTMLModElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement/dateTime)
      */
-    open var dateTime: String
+    public open var dateTime: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1913,25 +1913,25 @@ public abstract external class HTMLModElement : HTMLElement {
  */
 public abstract external class HTMLPictureElement : HTMLElement {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1948,7 +1948,7 @@ public abstract external class HTMLSourceElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/src)
      */
-    open var src: String
+    public open var src: String
 
     /**
      * The type property of the HTMLSourceElement interface is a string representing the MIME type of the media
@@ -1956,7 +1956,7 @@ public abstract external class HTMLSourceElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/type)
      */
-    open var type: String
+    public open var type: String
 
     /**
      * The srcset property of the HTMLSourceElement interface is a string containing a comma-separated list of candidate
@@ -1964,7 +1964,7 @@ public abstract external class HTMLSourceElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/srcset)
      */
-    open var srcset: String
+    public open var srcset: String
 
     /**
      * The sizes property of the HTMLSourceElement interface is a string representing a list of one or more sizes,
@@ -1972,7 +1972,7 @@ public abstract external class HTMLSourceElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/sizes)
      */
-    open var sizes: String
+    public open var sizes: String
 
     /**
      * The media property of the HTMLSourceElement interface is a string representing the intended destination medium
@@ -1981,7 +1981,7 @@ public abstract external class HTMLSourceElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/media)
      */
-    open var media: String
+    public open var media: String
 
     /**
      * The width property of the HTMLSourceElement interface is a non-negative number indicating the width of the image
@@ -1989,7 +1989,7 @@ public abstract external class HTMLSourceElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/width)
      */
-    open var width: Int
+    public open var width: Int
 
     /**
      * The height property of the HTMLSourceElement interface is a non-negative number indicating the height of the
@@ -1997,27 +1997,27 @@ public abstract external class HTMLSourceElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/height)
      */
-    open var height: Int
+    public open var height: Int
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2036,7 +2036,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/alt)
      */
-    open var alt: String
+    public open var alt: String
 
     /**
      * The src property of the HTMLImageElement interface specifies the image to display in the &lt;img&gt; element. It
@@ -2044,7 +2044,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/src)
      */
-    open var src: String
+    public open var src: String
 
     /**
      * The srcset property of the HTMLImageElement interface identifies one or more image candidate strings, separated
@@ -2055,7 +2055,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset)
      */
-    open var srcset: String
+    public open var srcset: String
 
     /**
      * The sizes property of the HTMLImageElement interface allows you to specify the layout width of the image for each
@@ -2066,7 +2066,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/sizes)
      */
-    open var sizes: String
+    public open var sizes: String
 
     /**
      * The crossOrigin property of the HTMLImageElement interface is a string which specifies the Cross-Origin Resource
@@ -2075,7 +2075,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/crossOrigin)
      */
-    open var crossOrigin: String?
+    public open var crossOrigin: String?
 
     /**
      * The useMap property of the HTMLImageElement interface provides the name of the client-side image map to apply to
@@ -2083,7 +2083,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/useMap)
      */
-    open var useMap: String
+    public open var useMap: String
 
     /**
      * The isMap property of the HTMLImageElement interface indicates that the image is part of a server-side map. If
@@ -2093,8 +2093,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/isMap)
      */
-    open var isMap: Boolean
-    open var controls: Boolean
+    public open var isMap: Boolean
+    public open var controls: Boolean
 
     /**
      * The width property of the HTMLImageElement interface indicates the width at which the image is drawn, in CSS
@@ -2103,7 +2103,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/width)
      */
-    open var width: Int
+    public open var width: Int
 
     /**
      * The height property of the HTMLImageElement interface indicates the height at which the image is drawn, in CSS
@@ -2112,7 +2112,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/height)
      */
-    open var height: Int
+    public open var height: Int
 
     /**
      * The read-only naturalWidth property of the HTMLImageElement interface returns the intrinsic (natural),
@@ -2120,7 +2120,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/naturalWidth)
      */
-    open val naturalWidth: Int
+    public open val naturalWidth: Int
 
     /**
      * The read-only naturalHeight property of the HTMLImageElement interface returns the intrinsic (natural),
@@ -2128,7 +2128,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/naturalHeight)
      */
-    open val naturalHeight: Int
+    public open val naturalHeight: Int
 
     /**
      * The complete read-only property of the HTMLImageElement interface is a Boolean value indicating whether or not
@@ -2136,7 +2136,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/complete)
      */
-    open val complete: Boolean
+    public open val complete: Boolean
 
     /**
      * The currentSrc read-only property of the HTMLImageElement interface indicates the URL of the image selected by
@@ -2144,7 +2144,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/currentSrc)
      */
-    open val currentSrc: String
+    public open val currentSrc: String
 
     /**
      * The referrerPolicy property of the HTMLImageElement interface defines which referrer is sent when fetching the
@@ -2152,7 +2152,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/referrerPolicy)
      */
-    open var referrerPolicy: String
+    public open var referrerPolicy: String
 
     /**
      * The decoding property of the HTMLImageElement interface provides a hint to the browser as to how it should decode
@@ -2161,7 +2161,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decoding)
      */
-    open var decoding: String
+    public open var decoding: String
 
     /**
      * The loading property of the HTMLImageElement interface provides a hint to the browser on how to handle the
@@ -2171,7 +2171,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/loading)
      */
-    open var loading: String
+    public open var loading: String
 
     /**
      * The fetchPriority property of the HTMLImageElement interface represents a hint to the browser indicating how it
@@ -2180,7 +2180,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/fetchPriority)
      */
-    open var fetchPriority: String
+    public open var fetchPriority: String
 
     /**
      * The decode() method of the HTMLImageElement interface returns a Promise that resolves once the image is decoded
@@ -2188,7 +2188,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
      */
-    open fun decode(): Promise<JsAny?>
+    public open fun decode(): Promise<JsAny?>
 
     /**
      * The deprecated name property of the HTMLImageElement interface specifies a name for the element. It reflects the
@@ -2199,8 +2199,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/name)
      */
-    open var name: String
-    open var lowsrc: String
+    public open var name: String
+    public open var lowsrc: String
 
     /**
      * The deprecated align property of the HTMLImageElement interface is a string which indicates how to position the
@@ -2210,7 +2210,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/align)
      */
-    open var align: String
+    public open var align: String
 
     /**
      * The deprecated hspace property of the HTMLImageElement interface specifies the number of pixels of empty space to
@@ -2221,7 +2221,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/hspace)
      */
-    open var hspace: Int
+    public open var hspace: Int
 
     /**
      * The deprecated vspace property of the HTMLImageElement interface specifies the number of pixels of empty space to
@@ -2232,7 +2232,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/vspace)
      */
-    open var vspace: Int
+    public open var vspace: Int
 
     /**
      * The deprecated longDesc property of the HTMLImageElement interface specifies the URL of a text or HTML file which
@@ -2244,7 +2244,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/longDesc)
      */
-    open var longDesc: String
+    public open var longDesc: String
 
     /**
      * The deprecated border property of the HTMLImageElement interface specifies the number of pixels thick the border
@@ -2255,7 +2255,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/border)
      */
-    open var border: String
+    public open var border: String
 
     /**
      * The read-only x property of the HTMLImageElement interface indicates the x-coordinate of the &lt;img&gt;
@@ -2263,7 +2263,7 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/x)
      */
-    open val x: Int
+    public open val x: Int
 
     /**
      * The read-only y property of the HTMLImageElement interface indicates the y-coordinate of the &lt;img&gt;
@@ -2271,32 +2271,32 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/y)
      */
-    open val y: Int
+    public open val y: Int
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public open external class Image : HTMLImageElement {
-    constructor(width: Int = definedExternally, height: Int = definedExternally)
+    public constructor(width: Int = definedExternally, height: Int = definedExternally)
 
     /**
      * The read-only children property returns a live HTMLCollection which contains all of the child elements of the
@@ -3561,25 +3561,25 @@ public open external class Image : HTMLImageElement {
      */
     override val style: CSSStyleProperties
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -3596,7 +3596,7 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/src)
      */
-    open var src: String
+    public open var src: String
 
     /**
      * The srcdoc property of the HTMLIFrameElement interface gets or sets the inline HTML markup of the frame's
@@ -3604,7 +3604,7 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/srcdoc)
      */
-    open var srcdoc: String
+    public open var srcdoc: String
 
     /**
      * The name property of the HTMLIFrameElement interface is a string value that reflects the name attribute of the
@@ -3612,7 +3612,7 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The read-only sandbox property of the HTMLIFrameElement returns a live DOMTokenList object indicating extra
@@ -3621,7 +3621,7 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/sandbox)
      */
-    open val sandbox: DOMTokenList
+    public open val sandbox: DOMTokenList
 
     /**
      * The allow property of the HTMLIFrameElement interface indicates the Permissions Policy specified for this
@@ -3630,7 +3630,7 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allow)
      */
-    open var allow: String
+    public open var allow: String
 
     /**
      * The allowFullscreen property of the HTMLIFrameElement interface is a boolean value that reflects the
@@ -3639,7 +3639,7 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allowFullscreen)
      */
-    open var allowFullscreen: Boolean
+    public open var allowFullscreen: Boolean
 
     /**
      * The width property of the HTMLIFrameElement interface returns a string that reflects the width attribute of the
@@ -3647,7 +3647,7 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/width)
      */
-    open var width: String
+    public open var width: String
 
     /**
      * The height property of the HTMLIFrameElement interface returns a string that reflects the height attribute of the
@@ -3655,7 +3655,7 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/height)
      */
-    open var height: String
+    public open var height: String
 
     /**
      * The HTMLIFrameElement.referrerPolicy property reflects the HTML referrerpolicy attribute of the &lt;iframe&gt;
@@ -3663,7 +3663,7 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/referrerPolicy)
      */
-    open var referrerPolicy: String
+    public open var referrerPolicy: String
 
     /**
      * The loading property of the HTMLIFrameElement interface is a string that provides a hint to the browser
@@ -3671,7 +3671,7 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/loading)
      */
-    open var loading: String
+    public open var loading: String
 
     /**
      * The contentDocument read-only property of the HTMLIFrameElement interface returns a Document (that is, the active
@@ -3680,47 +3680,47 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/contentDocument)
      */
-    open val contentDocument: Document?
+    public open val contentDocument: Document?
 
     /**
      * The contentWindow property returns the Window object of an HTMLIFrameElement.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/contentWindow)
      */
-    open val contentWindow: Window?
+    public open val contentWindow: Window?
 
     /**
      * The getSVGDocument() method of the HTMLIFrameElement interface returns the Document object of the embedded SVG.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/getSVGDocument)
      */
-    open fun getSVGDocument(): Document?
-    open var align: String
-    open var scrolling: String
-    open var frameBorder: String
-    open var longDesc: String
-    open var marginHeight: String
-    open var marginWidth: String
+    public open fun getSVGDocument(): Document?
+    public open var align: String
+    public open var scrolling: String
+    public open var frameBorder: String
+    public open var longDesc: String
+    public open var marginHeight: String
+    public open var marginWidth: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -3737,7 +3737,7 @@ public abstract external class HTMLEmbedElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/src)
      */
-    open var src: String
+    public open var src: String
 
     /**
      * The type property of the HTMLEmbedElement interface returns a string that reflects the type attribute of the
@@ -3746,7 +3746,7 @@ public abstract external class HTMLEmbedElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/type)
      */
-    open var type: String
+    public open var type: String
 
     /**
      * The width property of the HTMLEmbedElement interface returns a string that reflects the width attribute of the
@@ -3754,7 +3754,7 @@ public abstract external class HTMLEmbedElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/width)
      */
-    open var width: String
+    public open var width: String
 
     /**
      * The height property of the HTMLEmbedElement interface returns a string that reflects the height attribute of the
@@ -3762,36 +3762,36 @@ public abstract external class HTMLEmbedElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/height)
      */
-    open var height: String
+    public open var height: String
 
     /**
      * The getSVGDocument() method of the HTMLEmbedElement interface returns the Document object of the embedded SVG.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/getSVGDocument)
      */
-    open fun getSVGDocument(): Document?
-    open var align: String
-    open var name: String
+    public open fun getSVGDocument(): Document?
+    public open var align: String
+    public open var name: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -3809,7 +3809,7 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/data)
      */
-    open var data: String
+    public open var data: String
 
     /**
      * The type property of the HTMLObjectElement interface returns a string that reflects the type HTML attribute,
@@ -3817,7 +3817,7 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/type)
      */
-    open var type: String
+    public open var type: String
 
     /**
      * The name property of the HTMLObjectElement interface returns a string that reflects the name HTML attribute,
@@ -3825,7 +3825,7 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The form read-only property of the HTMLObjectElement interface returns an HTMLFormElement object that owns this
@@ -3833,7 +3833,7 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/form)
      */
-    open val form: HTMLFormElement?
+    public open val form: HTMLFormElement?
 
     /**
      * The width property of the HTMLObjectElement interface returns a string that reflects the width HTML attribute,
@@ -3841,7 +3841,7 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/width)
      */
-    open var width: String
+    public open var width: String
 
     /**
      * The height property of the HTMLObjectElement interface Returns a string that reflects the height HTML attribute,
@@ -3849,7 +3849,7 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/height)
      */
-    open var height: String
+    public open var height: String
 
     /**
      * The contentDocument read-only property of the HTMLObjectElement interface Returns a Document representing the
@@ -3857,7 +3857,7 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/contentDocument)
      */
-    open val contentDocument: Document?
+    public open val contentDocument: Document?
 
     /**
      * The contentWindow read-only property of the HTMLObjectElement interface returns a WindowProxy representing the
@@ -3865,14 +3865,14 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/contentWindow)
      */
-    open val contentWindow: Window?
+    public open val contentWindow: Window?
 
     /**
      * The getSVGDocument() method of the HTMLObjectElement interface returns the Document object of the embedded SVG.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/getSVGDocument)
      */
-    open fun getSVGDocument(): Document?
+    public open fun getSVGDocument(): Document?
 
     /**
      * The willValidate read-only property of the HTMLObjectElement interface returns false, because &lt;object&gt;
@@ -3880,7 +3880,7 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/willValidate)
      */
-    open val willValidate: Boolean
+    public open val willValidate: Boolean
 
     /**
      * The validity read-only property of the HTMLObjectElement interface returns a ValidityState object that represents
@@ -3889,7 +3889,7 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/validity)
      */
-    open val validity: ValidityState
+    public open val validity: ValidityState
 
     /**
      * The validationMessage read-only property of the HTMLObjectElement interface returns a string representing a
@@ -3899,7 +3899,7 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/validationMessage)
      */
-    open val validationMessage: String
+    public open val validationMessage: String
 
     /**
      * The checkValidity() method of the HTMLObjectElement interface checks if the element is valid, but always returns
@@ -3907,7 +3907,7 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/checkValidity)
      */
-    open fun checkValidity(): Boolean
+    public open fun checkValidity(): Boolean
 
     /**
      * The reportValidity() method of the HTMLObjectElement interface performs the same validity checking steps as the
@@ -3916,23 +3916,23 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/reportValidity)
      */
-    open fun reportValidity(): Boolean
+    public open fun reportValidity(): Boolean
 
     /**
      * The setCustomValidity() method of the HTMLObjectElement interface sets a custom validity message for the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/setCustomValidity)
      */
-    open fun setCustomValidity(error: String)
-    open var align: String
-    open var archive: String
-    open var code: String
-    open var declare: Boolean
-    open var hspace: Int
-    open var standby: String
-    open var vspace: Int
-    open var codeBase: String
-    open var codeType: String
+    public open fun setCustomValidity(error: String)
+    public open var align: String
+    public open var archive: String
+    public open var code: String
+    public open var declare: Boolean
+    public open var hspace: Int
+    public open var standby: String
+    public open var vspace: Int
+    public open var codeBase: String
+    public open var codeType: String
 
     /**
      * The useMap property of the HTMLObjectElement interface returns a string that reflects the usemap HTML attribute,
@@ -3942,28 +3942,28 @@ public abstract external class HTMLObjectElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/useMap)
      */
-    open var useMap: String
-    open var border: String
+    public open var useMap: String
+    public open var border: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -3980,7 +3980,7 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/width)
      */
-    open var width: Int
+    public open var width: Int
 
     /**
      * The height property of the HTMLVideoElement interface returns an integer that reflects the height attribute of
@@ -3988,7 +3988,7 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/height)
      */
-    open var height: Int
+    public open var height: Int
 
     /**
      * The HTMLVideoElement interface's read-only videoWidth property indicates the intrinsic width of the video,
@@ -3996,7 +3996,7 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/videoWidth)
      */
-    open val videoWidth: Int
+    public open val videoWidth: Int
 
     /**
      * The HTMLVideoElement interface's read-only videoHeight property indicates the intrinsic height of the video,
@@ -4004,7 +4004,7 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/videoHeight)
      */
-    open val videoHeight: Int
+    public open val videoHeight: Int
 
     /**
      * The poster property of the HTMLVideoElement interface is a string that reflects the URL for an image to be shown
@@ -4012,37 +4012,37 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/poster)
      */
-    open var poster: String
-    open var playsInline: Boolean
+    public open var poster: String
+    public open var playsInline: Boolean
 
-    companion object {
-        val NETWORK_EMPTY: Short
-        val NETWORK_IDLE: Short
-        val NETWORK_LOADING: Short
-        val NETWORK_NO_SOURCE: Short
-        val HAVE_NOTHING: Short
-        val HAVE_METADATA: Short
-        val HAVE_CURRENT_DATA: Short
-        val HAVE_FUTURE_DATA: Short
-        val HAVE_ENOUGH_DATA: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val NETWORK_EMPTY: Short
+        public val NETWORK_IDLE: Short
+        public val NETWORK_LOADING: Short
+        public val NETWORK_NO_SOURCE: Short
+        public val HAVE_NOTHING: Short
+        public val HAVE_METADATA: Short
+        public val HAVE_CURRENT_DATA: Short
+        public val HAVE_FUTURE_DATA: Short
+        public val HAVE_ENOUGH_DATA: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -4054,39 +4054,39 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
  */
 public abstract external class HTMLAudioElement : HTMLMediaElement {
 
-    companion object {
-        val NETWORK_EMPTY: Short
-        val NETWORK_IDLE: Short
-        val NETWORK_LOADING: Short
-        val NETWORK_NO_SOURCE: Short
-        val HAVE_NOTHING: Short
-        val HAVE_METADATA: Short
-        val HAVE_CURRENT_DATA: Short
-        val HAVE_FUTURE_DATA: Short
-        val HAVE_ENOUGH_DATA: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val NETWORK_EMPTY: Short
+        public val NETWORK_IDLE: Short
+        public val NETWORK_LOADING: Short
+        public val NETWORK_NO_SOURCE: Short
+        public val HAVE_NOTHING: Short
+        public val HAVE_METADATA: Short
+        public val HAVE_CURRENT_DATA: Short
+        public val HAVE_FUTURE_DATA: Short
+        public val HAVE_ENOUGH_DATA: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public open external class Audio : HTMLAudioElement {
-    constructor(src: String = definedExternally)
+    public constructor(src: String = definedExternally)
 
     /**
      * The read-only children property returns a live HTMLCollection which contains all of the child elements of the
@@ -5351,34 +5351,34 @@ public open external class Audio : HTMLAudioElement {
      */
     override val style: CSSStyleProperties
 
-    companion object {
-        val NETWORK_EMPTY: Short
-        val NETWORK_IDLE: Short
-        val NETWORK_LOADING: Short
-        val NETWORK_NO_SOURCE: Short
-        val HAVE_NOTHING: Short
-        val HAVE_METADATA: Short
-        val HAVE_CURRENT_DATA: Short
-        val HAVE_FUTURE_DATA: Short
-        val HAVE_ENOUGH_DATA: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val NETWORK_EMPTY: Short
+        public val NETWORK_IDLE: Short
+        public val NETWORK_LOADING: Short
+        public val NETWORK_NO_SOURCE: Short
+        public val HAVE_NOTHING: Short
+        public val HAVE_METADATA: Short
+        public val HAVE_CURRENT_DATA: Short
+        public val HAVE_FUTURE_DATA: Short
+        public val HAVE_ENOUGH_DATA: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -5396,7 +5396,7 @@ public abstract external class HTMLTrackElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/kind)
      */
-    open var kind: String
+    public open var kind: String
 
     /**
      * The src property of the HTMLTrackElement interface reflects the value of the &lt;track&gt; element's src
@@ -5404,7 +5404,7 @@ public abstract external class HTMLTrackElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/src)
      */
-    open var src: String
+    public open var src: String
 
     /**
      * The srclang property of the HTMLTrackElement interface reflects the value of the &lt;track&gt; element's srclang
@@ -5412,7 +5412,7 @@ public abstract external class HTMLTrackElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/srclang)
      */
-    open var srclang: String
+    public open var srclang: String
 
     /**
      * The label property of the HTMLTrackElement represents the user-readable title displayed when listing subtitle,
@@ -5420,7 +5420,7 @@ public abstract external class HTMLTrackElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/label)
      */
-    open var label: String
+    public open var label: String
 
     /**
      * The default property of the HTMLTrackElement interface represents whether the track will be enabled if the user's
@@ -5429,12 +5429,12 @@ public abstract external class HTMLTrackElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/default)
      */
-    open var default: Boolean
+    public open var default: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/readyState)
      */
-    open val readyState: Short
+    public open val readyState: Short
 
     /**
      * The track read-only property of the HTMLTrackElement interface returns a TextTrack object corresponding to the
@@ -5442,37 +5442,37 @@ public abstract external class HTMLTrackElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/track)
      */
-    open val track: TextTrack
+    public open val track: TextTrack
 
-    companion object {
-        val NONE: Short
-        val LOADING: Short
-        val LOADED: Short
-        val ERROR: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val NONE: Short
+        public val LOADING: Short
+        public val LOADED: Short
+        public val ERROR: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public external interface CanPlayTypeResult : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanPlayTypeResult.Companion.EMPTY: CanPlayTypeResult get() = "".toJsString().unsafeCast<CanPlayTypeResult>()
@@ -5493,7 +5493,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/error)
      */
-    open val error: MediaError?
+    public open val error: MediaError?
 
     /**
      * The HTMLMediaElement.src property reflects the value of the HTML media element's src attribute, which indicates
@@ -5501,7 +5501,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/src)
      */
-    open var src: String
+    public open var src: String
 
     /**
      * The srcObject property of the HTMLMediaElement interface sets or returns the object which serves as the source of
@@ -5509,7 +5509,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/srcObject)
      */
-    open var srcObject: MediaProvider?
+    public open var srcObject: MediaProvider?
 
     /**
      * The currentSrc read-only property of the HTMLMediaElement interface contains the absolute URL of the chosen media
@@ -5518,7 +5518,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/currentSrc)
      */
-    open val currentSrc: String
+    public open val currentSrc: String
 
     /**
      * The HTMLMediaElement.crossOrigin property is the CORS setting for this media element. See CORS settings
@@ -5526,7 +5526,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/crossOrigin)
      */
-    open var crossOrigin: String?
+    public open var crossOrigin: String?
 
     /**
      * The networkState read-only property of the HTMLMediaElement interface indicates the current state of the fetching
@@ -5534,7 +5534,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/networkState)
      */
-    open val networkState: Short
+    public open val networkState: Short
 
     /**
      * The preload property of the HTMLMediaElement interface is a string that provides a hint to the browser about what
@@ -5542,7 +5542,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preload)
      */
-    open var preload: String
+    public open var preload: String
 
     /**
      * The buffered read-only property of HTMLMediaElement objects returns a new static normalized TimeRanges object
@@ -5551,7 +5551,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/buffered)
      */
-    open val buffered: TimeRanges
+    public open val buffered: TimeRanges
 
     /**
      * The HTMLMediaElement method load() resets the media element to its initial state and begins the process of
@@ -5559,7 +5559,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/load)
      */
-    open fun load()
+    public open fun load()
 
     /**
      * The HTMLMediaElement method canPlayType() reports how likely it is that the current browser will be able to play
@@ -5567,14 +5567,14 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/canPlayType)
      */
-    open fun canPlayType(type: String): CanPlayTypeResult
+    public open fun canPlayType(type: String): CanPlayTypeResult
 
     /**
      * The readyState read-only property of the HTMLMediaElement interface indicates the readiness state of the media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/readyState)
      */
-    open val readyState: Short
+    public open val readyState: Short
 
     /**
      * The seeking read-only property of the HTMLMediaElement interface is a Boolean indicating whether the resource,
@@ -5582,28 +5582,28 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeking)
      */
-    open val seeking: Boolean
+    public open val seeking: Boolean
 
     /**
      * The HTMLMediaElement interface's currentTime property specifies the current playback time in seconds.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/currentTime)
      */
-    open var currentTime: Double
+    public open var currentTime: Double
 
     /**
      * The HTMLMediaElement.fastSeek() method quickly seeks the media to the new time with precision tradeoff.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/fastSeek)
      */
-    open fun fastSeek(time: Double)
+    public open fun fastSeek(time: Double)
 
     /**
      * The read-only HTMLMediaElement property duration indicates the length of the element's media in seconds.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/duration)
      */
-    open val duration: Double
+    public open val duration: Double
 
     /**
      * The getStartDate() method of the HTMLMediaElement interface returns a new Date object representing the real-world
@@ -5611,21 +5611,21 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/getStartDate)
      */
-    open fun getStartDate(): JsAny
+    public open fun getStartDate(): JsAny
 
     /**
      * The read-only HTMLMediaElement.paused property tells whether the media element is paused.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/paused)
      */
-    open val paused: Boolean
+    public open val paused: Boolean
 
     /**
      * The HTMLMediaElement.defaultPlaybackRate property indicates the default playback rate for the media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultPlaybackRate)
      */
-    open var defaultPlaybackRate: Double
+    public open var defaultPlaybackRate: Double
 
     /**
      * The HTMLMediaElement.playbackRate property sets the rate at which the media is being played back. This is used to
@@ -5634,7 +5634,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/playbackRate)
      */
-    open var playbackRate: Double
+    public open var playbackRate: Double
 
     /**
      * The HTMLMediaElement.preservesPitch property determines whether or not the browser should adjust the pitch of the
@@ -5642,7 +5642,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preservesPitch)
      */
-    open var preservesPitch: Boolean
+    public open var preservesPitch: Boolean
 
     /**
      * The played read-only property of the HTMLMediaElement interface indicates the time ranges the resource, an
@@ -5651,7 +5651,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/played)
      */
-    open val played: TimeRanges
+    public open val played: TimeRanges
 
     /**
      * The seekable read-only property of HTMLMediaElement objects returns a new static normalized TimeRanges object
@@ -5660,7 +5660,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seekable)
      */
-    open val seekable: TimeRanges
+    public open val seekable: TimeRanges
 
     /**
      * The ended read-only property of the HTMLMediaElement interface indicates whether the media element has ended
@@ -5668,7 +5668,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ended)
      */
-    open val ended: Boolean
+    public open val ended: Boolean
 
     /**
      * The HTMLMediaElement.autoplay property reflects the autoplay HTML attribute, indicating whether playback should
@@ -5676,7 +5676,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/autoplay)
      */
-    open var autoplay: Boolean
+    public open var autoplay: Boolean
 
     /**
      * The HTMLMediaElement.loop property reflects the loop HTML attribute, which controls whether the media element
@@ -5684,7 +5684,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loop)
      */
-    open var loop: Boolean
+    public open var loop: Boolean
 
     /**
      * The HTMLMediaElement play() method attempts to begin playback of the media. It returns a Promise which is
@@ -5692,7 +5692,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
      */
-    open fun play(): Promise<JsAny?>
+    public open fun play(): Promise<JsAny?>
 
     /**
      * The HTMLMediaElement.pause() method will pause playback of the media, if the media is already in a paused state
@@ -5700,7 +5700,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/pause)
      */
-    open fun pause()
+    public open fun pause()
 
     /**
      * The HTMLMediaElement.controls property reflects the controls HTML attribute, which controls whether user
@@ -5708,21 +5708,21 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/controls)
      */
-    open var controls: Boolean
+    public open var controls: Boolean
 
     /**
      * The HTMLMediaElement.volume property sets the volume at which the media will be played.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/volume)
      */
-    open var volume: Double
+    public open var volume: Double
 
     /**
      * The HTMLMediaElement.muted property indicates whether the media element is muted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/muted)
      */
-    open var muted: Boolean
+    public open var muted: Boolean
 
     /**
      * The HTMLMediaElement.defaultMuted property reflects the muted HTML attribute, which indicates whether the media
@@ -5731,7 +5731,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultMuted)
      */
-    open var defaultMuted: Boolean
+    public open var defaultMuted: Boolean
 
     /**
      * The loading property of the HTMLMediaElement interface provides a hint to the browser on how to handle the
@@ -5742,7 +5742,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loading)
      */
-    open var loading: String
+    public open var loading: String
 
     /**
      * The read-only audioTracks property on HTMLMediaElement objects returns an AudioTrackList object listing all of
@@ -5750,7 +5750,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/audioTracks)
      */
-    open val audioTracks: AudioTrackList
+    public open val audioTracks: AudioTrackList
 
     /**
      * The read-only videoTracks property on HTMLMediaElement objects returns a VideoTrackList object listing all of the
@@ -5758,7 +5758,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/videoTracks)
      */
-    open val videoTracks: VideoTrackList
+    public open val videoTracks: VideoTrackList
 
     /**
      * The read-only textTracks property on HTMLMediaElement objects returns a TextTrackList object listing all of the
@@ -5766,7 +5766,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/textTracks)
      */
-    open val textTracks: TextTrackList
+    public open val textTracks: TextTrackList
 
     /**
      * The addTextTrack() method of the HTMLMediaElement interface creates a new TextTrack object and adds it to the
@@ -5775,7 +5775,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/addTextTrack)
      */
-    open fun addTextTrack(kind: TextTrackKind, label: String = definedExternally, language: String = definedExternally): TextTrack
+    public open fun addTextTrack(kind: TextTrackKind, label: String = definedExternally, language: String = definedExternally): TextTrack
 
     /**
      * The read-only HTMLMediaElement.mediaKeys property returns a MediaKeys object, that is a set of keys that the
@@ -5785,14 +5785,14 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/mediaKeys)
      */
-    open val mediaKeys: MediaKeys?
+    public open val mediaKeys: MediaKeys?
 
     /**
      * The encrypted event is fired when initialization data is found in the media that indicates it is encrypted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event)
      */
-    open var onencrypted: ((MediaEncryptedEvent) -> Unit)?
+    public open var onencrypted: ((MediaEncryptedEvent) -> Unit)?
 
     /**
      * The waitingforkey event is fired at a media element when it is first unable to play because it needs a key to
@@ -5800,7 +5800,7 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event)
      */
-    open var onwaitingforkey: ((Event) -> Unit)?
+    public open var onwaitingforkey: ((Event) -> Unit)?
 
     /**
      * The setMediaKeys() method of the HTMLMediaElement interface sets the MediaKeys that will be used to decrypt media
@@ -5810,36 +5810,36 @@ public abstract external class HTMLMediaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
      */
-    open fun setMediaKeys(mediaKeys: MediaKeys?): Promise<JsAny?>
+    public open fun setMediaKeys(mediaKeys: MediaKeys?): Promise<JsAny?>
 
-    companion object {
-        val NETWORK_EMPTY: Short
-        val NETWORK_IDLE: Short
-        val NETWORK_LOADING: Short
-        val NETWORK_NO_SOURCE: Short
-        val HAVE_NOTHING: Short
-        val HAVE_METADATA: Short
-        val HAVE_CURRENT_DATA: Short
-        val HAVE_FUTURE_DATA: Short
-        val HAVE_ENOUGH_DATA: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val NETWORK_EMPTY: Short
+        public val NETWORK_IDLE: Short
+        public val NETWORK_LOADING: Short
+        public val NETWORK_NO_SOURCE: Short
+        public val HAVE_NOTHING: Short
+        public val HAVE_METADATA: Short
+        public val HAVE_CURRENT_DATA: Short
+        public val HAVE_FUTURE_DATA: Short
+        public val HAVE_ENOUGH_DATA: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -5856,7 +5856,7 @@ public abstract external class MediaError : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError/code)
      */
-    open val code: Short
+    public open val code: Short
 
     /**
      * The read-only property MediaError.message returns a human-readable string offering specific diagnostic details
@@ -5865,13 +5865,13 @@ public abstract external class MediaError : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError/message)
      */
-    open val message: String
+    public open val message: String
 
-    companion object {
-        val MEDIA_ERR_ABORTED: Short
-        val MEDIA_ERR_NETWORK: Short
-        val MEDIA_ERR_DECODE: Short
-        val MEDIA_ERR_SRC_NOT_SUPPORTED: Short
+    public companion object {
+        public val MEDIA_ERR_ABORTED: Short
+        public val MEDIA_ERR_NETWORK: Short
+        public val MEDIA_ERR_DECODE: Short
+        public val MEDIA_ERR_SRC_NOT_SUPPORTED: Short
     }
 }
 
@@ -5889,7 +5889,7 @@ public abstract external class AudioTrackList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The AudioTrackList method getTrackById() returns the first AudioTrack object from the track list whose id matches
@@ -5897,7 +5897,7 @@ public abstract external class AudioTrackList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList/getTrackById)
      */
-    open fun getTrackById(id: String): AudioTrack?
+    public open fun getTrackById(id: String): AudioTrack?
 
     /**
      * The change event is fired when an audio track is enabled or disabled, for example by changing the track's enabled
@@ -5905,21 +5905,21 @@ public abstract external class AudioTrackList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList/change_event)
      */
-    open var onchange: ((Event) -> Unit)?
+    public open var onchange: ((Event) -> Unit)?
 
     /**
      * The addtrack event is fired when a track is added to an AudioTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList/addtrack_event)
      */
-    open var onaddtrack: ((TrackEvent) -> Unit)?
+    public open var onaddtrack: ((TrackEvent) -> Unit)?
 
     /**
      * The removetrack event is fired when a track is removed from an AudioTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList/removetrack_event)
      */
-    open var onremovetrack: ((TrackEvent) -> Unit)?
+    public open var onremovetrack: ((TrackEvent) -> Unit)?
 }
 
 public operator fun AudioTrackList.get(index: Int): AudioTrack? = getProperty(this, index)
@@ -5937,7 +5937,7 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/id)
      */
-    open val id: String
+    public open val id: String
 
     /**
      * The kind read-only property of the AudioTrack interface contains a string indicating the category of audio
@@ -5945,7 +5945,7 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/kind)
      */
-    open val kind: String
+    public open val kind: String
 
     /**
      * The read-only AudioTrack property label returns a string specifying the audio track's human-readable label, if
@@ -5953,14 +5953,14 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/label)
      */
-    open val label: String
+    public open val label: String
 
     /**
      * The read-only AudioTrack property language returns a string identifying the language used in the audio track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/language)
      */
-    open val language: String
+    public open val language: String
 
     /**
      * The AudioTrack property enabled specifies whether or not the described audio track is currently enabled for use.
@@ -5968,7 +5968,7 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/enabled)
      */
-    open var enabled: Boolean
+    public open var enabled: Boolean
 
     /**
      * The read-only AudioTrack property sourceBuffer returns the SourceBuffer that created the track, or null if the
@@ -5977,7 +5977,7 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/sourceBuffer)
      */
-    open val sourceBuffer: SourceBuffer?
+    public open val sourceBuffer: SourceBuffer?
 }
 
 /**
@@ -5993,7 +5993,7 @@ public abstract external class VideoTrackList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The VideoTrackList method getTrackById() returns the first VideoTrack object from the track list whose id matches
@@ -6001,7 +6001,7 @@ public abstract external class VideoTrackList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/getTrackById)
      */
-    open fun getTrackById(id: String): VideoTrack?
+    public open fun getTrackById(id: String): VideoTrack?
 
     /**
      * The read-only VideoTrackList property selectedIndex returns the index of the currently selected track, if any, or
@@ -6009,7 +6009,7 @@ public abstract external class VideoTrackList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/selectedIndex)
      */
-    open val selectedIndex: Int
+    public open val selectedIndex: Int
 
     /**
      * The change event is fired when a video track is made active or inactive, for example by changing the track's
@@ -6017,21 +6017,21 @@ public abstract external class VideoTrackList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/change_event)
      */
-    open var onchange: ((Event) -> Unit)?
+    public open var onchange: ((Event) -> Unit)?
 
     /**
      * The addtrack event is fired when a video track is added to a VideoTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/addtrack_event)
      */
-    open var onaddtrack: ((TrackEvent) -> Unit)?
+    public open var onaddtrack: ((TrackEvent) -> Unit)?
 
     /**
      * The removetrack event is fired when a video track is removed from a VideoTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/removetrack_event)
      */
-    open var onremovetrack: ((TrackEvent) -> Unit)?
+    public open var onremovetrack: ((TrackEvent) -> Unit)?
 }
 
 public operator fun VideoTrackList.get(index: Int): VideoTrack? = getProperty(this, index)
@@ -6048,7 +6048,7 @@ public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/id)
      */
-    open val id: String
+    public open val id: String
 
     /**
      * The kind read-only property of the VideoTrack interface contains a string indicating the category of video
@@ -6056,7 +6056,7 @@ public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/kind)
      */
-    open val kind: String
+    public open val kind: String
 
     /**
      * The read-only VideoTrack property label returns a string specifying the video track's human-readable label, if
@@ -6064,21 +6064,21 @@ public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/label)
      */
-    open val label: String
+    public open val label: String
 
     /**
      * The read-only VideoTrack property language returns a string identifying the language used in the video track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/language)
      */
-    open val language: String
+    public open val language: String
 
     /**
      * The VideoTrack property selected controls whether or not a particular video track is active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/selected)
      */
-    open var selected: Boolean
+    public open var selected: Boolean
 
     /**
      * The read-only VideoTrack property sourceBuffer returns the SourceBuffer that created the track, or null if the
@@ -6087,7 +6087,7 @@ public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/sourceBuffer)
      */
-    open val sourceBuffer: SourceBuffer?
+    public open val sourceBuffer: SourceBuffer?
 }
 
 /**
@@ -6103,7 +6103,7 @@ public abstract external class TextTrackList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The TextTrackList method getTrackById() returns the first TextTrack object from the track list whose id matches
@@ -6111,35 +6111,35 @@ public abstract external class TextTrackList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/getTrackById)
      */
-    open fun getTrackById(id: String): TextTrack?
+    public open fun getTrackById(id: String): TextTrack?
 
     /**
      * The change event is fired when a text track is made active or inactive, or a TextTrackList is otherwise changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/change_event)
      */
-    open var onchange: ((Event) -> Unit)?
+    public open var onchange: ((Event) -> Unit)?
 
     /**
      * The addtrack event is fired when a track is added to a TextTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/addtrack_event)
      */
-    open var onaddtrack: ((TrackEvent) -> Unit)?
+    public open var onaddtrack: ((TrackEvent) -> Unit)?
 
     /**
      * The removetrack event is fired when a track is removed from a TextTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/removetrack_event)
      */
-    open var onremovetrack: ((TrackEvent) -> Unit)?
+    public open var onremovetrack: ((TrackEvent) -> Unit)?
 }
 
 public operator fun TextTrackList.get(index: Int): TextTrack? = getProperty(this, index)
 
 public external interface TextTrackMode : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val TextTrackMode.Companion.DISABLED: TextTrackMode get() = "disabled".toJsString().unsafeCast<TextTrackMode>()
@@ -6148,7 +6148,7 @@ public inline val TextTrackMode.Companion.SHOWING: TextTrackMode get() = "showin
 
 public external interface TextTrackKind : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val TextTrackKind.Companion.SUBTITLES: TextTrackKind get() = "subtitles".toJsString().unsafeCast<TextTrackKind>()
@@ -6169,7 +6169,7 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/kind)
      */
-    open val kind: TextTrackKind
+    public open val kind: TextTrackKind
 
     /**
      * The label read-only property of the TextTrack interface returns a human-readable label for the text track, if it
@@ -6177,21 +6177,21 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/label)
      */
-    open val label: String
+    public open val label: String
 
     /**
      * The language read-only property of the TextTrack interface returns the language of the text track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/language)
      */
-    open val language: String
+    public open val language: String
 
     /**
      * The id read-only property of the TextTrack interface returns the ID of the track if it has one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/id)
      */
-    open val id: String
+    public open val id: String
 
     /**
      * The inBandMetadataTrackDispatchType read-only property of the TextTrack interface returns the text track's
@@ -6199,7 +6199,7 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/inBandMetadataTrackDispatchType)
      */
-    open val inBandMetadataTrackDispatchType: String
+    public open val inBandMetadataTrackDispatchType: String
 
     /**
      * The TextTrack interface's mode property is a string specifying and controlling the text track's mode: disabled,
@@ -6208,7 +6208,7 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/mode)
      */
-    open var mode: TextTrackMode
+    public open var mode: TextTrackMode
 
     /**
      * The cues read-only property of the TextTrack interface returns a TextTrackCueList object containing all of the
@@ -6216,7 +6216,7 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cues)
      */
-    open val cues: TextTrackCueList?
+    public open val cues: TextTrackCueList?
 
     /**
      * The activeCues read-only property of the TextTrack interface returns a TextTrackCueList object listing the
@@ -6224,21 +6224,21 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/activeCues)
      */
-    open val activeCues: TextTrackCueList?
+    public open val activeCues: TextTrackCueList?
 
     /**
      * The addCue() method of the TextTrack interface adds a new cue to the list of cues.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/addCue)
      */
-    open fun addCue(cue: TextTrackCue)
+    public open fun addCue(cue: TextTrackCue)
 
     /**
      * The removeCue() method of the TextTrack interface removes a cue from the list of cues.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/removeCue)
      */
-    open fun removeCue(cue: TextTrackCue)
+    public open fun removeCue(cue: TextTrackCue)
 
     /**
      * The cuechange event fires when a TextTrack has changed the currently displaying cues. The event is fired on both
@@ -6246,7 +6246,7 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cuechange_event)
      */
-    open var oncuechange: ((Event) -> Unit)?
+    public open var oncuechange: ((Event) -> Unit)?
 
     /**
      * The read-only sourceBuffer property of the TextTrack interface returns the SourceBuffer that created the track,
@@ -6255,7 +6255,7 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/sourceBuffer)
      */
-    open val sourceBuffer: SourceBuffer?
+    public open val sourceBuffer: SourceBuffer?
 }
 
 /**
@@ -6270,7 +6270,7 @@ public abstract external class TextTrackCueList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCueList/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The getCueById() method of the TextTrackCueList interface returns the first VTTCue in the list represented by the
@@ -6278,7 +6278,7 @@ public abstract external class TextTrackCueList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCueList/getCueById)
      */
-    open fun getCueById(id: String): TextTrackCue?
+    public open fun getCueById(id: String): TextTrackCue?
 }
 
 public operator fun TextTrackCueList.get(index: Int): TextTrackCue? = getProperty(this, index)
@@ -6295,28 +6295,28 @@ public abstract external class TextTrackCue : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/track)
      */
-    open val track: TextTrack?
+    public open val track: TextTrack?
 
     /**
      * The id property of the TextTrackCue interface returns and sets the identifier for this cue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/id)
      */
-    open var id: String
+    public open var id: String
 
     /**
      * The startTime property of the TextTrackCue interface returns and sets the start time of the cue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/startTime)
      */
-    open var startTime: Double
+    public open var startTime: Double
 
     /**
      * The endTime property of the TextTrackCue interface returns and sets the end time of the cue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/endTime)
      */
-    open var endTime: Double
+    public open var endTime: Double
 
     /**
      * The pauseOnExit property of the TextTrackCue interface returns or sets the flag indicating whether playback of
@@ -6324,7 +6324,7 @@ public abstract external class TextTrackCue : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/pauseOnExit)
      */
-    open var pauseOnExit: Boolean
+    public open var pauseOnExit: Boolean
 
     /**
      * The enter event fires when a cue becomes active. In the case of subtitles or a caption this is when it displays
@@ -6332,14 +6332,14 @@ public abstract external class TextTrackCue : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/enter_event)
      */
-    open var onenter: ((Event) -> Unit)?
+    public open var onenter: ((Event) -> Unit)?
 
     /**
      * The exit event fires when a cue stops being active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/exit_event)
      */
-    open var onexit: ((Event) -> Unit)?
+    public open var onexit: ((Event) -> Unit)?
 }
 
 /**
@@ -6355,7 +6355,7 @@ public abstract external class TimeRanges : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The start() method of the TimeRanges interface returns the time offset (in seconds) at which a specified time
@@ -6363,7 +6363,7 @@ public abstract external class TimeRanges : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/start)
      */
-    open fun start(index: Int): Double
+    public open fun start(index: Int): Double
 
     /**
      * The end() method of the TimeRanges interface returns the time offset (in seconds) at which a specified time range
@@ -6371,7 +6371,7 @@ public abstract external class TimeRanges : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/end)
      */
-    open fun end(index: Int): Double
+    public open fun end(index: Int): Double
 }
 
 /**
@@ -6387,7 +6387,7 @@ public open external class TrackEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent/TrackEvent)
      */
-    constructor(type: String, eventInitDict: TrackEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: TrackEventInit = definedExternally)
 
     /**
      * The read-only track property of the TrackEvent interface specifies the media track object to which the event
@@ -6395,18 +6395,18 @@ public open external class TrackEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent/track)
      */
-    open val track: UnionAudioTrackOrTextTrackOrVideoTrack?
+    public open val track: UnionAudioTrackOrTextTrackOrVideoTrack?
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface TrackEventInit : EventInit {
-    var track: UnionAudioTrackOrTextTrackOrVideoTrack?
+    public var track: UnionAudioTrackOrTextTrackOrVideoTrack?
 }
 
 public fun TrackEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, track: UnionAudioTrackOrTextTrackOrVideoTrack? = null): TrackEventInit = newJsObject<TrackEventInit>().apply {
@@ -6429,7 +6429,7 @@ public abstract external class HTMLMapElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The areas read-only property of the HTMLMapElement interface returns a collection of &lt;area&gt; elements
@@ -6437,27 +6437,27 @@ public abstract external class HTMLMapElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/areas)
      */
-    open val areas: HTMLCollection
+    public open val areas: HTMLCollection
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -6475,7 +6475,7 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/alt)
      */
-    open var alt: String
+    public open var alt: String
 
     /**
      * The coords property of the HTMLAreaElement interface specifies the coordinates of the element's shape as a list
@@ -6483,7 +6483,7 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/coords)
      */
-    open var coords: String
+    public open var coords: String
 
     /**
      * The shape property of the HTMLAreaElement interface specifies the shape of an image map area. It reflects the
@@ -6491,7 +6491,7 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/shape)
      */
-    open var shape: String
+    public open var shape: String
 
     /**
      * The download property of the HTMLAreaElement interface is a string indicating that the linked resource is
@@ -6500,7 +6500,7 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/download)
      */
-    open var download: String
+    public open var download: String
 
     /**
      * The ping property of the HTMLAreaElement interface is a space-separated list of URLs. When the link is followed,
@@ -6508,7 +6508,7 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/ping)
      */
-    open var ping: String
+    public open var ping: String
 
     /**
      * The HTMLAreaElement.rel property reflects the rel attribute. It is a string containing a space-separated list of
@@ -6517,7 +6517,7 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/rel)
      */
-    open var rel: String
+    public open var rel: String
 
     /**
      * The read-only relList property of the HTMLAreaElement returns a live DOMTokenList object containing the set of
@@ -6526,7 +6526,7 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/relList)
      */
-    open val relList: DOMTokenList
+    public open val relList: DOMTokenList
 
     /**
      * The HTMLAreaElement.referrerPolicy property reflect the HTML referrerpolicy attribute of the &lt;area&gt; element
@@ -6534,28 +6534,28 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/referrerPolicy)
      */
-    open var referrerPolicy: String
-    open var noHref: Boolean
+    public open var referrerPolicy: String
+    public open var noHref: Boolean
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -6573,7 +6573,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/caption)
      */
-    open var caption: HTMLTableCaptionElement?
+    public open var caption: HTMLTableCaptionElement?
 
     /**
      * The createCaption() method of the HTMLTableElement interface creates a &lt;caption&gt; element, inserts it as the
@@ -6582,7 +6582,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createCaption)
      */
-    open fun createCaption(): HTMLTableCaptionElement
+    public open fun createCaption(): HTMLTableCaptionElement
 
     /**
      * The deleteCaption() method of the HTMLTableElement interface removes the first &lt;caption&gt; element child from
@@ -6590,7 +6590,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteCaption)
      */
-    open fun deleteCaption()
+    public open fun deleteCaption()
 
     /**
      * The tHead property of the HTMLTableElement interface represents the first &lt;thead&gt; element child of the
@@ -6598,7 +6598,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tHead)
      */
-    open var tHead: HTMLTableSectionElement?
+    public open var tHead: HTMLTableSectionElement?
 
     /**
      * The createTHead() method of the HTMLTableElement interface creates a &lt;thead&gt; element, inserts it before the
@@ -6608,7 +6608,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTHead)
      */
-    open fun createTHead(): HTMLTableSectionElement
+    public open fun createTHead(): HTMLTableSectionElement
 
     /**
      * The deleteTHead() method of the HTMLTableElement interface removes the first &lt;thead&gt; element child from a
@@ -6616,7 +6616,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteTHead)
      */
-    open fun deleteTHead()
+    public open fun deleteTHead()
 
     /**
      * The tFoot property of the HTMLTableElement interface represents the first &lt;tfoot&gt; element child of the
@@ -6624,7 +6624,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tFoot)
      */
-    open var tFoot: HTMLTableSectionElement?
+    public open var tFoot: HTMLTableSectionElement?
 
     /**
      * The createTFoot() method of the HTMLTableElement interface creates a &lt;tfoot&gt; element, inserts it as the
@@ -6633,7 +6633,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTFoot)
      */
-    open fun createTFoot(): HTMLTableSectionElement
+    public open fun createTFoot(): HTMLTableSectionElement
 
     /**
      * The deleteTFoot() method of the HTMLTableElement interface removes the first &lt;tfoot&gt; element child from a
@@ -6641,7 +6641,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteTFoot)
      */
-    open fun deleteTFoot()
+    public open fun deleteTFoot()
 
     /**
      * The tBodies read-only property of the HTMLTableElement interface returns a live HTMLCollection of all
@@ -6649,7 +6649,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tBodies)
      */
-    open val tBodies: HTMLCollection
+    public open val tBodies: HTMLCollection
 
     /**
      * The createTBody() method of the HTMLTableElement interface creates a &lt;tbody&gt; element, inserts it
@@ -6658,7 +6658,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTBody)
      */
-    open fun createTBody(): HTMLTableSectionElement
+    public open fun createTBody(): HTMLTableSectionElement
 
     /**
      * The rows read-only property of the HTMLTableElement interface returns a live HTMLCollection of all &lt;tr&gt;
@@ -6669,7 +6669,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/rows)
      */
-    open val rows: HTMLCollection
+    public open val rows: HTMLCollection
 
     /**
      * The insertRow() method of the HTMLTableElement interface creates a &lt;tr&gt; element, inserts it at the
@@ -6678,7 +6678,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/insertRow)
      */
-    open fun insertRow(index: Int = definedExternally): HTMLTableRowElement
+    public open fun insertRow(index: Int = definedExternally): HTMLTableRowElement
 
     /**
      * The deleteRow() method of the HTMLTableElement interface removes a specific row (&lt;tr&gt;) from a given
@@ -6686,7 +6686,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteRow)
      */
-    open fun deleteRow(index: Int)
+    public open fun deleteRow(index: Int)
 
     /**
      * The HTMLTableElement.align property represents the alignment of the table.
@@ -6695,7 +6695,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/align)
      */
-    open var align: String
+    public open var align: String
 
     /**
      * The HTMLTableElement.border property represents the border width of the &lt;table&gt; element.
@@ -6704,7 +6704,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/border)
      */
-    open var border: String
+    public open var border: String
 
     /**
      * The HTMLTableElement interface's frame property is a string that indicates which of the table's exterior borders
@@ -6714,7 +6714,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/frame)
      */
-    open var frame: String
+    public open var frame: String
 
     /**
      * The HTMLTableElement.rules property indicates which cell borders to render in the table.
@@ -6723,7 +6723,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/rules)
      */
-    open var rules: String
+    public open var rules: String
 
     /**
      * The HTMLTableElement.summary property represents the table description.
@@ -6732,7 +6732,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/summary)
      */
-    open var summary: String
+    public open var summary: String
 
     /**
      * The HTMLTableElement.width property represents the desired width of the table.
@@ -6741,7 +6741,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/width)
      */
-    open var width: String
+    public open var width: String
 
     /**
      * The bgcolor property of the HTMLTableElement represents the background color of the table.
@@ -6750,7 +6750,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/bgColor)
      */
-    open var bgColor: String
+    public open var bgColor: String
 
     /**
      * The HTMLTableElement.cellPadding property represents the padding around the individual cells of the table.
@@ -6759,7 +6759,7 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/cellPadding)
      */
-    open var cellPadding: String
+    public open var cellPadding: String
 
     /**
      * While you should instead use the CSS border-spacing property, the obsolete HTMLTableElement interface's
@@ -6770,27 +6770,27 @@ public abstract external class HTMLTableElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/cellSpacing)
      */
-    open var cellSpacing: String
+    public open var cellSpacing: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -6809,27 +6809,27 @@ public abstract external class HTMLTableCaptionElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCaptionElement/align)
      */
-    open var align: String
+    public open var align: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -6846,7 +6846,7 @@ public abstract external class HTMLTableColElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/span)
      */
-    open var span: Int
+    public open var span: Int
 
     /**
      * The align property of the HTMLTableColElement interface is a string indicating how to horizontally align text in
@@ -6856,7 +6856,7 @@ public abstract external class HTMLTableColElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/align)
      */
-    open var align: String
+    public open var align: String
 
     /**
      * The ch property of the HTMLTableColElement interface does nothing. It reflects the char attribute of the
@@ -6866,7 +6866,7 @@ public abstract external class HTMLTableColElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/ch)
      */
-    open var ch: String
+    public open var ch: String
 
     /**
      * The chOff property of the HTMLTableColElement interface does nothing. It reflects the charoff attribute of the
@@ -6876,7 +6876,7 @@ public abstract external class HTMLTableColElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/chOff)
      */
-    open var chOff: String
+    public open var chOff: String
 
     /**
      * The vAlign property of the HTMLTableColElement interface is a string indicating how to vertically align text in a
@@ -6886,28 +6886,28 @@ public abstract external class HTMLTableColElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/vAlign)
      */
-    open var vAlign: String
-    open var width: String
+    public open var vAlign: String
+    public open var width: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -6925,7 +6925,7 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/rows)
      */
-    open val rows: HTMLCollection
+    public open val rows: HTMLCollection
 
     /**
      * The insertRow() method of the HTMLTableSectionElement interface creates a &lt;tr&gt; element, inserts it at the
@@ -6934,7 +6934,7 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/insertRow)
      */
-    open fun insertRow(index: Int = definedExternally): HTMLTableRowElement
+    public open fun insertRow(index: Int = definedExternally): HTMLTableRowElement
 
     /**
      * The deleteRow() method of the HTMLTableSectionElement interface removes a specific row (&lt;tr&gt;) from the
@@ -6942,7 +6942,7 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/deleteRow)
      */
-    open fun deleteRow(index: Int)
+    public open fun deleteRow(index: Int)
 
     /**
      * The align property of the HTMLTableSectionElement interface is a string indicating how to horizontally align text
@@ -6952,7 +6952,7 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/align)
      */
-    open var align: String
+    public open var align: String
 
     /**
      * The ch property of the HTMLTableSectionElement interface does nothing. It reflects the char attribute of the
@@ -6962,7 +6962,7 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/ch)
      */
-    open var ch: String
+    public open var ch: String
 
     /**
      * The chOff property of the HTMLTableSectionElement interface does nothing. It reflects the charoff attribute of
@@ -6972,7 +6972,7 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/chOff)
      */
-    open var chOff: String
+    public open var chOff: String
 
     /**
      * The vAlign property of the HTMLTableSectionElement interface is a string indicating how to vertically align text
@@ -6982,27 +6982,27 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/vAlign)
      */
-    open var vAlign: String
+    public open var vAlign: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -7019,7 +7019,7 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/rowIndex)
      */
-    open val rowIndex: Int
+    public open val rowIndex: Int
 
     /**
      * The sectionRowIndex read-only property of the HTMLTableRowElement interface represents the position of a row
@@ -7027,7 +7027,7 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/sectionRowIndex)
      */
-    open val sectionRowIndex: Int
+    public open val sectionRowIndex: Int
 
     /**
      * The cells read-only property of the HTMLTableRowElement interface returns a live HTMLCollection containing the
@@ -7035,7 +7035,7 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/cells)
      */
-    open val cells: HTMLCollection
+    public open val cells: HTMLCollection
 
     /**
      * The insertCell() method of the HTMLTableRowElement interface creates a &lt;td&gt; element, inserts it at the
@@ -7043,14 +7043,14 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/insertCell)
      */
-    open fun insertCell(index: Int = definedExternally): HTMLTableCellElement
+    public open fun insertCell(index: Int = definedExternally): HTMLTableCellElement
 
     /**
      * The deleteCell() method of the HTMLTableRowElement interface removes a specific row cell from a given &lt;tr&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/deleteCell)
      */
-    open fun deleteCell(index: Int)
+    public open fun deleteCell(index: Int)
 
     /**
      * The align property of the HTMLTableRowElement interface is a string indicating how to horizontally align text in
@@ -7060,7 +7060,7 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/align)
      */
-    open var align: String
+    public open var align: String
 
     /**
      * The ch property of the HTMLTableRowElement interface does nothing. It reflects the char attribute of the
@@ -7070,7 +7070,7 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/ch)
      */
-    open var ch: String
+    public open var ch: String
 
     /**
      * The chOff property of the HTMLTableRowElement interface does nothing. It reflects the charoff attribute of the
@@ -7080,7 +7080,7 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/chOff)
      */
-    open var chOff: String
+    public open var chOff: String
 
     /**
      * The vAlign property of the HTMLTableRowElement interface is a string indicating how to vertically align text in a
@@ -7090,7 +7090,7 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/vAlign)
      */
-    open var vAlign: String
+    public open var vAlign: String
 
     /**
      * The HTMLTableRowElement.bgColor property is used to set the background color of a row or retrieve the value of
@@ -7100,27 +7100,27 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/bgColor)
      */
-    open var bgColor: String
+    public open var bgColor: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -7138,7 +7138,7 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/colSpan)
      */
-    open var colSpan: Int
+    public open var colSpan: Int
 
     /**
      * The rowSpan property of the HTMLTableCellElement interface represents the number of rows this cell must span;
@@ -7146,7 +7146,7 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/rowSpan)
      */
-    open var rowSpan: Int
+    public open var rowSpan: Int
 
     /**
      * The headers property of the HTMLTableCellElement interface contains a list of IDs of &lt;th&gt; elements that are
@@ -7154,7 +7154,7 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/headers)
      */
-    open var headers: String
+    public open var headers: String
 
     /**
      * The cellIndex read-only property of the HTMLTableCellElement interface represents the position of a cell within
@@ -7162,14 +7162,14 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/cellIndex)
      */
-    open val cellIndex: Int
+    public open val cellIndex: Int
 
     /**
      * The scope property of the HTMLTableCellElement interface indicates the scope of a &lt;th&gt; cell.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/scope)
      */
-    open var scope: String
+    public open var scope: String
 
     /**
      * The abbr property of the HTMLTableCellElement interface indicates an abbreviation associated with the cell. If
@@ -7177,7 +7177,7 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/abbr)
      */
-    open var abbr: String
+    public open var abbr: String
 
     /**
      * The align property of the HTMLTableCellElement interface is a string indicating how to horizontally align text in
@@ -7187,10 +7187,10 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/align)
      */
-    open var align: String
-    open var axis: String
-    open var height: String
-    open var width: String
+    public open var align: String
+    public open var axis: String
+    public open var height: String
+    public open var width: String
 
     /**
      * The ch property of the HTMLTableCellElement interface does nothing. It reflects the char attribute of the cell
@@ -7200,7 +7200,7 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/ch)
      */
-    open var ch: String
+    public open var ch: String
 
     /**
      * The chOff property of the HTMLTableCellElement interface does nothing. It reflects the charoff attribute of the
@@ -7210,7 +7210,7 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/chOff)
      */
-    open var chOff: String
+    public open var chOff: String
 
     /**
      * The noWrap property of the HTMLTableCellElement interface returns a Boolean value indicating if the text of the
@@ -7220,7 +7220,7 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/noWrap)
      */
-    open var noWrap: Boolean
+    public open var noWrap: Boolean
 
     /**
      * The vAlign property of the HTMLTableCellElement interface is a string indicating how to vertically align text in
@@ -7230,7 +7230,7 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/vAlign)
      */
-    open var vAlign: String
+    public open var vAlign: String
 
     /**
      * The HTMLTableCellElement.bgColor property is used to set the background color of a cell or get the value of the
@@ -7240,27 +7240,27 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/bgColor)
      */
-    open var bgColor: String
+    public open var bgColor: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -7276,14 +7276,14 @@ public abstract external class HTMLFormElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/acceptCharset)
      */
-    open var acceptCharset: String
+    public open var acceptCharset: String
 
     /**
      * The HTMLFormElement.action property represents the action of the &lt;form&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/action)
      */
-    open var action: String
+    public open var action: String
 
     /**
      * The autocomplete property of the HTMLFormElement interface indicates whether the value of the form's controls can
@@ -7291,14 +7291,14 @@ public abstract external class HTMLFormElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/autocomplete)
      */
-    open var autocomplete: String
+    public open var autocomplete: String
 
     /**
      * The HTMLFormElement.enctype property is the MIME type of content that is used to submit the form to the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/enctype)
      */
-    open var enctype: String
+    public open var enctype: String
 
     /**
      * The HTMLFormElement.encoding property is an alternative name for the enctype element on the DOM HTMLFormElement
@@ -7306,21 +7306,21 @@ public abstract external class HTMLFormElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/encoding)
      */
-    open var encoding: String
+    public open var encoding: String
 
     /**
      * The HTMLFormElement.method property represents the HTTP method used to submit the &lt;form&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/method)
      */
-    open var method: String
+    public open var method: String
 
     /**
      * The HTMLFormElement.name property represents the name of the current &lt;form&gt; element as a string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The noValidate property of the HTMLFormElement interface is a boolean value indicating if the &lt;form&gt; will
@@ -7329,7 +7329,7 @@ public abstract external class HTMLFormElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/noValidate)
      */
-    open var noValidate: Boolean
+    public open var noValidate: Boolean
 
     /**
      * The target property of the HTMLFormElement interface represents the target of the form's action (i.e., the frame
@@ -7337,7 +7337,7 @@ public abstract external class HTMLFormElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/target)
      */
-    open var target: String
+    public open var target: String
 
     /**
      * The rel property of the HTMLFormElement interface reflects the rel attribute. It is a string containing what
@@ -7345,7 +7345,7 @@ public abstract external class HTMLFormElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/rel)
      */
-    open var rel: String
+    public open var rel: String
 
     /**
      * The read-only relList property of the HTMLFormElement returns a live DOMTokenList object containing the set of
@@ -7354,7 +7354,7 @@ public abstract external class HTMLFormElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/relList)
      */
-    open val relList: DOMTokenList
+    public open val relList: DOMTokenList
 
     /**
      * The elements read-only property of the HTMLFormElement interface returns an HTMLFormControlsCollection listing
@@ -7362,28 +7362,28 @@ public abstract external class HTMLFormElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/elements)
      */
-    open val elements: HTMLFormControlsCollection
+    public open val elements: HTMLFormControlsCollection
 
     /**
      * The HTMLFormElement.length read-only property returns the number of controls in the &lt;form&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The HTMLFormElement.submit() method submits a given &lt;form&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/submit)
      */
-    open fun submit()
+    public open fun submit()
 
     /**
      * The HTMLFormElement method requestSubmit() requests that the form be submitted using a specific submit button.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/requestSubmit)
      */
-    open fun requestSubmit(submitter: HTMLElement? = definedExternally)
+    public open fun requestSubmit(submitter: HTMLElement? = definedExternally)
 
     /**
      * The HTMLFormElement.reset() method restores a form element's default values. This method does the same thing as
@@ -7391,7 +7391,7 @@ public abstract external class HTMLFormElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reset)
      */
-    open fun reset()
+    public open fun reset()
 
     /**
      * The checkValidity() method of the HTMLFormElement interface returns a boolean value which indicates if all
@@ -7401,7 +7401,7 @@ public abstract external class HTMLFormElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/checkValidity)
      */
-    open fun checkValidity(): Boolean
+    public open fun checkValidity(): Boolean
 
     /**
      * The reportValidity() method of the HTMLFormElement interface performs the same validity checking steps as the
@@ -7410,27 +7410,27 @@ public abstract external class HTMLFormElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reportValidity)
      */
-    open fun reportValidity(): Boolean
+    public open fun reportValidity(): Boolean
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -7453,7 +7453,7 @@ public abstract external class HTMLLabelElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement/form)
      */
-    open val form: HTMLFormElement?
+    public open val form: HTMLFormElement?
 
     /**
      * The htmlFor property of the HTMLLabelElement interface is the ID of the associated label's control element. It
@@ -7461,7 +7461,7 @@ public abstract external class HTMLLabelElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement/htmlFor)
      */
-    open var htmlFor: String
+    public open var htmlFor: String
 
     /**
      * The read-only HTMLLabelElement.control property returns a reference to the control (in the form of an object of
@@ -7470,27 +7470,27 @@ public abstract external class HTMLLabelElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement/control)
      */
-    open val control: HTMLElement?
+    public open val control: HTMLElement?
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -7508,7 +7508,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/accept)
      */
-    open var accept: String
+    public open var accept: String
 
     /**
      * The alpha property of the HTMLInputElement interface reflects the &lt;input&gt; element's alpha attribute, which
@@ -7517,7 +7517,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/alpha)
      */
-    open var alpha: Boolean
+    public open var alpha: Boolean
 
     /**
      * The alt property of the HTMLInputElement interface defines the textual label for the button for users and user
@@ -7525,7 +7525,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/alt)
      */
-    open var alt: String
+    public open var alt: String
 
     /**
      * The autocomplete property of the HTMLInputElement interface indicates whether the value of the control can be
@@ -7533,7 +7533,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/autocomplete)
      */
-    open var autocomplete: String
+    public open var autocomplete: String
 
     /**
      * The defaultChecked property of the HTMLInputElement interface specifies the default checkedness state of the
@@ -7541,7 +7541,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultChecked)
      */
-    open var defaultChecked: Boolean
+    public open var defaultChecked: Boolean
 
     /**
      * The checked property of the HTMLInputElement interface specifies the current checkedness of the element; that is,
@@ -7549,7 +7549,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/checked)
      */
-    open var checked: Boolean
+    public open var checked: Boolean
 
     /**
      * The colorSpace property of the HTMLInputElement interface reflects the &lt;input&gt; element's colorspace
@@ -7558,7 +7558,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/colorSpace)
      */
-    open var colorSpace: String
+    public open var colorSpace: String
 
     /**
      * The dirName property of the HTMLInputElement interface is the directionality of the element and enables the
@@ -7567,7 +7567,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/dirName)
      */
-    open var dirName: String
+    public open var dirName: String
 
     /**
      * The HTMLInputElement.disabled property is a boolean value that reflects the disabled HTML attribute, which
@@ -7576,7 +7576,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/disabled)
      */
-    open var disabled: Boolean
+    public open var disabled: Boolean
 
     /**
      * The form read-only property of the HTMLInputElement interface returns an HTMLFormElement object that owns this
@@ -7584,7 +7584,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/form)
      */
-    open val form: HTMLFormElement?
+    public open val form: HTMLFormElement?
 
     /**
      * The HTMLInputElement.files property allows you to access the FileList selected with the &lt;input type="file"&gt;
@@ -7592,7 +7592,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/files)
      */
-    open var files: FileList?
+    public open var files: FileList?
 
     /**
      * The formAction property of the HTMLInputElement interface is the URL of the program that is executed on the
@@ -7601,7 +7601,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formAction)
      */
-    open var formAction: String
+    public open var formAction: String
 
     /**
      * The formEnctype property of the HTMLInputElement interface is the MIME type of the content sent to the server
@@ -7610,7 +7610,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formEnctype)
      */
-    open var formEnctype: String
+    public open var formEnctype: String
 
     /**
      * The formMethod property of the HTMLInputElement interface is the HTTP method used to submit the &lt;form&gt; if
@@ -7619,7 +7619,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formMethod)
      */
-    open var formMethod: String
+    public open var formMethod: String
 
     /**
      * The formNoValidate property of the HTMLInputElement interface is a boolean value indicating if the &lt;form&gt;
@@ -7628,7 +7628,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formNoValidate)
      */
-    open var formNoValidate: Boolean
+    public open var formNoValidate: Boolean
 
     /**
      * The formTarget property of the HTMLInputElement interface is the tab, window, or iframe where the response of the
@@ -7637,7 +7637,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formTarget)
      */
-    open var formTarget: String
+    public open var formTarget: String
 
     /**
      * The height property of the HTMLInputElement interface specifies the height of a control. It reflects the
@@ -7645,7 +7645,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/height)
      */
-    open var height: Int
+    public open var height: Int
 
     /**
      * The indeterminate property of the HTMLInputElement interface returns a boolean value that indicates whether the
@@ -7655,7 +7655,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/indeterminate)
      */
-    open var indeterminate: Boolean
+    public open var indeterminate: Boolean
 
     /**
      * The list read-only property of the HTMLInputElement interface returns the HTMLDataListElement pointed to by the
@@ -7664,7 +7664,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/list)
      */
-    open val list: HTMLDataListElement?
+    public open val list: HTMLDataListElement?
 
     /**
      * The max property of the HTMLInputElement interface reflects the &lt;input&gt; element's max attribute, which
@@ -7673,7 +7673,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/max)
      */
-    open var max: String
+    public open var max: String
 
     /**
      * The maxLength property of the HTMLInputElement interface indicates the maximum number of characters (in UTF-16
@@ -7683,7 +7683,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/maxLength)
      */
-    open var maxLength: Int
+    public open var maxLength: Int
 
     /**
      * The min property of the HTMLInputElement interface reflects the &lt;input&gt; element's min attribute, which
@@ -7692,7 +7692,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/min)
      */
-    open var min: String
+    public open var min: String
 
     /**
      * The minLength property of the HTMLInputElement interface indicates the minimum number of characters (in UTF-16
@@ -7701,7 +7701,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/minLength)
      */
-    open var minLength: Int
+    public open var minLength: Int
 
     /**
      * The HTMLInputElement.multiple property indicates if an input can have more than one value. Firefox currently only
@@ -7709,7 +7709,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/multiple)
      */
-    open var multiple: Boolean
+    public open var multiple: Boolean
 
     /**
      * The name property of the HTMLInputElement interface indicates the name of the &lt;input&gt; element. It reflects
@@ -7717,7 +7717,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The pattern property of the HTMLInputElement interface represents a regular expression a non-null &lt;input&gt;
@@ -7725,7 +7725,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/pattern)
      */
-    open var pattern: String
+    public open var pattern: String
 
     /**
      * The placeholder property of the HTMLInputElement interface represents a hint to the user of what can be entered
@@ -7733,7 +7733,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/placeholder)
      */
-    open var placeholder: String
+    public open var placeholder: String
 
     /**
      * The readOnly property of the HTMLInputElement interface indicates that the user cannot modify the value of the
@@ -7742,7 +7742,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/readOnly)
      */
-    open var readOnly: Boolean
+    public open var readOnly: Boolean
 
     /**
      * The required property of the HTMLInputElement interface specifies that the user must fill in a value before
@@ -7750,7 +7750,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/required)
      */
-    open var required: Boolean
+    public open var required: Boolean
 
     /**
      * The size property of the HTMLInputElement interface defines the number of visible characters displayed. It
@@ -7758,7 +7758,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/size)
      */
-    open var size: Int
+    public open var size: Int
 
     /**
      * The src property of the HTMLInputElement interface specifies the source of an image to display as the graphical
@@ -7766,7 +7766,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/src)
      */
-    open var src: String
+    public open var src: String
 
     /**
      * The step property of the HTMLInputElement interface indicates the step by which numeric or date-time
@@ -7776,7 +7776,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/step)
      */
-    open var step: String
+    public open var step: String
 
     /**
      * The type property of the HTMLInputElement interface indicates the kind of data allowed in the &lt;input&gt;
@@ -7785,7 +7785,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/type)
      */
-    open var type: String
+    public open var type: String
 
     /**
      * The defaultValue property of the HTMLInputElement interface indicates the original (or default) value of the
@@ -7793,7 +7793,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultValue)
      */
-    open var defaultValue: String
+    public open var defaultValue: String
 
     /**
      * The value property of the HTMLInputElement interface represents the current value of the &lt;input&gt; element as
@@ -7801,7 +7801,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/value)
      */
-    open var value: String
+    public open var value: String
 
     /**
      * The valueAsDate property of the HTMLInputElement interface represents the current value of the &lt;input&gt;
@@ -7809,7 +7809,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/valueAsDate)
      */
-    open var valueAsDate: JsAny?
+    public open var valueAsDate: JsAny?
 
     /**
      * The valueAsNumber property of the HTMLInputElement interface represents the current value of the &lt;input&gt;
@@ -7817,7 +7817,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/valueAsNumber)
      */
-    open var valueAsNumber: Double
+    public open var valueAsNumber: Double
 
     /**
      * The width property of the HTMLInputElement interface specifies the width of a control. It reflects the
@@ -7825,7 +7825,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/width)
      */
-    open var width: Int
+    public open var width: Int
 
     /**
      * The HTMLInputElement.stepUp() method increments the value of a numeric type of &lt;input&gt; element by the value
@@ -7835,7 +7835,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepUp)
      */
-    open fun stepUp(n: Int = definedExternally)
+    public open fun stepUp(n: Int = definedExternally)
 
     /**
      * The HTMLInputElement.stepDown() method decrements the value of a numeric type of &lt;input&gt; element by the
@@ -7843,7 +7843,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepDown)
      */
-    open fun stepDown(n: Int = definedExternally)
+    public open fun stepDown(n: Int = definedExternally)
 
     /**
      * The willValidate read-only property of the HTMLInputElement interface indicates whether the &lt;input&gt; element
@@ -7851,7 +7851,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/willValidate)
      */
-    open val willValidate: Boolean
+    public open val willValidate: Boolean
 
     /**
      * The validity read-only property of the HTMLInputElement interface returns a ValidityState object that represents
@@ -7859,7 +7859,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validity)
      */
-    open val validity: ValidityState
+    public open val validity: ValidityState
 
     /**
      * The validationMessage read-only property of the HTMLInputElement interface returns a string representing a
@@ -7868,7 +7868,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validationMessage)
      */
-    open val validationMessage: String
+    public open val validationMessage: String
 
     /**
      * The checkValidity() method of the HTMLInputElement interface returns a boolean value which indicates if the
@@ -7878,7 +7878,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/checkValidity)
      */
-    open fun checkValidity(): Boolean
+    public open fun checkValidity(): Boolean
 
     /**
      * The reportValidity() method of the HTMLInputElement interface performs the same validity checking steps as the
@@ -7887,14 +7887,14 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/reportValidity)
      */
-    open fun reportValidity(): Boolean
+    public open fun reportValidity(): Boolean
 
     /**
      * The HTMLInputElement.setCustomValidity() method sets a custom validity message for the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setCustomValidity)
      */
-    open fun setCustomValidity(error: String)
+    public open fun setCustomValidity(error: String)
 
     /**
      * The HTMLInputElement.labels read-only property returns a NodeList of the &lt;label&gt; elements associated with
@@ -7902,7 +7902,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/labels)
      */
-    open val labels: NodeList?
+    public open val labels: NodeList?
 
     /**
      * The select() method of the HTMLInputElement interface selects all the text in an &lt;input&gt; element that
@@ -7910,7 +7910,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/select)
      */
-    open fun select()
+    public open fun select()
 
     /**
      * The selectionStart property of the HTMLInputElement interface specifies the start position of the current text
@@ -7918,7 +7918,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionStart)
      */
-    open var selectionStart: Int?
+    public open var selectionStart: Int?
 
     /**
      * The selectionEnd property of the HTMLInputElement interface specifies the end position of the current text
@@ -7926,7 +7926,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionEnd)
      */
-    open var selectionEnd: Int?
+    public open var selectionEnd: Int?
 
     /**
      * The selectionDirection property of the HTMLInputElement interface is a string that indicates the direction in
@@ -7934,7 +7934,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionDirection)
      */
-    open var selectionDirection: String?
+    public open var selectionDirection: String?
 
     /**
      * The HTMLInputElement.setRangeText() method replaces a range of text in an &lt;input&gt; or &lt;textarea&gt;
@@ -7942,7 +7942,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setRangeText)
      */
-    open fun setRangeText(replacement: String)
+    public open fun setRangeText(replacement: String)
 
     /**
      * The HTMLInputElement.setRangeText() method replaces a range of text in an &lt;input&gt; or &lt;textarea&gt;
@@ -7950,7 +7950,7 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setRangeText)
      */
-    open fun setRangeText(replacement: String, start: Int, end: Int, selectionMode: SelectionMode = definedExternally)
+    public open fun setRangeText(replacement: String, start: Int, end: Int, selectionMode: SelectionMode = definedExternally)
 
     /**
      * The setSelectionRange() method of the HTMLInputElement interface sets the start and end positions of the current
@@ -7959,38 +7959,38 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setSelectionRange)
      */
-    open fun setSelectionRange(start: Int, end: Int, direction: String = definedExternally)
+    public open fun setSelectionRange(start: Int, end: Int, direction: String = definedExternally)
 
     /**
      * The HTMLInputElement.showPicker() method displays the browser picker for an input element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/showPicker)
      */
-    open fun showPicker()
-    open var align: String
-    open var useMap: String
-    open var hspace: Int
-    open var vspace: Int
+    public open fun showPicker()
+    public open var align: String
+    public open var useMap: String
+    public open var hspace: Int
+    public open var vspace: Int
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -8007,7 +8007,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/command)
      */
-    open var command: String
+    public open var command: String
 
     /**
      * The commandForElement property of the HTMLButtonElement interface gets and sets the element to control via a
@@ -8015,7 +8015,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/commandForElement)
      */
-    open var commandForElement: Element?
+    public open var commandForElement: Element?
 
     /**
      * The HTMLButtonElement.disabled property indicates whether the control is disabled, meaning that it does not
@@ -8023,7 +8023,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/disabled)
      */
-    open var disabled: Boolean
+    public open var disabled: Boolean
 
     /**
      * The form read-only property of the HTMLButtonElement interface returns an HTMLFormElement object that owns this
@@ -8031,7 +8031,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/form)
      */
-    open val form: HTMLFormElement?
+    public open val form: HTMLFormElement?
 
     /**
      * The formAction property of the HTMLButtonElement interface is the URL of the program that is executed on the
@@ -8040,7 +8040,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formAction)
      */
-    open var formAction: String
+    public open var formAction: String
 
     /**
      * The formEnctype property of the HTMLButtonElement interface is the MIME type of the content sent to the server
@@ -8048,7 +8048,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formEnctype)
      */
-    open var formEnctype: String
+    public open var formEnctype: String
 
     /**
      * The formMethod property of the HTMLButtonElement interface is the HTTP method used to submit the &lt;form&gt; if
@@ -8057,7 +8057,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formMethod)
      */
-    open var formMethod: String
+    public open var formMethod: String
 
     /**
      * The formNoValidate property of the HTMLButtonElement interface is a boolean value indicating if the &lt;form&gt;
@@ -8066,7 +8066,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formNoValidate)
      */
-    open var formNoValidate: Boolean
+    public open var formNoValidate: Boolean
 
     /**
      * The formTarget property of the HTMLButtonElement interface is the tab, window, or iframe where the response of
@@ -8075,7 +8075,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formTarget)
      */
-    open var formTarget: String
+    public open var formTarget: String
 
     /**
      * The name property of the HTMLButtonElement interface indicates the name of the &lt;button&gt; element or the
@@ -8083,7 +8083,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The type property of the HTMLButtonElement interface is a string that indicates the behavior type of the
@@ -8091,7 +8091,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/type)
      */
-    open var type: String
+    public open var type: String
 
     /**
      * The value property of the HTMLButtonElement interface represents the value of the &lt;button&gt; element as a
@@ -8099,7 +8099,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/value)
      */
-    open var value: String
+    public open var value: String
 
     /**
      * The willValidate read-only property of the HTMLButtonElement interface indicates whether the &lt;button&gt;
@@ -8107,7 +8107,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/willValidate)
      */
-    open val willValidate: Boolean
+    public open val willValidate: Boolean
 
     /**
      * The validity read-only property of the HTMLButtonElement interface returns a ValidityState object that represents
@@ -8115,7 +8115,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/validity)
      */
-    open val validity: ValidityState
+    public open val validity: ValidityState
 
     /**
      * The validationMessage read-only property of the HTMLButtonElement interface returns a string representing a
@@ -8125,7 +8125,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/validationMessage)
      */
-    open val validationMessage: String
+    public open val validationMessage: String
 
     /**
      * The checkValidity() method of the HTMLButtonElement interface returns a boolean value which indicates if the
@@ -8136,7 +8136,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/checkValidity)
      */
-    open fun checkValidity(): Boolean
+    public open fun checkValidity(): Boolean
 
     /**
      * The reportValidity() method of the HTMLButtonElement interface performs the same validity checking steps as the
@@ -8146,7 +8146,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/reportValidity)
      */
-    open fun reportValidity(): Boolean
+    public open fun reportValidity(): Boolean
 
     /**
      * The setCustomValidity() method of the HTMLButtonElement interface sets the custom validity message for the
@@ -8154,7 +8154,7 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/setCustomValidity)
      */
-    open fun setCustomValidity(error: String)
+    public open fun setCustomValidity(error: String)
 
     /**
      * The HTMLButtonElement.labels read-only property returns a NodeList of the &lt;label&gt; elements associated with
@@ -8162,27 +8162,27 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/labels)
      */
-    open val labels: NodeList
+    public open val labels: NodeList
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -8199,7 +8199,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/autocomplete)
      */
-    open var autocomplete: String
+    public open var autocomplete: String
 
     /**
      * The HTMLSelectElement.disabled property is a boolean value that reflects the disabled HTML attribute, which
@@ -8208,7 +8208,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/disabled)
      */
-    open var disabled: Boolean
+    public open var disabled: Boolean
 
     /**
      * The form read-only property of the HTMLSelectElement interface returns an HTMLFormElement object that owns this
@@ -8216,7 +8216,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/form)
      */
-    open val form: HTMLFormElement?
+    public open val form: HTMLFormElement?
 
     /**
      * The multiple property of the HTMLSelectElement interface specifies that the user may select more than one option
@@ -8224,7 +8224,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/multiple)
      */
-    open var multiple: Boolean
+    public open var multiple: Boolean
 
     /**
      * The name property of the HTMLSelectElement interface indicates the name of the &lt;select&gt; element. It
@@ -8232,7 +8232,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The required property of the HTMLSelectElement interface specifies that the user must select an option with a
@@ -8240,7 +8240,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/required)
      */
-    open var required: Boolean
+    public open var required: Boolean
 
     /**
      * The size property of the HTMLSelectElement interface specifies the number of options, or rows, that should be
@@ -8248,14 +8248,14 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/size)
      */
-    open var size: Int
+    public open var size: Int
 
     /**
      * The HTMLSelectElement.type read-only property returns the form control's type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/type)
      */
-    open val type: String
+    public open val type: String
 
     /**
      * The HTMLSelectElement.options read-only property returns a HTMLOptionsCollection of the &lt;option&gt; elements
@@ -8263,7 +8263,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/options)
      */
-    open val options: HTMLOptionsCollection
+    public open val options: HTMLOptionsCollection
 
     /**
      * The length property of the HTMLSelectElement interface specifies the number of &lt;option&gt; elements in the
@@ -8288,28 +8288,28 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/namedItem)
      */
-    open fun namedItem(name: String): HTMLOptionElement?
+    public open fun namedItem(name: String): HTMLOptionElement?
 
     /**
      * The HTMLSelectElement.add() method adds an element to the collection of option elements for this select element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
      */
-    open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: HTMLElement?)
+    public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: HTMLElement?)
 
     /**
      * The HTMLSelectElement.add() method adds an element to the collection of option elements for this select element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
      */
-    open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: Int?)
+    public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: Int?)
 
     /**
      * The HTMLSelectElement.add() method adds an element to the collection of option elements for this select element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
      */
-    open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement)
+    public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement)
 
     /**
      * The HTMLSelectElement.remove() method removes the element at the specified index from the options collection for
@@ -8325,7 +8325,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/remove)
      */
-    open fun remove(index: Int)
+    public open fun remove(index: Int)
 
     /**
      * The read-only HTMLSelectElement property selectedOptions contains a list of the &lt;option&gt; elements contained
@@ -8334,7 +8334,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedOptions)
      */
-    open val selectedOptions: HTMLCollection
+    public open val selectedOptions: HTMLCollection
 
     /**
      * The selectedIndex property of the HTMLSelectElement interface is the numeric index of the first selected
@@ -8344,7 +8344,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedIndex)
      */
-    open var selectedIndex: Int
+    public open var selectedIndex: Int
 
     /**
      * The HTMLSelectElement.value property contains the value of the first selected &lt;option&gt; element associated
@@ -8352,7 +8352,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/value)
      */
-    open var value: String
+    public open var value: String
 
     /**
      * The willValidate read-only property of the HTMLSelectElement interface indicates whether the &lt;select&gt;
@@ -8361,7 +8361,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/willValidate)
      */
-    open val willValidate: Boolean
+    public open val willValidate: Boolean
 
     /**
      * The validity read-only property of the HTMLSelectElement interface returns a ValidityState object that represents
@@ -8369,7 +8369,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/validity)
      */
-    open val validity: ValidityState
+    public open val validity: ValidityState
 
     /**
      * The validationMessage read-only property of the HTMLSelectElement interface returns a string representing a
@@ -8379,7 +8379,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/validationMessage)
      */
-    open val validationMessage: String
+    public open val validationMessage: String
 
     /**
      * The checkValidity() method of the HTMLSelectElement interface returns a boolean value which indicates if the
@@ -8389,7 +8389,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/checkValidity)
      */
-    open fun checkValidity(): Boolean
+    public open fun checkValidity(): Boolean
 
     /**
      * The reportValidity() method of the HTMLSelectElement interface performs the same validity checking steps as the
@@ -8398,7 +8398,7 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/reportValidity)
      */
-    open fun reportValidity(): Boolean
+    public open fun reportValidity(): Boolean
 
     /**
      * The HTMLSelectElement.setCustomValidity() method sets the custom validity message for the selection element to
@@ -8406,14 +8406,14 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/setCustomValidity)
      */
-    open fun setCustomValidity(error: String)
+    public open fun setCustomValidity(error: String)
 
     /**
      * The HTMLSelectElement.showPicker() method displays the browser picker for a select element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/showPicker)
      */
-    open fun showPicker()
+    public open fun showPicker()
 
     /**
      * The HTMLSelectElement.labels read-only property returns a NodeList of the &lt;label&gt; elements associated with
@@ -8421,27 +8421,27 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/labels)
      */
-    open val labels: NodeList
+    public open val labels: NodeList
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -8463,27 +8463,27 @@ public abstract external class HTMLDataListElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataListElement/options)
      */
-    open val options: HTMLCollection
+    public open val options: HTMLCollection
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -8501,7 +8501,7 @@ public abstract external class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement/disabled)
      */
-    open var disabled: Boolean
+    public open var disabled: Boolean
 
     /**
      * The label property of the HTMLOptGroupElement interface is a string value that reflects the &lt;optgroup&gt;
@@ -8509,27 +8509,27 @@ public abstract external class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGr
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement/label)
      */
-    open var label: String
+    public open var label: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -8546,7 +8546,7 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/disabled)
      */
-    open var disabled: Boolean
+    public open var disabled: Boolean
 
     /**
      * The form read-only property of the HTMLOptionElement interface returns an HTMLFormElement object that owns the
@@ -8555,7 +8555,7 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/form)
      */
-    open val form: HTMLFormElement?
+    public open val form: HTMLFormElement?
 
     /**
      * The label property of the HTMLOptionElement represents the text displayed for an option in a &lt;select&gt;
@@ -8564,7 +8564,7 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/label)
      */
-    open var label: String
+    public open var label: String
 
     /**
      * The defaultSelected property of the HTMLOptionElement interface specifies the default selected state of the
@@ -8573,7 +8573,7 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/defaultSelected)
      */
-    open var defaultSelected: Boolean
+    public open var defaultSelected: Boolean
 
     /**
      * The selected property of the HTMLOptionElement interface specifies the current selectedness of the element; that
@@ -8581,7 +8581,7 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/selected)
      */
-    open var selected: Boolean
+    public open var selected: Boolean
 
     /**
      * The value property of the HTMLOptionElement interface represents the value of the &lt;option&gt; element as a
@@ -8590,7 +8590,7 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/value)
      */
-    open var value: String
+    public open var value: String
 
     /**
      * The text property of the HTMLOptionElement represents the text inside the &lt;option&gt; element. This property
@@ -8598,7 +8598,7 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/text)
      */
-    open var text: String
+    public open var text: String
 
     /**
      * The read-only index property of the HTMLOptionElement interface specifies the 0-based index of the element; that
@@ -8607,32 +8607,32 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/index)
      */
-    open val index: Int
+    public open val index: Int
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public open external class Option : HTMLOptionElement {
-    constructor(text: String = definedExternally, value: String = definedExternally, defaultSelected: Boolean = definedExternally, selected: Boolean = definedExternally)
+    public constructor(text: String = definedExternally, value: String = definedExternally, defaultSelected: Boolean = definedExternally, selected: Boolean = definedExternally)
 
     /**
      * The read-only children property returns a live HTMLCollection which contains all of the child elements of the
@@ -9897,25 +9897,25 @@ public open external class Option : HTMLOptionElement {
      */
     override val style: CSSStyleProperties
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -9932,7 +9932,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/autocomplete)
      */
-    open var autocomplete: String
+    public open var autocomplete: String
 
     /**
      * The cols property of the HTMLTextAreaElement interface is a positive integer representing the visible width of
@@ -9941,7 +9941,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/cols)
      */
-    open var cols: Int
+    public open var cols: Int
 
     /**
      * The dirName property of the HTMLTextAreaElement interface is the directionality of the element. It reflects the
@@ -9949,7 +9949,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/dirName)
      */
-    open var dirName: String
+    public open var dirName: String
 
     /**
      * The disabled property of the HTMLTextAreaElement interface indicates whether this multi-line text control is
@@ -9958,7 +9958,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/disabled)
      */
-    open var disabled: Boolean
+    public open var disabled: Boolean
 
     /**
      * The form read-only property of the HTMLTextAreaElement interface returns an HTMLFormElement object that owns this
@@ -9966,7 +9966,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/form)
      */
-    open val form: HTMLFormElement?
+    public open val form: HTMLFormElement?
 
     /**
      * The maxLength property of the HTMLTextAreaElement interface indicates the maximum number of characters (in UTF-16
@@ -9976,7 +9976,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/maxLength)
      */
-    open var maxLength: Int
+    public open var maxLength: Int
 
     /**
      * The minLength property of the HTMLTextAreaElement interface indicates the minimum number of characters (in UTF-16
@@ -9985,7 +9985,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/minLength)
      */
-    open var minLength: Int
+    public open var minLength: Int
 
     /**
      * The name property of the HTMLTextAreaElement interface indicates the name of the &lt;textarea&gt; element. It
@@ -9993,7 +9993,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The placeholder property of the HTMLTextAreaElement interface represents a hint to the user of what can be
@@ -10001,7 +10001,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/placeholder)
      */
-    open var placeholder: String
+    public open var placeholder: String
 
     /**
      * The readOnly property of the HTMLTextAreaElement interface indicates that the user cannot modify the value of the
@@ -10010,7 +10010,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/readOnly)
      */
-    open var readOnly: Boolean
+    public open var readOnly: Boolean
 
     /**
      * The required property of the HTMLTextAreaElement interface specifies that the user must fill in a value before
@@ -10018,7 +10018,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/required)
      */
-    open var required: Boolean
+    public open var required: Boolean
 
     /**
      * The rows property of the HTMLTextAreaElement interface is a positive integer representing the visible text lines
@@ -10026,7 +10026,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/rows)
      */
-    open var rows: Int
+    public open var rows: Int
 
     /**
      * The wrap property of the HTMLTextAreaElement interface indicates how the control should wrap the value for form
@@ -10035,14 +10035,14 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/wrap)
      */
-    open var wrap: String
+    public open var wrap: String
 
     /**
      * The type read-only property of the HTMLTextAreaElement interface returns the string "textarea".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/type)
      */
-    open val type: String
+    public open val type: String
 
     /**
      * The defaultValue property of the HTMLTextAreaElement interface represents the default text content of this text
@@ -10050,7 +10050,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/defaultValue)
      */
-    open var defaultValue: String
+    public open var defaultValue: String
 
     /**
      * The value property of the HTMLTextAreaElement interface represents the value of the &lt;textarea&gt; element as a
@@ -10059,7 +10059,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/value)
      */
-    open var value: String
+    public open var value: String
 
     /**
      * The textLength read-only property of the HTMLTextAreaElement interface is a non-negative integer representing the
@@ -10068,7 +10068,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/textLength)
      */
-    open val textLength: Int
+    public open val textLength: Int
 
     /**
      * The willValidate read-only property of the HTMLTextAreaElement interface indicates whether the &lt;textarea&gt;
@@ -10077,7 +10077,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/willValidate)
      */
-    open val willValidate: Boolean
+    public open val willValidate: Boolean
 
     /**
      * The validity read-only property of the HTMLTextAreaElement interface returns a ValidityState object that
@@ -10085,7 +10085,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/validity)
      */
-    open val validity: ValidityState
+    public open val validity: ValidityState
 
     /**
      * The validationMessage read-only property of the HTMLTextAreaElement interface returns a string representing a
@@ -10095,7 +10095,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/validationMessage)
      */
-    open val validationMessage: String
+    public open val validationMessage: String
 
     /**
      * The checkValidity() method of the HTMLTextAreaElement interface returns a boolean value which indicates if the
@@ -10105,7 +10105,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/checkValidity)
      */
-    open fun checkValidity(): Boolean
+    public open fun checkValidity(): Boolean
 
     /**
      * The reportValidity() method of the HTMLTextAreaElement interface performs the same validity checking steps as the
@@ -10114,7 +10114,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/reportValidity)
      */
-    open fun reportValidity(): Boolean
+    public open fun reportValidity(): Boolean
 
     /**
      * The setCustomValidity() method of the HTMLTextAreaElement interface sets the custom validity message for the
@@ -10123,7 +10123,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setCustomValidity)
      */
-    open fun setCustomValidity(error: String)
+    public open fun setCustomValidity(error: String)
 
     /**
      * The HTMLTextAreaElement.labels read-only property returns a NodeList of the &lt;label&gt; elements associated
@@ -10131,14 +10131,14 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/labels)
      */
-    open val labels: NodeList
+    public open val labels: NodeList
 
     /**
      * The select() method of the HTMLTextAreaElement interface selects all the text in a &lt;textarea&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/select)
      */
-    open fun select()
+    public open fun select()
 
     /**
      * The selectionStart property of the HTMLTextAreaElement interface specifies the start position of the current text
@@ -10146,7 +10146,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionStart)
      */
-    open var selectionStart: Int
+    public open var selectionStart: Int
 
     /**
      * The selectionEnd property of the HTMLTextAreaElement interface specifies the end position of the current text
@@ -10154,7 +10154,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionEnd)
      */
-    open var selectionEnd: Int
+    public open var selectionEnd: Int
 
     /**
      * The selectionDirection property of the HTMLTextAreaElement interface is a string that indicates the direction in
@@ -10162,7 +10162,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionDirection)
      */
-    open var selectionDirection: String
+    public open var selectionDirection: String
 
     /**
      * The setRangeText() method of the HTMLTextAreaElement interface replaces a range of text in a &lt;textarea&gt;
@@ -10170,7 +10170,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setRangeText)
      */
-    open fun setRangeText(replacement: String)
+    public open fun setRangeText(replacement: String)
 
     /**
      * The setRangeText() method of the HTMLTextAreaElement interface replaces a range of text in a &lt;textarea&gt;
@@ -10178,7 +10178,7 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setRangeText)
      */
-    open fun setRangeText(replacement: String, start: Int, end: Int, selectionMode: SelectionMode = definedExternally)
+    public open fun setRangeText(replacement: String, start: Int, end: Int, selectionMode: SelectionMode = definedExternally)
 
     /**
      * The setSelectionRange() method of the HTMLTextAreaElement interface sets the start and end positions of the
@@ -10186,27 +10186,27 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setSelectionRange)
      */
-    open fun setSelectionRange(start: Int, end: Int, direction: String = definedExternally)
+    public open fun setSelectionRange(start: Int, end: Int, direction: String = definedExternally)
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -10224,7 +10224,7 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/htmlFor)
      */
-    open val htmlFor: DOMTokenList
+    public open val htmlFor: DOMTokenList
 
     /**
      * The form read-only property of the HTMLOutputElement interface returns an HTMLFormElement object that owns this
@@ -10232,7 +10232,7 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/form)
      */
-    open val form: HTMLFormElement?
+    public open val form: HTMLFormElement?
 
     /**
      * The name property of the HTMLOutputElement interface indicates the name of the &lt;output&gt; element. It
@@ -10240,14 +10240,14 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The type read-only property of the HTMLOutputElement interface returns the string "output".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/type)
      */
-    open val type: String
+    public open val type: String
 
     /**
      * The defaultValue property of the HTMLOutputElement interface represents the default text content of this
@@ -10256,7 +10256,7 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/defaultValue)
      */
-    open var defaultValue: String
+    public open var defaultValue: String
 
     /**
      * The value property of the HTMLOutputElement interface represents the value of the &lt;output&gt; element as a
@@ -10265,7 +10265,7 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/value)
      */
-    open var value: String
+    public open var value: String
 
     /**
      * The willValidate read-only property of the HTMLOutputElement interface returns false, because &lt;output&gt;
@@ -10273,7 +10273,7 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/willValidate)
      */
-    open val willValidate: Boolean
+    public open val willValidate: Boolean
 
     /**
      * The validity read-only property of the HTMLOutputElement interface returns a ValidityState object that represents
@@ -10282,7 +10282,7 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validity)
      */
-    open val validity: ValidityState
+    public open val validity: ValidityState
 
     /**
      * The validationMessage read-only property of the HTMLOutputElement interface returns a string representing a
@@ -10292,7 +10292,7 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validationMessage)
      */
-    open val validationMessage: String
+    public open val validationMessage: String
 
     /**
      * The checkValidity() method of the HTMLOutputElement interface checks if the element is valid, but always returns
@@ -10300,7 +10300,7 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/checkValidity)
      */
-    open fun checkValidity(): Boolean
+    public open fun checkValidity(): Boolean
 
     /**
      * The reportValidity() method of the HTMLOutputElement interface performs the same validity checking steps as the
@@ -10309,7 +10309,7 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/reportValidity)
      */
-    open fun reportValidity(): Boolean
+    public open fun reportValidity(): Boolean
 
     /**
      * The setCustomValidity() method of the HTMLOutputElement interface sets the custom validity message for the
@@ -10317,7 +10317,7 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/setCustomValidity)
      */
-    open fun setCustomValidity(error: String)
+    public open fun setCustomValidity(error: String)
 
     /**
      * The HTMLOutputElement.labels read-only property returns a NodeList of the &lt;label&gt; elements associated with
@@ -10325,27 +10325,27 @@ public abstract external class HTMLOutputElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/labels)
      */
-    open val labels: NodeList
+    public open val labels: NodeList
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -10363,7 +10363,7 @@ public abstract external class HTMLProgressElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/value)
      */
-    open var value: Double
+    public open var value: Double
 
     /**
      * The max property of the HTMLProgressElement interface represents the upper bound of the &lt;progress&gt;
@@ -10371,7 +10371,7 @@ public abstract external class HTMLProgressElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/max)
      */
-    open var max: Double
+    public open var max: Double
 
     /**
      * The position read-only property of the HTMLProgressElement interface returns current progress of the
@@ -10379,7 +10379,7 @@ public abstract external class HTMLProgressElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/position)
      */
-    open val position: Double
+    public open val position: Double
 
     /**
      * The HTMLProgressElement.labels read-only property returns a NodeList of the &lt;label&gt; elements associated
@@ -10387,27 +10387,27 @@ public abstract external class HTMLProgressElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/labels)
      */
-    open val labels: NodeList
+    public open val labels: NodeList
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -10426,7 +10426,7 @@ public abstract external class HTMLMeterElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/value)
      */
-    open var value: Double
+    public open var value: Double
 
     /**
      * The min property of the HTMLMeterElement interface represents the minimum value of the &lt;meter&gt; element as a
@@ -10434,7 +10434,7 @@ public abstract external class HTMLMeterElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/min)
      */
-    open var min: Double
+    public open var min: Double
 
     /**
      * The max property of the HTMLMeterElement interface represents the maximum value of the &lt;meter&gt; element as a
@@ -10443,7 +10443,7 @@ public abstract external class HTMLMeterElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/max)
      */
-    open var max: Double
+    public open var max: Double
 
     /**
      * The low property of the HTMLMeterElement interface represents the low boundary of the &lt;meter&gt; element as a
@@ -10452,7 +10452,7 @@ public abstract external class HTMLMeterElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/low)
      */
-    open var low: Double
+    public open var low: Double
 
     /**
      * The high property of the HTMLMeterElement interface represents the high boundary of the &lt;meter&gt; element as
@@ -10461,7 +10461,7 @@ public abstract external class HTMLMeterElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/high)
      */
-    open var high: Double
+    public open var high: Double
 
     /**
      * The optimum property of the HTMLMeterElement interface represents the optimum boundary of the &lt;meter&gt;
@@ -10470,7 +10470,7 @@ public abstract external class HTMLMeterElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/optimum)
      */
-    open var optimum: Double
+    public open var optimum: Double
 
     /**
      * The HTMLMeterElement.labels read-only property returns a NodeList of the &lt;label&gt; elements associated with
@@ -10478,27 +10478,27 @@ public abstract external class HTMLMeterElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/labels)
      */
-    open val labels: NodeList
+    public open val labels: NodeList
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -10516,7 +10516,7 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/disabled)
      */
-    open var disabled: Boolean
+    public open var disabled: Boolean
 
     /**
      * The form read-only property of the HTMLFieldSetElement interface returns an HTMLFormElement object that owns this
@@ -10524,7 +10524,7 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/form)
      */
-    open val form: HTMLFormElement?
+    public open val form: HTMLFormElement?
 
     /**
      * The name property of the HTMLFieldSetElement interface indicates the name of the &lt;fieldset&gt; element. It
@@ -10532,14 +10532,14 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The type read-only property of the HTMLFieldSetElement interface returns the string "fieldset".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/type)
      */
-    open val type: String
+    public open val type: String
 
     /**
      * The elements read-only property of the HTMLFieldSetElement interface returns an HTMLCollection object containing
@@ -10548,7 +10548,7 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/elements)
      */
-    open val elements: HTMLCollection
+    public open val elements: HTMLCollection
 
     /**
      * The willValidate read-only property of the HTMLFieldSetElement interface returns false, because &lt;fieldset&gt;
@@ -10556,7 +10556,7 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/willValidate)
      */
-    open val willValidate: Boolean
+    public open val willValidate: Boolean
 
     /**
      * The validity read-only property of the HTMLFieldSetElement interface returns a ValidityState object that
@@ -10565,7 +10565,7 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/validity)
      */
-    open val validity: ValidityState
+    public open val validity: ValidityState
 
     /**
      * The validationMessage read-only property of the HTMLFieldSetElement interface returns a string representing a
@@ -10575,7 +10575,7 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/validationMessage)
      */
-    open val validationMessage: String
+    public open val validationMessage: String
 
     /**
      * The checkValidity() method of the HTMLFieldSetElement interface checks if the element is valid, but always
@@ -10583,7 +10583,7 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/checkValidity)
      */
-    open fun checkValidity(): Boolean
+    public open fun checkValidity(): Boolean
 
     /**
      * The reportValidity() method of the HTMLFieldSetElement interface performs the same validity checking steps as the
@@ -10592,7 +10592,7 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/reportValidity)
      */
-    open fun reportValidity(): Boolean
+    public open fun reportValidity(): Boolean
 
     /**
      * The setCustomValidity() method of the HTMLFieldSetElement interface sets the custom validity message for the
@@ -10601,27 +10601,27 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/setCustomValidity)
      */
-    open fun setCustomValidity(error: String)
+    public open fun setCustomValidity(error: String)
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -10639,28 +10639,28 @@ public abstract external class HTMLLegendElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLegendElement/form)
      */
-    open val form: HTMLFormElement?
-    open var align: String
+    public open val form: HTMLFormElement?
+    public open var align: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -10671,31 +10671,31 @@ public abstract external class HTMLLegendElement : HTMLElement {
  */
 public abstract external class HTMLSelectedContentElement : HTMLElement {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public external interface SelectionMode : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val SelectionMode.Companion.SELECT: SelectionMode get() = "select".toJsString().unsafeCast<SelectionMode>()
@@ -10716,7 +10716,7 @@ public abstract external class ValidityState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/valueMissing)
      */
-    open val valueMissing: Boolean
+    public open val valueMissing: Boolean
 
     /**
      * The read-only typeMismatch property of the ValidityState interface indicates if the value of an &lt;input&gt;,
@@ -10724,7 +10724,7 @@ public abstract external class ValidityState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/typeMismatch)
      */
-    open val typeMismatch: Boolean
+    public open val typeMismatch: Boolean
 
     /**
      * The read-only patternMismatch property of the ValidityState interface indicates if the value of an &lt;input&gt;,
@@ -10732,7 +10732,7 @@ public abstract external class ValidityState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/patternMismatch)
      */
-    open val patternMismatch: Boolean
+    public open val patternMismatch: Boolean
 
     /**
      * The read-only tooLong property of the ValidityState interface indicates if the value of an &lt;input&gt; or
@@ -10741,7 +10741,7 @@ public abstract external class ValidityState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/tooLong)
      */
-    open val tooLong: Boolean
+    public open val tooLong: Boolean
 
     /**
      * The read-only tooShort property of the ValidityState interface indicates if the value of an &lt;input&gt;,
@@ -10750,7 +10750,7 @@ public abstract external class ValidityState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/tooShort)
      */
-    open val tooShort: Boolean
+    public open val tooShort: Boolean
 
     /**
      * The read-only rangeUnderflow property of the ValidityState interface indicates if the value of an &lt;input&gt;,
@@ -10758,7 +10758,7 @@ public abstract external class ValidityState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/rangeUnderflow)
      */
-    open val rangeUnderflow: Boolean
+    public open val rangeUnderflow: Boolean
 
     /**
      * The read-only rangeOverflow property of the ValidityState interface indicates if the value of an &lt;input&gt;,
@@ -10766,7 +10766,7 @@ public abstract external class ValidityState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/rangeOverflow)
      */
-    open val rangeOverflow: Boolean
+    public open val rangeOverflow: Boolean
 
     /**
      * The read-only stepMismatch property of the ValidityState interface indicates if the value of an &lt;input&gt;,
@@ -10774,7 +10774,7 @@ public abstract external class ValidityState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/stepMismatch)
      */
-    open val stepMismatch: Boolean
+    public open val stepMismatch: Boolean
 
     /**
      * The read-only badInput property of the ValidityState interface indicates if the user has provided input that the
@@ -10782,7 +10782,7 @@ public abstract external class ValidityState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/badInput)
      */
-    open val badInput: Boolean
+    public open val badInput: Boolean
 
     /**
      * The read-only customError property of the ValidityState interface returns true if an element doesn't meet the
@@ -10790,7 +10790,7 @@ public abstract external class ValidityState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/customError)
      */
-    open val customError: Boolean
+    public open val customError: Boolean
 
     /**
      * The read-only valid property of the ValidityState interface indicates if the value of an &lt;input&gt; element
@@ -10798,7 +10798,7 @@ public abstract external class ValidityState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/valid)
      */
-    open val valid: Boolean
+    public open val valid: Boolean
 }
 
 /**
@@ -10814,7 +10814,7 @@ public open external class SubmitEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent/SubmitEvent)
      */
-    constructor(type: String, eventInitDict: SubmitEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: SubmitEventInit = definedExternally)
 
     /**
      * The read-only submitter property found on the SubmitEvent interface specifies the submit button or other element
@@ -10822,18 +10822,18 @@ public open external class SubmitEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent/submitter)
      */
-    open val submitter: HTMLElement?
+    public open val submitter: HTMLElement?
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface SubmitEventInit : EventInit {
-    var submitter: HTMLElement?
+    public var submitter: HTMLElement?
 }
 
 public fun SubmitEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, submitter: HTMLElement? = null): SubmitEventInit = newJsObject<SubmitEventInit>().apply {
@@ -10856,7 +10856,7 @@ public open external class FormDataEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent/FormDataEvent)
      */
-    constructor(type: String, eventInitDict: FormDataEventInit)
+    public constructor(type: String, eventInitDict: FormDataEventInit)
 
     /**
      * The formData read-only property of the FormDataEvent interface contains the FormData object representing the data
@@ -10864,18 +10864,18 @@ public open external class FormDataEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent/formData)
      */
-    open val formData: FormData
+    public open val formData: FormData
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface FormDataEventInit : EventInit {
-    var formData: FormData
+    public var formData: FormData
 }
 
 public fun FormDataEventInit(formData: FormData, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): FormDataEventInit = newJsObject<FormDataEventInit>().apply {
@@ -10900,7 +10900,7 @@ public abstract external class HTMLDetailsElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The open property of the HTMLDetailsElement interface is a boolean value reflecting the open HTML attribute,
@@ -10908,27 +10908,27 @@ public abstract external class HTMLDetailsElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/open)
      */
-    open var open: Boolean
+    public open var open: Boolean
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -10945,7 +10945,7 @@ public abstract external class HTMLDialogElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/open)
      */
-    open var open: Boolean
+    public open var open: Boolean
 
     /**
      * The returnValue property of the HTMLDialogElement interface is a string representing the return value for a
@@ -10954,7 +10954,7 @@ public abstract external class HTMLDialogElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/returnValue)
      */
-    open var returnValue: String
+    public open var returnValue: String
 
     /**
      * The closedBy property of the HTMLDialogElement interface indicates the types of user actions that can be used to
@@ -10962,14 +10962,14 @@ public abstract external class HTMLDialogElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/closedBy)
      */
-    open var closedBy: String
+    public open var closedBy: String
 
     /**
      * The show() method of the HTMLDialogElement interface displays the dialog as a non-modal dialog.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/show)
      */
-    open fun show()
+    public open fun show()
 
     /**
      * The showModal() method of the HTMLDialogElement interface displays the dialog as a modal dialog, over the top of
@@ -10977,7 +10977,7 @@ public abstract external class HTMLDialogElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/showModal)
      */
-    open fun showModal()
+    public open fun showModal()
 
     /**
      * The close() method of the HTMLDialogElement interface closes the &lt;dialog&gt;. An optional string may be passed
@@ -10985,7 +10985,7 @@ public abstract external class HTMLDialogElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/close)
      */
-    open fun close(returnValue: String = definedExternally)
+    public open fun close(returnValue: String = definedExternally)
 
     /**
      * The requestClose() method of the HTMLDialogElement interface requests to close the &lt;dialog&gt;. An optional
@@ -10993,27 +10993,27 @@ public abstract external class HTMLDialogElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/requestClose)
      */
-    open fun requestClose(returnValue: String = definedExternally)
+    public open fun requestClose(returnValue: String = definedExternally)
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -11029,7 +11029,7 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/type)
      */
-    open var type: String
+    public open var type: String
 
     /**
      * The src property of the HTMLScriptElement interface is a string representing the URL of an external script; this
@@ -11037,7 +11037,7 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/src)
      */
-    open var src: String
+    public open var src: String
 
     /**
      * The noModule property of the HTMLScriptElement interface is a boolean value that indicates whether the script
@@ -11046,7 +11046,7 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/noModule)
      */
-    open var noModule: Boolean
+    public open var noModule: Boolean
 
     /**
      * The async property of the HTMLScriptElement interface is a boolean value that controls how the script should be
@@ -11057,7 +11057,7 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/async)
      */
-    open var async: Boolean
+    public open var async: Boolean
 
     /**
      * The defer property of the HTMLScriptElement interface is a boolean value that controls how the script should be
@@ -11067,7 +11067,7 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/defer)
      */
-    open var defer: Boolean
+    public open var defer: Boolean
 
     /**
      * The read-only blocking property of the HTMLScriptElement returns a live DOMTokenList object containing the
@@ -11076,7 +11076,7 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/blocking)
      */
-    open val blocking: DOMTokenList
+    public open val blocking: DOMTokenList
 
     /**
      * The crossOrigin property of the HTMLScriptElement interface reflects the Cross-Origin Resource Sharing settings
@@ -11086,7 +11086,7 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/crossOrigin)
      */
-    open var crossOrigin: String?
+    public open var crossOrigin: String?
 
     /**
      * The referrerPolicy property of the HTMLScriptElement interface reflects the HTML referrerpolicy of the
@@ -11095,7 +11095,7 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/referrerPolicy)
      */
-    open var referrerPolicy: String
+    public open var referrerPolicy: String
 
     /**
      * The integrity property of the HTMLScriptElement interface is a string that contains inline metadata that a
@@ -11103,7 +11103,7 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/integrity)
      */
-    open var integrity: String
+    public open var integrity: String
 
     /**
      * The fetchPriority property of the HTMLScriptElement interface represents a hint to the browser indicating how it
@@ -11112,7 +11112,7 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/fetchPriority)
      */
-    open var fetchPriority: String
+    public open var fetchPriority: String
 
     /**
      * The innerText property of the HTMLScriptElement interface represents the text content of the &lt;script&gt;
@@ -11136,30 +11136,30 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/text)
      */
-    open var text: String
-    open var charset: String
-    open var event: String
-    open var htmlFor: String
+    public open var text: String
+    public open var charset: String
+    public open var event: String
+    public open var htmlFor: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
 
         /**
          * The supports() static method of the HTMLScriptElement interface provides a simple and consistent method to
@@ -11167,7 +11167,7 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/supports_static)
          */
-        fun supports(type: String): Boolean
+        public fun supports(type: String): Boolean
     }
 }
 
@@ -11185,7 +11185,7 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
      */
-    open val content: DocumentFragment
+    public open val content: DocumentFragment
 
     /**
      * The htmlFor property of the HTMLTemplateElement interface is the ID of the Processing Instruction marker to
@@ -11194,7 +11194,7 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/htmlFor)
      */
-    open var htmlFor: String
+    public open var htmlFor: String
 
     /**
      * The shadowRootMode property of the HTMLTemplateElement interface reflects the value of the shadowrootmode
@@ -11202,7 +11202,7 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootMode)
      */
-    open var shadowRootMode: String
+    public open var shadowRootMode: String
 
     /**
      * The shadowRootDelegatesFocus property of the HTMLTemplateElement interface reflects the value of the
@@ -11210,7 +11210,7 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootDelegatesFocus)
      */
-    open var shadowRootDelegatesFocus: Boolean
+    public open var shadowRootDelegatesFocus: Boolean
 
     /**
      * The shadowRootSerializable property reflects the value of the shadowrootserializable attribute of the associated
@@ -11218,7 +11218,7 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootSerializable)
      */
-    open var shadowRootSerializable: Boolean
+    public open var shadowRootSerializable: Boolean
 
     /**
      * The shadowRootSlotAssignment property of the HTMLTemplateElement interface indicates whether the element has been
@@ -11226,7 +11226,7 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootSlotAssignment)
      */
-    open var shadowRootSlotAssignment: String
+    public open var shadowRootSlotAssignment: String
 
     /**
      * The shadowRootClonable property reflects the value of the shadowrootclonable attribute of the associated
@@ -11234,7 +11234,7 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootClonable)
      */
-    open var shadowRootClonable: Boolean
+    public open var shadowRootClonable: Boolean
 
     /**
      * The shadowRootCustomElementRegistry property of the HTMLTemplateElement interface reflects the value of the
@@ -11242,27 +11242,27 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootCustomElementRegistry)
      */
-    open var shadowRootCustomElementRegistry: String
+    public open var shadowRootCustomElementRegistry: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -11279,7 +11279,7 @@ public abstract external class HTMLSlotElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The assignedNodes() method of the HTMLSlotElement interface returns a sequence of the nodes assigned to this
@@ -11287,7 +11287,7 @@ public abstract external class HTMLSlotElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedNodes)
      */
-    open fun assignedNodes(options: AssignedNodesOptions = definedExternally): JsArray<Node>
+    public open fun assignedNodes(options: AssignedNodesOptions = definedExternally): JsArray<Node>
 
     /**
      * The assignedElements() method of the HTMLSlotElement interface returns a sequence of the elements assigned to
@@ -11295,7 +11295,7 @@ public abstract external class HTMLSlotElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedElements)
      */
-    open fun assignedElements(options: AssignedNodesOptions = definedExternally): JsArray<Element>
+    public open fun assignedElements(options: AssignedNodesOptions = definedExternally): JsArray<Element>
 
     /**
      * The assign() method of the HTMLSlotElement interface sets the slot's manually assigned nodes to an ordered set of
@@ -11303,32 +11303,32 @@ public abstract external class HTMLSlotElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)
      */
-    open fun assign(vararg nodes: UnionElementOrText)
+    public open fun assign(vararg nodes: UnionElementOrText)
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public external interface AssignedNodesOptions : JsAny {
-    var flatten: Boolean?
+    public var flatten: Boolean?
 }
 
 public fun AssignedNodesOptions(flatten: Boolean? = null): AssignedNodesOptions = newJsObject<AssignedNodesOptions>().apply {
@@ -11350,7 +11350,7 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/width)
      */
-    open var width: Int
+    public open var width: Int
 
     /**
      * The HTMLCanvasElement.height property is a positive integer reflecting the height HTML attribute of the
@@ -11359,7 +11359,7 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/height)
      */
-    open var height: Int
+    public open var height: Int
 
     /**
      * The HTMLCanvasElement.getContext() method returns a drawing context on the canvas, or null if the context
@@ -11367,7 +11367,7 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/getContext)
      */
-    open fun getContext(contextId: String, options: JsAny? = definedExternally): RenderingContext?
+    public open fun getContext(contextId: String, options: JsAny? = definedExternally): RenderingContext?
 
     /**
      * The HTMLCanvasElement.toDataURL() method returns a data URL containing a representation of the image in the
@@ -11375,7 +11375,7 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toDataURL)
      */
-    open fun toDataURL(type: String = definedExternally, quality: JsAny? = definedExternally): String
+    public open fun toDataURL(type: String = definedExternally, quality: JsAny? = definedExternally): String
 
     /**
      * The HTMLCanvasElement.toBlob() method creates a Blob object representing the image contained in the canvas. This
@@ -11383,7 +11383,7 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob)
      */
-    open fun toBlob(callback: (Blob?) -> Unit, type: String = definedExternally, quality: JsAny? = definedExternally)
+    public open fun toBlob(callback: (Blob?) -> Unit, type: String = definedExternally, quality: JsAny? = definedExternally)
 
     /**
      * The HTMLCanvasElement.transferControlToOffscreen() method transfers control to an OffscreenCanvas object, either
@@ -11391,33 +11391,33 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen)
      */
-    open fun transferControlToOffscreen(): OffscreenCanvas
+    public open fun transferControlToOffscreen(): OffscreenCanvas
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public external interface CanvasColorType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanvasColorType.Companion.UNORM8: CanvasColorType get() = "unorm8".toJsString().unsafeCast<CanvasColorType>()
@@ -11425,18 +11425,18 @@ public inline val CanvasColorType.Companion.FLOAT16: CanvasColorType get() = "fl
 
 public external interface CanvasFillRule : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanvasFillRule.Companion.NONZERO: CanvasFillRule get() = "nonzero".toJsString().unsafeCast<CanvasFillRule>()
 public inline val CanvasFillRule.Companion.EVENODD: CanvasFillRule get() = "evenodd".toJsString().unsafeCast<CanvasFillRule>()
 
 public external interface CanvasRenderingContext2DSettings : JsAny {
-    var alpha: Boolean?
-    var desynchronized: Boolean?
-    var colorSpace: PredefinedColorSpace?
-    var colorType: CanvasColorType?
-    var willReadFrequently: Boolean?
+    public var alpha: Boolean?
+    public var desynchronized: Boolean?
+    public var colorSpace: PredefinedColorSpace?
+    public var colorType: CanvasColorType?
+    public var willReadFrequently: Boolean?
 }
 
 public fun CanvasRenderingContext2DSettings(alpha: Boolean? = null, desynchronized: Boolean? = null, colorSpace: PredefinedColorSpace? = null, colorType: CanvasColorType? = null, willReadFrequently: Boolean? = null): CanvasRenderingContext2DSettings = newJsObject<CanvasRenderingContext2DSettings>().apply {
@@ -11449,7 +11449,7 @@ public fun CanvasRenderingContext2DSettings(alpha: Boolean? = null, desynchroniz
 
 public external interface ImageSmoothingQuality : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ImageSmoothingQuality.Companion.LOW: ImageSmoothingQuality get() = "low".toJsString().unsafeCast<ImageSmoothingQuality>()
@@ -11469,7 +11469,7 @@ public abstract external class CanvasRenderingContext2D : CanvasSettings, Canvas
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas)
      */
-    open val canvas: HTMLCanvasElement
+    public open val canvas: HTMLCanvasElement
 }
 
 public external interface CanvasSettings : JsAny {
@@ -11479,7 +11479,7 @@ public external interface CanvasSettings : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getContextAttributes)
      */
-    fun getContextAttributes(): CanvasRenderingContext2DSettings
+    public fun getContextAttributes(): CanvasRenderingContext2DSettings
 }
 
 public external interface CanvasState : JsAny {
@@ -11489,7 +11489,7 @@ public external interface CanvasState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/save)
      */
-    fun save()
+    public fun save()
 
     /**
      * The CanvasRenderingContext2D.restore() method of the Canvas 2D API restores the most recently saved canvas state
@@ -11497,7 +11497,7 @@ public external interface CanvasState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/restore)
      */
-    fun restore()
+    public fun restore()
 
     /**
      * The CanvasRenderingContext2D.reset() method of the Canvas 2D API resets the rendering context to its default
@@ -11505,7 +11505,7 @@ public external interface CanvasState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/reset)
      */
-    fun reset()
+    public fun reset()
 
     /**
      * The CanvasRenderingContext2D.isContextLost() method of the Canvas 2D API returns true if the rendering context is
@@ -11513,7 +11513,7 @@ public external interface CanvasState : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isContextLost)
      */
-    fun isContextLost(): Boolean
+    public fun isContextLost(): Boolean
 }
 
 public external interface CanvasTransform : JsAny {
@@ -11523,14 +11523,14 @@ public external interface CanvasTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/scale)
      */
-    fun scale(x: Double, y: Double)
+    public fun scale(x: Double, y: Double)
 
     /**
      * The CanvasRenderingContext2D.rotate() method of the Canvas 2D API adds a rotation to the transformation matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rotate)
      */
-    fun rotate(angle: Double)
+    public fun rotate(angle: Double)
 
     /**
      * The CanvasRenderingContext2D.translate() method of the Canvas 2D API adds a translation transformation to the
@@ -11538,7 +11538,7 @@ public external interface CanvasTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/translate)
      */
-    fun translate(x: Double, y: Double)
+    public fun translate(x: Double, y: Double)
 
     /**
      * The CanvasRenderingContext2D.transform() method of the Canvas 2D API multiplies the current transformation with
@@ -11547,7 +11547,7 @@ public external interface CanvasTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/transform)
      */
-    fun transform(a: Double, b: Double, c: Double, d: Double, e: Double, f: Double)
+    public fun transform(a: Double, b: Double, c: Double, d: Double, e: Double, f: Double)
 
     /**
      * The CanvasRenderingContext2D.getTransform() method of the Canvas 2D API retrieves the current transformation
@@ -11555,7 +11555,7 @@ public external interface CanvasTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getTransform)
      */
-    fun getTransform(): DOMMatrix
+    public fun getTransform(): DOMMatrix
 
     /**
      * The CanvasRenderingContext2D.setTransform() method of the Canvas 2D API resets (overrides) the current
@@ -11564,7 +11564,7 @@ public external interface CanvasTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setTransform)
      */
-    fun setTransform(a: Double, b: Double, c: Double, d: Double, e: Double, f: Double)
+    public fun setTransform(a: Double, b: Double, c: Double, d: Double, e: Double, f: Double)
 
     /**
      * The CanvasRenderingContext2D.setTransform() method of the Canvas 2D API resets (overrides) the current
@@ -11573,7 +11573,7 @@ public external interface CanvasTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setTransform)
      */
-    fun setTransform(transform: DOMMatrix2DInit = definedExternally)
+    public fun setTransform(transform: DOMMatrix2DInit = definedExternally)
 
     /**
      * The CanvasRenderingContext2D.resetTransform() method of the Canvas 2D API resets the current transform to the
@@ -11581,7 +11581,7 @@ public external interface CanvasTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/resetTransform)
      */
-    fun resetTransform()
+    public fun resetTransform()
 }
 
 public external interface CanvasCompositing : JsAny {
@@ -11591,7 +11591,7 @@ public external interface CanvasCompositing : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/globalAlpha)
      */
-    var globalAlpha: Double
+    public var globalAlpha: Double
 
     /**
      * The CanvasRenderingContext2D.globalCompositeOperation property of the Canvas 2D API sets the type of compositing
@@ -11599,7 +11599,7 @@ public external interface CanvasCompositing : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation)
      */
-    var globalCompositeOperation: String
+    public var globalCompositeOperation: String
 }
 
 public external interface CanvasImageSmoothing : JsAny {
@@ -11610,7 +11610,7 @@ public external interface CanvasImageSmoothing : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled)
      */
-    var imageSmoothingEnabled: Boolean
+    public var imageSmoothingEnabled: Boolean
 
     /**
      * The imageSmoothingQuality property of the CanvasRenderingContext2D interface, part of the Canvas API, lets you
@@ -11618,7 +11618,7 @@ public external interface CanvasImageSmoothing : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality)
      */
-    var imageSmoothingQuality: ImageSmoothingQuality
+    public var imageSmoothingQuality: ImageSmoothingQuality
 }
 
 public external interface CanvasFillStrokeStyles : JsAny {
@@ -11628,7 +11628,7 @@ public external interface CanvasFillStrokeStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeStyle)
      */
-    var strokeStyle: JsAny
+    public var strokeStyle: JsAny
 
     /**
      * The CanvasRenderingContext2D.fillStyle property of the Canvas 2D API specifies the color, gradient, or pattern to
@@ -11636,7 +11636,7 @@ public external interface CanvasFillStrokeStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillStyle)
      */
-    var fillStyle: JsAny
+    public var fillStyle: JsAny
 
     /**
      * The CanvasRenderingContext2D.createLinearGradient() method of the Canvas 2D API creates a gradient along the line
@@ -11644,7 +11644,7 @@ public external interface CanvasFillStrokeStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createLinearGradient)
      */
-    fun createLinearGradient(x0: Double, y0: Double, x1: Double, y1: Double): CanvasGradient
+    public fun createLinearGradient(x0: Double, y0: Double, x1: Double, y1: Double): CanvasGradient
 
     /**
      * The CanvasRenderingContext2D.createRadialGradient() method of the Canvas 2D API creates a radial gradient using
@@ -11652,7 +11652,7 @@ public external interface CanvasFillStrokeStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createRadialGradient)
      */
-    fun createRadialGradient(x0: Double, y0: Double, r0: Double, x1: Double, y1: Double, r1: Double): CanvasGradient
+    public fun createRadialGradient(x0: Double, y0: Double, r0: Double, x1: Double, y1: Double, r1: Double): CanvasGradient
 
     /**
      * The CanvasRenderingContext2D.createConicGradient() method of the Canvas 2D API creates a gradient around a point
@@ -11660,7 +11660,7 @@ public external interface CanvasFillStrokeStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createConicGradient)
      */
-    fun createConicGradient(startAngle: Double, x: Double, y: Double): CanvasGradient
+    public fun createConicGradient(startAngle: Double, x: Double, y: Double): CanvasGradient
 
     /**
      * The CanvasRenderingContext2D.createPattern() method of the Canvas 2D API creates a pattern using the specified
@@ -11668,7 +11668,7 @@ public external interface CanvasFillStrokeStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createPattern)
      */
-    fun createPattern(image: CanvasImageSource, repetition: String): CanvasPattern?
+    public fun createPattern(image: CanvasImageSource, repetition: String): CanvasPattern?
 }
 
 public external interface CanvasShadowStyles : JsAny {
@@ -11678,7 +11678,7 @@ public external interface CanvasShadowStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX)
      */
-    var shadowOffsetX: Double
+    public var shadowOffsetX: Double
 
     /**
      * The CanvasRenderingContext2D.shadowOffsetY property of the Canvas 2D API specifies the distance that shadows will
@@ -11686,7 +11686,7 @@ public external interface CanvasShadowStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY)
      */
-    var shadowOffsetY: Double
+    public var shadowOffsetY: Double
 
     /**
      * The CanvasRenderingContext2D.shadowBlur property of the Canvas 2D API specifies the amount of blur applied to
@@ -11694,14 +11694,14 @@ public external interface CanvasShadowStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowBlur)
      */
-    var shadowBlur: Double
+    public var shadowBlur: Double
 
     /**
      * The CanvasRenderingContext2D.shadowColor property of the Canvas 2D API specifies the color of shadows.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowColor)
      */
-    var shadowColor: String
+    public var shadowColor: String
 }
 
 public external interface CanvasFilters : JsAny {
@@ -11711,7 +11711,7 @@ public external interface CanvasFilters : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/filter)
      */
-    var filter: String
+    public var filter: String
 }
 
 public external interface CanvasRect : JsAny {
@@ -11721,7 +11721,7 @@ public external interface CanvasRect : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/clearRect)
      */
-    fun clearRect(x: Double, y: Double, w: Double, h: Double)
+    public fun clearRect(x: Double, y: Double, w: Double, h: Double)
 
     /**
      * The CanvasRenderingContext2D.fillRect() method of the Canvas 2D API draws a rectangle that is filled according to
@@ -11729,7 +11729,7 @@ public external interface CanvasRect : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillRect)
      */
-    fun fillRect(x: Double, y: Double, w: Double, h: Double)
+    public fun fillRect(x: Double, y: Double, w: Double, h: Double)
 
     /**
      * The CanvasRenderingContext2D.strokeRect() method of the Canvas 2D API draws a rectangle that is stroked
@@ -11737,7 +11737,7 @@ public external interface CanvasRect : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeRect)
      */
-    fun strokeRect(x: Double, y: Double, w: Double, h: Double)
+    public fun strokeRect(x: Double, y: Double, w: Double, h: Double)
 }
 
 public external interface CanvasDrawPath : JsAny {
@@ -11747,7 +11747,7 @@ public external interface CanvasDrawPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/beginPath)
      */
-    fun beginPath()
+    public fun beginPath()
 
     /**
      * The CanvasRenderingContext2D.fill() method of the Canvas 2D API fills the current or given path with the current
@@ -11755,7 +11755,7 @@ public external interface CanvasDrawPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fill)
      */
-    fun fill(fillRule: CanvasFillRule = definedExternally)
+    public fun fill(fillRule: CanvasFillRule = definedExternally)
 
     /**
      * The CanvasRenderingContext2D.fill() method of the Canvas 2D API fills the current or given path with the current
@@ -11763,7 +11763,7 @@ public external interface CanvasDrawPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fill)
      */
-    fun fill(path: Path2D, fillRule: CanvasFillRule = definedExternally)
+    public fun fill(path: Path2D, fillRule: CanvasFillRule = definedExternally)
 
     /**
      * The CanvasRenderingContext2D.stroke() method of the Canvas 2D API strokes (outlines) the current or given path
@@ -11771,7 +11771,7 @@ public external interface CanvasDrawPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/stroke)
      */
-    fun stroke()
+    public fun stroke()
 
     /**
      * The CanvasRenderingContext2D.stroke() method of the Canvas 2D API strokes (outlines) the current or given path
@@ -11779,7 +11779,7 @@ public external interface CanvasDrawPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/stroke)
      */
-    fun stroke(path: Path2D)
+    public fun stroke(path: Path2D)
 
     /**
      * The CanvasRenderingContext2D.clip() method of the Canvas 2D API turns the current or given path into the current
@@ -11788,7 +11788,7 @@ public external interface CanvasDrawPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/clip)
      */
-    fun clip(fillRule: CanvasFillRule = definedExternally)
+    public fun clip(fillRule: CanvasFillRule = definedExternally)
 
     /**
      * The CanvasRenderingContext2D.clip() method of the Canvas 2D API turns the current or given path into the current
@@ -11797,7 +11797,7 @@ public external interface CanvasDrawPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/clip)
      */
-    fun clip(path: Path2D, fillRule: CanvasFillRule = definedExternally)
+    public fun clip(path: Path2D, fillRule: CanvasFillRule = definedExternally)
 
     /**
      * The CanvasRenderingContext2D.isPointInPath() method of the Canvas 2D API reports whether or not the specified
@@ -11805,7 +11805,7 @@ public external interface CanvasDrawPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInPath)
      */
-    fun isPointInPath(x: Double, y: Double, fillRule: CanvasFillRule = definedExternally): Boolean
+    public fun isPointInPath(x: Double, y: Double, fillRule: CanvasFillRule = definedExternally): Boolean
 
     /**
      * The CanvasRenderingContext2D.isPointInPath() method of the Canvas 2D API reports whether or not the specified
@@ -11813,7 +11813,7 @@ public external interface CanvasDrawPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInPath)
      */
-    fun isPointInPath(path: Path2D, x: Double, y: Double, fillRule: CanvasFillRule = definedExternally): Boolean
+    public fun isPointInPath(path: Path2D, x: Double, y: Double, fillRule: CanvasFillRule = definedExternally): Boolean
 
     /**
      * The CanvasRenderingContext2D.isPointInStroke() method of the Canvas 2D API reports whether or not the specified
@@ -11821,7 +11821,7 @@ public external interface CanvasDrawPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInStroke)
      */
-    fun isPointInStroke(x: Double, y: Double): Boolean
+    public fun isPointInStroke(x: Double, y: Double): Boolean
 
     /**
      * The CanvasRenderingContext2D.isPointInStroke() method of the Canvas 2D API reports whether or not the specified
@@ -11829,7 +11829,7 @@ public external interface CanvasDrawPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInStroke)
      */
-    fun isPointInStroke(path: Path2D, x: Double, y: Double): Boolean
+    public fun isPointInStroke(path: Path2D, x: Double, y: Double): Boolean
 }
 
 public external interface CanvasUserInterface : JsAny {
@@ -11839,7 +11839,7 @@ public external interface CanvasUserInterface : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawFocusIfNeeded)
      */
-    fun drawFocusIfNeeded(element: Element)
+    public fun drawFocusIfNeeded(element: Element)
 
     /**
      * The CanvasRenderingContext2D.drawFocusIfNeeded() method of the Canvas 2D API draws a focus ring around the
@@ -11847,7 +11847,7 @@ public external interface CanvasUserInterface : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawFocusIfNeeded)
      */
-    fun drawFocusIfNeeded(path: Path2D, element: Element)
+    public fun drawFocusIfNeeded(path: Path2D, element: Element)
 }
 
 public external interface CanvasText : JsAny {
@@ -11859,7 +11859,7 @@ public external interface CanvasText : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillText)
      */
-    fun fillText(text: String, x: Double, y: Double, maxWidth: Double = definedExternally)
+    public fun fillText(text: String, x: Double, y: Double, maxWidth: Double = definedExternally)
 
     /**
      * The CanvasRenderingContext2D method strokeText(), part of the Canvas 2D API, strokes — that is, draws the
@@ -11869,7 +11869,7 @@ public external interface CanvasText : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeText)
      */
-    fun strokeText(text: String, x: Double, y: Double, maxWidth: Double = definedExternally)
+    public fun strokeText(text: String, x: Double, y: Double, maxWidth: Double = definedExternally)
 
     /**
      * The CanvasRenderingContext2D.measureText() method returns a TextMetrics object that contains information about
@@ -11877,7 +11877,7 @@ public external interface CanvasText : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/measureText)
      */
-    fun measureText(text: String): TextMetrics
+    public fun measureText(text: String): TextMetrics
 }
 
 public external interface CanvasDrawImage : JsAny {
@@ -11887,7 +11887,7 @@ public external interface CanvasDrawImage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage)
      */
-    fun drawImage(image: CanvasImageSource, dx: Double, dy: Double)
+    public fun drawImage(image: CanvasImageSource, dx: Double, dy: Double)
 
     /**
      * The CanvasRenderingContext2D.drawImage() method of the Canvas 2D API provides different ways to draw an image
@@ -11895,7 +11895,7 @@ public external interface CanvasDrawImage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage)
      */
-    fun drawImage(image: CanvasImageSource, dx: Double, dy: Double, dw: Double, dh: Double)
+    public fun drawImage(image: CanvasImageSource, dx: Double, dy: Double, dw: Double, dh: Double)
 
     /**
      * The CanvasRenderingContext2D.drawImage() method of the Canvas 2D API provides different ways to draw an image
@@ -11903,7 +11903,7 @@ public external interface CanvasDrawImage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage)
      */
-    fun drawImage(image: CanvasImageSource, sx: Double, sy: Double, sw: Double, sh: Double, dx: Double, dy: Double, dw: Double, dh: Double)
+    public fun drawImage(image: CanvasImageSource, sx: Double, sy: Double, sw: Double, sh: Double, dx: Double, dy: Double, dw: Double, dh: Double)
 }
 
 public external interface CanvasImageData : JsAny {
@@ -11913,7 +11913,7 @@ public external interface CanvasImageData : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createImageData)
      */
-    fun createImageData(sw: Int, sh: Int, settings: ImageDataSettings = definedExternally): ImageData
+    public fun createImageData(sw: Int, sh: Int, settings: ImageDataSettings = definedExternally): ImageData
 
     /**
      * The CanvasRenderingContext2D.createImageData() method of the Canvas 2D API creates a new, blank ImageData object
@@ -11921,7 +11921,7 @@ public external interface CanvasImageData : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createImageData)
      */
-    fun createImageData(imageData: ImageData): ImageData
+    public fun createImageData(imageData: ImageData): ImageData
 
     /**
      * The CanvasRenderingContext2D method getImageData() of the Canvas 2D API returns an ImageData object representing
@@ -11929,7 +11929,7 @@ public external interface CanvasImageData : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData)
      */
-    fun getImageData(sx: Int, sy: Int, sw: Int, sh: Int, settings: ImageDataSettings = definedExternally): ImageData
+    public fun getImageData(sx: Int, sy: Int, sw: Int, sh: Int, settings: ImageDataSettings = definedExternally): ImageData
 
     /**
      * The CanvasRenderingContext2D.putImageData() method of the Canvas 2D API paints data from the given ImageData
@@ -11938,7 +11938,7 @@ public external interface CanvasImageData : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/putImageData)
      */
-    fun putImageData(imageData: ImageData, dx: Int, dy: Int)
+    public fun putImageData(imageData: ImageData, dx: Int, dy: Int)
 
     /**
      * The CanvasRenderingContext2D.putImageData() method of the Canvas 2D API paints data from the given ImageData
@@ -11947,12 +11947,12 @@ public external interface CanvasImageData : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/putImageData)
      */
-    fun putImageData(imageData: ImageData, dx: Int, dy: Int, dirtyX: Int, dirtyY: Int, dirtyWidth: Int, dirtyHeight: Int)
+    public fun putImageData(imageData: ImageData, dx: Int, dy: Int, dirtyX: Int, dirtyY: Int, dirtyWidth: Int, dirtyHeight: Int)
 }
 
 public external interface CanvasLineCap : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanvasLineCap.Companion.BUTT: CanvasLineCap get() = "butt".toJsString().unsafeCast<CanvasLineCap>()
@@ -11961,7 +11961,7 @@ public inline val CanvasLineCap.Companion.SQUARE: CanvasLineCap get() = "square"
 
 public external interface CanvasLineJoin : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanvasLineJoin.Companion.ROUND: CanvasLineJoin get() = "round".toJsString().unsafeCast<CanvasLineJoin>()
@@ -11970,7 +11970,7 @@ public inline val CanvasLineJoin.Companion.MITER: CanvasLineJoin get() = "miter"
 
 public external interface CanvasTextAlign : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanvasTextAlign.Companion.START: CanvasTextAlign get() = "start".toJsString().unsafeCast<CanvasTextAlign>()
@@ -11981,7 +11981,7 @@ public inline val CanvasTextAlign.Companion.CENTER: CanvasTextAlign get() = "cen
 
 public external interface CanvasTextBaseline : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanvasTextBaseline.Companion.TOP: CanvasTextBaseline get() = "top".toJsString().unsafeCast<CanvasTextBaseline>()
@@ -11993,7 +11993,7 @@ public inline val CanvasTextBaseline.Companion.BOTTOM: CanvasTextBaseline get() 
 
 public external interface CanvasDirection : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanvasDirection.Companion.LTR: CanvasDirection get() = "ltr".toJsString().unsafeCast<CanvasDirection>()
@@ -12002,7 +12002,7 @@ public inline val CanvasDirection.Companion.INHERIT: CanvasDirection get() = "in
 
 public external interface CanvasFontKerning : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanvasFontKerning.Companion.AUTO: CanvasFontKerning get() = "auto".toJsString().unsafeCast<CanvasFontKerning>()
@@ -12011,7 +12011,7 @@ public inline val CanvasFontKerning.Companion.NONE: CanvasFontKerning get() = "n
 
 public external interface CanvasFontStretch : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanvasFontStretch.Companion.ULTRA_CONDENSED: CanvasFontStretch get() = "ultra-condensed".toJsString().unsafeCast<CanvasFontStretch>()
@@ -12026,7 +12026,7 @@ public inline val CanvasFontStretch.Companion.ULTRA_EXPANDED: CanvasFontStretch 
 
 public external interface CanvasFontVariantCaps : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanvasFontVariantCaps.Companion.NORMAL: CanvasFontVariantCaps get() = "normal".toJsString().unsafeCast<CanvasFontVariantCaps>()
@@ -12039,7 +12039,7 @@ public inline val CanvasFontVariantCaps.Companion.TITLING_CAPS: CanvasFontVarian
 
 public external interface CanvasTextRendering : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CanvasTextRendering.Companion.AUTO: CanvasTextRendering get() = "auto".toJsString().unsafeCast<CanvasTextRendering>()
@@ -12053,7 +12053,7 @@ public external interface CanvasPathDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineWidth)
      */
-    var lineWidth: Double
+    public var lineWidth: Double
 
     /**
      * The CanvasRenderingContext2D.lineCap property of the Canvas 2D API determines the shape used to draw the end
@@ -12061,7 +12061,7 @@ public external interface CanvasPathDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineCap)
      */
-    var lineCap: CanvasLineCap
+    public var lineCap: CanvasLineCap
 
     /**
      * The CanvasRenderingContext2D.lineJoin property of the Canvas 2D API determines the shape used to join two line
@@ -12069,14 +12069,14 @@ public external interface CanvasPathDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineJoin)
      */
-    var lineJoin: CanvasLineJoin
+    public var lineJoin: CanvasLineJoin
 
     /**
      * The CanvasRenderingContext2D.miterLimit property of the Canvas 2D API sets the miter limit ratio.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/miterLimit)
      */
-    var miterLimit: Double
+    public var miterLimit: Double
 
     /**
      * The setLineDash() method of the Canvas 2D API's CanvasRenderingContext2D interface sets the line dash pattern
@@ -12085,7 +12085,7 @@ public external interface CanvasPathDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash)
      */
-    fun setLineDash(segments: JsArray<JsNumber>)
+    public fun setLineDash(segments: JsArray<JsNumber>)
 
     /**
      * The getLineDash() method of the Canvas 2D API's CanvasRenderingContext2D interface gets the current line dash
@@ -12093,14 +12093,14 @@ public external interface CanvasPathDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getLineDash)
      */
-    fun getLineDash(): JsArray<JsNumber>
+    public fun getLineDash(): JsArray<JsNumber>
 
     /**
      * The CanvasRenderingContext2D.lineDashOffset property of the Canvas 2D API sets the line dash offset, or "phase."
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
      */
-    var lineDashOffset: Double
+    public var lineDashOffset: Double
 }
 
 public external interface CanvasTextDrawingStyles : JsAny {
@@ -12110,7 +12110,7 @@ public external interface CanvasTextDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lang)
      */
-    var lang: String
+    public var lang: String
 
     /**
      * The CanvasRenderingContext2D.font property of the Canvas 2D API specifies the current text style to use when
@@ -12118,7 +12118,7 @@ public external interface CanvasTextDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/font)
      */
-    var font: String
+    public var font: String
 
     /**
      * The CanvasRenderingContext2D.textAlign property of the Canvas 2D API specifies the current text alignment used
@@ -12126,7 +12126,7 @@ public external interface CanvasTextDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textAlign)
      */
-    var textAlign: CanvasTextAlign
+    public var textAlign: CanvasTextAlign
 
     /**
      * The CanvasRenderingContext2D.textBaseline property of the Canvas 2D API specifies the current text baseline used
@@ -12134,7 +12134,7 @@ public external interface CanvasTextDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textBaseline)
      */
-    var textBaseline: CanvasTextBaseline
+    public var textBaseline: CanvasTextBaseline
 
     /**
      * The CanvasRenderingContext2D.direction property of the Canvas 2D API specifies the current text direction used to
@@ -12142,7 +12142,7 @@ public external interface CanvasTextDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/direction)
      */
-    var direction: CanvasDirection
+    public var direction: CanvasDirection
 
     /**
      * The CanvasRenderingContext2D.letterSpacing property of the Canvas API specifies the spacing between letters when
@@ -12150,7 +12150,7 @@ public external interface CanvasTextDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/letterSpacing)
      */
-    var letterSpacing: String
+    public var letterSpacing: String
 
     /**
      * The CanvasRenderingContext2D.fontKerning property of the Canvas API specifies how font kerning information is
@@ -12158,7 +12158,7 @@ public external interface CanvasTextDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontKerning)
      */
-    var fontKerning: CanvasFontKerning
+    public var fontKerning: CanvasFontKerning
 
     /**
      * The CanvasRenderingContext2D.fontStretch property of the Canvas API specifies how the font may be expanded or
@@ -12166,7 +12166,7 @@ public external interface CanvasTextDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontStretch)
      */
-    var fontStretch: CanvasFontStretch
+    public var fontStretch: CanvasFontStretch
 
     /**
      * The CanvasRenderingContext2D.fontVariantCaps property of the Canvas API specifies an alternative capitalization
@@ -12174,7 +12174,7 @@ public external interface CanvasTextDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontVariantCaps)
      */
-    var fontVariantCaps: CanvasFontVariantCaps
+    public var fontVariantCaps: CanvasFontVariantCaps
 
     /**
      * The CanvasRenderingContext2D.textRendering property of the Canvas API provides information to the rendering
@@ -12182,7 +12182,7 @@ public external interface CanvasTextDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textRendering)
      */
-    var textRendering: CanvasTextRendering
+    public var textRendering: CanvasTextRendering
 
     /**
      * The CanvasRenderingContext2D.wordSpacing property of the Canvas API specifies the spacing between words when
@@ -12190,7 +12190,7 @@ public external interface CanvasTextDrawingStyles : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/wordSpacing)
      */
-    var wordSpacing: String
+    public var wordSpacing: String
 }
 
 public external interface CanvasPath : JsAny {
@@ -12201,7 +12201,7 @@ public external interface CanvasPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/closePath)
      */
-    fun closePath()
+    public fun closePath()
 
     /**
      * The CanvasRenderingContext2D.moveTo() method of the Canvas 2D API begins a new sub-path at the point specified by
@@ -12209,7 +12209,7 @@ public external interface CanvasPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/moveTo)
      */
-    fun moveTo(x: Double, y: Double)
+    public fun moveTo(x: Double, y: Double)
 
     /**
      * The CanvasRenderingContext2D method lineTo(), part of the Canvas 2D API, adds a straight line to the current
@@ -12217,7 +12217,7 @@ public external interface CanvasPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineTo)
      */
-    fun lineTo(x: Double, y: Double)
+    public fun lineTo(x: Double, y: Double)
 
     /**
      * The CanvasRenderingContext2D.quadraticCurveTo() method of the Canvas 2D API adds a quadratic Bézier curve to the
@@ -12227,7 +12227,7 @@ public external interface CanvasPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo)
      */
-    fun quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double)
+    public fun quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double)
 
     /**
      * The CanvasRenderingContext2D.bezierCurveTo() method of the Canvas 2D API adds a cubic Bézier curve to the current
@@ -12237,7 +12237,7 @@ public external interface CanvasPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/bezierCurveTo)
      */
-    fun bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double)
+    public fun bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double)
 
     /**
      * The CanvasRenderingContext2D.arcTo() method of the Canvas 2D API adds a circular arc to the current sub-path,
@@ -12246,14 +12246,14 @@ public external interface CanvasPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arcTo)
      */
-    fun arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double)
+    public fun arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double)
 
     /**
      * The CanvasRenderingContext2D.rect() method of the Canvas 2D API adds a rectangle to the current path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rect)
      */
-    fun rect(x: Double, y: Double, w: Double, h: Double)
+    public fun rect(x: Double, y: Double, w: Double, h: Double)
 
     /**
      * The CanvasRenderingContext2D.roundRect() method of the Canvas 2D API adds a rounded rectangle to the current
@@ -12261,7 +12261,7 @@ public external interface CanvasPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
      */
-    fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: Double)
+    public fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: Double)
 
     /**
      * The CanvasRenderingContext2D.roundRect() method of the Canvas 2D API adds a rounded rectangle to the current
@@ -12269,7 +12269,7 @@ public external interface CanvasPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
      */
-    fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: DOMPointInit)
+    public fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: DOMPointInit)
 
     /**
      * The CanvasRenderingContext2D.roundRect() method of the Canvas 2D API adds a rounded rectangle to the current
@@ -12277,7 +12277,7 @@ public external interface CanvasPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
      */
-    fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: JsArray<JsAny>)
+    public fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: JsArray<JsAny>)
 
     /**
      * The CanvasRenderingContext2D.roundRect() method of the Canvas 2D API adds a rounded rectangle to the current
@@ -12285,14 +12285,14 @@ public external interface CanvasPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
      */
-    fun roundRect(x: Double, y: Double, w: Double, h: Double)
+    public fun roundRect(x: Double, y: Double, w: Double, h: Double)
 
     /**
      * The CanvasRenderingContext2D.arc() method of the Canvas 2D API adds a circular arc to the current sub-path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arc)
      */
-    fun arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally)
+    public fun arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally)
 
     /**
      * The CanvasRenderingContext2D.ellipse() method of the Canvas 2D API adds an elliptical arc to the current
@@ -12300,7 +12300,7 @@ public external interface CanvasPath : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/ellipse)
      */
-    fun ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally)
+    public fun ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally)
 }
 
 /**
@@ -12317,7 +12317,7 @@ public abstract external class CanvasGradient : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasGradient/addColorStop)
      */
-    open fun addColorStop(offset: Double, color: String)
+    public open fun addColorStop(offset: Double, color: String)
 }
 
 /**
@@ -12333,7 +12333,7 @@ public abstract external class CanvasPattern : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasPattern/setTransform)
      */
-    open fun setTransform(transform: DOMMatrix2DInit = definedExternally)
+    public open fun setTransform(transform: DOMMatrix2DInit = definedExternally)
 }
 
 /**
@@ -12349,7 +12349,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/width)
      */
-    open val width: Double
+    public open val width: Double
 
     /**
      * The read-only actualBoundingBoxLeft property of the TextMetrics interface is a double giving the distance
@@ -12359,7 +12359,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/actualBoundingBoxLeft)
      */
-    open val actualBoundingBoxLeft: Double
+    public open val actualBoundingBoxLeft: Double
 
     /**
      * The read-only actualBoundingBoxRight property of the TextMetrics interface is a double giving the distance
@@ -12368,7 +12368,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/actualBoundingBoxRight)
      */
-    open val actualBoundingBoxRight: Double
+    public open val actualBoundingBoxRight: Double
 
     /**
      * The read-only fontBoundingBoxAscent property of the TextMetrics interface returns the distance from the
@@ -12377,7 +12377,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/fontBoundingBoxAscent)
      */
-    open val fontBoundingBoxAscent: Double
+    public open val fontBoundingBoxAscent: Double
 
     /**
      * The read-only fontBoundingBoxDescent property of the TextMetrics interface returns the distance from the
@@ -12386,7 +12386,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/fontBoundingBoxDescent)
      */
-    open val fontBoundingBoxDescent: Double
+    public open val fontBoundingBoxDescent: Double
 
     /**
      * The read-only actualBoundingBoxAscent property of the TextMetrics interface is a double giving the distance from
@@ -12395,7 +12395,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/actualBoundingBoxAscent)
      */
-    open val actualBoundingBoxAscent: Double
+    public open val actualBoundingBoxAscent: Double
 
     /**
      * The read-only actualBoundingBoxDescent property of the TextMetrics interface is a double giving the distance from
@@ -12404,7 +12404,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/actualBoundingBoxDescent)
      */
-    open val actualBoundingBoxDescent: Double
+    public open val actualBoundingBoxDescent: Double
 
     /**
      * The read-only emHeightAscent property of the TextMetrics interface returns the distance from the horizontal line
@@ -12413,7 +12413,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/emHeightAscent)
      */
-    open val emHeightAscent: Double
+    public open val emHeightAscent: Double
 
     /**
      * The read-only emHeightDescent property of the TextMetrics interface returns the distance from the horizontal line
@@ -12422,7 +12422,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/emHeightDescent)
      */
-    open val emHeightDescent: Double
+    public open val emHeightDescent: Double
 
     /**
      * The read-only hangingBaseline property of the TextMetrics interface is a double giving the distance from the
@@ -12431,7 +12431,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/hangingBaseline)
      */
-    open val hangingBaseline: Double
+    public open val hangingBaseline: Double
 
     /**
      * The read-only alphabeticBaseline property of the TextMetrics interface is a double giving the distance from the
@@ -12440,7 +12440,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/alphabeticBaseline)
      */
-    open val alphabeticBaseline: Double
+    public open val alphabeticBaseline: Double
 
     /**
      * The read-only ideographicBaseline property of the TextMetrics interface is a double giving the distance from the
@@ -12449,7 +12449,7 @@ public abstract external class TextMetrics : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/ideographicBaseline)
      */
-    open val ideographicBaseline: Double
+    public open val ideographicBaseline: Double
 }
 
 /**
@@ -12466,7 +12466,7 @@ public open external class Path2D : CanvasPath {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/Path2D)
      */
-    constructor(path: Path2D)
+    public constructor(path: Path2D)
 
     /**
      * The Path2D() constructor returns a newly instantiated Path2D object, optionally with another path as an argument
@@ -12474,7 +12474,7 @@ public open external class Path2D : CanvasPath {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/Path2D)
      */
-    constructor(path: String)
+    public constructor(path: String)
 
     /**
      * The Path2D() constructor returns a newly instantiated Path2D object, optionally with another path as an argument
@@ -12482,14 +12482,14 @@ public open external class Path2D : CanvasPath {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/Path2D)
      */
-    constructor()
+    public constructor()
 
     /**
      * The Path2D.addPath() method of the Canvas 2D API adds one Path2D object to another Path2D object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/addPath)
      */
-    open fun addPath(path: Path2D, transform: DOMMatrix2DInit = definedExternally)
+    public open fun addPath(path: Path2D, transform: DOMMatrix2DInit = definedExternally)
 
     /**
      * The CanvasRenderingContext2D.closePath() method of the Canvas 2D API attempts to add a straight line from the
@@ -12614,7 +12614,7 @@ public abstract external class ImageBitmapRenderingContext : RenderingContext, O
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext/canvas)
      */
-    open val canvas: UnionHTMLCanvasElementOrOffscreenCanvas
+    public open val canvas: UnionHTMLCanvasElementOrOffscreenCanvas
 
     /**
      * The ImageBitmapRenderingContext.transferFromImageBitmap() method displays the given ImageBitmap in the canvas
@@ -12622,11 +12622,11 @@ public abstract external class ImageBitmapRenderingContext : RenderingContext, O
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext/transferFromImageBitmap)
      */
-    open fun transferFromImageBitmap(bitmap: ImageBitmap?)
+    public open fun transferFromImageBitmap(bitmap: ImageBitmap?)
 }
 
 public external interface ImageBitmapRenderingContextSettings : JsAny {
-    var alpha: Boolean?
+    public var alpha: Boolean?
 }
 
 public fun ImageBitmapRenderingContextSettings(alpha: Boolean? = null): ImageBitmapRenderingContextSettings = newJsObject<ImageBitmapRenderingContextSettings>().apply {
@@ -12634,8 +12634,8 @@ public fun ImageBitmapRenderingContextSettings(alpha: Boolean? = null): ImageBit
 }
 
 public external interface ImageEncodeOptions : JsAny {
-    var type: String?
-    var quality: Double?
+    public var type: String?
+    public var quality: Double?
 }
 
 public fun ImageEncodeOptions(type: String? = null, quality: Double? = null): ImageEncodeOptions = newJsObject<ImageEncodeOptions>().apply {
@@ -12645,7 +12645,7 @@ public fun ImageEncodeOptions(type: String? = null, quality: Double? = null): Im
 
 public external interface OffscreenRenderingContextId : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val OffscreenRenderingContextId.Companion._2D: OffscreenRenderingContextId get() = "2d".toJsString().unsafeCast<OffscreenRenderingContextId>()
@@ -12667,21 +12667,21 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/OffscreenCanvas)
      */
-    constructor(width: Double, height: Double)
+    public constructor(width: Double, height: Double)
 
     /**
      * The width property returns and sets the width of an OffscreenCanvas object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/width)
      */
-    open var width: Double
+    public open var width: Double
 
     /**
      * The height property returns and sets the height of an OffscreenCanvas object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/height)
      */
-    open var height: Double
+    public open var height: Double
 
     /**
      * The OffscreenCanvas.getContext() method returns a drawing context for an offscreen canvas, or null if the context
@@ -12689,7 +12689,7 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/getContext)
      */
-    open fun getContext(contextId: OffscreenRenderingContextId, options: JsAny? = definedExternally): OffscreenRenderingContext?
+    public open fun getContext(contextId: OffscreenRenderingContextId, options: JsAny? = definedExternally): OffscreenRenderingContext?
 
     /**
      * The transferToImageBitmap() method of the OffscreenCanvas interface creates an ImageBitmap object from the most
@@ -12698,14 +12698,14 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/transferToImageBitmap)
      */
-    open fun transferToImageBitmap(): ImageBitmap
+    public open fun transferToImageBitmap(): ImageBitmap
 
     /**
      * The OffscreenCanvas.convertToBlob() method creates a Blob object representing the image contained in the canvas.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
      */
-    open fun convertToBlob(options: ImageEncodeOptions = definedExternally): Promise<Blob>
+    public open fun convertToBlob(options: ImageEncodeOptions = definedExternally): Promise<Blob>
 
     /**
      * The contextlost event of the OffscreenCanvas interface is fired if the browser detects that the
@@ -12714,7 +12714,7 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextlost_event)
      */
-    open var oncontextlost: ((Event) -> Unit)?
+    public open var oncontextlost: ((Event) -> Unit)?
 
     /**
      * The contextrestored event of the OffscreenCanvas interface is fired if the browser restores an
@@ -12722,7 +12722,7 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextrestored_event)
      */
-    open var oncontextrestored: ((Event) -> Unit)?
+    public open var oncontextrestored: ((Event) -> Unit)?
 }
 
 /**
@@ -12738,12 +12738,12 @@ public abstract external class OffscreenCanvasRenderingContext2D : CanvasSetting
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas)
      */
-    open val canvas: OffscreenCanvas
+    public open val canvas: OffscreenCanvas
 }
 
 public external interface PredefinedColorSpace : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val PredefinedColorSpace.Companion.SRGB: PredefinedColorSpace get() = "srgb".toJsString().unsafeCast<PredefinedColorSpace>()
@@ -12764,7 +12764,7 @@ public open external class CustomElementRegistry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/CustomElementRegistry)
      */
-    constructor()
+    public constructor()
 
     /**
      * The define() method of the CustomElementRegistry interface adds a definition for a custom element to the custom
@@ -12772,7 +12772,7 @@ public open external class CustomElementRegistry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/define)
      */
-    open fun define(name: String, constructor: () -> HTMLElement, options: ElementDefinitionOptions = definedExternally)
+    public open fun define(name: String, constructor: () -> HTMLElement, options: ElementDefinitionOptions = definedExternally)
 
     /**
      * The get() method of the CustomElementRegistry interface returns the constructor for a previously-defined custom
@@ -12780,7 +12780,7 @@ public open external class CustomElementRegistry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/get)
      */
-    open fun get(name: String): (() -> HTMLElement)?
+    public open fun get(name: String): (() -> HTMLElement)?
 
     /**
      * The getName() method of the CustomElementRegistry interface returns the name for a previously-defined custom
@@ -12788,7 +12788,7 @@ public open external class CustomElementRegistry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName)
      */
-    open fun getName(constructor: () -> HTMLElement): String?
+    public open fun getName(constructor: () -> HTMLElement): String?
 
     /**
      * The whenDefined() method of the CustomElementRegistry interface returns a Promise that resolves when the named
@@ -12796,7 +12796,7 @@ public open external class CustomElementRegistry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
      */
-    open fun whenDefined(name: String): Promise<JsAny>
+    public open fun whenDefined(name: String): Promise<JsAny>
 
     /**
      * The upgrade() method of the CustomElementRegistry interface upgrades all shadow-containing custom elements in a
@@ -12804,7 +12804,7 @@ public open external class CustomElementRegistry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/upgrade)
      */
-    open fun upgrade(root: Node)
+    public open fun upgrade(root: Node)
 
     /**
      * The initialize() method of the CustomElementRegistry interface associates this registry with a DOM subtree,
@@ -12813,11 +12813,11 @@ public open external class CustomElementRegistry : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/initialize)
      */
-    open fun initialize(root: Node)
+    public open fun initialize(root: Node)
 }
 
 public external interface ElementDefinitionOptions : JsAny {
-    var extends: String?
+    public var extends: String?
 }
 
 public fun ElementDefinitionOptions(extends: String? = null): ElementDefinitionOptions = newJsObject<ElementDefinitionOptions>().apply {
@@ -12837,7 +12837,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/shadowRoot)
      */
-    open val shadowRoot: ShadowRoot?
+    public open val shadowRoot: ShadowRoot?
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12845,7 +12845,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: File?, state: File?)
+    public open fun setFormValue(value: File?, state: File?)
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12853,7 +12853,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: File?, state: String?)
+    public open fun setFormValue(value: File?, state: String?)
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12861,7 +12861,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: File?, state: FormData?)
+    public open fun setFormValue(value: File?, state: FormData?)
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12869,7 +12869,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: File?)
+    public open fun setFormValue(value: File?)
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12877,7 +12877,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: String?, state: File?)
+    public open fun setFormValue(value: String?, state: File?)
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12885,7 +12885,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: String?, state: String?)
+    public open fun setFormValue(value: String?, state: String?)
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12893,7 +12893,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: String?, state: FormData?)
+    public open fun setFormValue(value: String?, state: FormData?)
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12901,7 +12901,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: String?)
+    public open fun setFormValue(value: String?)
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12909,7 +12909,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: FormData?, state: File?)
+    public open fun setFormValue(value: FormData?, state: File?)
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12917,7 +12917,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: FormData?, state: String?)
+    public open fun setFormValue(value: FormData?, state: String?)
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12925,7 +12925,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: FormData?, state: FormData?)
+    public open fun setFormValue(value: FormData?, state: FormData?)
 
     /**
      * The setFormValue() method of the ElementInternals interface sets the element's submission value and state,
@@ -12933,7 +12933,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
-    open fun setFormValue(value: FormData?)
+    public open fun setFormValue(value: FormData?)
 
     /**
      * The form read-only property of the ElementInternals interface returns the HTMLFormElement associated with this
@@ -12941,14 +12941,14 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/form)
      */
-    open val form: HTMLFormElement?
+    public open val form: HTMLFormElement?
 
     /**
      * The setValidity() method of the ElementInternals interface sets the validity of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setValidity)
      */
-    open fun setValidity(flags: ValidityStateFlags = definedExternally, message: String = definedExternally, anchor: HTMLElement = definedExternally)
+    public open fun setValidity(flags: ValidityStateFlags = definedExternally, message: String = definedExternally, anchor: HTMLElement = definedExternally)
 
     /**
      * The willValidate read-only property of the ElementInternals interface returns true if the element is a
@@ -12956,7 +12956,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/willValidate)
      */
-    open val willValidate: Boolean
+    public open val willValidate: Boolean
 
     /**
      * The validity read-only property of the ElementInternals interface returns a ValidityState object which represents
@@ -12964,7 +12964,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/validity)
      */
-    open val validity: ValidityState
+    public open val validity: ValidityState
 
     /**
      * The validationMessage read-only property of the ElementInternals interface returns the validation message for the
@@ -12972,7 +12972,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/validationMessage)
      */
-    open val validationMessage: String
+    public open val validationMessage: String
 
     /**
      * The checkValidity() method of the ElementInternals interface checks if the element meets any constraint
@@ -12980,7 +12980,7 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/checkValidity)
      */
-    open fun checkValidity(): Boolean
+    public open fun checkValidity(): Boolean
 
     /**
      * The reportValidity() method of the ElementInternals interface checks if the element meets any constraint
@@ -12988,14 +12988,14 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/reportValidity)
      */
-    open fun reportValidity(): Boolean
+    public open fun reportValidity(): Boolean
 
     /**
      * The labels read-only property of the ElementInternals interface returns the labels associated with the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/labels)
      */
-    open val labels: NodeList
+    public open val labels: NodeList
 
     /**
      * The states read-only property of the ElementInternals interface returns a CustomStateSet representing the
@@ -13003,20 +13003,20 @@ public abstract external class ElementInternals : ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/states)
      */
-    open val states: CustomStateSet
+    public open val states: CustomStateSet
 }
 
 public external interface ValidityStateFlags : JsAny {
-    var valueMissing: Boolean?
-    var typeMismatch: Boolean?
-    var patternMismatch: Boolean?
-    var tooLong: Boolean?
-    var tooShort: Boolean?
-    var rangeUnderflow: Boolean?
-    var rangeOverflow: Boolean?
-    var stepMismatch: Boolean?
-    var badInput: Boolean?
-    var customError: Boolean?
+    public var valueMissing: Boolean?
+    public var typeMismatch: Boolean?
+    public var patternMismatch: Boolean?
+    public var tooLong: Boolean?
+    public var tooShort: Boolean?
+    public var rangeUnderflow: Boolean?
+    public var rangeOverflow: Boolean?
+    public var stepMismatch: Boolean?
+    public var badInput: Boolean?
+    public var customError: Boolean?
 }
 
 public fun ValidityStateFlags(valueMissing: Boolean? = null, typeMismatch: Boolean? = null, patternMismatch: Boolean? = null, tooLong: Boolean? = null, tooShort: Boolean? = null, rangeUnderflow: Boolean? = null, rangeOverflow: Boolean? = null, stepMismatch: Boolean? = null, badInput: Boolean? = null, customError: Boolean? = null): ValidityStateFlags = newJsObject<ValidityStateFlags>().apply {
@@ -13067,7 +13067,7 @@ public abstract external class UserActivation : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation/hasBeenActive)
      */
-    open val hasBeenActive: Boolean
+    public open val hasBeenActive: Boolean
 
     /**
      * The read-only isActive property of the UserActivation interface indicates whether the current window has
@@ -13075,7 +13075,7 @@ public abstract external class UserActivation : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation/isActive)
      */
-    open val isActive: Boolean
+    public open val isActive: Boolean
 }
 
 /**
@@ -13090,7 +13090,7 @@ public open external class ToggleEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/ToggleEvent)
      */
-    constructor(type: String, eventInitDict: ToggleEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: ToggleEventInit = definedExternally)
 
     /**
      * The oldState read-only property of the ToggleEvent interface is a string representing the state the element is
@@ -13098,7 +13098,7 @@ public open external class ToggleEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/oldState)
      */
-    open val oldState: String
+    public open val oldState: String
 
     /**
      * The newState read-only property of the ToggleEvent interface is a string representing the state the element is
@@ -13106,7 +13106,7 @@ public open external class ToggleEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/newState)
      */
-    open val newState: String
+    public open val newState: String
 
     /**
      * The source read-only property of the ToggleEvent interface is an Element object instance representing the HTML
@@ -13114,20 +13114,20 @@ public open external class ToggleEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/source)
      */
-    open val source: Element?
+    public open val source: Element?
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface ToggleEventInit : EventInit {
-    var oldState: String?
-    var newState: String?
-    var source: Element?
+    public var oldState: String?
+    public var newState: String?
+    public var source: Element?
 }
 
 public fun ToggleEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, oldState: String? = null, newState: String? = null, source: Element? = null): ToggleEventInit = newJsObject<ToggleEventInit>().apply {
@@ -13151,7 +13151,7 @@ public open external class CommandEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/CommandEvent)
      */
-    constructor(type: String, eventInitDict: CommandEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: CommandEventInit = definedExternally)
 
     /**
      * The source read-only property of the CommandEvent interface returns an EventTarget representing the control that
@@ -13159,7 +13159,7 @@ public open external class CommandEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/source)
      */
-    open val source: Element?
+    public open val source: Element?
 
     /**
      * The command read-only property of the CommandEvent interface returns a string containing the value of the command
@@ -13167,19 +13167,19 @@ public open external class CommandEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/command)
      */
-    open val command: String
+    public open val command: String
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface CommandEventInit : EventInit {
-    var source: Element?
-    var command: String?
+    public var source: Element?
+    public var command: String?
 }
 
 public fun CommandEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, source: Element? = null, command: String? = null): CommandEventInit = newJsObject<CommandEventInit>().apply {
@@ -13191,8 +13191,8 @@ public fun CommandEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nul
 }
 
 public external interface FocusOptions : JsAny {
-    var preventScroll: Boolean?
-    var focusVisible: Boolean?
+    public var preventScroll: Boolean?
+    public var focusVisible: Boolean?
 }
 
 public fun FocusOptions(preventScroll: Boolean? = null, focusVisible: Boolean? = null): FocusOptions = newJsObject<FocusOptions>().apply {
@@ -13206,7 +13206,7 @@ public external interface ElementContentEditable : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable)
      */
-    var contentEditable: String
+    public var contentEditable: String
 
     /**
      * The enterKeyHint property is an enumerated property defining what action label (or icon) to present for the enter
@@ -13214,7 +13214,7 @@ public external interface ElementContentEditable : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/enterKeyHint)
      */
-    var enterKeyHint: String
+    public var enterKeyHint: String
 
     /**
      * The HTMLElement.isContentEditable read-only property returns a boolean value that is true if the contents of the
@@ -13222,14 +13222,14 @@ public external interface ElementContentEditable : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/isContentEditable)
      */
-    val isContentEditable: Boolean
+    public val isContentEditable: Boolean
 
     /**
      * The HTMLElement property inputMode reflects the value of the element's inputmode attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/inputMode)
      */
-    var inputMode: String
+    public var inputMode: String
 }
 
 /**
@@ -13244,7 +13244,7 @@ public open external class CloseWatcher : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/CloseWatcher)
      */
-    constructor(options: CloseWatcherOptions = definedExternally)
+    public constructor(options: CloseWatcherOptions = definedExternally)
 
     /**
      * The requestClose() method of the CloseWatcher interface fires a cancel event and if that event is not canceled
@@ -13253,7 +13253,7 @@ public open external class CloseWatcher : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/requestClose)
      */
-    open fun requestClose()
+    public open fun requestClose()
 
     /**
      * The close() method of the CloseWatcher interface lets you skip any logic in the cancel event handler and
@@ -13261,7 +13261,7 @@ public open external class CloseWatcher : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/close)
      */
-    open fun close()
+    public open fun close()
 
     /**
      * The destroy() method of the CloseWatcher interface deactivates the close watcher. This is intended to be called
@@ -13269,7 +13269,7 @@ public open external class CloseWatcher : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/destroy)
      */
-    open fun destroy()
+    public open fun destroy()
 
     /**
      * A cancel event is fired at a CloseWatcher object before the close event, so that close can be prevented from
@@ -13278,7 +13278,7 @@ public open external class CloseWatcher : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/cancel_event)
      */
-    open var oncancel: ((Event) -> Unit)?
+    public open var oncancel: ((Event) -> Unit)?
 
     /**
      * A close event is fired at a CloseWatcher object when a close request was received and only fired if the cancel
@@ -13286,11 +13286,11 @@ public open external class CloseWatcher : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/close_event)
      */
-    open var onclose: ((Event) -> Unit)?
+    public open var onclose: ((Event) -> Unit)?
 }
 
 public external interface CloseWatcherOptions : JsAny {
-    var signal: AbortSignal?
+    public var signal: AbortSignal?
 }
 
 public fun CloseWatcherOptions(signal: AbortSignal? = null): CloseWatcherOptions = newJsObject<CloseWatcherOptions>().apply {
@@ -13309,7 +13309,7 @@ public open external class DataTransfer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/DataTransfer)
      */
-    constructor()
+    public constructor()
 
     /**
      * The DataTransfer.dropEffect property controls the feedback (typically visual) the user is given during a drag and
@@ -13318,7 +13318,7 @@ public open external class DataTransfer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/dropEffect)
      */
-    open var dropEffect: String
+    public open var dropEffect: String
 
     /**
      * The effectAllowed property of the DataTransfer interface specifies the effect that is allowed for a drag
@@ -13329,7 +13329,7 @@ public open external class DataTransfer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/effectAllowed)
      */
-    open var effectAllowed: String
+    public open var effectAllowed: String
 
     /**
      * The items read-only property of the DataTransfer interface is a DataTransferItemList of the DataTransferItem
@@ -13338,7 +13338,7 @@ public open external class DataTransfer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/items)
      */
-    open val items: DataTransferItemList
+    public open val items: DataTransferItemList
 
     /**
      * The setDragImage() method of the DataTransfer interface sets a custom image to use as drag feedback. The image
@@ -13346,14 +13346,14 @@ public open external class DataTransfer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/setDragImage)
      */
-    open fun setDragImage(image: Element, x: Int, y: Int)
+    public open fun setDragImage(image: Element, x: Int, y: Int)
 
     /**
      * The types read-only property of the DataTransfer interface returns the available types that exist in the items.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/types)
      */
-    open val types: JsArray<JsString>
+    public open val types: JsArray<JsString>
 
     /**
      * The getData() method of the DataTransfer interface retrieves drag data (as a string) for the specified type. If
@@ -13361,7 +13361,7 @@ public open external class DataTransfer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/getData)
      */
-    open fun getData(format: String): String
+    public open fun getData(format: String): String
 
     /**
      * The setData() method of the DataTransfer interface sets the drag operation's drag data to the specified data and
@@ -13372,7 +13372,7 @@ public open external class DataTransfer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/setData)
      */
-    open fun setData(format: String, data: String)
+    public open fun setData(format: String, data: String)
 
     /**
      * The clearData() method of the DataTransfer interface removes the drag operation's drag data for the given type.
@@ -13380,7 +13380,7 @@ public open external class DataTransfer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/clearData)
      */
-    open fun clearData(format: String = definedExternally)
+    public open fun clearData(format: String = definedExternally)
 
     /**
      * The files read-only property of the DataTransfer interface is a list of the files in the drag operation. If the
@@ -13388,7 +13388,7 @@ public open external class DataTransfer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/files)
      */
-    open val files: FileList
+    public open val files: FileList
 }
 
 /**
@@ -13404,7 +13404,7 @@ public abstract external class DataTransferItemList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The add() method of the DataTransferItemList interface creates a new DataTransferItem using the specified data
@@ -13413,7 +13413,7 @@ public abstract external class DataTransferItemList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/add)
      */
-    open fun add(data: String, type: String): DataTransferItem?
+    public open fun add(data: String, type: String): DataTransferItem?
 
     /**
      * The add() method of the DataTransferItemList interface creates a new DataTransferItem using the specified data
@@ -13422,7 +13422,7 @@ public abstract external class DataTransferItemList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/add)
      */
-    open fun add(data: File): DataTransferItem?
+    public open fun add(data: File): DataTransferItem?
 
     /**
      * The remove() method of the DataTransferItemList interface removes the DataTransferItem at the specified index
@@ -13431,7 +13431,7 @@ public abstract external class DataTransferItemList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/remove)
      */
-    open fun remove(index: Int)
+    public open fun remove(index: Int)
 
     /**
      * The clear() method of the DataTransferItemList interface removes all DataTransferItem objects from the drag data
@@ -13439,7 +13439,7 @@ public abstract external class DataTransferItemList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/clear)
      */
-    open fun clear()
+    public open fun clear()
 }
 
 public operator fun DataTransferItemList.get(index: Int): DataTransferItem? = getProperty(this, index)
@@ -13457,7 +13457,7 @@ public abstract external class DataTransferItem : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind)
      */
-    open val kind: String
+    public open val kind: String
 
     /**
      * The type read-only property of the DataTransferItem interface returns the type (format) of the object
@@ -13466,7 +13466,7 @@ public abstract external class DataTransferItem : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/type)
      */
-    open val type: String
+    public open val type: String
 
     /**
      * The getAsString() method of the DataTransferItem interface invokes the given callback with the drag data item's
@@ -13474,7 +13474,7 @@ public abstract external class DataTransferItem : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/getAsString)
      */
-    open fun getAsString(callback: ((String) -> Unit)?)
+    public open fun getAsString(callback: ((String) -> Unit)?)
 
     /**
      * The getAsFile() method of the DataTransferItem interface returns the drag data item's File object if the item is
@@ -13482,7 +13482,7 @@ public abstract external class DataTransferItem : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/getAsFile)
      */
-    open fun getAsFile(): File?
+    public open fun getAsFile(): File?
 }
 
 /**
@@ -13499,25 +13499,25 @@ public open external class DragEvent : MouseEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent/DragEvent)
      */
-    constructor(type: String, eventInitDict: DragEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: DragEventInit = definedExternally)
 
     /**
      * The DragEvent.dataTransfer read-only property holds the drag operation's data (as a DataTransfer object).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent/dataTransfer)
      */
-    open val dataTransfer: DataTransfer?
+    public open val dataTransfer: DataTransfer?
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface DragEventInit : MouseEventInit {
-    var dataTransfer: DataTransfer?
+    public var dataTransfer: DataTransfer?
 }
 
 public fun DragEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null, dataTransfer: DataTransfer? = null): DragEventInit = newJsObject<DragEventInit>().apply {
@@ -13558,7 +13558,7 @@ public external interface PopoverTargetAttributes : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/popoverTargetElement)
      */
-    var popoverTargetElement: Element?
+    public var popoverTargetElement: Element?
 
     /**
      * The popoverTargetAction property of the HTMLInputElement interface gets and sets the action to be performed
@@ -13566,17 +13566,17 @@ public external interface PopoverTargetAttributes : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/popoverTargetAction)
      */
-    var popoverTargetAction: String
+    public var popoverTargetAction: String
 }
 
 public open external class Origin : JsAny {
-    constructor()
-    open val opaque: Boolean
-    open fun isSameOrigin(other: Origin): Boolean
-    open fun isSameSite(other: Origin): Boolean
+    public constructor()
+    public open val opaque: Boolean
+    public open fun isSameOrigin(other: Origin): Boolean
+    public open fun isSameSite(other: Origin): Boolean
 
-    companion object {
-        fun from(value: JsAny?): Origin
+    public companion object {
+        public fun from(value: JsAny?): Origin
     }
 }
 
@@ -13592,7 +13592,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/window)
      */
-    open val window: Window
+    public open val window: Window
 
     /**
      * The Window.self read-only property returns the window itself, as a WindowProxy. It can be used with dot notation
@@ -13603,7 +13603,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/self)
      */
-    open val self: Window
+    public open val self: Window
 
     /**
      * The document read-only property of the Window interface returns a reference to the document contained in the
@@ -13611,14 +13611,14 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/document)
      */
-    open val document: Document
+    public open val document: Document
 
     /**
      * The Window.name property gets/sets the name of the window's browsing context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/name)
      */
-    open var name: String
+    public open var name: String
 
     /**
      * The read-only location property of the Window interface returns a Location object with information about the
@@ -13626,7 +13626,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/location)
      */
-    open val location: Location
+    public open val location: Location
 
     /**
      * The Window.history read-only property returns a reference to the History object, which provides an interface for
@@ -13634,7 +13634,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/history)
      */
-    open val history: History
+    public open val history: History
 
     /**
      * The navigation read-only property of the Window interface returns the current window's associated Navigation
@@ -13642,7 +13642,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/navigation)
      */
-    open val navigation: Navigation
+    public open val navigation: Navigation
 
     /**
      * The customElements read-only property of the Window interface returns a reference to the global
@@ -13651,49 +13651,49 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/customElements)
      */
-    open val customElements: CustomElementRegistry
+    public open val customElements: CustomElementRegistry
 
     /**
      * The locationbar read-only property of the Window interface returns the locationbar object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/locationbar)
      */
-    open val locationbar: BarProp
+    public open val locationbar: BarProp
 
     /**
      * The menubar read-only property of the Window interface returns the menubar object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/menubar)
      */
-    open val menubar: BarProp
+    public open val menubar: BarProp
 
     /**
      * The personalbar read-only property of the Window interface returns the personalbar object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/personalbar)
      */
-    open val personalbar: BarProp
+    public open val personalbar: BarProp
 
     /**
      * The scrollbars read-only property of the Window interface returns the scrollbars object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollbars)
      */
-    open val scrollbars: BarProp
+    public open val scrollbars: BarProp
 
     /**
      * The statusbar read-only property of the Window interface returns the statusbar object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/statusbar)
      */
-    open val statusbar: BarProp
+    public open val statusbar: BarProp
 
     /**
      * The toolbar read-only property of the Window interface returns the toolbar object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/toolbar)
      */
-    open val toolbar: BarProp
+    public open val toolbar: BarProp
 
     /**
      * The status property of the Window interface was originally intended to set the text in the status bar at the
@@ -13704,21 +13704,21 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/status)
      */
-    open var status: String
+    public open var status: String
 
     /**
      * The Window.close() method closes the current window, or the window on which it was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/close)
      */
-    open fun close()
+    public open fun close()
 
     /**
      * The Window.closed read-only property indicates whether the referenced window is closed or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/closed)
      */
-    open val closed: Boolean
+    public open val closed: Boolean
 
     /**
      * The window.stop() stops further resource loading in the current browsing context, equivalent to the stop button
@@ -13726,7 +13726,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/stop)
      */
-    open fun stop()
+    public open fun stop()
 
     /**
      * Makes a request to bring the window to the front. It may fail due to user settings and the window isn't
@@ -13734,7 +13734,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focus)
      */
-    open fun focus()
+    public open fun focus()
 
     /**
      * The Window.blur() method does nothing.
@@ -13743,7 +13743,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/blur)
      */
-    open fun blur()
+    public open fun blur()
 
     /**
      * The frames read-only property of the Window interface returns the window itself, which is an array-like object,
@@ -13751,7 +13751,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/frames)
      */
-    open val frames: Window
+    public open val frames: Window
 
     /**
      * The length read-only property of the Window interface returns the number of frames (either &lt;frame&gt; or
@@ -13759,7 +13759,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The top read-only property of the Window interface returns a reference to the topmost window in the window
@@ -13767,7 +13767,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/top)
      */
-    open val top: Window?
+    public open val top: Window?
 
     /**
      * The Window interface's opener property returns a reference to the window that opened the window, either with
@@ -13775,7 +13775,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/opener)
      */
-    open var opener: JsAny?
+    public open var opener: JsAny?
 
     /**
      * The parent read-only property of the Window interface is a reference to the parent of the current window or
@@ -13783,7 +13783,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/parent)
      */
-    open val parent: Window?
+    public open val parent: Window?
 
     /**
      * The frameElement read-only property of the Window interface returns the element (such as &lt;iframe&gt; or
@@ -13791,7 +13791,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/frameElement)
      */
-    open val frameElement: Element?
+    public open val frameElement: Element?
 
     /**
      * The open() method of the Window interface loads a specified resource into a new or existing browsing context
@@ -13799,7 +13799,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/open)
      */
-    open fun open(url: String = definedExternally, target: String = definedExternally, features: String = definedExternally): Window?
+    public open fun open(url: String = definedExternally, target: String = definedExternally, features: String = definedExternally): Window?
 
     /**
      * The Window.navigator read-only property returns a reference to the Navigator object, which has methods and
@@ -13807,8 +13807,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/navigator)
      */
-    open val navigator: Navigator
-    open val clientInformation: Navigator
+    public open val navigator: Navigator
+    public open val clientInformation: Navigator
 
     /**
      * The originAgentCluster read-only property of the Window interface returns true if this window belongs to an
@@ -13817,7 +13817,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/originAgentCluster)
      */
-    open val originAgentCluster: Boolean
+    public open val originAgentCluster: Boolean
 
     /**
      * window.alert() instructs the browser to display a dialog with an optional message, and to wait until the user
@@ -13825,7 +13825,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/alert)
      */
-    open fun alert()
+    public open fun alert()
 
     /**
      * window.alert() instructs the browser to display a dialog with an optional message, and to wait until the user
@@ -13833,7 +13833,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/alert)
      */
-    open fun alert(message: String)
+    public open fun alert(message: String)
 
     /**
      * window.confirm() instructs the browser to display a dialog with an optional message, and to wait until the user
@@ -13841,7 +13841,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/confirm)
      */
-    open fun confirm(message: String = definedExternally): Boolean
+    public open fun confirm(message: String = definedExternally): Boolean
 
     /**
      * window.prompt() instructs the browser to display a dialog with an optional message prompting the user to input
@@ -13849,14 +13849,14 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/prompt)
      */
-    open fun prompt(message: String = definedExternally, default: String = definedExternally): String?
+    public open fun prompt(message: String = definedExternally, default: String = definedExternally): String?
 
     /**
      * Opens the print dialog to print the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/print)
      */
-    open fun print()
+    public open fun print()
 
     /**
      * The window.postMessage() method safely enables cross-origin communication between Window objects; e.g., between a
@@ -13864,7 +13864,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
      */
-    open fun postMessage(message: JsAny?, targetOrigin: String, transfer: JsArray<JsAny> = definedExternally)
+    public open fun postMessage(message: JsAny?, targetOrigin: String, transfer: JsArray<JsAny> = definedExternally)
 
     /**
      * The window.postMessage() method safely enables cross-origin communication between Window objects; e.g., between a
@@ -13872,7 +13872,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
      */
-    open fun postMessage(message: JsAny?, options: WindowPostMessageOptions = definedExternally)
+    public open fun postMessage(message: JsAny?, options: WindowPostMessageOptions = definedExternally)
 
     /**
      * The Window.captureEvents() method does nothing. Its original behavior has been removed from the specification,
@@ -13882,7 +13882,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/captureEvents)
      */
-    open fun captureEvents()
+    public open fun captureEvents()
 
     /**
      * Releases the window from trapping events of a specific type.
@@ -13891,7 +13891,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/releaseEvents)
      */
-    open fun releaseEvents()
+    public open fun releaseEvents()
 
     /**
      * The external read-only property of the Window interface returns an instance of the External interface, which was
@@ -13902,7 +13902,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/external)
      */
-    open val external: External
+    public open val external: External
 
     /**
      * The read-only Window property event returns the Event which is currently being handled by the site's code.
@@ -13912,7 +13912,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/event)
      */
-    open val event: Event?
+    public open val event: Event?
 
     /**
      * The Window interface's matchMedia() method returns a new MediaQueryList object that can then be used to determine
@@ -13921,7 +13921,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/matchMedia)
      */
-    open fun matchMedia(query: String): MediaQueryList
+    public open fun matchMedia(query: String): MediaQueryList
 
     /**
      * The screen read-only property of the Window interface returns a reference to the screen object associated with
@@ -13930,7 +13930,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screen)
      */
-    open val screen: Screen
+    public open val screen: Screen
 
     /**
      * The visualViewport read-only property of the Window interface returns a VisualViewport object representing the
@@ -13938,35 +13938,35 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/visualViewport)
      */
-    open val visualViewport: VisualViewport?
+    public open val visualViewport: VisualViewport?
 
     /**
      * The moveTo() method of the Window interface moves the current window to the specified coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/moveTo)
      */
-    open fun moveTo(x: Int, y: Int)
+    public open fun moveTo(x: Int, y: Int)
 
     /**
      * The moveBy() method of the Window interface moves the current window by a specified amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/moveBy)
      */
-    open fun moveBy(x: Int, y: Int)
+    public open fun moveBy(x: Int, y: Int)
 
     /**
      * The Window.resizeTo() method dynamically resizes the window.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resizeTo)
      */
-    open fun resizeTo(width: Int, height: Int)
+    public open fun resizeTo(width: Int, height: Int)
 
     /**
      * The Window.resizeBy() method resizes the current window by a specified amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resizeBy)
      */
-    open fun resizeBy(x: Int, y: Int)
+    public open fun resizeBy(x: Int, y: Int)
 
     /**
      * The read-only Window property innerWidth returns the interior width of the window in pixels (that is, the width
@@ -13974,7 +13974,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerWidth)
      */
-    open val innerWidth: Int
+    public open val innerWidth: Int
 
     /**
      * The read-only innerHeight property of the Window interface returns the interior height of the window in pixels,
@@ -13982,7 +13982,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerHeight)
      */
-    open val innerHeight: Int
+    public open val innerHeight: Int
 
     /**
      * The read-only scrollX property of the Window interface returns the number of pixels by which the document is
@@ -13992,8 +13992,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollX)
      */
-    open val scrollX: Double
-    open val pageXOffset: Double
+    public open val scrollX: Double
+    public open val pageXOffset: Double
 
     /**
      * The read-only scrollY property of the Window interface returns the number of pixels by which the document is
@@ -14003,50 +14003,50 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollY)
      */
-    open val scrollY: Double
-    open val pageYOffset: Double
+    public open val scrollY: Double
+    public open val pageYOffset: Double
 
     /**
      * The scroll() method of the Window interface scrolls the window to a particular place in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scroll)
      */
-    open fun scroll(options: ScrollToOptions = definedExternally): Promise<ScrollResult>
+    public open fun scroll(options: ScrollToOptions = definedExternally): Promise<ScrollResult>
 
     /**
      * The scroll() method of the Window interface scrolls the window to a particular place in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scroll)
      */
-    open fun scroll(x: Double, y: Double): Promise<ScrollResult>
+    public open fun scroll(x: Double, y: Double): Promise<ScrollResult>
 
     /**
      * The scrollTo() method of the Window interface scrolls to a particular set of coordinates in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollTo)
      */
-    open fun scrollTo(options: ScrollToOptions = definedExternally): Promise<ScrollResult>
+    public open fun scrollTo(options: ScrollToOptions = definedExternally): Promise<ScrollResult>
 
     /**
      * The scrollTo() method of the Window interface scrolls to a particular set of coordinates in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollTo)
      */
-    open fun scrollTo(x: Double, y: Double): Promise<ScrollResult>
+    public open fun scrollTo(x: Double, y: Double): Promise<ScrollResult>
 
     /**
      * The scrollBy() method of the Window interface scrolls the document in the window by the given amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollBy)
      */
-    open fun scrollBy(options: ScrollToOptions = definedExternally): Promise<ScrollResult>
+    public open fun scrollBy(options: ScrollToOptions = definedExternally): Promise<ScrollResult>
 
     /**
      * The scrollBy() method of the Window interface scrolls the document in the window by the given amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollBy)
      */
-    open fun scrollBy(x: Double, y: Double): Promise<ScrollResult>
+    public open fun scrollBy(x: Double, y: Double): Promise<ScrollResult>
 
     /**
      * The screenX read-only property of the Window interface returns the horizontal distance, in CSS pixels, from the
@@ -14054,7 +14054,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenX)
      */
-    open val screenX: Int
+    public open val screenX: Int
 
     /**
      * The screenLeft read-only property of the Window interface returns the horizontal distance, in CSS pixels, from
@@ -14062,7 +14062,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenLeft)
      */
-    open val screenLeft: Int
+    public open val screenLeft: Int
 
     /**
      * The screenY read-only property of the Window interface returns the vertical distance, in CSS pixels, from the top
@@ -14070,7 +14070,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenY)
      */
-    open val screenY: Int
+    public open val screenY: Int
 
     /**
      * The screenTop read-only property of the Window interface returns the vertical distance, in CSS pixels, from the
@@ -14078,7 +14078,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenTop)
      */
-    open val screenTop: Int
+    public open val screenTop: Int
 
     /**
      * Window.outerWidth read-only property returns the width of the outside of the browser window. It represents the
@@ -14087,7 +14087,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerWidth)
      */
-    open val outerWidth: Int
+    public open val outerWidth: Int
 
     /**
      * The Window.outerHeight read-only property returns the height in pixels of the whole browser window, including any
@@ -14095,7 +14095,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerHeight)
      */
-    open val outerHeight: Int
+    public open val outerHeight: Int
 
     /**
      * The devicePixelRatio read-only property of the Window interface returns the ratio of the resolution in physical
@@ -14103,7 +14103,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio)
      */
-    open val devicePixelRatio: Double
+    public open val devicePixelRatio: Double
 
     /**
      * The Window.getComputedStyle() method returns a live read-only CSSStyleProperties object containing the resolved
@@ -14112,7 +14112,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/getComputedStyle)
      */
-    open fun getComputedStyle(elt: Element, pseudoElt: String? = definedExternally): CSSStyleProperties
+    public open fun getComputedStyle(elt: Element, pseudoElt: String? = definedExternally): CSSStyleProperties
 
     /**
      * The fetchLater() method of the Window interface creates a deferred fetch.
@@ -14121,7 +14121,7 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fetchLater)
      */
-    open fun fetchLater(input: Request, init: DeferredRequestInit = definedExternally): FetchLaterResult
+    public open fun fetchLater(input: Request, init: DeferredRequestInit = definedExternally): FetchLaterResult
 
     /**
      * The fetchLater() method of the Window interface creates a deferred fetch.
@@ -14130,13 +14130,13 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fetchLater)
      */
-    open fun fetchLater(input: String, init: DeferredRequestInit = definedExternally): FetchLaterResult
+    public open fun fetchLater(input: String, init: DeferredRequestInit = definedExternally): FetchLaterResult
 }
 
 public operator fun Window.get(name: String): JsAny? = getProperty(this, name)
 
 public external interface WindowPostMessageOptions : StructuredSerializeOptions {
-    var targetOrigin: String?
+    public var targetOrigin: String?
 }
 
 public fun WindowPostMessageOptions(transfer: JsArray<JsAny>? = null, targetOrigin: String? = null): WindowPostMessageOptions = newJsObject<WindowPostMessageOptions>().apply {
@@ -14157,7 +14157,7 @@ public abstract external class BarProp : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BarProp/visible)
      */
-    open val visible: Boolean
+    public open val visible: Boolean
 }
 
 /**
@@ -14174,7 +14174,7 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/href)
      */
-    open var href: String
+    public open var href: String
 
     /**
      * The origin read-only property of the Location interface returns a string containing the Unicode serialization of
@@ -14182,7 +14182,7 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/origin)
      */
-    open val origin: String
+    public open val origin: String
 
     /**
      * The protocol property of the Location interface is a string containing the protocol or scheme of the location's
@@ -14190,7 +14190,7 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/protocol)
      */
-    open var protocol: String
+    public open var protocol: String
 
     /**
      * The host property of the Location interface is a string containing the host, which is the hostname, and then, if
@@ -14199,7 +14199,7 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/host)
      */
-    open var host: String
+    public open var host: String
 
     /**
      * The hostname property of the Location interface is a string containing either the domain name or IP address of
@@ -14208,7 +14208,7 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/hostname)
      */
-    open var hostname: String
+    public open var hostname: String
 
     /**
      * The port property of the Location interface is a string containing the port number of the location's URL. If the
@@ -14217,7 +14217,7 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/port)
      */
-    open var port: String
+    public open var port: String
 
     /**
      * The pathname property of the Location interface is a string containing the path of the URL for the location. If
@@ -14226,7 +14226,7 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/pathname)
      */
-    open var pathname: String
+    public open var pathname: String
 
     /**
      * The search property of the Location interface is a search string, also called a query string, that is a string
@@ -14235,7 +14235,7 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/search)
      */
-    open var search: String
+    public open var search: String
 
     /**
      * The hash property of the Location interface is a string containing a "#" followed by the fragment identifier of
@@ -14243,7 +14243,7 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/hash)
      */
-    open var hash: String
+    public open var hash: String
 
     /**
      * The assign() method of the Location interface causes the window to load and display the document at the URL
@@ -14252,7 +14252,7 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/assign)
      */
-    open fun assign(url: String)
+    public open fun assign(url: String)
 
     /**
      * The replace() method of the Location interface replaces the current resource with the one at the provided URL.
@@ -14262,14 +14262,14 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/replace)
      */
-    open fun replace(url: String)
+    public open fun replace(url: String)
 
     /**
      * The reload() method of the Location interface reloads the current URL, like the Refresh button.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/reload)
      */
-    open fun reload()
+    public open fun reload()
 
     /**
      * The ancestorOrigins read-only property of the Location interface is a static DOMStringList containing, in reverse
@@ -14277,12 +14277,12 @@ public abstract external class Location : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/ancestorOrigins)
      */
-    open val ancestorOrigins: DOMStringList
+    public open val ancestorOrigins: DOMStringList
 }
 
 public external interface ScrollRestoration : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ScrollRestoration.Companion.AUTO: ScrollRestoration get() = "auto".toJsString().unsafeCast<ScrollRestoration>()
@@ -14301,7 +14301,7 @@ public abstract external class History : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The scrollRestoration property of the History interface allows web applications to explicitly set default scroll
@@ -14309,7 +14309,7 @@ public abstract external class History : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/scrollRestoration)
      */
-    open var scrollRestoration: ScrollRestoration
+    public open var scrollRestoration: ScrollRestoration
 
     /**
      * The state read-only property of the History interface returns a value representing the state at the top of the
@@ -14317,7 +14317,7 @@ public abstract external class History : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/state)
      */
-    open val state: JsAny?
+    public open val state: JsAny?
 
     /**
      * The go() method of the History interface loads a specific page from the session history. You can use it to move
@@ -14325,14 +14325,14 @@ public abstract external class History : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/go)
      */
-    open fun go(delta: Int = definedExternally)
+    public open fun go(delta: Int = definedExternally)
 
     /**
      * The back() method of the History interface causes the browser to move back one page in the session history.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/back)
      */
-    open fun back()
+    public open fun back()
 
     /**
      * The forward() method of the History interface causes the browser to move forward one page in the session history.
@@ -14340,14 +14340,14 @@ public abstract external class History : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/forward)
      */
-    open fun forward()
+    public open fun forward()
 
     /**
      * The pushState() method of the History interface adds an entry to the browser's session history stack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/pushState)
      */
-    open fun pushState(data: JsAny?, unused: String, url: String? = definedExternally)
+    public open fun pushState(data: JsAny?, unused: String, url: String? = definedExternally)
 
     /**
      * The replaceState() method of the History interface modifies the current history entry, replacing it with the
@@ -14356,7 +14356,7 @@ public abstract external class History : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/replaceState)
      */
-    open fun replaceState(data: JsAny?, unused: String, url: String? = definedExternally)
+    public open fun replaceState(data: JsAny?, unused: String, url: String? = definedExternally)
 }
 
 /**
@@ -14373,7 +14373,7 @@ public abstract external class Navigation : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/entries)
      */
-    open fun entries(): JsArray<NavigationHistoryEntry>
+    public open fun entries(): JsArray<NavigationHistoryEntry>
 
     /**
      * The currentEntry read-only property of the Navigation interface returns a NavigationHistoryEntry object
@@ -14381,7 +14381,7 @@ public abstract external class Navigation : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/currentEntry)
      */
-    open val currentEntry: NavigationHistoryEntry?
+    public open val currentEntry: NavigationHistoryEntry?
 
     /**
      * The updateCurrentEntry() method of the Navigation interface updates the state of the currentEntry; used in cases
@@ -14389,7 +14389,7 @@ public abstract external class Navigation : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/updateCurrentEntry)
      */
-    open fun updateCurrentEntry(options: NavigationUpdateCurrentEntryOptions)
+    public open fun updateCurrentEntry(options: NavigationUpdateCurrentEntryOptions)
 
     /**
      * The transition read-only property of the Navigation interface returns a NavigationTransition object representing
@@ -14397,7 +14397,7 @@ public abstract external class Navigation : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/transition)
      */
-    open val transition: NavigationTransition?
+    public open val transition: NavigationTransition?
 
     /**
      * The activation read-only property of the Navigation interface returns a NavigationActivation object containing
@@ -14406,7 +14406,7 @@ public abstract external class Navigation : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/activation)
      */
-    open val activation: NavigationActivation?
+    public open val activation: NavigationActivation?
 
     /**
      * The canGoBack read-only property of the Navigation interface returns true if it is possible to navigate backwards
@@ -14415,7 +14415,7 @@ public abstract external class Navigation : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/canGoBack)
      */
-    open val canGoBack: Boolean
+    public open val canGoBack: Boolean
 
     /**
      * The canGoForward read-only property of the Navigation interface returns true if it is possible to navigate
@@ -14424,7 +14424,7 @@ public abstract external class Navigation : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/canGoForward)
      */
-    open val canGoForward: Boolean
+    public open val canGoForward: Boolean
 
     /**
      * The navigate() method of the Navigation interface navigates to a specific URL, updating any provided state in the
@@ -14432,7 +14432,7 @@ public abstract external class Navigation : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigate)
      */
-    open fun navigate(url: String, options: NavigationNavigateOptions = definedExternally): NavigationResult
+    public open fun navigate(url: String, options: NavigationNavigateOptions = definedExternally): NavigationResult
 
     /**
      * The reload() method of the Navigation interface reloads the current URL, updating any provided state in the
@@ -14440,7 +14440,7 @@ public abstract external class Navigation : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/reload)
      */
-    open fun reload(options: NavigationReloadOptions = definedExternally): NavigationResult
+    public open fun reload(options: NavigationReloadOptions = definedExternally): NavigationResult
 
     /**
      * The traverseTo() method of the Navigation interface navigates to the NavigationHistoryEntry identified by the
@@ -14448,21 +14448,21 @@ public abstract external class Navigation : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/traverseTo)
      */
-    open fun traverseTo(key: String, options: NavigationOptions = definedExternally): NavigationResult
+    public open fun traverseTo(key: String, options: NavigationOptions = definedExternally): NavigationResult
 
     /**
      * The back() method of the Navigation interface navigates backwards by one entry in the navigation history.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/back)
      */
-    open fun back(options: NavigationOptions = definedExternally): NavigationResult
+    public open fun back(options: NavigationOptions = definedExternally): NavigationResult
 
     /**
      * The forward() method of the Navigation interface navigates forwards by one entry in the navigation history.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/forward)
      */
-    open fun forward(options: NavigationOptions = definedExternally): NavigationResult
+    public open fun forward(options: NavigationOptions = definedExternally): NavigationResult
 
     /**
      * The navigate event of the Navigation interface is fired when any type of navigation is initiated, allowing you to
@@ -14470,32 +14470,32 @@ public abstract external class Navigation : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigate_event)
      */
-    open var onnavigate: ((NavigateEvent) -> Unit)?
+    public open var onnavigate: ((NavigateEvent) -> Unit)?
 
     /**
      * The navigatesuccess event of the Navigation interface is fired when a successful navigation has finished.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigatesuccess_event)
      */
-    open var onnavigatesuccess: ((Event) -> Unit)?
+    public open var onnavigatesuccess: ((Event) -> Unit)?
 
     /**
      * The navigateerror event of the Navigation interface is fired when a navigation fails.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigateerror_event)
      */
-    open var onnavigateerror: ((ErrorEvent) -> Unit)?
+    public open var onnavigateerror: ((ErrorEvent) -> Unit)?
 
     /**
      * The currententrychange event of the Navigation interface is fired when the Navigation.currentEntry has changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/currententrychange_event)
      */
-    open var oncurrententrychange: ((NavigationCurrentEntryChangeEvent) -> Unit)?
+    public open var oncurrententrychange: ((NavigationCurrentEntryChangeEvent) -> Unit)?
 }
 
 public external interface NavigationUpdateCurrentEntryOptions : JsAny {
-    var state: JsAny?
+    public var state: JsAny?
 }
 
 public fun NavigationUpdateCurrentEntryOptions(state: JsAny?): NavigationUpdateCurrentEntryOptions = newJsObject<NavigationUpdateCurrentEntryOptions>().apply {
@@ -14503,7 +14503,7 @@ public fun NavigationUpdateCurrentEntryOptions(state: JsAny?): NavigationUpdateC
 }
 
 public external interface NavigationOptions : JsAny {
-    var info: JsAny?
+    public var info: JsAny?
 }
 
 public fun NavigationOptions(info: JsAny? = null): NavigationOptions = newJsObject<NavigationOptions>().apply {
@@ -14511,8 +14511,8 @@ public fun NavigationOptions(info: JsAny? = null): NavigationOptions = newJsObje
 }
 
 public external interface NavigationNavigateOptions : NavigationOptions {
-    var state: JsAny?
-    var history: NavigationHistoryBehavior?
+    public var state: JsAny?
+    public var history: NavigationHistoryBehavior?
 }
 
 public fun NavigationNavigateOptions(info: JsAny? = null, state: JsAny? = null, history: NavigationHistoryBehavior? = null): NavigationNavigateOptions = newJsObject<NavigationNavigateOptions>().apply {
@@ -14522,7 +14522,7 @@ public fun NavigationNavigateOptions(info: JsAny? = null, state: JsAny? = null, 
 }
 
 public external interface NavigationReloadOptions : NavigationOptions {
-    var state: JsAny?
+    public var state: JsAny?
 }
 
 public fun NavigationReloadOptions(info: JsAny? = null, state: JsAny? = null): NavigationReloadOptions = newJsObject<NavigationReloadOptions>().apply {
@@ -14531,8 +14531,8 @@ public fun NavigationReloadOptions(info: JsAny? = null, state: JsAny? = null): N
 }
 
 public external interface NavigationResult : JsAny {
-    var committed: Promise<NavigationHistoryEntry>?
-    var finished: Promise<NavigationHistoryEntry>?
+    public var committed: Promise<NavigationHistoryEntry>?
+    public var finished: Promise<NavigationHistoryEntry>?
 }
 
 public fun NavigationResult(committed: Promise<NavigationHistoryEntry>? = null, finished: Promise<NavigationHistoryEntry>? = null): NavigationResult = newJsObject<NavigationResult>().apply {
@@ -14542,7 +14542,7 @@ public fun NavigationResult(committed: Promise<NavigationHistoryEntry>? = null, 
 
 public external interface NavigationHistoryBehavior : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val NavigationHistoryBehavior.Companion.AUTO: NavigationHistoryBehavior get() = "auto".toJsString().unsafeCast<NavigationHistoryBehavior>()
@@ -14551,7 +14551,7 @@ public inline val NavigationHistoryBehavior.Companion.REPLACE: NavigationHistory
 
 public external interface NavigationType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val NavigationType.Companion.PUSH: NavigationType get() = "push".toJsString().unsafeCast<NavigationType>()
@@ -14573,7 +14573,7 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/url)
      */
-    open val url: String?
+    public open val url: String?
 
     /**
      * The key read-only property of the NavigationHistoryEntry interface returns the key of the history entry, or an
@@ -14584,7 +14584,7 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/key)
      */
-    open val key: String
+    public open val key: String
 
     /**
      * The id read-only property of the NavigationHistoryEntry interface returns the id of the history entry, or an
@@ -14593,7 +14593,7 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/id)
      */
-    open val id: String
+    public open val id: String
 
     /**
      * The index read-only property of the NavigationHistoryEntry interface returns the index of the history entry in
@@ -14602,7 +14602,7 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/index)
      */
-    open val index: Double
+    public open val index: Double
 
     /**
      * The sameDocument read-only property of the NavigationHistoryEntry interface returns true if this history entry is
@@ -14610,7 +14610,7 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/sameDocument)
      */
-    open val sameDocument: Boolean
+    public open val sameDocument: Boolean
 
     /**
      * The getState() method of the NavigationHistoryEntry interface returns a clone of the developer-supplied state
@@ -14618,7 +14618,7 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/getState)
      */
-    open fun getState(): JsAny?
+    public open fun getState(): JsAny?
 
     /**
      * The dispose event of the NavigationHistoryEntry interface is fired when the entry is no longer part of the
@@ -14626,7 +14626,7 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/dispose_event)
      */
-    open var ondispose: ((Event) -> Unit)?
+    public open var ondispose: ((Event) -> Unit)?
 }
 
 /**
@@ -14642,7 +14642,7 @@ public abstract external class NavigationTransition : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/navigationType)
      */
-    open val navigationType: NavigationType
+    public open val navigationType: NavigationType
 
     /**
      * The from read-only property of the NavigationTransition interface returns the NavigationHistoryEntry that the
@@ -14650,7 +14650,7 @@ public abstract external class NavigationTransition : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/from)
      */
-    open val from: NavigationHistoryEntry
+    public open val from: NavigationHistoryEntry
 
     /**
      * The to read-only property of the NavigationTransition interface returns the NavigationDestination that the
@@ -14658,7 +14658,7 @@ public abstract external class NavigationTransition : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/to)
      */
-    open val to: NavigationDestination
+    public open val to: NavigationDestination
 
     /**
      * The committed read-only property of the NavigationTransition interface returns a Promise that fulfills when
@@ -14667,7 +14667,7 @@ public abstract external class NavigationTransition : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/committed)
      */
-    open val committed: Promise<JsAny?>
+    public open val committed: Promise<JsAny?>
 
     /**
      * The finished read-only property of the NavigationTransition interface returns a Promise that fulfills at the same
@@ -14675,7 +14675,7 @@ public abstract external class NavigationTransition : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/finished)
      */
-    open val finished: Promise<JsAny?>
+    public open val finished: Promise<JsAny?>
 }
 
 /**
@@ -14691,7 +14691,7 @@ public abstract external class NavigationActivation : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation/from)
      */
-    open val from: NavigationHistoryEntry?
+    public open val from: NavigationHistoryEntry?
 
     /**
      * The entry read-only property of the NavigationActivation interface contains a NavigationHistoryEntry object
@@ -14700,7 +14700,7 @@ public abstract external class NavigationActivation : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation/entry)
      */
-    open val entry: NavigationHistoryEntry
+    public open val entry: NavigationHistoryEntry
 
     /**
      * The navigationType read-only property of the NavigationActivation interface contains a string indicating the type
@@ -14708,7 +14708,7 @@ public abstract external class NavigationActivation : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation/navigationType)
      */
-    open val navigationType: NavigationType
+    public open val navigationType: NavigationType
 }
 
 /**
@@ -14725,7 +14725,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/NavigateEvent)
      */
-    constructor(type: String, eventInitDict: NavigateEventInit)
+    public constructor(type: String, eventInitDict: NavigateEventInit)
 
     /**
      * The navigationType read-only property of the NavigateEvent interface returns the type of the navigation — push,
@@ -14733,7 +14733,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/navigationType)
      */
-    open val navigationType: NavigationType
+    public open val navigationType: NavigationType
 
     /**
      * The destination read-only property of the NavigateEvent interface returns a NavigationDestination object
@@ -14741,7 +14741,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/destination)
      */
-    open val destination: NavigationDestination
+    public open val destination: NavigationDestination
 
     /**
      * The canIntercept read-only property of the NavigateEvent interface returns true if the navigation can be
@@ -14749,7 +14749,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/canIntercept)
      */
-    open val canIntercept: Boolean
+    public open val canIntercept: Boolean
 
     /**
      * The userInitiated read-only property of the NavigateEvent interface returns true if the navigation was initiated
@@ -14758,7 +14758,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/userInitiated)
      */
-    open val userInitiated: Boolean
+    public open val userInitiated: Boolean
 
     /**
      * The hashChange read-only property of the NavigateEvent interface returns true if the navigation is a fragment
@@ -14766,7 +14766,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/hashChange)
      */
-    open val hashChange: Boolean
+    public open val hashChange: Boolean
 
     /**
      * The signal read-only property of the NavigateEvent interface returns an AbortSignal, which will become aborted if
@@ -14775,7 +14775,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/signal)
      */
-    open val signal: AbortSignal
+    public open val signal: AbortSignal
 
     /**
      * The formData read-only property of the NavigateEvent interface returns the FormData object representing the
@@ -14783,7 +14783,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/formData)
      */
-    open val formData: FormData?
+    public open val formData: FormData?
 
     /**
      * The downloadRequest read-only property of the NavigateEvent interface returns the filename of the file requested
@@ -14792,7 +14792,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/downloadRequest)
      */
-    open val downloadRequest: String?
+    public open val downloadRequest: String?
 
     /**
      * The info read-only property of the NavigateEvent interface returns the info data value passed by the initiating
@@ -14801,7 +14801,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/info)
      */
-    open val info: JsAny?
+    public open val info: JsAny?
 
     /**
      * The hasUAVisualTransition read-only property of the NavigateEvent interface returns true if the user agent
@@ -14809,7 +14809,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/hasUAVisualTransition)
      */
-    open val hasUAVisualTransition: Boolean
+    public open val hasUAVisualTransition: Boolean
 
     /**
      * The sourceElement read-only property of the NavigateEvent interface returns an Element object representing the
@@ -14817,7 +14817,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/sourceElement)
      */
-    open val sourceElement: Element?
+    public open val sourceElement: Element?
 
     /**
      * The intercept() method of the NavigateEvent interface intercepts this navigation, turning it into a same-document
@@ -14825,7 +14825,7 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/intercept)
      */
-    open fun intercept(options: NavigationInterceptOptions = definedExternally)
+    public open fun intercept(options: NavigationInterceptOptions = definedExternally)
 
     /**
      * The scroll() method of the NavigateEvent interface can be called to manually trigger the browser-driven scrolling
@@ -14834,28 +14834,28 @@ public open external class NavigateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/scroll)
      */
-    open fun scroll()
+    public open fun scroll()
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface NavigateEventInit : EventInit {
-    var navigationType: NavigationType?
-    var destination: NavigationDestination
-    var canIntercept: Boolean?
-    var userInitiated: Boolean?
-    var hashChange: Boolean?
-    var signal: AbortSignal
-    var formData: FormData?
-    var downloadRequest: String?
-    var info: JsAny?
-    var hasUAVisualTransition: Boolean?
-    var sourceElement: Element?
+    public var navigationType: NavigationType?
+    public var destination: NavigationDestination
+    public var canIntercept: Boolean?
+    public var userInitiated: Boolean?
+    public var hashChange: Boolean?
+    public var signal: AbortSignal
+    public var formData: FormData?
+    public var downloadRequest: String?
+    public var info: JsAny?
+    public var hasUAVisualTransition: Boolean?
+    public var sourceElement: Element?
 }
 
 public fun NavigateEventInit(destination: NavigationDestination, signal: AbortSignal, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, navigationType: NavigationType? = null, canIntercept: Boolean? = null, userInitiated: Boolean? = null, hashChange: Boolean? = null, formData: FormData? = null, downloadRequest: String? = null, info: JsAny? = null, hasUAVisualTransition: Boolean? = null, sourceElement: Element? = null): NavigateEventInit = newJsObject<NavigateEventInit>().apply {
@@ -14876,10 +14876,10 @@ public fun NavigateEventInit(destination: NavigationDestination, signal: AbortSi
 }
 
 public external interface NavigationInterceptOptions : JsAny {
-    var precommitHandler: ((NavigationPrecommitController) -> Promise<JsAny?>)?
-    var handler: (() -> Promise<JsAny?>)?
-    var focusReset: NavigationFocusReset?
-    var scroll: NavigationScrollBehavior?
+    public var precommitHandler: ((NavigationPrecommitController) -> Promise<JsAny?>)?
+    public var handler: (() -> Promise<JsAny?>)?
+    public var focusReset: NavigationFocusReset?
+    public var scroll: NavigationScrollBehavior?
 }
 
 public fun NavigationInterceptOptions(precommitHandler: ((NavigationPrecommitController) -> Promise<JsAny?>)? = null, handler: (() -> Promise<JsAny?>)? = null, focusReset: NavigationFocusReset? = null, scroll: NavigationScrollBehavior? = null): NavigationInterceptOptions = newJsObject<NavigationInterceptOptions>().apply {
@@ -14891,7 +14891,7 @@ public fun NavigationInterceptOptions(precommitHandler: ((NavigationPrecommitCon
 
 public external interface NavigationFocusReset : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val NavigationFocusReset.Companion.AFTER_TRANSITION: NavigationFocusReset get() = "after-transition".toJsString().unsafeCast<NavigationFocusReset>()
@@ -14899,7 +14899,7 @@ public inline val NavigationFocusReset.Companion.MANUAL: NavigationFocusReset ge
 
 public external interface NavigationScrollBehavior : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val NavigationScrollBehavior.Companion.AFTER_TRANSITION: NavigationScrollBehavior get() = "after-transition".toJsString().unsafeCast<NavigationScrollBehavior>()
@@ -14918,7 +14918,7 @@ public abstract external class NavigationPrecommitController : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPrecommitController/redirect)
      */
-    open fun redirect(url: String, options: NavigationNavigateOptions = definedExternally)
+    public open fun redirect(url: String, options: NavigationNavigateOptions = definedExternally)
 
     /**
      * The addHandler() method of the NavigationPrecommitController interface allows you to dynamically add a handler
@@ -14926,7 +14926,7 @@ public abstract external class NavigationPrecommitController : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPrecommitController/addHandler)
      */
-    open fun addHandler(handler: () -> Promise<JsAny?>)
+    public open fun addHandler(handler: () -> Promise<JsAny?>)
 }
 
 /**
@@ -14941,7 +14941,7 @@ public abstract external class NavigationDestination : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/url)
      */
-    open val url: String
+    public open val url: String
 
     /**
      * The key read-only property of the NavigationDestination interface returns the key value of the destination
@@ -14949,7 +14949,7 @@ public abstract external class NavigationDestination : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/key)
      */
-    open val key: String
+    public open val key: String
 
     /**
      * The id read-only property of the NavigationDestination interface returns the id value of the destination
@@ -14957,7 +14957,7 @@ public abstract external class NavigationDestination : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/id)
      */
-    open val id: String
+    public open val id: String
 
     /**
      * The index read-only property of the NavigationDestination interface returns the index value of the destination
@@ -14965,7 +14965,7 @@ public abstract external class NavigationDestination : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/index)
      */
-    open val index: Double
+    public open val index: Double
 
     /**
      * The sameDocument read-only property of the NavigationDestination interface returns true if the navigation is to
@@ -14973,7 +14973,7 @@ public abstract external class NavigationDestination : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/sameDocument)
      */
-    open val sameDocument: Boolean
+    public open val sameDocument: Boolean
 
     /**
      * The getState() method of the NavigationDestination interface returns a clone of the developer-supplied state
@@ -14982,7 +14982,7 @@ public abstract external class NavigationDestination : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/getState)
      */
-    open fun getState(): JsAny?
+    public open fun getState(): JsAny?
 }
 
 /**
@@ -14998,7 +14998,7 @@ public open external class NavigationCurrentEntryChangeEvent : Event {
      * [MDN
      * Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent/NavigationCurrentEntryChangeEvent)
      */
-    constructor(type: String, eventInitDict: NavigationCurrentEntryChangeEventInit)
+    public constructor(type: String, eventInitDict: NavigationCurrentEntryChangeEventInit)
 
     /**
      * The navigationType read-only property of the NavigationCurrentEntryChangeEvent interface returns the type of the
@@ -15007,7 +15007,7 @@ public open external class NavigationCurrentEntryChangeEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent/navigationType)
      */
-    open val navigationType: NavigationType?
+    public open val navigationType: NavigationType?
 
     /**
      * The from read-only property of the NavigationCurrentEntryChangeEvent interface returns the NavigationHistoryEntry
@@ -15015,19 +15015,19 @@ public open external class NavigationCurrentEntryChangeEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent/from)
      */
-    open val from: NavigationHistoryEntry
+    public open val from: NavigationHistoryEntry
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface NavigationCurrentEntryChangeEventInit : EventInit {
-    var navigationType: NavigationType?
-    var from: NavigationHistoryEntry
+    public var navigationType: NavigationType?
+    public var from: NavigationHistoryEntry
 }
 
 public fun NavigationCurrentEntryChangeEventInit(from: NavigationHistoryEntry, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, navigationType: NavigationType? = null): NavigationCurrentEntryChangeEventInit = newJsObject<NavigationCurrentEntryChangeEventInit>().apply {
@@ -15049,7 +15049,7 @@ public open external class PopStateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/PopStateEvent)
      */
-    constructor(type: String, eventInitDict: PopStateEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: PopStateEventInit = definedExternally)
 
     /**
      * The state read-only property of the PopStateEvent interface represents the state stored when the event was
@@ -15057,7 +15057,7 @@ public open external class PopStateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/state)
      */
-    open val state: JsAny?
+    public open val state: JsAny?
 
     /**
      * The hasUAVisualTransition read-only property of the PopStateEvent interface returns true if the user agent
@@ -15065,19 +15065,19 @@ public open external class PopStateEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/hasUAVisualTransition)
      */
-    open val hasUAVisualTransition: Boolean
+    public open val hasUAVisualTransition: Boolean
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface PopStateEventInit : EventInit {
-    var state: JsAny?
-    var hasUAVisualTransition: Boolean?
+    public var state: JsAny?
+    public var hasUAVisualTransition: Boolean?
 }
 
 public fun PopStateEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, state: JsAny? = null, hasUAVisualTransition: Boolean? = null): PopStateEventInit = newJsObject<PopStateEventInit>().apply {
@@ -15100,7 +15100,7 @@ public open external class HashChangeEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/HashChangeEvent)
      */
-    constructor(type: String, eventInitDict: HashChangeEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: HashChangeEventInit = definedExternally)
 
     /**
      * The oldURL read-only property of the HashChangeEvent interface returns the previous URL from which the window was
@@ -15108,7 +15108,7 @@ public open external class HashChangeEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/oldURL)
      */
-    open val oldURL: String
+    public open val oldURL: String
 
     /**
      * The newURL read-only property of the HashChangeEvent interface returns the new URL to which the window is
@@ -15116,19 +15116,19 @@ public open external class HashChangeEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/newURL)
      */
-    open val newURL: String
+    public open val newURL: String
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface HashChangeEventInit : EventInit {
-    var oldURL: String?
-    var newURL: String?
+    public var oldURL: String?
+    public var newURL: String?
 }
 
 public fun HashChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, oldURL: String? = null, newURL: String? = null): HashChangeEventInit = newJsObject<HashChangeEventInit>().apply {
@@ -15150,7 +15150,7 @@ public open external class PageSwapEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent/PageSwapEvent)
      */
-    constructor(type: String, eventInitDict: PageSwapEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: PageSwapEventInit = definedExternally)
 
     /**
      * The activation read-only property of the PageSwapEvent interface contains a NavigationActivation object
@@ -15158,18 +15158,18 @@ public open external class PageSwapEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent/activation)
      */
-    open val activation: NavigationActivation?
+    public open val activation: NavigationActivation?
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface PageSwapEventInit : EventInit {
-    var activation: NavigationActivation?
+    public var activation: NavigationActivation?
 }
 
 public fun PageSwapEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, activation: NavigationActivation? = null): PageSwapEventInit = newJsObject<PageSwapEventInit>().apply {
@@ -15190,13 +15190,13 @@ public open external class PageRevealEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageRevealEvent/PageRevealEvent)
      */
-    constructor(type: String, eventInitDict: PageRevealEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: PageRevealEventInit = definedExternally)
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
@@ -15221,25 +15221,25 @@ public open external class PageTransitionEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/PageTransitionEvent)
      */
-    constructor(type: String, eventInitDict: PageTransitionEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: PageTransitionEventInit = definedExternally)
 
     /**
      * The persisted read-only property indicates if a webpage is loading from a cache.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted)
      */
-    open val persisted: Boolean
+    public open val persisted: Boolean
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface PageTransitionEventInit : EventInit {
-    var persisted: Boolean?
+    public var persisted: Boolean?
 }
 
 public fun PageTransitionEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, persisted: Boolean? = null): PageTransitionEventInit = newJsObject<PageTransitionEventInit>().apply {
@@ -15257,11 +15257,11 @@ public fun PageTransitionEventInit(bubbles: Boolean? = null, cancelable: Boolean
  */
 public abstract external class BeforeUnloadEvent : Event {
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
@@ -15278,7 +15278,7 @@ public abstract external class NotRestoredReasonDetails : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasonDetails/reason)
      */
-    open val reason: String
+    public open val reason: String
 
     /**
      * The toJSON() method of the NotRestoredReasonDetails interface returns a JSON-serializable plain object
@@ -15286,7 +15286,7 @@ public abstract external class NotRestoredReasonDetails : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasonDetails/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 }
 
 /**
@@ -15302,7 +15302,7 @@ public abstract external class NotRestoredReasons : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/src)
      */
-    open val src: String?
+    public open val src: String?
 
     /**
      * The id read-only property of the NotRestoredReasons interface returns a string representing the id attribute
@@ -15310,7 +15310,7 @@ public abstract external class NotRestoredReasons : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/id)
      */
-    open val id: String?
+    public open val id: String?
 
     /**
      * The name read-only property of the NotRestoredReasons interface returns a string representing the name attribute
@@ -15318,7 +15318,7 @@ public abstract external class NotRestoredReasons : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/name)
      */
-    open val name: String?
+    public open val name: String?
 
     /**
      * The url read-only property of the NotRestoredReasons interface returns a string representing the URL of the
@@ -15326,7 +15326,7 @@ public abstract external class NotRestoredReasons : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/url)
      */
-    open val url: String?
+    public open val url: String?
 
     /**
      * The reasons read-only property of the NotRestoredReasons interface returns an array of NotRestoredReasonDetails
@@ -15335,7 +15335,7 @@ public abstract external class NotRestoredReasons : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/reasons)
      */
-    open val reasons: JsArray<NotRestoredReasonDetails>?
+    public open val reasons: JsArray<NotRestoredReasonDetails>?
 
     /**
      * The children read-only property of the NotRestoredReasons interface returns an array of NotRestoredReasons
@@ -15344,7 +15344,7 @@ public abstract external class NotRestoredReasons : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/children)
      */
-    open val children: JsArray<NotRestoredReasons>?
+    public open val children: JsArray<NotRestoredReasons>?
 
     /**
      * The toJSON() method of the NotRestoredReasons interface returns a JSON-serializable plain object representing the
@@ -15352,7 +15352,7 @@ public abstract external class NotRestoredReasons : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 }
 
 /**
@@ -15366,7 +15366,7 @@ public open external class ErrorEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/ErrorEvent)
      */
-    constructor(type: String, eventInitDict: ErrorEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: ErrorEventInit = definedExternally)
 
     /**
      * The message read-only property of the ErrorEvent interface returns a string containing a human-readable error
@@ -15374,7 +15374,7 @@ public open external class ErrorEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/message)
      */
-    open val message: String
+    public open val message: String
 
     /**
      * The filename read-only property of the ErrorEvent interface returns a string containing the name of the script
@@ -15382,7 +15382,7 @@ public open external class ErrorEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/filename)
      */
-    open val filename: String
+    public open val filename: String
 
     /**
      * The lineno read-only property of the ErrorEvent interface returns an integer containing the line number of the
@@ -15390,7 +15390,7 @@ public open external class ErrorEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/lineno)
      */
-    open val lineno: Int
+    public open val lineno: Int
 
     /**
      * The colno read-only property of the ErrorEvent interface returns an integer containing the column number of the
@@ -15398,7 +15398,7 @@ public open external class ErrorEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/colno)
      */
-    open val colno: Int
+    public open val colno: Int
 
     /**
      * The error read-only property of the ErrorEvent interface returns a JavaScript value, such as an Error or
@@ -15406,22 +15406,22 @@ public open external class ErrorEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/error)
      */
-    open val error: JsAny?
+    public open val error: JsAny?
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface ErrorEventInit : EventInit {
-    var message: String?
-    var filename: String?
-    var lineno: Int?
-    var colno: Int?
-    var error: JsAny?
+    public var message: String?
+    public var filename: String?
+    public var lineno: Int?
+    public var colno: Int?
+    public var error: JsAny?
 }
 
 public fun ErrorEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, message: String? = null, filename: String? = null, lineno: Int? = null, colno: Int? = null, error: JsAny? = null): ErrorEventInit = newJsObject<ErrorEventInit>().apply {
@@ -15448,7 +15448,7 @@ public open external class PromiseRejectionEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/PromiseRejectionEvent)
      */
-    constructor(type: String, eventInitDict: PromiseRejectionEventInit)
+    public constructor(type: String, eventInitDict: PromiseRejectionEventInit)
 
     /**
      * The PromiseRejectionEvent interface's promise read-only property indicates the JavaScript Promise which was
@@ -15457,7 +15457,7 @@ public open external class PromiseRejectionEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/promise)
      */
-    open val promise: JsAny
+    public open val promise: JsAny
 
     /**
      * The PromiseRejectionEvent reason read-only property is any JavaScript value or Object which provides the reason
@@ -15465,19 +15465,19 @@ public open external class PromiseRejectionEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/reason)
      */
-    open val reason: JsAny?
+    public open val reason: JsAny?
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface PromiseRejectionEventInit : EventInit {
-    var promise: JsAny
-    var reason: JsAny?
+    public var promise: JsAny
+    public var reason: JsAny?
 }
 
 public fun PromiseRejectionEventInit(promise: JsAny, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, reason: JsAny? = null): PromiseRejectionEventInit = newJsObject<PromiseRejectionEventInit>().apply {
@@ -15489,7 +15489,7 @@ public fun PromiseRejectionEventInit(promise: JsAny, bubbles: Boolean? = null, c
 }
 
 public external interface GlobalEventHandlers : JsAny {
-    var onabort: ((Event) -> Unit)?
+    public var onabort: ((Event) -> Unit)?
 
     /**
      * The auxclick event is fired at an Element when a non-primary pointing device button (any mouse button other than
@@ -15497,7 +15497,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/auxclick_event)
      */
-    var onauxclick: ((PointerEvent) -> Unit)?
+    public var onauxclick: ((PointerEvent) -> Unit)?
 
     /**
      * The DOM beforeinput event fires when the value of an &lt;input&gt; or &lt;textarea&gt; element is about to be
@@ -15506,7 +15506,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforeinput_event)
      */
-    var onbeforeinput: ((InputEvent) -> Unit)?
+    public var onbeforeinput: ((InputEvent) -> Unit)?
 
     /**
      * An element receives a beforematch event when it is in the hidden until found state and the browser is about to
@@ -15515,7 +15515,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforematch_event)
      */
-    var onbeforematch: ((Event) -> Unit)?
+    public var onbeforematch: ((Event) -> Unit)?
 
     /**
      * The beforetoggle event of the HTMLElement interface fires on a popover or &lt;dialog&gt; element just before it
@@ -15523,7 +15523,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforetoggle_event)
      */
-    var onbeforetoggle: ((ToggleEvent) -> Unit)?
+    public var onbeforetoggle: ((ToggleEvent) -> Unit)?
 
     /**
      * The blur event fires when an element has lost focus. The event does not bubble, but the related focusout event
@@ -15531,10 +15531,10 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/blur_event)
      */
-    var onblur: ((FocusEvent) -> Unit)?
-    var oncancel: ((Event) -> Unit)?
-    var oncanplay: ((Event) -> Unit)?
-    var oncanplaythrough: ((Event) -> Unit)?
+    public var onblur: ((FocusEvent) -> Unit)?
+    public var oncancel: ((Event) -> Unit)?
+    public var oncanplay: ((Event) -> Unit)?
+    public var oncanplaythrough: ((Event) -> Unit)?
 
     /**
      * The change event is fired for &lt;input&gt;, &lt;select&gt;, and &lt;textarea&gt; elements when the user modifies
@@ -15543,13 +15543,13 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/change_event)
      */
-    var onchange: ((Event) -> Unit)?
+    public var onchange: ((Event) -> Unit)?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/click_event)
      */
-    var onclick: ((PointerEvent) -> Unit)?
-    var onclose: ((Event) -> Unit)?
+    public var onclick: ((PointerEvent) -> Unit)?
+    public var onclose: ((Event) -> Unit)?
 
     /**
      * The command event of the HTMLElement interface fires on an element that is controlled via a button with valid
@@ -15557,8 +15557,8 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/command_event)
      */
-    var oncommand: ((CommandEvent) -> Unit)?
-    var oncontextlost: ((Event) -> Unit)?
+    public var oncommand: ((CommandEvent) -> Unit)?
+    public var oncontextlost: ((Event) -> Unit)?
 
     /**
      * The contextmenu event fires when the user attempts to open a context menu. This event is typically triggered by
@@ -15566,8 +15566,8 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event)
      */
-    var oncontextmenu: ((PointerEvent) -> Unit)?
-    var oncontextrestored: ((Event) -> Unit)?
+    public var oncontextmenu: ((PointerEvent) -> Unit)?
+    public var oncontextrestored: ((Event) -> Unit)?
 
     /**
      * The copy event of the Clipboard API fires when the user initiates a copy action through the browser's user
@@ -15575,8 +15575,8 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/copy_event)
      */
-    var oncopy: ((ClipboardEvent) -> Unit)?
-    var oncuechange: ((Event) -> Unit)?
+    public var oncopy: ((ClipboardEvent) -> Unit)?
+    public var oncuechange: ((Event) -> Unit)?
 
     /**
      * The cut event of the Clipboard API is fired when the user has initiated a "cut" action through the browser's user
@@ -15584,7 +15584,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/cut_event)
      */
-    var oncut: ((ClipboardEvent) -> Unit)?
+    public var oncut: ((ClipboardEvent) -> Unit)?
 
     /**
      * The dblclick event fires when a pointing device button (such as a mouse's primary button) is double-clicked; that
@@ -15592,7 +15592,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/dblclick_event)
      */
-    var ondblclick: ((MouseEvent) -> Unit)?
+    public var ondblclick: ((MouseEvent) -> Unit)?
 
     /**
      * The drag event is fired repeatedly as an element or text selection is being dragged by the user. The firing
@@ -15600,14 +15600,14 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drag_event)
      */
-    var ondrag: ((DragEvent) -> Unit)?
+    public var ondrag: ((DragEvent) -> Unit)?
 
     /**
      * The dragend event is fired when a drag operation ends (by releasing a mouse button or hitting the escape key).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragend_event)
      */
-    var ondragend: ((DragEvent) -> Unit)?
+    public var ondragend: ((DragEvent) -> Unit)?
 
     /**
      * The dragenter event is fired when a dragged element or text selection enters a valid drop target. The target
@@ -15616,14 +15616,14 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragenter_event)
      */
-    var ondragenter: ((DragEvent) -> Unit)?
+    public var ondragenter: ((DragEvent) -> Unit)?
 
     /**
      * The dragleave event is fired when a dragged element or text selection leaves a valid drop target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragleave_event)
      */
-    var ondragleave: ((DragEvent) -> Unit)?
+    public var ondragleave: ((DragEvent) -> Unit)?
 
     /**
      * The dragover event is fired repeatedly when an element or text selection is being dragged over a potential drop
@@ -15631,14 +15631,14 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragover_event)
      */
-    var ondragover: ((DragEvent) -> Unit)?
+    public var ondragover: ((DragEvent) -> Unit)?
 
     /**
      * The dragstart event is fired when the user starts dragging an element or text selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragstart_event)
      */
-    var ondragstart: ((DragEvent) -> Unit)?
+    public var ondragstart: ((DragEvent) -> Unit)?
 
     /**
      * The drop event is fired when an element or text selection is dropped on a valid drop target. To ensure that the
@@ -15647,10 +15647,10 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drop_event)
      */
-    var ondrop: ((DragEvent) -> Unit)?
-    var ondurationchange: ((Event) -> Unit)?
-    var onemptied: ((Event) -> Unit)?
-    var onended: ((Event) -> Unit)?
+    public var ondrop: ((DragEvent) -> Unit)?
+    public var ondurationchange: ((Event) -> Unit)?
+    public var onemptied: ((Event) -> Unit)?
+    public var onended: ((Event) -> Unit)?
 
     /**
      * The error event is fired on an element when a resource failed to load, or can't be used. For example, if a script
@@ -15658,7 +15658,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/error_event)
      */
-    var onerror: ((JsAny, String, Int, Int, JsAny?) -> Unit)?
+    public var onerror: ((JsAny, String, Int, Int, JsAny?) -> Unit)?
 
     /**
      * The focus event fires when an element has received focus. The event does not bubble, but the related focusin
@@ -15666,8 +15666,8 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/focus_event)
      */
-    var onfocus: ((FocusEvent) -> Unit)?
-    var onformdata: ((FormDataEvent) -> Unit)?
+    public var onfocus: ((FocusEvent) -> Unit)?
+    public var onformdata: ((FormDataEvent) -> Unit)?
 
     /**
      * The input event fires when the value of an &lt;input&gt;, &lt;select&gt;, or &lt;textarea&gt; element has been
@@ -15675,15 +15675,15 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/input_event)
      */
-    var oninput: ((InputEvent) -> Unit)?
-    var oninvalid: ((Event) -> Unit)?
+    public var oninput: ((InputEvent) -> Unit)?
+    public var oninvalid: ((Event) -> Unit)?
 
     /**
      * The keydown event is fired when a key is pressed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keydown_event)
      */
-    var onkeydown: ((KeyboardEvent) -> Unit)?
+    public var onkeydown: ((KeyboardEvent) -> Unit)?
 
     /**
      * The keypress event is fired when a letter, number, punctuation, or symbol key is pressed, or else when the Enter
@@ -15695,14 +15695,14 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keypress_event)
      */
-    var onkeypress: ((KeyboardEvent) -> Unit)?
+    public var onkeypress: ((KeyboardEvent) -> Unit)?
 
     /**
      * The keyup event is fired when a key is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keyup_event)
      */
-    var onkeyup: ((KeyboardEvent) -> Unit)?
+    public var onkeyup: ((KeyboardEvent) -> Unit)?
 
     /**
      * The load event fires for elements containing a resource when the resource has successfully loaded. Currently, the
@@ -15711,10 +15711,10 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/load_event)
      */
-    var onload: ((Event) -> Unit)?
-    var onloadeddata: ((Event) -> Unit)?
-    var onloadedmetadata: ((Event) -> Unit)?
-    var onloadstart: ((Event) -> Unit)?
+    public var onload: ((Event) -> Unit)?
+    public var onloadeddata: ((Event) -> Unit)?
+    public var onloadedmetadata: ((Event) -> Unit)?
+    public var onloadstart: ((Event) -> Unit)?
 
     /**
      * The mousedown event is fired at an Element when a pointing device button is pressed while the pointer is inside
@@ -15722,7 +15722,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mousedown_event)
      */
-    var onmousedown: ((MouseEvent) -> Unit)?
+    public var onmousedown: ((MouseEvent) -> Unit)?
 
     /**
      * The mouseenter event is fired at an Element when a pointing device (usually a mouse) is initially moved so that
@@ -15730,7 +15730,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseenter_event)
      */
-    var onmouseenter: ((MouseEvent) -> Unit)?
+    public var onmouseenter: ((MouseEvent) -> Unit)?
 
     /**
      * The mouseleave event is fired at an Element when the cursor of a pointing device (usually a mouse) is moved out
@@ -15738,7 +15738,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseleave_event)
      */
-    var onmouseleave: ((MouseEvent) -> Unit)?
+    public var onmouseleave: ((MouseEvent) -> Unit)?
 
     /**
      * The mousemove event is fired at an element when a pointing device (usually a mouse) is moved while the cursor's
@@ -15746,7 +15746,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mousemove_event)
      */
-    var onmousemove: ((MouseEvent) -> Unit)?
+    public var onmousemove: ((MouseEvent) -> Unit)?
 
     /**
      * The mouseout event is fired at an Element when a pointing device (usually a mouse) is used to move the cursor so
@@ -15754,7 +15754,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseout_event)
      */
-    var onmouseout: ((MouseEvent) -> Unit)?
+    public var onmouseout: ((MouseEvent) -> Unit)?
 
     /**
      * The mouseover event is fired at an Element when a pointing device (such as a mouse or trackpad) is used to move
@@ -15762,7 +15762,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseover_event)
      */
-    var onmouseover: ((MouseEvent) -> Unit)?
+    public var onmouseover: ((MouseEvent) -> Unit)?
 
     /**
      * The mouseup event is fired at an Element when a button on a pointing device (such as a mouse or trackpad) is
@@ -15770,7 +15770,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseup_event)
      */
-    var onmouseup: ((MouseEvent) -> Unit)?
+    public var onmouseup: ((MouseEvent) -> Unit)?
 
     /**
      * The paste event of the Clipboard API is fired when the user has initiated a "paste" action through the browser's
@@ -15778,20 +15778,20 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/paste_event)
      */
-    var onpaste: ((ClipboardEvent) -> Unit)?
-    var onpause: ((Event) -> Unit)?
-    var onplay: ((Event) -> Unit)?
-    var onplaying: ((Event) -> Unit)?
-    var onprogress: ((Event) -> Unit)?
-    var onratechange: ((Event) -> Unit)?
-    var onreset: ((Event) -> Unit)?
+    public var onpaste: ((ClipboardEvent) -> Unit)?
+    public var onpause: ((Event) -> Unit)?
+    public var onplay: ((Event) -> Unit)?
+    public var onplaying: ((Event) -> Unit)?
+    public var onprogress: ((Event) -> Unit)?
+    public var onratechange: ((Event) -> Unit)?
+    public var onreset: ((Event) -> Unit)?
 
     /**
      * The resize event fires when the document view (window) has been resized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resize_event)
      */
-    var onresize: ((Event) -> Unit)?
+    public var onresize: ((Event) -> Unit)?
 
     /**
      * The scroll event fires when the document view has been scrolled. To detect when scrolling has completed, see the
@@ -15799,7 +15799,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scroll_event)
      */
-    var onscroll: ((Event) -> Unit)?
+    public var onscroll: ((Event) -> Unit)?
 
     /**
      * The scrollend event fires when the document view has completed scrolling. Scrolling is considered completed when
@@ -15807,22 +15807,22 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollend_event)
      */
-    var onscrollend: ((Event) -> Unit)?
+    public var onscrollend: ((Event) -> Unit)?
 
     /**
      * The securitypolicyviolation event is fired when a Content Security Policy is violated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/securitypolicyviolation_event)
      */
-    var onsecuritypolicyviolation: ((Event) -> Unit)?
-    var onseeked: ((Event) -> Unit)?
-    var onseeking: ((Event) -> Unit)?
-    var onselect: ((Event) -> Unit)?
-    var onslotchange: ((Event) -> Unit)?
-    var onstalled: ((Event) -> Unit)?
-    var onsubmit: ((SubmitEvent) -> Unit)?
-    var onsuspend: ((Event) -> Unit)?
-    var ontimeupdate: ((Event) -> Unit)?
+    public var onsecuritypolicyviolation: ((Event) -> Unit)?
+    public var onseeked: ((Event) -> Unit)?
+    public var onseeking: ((Event) -> Unit)?
+    public var onselect: ((Event) -> Unit)?
+    public var onslotchange: ((Event) -> Unit)?
+    public var onstalled: ((Event) -> Unit)?
+    public var onsubmit: ((SubmitEvent) -> Unit)?
+    public var onsuspend: ((Event) -> Unit)?
+    public var ontimeupdate: ((Event) -> Unit)?
 
     /**
      * The toggle event of the HTMLElement interface fires on a popover element, &lt;dialog&gt; element, or
@@ -15830,13 +15830,13 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event)
      */
-    var ontoggle: ((ToggleEvent) -> Unit)?
-    var onvolumechange: ((Event) -> Unit)?
-    var onwaiting: ((Event) -> Unit)?
-    var onwebkitanimationend: ((Event) -> Unit)?
-    var onwebkitanimationiteration: ((Event) -> Unit)?
-    var onwebkitanimationstart: ((Event) -> Unit)?
-    var onwebkittransitionend: ((Event) -> Unit)?
+    public var ontoggle: ((ToggleEvent) -> Unit)?
+    public var onvolumechange: ((Event) -> Unit)?
+    public var onwaiting: ((Event) -> Unit)?
+    public var onwebkitanimationend: ((Event) -> Unit)?
+    public var onwebkitanimationiteration: ((Event) -> Unit)?
+    public var onwebkitanimationstart: ((Event) -> Unit)?
+    public var onwebkittransitionend: ((Event) -> Unit)?
 
     /**
      * The wheel event fires when the user rotates a wheel button on a pointing device (typically a mouse). It is also
@@ -15844,14 +15844,14 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/wheel_event)
      */
-    var onwheel: ((WheelEvent) -> Unit)?
+    public var onwheel: ((WheelEvent) -> Unit)?
 
     /**
      * The touchstart event is fired when one or more touch points are placed on the touch surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchstart_event)
      */
-    var ontouchstart: ((TouchEvent) -> Unit)?
+    public var ontouchstart: ((TouchEvent) -> Unit)?
 
     /**
      * The touchend event fires when one or more touch points are removed from the touch surface. Remember that it is
@@ -15859,14 +15859,14 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchend_event)
      */
-    var ontouchend: ((TouchEvent) -> Unit)?
+    public var ontouchend: ((TouchEvent) -> Unit)?
 
     /**
      * The touchmove event is fired when one or more touch points are moved along the touch surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchmove_event)
      */
-    var ontouchmove: ((TouchEvent) -> Unit)?
+    public var ontouchmove: ((TouchEvent) -> Unit)?
 
     /**
      * The touchcancel event is fired when one or more touch points have been disrupted in an implementation-specific
@@ -15874,14 +15874,14 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchcancel_event)
      */
-    var ontouchcancel: ((TouchEvent) -> Unit)?
+    public var ontouchcancel: ((TouchEvent) -> Unit)?
 
     /**
      * The pointerover event is fired when a pointing device is moved into an element's hit test boundaries.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerover_event)
      */
-    var onpointerover: ((PointerEvent) -> Unit)?
+    public var onpointerover: ((PointerEvent) -> Unit)?
 
     /**
      * The pointerenter event fires when a pointing device is moved into the hit test boundaries of an element or one of
@@ -15891,7 +15891,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerenter_event)
      */
-    var onpointerenter: ((PointerEvent) -> Unit)?
+    public var onpointerenter: ((PointerEvent) -> Unit)?
 
     /**
      * The pointerdown event is fired when a pointer becomes active. For mouse, it is fired when the device transitions
@@ -15900,7 +15900,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerdown_event)
      */
-    var onpointerdown: ((PointerEvent) -> Unit)?
+    public var onpointerdown: ((PointerEvent) -> Unit)?
 
     /**
      * The pointermove event is fired when a pointer changes coordinates, and the pointer has not been canceled by a
@@ -15910,7 +15910,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointermove_event)
      */
-    var onpointermove: ((PointerEvent) -> Unit)?
+    public var onpointermove: ((PointerEvent) -> Unit)?
 
     /**
      * The pointerrawupdate event is fired when a pointer changes any properties that don't fire pointerdown or
@@ -15920,7 +15920,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerrawupdate_event)
      */
-    var onpointerrawupdate: ((PointerEvent) -> Unit)?
+    public var onpointerrawupdate: ((PointerEvent) -> Unit)?
 
     /**
      * The pointerup event is fired when a pointer is no longer active. Remember that it is possible to get a
@@ -15928,7 +15928,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerup_event)
      */
-    var onpointerup: ((PointerEvent) -> Unit)?
+    public var onpointerup: ((PointerEvent) -> Unit)?
 
     /**
      * The pointercancel event is fired when the browser determines that there are unlikely to be any more pointer
@@ -15937,7 +15937,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointercancel_event)
      */
-    var onpointercancel: ((PointerEvent) -> Unit)?
+    public var onpointercancel: ((PointerEvent) -> Unit)?
 
     /**
      * The pointerout event is fired for several reasons including: pointing device is moved out of the hit test
@@ -15947,7 +15947,7 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerout_event)
      */
-    var onpointerout: ((PointerEvent) -> Unit)?
+    public var onpointerout: ((PointerEvent) -> Unit)?
 
     /**
      * The pointerleave event is fired when a pointing device is moved out of the hit test boundaries of an element. For
@@ -15957,21 +15957,21 @@ public external interface GlobalEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerleave_event)
      */
-    var onpointerleave: ((PointerEvent) -> Unit)?
+    public var onpointerleave: ((PointerEvent) -> Unit)?
 
     /**
      * The gotpointercapture event is fired when an element captures a pointer using setPointerCapture().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/gotpointercapture_event)
      */
-    var ongotpointercapture: ((PointerEvent) -> Unit)?
+    public var ongotpointercapture: ((PointerEvent) -> Unit)?
 
     /**
      * The lostpointercapture event is fired when a captured pointer is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/lostpointercapture_event)
      */
-    var onlostpointercapture: ((PointerEvent) -> Unit)?
+    public var onlostpointercapture: ((PointerEvent) -> Unit)?
 }
 
 public external interface WindowEventHandlers : JsAny {
@@ -15981,14 +15981,14 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/afterprint_event)
      */
-    var onafterprint: ((Event) -> Unit)?
+    public var onafterprint: ((Event) -> Unit)?
 
     /**
      * The beforeprint event is fired when the associated document is about to be printed or previewed for printing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeprint_event)
      */
-    var onbeforeprint: ((Event) -> Unit)?
+    public var onbeforeprint: ((Event) -> Unit)?
 
     /**
      * The beforeunload event is fired when the current window, contained document, and associated resources are about
@@ -15996,7 +15996,7 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeunload_event)
      */
-    var onbeforeunload: ((BeforeUnloadEvent) -> String?)?
+    public var onbeforeunload: ((BeforeUnloadEvent) -> String?)?
 
     /**
      * The hashchange event is fired when the fragment identifier of the URL has changed (the part of the URL beginning
@@ -16004,14 +16004,14 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/hashchange_event)
      */
-    var onhashchange: ((HashChangeEvent) -> Unit)?
+    public var onhashchange: ((HashChangeEvent) -> Unit)?
 
     /**
      * The languagechange event is fired at the global scope object when the user's preferred language changes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/languagechange_event)
      */
-    var onlanguagechange: ((Event) -> Unit)?
+    public var onlanguagechange: ((Event) -> Unit)?
 
     /**
      * The message event is fired on a Window object when the window receives a message, for example from a call to
@@ -16019,14 +16019,14 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/message_event)
      */
-    var onmessage: ((MessageEvent) -> Unit)?
+    public var onmessage: ((MessageEvent) -> Unit)?
 
     /**
      * The messageerror event is fired on a Window object when it receives a message that can't be deserialized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/messageerror_event)
      */
-    var onmessageerror: ((MessageEvent) -> Unit)?
+    public var onmessageerror: ((MessageEvent) -> Unit)?
 
     /**
      * The offline event of the Window interface is fired when the browser has lost access to the network and the value
@@ -16034,7 +16034,7 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/offline_event)
      */
-    var onoffline: ((Event) -> Unit)?
+    public var onoffline: ((Event) -> Unit)?
 
     /**
      * The online event of the Window interface is fired when the browser has gained access to the network and the value
@@ -16042,7 +16042,7 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/online_event)
      */
-    var ononline: ((Event) -> Unit)?
+    public var ononline: ((Event) -> Unit)?
 
     /**
      * The pagehide event is sent to a Window when the browser hides the current page in the process of presenting a
@@ -16050,7 +16050,7 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagehide_event)
      */
-    var onpagehide: ((PageTransitionEvent) -> Unit)?
+    public var onpagehide: ((PageTransitionEvent) -> Unit)?
 
     /**
      * The pagereveal event is fired when a document is first rendered, either when loading a fresh document from the
@@ -16058,21 +16058,21 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagereveal_event)
      */
-    var onpagereveal: ((PageRevealEvent) -> Unit)?
+    public var onpagereveal: ((PageRevealEvent) -> Unit)?
 
     /**
      * The pageshow event is sent to a Window when the browser navigates to a new document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageshow_event)
      */
-    var onpageshow: ((PageTransitionEvent) -> Unit)?
+    public var onpageshow: ((PageTransitionEvent) -> Unit)?
 
     /**
      * The pageswap event is fired when you navigate across documents, when the previous document is about to unload.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageswap_event)
      */
-    var onpageswap: ((PageSwapEvent) -> Unit)?
+    public var onpageswap: ((PageSwapEvent) -> Unit)?
 
     /**
      * The popstate event of the Window interface is fired when the active history entry changes while the user
@@ -16082,7 +16082,7 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/popstate_event)
      */
-    var onpopstate: ((PopStateEvent) -> Unit)?
+    public var onpopstate: ((PopStateEvent) -> Unit)?
 
     /**
      * The rejectionhandled event is sent to the script's global scope (usually window but also Worker) whenever a
@@ -16091,7 +16091,7 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/rejectionhandled_event)
      */
-    var onrejectionhandled: ((PromiseRejectionEvent) -> Unit)?
+    public var onrejectionhandled: ((PromiseRejectionEvent) -> Unit)?
 
     /**
      * The storage event of the Window interface fires when another document that shares the same storage area (either
@@ -16100,7 +16100,7 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/storage_event)
      */
-    var onstorage: ((StorageEvent) -> Unit)?
+    public var onstorage: ((StorageEvent) -> Unit)?
 
     /**
      * The unhandledrejection event is sent to the global scope of a script when a JavaScript Promise that has no
@@ -16108,52 +16108,52 @@ public external interface WindowEventHandlers : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/unhandledrejection_event)
      */
-    var onunhandledrejection: ((PromiseRejectionEvent) -> Unit)?
+    public var onunhandledrejection: ((PromiseRejectionEvent) -> Unit)?
 
     /**
      * The unload event is fired when the document or a child resource is being unloaded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/unload_event)
      */
-    var onunload: ((Event) -> Unit)?
+    public var onunload: ((Event) -> Unit)?
 }
 
 public external interface WindowOrWorkerGlobalScope : JsAny {
-    val origin: String
-    val isSecureContext: Boolean
-    val crossOriginIsolated: Boolean
-    fun reportError(e: JsAny?)
-    fun btoa(data: String): String
-    fun atob(data: String): String
-    fun setTimeout(handler: String, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
-    fun setTimeout(handler: (JsAny?) -> JsAny?, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
-    fun clearTimeout(id: Int = definedExternally)
-    fun setInterval(handler: String, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
-    fun setInterval(handler: (JsAny?) -> JsAny?, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
-    fun clearInterval(id: Int = definedExternally)
-    fun queueMicrotask(callback: () -> Unit)
-    fun createImageBitmap(image: ImageBitmapSource, options: ImageBitmapOptions = definedExternally): Promise<ImageBitmap>
-    fun createImageBitmap(image: ImageBitmapSource, sx: Int, sy: Int, sw: Int, sh: Int, options: ImageBitmapOptions = definedExternally): Promise<ImageBitmap>
-    fun structuredClone(value: JsAny?, options: StructuredSerializeOptions = definedExternally): JsAny?
-    fun fetch(input: Request, init: RequestInit = definedExternally): Promise<Response>
-    fun fetch(input: String, init: RequestInit = definedExternally): Promise<Response>
-    val performance: Performance
+    public val origin: String
+    public val isSecureContext: Boolean
+    public val crossOriginIsolated: Boolean
+    public fun reportError(e: JsAny?)
+    public fun btoa(data: String): String
+    public fun atob(data: String): String
+    public fun setTimeout(handler: String, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
+    public fun setTimeout(handler: (JsAny?) -> JsAny?, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
+    public fun clearTimeout(id: Int = definedExternally)
+    public fun setInterval(handler: String, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
+    public fun setInterval(handler: (JsAny?) -> JsAny?, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
+    public fun clearInterval(id: Int = definedExternally)
+    public fun queueMicrotask(callback: () -> Unit)
+    public fun createImageBitmap(image: ImageBitmapSource, options: ImageBitmapOptions = definedExternally): Promise<ImageBitmap>
+    public fun createImageBitmap(image: ImageBitmapSource, sx: Int, sy: Int, sw: Int, sh: Int, options: ImageBitmapOptions = definedExternally): Promise<ImageBitmap>
+    public fun structuredClone(value: JsAny?, options: StructuredSerializeOptions = definedExternally): JsAny?
+    public fun fetch(input: Request, init: RequestInit = definedExternally): Promise<Response>
+    public fun fetch(input: String, init: RequestInit = definedExternally): Promise<Response>
+    public val performance: Performance
 
     /**
      * Available only in secure contexts.
      */
-    val caches: CacheStorage
+    public val caches: CacheStorage
 }
 
 public external interface SanitizerPresets : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val SanitizerPresets.Companion.DEFAULT: SanitizerPresets get() = "default".toJsString().unsafeCast<SanitizerPresets>()
 
 public external interface SetHTMLOptions : JsAny {
-    var sanitizer: JsAny?
+    public var sanitizer: JsAny?
 }
 
 public fun SetHTMLOptions(sanitizer: JsAny? = null): SetHTMLOptions = newJsObject<SetHTMLOptions>().apply {
@@ -16161,8 +16161,8 @@ public fun SetHTMLOptions(sanitizer: JsAny? = null): SetHTMLOptions = newJsObjec
 }
 
 public external interface SetHTMLUnsafeOptions : JsAny {
-    var sanitizer: JsAny?
-    var runScripts: Boolean?
+    public var sanitizer: JsAny?
+    public var runScripts: Boolean?
 }
 
 public fun SetHTMLUnsafeOptions(sanitizer: JsAny? = null, runScripts: Boolean? = null): SetHTMLUnsafeOptions = newJsObject<SetHTMLUnsafeOptions>().apply {
@@ -16171,7 +16171,7 @@ public fun SetHTMLUnsafeOptions(sanitizer: JsAny? = null, runScripts: Boolean? =
 }
 
 public external interface ParseHTMLUnsafeOptions : JsAny {
-    var sanitizer: JsAny?
+    public var sanitizer: JsAny?
 }
 
 public fun ParseHTMLUnsafeOptions(sanitizer: JsAny? = null): ParseHTMLUnsafeOptions = newJsObject<ParseHTMLUnsafeOptions>().apply {
@@ -16179,8 +16179,8 @@ public fun ParseHTMLUnsafeOptions(sanitizer: JsAny? = null): ParseHTMLUnsafeOpti
 }
 
 public external interface GetHTMLOptions : JsAny {
-    var serializableShadowRoots: Boolean?
-    var shadowRoots: JsArray<ShadowRoot>?
+    public var serializableShadowRoots: Boolean?
+    public var shadowRoots: JsArray<ShadowRoot>?
 }
 
 public fun GetHTMLOptions(serializableShadowRoots: Boolean? = null, shadowRoots: JsArray<ShadowRoot>? = null): GetHTMLOptions = newJsObject<GetHTMLOptions>().apply {
@@ -16200,7 +16200,7 @@ public open external class DOMParser : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser/DOMParser)
      */
-    constructor()
+    public constructor()
 
     /**
      * The parseFromString() method of the DOMParser interface parses an input containing either HTML or XML, returning
@@ -16208,12 +16208,12 @@ public open external class DOMParser : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser/parseFromString)
      */
-    open fun parseFromString(string: String, type: DOMParserSupportedType): Document
+    public open fun parseFromString(string: String, type: DOMParserSupportedType): Document
 }
 
 public external interface DOMParserSupportedType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val DOMParserSupportedType.Companion.TEXT_HTML: DOMParserSupportedType get() = "text/html".toJsString().unsafeCast<DOMParserSupportedType>()
@@ -16234,14 +16234,14 @@ public open external class XMLSerializer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer/XMLSerializer)
      */
-    constructor()
+    public constructor()
 
     /**
      * The XMLSerializer method serializeToString() constructs a string representing the specified DOM tree in XML form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer/serializeToString)
      */
-    open fun serializeToString(root: Node): String
+    public open fun serializeToString(root: Node): String
 }
 
 /**
@@ -16258,7 +16258,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/Sanitizer)
      */
-    constructor(configuration: SanitizerConfig)
+    public constructor(configuration: SanitizerConfig)
 
     /**
      * The Sanitizer() constructor creates a new Sanitizer object, which can be used to filter unwanted elements and
@@ -16266,7 +16266,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/Sanitizer)
      */
-    constructor(configuration: SanitizerPresets)
+    public constructor(configuration: SanitizerPresets)
 
     /**
      * The Sanitizer() constructor creates a new Sanitizer object, which can be used to filter unwanted elements and
@@ -16274,7 +16274,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/Sanitizer)
      */
-    constructor()
+    public constructor()
 
     /**
      * The get() method of the Sanitizer interface returns a SanitizerConfig dictionary instance that represents the
@@ -16282,7 +16282,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/get)
      */
-    open fun get(): SanitizerConfig
+    public open fun get(): SanitizerConfig
 
     /**
      * The allowElement() method of the Sanitizer interface sets that the specified element is allowed in the output
@@ -16290,7 +16290,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/allowElement)
      */
-    open fun allowElement(element: String): Boolean
+    public open fun allowElement(element: String): Boolean
 
     /**
      * The allowElement() method of the Sanitizer interface sets that the specified element is allowed in the output
@@ -16298,7 +16298,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/allowElement)
      */
-    open fun allowElement(element: SanitizerElementNamespaceWithAttributes): Boolean
+    public open fun allowElement(element: SanitizerElementNamespaceWithAttributes): Boolean
 
     /**
      * The removeElement() method of the Sanitizer interface sets the specified element be removed from the output when
@@ -16306,7 +16306,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/removeElement)
      */
-    open fun removeElement(element: String): Boolean
+    public open fun removeElement(element: String): Boolean
 
     /**
      * The removeElement() method of the Sanitizer interface sets the specified element be removed from the output when
@@ -16314,7 +16314,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/removeElement)
      */
-    open fun removeElement(element: SanitizerElementNamespace): Boolean
+    public open fun removeElement(element: SanitizerElementNamespace): Boolean
 
     /**
      * The replaceElementWithChildren() method of the Sanitizer interface sets an element to be replaced by its child
@@ -16322,7 +16322,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/replaceElementWithChildren)
      */
-    open fun replaceElementWithChildren(element: String): Boolean
+    public open fun replaceElementWithChildren(element: String): Boolean
 
     /**
      * The replaceElementWithChildren() method of the Sanitizer interface sets an element to be replaced by its child
@@ -16330,11 +16330,11 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/replaceElementWithChildren)
      */
-    open fun replaceElementWithChildren(element: SanitizerElementNamespace): Boolean
-    open fun allowProcessingInstruction(pi: String): Boolean
-    open fun allowProcessingInstruction(pi: SanitizerProcessingInstruction): Boolean
-    open fun removeProcessingInstruction(pi: String): Boolean
-    open fun removeProcessingInstruction(pi: SanitizerProcessingInstruction): Boolean
+    public open fun replaceElementWithChildren(element: SanitizerElementNamespace): Boolean
+    public open fun allowProcessingInstruction(pi: String): Boolean
+    public open fun allowProcessingInstruction(pi: SanitizerProcessingInstruction): Boolean
+    public open fun removeProcessingInstruction(pi: String): Boolean
+    public open fun removeProcessingInstruction(pi: SanitizerProcessingInstruction): Boolean
 
     /**
      * The allowAttribute() method of the Sanitizer interface sets an attribute to be allowed on all elements when the
@@ -16342,7 +16342,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/allowAttribute)
      */
-    open fun allowAttribute(attribute: String): Boolean
+    public open fun allowAttribute(attribute: String): Boolean
 
     /**
      * The allowAttribute() method of the Sanitizer interface sets an attribute to be allowed on all elements when the
@@ -16350,7 +16350,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/allowAttribute)
      */
-    open fun allowAttribute(attribute: SanitizerAttributeNamespace): Boolean
+    public open fun allowAttribute(attribute: SanitizerAttributeNamespace): Boolean
 
     /**
      * The removeAttribute() method of the Sanitizer interface sets an attribute to be removed from all elements when
@@ -16358,7 +16358,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/removeAttribute)
      */
-    open fun removeAttribute(attribute: String): Boolean
+    public open fun removeAttribute(attribute: String): Boolean
 
     /**
      * The removeAttribute() method of the Sanitizer interface sets an attribute to be removed from all elements when
@@ -16366,7 +16366,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/removeAttribute)
      */
-    open fun removeAttribute(attribute: SanitizerAttributeNamespace): Boolean
+    public open fun removeAttribute(attribute: SanitizerAttributeNamespace): Boolean
 
     /**
      * The setComments() method of the Sanitizer interface sets whether comments will be allowed or removed by the
@@ -16374,7 +16374,7 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/setComments)
      */
-    open fun setComments(allow: Boolean): Boolean
+    public open fun setComments(allow: Boolean): Boolean
 
     /**
      * The setDataAttributes() method of the Sanitizer interface sets whether all data-* attributes will be allowed by
@@ -16382,8 +16382,8 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/setDataAttributes)
      */
-    open fun setDataAttributes(allow: Boolean): Boolean
-    open fun setJavascriptURLs(allow: Boolean): Boolean
+    public open fun setDataAttributes(allow: Boolean): Boolean
+    public open fun setJavascriptURLs(allow: Boolean): Boolean
 
     /**
      * The removeUnsafe() method of the Sanitizer interface configures the sanitizer so that it will remove all elements
@@ -16391,12 +16391,12 @@ public open external class Sanitizer : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/removeUnsafe)
      */
-    open fun removeUnsafe(): Boolean
+    public open fun removeUnsafe(): Boolean
 }
 
 public external interface SanitizerElementNamespace : JsAny {
-    var name: String
-    var namespace: String?
+    public var name: String
+    public var namespace: String?
 }
 
 public fun SanitizerElementNamespace(name: String, namespace: String? = null): SanitizerElementNamespace = newJsObject<SanitizerElementNamespace>().apply {
@@ -16405,8 +16405,8 @@ public fun SanitizerElementNamespace(name: String, namespace: String? = null): S
 }
 
 public external interface SanitizerElementNamespaceWithAttributes : SanitizerElementNamespace {
-    var attributes: JsArray<JsAny>?
-    var removeAttributes: JsArray<JsAny>?
+    public var attributes: JsArray<JsAny>?
+    public var removeAttributes: JsArray<JsAny>?
 }
 
 public fun SanitizerElementNamespaceWithAttributes(name: String, namespace: String? = null, attributes: JsArray<JsAny>? = null, removeAttributes: JsArray<JsAny>? = null): SanitizerElementNamespaceWithAttributes = newJsObject<SanitizerElementNamespaceWithAttributes>().apply {
@@ -16417,8 +16417,8 @@ public fun SanitizerElementNamespaceWithAttributes(name: String, namespace: Stri
 }
 
 public external interface SanitizerAttributeNamespace : JsAny {
-    var name: String
-    var namespace: String?
+    public var name: String
+    public var namespace: String?
 }
 
 public fun SanitizerAttributeNamespace(name: String, namespace: String? = null): SanitizerAttributeNamespace = newJsObject<SanitizerAttributeNamespace>().apply {
@@ -16427,7 +16427,7 @@ public fun SanitizerAttributeNamespace(name: String, namespace: String? = null):
 }
 
 public external interface SanitizerProcessingInstruction : JsAny {
-    var target: String
+    public var target: String
 }
 
 public fun SanitizerProcessingInstruction(target: String): SanitizerProcessingInstruction = newJsObject<SanitizerProcessingInstruction>().apply {
@@ -16435,16 +16435,16 @@ public fun SanitizerProcessingInstruction(target: String): SanitizerProcessingIn
 }
 
 public external interface SanitizerConfig : JsAny {
-    var elements: JsArray<JsAny>?
-    var removeElements: JsArray<JsAny>?
-    var replaceWithChildrenElements: JsArray<JsAny>?
-    var processingInstructions: JsArray<JsAny>?
-    var removeProcessingInstructions: JsArray<JsAny>?
-    var attributes: JsArray<JsAny>?
-    var removeAttributes: JsArray<JsAny>?
-    var comments: Boolean?
-    var dataAttributes: Boolean?
-    var javascriptURLs: Boolean?
+    public var elements: JsArray<JsAny>?
+    public var removeElements: JsArray<JsAny>?
+    public var replaceWithChildrenElements: JsArray<JsAny>?
+    public var processingInstructions: JsArray<JsAny>?
+    public var removeProcessingInstructions: JsArray<JsAny>?
+    public var attributes: JsArray<JsAny>?
+    public var removeAttributes: JsArray<JsAny>?
+    public var comments: Boolean?
+    public var dataAttributes: Boolean?
+    public var javascriptURLs: Boolean?
 }
 
 public fun SanitizerConfig(elements: JsArray<JsAny>? = null, removeElements: JsArray<JsAny>? = null, replaceWithChildrenElements: JsArray<JsAny>? = null, processingInstructions: JsArray<JsAny>? = null, removeProcessingInstructions: JsArray<JsAny>? = null, attributes: JsArray<JsAny>? = null, removeAttributes: JsArray<JsAny>? = null, comments: Boolean? = null, dataAttributes: Boolean? = null, javascriptURLs: Boolean? = null): SanitizerConfig = newJsObject<SanitizerConfig>().apply {
@@ -16473,7 +16473,7 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/userActivation)
      */
-    open val userActivation: UserActivation
+    public open val userActivation: UserActivation
 
     /**
      * The maxTouchPoints read-only property of the Navigator interface returns the maximum number of simultaneous touch
@@ -16481,7 +16481,7 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/maxTouchPoints)
      */
-    open val maxTouchPoints: Int
+    public open val maxTouchPoints: Int
 
     /**
      * The mediaDevices read-only property of the Navigator interface returns a MediaDevices object, which provides
@@ -16491,7 +16491,7 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mediaDevices)
      */
-    open val mediaDevices: MediaDevices
+    public open val mediaDevices: MediaDevices
 
     /**
      * The clipboard read-only property of the Navigator interface returns a Clipboard object used to read and write the
@@ -16501,7 +16501,7 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/clipboard)
      */
-    open val clipboard: Clipboard
+    public open val clipboard: Clipboard
 
     /**
      * The vibrate() method of the Navigator interface pulses the vibration hardware on the device, if such hardware
@@ -16510,7 +16510,7 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vibrate)
      */
-    open fun vibrate(pattern: Int): Boolean
+    public open fun vibrate(pattern: Int): Boolean
 
     /**
      * The vibrate() method of the Navigator interface pulses the vibration hardware on the device, if such hardware
@@ -16519,7 +16519,7 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vibrate)
      */
-    open fun vibrate(pattern: JsArray<JsNumber>): Boolean
+    public open fun vibrate(pattern: JsArray<JsNumber>): Boolean
 
     /**
      * The serviceWorker read-only property of the Navigator interface returns the ServiceWorkerContainer object for the
@@ -16530,7 +16530,7 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/serviceWorker)
      */
-    open val serviceWorker: ServiceWorkerContainer
+    public open val serviceWorker: ServiceWorkerContainer
 
     /**
      * The requestMediaKeySystemAccess() method of the Navigator interface returns a Promise which delivers a
@@ -16541,7 +16541,7 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMediaKeySystemAccess)
      */
-    open fun requestMediaKeySystemAccess(keySystem: String, supportedConfigurations: JsArray<MediaKeySystemConfiguration>): Promise<MediaKeySystemAccess>
+    public open fun requestMediaKeySystemAccess(keySystem: String, supportedConfigurations: JsArray<MediaKeySystemConfiguration>): Promise<MediaKeySystemAccess>
 }
 
 public external interface NavigatorID : JsAny {
@@ -16551,7 +16551,7 @@ public external interface NavigatorID : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/appCodeName)
      */
-    val appCodeName: String
+    public val appCodeName: String
 
     /**
      * The appName read-only property of the Navigator interface is always "Netscape", in any browser. This property is
@@ -16559,7 +16559,7 @@ public external interface NavigatorID : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/appName)
      */
-    val appName: String
+    public val appName: String
 
     /**
      * The Navigator.appVersion read-only property of the Navigator interface returns a string representing version
@@ -16567,7 +16567,7 @@ public external interface NavigatorID : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/appVersion)
      */
-    val appVersion: String
+    public val appVersion: String
 
     /**
      * The platform property read-only property of the Navigator interface returns a string identifying the platform on
@@ -16575,7 +16575,7 @@ public external interface NavigatorID : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/platform)
      */
-    val platform: String
+    public val platform: String
 
     /**
      * The product read-only property of the Navigator interface is always "Gecko", in any browser. This property is
@@ -16583,14 +16583,14 @@ public external interface NavigatorID : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/product)
      */
-    val product: String
+    public val product: String
 
     /**
      * The Navigator.productSub read-only property that returns either the string "20030107", or the string "20100101".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/productSub)
      */
-    val productSub: String
+    public val productSub: String
 
     /**
      * The Navigator.userAgent read-only property of the Navigator interface returns the User-Agent (UA) string for the
@@ -16598,7 +16598,7 @@ public external interface NavigatorID : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/userAgent)
      */
-    val userAgent: String
+    public val userAgent: String
 
     /**
      * The vendor read-only property of the Navigator interface is always either "Google Inc.", "Apple Computer, Inc.",
@@ -16606,21 +16606,21 @@ public external interface NavigatorID : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vendor)
      */
-    val vendor: String
+    public val vendor: String
 
     /**
      * The vendorSub read-only property of the Navigator interface is always the empty string, in any browser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vendorSub)
      */
-    val vendorSub: String
+    public val vendorSub: String
 
     /**
      * The Navigator.taintEnabled() method always returns false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/taintEnabled)
      */
-    fun taintEnabled(): Boolean
+    public fun taintEnabled(): Boolean
 
     /**
      * The oscpu read-only property of the Navigator interface returns a string that identifies the current operating
@@ -16628,7 +16628,7 @@ public external interface NavigatorID : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/oscpu)
      */
-    val oscpu: String
+    public val oscpu: String
 }
 
 public external interface NavigatorLanguage : JsAny {
@@ -16638,7 +16638,7 @@ public external interface NavigatorLanguage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/language)
      */
-    val language: String
+    public val language: String
 
     /**
      * The languages read-only property of the Navigator interface returns an array of strings representing the user's
@@ -16647,7 +16647,7 @@ public external interface NavigatorLanguage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/languages)
      */
-    val languages: JsArray<JsString>
+    public val languages: JsArray<JsString>
 }
 
 public external interface NavigatorOnLine : JsAny {
@@ -16660,7 +16660,7 @@ public external interface NavigatorOnLine : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/onLine)
      */
-    val onLine: Boolean
+    public val onLine: Boolean
 }
 
 public external interface NavigatorContentUtils : JsAny {
@@ -16672,7 +16672,7 @@ public external interface NavigatorContentUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/registerProtocolHandler)
      */
-    fun registerProtocolHandler(scheme: String, url: String)
+    public fun registerProtocolHandler(scheme: String, url: String)
 
     /**
      * The Navigator method unregisterProtocolHandler() removes a protocol handler for a given URL scheme.
@@ -16681,7 +16681,7 @@ public external interface NavigatorContentUtils : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/unregisterProtocolHandler)
      */
-    fun unregisterProtocolHandler(scheme: String, url: String)
+    public fun unregisterProtocolHandler(scheme: String, url: String)
 }
 
 public external interface NavigatorCookies : JsAny {
@@ -16690,7 +16690,7 @@ public external interface NavigatorCookies : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/cookieEnabled)
      */
-    val cookieEnabled: Boolean
+    public val cookieEnabled: Boolean
 }
 
 public external interface NavigatorPlugins : JsAny {
@@ -16701,7 +16701,7 @@ public external interface NavigatorPlugins : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/plugins)
      */
-    val plugins: PluginArray
+    public val plugins: PluginArray
 
     /**
      * The mimeTypes read-only property of the Navigator interface returns a MimeTypeArray object, which contains a list
@@ -16711,14 +16711,14 @@ public external interface NavigatorPlugins : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mimeTypes)
      */
-    val mimeTypes: MimeTypeArray
+    public val mimeTypes: MimeTypeArray
 
     /**
      * This method always returns false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/javaEnabled)
      */
-    fun javaEnabled(): Boolean
+    public fun javaEnabled(): Boolean
 
     /**
      * The pdfViewerEnabled read-only property of the Navigator interface indicates whether the browser supports inline
@@ -16726,7 +16726,7 @@ public external interface NavigatorPlugins : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/pdfViewerEnabled)
      */
-    val pdfViewerEnabled: Boolean
+    public val pdfViewerEnabled: Boolean
 }
 
 /**
@@ -16739,10 +16739,10 @@ public external interface NavigatorPlugins : JsAny {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PluginArray)
  */
 public abstract external class PluginArray : ItemArrayLike<Plugin> {
-    open fun refresh()
+    public open fun refresh()
     override val length: Int
     override fun item(index: Int): Plugin?
-    open fun namedItem(name: String): Plugin?
+    public open fun namedItem(name: String): Plugin?
 }
 
 public operator fun PluginArray.get(index: Int): Plugin? = getProperty(this, index)
@@ -16760,7 +16760,7 @@ public operator fun PluginArray.get(name: String): Plugin? = getProperty(this, n
 public abstract external class MimeTypeArray : ItemArrayLike<MimeType> {
     override val length: Int
     override fun item(index: Int): MimeType?
-    open fun namedItem(name: String): MimeType?
+    public open fun namedItem(name: String): MimeType?
 }
 
 public operator fun MimeTypeArray.get(index: Int): MimeType? = getProperty(this, index)
@@ -16775,12 +16775,12 @@ public operator fun MimeTypeArray.get(name: String): MimeType? = getProperty(thi
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Plugin)
  */
 public abstract external class Plugin : ItemArrayLike<MimeType> {
-    open val name: String
-    open val description: String
-    open val filename: String
+    public open val name: String
+    public open val description: String
+    public open val filename: String
     override val length: Int
     override fun item(index: Int): MimeType?
-    open fun namedItem(name: String): MimeType?
+    public open fun namedItem(name: String): MimeType?
 }
 
 public operator fun Plugin.get(index: Int): MimeType? = getProperty(this, index)
@@ -16796,23 +16796,23 @@ public operator fun Plugin.get(name: String): MimeType? = getProperty(this, name
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MimeType)
  */
 public abstract external class MimeType : JsAny {
-    open val type: String
-    open val description: String
-    open val suffixes: String
-    open val enabledPlugin: Plugin
+    public open val type: String
+    public open val description: String
+    public open val suffixes: String
+    public open val enabledPlugin: Plugin
 }
 
 public external interface ImageDataPixelFormat : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ImageDataPixelFormat.Companion.RGBA_UNORM8: ImageDataPixelFormat get() = "rgba-unorm8".toJsString().unsafeCast<ImageDataPixelFormat>()
 public inline val ImageDataPixelFormat.Companion.RGBA_FLOAT16: ImageDataPixelFormat get() = "rgba-float16".toJsString().unsafeCast<ImageDataPixelFormat>()
 
 public external interface ImageDataSettings : JsAny {
-    var colorSpace: PredefinedColorSpace?
-    var pixelFormat: ImageDataPixelFormat?
+    public var colorSpace: PredefinedColorSpace?
+    public var pixelFormat: ImageDataPixelFormat?
 }
 
 public fun ImageDataSettings(colorSpace: PredefinedColorSpace? = null, pixelFormat: ImageDataPixelFormat? = null): ImageDataSettings = newJsObject<ImageDataSettings>().apply {
@@ -16832,7 +16832,7 @@ public open external class ImageData : TexImageSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/ImageData)
      */
-    constructor(sw: Int, sh: Int, settings: ImageDataSettings = definedExternally)
+    public constructor(sw: Int, sh: Int, settings: ImageDataSettings = definedExternally)
 
     /**
      * The ImageData() constructor returns a newly instantiated ImageData object built from the typed array given and
@@ -16840,21 +16840,21 @@ public open external class ImageData : TexImageSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/ImageData)
      */
-    constructor(data: Uint8ClampedArray, sw: Int, sh: Int = definedExternally, settings: ImageDataSettings = definedExternally)
+    public constructor(data: Uint8ClampedArray, sw: Int, sh: Int = definedExternally, settings: ImageDataSettings = definedExternally)
 
     /**
      * The readonly ImageData.width property returns the number of pixels per row in the ImageData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/width)
      */
-    open val width: Int
+    public open val width: Int
 
     /**
      * The readonly ImageData.height property returns the number of rows in the ImageData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/height)
      */
-    open val height: Int
+    public open val height: Int
 
     /**
      * The readonly ImageData.data property returns a Uint8ClampedArray or Float16Array that contains the ImageData
@@ -16862,21 +16862,21 @@ public open external class ImageData : TexImageSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/data)
      */
-    open val data: Uint8ClampedArray
+    public open val data: Uint8ClampedArray
 
     /**
      * The read-only ImageData.pixelFormat property is a string indicating the pixel format of the image data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/pixelFormat)
      */
-    open val pixelFormat: ImageDataPixelFormat
+    public open val pixelFormat: ImageDataPixelFormat
 
     /**
      * The read-only ImageData.colorSpace property is a string indicating the color space of the image data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/colorSpace)
      */
-    open val colorSpace: PredefinedColorSpace
+    public open val colorSpace: PredefinedColorSpace
 }
 
 /**
@@ -16893,26 +16893,26 @@ public abstract external class ImageBitmap : CanvasImageSource, TexImageSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/width)
      */
-    open val width: Int
+    public open val width: Int
 
     /**
      * The ImageBitmap.height read-only property returns the ImageBitmap object's height in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/height)
      */
-    open val height: Int
+    public open val height: Int
 
     /**
      * The ImageBitmap.close() method disposes of all graphical resources associated with an ImageBitmap.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/close)
      */
-    open fun close()
+    public open fun close()
 }
 
 public external interface ImageOrientation : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ImageOrientation.Companion.FROM_IMAGE: ImageOrientation get() = "from-image".toJsString().unsafeCast<ImageOrientation>()
@@ -16920,7 +16920,7 @@ public inline val ImageOrientation.Companion.FLIP_Y: ImageOrientation get() = "f
 
 public external interface PremultiplyAlpha : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val PremultiplyAlpha.Companion.NONE: PremultiplyAlpha get() = "none".toJsString().unsafeCast<PremultiplyAlpha>()
@@ -16929,7 +16929,7 @@ public inline val PremultiplyAlpha.Companion.DEFAULT: PremultiplyAlpha get() = "
 
 public external interface ColorSpaceConversion : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ColorSpaceConversion.Companion.NONE: ColorSpaceConversion get() = "none".toJsString().unsafeCast<ColorSpaceConversion>()
@@ -16937,7 +16937,7 @@ public inline val ColorSpaceConversion.Companion.DEFAULT: ColorSpaceConversion g
 
 public external interface ResizeQuality : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ResizeQuality.Companion.PIXELATED: ResizeQuality get() = "pixelated".toJsString().unsafeCast<ResizeQuality>()
@@ -16946,12 +16946,12 @@ public inline val ResizeQuality.Companion.MEDIUM: ResizeQuality get() = "medium"
 public inline val ResizeQuality.Companion.HIGH: ResizeQuality get() = "high".toJsString().unsafeCast<ResizeQuality>()
 
 public external interface ImageBitmapOptions : JsAny {
-    var imageOrientation: ImageOrientation?
-    var premultiplyAlpha: PremultiplyAlpha?
-    var colorSpaceConversion: ColorSpaceConversion?
-    var resizeWidth: Int?
-    var resizeHeight: Int?
-    var resizeQuality: ResizeQuality?
+    public var imageOrientation: ImageOrientation?
+    public var premultiplyAlpha: PremultiplyAlpha?
+    public var colorSpaceConversion: ColorSpaceConversion?
+    public var resizeWidth: Int?
+    public var resizeHeight: Int?
+    public var resizeQuality: ResizeQuality?
 }
 
 public fun ImageBitmapOptions(imageOrientation: ImageOrientation? = null, premultiplyAlpha: PremultiplyAlpha? = null, colorSpaceConversion: ColorSpaceConversion? = null, resizeWidth: Int? = null, resizeHeight: Int? = null, resizeQuality: ResizeQuality? = null): ImageBitmapOptions = newJsObject<ImageBitmapOptions>().apply {
@@ -16970,7 +16970,7 @@ public external interface AnimationFrameProvider : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/requestAnimationFrame)
      */
-    fun requestAnimationFrame(callback: (Double) -> Unit): Int
+    public fun requestAnimationFrame(callback: (Double) -> Unit): Int
 
     /**
      * The window.cancelAnimationFrame() method cancels an animation frame request previously scheduled through a call
@@ -16978,7 +16978,7 @@ public external interface AnimationFrameProvider : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/cancelAnimationFrame)
      */
-    fun cancelAnimationFrame(handle: Int)
+    public fun cancelAnimationFrame(handle: Int)
 }
 
 /**
@@ -16992,14 +16992,14 @@ public open external class MessageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/MessageEvent)
      */
-    constructor(type: String, eventInitDict: MessageEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: MessageEventInit = definedExternally)
 
     /**
      * The data read-only property of the MessageEvent interface represents the data sent by the message emitter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/data)
      */
-    open val data: JsAny?
+    public open val data: JsAny?
 
     /**
      * The origin read-only property of the MessageEvent interface is a string representing the origin of the message
@@ -17007,7 +17007,7 @@ public open external class MessageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/origin)
      */
-    open val origin: String
+    public open val origin: String
 
     /**
      * The lastEventId read-only property of the MessageEvent interface is a string representing a unique ID for the
@@ -17015,7 +17015,7 @@ public open external class MessageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/lastEventId)
      */
-    open val lastEventId: String
+    public open val lastEventId: String
 
     /**
      * The source read-only property of the MessageEvent interface is a MessageEventSource (which can be a WindowProxy,
@@ -17023,7 +17023,7 @@ public open external class MessageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/source)
      */
-    open val source: MessageEventSource?
+    public open val source: MessageEventSource?
 
     /**
      * The ports read-only property of the MessageEvent interface is an array of MessagePort objects containing all
@@ -17031,23 +17031,23 @@ public open external class MessageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/ports)
      */
-    open val ports: JsArray<MessagePort>
-    open fun initMessageEvent(type: String, bubbles: Boolean = definedExternally, cancelable: Boolean = definedExternally, data: JsAny? = definedExternally, origin: String = definedExternally, lastEventId: String = definedExternally, source: MessageEventSource? = definedExternally, ports: JsArray<MessagePort> = definedExternally)
+    public open val ports: JsArray<MessagePort>
+    public open fun initMessageEvent(type: String, bubbles: Boolean = definedExternally, cancelable: Boolean = definedExternally, data: JsAny? = definedExternally, origin: String = definedExternally, lastEventId: String = definedExternally, source: MessageEventSource? = definedExternally, ports: JsArray<MessagePort> = definedExternally)
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface MessageEventInit : EventInit {
-    var data: JsAny?
-    var origin: String?
-    var lastEventId: String?
-    var source: MessageEventSource?
-    var ports: JsArray<MessagePort>?
+    public var data: JsAny?
+    public var origin: String?
+    public var lastEventId: String?
+    public var source: MessageEventSource?
+    public var ports: JsArray<MessagePort>?
 }
 
 public fun MessageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, data: JsAny? = null, origin: String? = null, lastEventId: String? = null, source: MessageEventSource? = null, ports: JsArray<MessagePort>? = null): MessageEventInit = newJsObject<MessageEventInit>().apply {
@@ -17072,14 +17072,14 @@ public open external class EventSource : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/EventSource)
      */
-    constructor(url: String, eventSourceInitDict: EventSourceInit = definedExternally)
+    public constructor(url: String, eventSourceInitDict: EventSourceInit = definedExternally)
 
     /**
      * The url read-only property of the EventSource interface returns a string representing the URL of the source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/url)
      */
-    open val url: String
+    public open val url: String
 
     /**
      * The withCredentials read-only property of the EventSource interface returns a boolean value indicating whether
@@ -17087,7 +17087,7 @@ public open external class EventSource : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/withCredentials)
      */
-    open val withCredentials: Boolean
+    public open val withCredentials: Boolean
 
     /**
      * The readyState read-only property of the EventSource interface returns a number representing the state of the
@@ -17095,28 +17095,28 @@ public open external class EventSource : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/readyState)
      */
-    open val readyState: Short
+    public open val readyState: Short
 
     /**
      * The open event of the EventSource interface is fired when a connection with an event source is opened.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/open_event)
      */
-    open var onopen: ((Event) -> Unit)?
+    public open var onopen: ((Event) -> Unit)?
 
     /**
      * The message event of the EventSource interface is fired when data is received through an event source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/message_event)
      */
-    open var onmessage: ((MessageEvent) -> Unit)?
+    public open var onmessage: ((MessageEvent) -> Unit)?
 
     /**
      * The error event of the EventSource API is fired when a connection with an event source fails to be opened.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/error_event)
      */
-    open var onerror: ((Event) -> Unit)?
+    public open var onerror: ((Event) -> Unit)?
 
     /**
      * The close() method of the EventSource interface closes the connection, if one is made, and sets the
@@ -17124,17 +17124,17 @@ public open external class EventSource : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/close)
      */
-    open fun close()
+    public open fun close()
 
-    companion object {
-        val CONNECTING: Short
-        val OPEN: Short
-        val CLOSED: Short
+    public companion object {
+        public val CONNECTING: Short
+        public val OPEN: Short
+        public val CLOSED: Short
     }
 }
 
 public external interface EventSourceInit : JsAny {
-    var withCredentials: Boolean?
+    public var withCredentials: Boolean?
 }
 
 public fun EventSourceInit(withCredentials: Boolean? = null): EventSourceInit = newJsObject<EventSourceInit>().apply {
@@ -17154,7 +17154,7 @@ public open external class MessageChannel : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageChannel/MessageChannel)
      */
-    constructor()
+    public constructor()
 
     /**
      * The port1 read-only property of the MessageChannel interface returns the first port of the message channel — the
@@ -17162,7 +17162,7 @@ public open external class MessageChannel : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageChannel/port1)
      */
-    open val port1: MessagePort
+    public open val port1: MessagePort
 
     /**
      * The port2 read-only property of the MessageChannel interface returns the second port of the message channel — the
@@ -17170,7 +17170,7 @@ public open external class MessageChannel : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageChannel/port2)
      */
-    open val port2: MessagePort
+    public open val port2: MessagePort
 }
 
 public external interface MessageEventTarget : JsAny {
@@ -17179,14 +17179,14 @@ public external interface MessageEventTarget : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event)
      */
-    var onmessage: ((MessageEvent) -> Unit)?
+    public var onmessage: ((MessageEvent) -> Unit)?
 
     /**
      * The messageerror event is fired on a MessagePort object when it receives a message that can't be deserialized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event)
      */
-    var onmessageerror: ((MessageEvent) -> Unit)?
+    public var onmessageerror: ((MessageEvent) -> Unit)?
 }
 
 /**
@@ -17202,7 +17202,7 @@ public abstract external class MessagePort : EventTarget, MessageEventTarget, Me
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/postMessage)
      */
-    open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
+    public open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
 
     /**
      * The postMessage() method of the MessagePort interface sends a message from the port, and optionally, transfers
@@ -17210,7 +17210,7 @@ public abstract external class MessagePort : EventTarget, MessageEventTarget, Me
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/postMessage)
      */
-    open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
+    public open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
 
     /**
      * The start() method of the MessagePort interface starts the sending of messages queued on the port. This method is
@@ -17218,7 +17218,7 @@ public abstract external class MessagePort : EventTarget, MessageEventTarget, Me
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/start)
      */
-    open fun start()
+    public open fun start()
 
     /**
      * The close() method of the MessagePort interface disconnects the port, so it is no longer active. This stops the
@@ -17226,11 +17226,11 @@ public abstract external class MessagePort : EventTarget, MessageEventTarget, Me
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/close)
      */
-    open fun close()
+    public open fun close()
 }
 
 public external interface StructuredSerializeOptions : JsAny {
-    var transfer: JsArray<JsAny>?
+    public var transfer: JsArray<JsAny>?
 }
 
 public fun StructuredSerializeOptions(transfer: JsArray<JsAny>? = null): StructuredSerializeOptions = newJsObject<StructuredSerializeOptions>().apply {
@@ -17251,7 +17251,7 @@ public open external class BroadcastChannel : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/BroadcastChannel)
      */
-    constructor(name: String)
+    public constructor(name: String)
 
     /**
      * The name read-only property of the BroadcastChannel interface returns a string, which uniquely identifies the
@@ -17260,7 +17260,7 @@ public open external class BroadcastChannel : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/name)
      */
-    open val name: String
+    public open val name: String
 
     /**
      * The postMessage() method of the BroadcastChannel interface sends a message, which can be of any kind of Object,
@@ -17269,7 +17269,7 @@ public open external class BroadcastChannel : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/postMessage)
      */
-    open fun postMessage(message: JsAny?)
+    public open fun postMessage(message: JsAny?)
 
     /**
      * The close() method of the BroadcastChannel interface terminates the connection to the underlying channel,
@@ -17278,14 +17278,14 @@ public open external class BroadcastChannel : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/close)
      */
-    open fun close()
+    public open fun close()
 
     /**
      * The message event of the BroadcastChannel interface fires when a message arrives on that channel.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event)
      */
-    open var onmessage: ((MessageEvent) -> Unit)?
+    public open var onmessage: ((MessageEvent) -> Unit)?
 
     /**
      * The messageerror event of the BroadcastChannel interface fires when a message that can't be deserialized arrives
@@ -17293,7 +17293,7 @@ public open external class BroadcastChannel : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/messageerror_event)
      */
-    open var onmessageerror: ((MessageEvent) -> Unit)?
+    public open var onmessageerror: ((MessageEvent) -> Unit)?
 }
 
 /**
@@ -17311,7 +17311,7 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/self)
      */
-    open val self: WorkerGlobalScope
+    public open val self: WorkerGlobalScope
 
     /**
      * The read-only location property of the WorkerGlobalScope interface returns the WorkerLocation associated with the
@@ -17320,7 +17320,7 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/location)
      */
-    open val location: WorkerLocation
+    public open val location: WorkerLocation
 
     /**
      * The navigator read-only property of the WorkerGlobalScope interface returns the WorkerNavigator associated with
@@ -17329,7 +17329,7 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/navigator)
      */
-    open val navigator: WorkerNavigator
+    public open val navigator: WorkerNavigator
 
     /**
      * The importScripts() method of the WorkerGlobalScope interface synchronously imports one or more scripts into the
@@ -17337,35 +17337,35 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts)
      */
-    open fun importScripts(vararg urls: String)
+    public open fun importScripts(vararg urls: String)
 
     /**
      * The error event of the WorkerGlobalScope interface fires when an error occurs in the worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/error_event)
      */
-    open var onerror: ((JsAny, String, Int, Int, JsAny?) -> Unit)?
+    public open var onerror: ((JsAny, String, Int, Int, JsAny?) -> Unit)?
 
     /**
      * The languagechange event is fired at the global scope object when the user's preferred language changes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/languagechange_event)
      */
-    open var onlanguagechange: ((Event) -> Unit)?
+    public open var onlanguagechange: ((Event) -> Unit)?
 
     /**
      * The offline event of the WorkerGlobalScope fires when the device loses connection to the internet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/offline_event)
      */
-    open var onoffline: ((Event) -> Unit)?
+    public open var onoffline: ((Event) -> Unit)?
 
     /**
      * The online event of the WorkerGlobalScope fires when the device reconnects to the internet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/online_event)
      */
-    open var ononline: ((Event) -> Unit)?
+    public open var ononline: ((Event) -> Unit)?
 
     /**
      * The rejectionhandled event is sent to the script's global scope (typically WorkerGlobalScope) whenever a rejected
@@ -17374,7 +17374,7 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/rejectionhandled_event)
      */
-    open var onrejectionhandled: ((PromiseRejectionEvent) -> Unit)?
+    public open var onrejectionhandled: ((PromiseRejectionEvent) -> Unit)?
 
     /**
      * The unhandledrejection event is sent to the global scope (typically WorkerGlobalScope) of a script when a Promise
@@ -17382,7 +17382,7 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/unhandledrejection_event)
      */
-    open var onunhandledrejection: ((PromiseRejectionEvent) -> Unit)?
+    public open var onunhandledrejection: ((PromiseRejectionEvent) -> Unit)?
 }
 
 /**
@@ -17400,7 +17400,7 @@ public abstract external class DedicatedWorkerGlobalScope : WorkerGlobalScope, A
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/name)
      */
-    open val name: String
+    public open val name: String
 
     /**
      * The postMessage() method of the DedicatedWorkerGlobalScope interface sends a message to the main thread that
@@ -17408,7 +17408,7 @@ public abstract external class DedicatedWorkerGlobalScope : WorkerGlobalScope, A
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/postMessage)
      */
-    open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
+    public open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
 
     /**
      * The postMessage() method of the DedicatedWorkerGlobalScope interface sends a message to the main thread that
@@ -17416,7 +17416,7 @@ public abstract external class DedicatedWorkerGlobalScope : WorkerGlobalScope, A
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/postMessage)
      */
-    open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
+    public open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
 
     /**
      * The close() method of the DedicatedWorkerGlobalScope interface discards any tasks queued in the
@@ -17424,7 +17424,7 @@ public abstract external class DedicatedWorkerGlobalScope : WorkerGlobalScope, A
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/close)
      */
-    open fun close()
+    public open fun close()
 }
 
 /**
@@ -17443,7 +17443,7 @@ public abstract external class SharedWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/name)
      */
-    open val name: String
+    public open val name: String
 
     /**
      * The close() method of the SharedWorkerGlobalScope interface discards any tasks queued in the
@@ -17451,14 +17451,14 @@ public abstract external class SharedWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/close)
      */
-    open fun close()
+    public open fun close()
 
     /**
      * The connect event is fired in shared workers at their SharedWorkerGlobalScope when a new client connects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/connect_event)
      */
-    open var onconnect: ((MessageEvent) -> Unit)?
+    public open var onconnect: ((MessageEvent) -> Unit)?
 }
 
 public external interface AbstractWorker : JsAny {
@@ -17467,7 +17467,7 @@ public external interface AbstractWorker : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/error_event)
      */
-    var onerror: ((Event) -> Unit)?
+    public var onerror: ((Event) -> Unit)?
 }
 
 /**
@@ -17482,7 +17482,7 @@ public open external class Worker : EventTarget, AbstractWorker, MessageEventTar
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/Worker)
      */
-    constructor(scriptURL: String, options: WorkerOptions = definedExternally)
+    public constructor(scriptURL: String, options: WorkerOptions = definedExternally)
 
     /**
      * The terminate() method of the Worker interface immediately terminates the Worker. This does not offer the worker
@@ -17490,7 +17490,7 @@ public open external class Worker : EventTarget, AbstractWorker, MessageEventTar
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/terminate)
      */
-    open fun terminate()
+    public open fun terminate()
 
     /**
      * The postMessage() method of the Worker interface sends a message to the worker. The first parameter is the data
@@ -17499,7 +17499,7 @@ public open external class Worker : EventTarget, AbstractWorker, MessageEventTar
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/postMessage)
      */
-    open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
+    public open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
 
     /**
      * The postMessage() method of the Worker interface sends a message to the worker. The first parameter is the data
@@ -17508,7 +17508,7 @@ public open external class Worker : EventTarget, AbstractWorker, MessageEventTar
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/postMessage)
      */
-    open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
+    public open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
 
     /**
      * The error event of the Worker interface fires when an error occurs in the worker.
@@ -17534,9 +17534,9 @@ public open external class Worker : EventTarget, AbstractWorker, MessageEventTar
 }
 
 public external interface WorkerOptions : JsAny {
-    var name: String?
-    var type: WorkerType?
-    var credentials: RequestCredentials?
+    public var name: String?
+    public var type: WorkerType?
+    public var credentials: RequestCredentials?
 }
 
 public fun WorkerOptions(name: String? = null, type: WorkerType? = null, credentials: RequestCredentials? = null): WorkerOptions = newJsObject<WorkerOptions>().apply {
@@ -17547,7 +17547,7 @@ public fun WorkerOptions(name: String? = null, type: WorkerType? = null, credent
 
 public external interface WorkerType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val WorkerType.Companion.CLASSIC: WorkerType get() = "classic".toJsString().unsafeCast<WorkerType>()
@@ -17567,21 +17567,21 @@ public open external class SharedWorker : EventTarget, AbstractWorker {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/SharedWorker)
      */
-    constructor(scriptURL: String, options: String)
+    public constructor(scriptURL: String, options: String)
 
     /**
      * The SharedWorker() constructor creates a SharedWorker object that executes the script at the specified URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/SharedWorker)
      */
-    constructor(scriptURL: String, options: SharedWorkerOptions)
+    public constructor(scriptURL: String, options: SharedWorkerOptions)
 
     /**
      * The SharedWorker() constructor creates a SharedWorker object that executes the script at the specified URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/SharedWorker)
      */
-    constructor(scriptURL: String)
+    public constructor(scriptURL: String)
 
     /**
      * The port property of the SharedWorker interface returns a MessagePort object used to communicate and control the
@@ -17589,7 +17589,7 @@ public open external class SharedWorker : EventTarget, AbstractWorker {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/port)
      */
-    open val port: MessagePort
+    public open val port: MessagePort
 
     /**
      * The error event of the SharedWorker interface fires when an error occurs in the worker.
@@ -17600,7 +17600,7 @@ public open external class SharedWorker : EventTarget, AbstractWorker {
 }
 
 public external interface SharedWorkerOptions : WorkerOptions {
-    var extendedLifetime: Boolean?
+    public var extendedLifetime: Boolean?
 }
 
 public fun SharedWorkerOptions(name: String? = null, type: WorkerType? = null, credentials: RequestCredentials? = null, extendedLifetime: Boolean? = null): SharedWorkerOptions = newJsObject<SharedWorkerOptions>().apply {
@@ -17617,7 +17617,7 @@ public external interface NavigatorConcurrentHardware : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/hardwareConcurrency)
      */
-    val hardwareConcurrency: Double
+    public val hardwareConcurrency: Double
 }
 
 /**
@@ -17636,7 +17636,7 @@ public abstract external class WorkerNavigator : NavigatorID, NavigatorLanguage,
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator/serviceWorker)
      */
-    open val serviceWorker: ServiceWorkerContainer
+    public open val serviceWorker: ServiceWorkerContainer
 }
 
 /**
@@ -17653,63 +17653,63 @@ public abstract external class WorkerLocation : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/href)
      */
-    open val href: String
+    public open val href: String
 
     /**
      * The origin property of a WorkerLocation object returns the worker's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/origin)
      */
-    open val origin: String
+    public open val origin: String
 
     /**
      * The protocol property of a WorkerLocation object returns the protocol part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/protocol)
      */
-    open val protocol: String
+    public open val protocol: String
 
     /**
      * The host property of a WorkerLocation object returns the host part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/host)
      */
-    open val host: String
+    public open val host: String
 
     /**
      * The hostname property of a WorkerLocation object returns the hostname part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/hostname)
      */
-    open val hostname: String
+    public open val hostname: String
 
     /**
      * The port property of a WorkerLocation object returns the port part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/port)
      */
-    open val port: String
+    public open val port: String
 
     /**
      * The pathname property of a WorkerLocation object returns the pathname part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/pathname)
      */
-    open val pathname: String
+    public open val pathname: String
 
     /**
      * The search property of a WorkerLocation object returns the search part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/search)
      */
-    open val search: String
+    public open val search: String
 
     /**
      * The hash property of a WorkerLocation object returns the hash part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/hash)
      */
-    open val hash: String
+    public open val hash: String
 }
 
 /**
@@ -17737,11 +17737,11 @@ public abstract external class Worklet : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
      */
-    open fun addModule(moduleURL: String, options: WorkletOptions = definedExternally): Promise<JsAny?>
+    public open fun addModule(moduleURL: String, options: WorkletOptions = definedExternally): Promise<JsAny?>
 }
 
 public external interface WorkletOptions : JsAny {
-    var credentials: RequestCredentials?
+    public var credentials: RequestCredentials?
 }
 
 public fun WorkletOptions(credentials: RequestCredentials? = null): WorkletOptions = newJsObject<WorkletOptions>().apply {
@@ -17761,7 +17761,7 @@ public abstract external class Storage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The key() method of the Storage interface, when passed a number n, returns the name of the nth key in a given
@@ -17769,7 +17769,7 @@ public abstract external class Storage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/key)
      */
-    open fun key(index: Int): String?
+    public open fun key(index: Int): String?
 
     /**
      * The getItem() method of the Storage interface, when passed a key name, will return that key's value, or null if
@@ -17777,7 +17777,7 @@ public abstract external class Storage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/getItem)
      */
-    open fun getItem(key: String): String?
+    public open fun getItem(key: String): String?
 
     /**
      * The setItem() method of the Storage interface, when passed a key name and value, will add that key to the given
@@ -17785,7 +17785,7 @@ public abstract external class Storage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/setItem)
      */
-    open fun setItem(key: String, value: String)
+    public open fun setItem(key: String, value: String)
 
     /**
      * The removeItem() method of the Storage interface, when passed a key name, will remove that key from the given
@@ -17794,14 +17794,14 @@ public abstract external class Storage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/removeItem)
      */
-    open fun removeItem(key: String)
+    public open fun removeItem(key: String)
 
     /**
      * The clear() method of the Storage interface clears all keys stored in a given Storage object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/clear)
      */
-    open fun clear()
+    public open fun clear()
 }
 
 public operator fun Storage.get(key: String): String? = getStringProperty(this, key)
@@ -17817,7 +17817,7 @@ public external interface WindowSessionStorage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)
      */
-    val sessionStorage: Storage
+    public val sessionStorage: Storage
 }
 
 public external interface WindowLocalStorage : JsAny {
@@ -17827,7 +17827,7 @@ public external interface WindowLocalStorage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/localStorage)
      */
-    val localStorage: Storage
+    public val localStorage: Storage
 }
 
 /**
@@ -17842,14 +17842,14 @@ public open external class StorageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/StorageEvent)
      */
-    constructor(type: String, eventInitDict: StorageEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: StorageEventInit = definedExternally)
 
     /**
      * The key property of the StorageEvent interface returns the key for the storage item that was changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/key)
      */
-    open val key: String?
+    public open val key: String?
 
     /**
      * The oldValue property of the StorageEvent interface returns the original value of the storage item whose value
@@ -17857,7 +17857,7 @@ public open external class StorageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/oldValue)
      */
-    open val oldValue: String?
+    public open val oldValue: String?
 
     /**
      * The newValue property of the StorageEvent interface returns the new value of the storage item whose value was
@@ -17865,21 +17865,21 @@ public open external class StorageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/newValue)
      */
-    open val newValue: String?
+    public open val newValue: String?
 
     /**
      * The url property of the StorageEvent interface returns the URL of the document whose storage changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/url)
      */
-    open val url: String
+    public open val url: String
 
     /**
      * The storageArea property of the StorageEvent interface returns the storage object that was affected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/storageArea)
      */
-    open val storageArea: Storage?
+    public open val storageArea: Storage?
 
     /**
      * The StorageEvent.initStorageEvent() method is used to initialize the value of a StorageEvent.
@@ -17888,22 +17888,22 @@ public open external class StorageEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/initStorageEvent)
      */
-    open fun initStorageEvent(type: String, bubbles: Boolean = definedExternally, cancelable: Boolean = definedExternally, key: String? = definedExternally, oldValue: String? = definedExternally, newValue: String? = definedExternally, url: String = definedExternally, storageArea: Storage? = definedExternally)
+    public open fun initStorageEvent(type: String, bubbles: Boolean = definedExternally, cancelable: Boolean = definedExternally, key: String? = definedExternally, oldValue: String? = definedExternally, newValue: String? = definedExternally, url: String = definedExternally, storageArea: Storage? = definedExternally)
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface StorageEventInit : EventInit {
-    var key: String?
-    var oldValue: String?
-    var newValue: String?
-    var url: String?
-    var storageArea: Storage?
+    public var key: String?
+    public var oldValue: String?
+    public var newValue: String?
+    public var url: String?
+    public var storageArea: Storage?
 }
 
 public fun StorageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, key: String? = null, oldValue: String? = null, newValue: String? = null, url: String? = null, storageArea: Storage? = null): StorageEventInit = newJsObject<StorageEventInit>().apply {
@@ -17925,39 +17925,39 @@ public fun StorageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nul
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMarqueeElement)
  */
 public abstract external class HTMLMarqueeElement : HTMLElement {
-    open var behavior: String
-    open var bgColor: String
-    open var direction: String
-    open var height: String
-    open var hspace: Int
-    open var loop: Int
-    open var scrollAmount: Int
-    open var scrollDelay: Int
-    open var trueSpeed: Boolean
-    open var vspace: Int
-    open var width: String
-    open fun start()
-    open fun stop()
+    public open var behavior: String
+    public open var bgColor: String
+    public open var direction: String
+    public open var height: String
+    public open var hspace: Int
+    public open var loop: Int
+    public open var scrollAmount: Int
+    public open var scrollDelay: Int
+    public open var trueSpeed: Boolean
+    public open var vspace: Int
+    public open var width: String
+    public open fun start()
+    public open fun stop()
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -17970,87 +17970,87 @@ public abstract external class HTMLMarqueeElement : HTMLElement {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFrameSetElement)
  */
 public abstract external class HTMLFrameSetElement : HTMLElement, WindowEventHandlers {
-    open var cols: String
-    open var rows: String
+    public open var cols: String
+    public open var rows: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public abstract external class HTMLFrameElement : HTMLElement {
-    open var name: String
-    open var scrolling: String
-    open var src: String
-    open var frameBorder: String
-    open var longDesc: String
-    open var noResize: Boolean
-    open val contentDocument: Document?
-    open val contentWindow: Window?
-    open var marginHeight: String
-    open var marginWidth: String
+    public open var name: String
+    public open var scrolling: String
+    public open var src: String
+    public open var frameBorder: String
+    public open var longDesc: String
+    public open var noResize: Boolean
+    public open val contentDocument: Document?
+    public open val contentWindow: Window?
+    public open var marginHeight: String
+    public open var marginWidth: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public abstract external class HTMLDirectoryElement : HTMLElement {
-    open var compact: Boolean
+    public open var compact: Boolean
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -18071,7 +18071,7 @@ public abstract external class HTMLFontElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFontElement/color)
      */
-    open var color: String
+    public open var color: String
 
     /**
      * The obsolete HTMLFontElement.face property is a string that reflects the face HTML attribute, containing a
@@ -18081,7 +18081,7 @@ public abstract external class HTMLFontElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFontElement/face)
      */
-    open var face: String
+    public open var face: String
 
     /**
      * The obsolete HTMLFontElement.size property is a string that reflects the size HTML attribute. It contains either
@@ -18091,27 +18091,27 @@ public abstract external class HTMLFontElement : HTMLElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFontElement/size)
      */
-    open var size: String
+    public open var size: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -18125,34 +18125,34 @@ public abstract external class HTMLFontElement : HTMLElement {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLParamElement)
  */
 public abstract external class HTMLParamElement : HTMLElement {
-    open var name: String
-    open var value: String
-    open var type: String
-    open var valueType: String
+    public open var name: String
+    public open var value: String
+    public open var type: String
+    public open var valueType: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public abstract external class External : JsAny {
-    open fun AddSearchProvider()
-    open fun IsSearchProviderInstalled()
+    public open fun AddSearchProvider()
+    public open fun IsSearchProviderInstalled()
 }

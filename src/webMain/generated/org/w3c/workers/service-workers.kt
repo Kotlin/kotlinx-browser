@@ -32,7 +32,7 @@ public abstract external class ServiceWorker : EventTarget, AbstractWorker, Mess
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/scriptURL)
      */
-    open val scriptURL: String
+    public open val scriptURL: String
 
     /**
      * The state read-only property of the ServiceWorker interface returns a string representing the current state of
@@ -41,7 +41,7 @@ public abstract external class ServiceWorker : EventTarget, AbstractWorker, Mess
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/state)
      */
-    open val state: ServiceWorkerState
+    public open val state: ServiceWorkerState
 
     /**
      * The postMessage() method of the ServiceWorker interface sends a message to the worker. The first parameter is the
@@ -50,7 +50,7 @@ public abstract external class ServiceWorker : EventTarget, AbstractWorker, Mess
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/postMessage)
      */
-    open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
+    public open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
 
     /**
      * The postMessage() method of the ServiceWorker interface sends a message to the worker. The first parameter is the
@@ -59,19 +59,19 @@ public abstract external class ServiceWorker : EventTarget, AbstractWorker, Mess
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/postMessage)
      */
-    open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
+    public open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
 
     /**
      * The statechange event fires anytime the ServiceWorker.state changes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event)
      */
-    open var onstatechange: ((Event) -> Unit)?
+    public open var onstatechange: ((Event) -> Unit)?
 }
 
 public external interface ServiceWorkerState : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ServiceWorkerState.Companion.PARSED: ServiceWorkerState get() = "parsed".toJsString().unsafeCast<ServiceWorkerState>()
@@ -96,7 +96,7 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/installing)
      */
-    open val installing: ServiceWorker?
+    public open val installing: ServiceWorker?
 
     /**
      * The waiting read-only property of the ServiceWorkerRegistration interface returns a service worker whose
@@ -104,7 +104,7 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/waiting)
      */
-    open val waiting: ServiceWorker?
+    public open val waiting: ServiceWorker?
 
     /**
      * The active read-only property of the ServiceWorkerRegistration interface returns a service worker whose
@@ -112,7 +112,7 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/active)
      */
-    open val active: ServiceWorker?
+    public open val active: ServiceWorker?
 
     /**
      * The navigationPreload read-only property of the ServiceWorkerRegistration interface returns the
@@ -120,7 +120,7 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/navigationPreload)
      */
-    open val navigationPreload: NavigationPreloadManager
+    public open val navigationPreload: NavigationPreloadManager
 
     /**
      * The scope read-only property of the ServiceWorkerRegistration interface returns a string representing a URL that
@@ -130,7 +130,7 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/scope)
      */
-    open val scope: String
+    public open val scope: String
 
     /**
      * The updateViaCache read-only property of the ServiceWorkerRegistration interface returns the value of the setting
@@ -139,7 +139,7 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updateViaCache)
      */
-    open val updateViaCache: ServiceWorkerUpdateViaCache
+    public open val updateViaCache: ServiceWorkerUpdateViaCache
 
     /**
      * The update() method of the ServiceWorkerRegistration interface attempts to update the service worker. It fetches
@@ -149,7 +149,7 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)
      */
-    open fun update(): Promise<ServiceWorkerRegistration>
+    public open fun update(): Promise<ServiceWorkerRegistration>
 
     /**
      * The unregister() method of the ServiceWorkerRegistration interface unregisters the service worker registration
@@ -160,7 +160,7 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister)
      */
-    open fun unregister(): Promise<JsBoolean>
+    public open fun unregister(): Promise<JsBoolean>
 
     /**
      * The updatefound event of the ServiceWorkerRegistration interface is fired any time the
@@ -168,7 +168,7 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event)
      */
-    open var onupdatefound: ((Event) -> Unit)?
+    public open var onupdatefound: ((Event) -> Unit)?
 
     /**
      * The showNotification() method of the ServiceWorkerRegistration interface creates a notification on an active
@@ -176,7 +176,7 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
      */
-    open fun showNotification(title: String, options: NotificationOptions = definedExternally): Promise<JsAny?>
+    public open fun showNotification(title: String, options: NotificationOptions = definedExternally): Promise<JsAny?>
 
     /**
      * The getNotifications() method of the ServiceWorkerRegistration interface returns a list of the notifications in
@@ -186,12 +186,12 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
      */
-    open fun getNotifications(filter: GetNotificationOptions = definedExternally): Promise<JsArray<Notification>>
+    public open fun getNotifications(filter: GetNotificationOptions = definedExternally): Promise<JsArray<Notification>>
 }
 
 public external interface ServiceWorkerUpdateViaCache : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ServiceWorkerUpdateViaCache.Companion.IMPORTS: ServiceWorkerUpdateViaCache get() = "imports".toJsString().unsafeCast<ServiceWorkerUpdateViaCache>()
@@ -215,7 +215,7 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controller)
      */
-    open val controller: ServiceWorker?
+    public open val controller: ServiceWorker?
 
     /**
      * The ready read-only property of the ServiceWorkerContainer interface provides a way of delaying code execution
@@ -223,7 +223,7 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/ready)
      */
-    open val ready: Promise<ServiceWorkerRegistration>
+    public open val ready: Promise<ServiceWorkerRegistration>
 
     /**
      * The register() method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for
@@ -231,7 +231,7 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
-    open fun register(scriptURL: String, options: RegistrationOptions = definedExternally): Promise<ServiceWorkerRegistration>
+    public open fun register(scriptURL: String, options: RegistrationOptions = definedExternally): Promise<ServiceWorkerRegistration>
 
     /**
      * The getRegistration() method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object
@@ -240,7 +240,7 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
      */
-    open fun getRegistration(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
+    public open fun getRegistration(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
 
     /**
      * The getRegistrations() method of the ServiceWorkerContainer interface gets all ServiceWorkerRegistrations
@@ -249,7 +249,7 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
      */
-    open fun getRegistrations(): Promise<JsArray<ServiceWorkerRegistration>>
+    public open fun getRegistrations(): Promise<JsArray<ServiceWorkerRegistration>>
 
     /**
      * The startMessages() method of the ServiceWorkerContainer interface explicitly starts the flow of messages being
@@ -258,7 +258,7 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/startMessages)
      */
-    open fun startMessages()
+    public open fun startMessages()
 
     /**
      * The controllerchange event of the ServiceWorkerContainer interface fires when the document's associated
@@ -266,14 +266,14 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controllerchange_event)
      */
-    open var oncontrollerchange: ((Event) -> Unit)?
+    public open var oncontrollerchange: ((Event) -> Unit)?
 
     /**
      * The message event is used in a page controlled by a service worker to receive messages from the service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/message_event)
      */
-    open var onmessage: ((MessageEvent) -> Unit)?
+    public open var onmessage: ((MessageEvent) -> Unit)?
 
     /**
      * The messageerror event is fired to the ServiceWorkerContainer when an incoming message sent to the associated
@@ -281,13 +281,13 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/messageerror_event)
      */
-    open var onmessageerror: ((MessageEvent) -> Unit)?
+    public open var onmessageerror: ((MessageEvent) -> Unit)?
 }
 
 public external interface RegistrationOptions : JsAny {
-    var scope: String?
-    var type: WorkerType?
-    var updateViaCache: ServiceWorkerUpdateViaCache?
+    public var scope: String?
+    public var type: WorkerType?
+    public var updateViaCache: ServiceWorkerUpdateViaCache?
 }
 
 public fun RegistrationOptions(scope: String? = null, type: WorkerType? = null, updateViaCache: ServiceWorkerUpdateViaCache? = null): RegistrationOptions = newJsObject<RegistrationOptions>().apply {
@@ -311,7 +311,7 @@ public abstract external class NavigationPreloadManager : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/enable)
      */
-    open fun enable(): Promise<JsAny?>
+    public open fun enable(): Promise<JsAny?>
 
     /**
      * The disable() method of the NavigationPreloadManager interface halts the automatic preloading of
@@ -320,7 +320,7 @@ public abstract external class NavigationPreloadManager : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/disable)
      */
-    open fun disable(): Promise<JsAny?>
+    public open fun disable(): Promise<JsAny?>
 
     /**
      * The setHeaderValue() method of the NavigationPreloadManager interface sets the value of the
@@ -329,7 +329,7 @@ public abstract external class NavigationPreloadManager : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/setHeaderValue)
      */
-    open fun setHeaderValue(value: String): Promise<JsAny?>
+    public open fun setHeaderValue(value: String): Promise<JsAny?>
 
     /**
      * The getState() method of the NavigationPreloadManager interface returns a Promise that resolves to an object with
@@ -338,12 +338,12 @@ public abstract external class NavigationPreloadManager : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/getState)
      */
-    open fun getState(): Promise<NavigationPreloadState>
+    public open fun getState(): Promise<NavigationPreloadState>
 }
 
 public external interface NavigationPreloadState : JsAny {
-    var enabled: Boolean?
-    var headerValue: String?
+    public var enabled: Boolean?
+    public var headerValue: String?
 }
 
 public fun NavigationPreloadState(enabled: Boolean? = null, headerValue: String? = null): NavigationPreloadState = newJsObject<NavigationPreloadState>().apply {
@@ -366,7 +366,7 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/clients)
      */
-    open val clients: Clients
+    public open val clients: Clients
 
     /**
      * The registration read-only property of the ServiceWorkerGlobalScope interface returns a reference to the
@@ -374,7 +374,7 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/registration)
      */
-    open val registration: ServiceWorkerRegistration
+    public open val registration: ServiceWorkerRegistration
 
     /**
      * The serviceWorker read-only property of the ServiceWorkerGlobalScope interface returns a reference to the
@@ -382,7 +382,7 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/serviceWorker)
      */
-    open val serviceWorker: ServiceWorker
+    public open val serviceWorker: ServiceWorker
 
     /**
      * The skipWaiting() method of the ServiceWorkerGlobalScope interface forces the waiting service worker to become
@@ -390,7 +390,7 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting)
      */
-    open fun skipWaiting(): Promise<JsAny?>
+    public open fun skipWaiting(): Promise<JsAny?>
 
     /**
      * The install event of the ServiceWorkerGlobalScope interface is fired when a ServiceWorkerRegistration acquires a
@@ -398,7 +398,7 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/install_event)
      */
-    open var oninstall: ((InstallEvent) -> Unit)?
+    public open var oninstall: ((InstallEvent) -> Unit)?
 
     /**
      * The activate event of the ServiceWorkerGlobalScope interface is fired when a ServiceWorkerRegistration acquires a
@@ -406,7 +406,7 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/activate_event)
      */
-    open var onactivate: ((ExtendableEvent) -> Unit)?
+    public open var onactivate: ((ExtendableEvent) -> Unit)?
 
     /**
      * The fetch event of the ServiceWorkerGlobalScope interface is fired in the service worker's global scope when the
@@ -415,7 +415,7 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/fetch_event)
      */
-    open var onfetch: ((FetchEvent) -> Unit)?
+    public open var onfetch: ((FetchEvent) -> Unit)?
 
     /**
      * The message event of the ServiceWorkerGlobalScope interface occurs when incoming messages are received.
@@ -424,7 +424,7 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event)
      */
-    open var onmessage: ((ExtendableMessageEvent) -> Unit)?
+    public open var onmessage: ((ExtendableMessageEvent) -> Unit)?
 
     /**
      * The messageerror event of the ServiceWorkerGlobalScope interface occurs when incoming messages can't be
@@ -432,7 +432,7 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/messageerror_event)
      */
-    open var onmessageerror: ((ExtendableMessageEvent) -> Unit)?
+    public open var onmessageerror: ((ExtendableMessageEvent) -> Unit)?
 
     /**
      * The notificationclick event of the ServiceWorkerGlobalScope interface is fired to indicate that a system
@@ -440,7 +440,7 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclick_event)
      */
-    open var onnotificationclick: ((NotificationEvent) -> Unit)?
+    public open var onnotificationclick: ((NotificationEvent) -> Unit)?
 
     /**
      * The notificationclose event of the ServiceWorkerGlobalScope interface fires when a user closes a displayed
@@ -448,7 +448,7 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclose_event)
      */
-    open var onnotificationclose: ((NotificationEvent) -> Unit)?
+    public open var onnotificationclose: ((NotificationEvent) -> Unit)?
 }
 
 /**
@@ -464,7 +464,7 @@ public abstract external class Client : UnionClientOrMessagePortOrServiceWorker 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/url)
      */
-    open val url: String
+    public open val url: String
 
     /**
      * The frameType read-only property of the Client interface indicates the type of browsing context of the current
@@ -472,14 +472,14 @@ public abstract external class Client : UnionClientOrMessagePortOrServiceWorker 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/frameType)
      */
-    open val frameType: FrameType
+    public open val frameType: FrameType
 
     /**
      * The id read-only property of the Client interface returns the universally unique identifier of the Client object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/id)
      */
-    open val id: String
+    public open val id: String
 
     /**
      * The type read-only property of the Client interface indicates the type of client the service worker is
@@ -487,7 +487,7 @@ public abstract external class Client : UnionClientOrMessagePortOrServiceWorker 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/type)
      */
-    open val type: ClientType
+    public open val type: ClientType
 
     /**
      * The postMessage() method of the Client interface allows a service worker to send a message to a client (a Window,
@@ -495,7 +495,7 @@ public abstract external class Client : UnionClientOrMessagePortOrServiceWorker 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/postMessage)
      */
-    open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
+    public open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
 
     /**
      * The postMessage() method of the Client interface allows a service worker to send a message to a client (a Window,
@@ -503,7 +503,7 @@ public abstract external class Client : UnionClientOrMessagePortOrServiceWorker 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/postMessage)
      */
-    open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
+    public open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
 }
 
 /**
@@ -520,7 +520,7 @@ public abstract external class WindowClient : Client {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/visibilityState)
      */
-    open val visibilityState: DocumentVisibilityState
+    public open val visibilityState: DocumentVisibilityState
 
     /**
      * The focused read-only property of the WindowClient interface is a boolean value that indicates whether the
@@ -528,7 +528,7 @@ public abstract external class WindowClient : Client {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focused)
      */
-    open val focused: Boolean
+    public open val focused: Boolean
 
     /**
      * The ancestorOrigins read-only property of the WindowClient interface is an array of strings listing the origins
@@ -536,7 +536,7 @@ public abstract external class WindowClient : Client {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/ancestorOrigins)
      */
-    open val ancestorOrigins: JsArray<JsString>
+    public open val ancestorOrigins: JsArray<JsString>
 
     /**
      * The focus() method of the WindowClient interface gives user input focus to the current client and returns a
@@ -544,7 +544,7 @@ public abstract external class WindowClient : Client {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
      */
-    open fun focus(): Promise<WindowClient>
+    public open fun focus(): Promise<WindowClient>
 
     /**
      * The navigate() method of the WindowClient interface loads a specified URL into a controlled client page then
@@ -552,12 +552,12 @@ public abstract external class WindowClient : Client {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
      */
-    open fun navigate(url: String): Promise<WindowClient?>
+    public open fun navigate(url: String): Promise<WindowClient?>
 }
 
 public external interface FrameType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val FrameType.Companion.AUXILIARY: FrameType get() = "auxiliary".toJsString().unsafeCast<FrameType>()
@@ -577,7 +577,7 @@ public abstract external class Clients : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
      */
-    open fun get(id: String): Promise<Client?>
+    public open fun get(id: String): Promise<Client?>
 
     /**
      * The matchAll() method of the Clients interface returns a Promise for a list of service worker Client objects.
@@ -587,7 +587,7 @@ public abstract external class Clients : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
      */
-    open fun matchAll(options: ClientQueryOptions = definedExternally): Promise<JsArray<Client>>
+    public open fun matchAll(options: ClientQueryOptions = definedExternally): Promise<JsArray<Client>>
 
     /**
      * The openWindow() method of the Clients interface creates a new top-level browsing context and loads a given URL.
@@ -595,7 +595,7 @@ public abstract external class Clients : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
      */
-    open fun openWindow(url: String): Promise<WindowClient?>
+    public open fun openWindow(url: String): Promise<WindowClient?>
 
     /**
      * The claim() method of the Clients interface allows an active service worker to set itself as the controller for
@@ -604,12 +604,12 @@ public abstract external class Clients : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim)
      */
-    open fun claim(): Promise<JsAny?>
+    public open fun claim(): Promise<JsAny?>
 }
 
 public external interface ClientQueryOptions : JsAny {
-    var includeUncontrolled: Boolean?
-    var type: ClientType?
+    public var includeUncontrolled: Boolean?
+    public var type: ClientType?
 }
 
 public fun ClientQueryOptions(includeUncontrolled: Boolean? = null, type: ClientType? = null): ClientQueryOptions = newJsObject<ClientQueryOptions>().apply {
@@ -619,7 +619,7 @@ public fun ClientQueryOptions(includeUncontrolled: Boolean? = null, type: Client
 
 public external interface ClientType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ClientType.Companion.WINDOW: ClientType get() = "window".toJsString().unsafeCast<ClientType>()
@@ -640,7 +640,7 @@ public open external class ExtendableEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/ExtendableEvent)
      */
-    constructor(type: String, eventInitDict: ExtendableEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: ExtendableEventInit = definedExternally)
 
     /**
      * The ExtendableEvent.waitUntil() method tells the event dispatcher that work is ongoing. It can also be used to
@@ -649,13 +649,13 @@ public open external class ExtendableEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil)
      */
-    open fun waitUntil(f: Promise<JsAny?>)
+    public open fun waitUntil(f: Promise<JsAny?>)
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
@@ -680,7 +680,7 @@ public open external class InstallEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InstallEvent/InstallEvent)
      */
-    constructor(type: String, eventInitDict: ExtendableEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: ExtendableEventInit = definedExternally)
 
     /**
      * The addRoutes() method of the InstallEvent interface specifies one or more static routes, which define rules for
@@ -690,7 +690,7 @@ public open external class InstallEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InstallEvent/addRoutes)
      */
-    open fun addRoutes(rules: RouterRule): Promise<JsAny?>
+    public open fun addRoutes(rules: RouterRule): Promise<JsAny?>
 
     /**
      * The addRoutes() method of the InstallEvent interface specifies one or more static routes, which define rules for
@@ -700,19 +700,19 @@ public open external class InstallEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InstallEvent/addRoutes)
      */
-    open fun addRoutes(rules: JsArray<RouterRule>): Promise<JsAny?>
+    public open fun addRoutes(rules: JsArray<RouterRule>): Promise<JsAny?>
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface RouterRule : JsAny {
-    var condition: RouterCondition
-    var source: JsAny
+    public var condition: RouterCondition
+    public var source: JsAny
 }
 
 public fun RouterRule(condition: RouterCondition, source: JsAny): RouterRule = newJsObject<RouterRule>().apply {
@@ -721,12 +721,12 @@ public fun RouterRule(condition: RouterCondition, source: JsAny): RouterRule = n
 }
 
 public external interface RouterCondition : JsAny {
-    var requestMethod: String?
-    var requestMode: RequestMode?
-    var requestDestination: RequestDestination?
-    var runningStatus: RunningStatus?
-    var or: JsArray<RouterCondition>?
-    var not: RouterCondition?
+    public var requestMethod: String?
+    public var requestMode: RequestMode?
+    public var requestDestination: RequestDestination?
+    public var runningStatus: RunningStatus?
+    public var or: JsArray<RouterCondition>?
+    public var not: RouterCondition?
 }
 
 public fun RouterCondition(requestMethod: String? = null, requestMode: RequestMode? = null, requestDestination: RequestDestination? = null, runningStatus: RunningStatus? = null, or: JsArray<RouterCondition>? = null, not: RouterCondition? = null): RouterCondition = newJsObject<RouterCondition>().apply {
@@ -739,7 +739,7 @@ public fun RouterCondition(requestMethod: String? = null, requestMode: RequestMo
 }
 
 public external interface RouterSourceDict : JsAny {
-    var cacheName: String?
+    public var cacheName: String?
 }
 
 public fun RouterSourceDict(cacheName: String? = null): RouterSourceDict = newJsObject<RouterSourceDict>().apply {
@@ -748,7 +748,7 @@ public fun RouterSourceDict(cacheName: String? = null): RouterSourceDict = newJs
 
 public external interface RunningStatus : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val RunningStatus.Companion.RUNNING: RunningStatus get() = "running".toJsString().unsafeCast<RunningStatus>()
@@ -756,7 +756,7 @@ public inline val RunningStatus.Companion.NOT_RUNNING: RunningStatus get() = "no
 
 public external interface RouterSourceEnum : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val RouterSourceEnum.Companion.CACHE: RouterSourceEnum get() = "cache".toJsString().unsafeCast<RouterSourceEnum>()
@@ -777,14 +777,14 @@ public open external class FetchEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/FetchEvent)
      */
-    constructor(type: String, eventInitDict: FetchEventInit)
+    public constructor(type: String, eventInitDict: FetchEventInit)
 
     /**
      * The request read-only property of the FetchEvent interface returns the Request that triggered the event handler.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/request)
      */
-    open val request: Request
+    public open val request: Request
 
     /**
      * The preloadResponse read-only property of the FetchEvent interface returns a Promise that resolves to the
@@ -792,7 +792,7 @@ public open external class FetchEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/preloadResponse)
      */
-    open val preloadResponse: Promise<JsAny?>
+    public open val preloadResponse: Promise<JsAny?>
 
     /**
      * The clientId read-only property of the FetchEvent interface returns the id of the Client that the current service
@@ -800,7 +800,7 @@ public open external class FetchEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/clientId)
      */
-    open val clientId: String
+    public open val clientId: String
 
     /**
      * The resultingClientId read-only property of the FetchEvent interface is the id of the client that replaces the
@@ -808,8 +808,8 @@ public open external class FetchEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/resultingClientId)
      */
-    open val resultingClientId: String
-    open val replacesClientId: String
+    public open val resultingClientId: String
+    public open val replacesClientId: String
 
     /**
      * The handled read-only property of the FetchEvent interface returns a promise indicating if the event has been
@@ -818,7 +818,7 @@ public open external class FetchEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/handled)
      */
-    open val handled: Promise<JsAny?>
+    public open val handled: Promise<JsAny?>
 
     /**
      * The respondWith() method of FetchEvent prevents the browser's default fetch handling, and allows you to provide a
@@ -826,23 +826,23 @@ public open external class FetchEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/respondWith)
      */
-    open fun respondWith(r: Promise<Response>)
+    public open fun respondWith(r: Promise<Response>)
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface FetchEventInit : ExtendableEventInit {
-    var request: Request
-    var preloadResponse: Promise<JsAny?>?
-    var clientId: String?
-    var resultingClientId: String?
-    var replacesClientId: String?
-    var handled: Promise<JsAny?>?
+    public var request: Request
+    public var preloadResponse: Promise<JsAny?>?
+    public var clientId: String?
+    public var resultingClientId: String?
+    public var replacesClientId: String?
+    public var handled: Promise<JsAny?>?
 }
 
 public fun FetchEventInit(request: Request, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, preloadResponse: Promise<JsAny?>? = null, clientId: String? = null, resultingClientId: String? = null, replacesClientId: String? = null, handled: Promise<JsAny?>? = null): FetchEventInit = newJsObject<FetchEventInit>().apply {
@@ -870,7 +870,7 @@ public open external class ExtendableMessageEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ExtendableMessageEvent)
      */
-    constructor(type: String, eventInitDict: ExtendableMessageEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: ExtendableMessageEventInit = definedExternally)
 
     /**
      * The data read-only property of the ExtendableMessageEvent interface returns the event's data. It can be any data
@@ -878,7 +878,7 @@ public open external class ExtendableMessageEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/data)
      */
-    open val data: JsAny?
+    public open val data: JsAny?
 
     /**
      * The origin read-only property of the ExtendableMessageEvent interface returns the origin of the Client that sent
@@ -886,7 +886,7 @@ public open external class ExtendableMessageEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/origin)
      */
-    open val origin: String
+    public open val origin: String
 
     /**
      * The lastEventID read-only property of the ExtendableMessageEvent interface represents, in server-sent events, the
@@ -894,7 +894,7 @@ public open external class ExtendableMessageEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/lastEventId)
      */
-    open val lastEventId: String
+    public open val lastEventId: String
 
     /**
      * The source read-only property of the ExtendableMessageEvent interface returns a reference to the Client object
@@ -902,7 +902,7 @@ public open external class ExtendableMessageEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/source)
      */
-    open val source: UnionClientOrMessagePortOrServiceWorker?
+    public open val source: UnionClientOrMessagePortOrServiceWorker?
 
     /**
      * The ports read-only property of the ExtendableMessageEvent interface returns the array containing the MessagePort
@@ -910,22 +910,22 @@ public open external class ExtendableMessageEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ports)
      */
-    open val ports: JsArray<MessagePort>
+    public open val ports: JsArray<MessagePort>
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface ExtendableMessageEventInit : ExtendableEventInit {
-    var data: JsAny?
-    var origin: String?
-    var lastEventId: String?
-    var source: UnionClientOrMessagePortOrServiceWorker?
-    var ports: JsArray<MessagePort>?
+    public var data: JsAny?
+    public var origin: String?
+    public var lastEventId: String?
+    public var source: UnionClientOrMessagePortOrServiceWorker?
+    public var ports: JsArray<MessagePort>?
 }
 
 public fun ExtendableMessageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, data: JsAny? = null, origin: String? = null, lastEventId: String? = null, source: UnionClientOrMessagePortOrServiceWorker? = null, ports: JsArray<MessagePort>? = null): ExtendableMessageEventInit = newJsObject<ExtendableMessageEventInit>().apply {
@@ -957,7 +957,7 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
      */
-    open fun match(request: Request, options: CacheQueryOptions = definedExternally): Promise<Response?>
+    public open fun match(request: Request, options: CacheQueryOptions = definedExternally): Promise<Response?>
 
     /**
      * The match() method of the Cache interface returns a Promise that resolves to the Response associated with the
@@ -965,7 +965,7 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
      */
-    open fun match(request: String, options: CacheQueryOptions = definedExternally): Promise<Response?>
+    public open fun match(request: String, options: CacheQueryOptions = definedExternally): Promise<Response?>
 
     /**
      * The matchAll() method of the Cache interface returns a Promise that resolves to an array of all matching
@@ -973,7 +973,7 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
      */
-    open fun matchAll(request: Request, options: CacheQueryOptions = definedExternally): Promise<JsArray<Response>>
+    public open fun matchAll(request: Request, options: CacheQueryOptions = definedExternally): Promise<JsArray<Response>>
 
     /**
      * The matchAll() method of the Cache interface returns a Promise that resolves to an array of all matching
@@ -981,7 +981,7 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
      */
-    open fun matchAll(request: String, options: CacheQueryOptions = definedExternally): Promise<JsArray<Response>>
+    public open fun matchAll(request: String, options: CacheQueryOptions = definedExternally): Promise<JsArray<Response>>
 
     /**
      * The matchAll() method of the Cache interface returns a Promise that resolves to an array of all matching
@@ -989,7 +989,7 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
      */
-    open fun matchAll(): Promise<JsArray<Response>>
+    public open fun matchAll(): Promise<JsArray<Response>>
 
     /**
      * The add() method of the Cache interface takes a URL, retrieves it, and adds the resulting response object to the
@@ -997,7 +997,7 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
      */
-    open fun add(request: Request): Promise<JsAny?>
+    public open fun add(request: Request): Promise<JsAny?>
 
     /**
      * The add() method of the Cache interface takes a URL, retrieves it, and adds the resulting response object to the
@@ -1005,7 +1005,7 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
      */
-    open fun add(request: String): Promise<JsAny?>
+    public open fun add(request: String): Promise<JsAny?>
 
     /**
      * The addAll() method of the Cache interface takes an array of URLs, retrieves them, and adds the resulting
@@ -1014,21 +1014,21 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
      */
-    open fun addAll(requests: JsArray<JsAny>): Promise<JsAny?>
+    public open fun addAll(requests: JsArray<JsAny>): Promise<JsAny?>
 
     /**
      * The put() method of the Cache interface allows key/value pairs to be added to the current Cache object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
      */
-    open fun put(request: Request, response: Response): Promise<JsAny?>
+    public open fun put(request: Request, response: Response): Promise<JsAny?>
 
     /**
      * The put() method of the Cache interface allows key/value pairs to be added to the current Cache object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
      */
-    open fun put(request: String, response: Response): Promise<JsAny?>
+    public open fun put(request: String, response: Response): Promise<JsAny?>
 
     /**
      * The delete() method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes
@@ -1036,7 +1036,7 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
      */
-    open fun delete(request: Request, options: CacheQueryOptions = definedExternally): Promise<JsBoolean>
+    public open fun delete(request: Request, options: CacheQueryOptions = definedExternally): Promise<JsBoolean>
 
     /**
      * The delete() method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes
@@ -1044,7 +1044,7 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
      */
-    open fun delete(request: String, options: CacheQueryOptions = definedExternally): Promise<JsBoolean>
+    public open fun delete(request: String, options: CacheQueryOptions = definedExternally): Promise<JsBoolean>
 
     /**
      * The keys() method of the Cache interface returns a Promise that resolves to an array of Request objects
@@ -1052,7 +1052,7 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
      */
-    open fun keys(request: Request, options: CacheQueryOptions = definedExternally): Promise<JsArray<Request>>
+    public open fun keys(request: Request, options: CacheQueryOptions = definedExternally): Promise<JsArray<Request>>
 
     /**
      * The keys() method of the Cache interface returns a Promise that resolves to an array of Request objects
@@ -1060,7 +1060,7 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
      */
-    open fun keys(request: String, options: CacheQueryOptions = definedExternally): Promise<JsArray<Request>>
+    public open fun keys(request: String, options: CacheQueryOptions = definedExternally): Promise<JsArray<Request>>
 
     /**
      * The keys() method of the Cache interface returns a Promise that resolves to an array of Request objects
@@ -1068,13 +1068,13 @@ public abstract external class Cache : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
      */
-    open fun keys(): Promise<JsArray<Request>>
+    public open fun keys(): Promise<JsArray<Request>>
 }
 
 public external interface CacheQueryOptions : JsAny {
-    var ignoreSearch: Boolean?
-    var ignoreMethod: Boolean?
-    var ignoreVary: Boolean?
+    public var ignoreSearch: Boolean?
+    public var ignoreMethod: Boolean?
+    public var ignoreVary: Boolean?
 }
 
 public fun CacheQueryOptions(ignoreSearch: Boolean? = null, ignoreMethod: Boolean? = null, ignoreVary: Boolean? = null): CacheQueryOptions = newJsObject<CacheQueryOptions>().apply {
@@ -1098,7 +1098,7 @@ public abstract external class CacheStorage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
      */
-    open fun match(request: Request, options: MultiCacheQueryOptions = definedExternally): Promise<Response?>
+    public open fun match(request: Request, options: MultiCacheQueryOptions = definedExternally): Promise<Response?>
 
     /**
      * The match() method of the CacheStorage interface checks if a given Request or URL string is a key for a stored
@@ -1107,7 +1107,7 @@ public abstract external class CacheStorage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
      */
-    open fun match(request: String, options: MultiCacheQueryOptions = definedExternally): Promise<Response?>
+    public open fun match(request: String, options: MultiCacheQueryOptions = definedExternally): Promise<Response?>
 
     /**
      * The has() method of the CacheStorage interface returns a Promise that resolves to true if a Cache object matches
@@ -1115,7 +1115,7 @@ public abstract external class CacheStorage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
      */
-    open fun has(cacheName: String): Promise<JsBoolean>
+    public open fun has(cacheName: String): Promise<JsBoolean>
 
     /**
      * The open() method of the CacheStorage interface returns a Promise that resolves to the Cache object matching the
@@ -1123,7 +1123,7 @@ public abstract external class CacheStorage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
      */
-    open fun open(cacheName: String): Promise<Cache>
+    public open fun open(cacheName: String): Promise<Cache>
 
     /**
      * The delete() method of the CacheStorage interface finds the Cache object matching the cacheName, and if found,
@@ -1132,7 +1132,7 @@ public abstract external class CacheStorage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
      */
-    open fun delete(cacheName: String): Promise<JsBoolean>
+    public open fun delete(cacheName: String): Promise<JsBoolean>
 
     /**
      * The keys() method of the CacheStorage interface returns a Promise that will resolve with an array containing
@@ -1141,11 +1141,11 @@ public abstract external class CacheStorage : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys)
      */
-    open fun keys(): Promise<JsArray<JsString>>
+    public open fun keys(): Promise<JsArray<JsString>>
 }
 
 public external interface MultiCacheQueryOptions : CacheQueryOptions {
-    var cacheName: String?
+    public var cacheName: String?
 }
 
 public fun MultiCacheQueryOptions(ignoreSearch: Boolean? = null, ignoreMethod: Boolean? = null, ignoreVary: Boolean? = null, cacheName: String? = null): MultiCacheQueryOptions = newJsObject<MultiCacheQueryOptions>().apply {

@@ -15,7 +15,7 @@ public external interface TexImageSource : ImageBitmapSource
 
 public external interface WebGLPowerPreference : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val WebGLPowerPreference.Companion.DEFAULT: WebGLPowerPreference get() = "default".toJsString().unsafeCast<WebGLPowerPreference>()
@@ -23,15 +23,15 @@ public inline val WebGLPowerPreference.Companion.LOW_POWER: WebGLPowerPreference
 public inline val WebGLPowerPreference.Companion.HIGH_PERFORMANCE: WebGLPowerPreference get() = "high-performance".toJsString().unsafeCast<WebGLPowerPreference>()
 
 public external interface WebGLContextAttributes : JsAny {
-    var alpha: Boolean?
-    var depth: Boolean?
-    var stencil: Boolean?
-    var antialias: Boolean?
-    var premultipliedAlpha: Boolean?
-    var preserveDrawingBuffer: Boolean?
-    var powerPreference: WebGLPowerPreference?
-    var failIfMajorPerformanceCaveat: Boolean?
-    var desynchronized: Boolean?
+    public var alpha: Boolean?
+    public var depth: Boolean?
+    public var stencil: Boolean?
+    public var antialias: Boolean?
+    public var premultipliedAlpha: Boolean?
+    public var preserveDrawingBuffer: Boolean?
+    public var powerPreference: WebGLPowerPreference?
+    public var failIfMajorPerformanceCaveat: Boolean?
+    public var desynchronized: Boolean?
 }
 
 public fun WebGLContextAttributes(alpha: Boolean? = null, depth: Boolean? = null, stencil: Boolean? = null, antialias: Boolean? = null, premultipliedAlpha: Boolean? = null, preserveDrawingBuffer: Boolean? = null, powerPreference: WebGLPowerPreference? = null, failIfMajorPerformanceCaveat: Boolean? = null, desynchronized: Boolean? = null): WebGLContextAttributes = newJsObject<WebGLContextAttributes>().apply {
@@ -52,7 +52,7 @@ public fun WebGLContextAttributes(alpha: Boolean? = null, depth: Boolean? = null
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLObject)
  */
 public abstract external class WebGLObject : JsAny {
-    open var label: String
+    public open var label: String
 }
 
 /**
@@ -124,7 +124,7 @@ public abstract external class WebGLActiveInfo : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLActiveInfo/size)
      */
-    open val size: Int
+    public open val size: Int
 
     /**
      * The read-only WebGLActiveInfo.type property represents the type of the requested data returned by calling the
@@ -132,7 +132,7 @@ public abstract external class WebGLActiveInfo : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLActiveInfo/type)
      */
-    open val type: Int
+    public open val type: Int
 
     /**
      * The read-only WebGLActiveInfo.name property represents the name of the requested data returned by calling the
@@ -140,7 +140,7 @@ public abstract external class WebGLActiveInfo : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLActiveInfo/name)
      */
-    open val name: String
+    public open val name: String
 }
 
 /**
@@ -156,7 +156,7 @@ public abstract external class WebGLShaderPrecisionFormat : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLShaderPrecisionFormat/rangeMin)
      */
-    open val rangeMin: Int
+    public open val rangeMin: Int
 
     /**
      * The read-only WebGLShaderPrecisionFormat.rangeMax property returns the base 2 log of the absolute value of the
@@ -164,7 +164,7 @@ public abstract external class WebGLShaderPrecisionFormat : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLShaderPrecisionFormat/rangeMax)
      */
-    open val rangeMax: Int
+    public open val rangeMax: Int
 
     /**
      * The read-only WebGLShaderPrecisionFormat.precision property returns the number of bits of precision that can be
@@ -172,7 +172,7 @@ public abstract external class WebGLShaderPrecisionFormat : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLShaderPrecisionFormat/precision)
      */
-    open val precision: Int
+    public open val precision: Int
 }
 
 public external interface WebGLRenderingContextBase : JsAny {
@@ -183,7 +183,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/canvas)
      */
-    val canvas: UnionHTMLCanvasElementOrOffscreenCanvas
+    public val canvas: UnionHTMLCanvasElementOrOffscreenCanvas
 
     /**
      * The read-only WebGLRenderingContext.drawingBufferWidth property represents the actual width of the current
@@ -192,7 +192,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferWidth)
      */
-    val drawingBufferWidth: Int
+    public val drawingBufferWidth: Int
 
     /**
      * The read-only WebGLRenderingContext.drawingBufferHeight property represents the actual height of the current
@@ -201,8 +201,8 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferHeight)
      */
-    val drawingBufferHeight: Int
-    val drawingBufferFormat: Int
+    public val drawingBufferHeight: Int
+    public val drawingBufferFormat: Int
 
     /**
      * The WebGLRenderingContext.drawingBufferColorSpace property specifies the color space of the WebGL drawing buffer.
@@ -210,7 +210,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferColorSpace)
      */
-    var drawingBufferColorSpace: PredefinedColorSpace
+    public var drawingBufferColorSpace: PredefinedColorSpace
 
     /**
      * The WebGLRenderingContext.unpackColorSpace property specifies the color space to convert to when importing
@@ -218,7 +218,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/unpackColorSpace)
      */
-    var unpackColorSpace: PredefinedColorSpace
+    public var unpackColorSpace: PredefinedColorSpace
 
     /**
      * The WebGLRenderingContext.getContextAttributes() method returns a WebGLContextAttributes object that contains the
@@ -226,7 +226,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getContextAttributes)
      */
-    fun getContextAttributes(): WebGLContextAttributes?
+    public fun getContextAttributes(): WebGLContextAttributes?
 
     /**
      * The WebGLRenderingContext.isContextLost() method returns a boolean value indicating whether or not the WebGL
@@ -234,29 +234,29 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isContextLost)
      */
-    fun isContextLost(): Boolean
+    public fun isContextLost(): Boolean
 
     /**
      * The WebGLRenderingContext.getSupportedExtensions() method returns a list of all the supported WebGL extensions.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getSupportedExtensions)
      */
-    fun getSupportedExtensions(): JsArray<JsString>?
+    public fun getSupportedExtensions(): JsArray<JsString>?
 
     /**
      * The WebGLRenderingContext.getExtension() method enables a WebGL extension.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getExtension)
      */
-    fun getExtension(name: String): JsAny?
-    fun drawingBufferStorage(sizedFormat: Int, width: Int, height: Int)
+    public fun getExtension(name: String): JsAny?
+    public fun drawingBufferStorage(sizedFormat: Int, width: Int, height: Int)
 
     /**
      * The WebGLRenderingContext.activeTexture() method of the WebGL API specifies which texture unit to make active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/activeTexture)
      */
-    fun activeTexture(texture: Int)
+    public fun activeTexture(texture: Int)
 
     /**
      * The WebGLRenderingContext.attachShader() method of the WebGL API attaches either a fragment or vertex WebGLShader
@@ -264,7 +264,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/attachShader)
      */
-    fun attachShader(program: WebGLProgram, shader: WebGLShader)
+    public fun attachShader(program: WebGLProgram, shader: WebGLShader)
 
     /**
      * The WebGLRenderingContext.bindAttribLocation() method of the WebGL API binds a generic vertex index to an
@@ -272,14 +272,14 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindAttribLocation)
      */
-    fun bindAttribLocation(program: WebGLProgram, index: Int, name: String)
+    public fun bindAttribLocation(program: WebGLProgram, index: Int, name: String)
 
     /**
      * The WebGLRenderingContext.bindBuffer() method of the WebGL API binds a given WebGLBuffer to a target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindBuffer)
      */
-    fun bindBuffer(target: Int, buffer: WebGLBuffer?)
+    public fun bindBuffer(target: Int, buffer: WebGLBuffer?)
 
     /**
      * The WebGLRenderingContext.bindFramebuffer() method of the WebGL API binds to the specified target the provided
@@ -288,7 +288,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindFramebuffer)
      */
-    fun bindFramebuffer(target: Int, framebuffer: WebGLFramebuffer?)
+    public fun bindFramebuffer(target: Int, framebuffer: WebGLFramebuffer?)
 
     /**
      * The WebGLRenderingContext.bindRenderbuffer() method of the WebGL API binds a given WebGLRenderbuffer to a target,
@@ -296,7 +296,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindRenderbuffer)
      */
-    fun bindRenderbuffer(target: Int, renderbuffer: WebGLRenderbuffer?)
+    public fun bindRenderbuffer(target: Int, renderbuffer: WebGLRenderbuffer?)
 
     /**
      * The WebGLRenderingContext.bindTexture() method of the WebGL API binds a given WebGLTexture to a target (binding
@@ -304,7 +304,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindTexture)
      */
-    fun bindTexture(target: Int, texture: WebGLTexture?)
+    public fun bindTexture(target: Int, texture: WebGLTexture?)
 
     /**
      * The WebGLRenderingContext.blendColor() method of the WebGL API is used to set the source and destination blending
@@ -312,7 +312,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendColor)
      */
-    fun blendColor(red: Float, green: Float, blue: Float, alpha: Float)
+    public fun blendColor(red: Float, green: Float, blue: Float, alpha: Float)
 
     /**
      * The WebGLRenderingContext.blendEquation() method of the WebGL API is used to set both the RGB blend equation and
@@ -320,7 +320,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendEquation)
      */
-    fun blendEquation(mode: Int)
+    public fun blendEquation(mode: Int)
 
     /**
      * The WebGLRenderingContext.blendEquationSeparate() method of the WebGL API is used to set the RGB blend equation
@@ -328,7 +328,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendEquationSeparate)
      */
-    fun blendEquationSeparate(modeRGB: Int, modeAlpha: Int)
+    public fun blendEquationSeparate(modeRGB: Int, modeAlpha: Int)
 
     /**
      * The WebGLRenderingContext.blendFunc() method of the WebGL API defines which function is used for blending pixel
@@ -336,7 +336,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendFunc)
      */
-    fun blendFunc(sfactor: Int, dfactor: Int)
+    public fun blendFunc(sfactor: Int, dfactor: Int)
 
     /**
      * The WebGLRenderingContext.blendFuncSeparate() method of the WebGL API defines which function is used for blending
@@ -344,7 +344,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendFuncSeparate)
      */
-    fun blendFuncSeparate(srcRGB: Int, dstRGB: Int, srcAlpha: Int, dstAlpha: Int)
+    public fun blendFuncSeparate(srcRGB: Int, dstRGB: Int, srcAlpha: Int, dstAlpha: Int)
 
     /**
      * The WebGLRenderingContext.checkFramebufferStatus() method of the WebGL API returns the completeness status of the
@@ -352,14 +352,14 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/checkFramebufferStatus)
      */
-    fun checkFramebufferStatus(target: Int): Int
+    public fun checkFramebufferStatus(target: Int): Int
 
     /**
      * The WebGLRenderingContext.clear() method of the WebGL API clears buffers to preset values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clear)
      */
-    fun clear(mask: Int)
+    public fun clear(mask: Int)
 
     /**
      * The WebGLRenderingContext.clearColor() method of the WebGL API specifies the color values used when clearing
@@ -367,14 +367,14 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearColor)
      */
-    fun clearColor(red: Float, green: Float, blue: Float, alpha: Float)
+    public fun clearColor(red: Float, green: Float, blue: Float, alpha: Float)
 
     /**
      * The WebGLRenderingContext.clearDepth() method of the WebGL API specifies the clear value for the depth buffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearDepth)
      */
-    fun clearDepth(depth: Float)
+    public fun clearDepth(depth: Float)
 
     /**
      * The WebGLRenderingContext.clearStencil() method of the WebGL API specifies the clear value for the stencil
@@ -382,7 +382,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearStencil)
      */
-    fun clearStencil(s: Int)
+    public fun clearStencil(s: Int)
 
     /**
      * The WebGLRenderingContext.colorMask() method of the WebGL API sets which color components to enable or to disable
@@ -390,7 +390,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/colorMask)
      */
-    fun colorMask(red: Boolean, green: Boolean, blue: Boolean, alpha: Boolean)
+    public fun colorMask(red: Boolean, green: Boolean, blue: Boolean, alpha: Boolean)
 
     /**
      * The WebGLRenderingContext.compileShader() method of the WebGL API compiles a GLSL shader into binary data so that
@@ -398,7 +398,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compileShader)
      */
-    fun compileShader(shader: WebGLShader)
+    public fun compileShader(shader: WebGLShader)
 
     /**
      * The copyTexImage2D() method of the WebGLRenderingContext interface of the WebGL API copies pixels from the
@@ -406,7 +406,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/copyTexImage2D)
      */
-    fun copyTexImage2D(target: Int, level: Int, internalformat: Int, x: Int, y: Int, width: Int, height: Int, border: Int)
+    public fun copyTexImage2D(target: Int, level: Int, internalformat: Int, x: Int, y: Int, width: Int, height: Int, border: Int)
 
     /**
      * The copyTexSubImage2D() method of the WebGLRenderingContext interface of the WebGL API copies pixels from the
@@ -414,7 +414,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/copyTexSubImage2D)
      */
-    fun copyTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, x: Int, y: Int, width: Int, height: Int)
+    public fun copyTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, x: Int, y: Int, width: Int, height: Int)
 
     /**
      * The WebGLRenderingContext.createBuffer() method of the WebGL API creates and initializes a WebGLBuffer storing
@@ -422,7 +422,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createBuffer)
      */
-    fun createBuffer(): WebGLBuffer
+    public fun createBuffer(): WebGLBuffer
 
     /**
      * The WebGLRenderingContext.createFramebuffer() method of the WebGL API creates and initializes a WebGLFramebuffer
@@ -430,14 +430,14 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createFramebuffer)
      */
-    fun createFramebuffer(): WebGLFramebuffer
+    public fun createFramebuffer(): WebGLFramebuffer
 
     /**
      * The WebGLRenderingContext.createProgram() method of the WebGL API creates and initializes a WebGLProgram object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createProgram)
      */
-    fun createProgram(): WebGLProgram
+    public fun createProgram(): WebGLProgram
 
     /**
      * The WebGLRenderingContext.createRenderbuffer() method of the WebGL API creates and initializes a
@@ -445,7 +445,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createRenderbuffer)
      */
-    fun createRenderbuffer(): WebGLRenderbuffer
+    public fun createRenderbuffer(): WebGLRenderbuffer
 
     /**
      * The WebGLRenderingContext method createShader() of the WebGL API creates a WebGLShader that can then be
@@ -453,14 +453,14 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createShader)
      */
-    fun createShader(type: Int): WebGLShader?
+    public fun createShader(type: Int): WebGLShader?
 
     /**
      * The WebGLRenderingContext.createTexture() method of the WebGL API creates and initializes a WebGLTexture object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createTexture)
      */
-    fun createTexture(): WebGLTexture
+    public fun createTexture(): WebGLTexture
 
     /**
      * The WebGLRenderingContext.cullFace() method of the WebGL API specifies whether or not front- and/or back-facing
@@ -468,7 +468,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/cullFace)
      */
-    fun cullFace(mode: Int)
+    public fun cullFace(mode: Int)
 
     /**
      * The WebGLRenderingContext.deleteBuffer() method of the WebGL API deletes a given WebGLBuffer. This method has no
@@ -477,7 +477,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteBuffer)
      */
-    fun deleteBuffer(buffer: WebGLBuffer?)
+    public fun deleteBuffer(buffer: WebGLBuffer?)
 
     /**
      * The WebGLRenderingContext.deleteFramebuffer() method of the WebGL API deletes a given WebGLFramebuffer object.
@@ -485,7 +485,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteFramebuffer)
      */
-    fun deleteFramebuffer(framebuffer: WebGLFramebuffer?)
+    public fun deleteFramebuffer(framebuffer: WebGLFramebuffer?)
 
     /**
      * The WebGLRenderingContext.deleteProgram() method of the WebGL API deletes a given WebGLProgram object. This
@@ -493,7 +493,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteProgram)
      */
-    fun deleteProgram(program: WebGLProgram?)
+    public fun deleteProgram(program: WebGLProgram?)
 
     /**
      * The WebGLRenderingContext.deleteRenderbuffer() method of the WebGL API deletes a given WebGLRenderbuffer object.
@@ -501,7 +501,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteRenderbuffer)
      */
-    fun deleteRenderbuffer(renderbuffer: WebGLRenderbuffer?)
+    public fun deleteRenderbuffer(renderbuffer: WebGLRenderbuffer?)
 
     /**
      * The WebGLRenderingContext.deleteShader() method of the WebGL API marks a given WebGLShader object for deletion.
@@ -511,7 +511,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteShader)
      */
-    fun deleteShader(shader: WebGLShader?)
+    public fun deleteShader(shader: WebGLShader?)
 
     /**
      * The WebGLRenderingContext.deleteTexture() method of the WebGL API deletes a given WebGLTexture object. This
@@ -519,7 +519,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteTexture)
      */
-    fun deleteTexture(texture: WebGLTexture?)
+    public fun deleteTexture(texture: WebGLTexture?)
 
     /**
      * The WebGLRenderingContext.depthFunc() method of the WebGL API specifies a function that compares incoming pixel
@@ -527,7 +527,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthFunc)
      */
-    fun depthFunc(func: Int)
+    public fun depthFunc(func: Int)
 
     /**
      * The WebGLRenderingContext.depthMask() method of the WebGL API sets whether writing into the depth buffer is
@@ -535,7 +535,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthMask)
      */
-    fun depthMask(flag: Boolean)
+    public fun depthMask(flag: Boolean)
 
     /**
      * The WebGLRenderingContext.depthRange() method of the WebGL API specifies the depth range mapping from normalized
@@ -543,7 +543,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthRange)
      */
-    fun depthRange(zNear: Float, zFar: Float)
+    public fun depthRange(zNear: Float, zFar: Float)
 
     /**
      * The WebGLRenderingContext.detachShader() method of the WebGL API detaches a previously attached WebGLShader from
@@ -551,7 +551,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/detachShader)
      */
-    fun detachShader(program: WebGLProgram, shader: WebGLShader)
+    public fun detachShader(program: WebGLProgram, shader: WebGLShader)
 
     /**
      * The WebGLRenderingContext.disable() method of the WebGL API disables specific WebGL capabilities for this
@@ -559,7 +559,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/disable)
      */
-    fun disable(cap: Int)
+    public fun disable(cap: Int)
 
     /**
      * The WebGLRenderingContext.disableVertexAttribArray() method of the WebGL API turns the generic vertex attribute
@@ -567,28 +567,28 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/disableVertexAttribArray)
      */
-    fun disableVertexAttribArray(index: Int)
+    public fun disableVertexAttribArray(index: Int)
 
     /**
      * The WebGLRenderingContext.drawArrays() method of the WebGL API renders primitives from array data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawArrays)
      */
-    fun drawArrays(mode: Int, first: Int, count: Int)
+    public fun drawArrays(mode: Int, first: Int, count: Int)
 
     /**
      * The WebGLRenderingContext.drawElements() method of the WebGL API renders primitives from array data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawElements)
      */
-    fun drawElements(mode: Int, count: Int, type: Int, offset: Double)
+    public fun drawElements(mode: Int, count: Int, type: Int, offset: Double)
 
     /**
      * The WebGLRenderingContext.enable() method of the WebGL API enables specific WebGL capabilities for this context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/enable)
      */
-    fun enable(cap: Int)
+    public fun enable(cap: Int)
 
     /**
      * The WebGLRenderingContext method enableVertexAttribArray(), part of the WebGL API, turns on the generic vertex
@@ -596,7 +596,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/enableVertexAttribArray)
      */
-    fun enableVertexAttribArray(index: Int)
+    public fun enableVertexAttribArray(index: Int)
 
     /**
      * The WebGLRenderingContext.finish() method of the WebGL API blocks execution until all previously called commands
@@ -604,7 +604,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/finish)
      */
-    fun finish()
+    public fun finish()
 
     /**
      * The WebGLRenderingContext.flush() method of the WebGL API empties different buffer commands, causing all commands
@@ -612,7 +612,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/flush)
      */
-    fun flush()
+    public fun flush()
 
     /**
      * The WebGLRenderingContext.framebufferRenderbuffer() method of the WebGL API attaches a WebGLRenderbuffer object
@@ -620,7 +620,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/framebufferRenderbuffer)
      */
-    fun framebufferRenderbuffer(target: Int, attachment: Int, renderbuffertarget: Int, renderbuffer: WebGLRenderbuffer?)
+    public fun framebufferRenderbuffer(target: Int, attachment: Int, renderbuffertarget: Int, renderbuffer: WebGLRenderbuffer?)
 
     /**
      * The WebGLRenderingContext.framebufferTexture2D() method of the WebGL API attaches a texture to a
@@ -628,7 +628,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/framebufferTexture2D)
      */
-    fun framebufferTexture2D(target: Int, attachment: Int, textarget: Int, texture: WebGLTexture?, level: Int)
+    public fun framebufferTexture2D(target: Int, attachment: Int, textarget: Int, texture: WebGLTexture?, level: Int)
 
     /**
      * The WebGLRenderingContext.frontFace() method of the WebGL API specifies whether polygons are front- or
@@ -636,7 +636,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/frontFace)
      */
-    fun frontFace(mode: Int)
+    public fun frontFace(mode: Int)
 
     /**
      * The WebGLRenderingContext.generateMipmap() method of the WebGL API generates a set of mipmaps for a WebGLTexture
@@ -644,7 +644,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/generateMipmap)
      */
-    fun generateMipmap(target: Int)
+    public fun generateMipmap(target: Int)
 
     /**
      * The WebGLRenderingContext.getActiveAttrib() method of the WebGL API returns a WebGLActiveInfo object containing
@@ -653,7 +653,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getActiveAttrib)
      */
-    fun getActiveAttrib(program: WebGLProgram, index: Int): WebGLActiveInfo?
+    public fun getActiveAttrib(program: WebGLProgram, index: Int): WebGLActiveInfo?
 
     /**
      * The WebGLRenderingContext.getActiveUniform() method of the WebGL API returns a WebGLActiveInfo object containing
@@ -662,7 +662,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getActiveUniform)
      */
-    fun getActiveUniform(program: WebGLProgram, index: Int): WebGLActiveInfo?
+    public fun getActiveUniform(program: WebGLProgram, index: Int): WebGLActiveInfo?
 
     /**
      * The WebGLRenderingContext.getAttachedShaders() method of the WebGL API returns a list of WebGLShader objects
@@ -670,7 +670,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getAttachedShaders)
      */
-    fun getAttachedShaders(program: WebGLProgram): JsArray<WebGLShader>?
+    public fun getAttachedShaders(program: WebGLProgram): JsArray<WebGLShader>?
 
     /**
      * The WebGLRenderingContext.getAttribLocation() method of the WebGL API returns the location of an attribute
@@ -678,28 +678,28 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getAttribLocation)
      */
-    fun getAttribLocation(program: WebGLProgram, name: String): Int
+    public fun getAttribLocation(program: WebGLProgram, name: String): Int
 
     /**
      * The WebGLRenderingContext.getBufferParameter() method of the WebGL API returns information about the buffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getBufferParameter)
      */
-    fun getBufferParameter(target: Int, pname: Int): JsAny?
+    public fun getBufferParameter(target: Int, pname: Int): JsAny?
 
     /**
      * The WebGLRenderingContext.getParameter() method of the WebGL API returns a value for the passed parameter name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getParameter)
      */
-    fun getParameter(pname: Int): JsAny?
+    public fun getParameter(pname: Int): JsAny?
 
     /**
      * The WebGLRenderingContext.getError() method of the WebGL API returns error information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getError)
      */
-    fun getError(): Int
+    public fun getError(): Int
 
     /**
      * The WebGLRenderingContext.getFramebufferAttachmentParameter() method of the WebGL API returns information about a
@@ -708,7 +708,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      * [MDN
      * Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter)
      */
-    fun getFramebufferAttachmentParameter(target: Int, attachment: Int, pname: Int): JsAny?
+    public fun getFramebufferAttachmentParameter(target: Int, attachment: Int, pname: Int): JsAny?
 
     /**
      * The WebGLRenderingContext.getProgramParameter() method of the WebGL API returns information about the given
@@ -716,7 +716,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getProgramParameter)
      */
-    fun getProgramParameter(program: WebGLProgram, pname: Int): JsAny?
+    public fun getProgramParameter(program: WebGLProgram, pname: Int): JsAny?
 
     /**
      * The WebGLRenderingContext.getProgramInfoLog returns the information log for the specified WebGLProgram object. It
@@ -724,7 +724,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getProgramInfoLog)
      */
-    fun getProgramInfoLog(program: WebGLProgram): String?
+    public fun getProgramInfoLog(program: WebGLProgram): String?
 
     /**
      * The WebGLRenderingContext.getRenderbufferParameter() method of the WebGL API returns information about the
@@ -732,7 +732,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getRenderbufferParameter)
      */
-    fun getRenderbufferParameter(target: Int, pname: Int): JsAny?
+    public fun getRenderbufferParameter(target: Int, pname: Int): JsAny?
 
     /**
      * The WebGLRenderingContext.getShaderParameter() method of the WebGL API returns information about the given
@@ -740,7 +740,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderParameter)
      */
-    fun getShaderParameter(shader: WebGLShader, pname: Int): JsAny?
+    public fun getShaderParameter(shader: WebGLShader, pname: Int): JsAny?
 
     /**
      * The WebGLRenderingContext.getShaderPrecisionFormat() method of the WebGL API returns a new
@@ -748,7 +748,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderPrecisionFormat)
      */
-    fun getShaderPrecisionFormat(shadertype: Int, precisiontype: Int): WebGLShaderPrecisionFormat?
+    public fun getShaderPrecisionFormat(shadertype: Int, precisiontype: Int): WebGLShaderPrecisionFormat?
 
     /**
      * The WebGLRenderingContext.getShaderInfoLog returns the information log for the specified WebGLShader object. It
@@ -756,7 +756,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderInfoLog)
      */
-    fun getShaderInfoLog(shader: WebGLShader): String?
+    public fun getShaderInfoLog(shader: WebGLShader): String?
 
     /**
      * The WebGLRenderingContext.getShaderSource() method of the WebGL API returns the source code of a WebGLShader as a
@@ -764,14 +764,14 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderSource)
      */
-    fun getShaderSource(shader: WebGLShader): String?
+    public fun getShaderSource(shader: WebGLShader): String?
 
     /**
      * The WebGLRenderingContext.getTexParameter() method of the WebGL API returns information about the given texture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getTexParameter)
      */
-    fun getTexParameter(target: Int, pname: Int): JsAny?
+    public fun getTexParameter(target: Int, pname: Int): JsAny?
 
     /**
      * The WebGLRenderingContext.getUniform() method of the WebGL API returns the value of a uniform variable at a given
@@ -779,7 +779,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getUniform)
      */
-    fun getUniform(program: WebGLProgram, location: WebGLUniformLocation): JsAny?
+    public fun getUniform(program: WebGLProgram, location: WebGLUniformLocation): JsAny?
 
     /**
      * Part of the WebGL API, the WebGLRenderingContext method getUniformLocation() returns the location of a specific
@@ -787,7 +787,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getUniformLocation)
      */
-    fun getUniformLocation(program: WebGLProgram, name: String): WebGLUniformLocation?
+    public fun getUniformLocation(program: WebGLProgram, name: String): WebGLUniformLocation?
 
     /**
      * The WebGLRenderingContext.getVertexAttrib() method of the WebGL API returns information about a vertex attribute
@@ -795,7 +795,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getVertexAttrib)
      */
-    fun getVertexAttrib(index: Int, pname: Int): JsAny?
+    public fun getVertexAttrib(index: Int, pname: Int): JsAny?
 
     /**
      * The WebGLRenderingContext.getVertexAttribOffset() method of the WebGL API returns the address of a specified
@@ -803,7 +803,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getVertexAttribOffset)
      */
-    fun getVertexAttribOffset(index: Int, pname: Int): Double
+    public fun getVertexAttribOffset(index: Int, pname: Int): Double
 
     /**
      * The WebGLRenderingContext.hint() method of the WebGL API specifies hints for certain behaviors. The
@@ -811,7 +811,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/hint)
      */
-    fun hint(target: Int, mode: Int)
+    public fun hint(target: Int, mode: Int)
 
     /**
      * The WebGLRenderingContext.isBuffer() method of the WebGL API returns true if the passed WebGLBuffer is valid and
@@ -819,7 +819,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isBuffer)
      */
-    fun isBuffer(buffer: WebGLBuffer?): Boolean
+    public fun isBuffer(buffer: WebGLBuffer?): Boolean
 
     /**
      * The WebGLRenderingContext.isEnabled() method of the WebGL API tests whether a specific WebGL capability is
@@ -827,7 +827,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isEnabled)
      */
-    fun isEnabled(cap: Int): Boolean
+    public fun isEnabled(cap: Int): Boolean
 
     /**
      * The WebGLRenderingContext.isFramebuffer() method of the WebGL API returns true if the passed WebGLFramebuffer is
@@ -835,7 +835,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isFramebuffer)
      */
-    fun isFramebuffer(framebuffer: WebGLFramebuffer?): Boolean
+    public fun isFramebuffer(framebuffer: WebGLFramebuffer?): Boolean
 
     /**
      * The WebGLRenderingContext.isProgram() method of the WebGL API returns true if the passed WebGLProgram is valid,
@@ -843,7 +843,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isProgram)
      */
-    fun isProgram(program: WebGLProgram?): Boolean
+    public fun isProgram(program: WebGLProgram?): Boolean
 
     /**
      * The WebGLRenderingContext.isRenderbuffer() method of the WebGL API returns true if the passed WebGLRenderbuffer
@@ -851,7 +851,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isRenderbuffer)
      */
-    fun isRenderbuffer(renderbuffer: WebGLRenderbuffer?): Boolean
+    public fun isRenderbuffer(renderbuffer: WebGLRenderbuffer?): Boolean
 
     /**
      * The WebGLRenderingContext.isShader() method of the WebGL API returns true if the passed WebGLShader is valid,
@@ -859,7 +859,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isShader)
      */
-    fun isShader(shader: WebGLShader?): Boolean
+    public fun isShader(shader: WebGLShader?): Boolean
 
     /**
      * The WebGLRenderingContext.isTexture() method of the WebGL API returns true if the passed WebGLTexture is valid
@@ -867,14 +867,14 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isTexture)
      */
-    fun isTexture(texture: WebGLTexture?): Boolean
+    public fun isTexture(texture: WebGLTexture?): Boolean
 
     /**
      * The WebGLRenderingContext.lineWidth() method of the WebGL API sets the line width of rasterized lines.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/lineWidth)
      */
-    fun lineWidth(width: Float)
+    public fun lineWidth(width: Float)
 
     /**
      * The WebGLRenderingContext interface's linkProgram() method links a given WebGLProgram, completing the process of
@@ -882,14 +882,14 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/linkProgram)
      */
-    fun linkProgram(program: WebGLProgram)
+    public fun linkProgram(program: WebGLProgram)
 
     /**
      * The WebGLRenderingContext.pixelStorei() method of the WebGL API specifies the pixel storage modes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/pixelStorei)
      */
-    fun pixelStorei(pname: Int, param: Int)
+    public fun pixelStorei(pname: Int, param: Int)
 
     /**
      * The WebGLRenderingContext.polygonOffset() method of the WebGL API specifies the scale factors and units to
@@ -897,7 +897,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/polygonOffset)
      */
-    fun polygonOffset(factor: Float, units: Float)
+    public fun polygonOffset(factor: Float, units: Float)
 
     /**
      * The WebGLRenderingContext.renderbufferStorage() method of the WebGL API creates and initializes a renderbuffer
@@ -905,7 +905,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/renderbufferStorage)
      */
-    fun renderbufferStorage(target: Int, internalformat: Int, width: Int, height: Int)
+    public fun renderbufferStorage(target: Int, internalformat: Int, width: Int, height: Int)
 
     /**
      * The WebGLRenderingContext.sampleCoverage() method of the WebGL API specifies multi-sample coverage parameters for
@@ -913,7 +913,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/sampleCoverage)
      */
-    fun sampleCoverage(value: Float, invert: Boolean)
+    public fun sampleCoverage(value: Float, invert: Boolean)
 
     /**
      * The WebGLRenderingContext.scissor() method of the WebGL API sets a scissor box, which limits the drawing to a
@@ -921,14 +921,14 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/scissor)
      */
-    fun scissor(x: Int, y: Int, width: Int, height: Int)
+    public fun scissor(x: Int, y: Int, width: Int, height: Int)
 
     /**
      * The WebGLRenderingContext.shaderSource() method of the WebGL API sets the source code of a WebGLShader.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/shaderSource)
      */
-    fun shaderSource(shader: WebGLShader, source: String)
+    public fun shaderSource(shader: WebGLShader, source: String)
 
     /**
      * The WebGLRenderingContext.stencilFunc() method of the WebGL API sets the front and back function and reference
@@ -936,7 +936,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilFunc)
      */
-    fun stencilFunc(func: Int, ref: Int, mask: Int)
+    public fun stencilFunc(func: Int, ref: Int, mask: Int)
 
     /**
      * The WebGLRenderingContext.stencilFuncSeparate() method of the WebGL API sets the front and/or back function and
@@ -944,7 +944,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilFuncSeparate)
      */
-    fun stencilFuncSeparate(face: Int, func: Int, ref: Int, mask: Int)
+    public fun stencilFuncSeparate(face: Int, func: Int, ref: Int, mask: Int)
 
     /**
      * The WebGLRenderingContext.stencilMask() method of the WebGL API controls enabling and disabling of both the front
@@ -952,7 +952,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilMask)
      */
-    fun stencilMask(mask: Int)
+    public fun stencilMask(mask: Int)
 
     /**
      * The WebGLRenderingContext.stencilMaskSeparate() method of the WebGL API controls enabling and disabling of front
@@ -960,7 +960,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilMaskSeparate)
      */
-    fun stencilMaskSeparate(face: Int, mask: Int)
+    public fun stencilMaskSeparate(face: Int, mask: Int)
 
     /**
      * The WebGLRenderingContext.stencilOp() method of the WebGL API sets both the front and back-facing stencil test
@@ -968,7 +968,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilOp)
      */
-    fun stencilOp(fail: Int, zfail: Int, zpass: Int)
+    public fun stencilOp(fail: Int, zfail: Int, zpass: Int)
 
     /**
      * The WebGLRenderingContext.stencilOpSeparate() method of the WebGL API sets the front and/or back-facing stencil
@@ -976,21 +976,21 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilOpSeparate)
      */
-    fun stencilOpSeparate(face: Int, fail: Int, zfail: Int, zpass: Int)
+    public fun stencilOpSeparate(face: Int, fail: Int, zfail: Int, zpass: Int)
 
     /**
      * The WebGLRenderingContext.texParameter\[fi\]() methods of the WebGL API set texture parameters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texParameter)
      */
-    fun texParameterf(target: Int, pname: Int, param: Float)
+    public fun texParameterf(target: Int, pname: Int, param: Float)
 
     /**
      * The WebGLRenderingContext.texParameter\[fi\]() methods of the WebGL API set texture parameters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texParameter)
      */
-    fun texParameteri(target: Int, pname: Int, param: Int)
+    public fun texParameteri(target: Int, pname: Int, param: Int)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1000,7 +1000,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform1f(location: WebGLUniformLocation?, x: Float)
+    public fun uniform1f(location: WebGLUniformLocation?, x: Float)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1010,7 +1010,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform2f(location: WebGLUniformLocation?, x: Float, y: Float)
+    public fun uniform2f(location: WebGLUniformLocation?, x: Float, y: Float)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1020,7 +1020,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform3f(location: WebGLUniformLocation?, x: Float, y: Float, z: Float)
+    public fun uniform3f(location: WebGLUniformLocation?, x: Float, y: Float, z: Float)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1030,7 +1030,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform4f(location: WebGLUniformLocation?, x: Float, y: Float, z: Float, w: Float)
+    public fun uniform4f(location: WebGLUniformLocation?, x: Float, y: Float, z: Float, w: Float)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1040,7 +1040,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform1i(location: WebGLUniformLocation?, x: Int)
+    public fun uniform1i(location: WebGLUniformLocation?, x: Int)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1050,7 +1050,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform2i(location: WebGLUniformLocation?, x: Int, y: Int)
+    public fun uniform2i(location: WebGLUniformLocation?, x: Int, y: Int)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1060,7 +1060,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform3i(location: WebGLUniformLocation?, x: Int, y: Int, z: Int)
+    public fun uniform3i(location: WebGLUniformLocation?, x: Int, y: Int, z: Int)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1070,7 +1070,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform4i(location: WebGLUniformLocation?, x: Int, y: Int, z: Int, w: Int)
+    public fun uniform4i(location: WebGLUniformLocation?, x: Int, y: Int, z: Int, w: Int)
 
     /**
      * The WebGLRenderingContext.useProgram() method of the WebGL API sets the specified WebGLProgram as part of the
@@ -1078,7 +1078,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/useProgram)
      */
-    fun useProgram(program: WebGLProgram?)
+    public fun useProgram(program: WebGLProgram?)
 
     /**
      * The WebGLRenderingContext.validateProgram() method of the WebGL API validates a WebGLProgram. It checks if it is
@@ -1086,7 +1086,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/validateProgram)
      */
-    fun validateProgram(program: WebGLProgram)
+    public fun validateProgram(program: WebGLProgram)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1094,7 +1094,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib1f(index: Int, x: Float)
+    public fun vertexAttrib1f(index: Int, x: Float)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1102,7 +1102,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib2f(index: Int, x: Float, y: Float)
+    public fun vertexAttrib2f(index: Int, x: Float, y: Float)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1110,7 +1110,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib3f(index: Int, x: Float, y: Float, z: Float)
+    public fun vertexAttrib3f(index: Int, x: Float, y: Float, z: Float)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1118,7 +1118,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib4f(index: Int, x: Float, y: Float, z: Float, w: Float)
+    public fun vertexAttrib4f(index: Int, x: Float, y: Float, z: Float, w: Float)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1126,7 +1126,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib1fv(index: Int, values: Float32Array)
+    public fun vertexAttrib1fv(index: Int, values: Float32Array)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1134,7 +1134,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib1fv(index: Int, values: JsArray<JsNumber>)
+    public fun vertexAttrib1fv(index: Int, values: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1142,7 +1142,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib2fv(index: Int, values: Float32Array)
+    public fun vertexAttrib2fv(index: Int, values: Float32Array)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1150,7 +1150,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib2fv(index: Int, values: JsArray<JsNumber>)
+    public fun vertexAttrib2fv(index: Int, values: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1158,7 +1158,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib3fv(index: Int, values: Float32Array)
+    public fun vertexAttrib3fv(index: Int, values: Float32Array)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1166,7 +1166,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib3fv(index: Int, values: JsArray<JsNumber>)
+    public fun vertexAttrib3fv(index: Int, values: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1174,7 +1174,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib4fv(index: Int, values: Float32Array)
+    public fun vertexAttrib4fv(index: Int, values: Float32Array)
 
     /**
      * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
@@ -1182,7 +1182,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
      */
-    fun vertexAttrib4fv(index: Int, values: JsArray<JsNumber>)
+    public fun vertexAttrib4fv(index: Int, values: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.vertexAttribPointer() method of the WebGL API binds the buffer currently bound to
@@ -1190,7 +1190,7 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttribPointer)
      */
-    fun vertexAttribPointer(index: Int, size: Int, type: Int, normalized: Boolean, stride: Int, offset: Double)
+    public fun vertexAttribPointer(index: Int, size: Int, type: Int, normalized: Boolean, stride: Int, offset: Double)
 
     /**
      * The WebGLRenderingContext.viewport() method of the WebGL API sets the viewport, which specifies the affine
@@ -1198,10 +1198,10 @@ public external interface WebGLRenderingContextBase : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/viewport)
      */
-    fun viewport(x: Int, y: Int, width: Int, height: Int)
+    public fun viewport(x: Int, y: Int, width: Int, height: Int)
 
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val WebGLRenderingContextBase.Companion.DEPTH_BUFFER_BIT: Int get() = 0x00000100
@@ -1509,7 +1509,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bufferData)
      */
-    fun bufferData(target: Int, size: Double, usage: Int)
+    public fun bufferData(target: Int, size: Double, usage: Int)
 
     /**
      * The WebGLRenderingContext.bufferData() method of the WebGL API initializes and creates the buffer object's data
@@ -1517,7 +1517,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bufferData)
      */
-    fun bufferData(target: Int, data: BufferDataSource?, usage: Int)
+    public fun bufferData(target: Int, data: BufferDataSource?, usage: Int)
 
     /**
      * The WebGLRenderingContext.bufferSubData() method of the WebGL API updates a subset of a buffer object's data
@@ -1525,7 +1525,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bufferSubData)
      */
-    fun bufferSubData(target: Int, offset: Double, data: BufferDataSource)
+    public fun bufferSubData(target: Int, offset: Double, data: BufferDataSource)
 
     /**
      * The compressedTexImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a
@@ -1533,7 +1533,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexImage2D)
      */
-    fun compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, data: ArrayBufferView)
+    public fun compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, data: ArrayBufferView)
 
     /**
      * The compressedTexSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a
@@ -1541,7 +1541,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexSubImage2D)
      */
-    fun compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, data: ArrayBufferView)
+    public fun compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, data: ArrayBufferView)
 
     /**
      * The WebGLRenderingContext.readPixels() method of the WebGL API reads a block of pixels from a specified rectangle
@@ -1549,7 +1549,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/readPixels)
      */
-    fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?)
+    public fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?)
 
     /**
      * The texImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1557,7 +1557,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
      */
-    fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, pixels: ArrayBufferView?)
+    public fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, pixels: ArrayBufferView?)
 
     /**
      * The texImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1565,7 +1565,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
      */
-    fun texImage2D(target: Int, level: Int, internalformat: Int, format: Int, type: Int, source: TexImageSource)
+    public fun texImage2D(target: Int, level: Int, internalformat: Int, format: Int, type: Int, source: TexImageSource)
 
     /**
      * The texSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1573,7 +1573,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
      */
-    fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?)
+    public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?)
 
     /**
      * The texSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
@@ -1581,7 +1581,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
      */
-    fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, type: Int, source: TexImageSource)
+    public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, type: Int, source: TexImageSource)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1591,7 +1591,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform1fv(location: WebGLUniformLocation?, v: Float32Array)
+    public fun uniform1fv(location: WebGLUniformLocation?, v: Float32Array)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1601,7 +1601,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform1fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+    public fun uniform1fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1611,7 +1611,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform2fv(location: WebGLUniformLocation?, v: Float32Array)
+    public fun uniform2fv(location: WebGLUniformLocation?, v: Float32Array)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1621,7 +1621,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform2fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+    public fun uniform2fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1631,7 +1631,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform3fv(location: WebGLUniformLocation?, v: Float32Array)
+    public fun uniform3fv(location: WebGLUniformLocation?, v: Float32Array)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1641,7 +1641,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform3fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+    public fun uniform3fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1651,7 +1651,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform4fv(location: WebGLUniformLocation?, v: Float32Array)
+    public fun uniform4fv(location: WebGLUniformLocation?, v: Float32Array)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1661,7 +1661,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform4fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+    public fun uniform4fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1671,7 +1671,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform1iv(location: WebGLUniformLocation?, v: Int32Array)
+    public fun uniform1iv(location: WebGLUniformLocation?, v: Int32Array)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1681,7 +1681,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform1iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+    public fun uniform1iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1691,7 +1691,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform2iv(location: WebGLUniformLocation?, v: Int32Array)
+    public fun uniform2iv(location: WebGLUniformLocation?, v: Int32Array)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1701,7 +1701,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform2iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+    public fun uniform2iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1711,7 +1711,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform3iv(location: WebGLUniformLocation?, v: Int32Array)
+    public fun uniform3iv(location: WebGLUniformLocation?, v: Int32Array)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1721,7 +1721,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform3iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+    public fun uniform3iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1731,7 +1731,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform4iv(location: WebGLUniformLocation?, v: Int32Array)
+    public fun uniform4iv(location: WebGLUniformLocation?, v: Int32Array)
 
     /**
      * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
@@ -1741,7 +1741,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
      */
-    fun uniform4iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+    public fun uniform4iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
@@ -1749,7 +1749,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
      */
-    fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, value: Float32Array)
+    public fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, value: Float32Array)
 
     /**
      * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
@@ -1757,7 +1757,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
      */
-    fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, value: JsArray<JsNumber>)
+    public fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, value: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
@@ -1765,7 +1765,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
      */
-    fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, value: Float32Array)
+    public fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, value: Float32Array)
 
     /**
      * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
@@ -1773,7 +1773,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
      */
-    fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, value: JsArray<JsNumber>)
+    public fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, value: JsArray<JsNumber>)
 
     /**
      * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
@@ -1781,7 +1781,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
      */
-    fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, value: Float32Array)
+    public fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, value: Float32Array)
 
     /**
      * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
@@ -1789,7 +1789,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
      */
-    fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, value: JsArray<JsNumber>)
+    public fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, value: JsArray<JsNumber>)
 }
 
 /**
@@ -1800,304 +1800,304 @@ public external interface WebGLRenderingContextOverloads : JsAny {
  */
 public abstract external class WebGLRenderingContext : WebGLRenderingContextBase, WebGLRenderingContextOverloads, RenderingContext, OffscreenRenderingContext {
 
-    companion object {
-        val DEPTH_BUFFER_BIT: Int
-        val STENCIL_BUFFER_BIT: Int
-        val COLOR_BUFFER_BIT: Int
-        val POINTS: Int
-        val LINES: Int
-        val LINE_LOOP: Int
-        val LINE_STRIP: Int
-        val TRIANGLES: Int
-        val TRIANGLE_STRIP: Int
-        val TRIANGLE_FAN: Int
-        val ZERO: Int
-        val ONE: Int
-        val SRC_COLOR: Int
-        val ONE_MINUS_SRC_COLOR: Int
-        val SRC_ALPHA: Int
-        val ONE_MINUS_SRC_ALPHA: Int
-        val DST_ALPHA: Int
-        val ONE_MINUS_DST_ALPHA: Int
-        val DST_COLOR: Int
-        val ONE_MINUS_DST_COLOR: Int
-        val SRC_ALPHA_SATURATE: Int
-        val FUNC_ADD: Int
-        val BLEND_EQUATION: Int
-        val BLEND_EQUATION_RGB: Int
-        val BLEND_EQUATION_ALPHA: Int
-        val FUNC_SUBTRACT: Int
-        val FUNC_REVERSE_SUBTRACT: Int
-        val BLEND_DST_RGB: Int
-        val BLEND_SRC_RGB: Int
-        val BLEND_DST_ALPHA: Int
-        val BLEND_SRC_ALPHA: Int
-        val CONSTANT_COLOR: Int
-        val ONE_MINUS_CONSTANT_COLOR: Int
-        val CONSTANT_ALPHA: Int
-        val ONE_MINUS_CONSTANT_ALPHA: Int
-        val BLEND_COLOR: Int
-        val ARRAY_BUFFER: Int
-        val ELEMENT_ARRAY_BUFFER: Int
-        val ARRAY_BUFFER_BINDING: Int
-        val ELEMENT_ARRAY_BUFFER_BINDING: Int
-        val STREAM_DRAW: Int
-        val STATIC_DRAW: Int
-        val DYNAMIC_DRAW: Int
-        val BUFFER_SIZE: Int
-        val BUFFER_USAGE: Int
-        val CURRENT_VERTEX_ATTRIB: Int
-        val FRONT: Int
-        val BACK: Int
-        val FRONT_AND_BACK: Int
-        val CULL_FACE: Int
-        val BLEND: Int
-        val DITHER: Int
-        val STENCIL_TEST: Int
-        val DEPTH_TEST: Int
-        val SCISSOR_TEST: Int
-        val POLYGON_OFFSET_FILL: Int
-        val SAMPLE_ALPHA_TO_COVERAGE: Int
-        val SAMPLE_COVERAGE: Int
-        val NO_ERROR: Int
-        val INVALID_ENUM: Int
-        val INVALID_VALUE: Int
-        val INVALID_OPERATION: Int
-        val OUT_OF_MEMORY: Int
-        val CW: Int
-        val CCW: Int
-        val LINE_WIDTH: Int
-        val ALIASED_POINT_SIZE_RANGE: Int
-        val ALIASED_LINE_WIDTH_RANGE: Int
-        val CULL_FACE_MODE: Int
-        val FRONT_FACE: Int
-        val DEPTH_RANGE: Int
-        val DEPTH_WRITEMASK: Int
-        val DEPTH_CLEAR_VALUE: Int
-        val DEPTH_FUNC: Int
-        val STENCIL_CLEAR_VALUE: Int
-        val STENCIL_FUNC: Int
-        val STENCIL_FAIL: Int
-        val STENCIL_PASS_DEPTH_FAIL: Int
-        val STENCIL_PASS_DEPTH_PASS: Int
-        val STENCIL_REF: Int
-        val STENCIL_VALUE_MASK: Int
-        val STENCIL_WRITEMASK: Int
-        val STENCIL_BACK_FUNC: Int
-        val STENCIL_BACK_FAIL: Int
-        val STENCIL_BACK_PASS_DEPTH_FAIL: Int
-        val STENCIL_BACK_PASS_DEPTH_PASS: Int
-        val STENCIL_BACK_REF: Int
-        val STENCIL_BACK_VALUE_MASK: Int
-        val STENCIL_BACK_WRITEMASK: Int
-        val VIEWPORT: Int
-        val SCISSOR_BOX: Int
-        val COLOR_CLEAR_VALUE: Int
-        val COLOR_WRITEMASK: Int
-        val UNPACK_ALIGNMENT: Int
-        val PACK_ALIGNMENT: Int
-        val MAX_TEXTURE_SIZE: Int
-        val MAX_VIEWPORT_DIMS: Int
-        val SUBPIXEL_BITS: Int
-        val RED_BITS: Int
-        val GREEN_BITS: Int
-        val BLUE_BITS: Int
-        val ALPHA_BITS: Int
-        val DEPTH_BITS: Int
-        val STENCIL_BITS: Int
-        val POLYGON_OFFSET_UNITS: Int
-        val POLYGON_OFFSET_FACTOR: Int
-        val TEXTURE_BINDING_2D: Int
-        val SAMPLE_BUFFERS: Int
-        val SAMPLES: Int
-        val SAMPLE_COVERAGE_VALUE: Int
-        val SAMPLE_COVERAGE_INVERT: Int
-        val COMPRESSED_TEXTURE_FORMATS: Int
-        val DONT_CARE: Int
-        val FASTEST: Int
-        val NICEST: Int
-        val GENERATE_MIPMAP_HINT: Int
-        val BYTE: Int
-        val UNSIGNED_BYTE: Int
-        val SHORT: Int
-        val UNSIGNED_SHORT: Int
-        val INT: Int
-        val UNSIGNED_INT: Int
-        val FLOAT: Int
-        val DEPTH_COMPONENT: Int
-        val ALPHA: Int
-        val RGB: Int
-        val RGBA: Int
-        val LUMINANCE: Int
-        val LUMINANCE_ALPHA: Int
-        val UNSIGNED_SHORT_4_4_4_4: Int
-        val UNSIGNED_SHORT_5_5_5_1: Int
-        val UNSIGNED_SHORT_5_6_5: Int
-        val FRAGMENT_SHADER: Int
-        val VERTEX_SHADER: Int
-        val MAX_VERTEX_ATTRIBS: Int
-        val MAX_VERTEX_UNIFORM_VECTORS: Int
-        val MAX_VARYING_VECTORS: Int
-        val MAX_COMBINED_TEXTURE_IMAGE_UNITS: Int
-        val MAX_VERTEX_TEXTURE_IMAGE_UNITS: Int
-        val MAX_TEXTURE_IMAGE_UNITS: Int
-        val MAX_FRAGMENT_UNIFORM_VECTORS: Int
-        val SHADER_TYPE: Int
-        val DELETE_STATUS: Int
-        val LINK_STATUS: Int
-        val VALIDATE_STATUS: Int
-        val ATTACHED_SHADERS: Int
-        val ACTIVE_UNIFORMS: Int
-        val ACTIVE_ATTRIBUTES: Int
-        val SHADING_LANGUAGE_VERSION: Int
-        val CURRENT_PROGRAM: Int
-        val NEVER: Int
-        val LESS: Int
-        val EQUAL: Int
-        val LEQUAL: Int
-        val GREATER: Int
-        val NOTEQUAL: Int
-        val GEQUAL: Int
-        val ALWAYS: Int
-        val KEEP: Int
-        val REPLACE: Int
-        val INCR: Int
-        val DECR: Int
-        val INVERT: Int
-        val INCR_WRAP: Int
-        val DECR_WRAP: Int
-        val VENDOR: Int
-        val RENDERER: Int
-        val VERSION: Int
-        val NEAREST: Int
-        val LINEAR: Int
-        val NEAREST_MIPMAP_NEAREST: Int
-        val LINEAR_MIPMAP_NEAREST: Int
-        val NEAREST_MIPMAP_LINEAR: Int
-        val LINEAR_MIPMAP_LINEAR: Int
-        val TEXTURE_MAG_FILTER: Int
-        val TEXTURE_MIN_FILTER: Int
-        val TEXTURE_WRAP_S: Int
-        val TEXTURE_WRAP_T: Int
-        val TEXTURE_2D: Int
-        val TEXTURE: Int
-        val TEXTURE_CUBE_MAP: Int
-        val TEXTURE_BINDING_CUBE_MAP: Int
-        val TEXTURE_CUBE_MAP_POSITIVE_X: Int
-        val TEXTURE_CUBE_MAP_NEGATIVE_X: Int
-        val TEXTURE_CUBE_MAP_POSITIVE_Y: Int
-        val TEXTURE_CUBE_MAP_NEGATIVE_Y: Int
-        val TEXTURE_CUBE_MAP_POSITIVE_Z: Int
-        val TEXTURE_CUBE_MAP_NEGATIVE_Z: Int
-        val MAX_CUBE_MAP_TEXTURE_SIZE: Int
-        val TEXTURE0: Int
-        val TEXTURE1: Int
-        val TEXTURE2: Int
-        val TEXTURE3: Int
-        val TEXTURE4: Int
-        val TEXTURE5: Int
-        val TEXTURE6: Int
-        val TEXTURE7: Int
-        val TEXTURE8: Int
-        val TEXTURE9: Int
-        val TEXTURE10: Int
-        val TEXTURE11: Int
-        val TEXTURE12: Int
-        val TEXTURE13: Int
-        val TEXTURE14: Int
-        val TEXTURE15: Int
-        val TEXTURE16: Int
-        val TEXTURE17: Int
-        val TEXTURE18: Int
-        val TEXTURE19: Int
-        val TEXTURE20: Int
-        val TEXTURE21: Int
-        val TEXTURE22: Int
-        val TEXTURE23: Int
-        val TEXTURE24: Int
-        val TEXTURE25: Int
-        val TEXTURE26: Int
-        val TEXTURE27: Int
-        val TEXTURE28: Int
-        val TEXTURE29: Int
-        val TEXTURE30: Int
-        val TEXTURE31: Int
-        val ACTIVE_TEXTURE: Int
-        val REPEAT: Int
-        val CLAMP_TO_EDGE: Int
-        val MIRRORED_REPEAT: Int
-        val FLOAT_VEC2: Int
-        val FLOAT_VEC3: Int
-        val FLOAT_VEC4: Int
-        val INT_VEC2: Int
-        val INT_VEC3: Int
-        val INT_VEC4: Int
-        val BOOL: Int
-        val BOOL_VEC2: Int
-        val BOOL_VEC3: Int
-        val BOOL_VEC4: Int
-        val FLOAT_MAT2: Int
-        val FLOAT_MAT3: Int
-        val FLOAT_MAT4: Int
-        val SAMPLER_2D: Int
-        val SAMPLER_CUBE: Int
-        val VERTEX_ATTRIB_ARRAY_ENABLED: Int
-        val VERTEX_ATTRIB_ARRAY_SIZE: Int
-        val VERTEX_ATTRIB_ARRAY_STRIDE: Int
-        val VERTEX_ATTRIB_ARRAY_TYPE: Int
-        val VERTEX_ATTRIB_ARRAY_NORMALIZED: Int
-        val VERTEX_ATTRIB_ARRAY_POINTER: Int
-        val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING: Int
-        val IMPLEMENTATION_COLOR_READ_TYPE: Int
-        val IMPLEMENTATION_COLOR_READ_FORMAT: Int
-        val COMPILE_STATUS: Int
-        val LOW_FLOAT: Int
-        val MEDIUM_FLOAT: Int
-        val HIGH_FLOAT: Int
-        val LOW_INT: Int
-        val MEDIUM_INT: Int
-        val HIGH_INT: Int
-        val FRAMEBUFFER: Int
-        val RENDERBUFFER: Int
-        val RGBA4: Int
-        val RGB5_A1: Int
-        val RGBA8: Int
-        val RGB565: Int
-        val DEPTH_COMPONENT16: Int
-        val STENCIL_INDEX8: Int
-        val DEPTH_STENCIL: Int
-        val RENDERBUFFER_WIDTH: Int
-        val RENDERBUFFER_HEIGHT: Int
-        val RENDERBUFFER_INTERNAL_FORMAT: Int
-        val RENDERBUFFER_RED_SIZE: Int
-        val RENDERBUFFER_GREEN_SIZE: Int
-        val RENDERBUFFER_BLUE_SIZE: Int
-        val RENDERBUFFER_ALPHA_SIZE: Int
-        val RENDERBUFFER_DEPTH_SIZE: Int
-        val RENDERBUFFER_STENCIL_SIZE: Int
-        val FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE: Int
-        val FRAMEBUFFER_ATTACHMENT_OBJECT_NAME: Int
-        val FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL: Int
-        val FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE: Int
-        val COLOR_ATTACHMENT0: Int
-        val DEPTH_ATTACHMENT: Int
-        val STENCIL_ATTACHMENT: Int
-        val DEPTH_STENCIL_ATTACHMENT: Int
-        val NONE: Int
-        val FRAMEBUFFER_COMPLETE: Int
-        val FRAMEBUFFER_INCOMPLETE_ATTACHMENT: Int
-        val FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT: Int
-        val FRAMEBUFFER_INCOMPLETE_DIMENSIONS: Int
-        val FRAMEBUFFER_UNSUPPORTED: Int
-        val FRAMEBUFFER_BINDING: Int
-        val RENDERBUFFER_BINDING: Int
-        val MAX_RENDERBUFFER_SIZE: Int
-        val INVALID_FRAMEBUFFER_OPERATION: Int
-        val UNPACK_FLIP_Y_WEBGL: Int
-        val UNPACK_PREMULTIPLY_ALPHA_WEBGL: Int
-        val CONTEXT_LOST_WEBGL: Int
-        val UNPACK_COLORSPACE_CONVERSION_WEBGL: Int
-        val BROWSER_DEFAULT_WEBGL: Int
+    public companion object {
+        public val DEPTH_BUFFER_BIT: Int
+        public val STENCIL_BUFFER_BIT: Int
+        public val COLOR_BUFFER_BIT: Int
+        public val POINTS: Int
+        public val LINES: Int
+        public val LINE_LOOP: Int
+        public val LINE_STRIP: Int
+        public val TRIANGLES: Int
+        public val TRIANGLE_STRIP: Int
+        public val TRIANGLE_FAN: Int
+        public val ZERO: Int
+        public val ONE: Int
+        public val SRC_COLOR: Int
+        public val ONE_MINUS_SRC_COLOR: Int
+        public val SRC_ALPHA: Int
+        public val ONE_MINUS_SRC_ALPHA: Int
+        public val DST_ALPHA: Int
+        public val ONE_MINUS_DST_ALPHA: Int
+        public val DST_COLOR: Int
+        public val ONE_MINUS_DST_COLOR: Int
+        public val SRC_ALPHA_SATURATE: Int
+        public val FUNC_ADD: Int
+        public val BLEND_EQUATION: Int
+        public val BLEND_EQUATION_RGB: Int
+        public val BLEND_EQUATION_ALPHA: Int
+        public val FUNC_SUBTRACT: Int
+        public val FUNC_REVERSE_SUBTRACT: Int
+        public val BLEND_DST_RGB: Int
+        public val BLEND_SRC_RGB: Int
+        public val BLEND_DST_ALPHA: Int
+        public val BLEND_SRC_ALPHA: Int
+        public val CONSTANT_COLOR: Int
+        public val ONE_MINUS_CONSTANT_COLOR: Int
+        public val CONSTANT_ALPHA: Int
+        public val ONE_MINUS_CONSTANT_ALPHA: Int
+        public val BLEND_COLOR: Int
+        public val ARRAY_BUFFER: Int
+        public val ELEMENT_ARRAY_BUFFER: Int
+        public val ARRAY_BUFFER_BINDING: Int
+        public val ELEMENT_ARRAY_BUFFER_BINDING: Int
+        public val STREAM_DRAW: Int
+        public val STATIC_DRAW: Int
+        public val DYNAMIC_DRAW: Int
+        public val BUFFER_SIZE: Int
+        public val BUFFER_USAGE: Int
+        public val CURRENT_VERTEX_ATTRIB: Int
+        public val FRONT: Int
+        public val BACK: Int
+        public val FRONT_AND_BACK: Int
+        public val CULL_FACE: Int
+        public val BLEND: Int
+        public val DITHER: Int
+        public val STENCIL_TEST: Int
+        public val DEPTH_TEST: Int
+        public val SCISSOR_TEST: Int
+        public val POLYGON_OFFSET_FILL: Int
+        public val SAMPLE_ALPHA_TO_COVERAGE: Int
+        public val SAMPLE_COVERAGE: Int
+        public val NO_ERROR: Int
+        public val INVALID_ENUM: Int
+        public val INVALID_VALUE: Int
+        public val INVALID_OPERATION: Int
+        public val OUT_OF_MEMORY: Int
+        public val CW: Int
+        public val CCW: Int
+        public val LINE_WIDTH: Int
+        public val ALIASED_POINT_SIZE_RANGE: Int
+        public val ALIASED_LINE_WIDTH_RANGE: Int
+        public val CULL_FACE_MODE: Int
+        public val FRONT_FACE: Int
+        public val DEPTH_RANGE: Int
+        public val DEPTH_WRITEMASK: Int
+        public val DEPTH_CLEAR_VALUE: Int
+        public val DEPTH_FUNC: Int
+        public val STENCIL_CLEAR_VALUE: Int
+        public val STENCIL_FUNC: Int
+        public val STENCIL_FAIL: Int
+        public val STENCIL_PASS_DEPTH_FAIL: Int
+        public val STENCIL_PASS_DEPTH_PASS: Int
+        public val STENCIL_REF: Int
+        public val STENCIL_VALUE_MASK: Int
+        public val STENCIL_WRITEMASK: Int
+        public val STENCIL_BACK_FUNC: Int
+        public val STENCIL_BACK_FAIL: Int
+        public val STENCIL_BACK_PASS_DEPTH_FAIL: Int
+        public val STENCIL_BACK_PASS_DEPTH_PASS: Int
+        public val STENCIL_BACK_REF: Int
+        public val STENCIL_BACK_VALUE_MASK: Int
+        public val STENCIL_BACK_WRITEMASK: Int
+        public val VIEWPORT: Int
+        public val SCISSOR_BOX: Int
+        public val COLOR_CLEAR_VALUE: Int
+        public val COLOR_WRITEMASK: Int
+        public val UNPACK_ALIGNMENT: Int
+        public val PACK_ALIGNMENT: Int
+        public val MAX_TEXTURE_SIZE: Int
+        public val MAX_VIEWPORT_DIMS: Int
+        public val SUBPIXEL_BITS: Int
+        public val RED_BITS: Int
+        public val GREEN_BITS: Int
+        public val BLUE_BITS: Int
+        public val ALPHA_BITS: Int
+        public val DEPTH_BITS: Int
+        public val STENCIL_BITS: Int
+        public val POLYGON_OFFSET_UNITS: Int
+        public val POLYGON_OFFSET_FACTOR: Int
+        public val TEXTURE_BINDING_2D: Int
+        public val SAMPLE_BUFFERS: Int
+        public val SAMPLES: Int
+        public val SAMPLE_COVERAGE_VALUE: Int
+        public val SAMPLE_COVERAGE_INVERT: Int
+        public val COMPRESSED_TEXTURE_FORMATS: Int
+        public val DONT_CARE: Int
+        public val FASTEST: Int
+        public val NICEST: Int
+        public val GENERATE_MIPMAP_HINT: Int
+        public val BYTE: Int
+        public val UNSIGNED_BYTE: Int
+        public val SHORT: Int
+        public val UNSIGNED_SHORT: Int
+        public val INT: Int
+        public val UNSIGNED_INT: Int
+        public val FLOAT: Int
+        public val DEPTH_COMPONENT: Int
+        public val ALPHA: Int
+        public val RGB: Int
+        public val RGBA: Int
+        public val LUMINANCE: Int
+        public val LUMINANCE_ALPHA: Int
+        public val UNSIGNED_SHORT_4_4_4_4: Int
+        public val UNSIGNED_SHORT_5_5_5_1: Int
+        public val UNSIGNED_SHORT_5_6_5: Int
+        public val FRAGMENT_SHADER: Int
+        public val VERTEX_SHADER: Int
+        public val MAX_VERTEX_ATTRIBS: Int
+        public val MAX_VERTEX_UNIFORM_VECTORS: Int
+        public val MAX_VARYING_VECTORS: Int
+        public val MAX_COMBINED_TEXTURE_IMAGE_UNITS: Int
+        public val MAX_VERTEX_TEXTURE_IMAGE_UNITS: Int
+        public val MAX_TEXTURE_IMAGE_UNITS: Int
+        public val MAX_FRAGMENT_UNIFORM_VECTORS: Int
+        public val SHADER_TYPE: Int
+        public val DELETE_STATUS: Int
+        public val LINK_STATUS: Int
+        public val VALIDATE_STATUS: Int
+        public val ATTACHED_SHADERS: Int
+        public val ACTIVE_UNIFORMS: Int
+        public val ACTIVE_ATTRIBUTES: Int
+        public val SHADING_LANGUAGE_VERSION: Int
+        public val CURRENT_PROGRAM: Int
+        public val NEVER: Int
+        public val LESS: Int
+        public val EQUAL: Int
+        public val LEQUAL: Int
+        public val GREATER: Int
+        public val NOTEQUAL: Int
+        public val GEQUAL: Int
+        public val ALWAYS: Int
+        public val KEEP: Int
+        public val REPLACE: Int
+        public val INCR: Int
+        public val DECR: Int
+        public val INVERT: Int
+        public val INCR_WRAP: Int
+        public val DECR_WRAP: Int
+        public val VENDOR: Int
+        public val RENDERER: Int
+        public val VERSION: Int
+        public val NEAREST: Int
+        public val LINEAR: Int
+        public val NEAREST_MIPMAP_NEAREST: Int
+        public val LINEAR_MIPMAP_NEAREST: Int
+        public val NEAREST_MIPMAP_LINEAR: Int
+        public val LINEAR_MIPMAP_LINEAR: Int
+        public val TEXTURE_MAG_FILTER: Int
+        public val TEXTURE_MIN_FILTER: Int
+        public val TEXTURE_WRAP_S: Int
+        public val TEXTURE_WRAP_T: Int
+        public val TEXTURE_2D: Int
+        public val TEXTURE: Int
+        public val TEXTURE_CUBE_MAP: Int
+        public val TEXTURE_BINDING_CUBE_MAP: Int
+        public val TEXTURE_CUBE_MAP_POSITIVE_X: Int
+        public val TEXTURE_CUBE_MAP_NEGATIVE_X: Int
+        public val TEXTURE_CUBE_MAP_POSITIVE_Y: Int
+        public val TEXTURE_CUBE_MAP_NEGATIVE_Y: Int
+        public val TEXTURE_CUBE_MAP_POSITIVE_Z: Int
+        public val TEXTURE_CUBE_MAP_NEGATIVE_Z: Int
+        public val MAX_CUBE_MAP_TEXTURE_SIZE: Int
+        public val TEXTURE0: Int
+        public val TEXTURE1: Int
+        public val TEXTURE2: Int
+        public val TEXTURE3: Int
+        public val TEXTURE4: Int
+        public val TEXTURE5: Int
+        public val TEXTURE6: Int
+        public val TEXTURE7: Int
+        public val TEXTURE8: Int
+        public val TEXTURE9: Int
+        public val TEXTURE10: Int
+        public val TEXTURE11: Int
+        public val TEXTURE12: Int
+        public val TEXTURE13: Int
+        public val TEXTURE14: Int
+        public val TEXTURE15: Int
+        public val TEXTURE16: Int
+        public val TEXTURE17: Int
+        public val TEXTURE18: Int
+        public val TEXTURE19: Int
+        public val TEXTURE20: Int
+        public val TEXTURE21: Int
+        public val TEXTURE22: Int
+        public val TEXTURE23: Int
+        public val TEXTURE24: Int
+        public val TEXTURE25: Int
+        public val TEXTURE26: Int
+        public val TEXTURE27: Int
+        public val TEXTURE28: Int
+        public val TEXTURE29: Int
+        public val TEXTURE30: Int
+        public val TEXTURE31: Int
+        public val ACTIVE_TEXTURE: Int
+        public val REPEAT: Int
+        public val CLAMP_TO_EDGE: Int
+        public val MIRRORED_REPEAT: Int
+        public val FLOAT_VEC2: Int
+        public val FLOAT_VEC3: Int
+        public val FLOAT_VEC4: Int
+        public val INT_VEC2: Int
+        public val INT_VEC3: Int
+        public val INT_VEC4: Int
+        public val BOOL: Int
+        public val BOOL_VEC2: Int
+        public val BOOL_VEC3: Int
+        public val BOOL_VEC4: Int
+        public val FLOAT_MAT2: Int
+        public val FLOAT_MAT3: Int
+        public val FLOAT_MAT4: Int
+        public val SAMPLER_2D: Int
+        public val SAMPLER_CUBE: Int
+        public val VERTEX_ATTRIB_ARRAY_ENABLED: Int
+        public val VERTEX_ATTRIB_ARRAY_SIZE: Int
+        public val VERTEX_ATTRIB_ARRAY_STRIDE: Int
+        public val VERTEX_ATTRIB_ARRAY_TYPE: Int
+        public val VERTEX_ATTRIB_ARRAY_NORMALIZED: Int
+        public val VERTEX_ATTRIB_ARRAY_POINTER: Int
+        public val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING: Int
+        public val IMPLEMENTATION_COLOR_READ_TYPE: Int
+        public val IMPLEMENTATION_COLOR_READ_FORMAT: Int
+        public val COMPILE_STATUS: Int
+        public val LOW_FLOAT: Int
+        public val MEDIUM_FLOAT: Int
+        public val HIGH_FLOAT: Int
+        public val LOW_INT: Int
+        public val MEDIUM_INT: Int
+        public val HIGH_INT: Int
+        public val FRAMEBUFFER: Int
+        public val RENDERBUFFER: Int
+        public val RGBA4: Int
+        public val RGB5_A1: Int
+        public val RGBA8: Int
+        public val RGB565: Int
+        public val DEPTH_COMPONENT16: Int
+        public val STENCIL_INDEX8: Int
+        public val DEPTH_STENCIL: Int
+        public val RENDERBUFFER_WIDTH: Int
+        public val RENDERBUFFER_HEIGHT: Int
+        public val RENDERBUFFER_INTERNAL_FORMAT: Int
+        public val RENDERBUFFER_RED_SIZE: Int
+        public val RENDERBUFFER_GREEN_SIZE: Int
+        public val RENDERBUFFER_BLUE_SIZE: Int
+        public val RENDERBUFFER_ALPHA_SIZE: Int
+        public val RENDERBUFFER_DEPTH_SIZE: Int
+        public val RENDERBUFFER_STENCIL_SIZE: Int
+        public val FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE: Int
+        public val FRAMEBUFFER_ATTACHMENT_OBJECT_NAME: Int
+        public val FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL: Int
+        public val FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE: Int
+        public val COLOR_ATTACHMENT0: Int
+        public val DEPTH_ATTACHMENT: Int
+        public val STENCIL_ATTACHMENT: Int
+        public val DEPTH_STENCIL_ATTACHMENT: Int
+        public val NONE: Int
+        public val FRAMEBUFFER_COMPLETE: Int
+        public val FRAMEBUFFER_INCOMPLETE_ATTACHMENT: Int
+        public val FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT: Int
+        public val FRAMEBUFFER_INCOMPLETE_DIMENSIONS: Int
+        public val FRAMEBUFFER_UNSUPPORTED: Int
+        public val FRAMEBUFFER_BINDING: Int
+        public val RENDERBUFFER_BINDING: Int
+        public val MAX_RENDERBUFFER_SIZE: Int
+        public val INVALID_FRAMEBUFFER_OPERATION: Int
+        public val UNPACK_FLIP_Y_WEBGL: Int
+        public val UNPACK_PREMULTIPLY_ALPHA_WEBGL: Int
+        public val CONTEXT_LOST_WEBGL: Int
+        public val UNPACK_COLORSPACE_CONVERSION_WEBGL: Int
+        public val BROWSER_DEFAULT_WEBGL: Int
     }
 }
 
@@ -2113,7 +2113,7 @@ public open external class WebGLContextEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent/WebGLContextEvent)
      */
-    constructor(type: String, eventInit: WebGLContextEventInit = definedExternally)
+    public constructor(type: String, eventInit: WebGLContextEventInit = definedExternally)
 
     /**
      * The read-only WebGLContextEvent.statusMessage property contains additional event status information, or is an
@@ -2121,18 +2121,18 @@ public open external class WebGLContextEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent/statusMessage)
      */
-    open val statusMessage: String
+    public open val statusMessage: String
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface WebGLContextEventInit : EventInit {
-    var statusMessage: String?
+    public var statusMessage: String?
 }
 
 public fun WebGLContextEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, statusMessage: String? = null): WebGLContextEventInit = newJsObject<WebGLContextEventInit>().apply {

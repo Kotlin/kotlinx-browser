@@ -92,7 +92,9 @@ typed-array built-ins and `JsObjects.kt`.
 
 ## Style
 
-- Kotlin official style, explicit `public` on top-level library declarations, KDoc on non-obvious generator code saying why, not what.
+- Kotlin official style, KDoc on non-obvious generator code saying why, not what.
+- The library compiles in explicit API mode: every public declaration and member says `public` and has a declared
+  return type (overrides excepted). The backend prints `public` on every non-override member; keep it that way.
 - Source files start with the Apache 2.0 header that points to "the LICENSE file".
 - MDN text is CC-BY-SA 2.5 (see `NOTICE`): it only enters the repository through `mdn/summaries.json` and the
   generated KDoc. Don't paste MDN prose into hand-written code or docs.

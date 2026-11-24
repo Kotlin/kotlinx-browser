@@ -14,7 +14,7 @@ public external interface GeometryNode : JsAny
 
 public external interface ScrollBehavior : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ScrollBehavior.Companion.AUTO: ScrollBehavior get() = "auto".toJsString().unsafeCast<ScrollBehavior>()
@@ -22,7 +22,7 @@ public inline val ScrollBehavior.Companion.INSTANT: ScrollBehavior get() = "inst
 public inline val ScrollBehavior.Companion.SMOOTH: ScrollBehavior get() = "smooth".toJsString().unsafeCast<ScrollBehavior>()
 
 public external interface ScrollOptions : JsAny {
-    var behavior: ScrollBehavior?
+    public var behavior: ScrollBehavior?
 }
 
 public fun ScrollOptions(behavior: ScrollBehavior? = null): ScrollOptions = newJsObject<ScrollOptions>().apply {
@@ -30,8 +30,8 @@ public fun ScrollOptions(behavior: ScrollBehavior? = null): ScrollOptions = newJ
 }
 
 public external interface ScrollToOptions : ScrollOptions {
-    var left: Double?
-    var top: Double?
+    public var left: Double?
+    public var top: Double?
 }
 
 public fun ScrollToOptions(behavior: ScrollBehavior? = null, left: Double? = null, top: Double? = null): ScrollToOptions = newJsObject<ScrollToOptions>().apply {
@@ -41,7 +41,7 @@ public fun ScrollToOptions(behavior: ScrollBehavior? = null, left: Double? = nul
 }
 
 public external interface ScrollResult : JsAny {
-    var interrupted: Boolean
+    public var interrupted: Boolean
 }
 
 public fun ScrollResult(interrupted: Boolean): ScrollResult = newJsObject<ScrollResult>().apply {
@@ -60,7 +60,7 @@ public abstract external class MediaQueryList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/media)
      */
-    open val media: String
+    public open val media: String
 
     /**
      * The matches read-only property of the MediaQueryList interface is a boolean value that returns true if the
@@ -68,7 +68,7 @@ public abstract external class MediaQueryList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/matches)
      */
-    open val matches: Boolean
+    public open val matches: Boolean
 
     /**
      * The deprecated addListener() method of the MediaQueryList interface adds a listener to the MediaQueryListener
@@ -78,7 +78,7 @@ public abstract external class MediaQueryList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/addListener)
      */
-    open fun addListener(callback: EventListener?)
+    public open fun addListener(callback: EventListener?)
 
     /**
      * The removeListener() method of the MediaQueryList interface removes a listener from the MediaQueryListener.
@@ -87,7 +87,7 @@ public abstract external class MediaQueryList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/removeListener)
      */
-    open fun removeListener(callback: EventListener?)
+    public open fun removeListener(callback: EventListener?)
 
     /**
      * The removeListener() method of the MediaQueryList interface removes a listener from the MediaQueryListener.
@@ -96,14 +96,14 @@ public abstract external class MediaQueryList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/removeListener)
      */
-    open fun removeListener(callback: (Event) -> Unit)
+    public open fun removeListener(callback: (Event) -> Unit)
 
     /**
      * The change event of the MediaQueryList interface fires when the status of media query support changes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/change_event)
      */
-    open var onchange: ((MediaQueryListEvent) -> Unit)?
+    public open var onchange: ((MediaQueryListEvent) -> Unit)?
 }
 
 private fun toEventListener(callback: (Event) -> Unit): EventListener = js("callback")
@@ -134,7 +134,7 @@ public open external class MediaQueryListEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/MediaQueryListEvent)
      */
-    constructor(type: String, eventInitDict: MediaQueryListEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: MediaQueryListEventInit = definedExternally)
 
     /**
      * The media read-only property of the MediaQueryListEvent interface is a string representing a serialized media
@@ -142,7 +142,7 @@ public open external class MediaQueryListEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/media)
      */
-    open val media: String
+    public open val media: String
 
     /**
      * The matches read-only property of the MediaQueryListEvent interface is a boolean value that is true if the
@@ -150,19 +150,19 @@ public open external class MediaQueryListEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/matches)
      */
-    open val matches: Boolean
+    public open val matches: Boolean
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface MediaQueryListEventInit : EventInit {
-    var media: String?
-    var matches: Boolean?
+    public var media: String?
+    public var matches: Boolean?
 }
 
 public fun MediaQueryListEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, media: String? = null, matches: Boolean? = null): MediaQueryListEventInit = newJsObject<MediaQueryListEventInit>().apply {
@@ -186,7 +186,7 @@ public abstract external class Screen : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/availWidth)
      */
-    open val availWidth: Int
+    public open val availWidth: Int
 
     /**
      * The read-only Screen interface's availHeight property returns the height, in CSS pixels, of the space available
@@ -195,21 +195,21 @@ public abstract external class Screen : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/availHeight)
      */
-    open val availHeight: Int
+    public open val availHeight: Int
 
     /**
      * The Screen.width read-only property returns the width of the screen in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/width)
      */
-    open val width: Int
+    public open val width: Int
 
     /**
      * The Screen.height read-only property returns the height of the screen in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/height)
      */
-    open val height: Int
+    public open val height: Int
 
     /**
      * The Screen.colorDepth read-only property returns the color depth of the screen. Per the CSSOM, some
@@ -217,7 +217,7 @@ public abstract external class Screen : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/colorDepth)
      */
-    open val colorDepth: Int
+    public open val colorDepth: Int
 
     /**
      * The pixelDepth read-only property of the Screen interface returns the bit depth of the screen. Per the CSSOM,
@@ -226,11 +226,11 @@ public abstract external class Screen : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/pixelDepth)
      */
-    open val pixelDepth: Int
+    public open val pixelDepth: Int
 }
 
 public external interface CaretPositionFromPointOptions : JsAny {
-    var shadowRoots: JsArray<ShadowRoot>?
+    public var shadowRoots: JsArray<ShadowRoot>?
 }
 
 public fun CaretPositionFromPointOptions(shadowRoots: JsArray<ShadowRoot>? = null): CaretPositionFromPointOptions = newJsObject<CaretPositionFromPointOptions>().apply {
@@ -250,7 +250,7 @@ public abstract external class CaretPosition : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition/offsetNode)
      */
-    open val offsetNode: Node
+    public open val offsetNode: Node
 
     /**
      * The offset property of the CaretPosition interface returns an integer representing the offset of the selection in
@@ -258,19 +258,19 @@ public abstract external class CaretPosition : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition/offset)
      */
-    open val offset: Int
+    public open val offset: Int
 
     /**
      * The getClientRect() method of the CaretPosition interface returns the client rectangle for the caret range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition/getClientRect)
      */
-    open fun getClientRect(): DOMRect?
+    public open fun getClientRect(): DOMRect?
 }
 
 public external interface ScrollLogicalPosition : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ScrollLogicalPosition.Companion.START: ScrollLogicalPosition get() = "start".toJsString().unsafeCast<ScrollLogicalPosition>()
@@ -279,9 +279,9 @@ public inline val ScrollLogicalPosition.Companion.END: ScrollLogicalPosition get
 public inline val ScrollLogicalPosition.Companion.NEAREST: ScrollLogicalPosition get() = "nearest".toJsString().unsafeCast<ScrollLogicalPosition>()
 
 public external interface ScrollIntoViewOptions : ScrollOptions {
-    var block: ScrollLogicalPosition?
-    var inline: ScrollLogicalPosition?
-    var container: ScrollIntoViewContainer?
+    public var block: ScrollLogicalPosition?
+    public var inline: ScrollLogicalPosition?
+    public var container: ScrollIntoViewContainer?
 }
 
 public fun ScrollIntoViewOptions(behavior: ScrollBehavior? = null, block: ScrollLogicalPosition? = null, inline: ScrollLogicalPosition? = null, container: ScrollIntoViewContainer? = null): ScrollIntoViewOptions = newJsObject<ScrollIntoViewOptions>().apply {
@@ -293,18 +293,18 @@ public fun ScrollIntoViewOptions(behavior: ScrollBehavior? = null, block: Scroll
 
 public external interface ScrollIntoViewContainer : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ScrollIntoViewContainer.Companion.ALL: ScrollIntoViewContainer get() = "all".toJsString().unsafeCast<ScrollIntoViewContainer>()
 public inline val ScrollIntoViewContainer.Companion.NEAREST: ScrollIntoViewContainer get() = "nearest".toJsString().unsafeCast<ScrollIntoViewContainer>()
 
 public external interface CheckVisibilityOptions : JsAny {
-    var checkOpacity: Boolean?
-    var checkVisibilityCSS: Boolean?
-    var contentVisibilityAuto: Boolean?
-    var opacityProperty: Boolean?
-    var visibilityProperty: Boolean?
+    public var checkOpacity: Boolean?
+    public var checkVisibilityCSS: Boolean?
+    public var contentVisibilityAuto: Boolean?
+    public var opacityProperty: Boolean?
+    public var visibilityProperty: Boolean?
 }
 
 public fun CheckVisibilityOptions(checkOpacity: Boolean? = null, checkVisibilityCSS: Boolean? = null, contentVisibilityAuto: Boolean? = null, opacityProperty: Boolean? = null, visibilityProperty: Boolean? = null): CheckVisibilityOptions = newJsObject<CheckVisibilityOptions>().apply {
@@ -317,7 +317,7 @@ public fun CheckVisibilityOptions(checkOpacity: Boolean? = null, checkVisibility
 
 public external interface CSSBoxType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val CSSBoxType.Companion.MARGIN: CSSBoxType get() = "margin".toJsString().unsafeCast<CSSBoxType>()
@@ -326,8 +326,8 @@ public inline val CSSBoxType.Companion.PADDING: CSSBoxType get() = "padding".toJ
 public inline val CSSBoxType.Companion.CONTENT: CSSBoxType get() = "content".toJsString().unsafeCast<CSSBoxType>()
 
 public external interface BoxQuadOptions : JsAny {
-    var box: CSSBoxType?
-    var relativeTo: GeometryNode?
+    public var box: CSSBoxType?
+    public var relativeTo: GeometryNode?
 }
 
 public fun BoxQuadOptions(box: CSSBoxType? = null, relativeTo: GeometryNode? = null): BoxQuadOptions = newJsObject<BoxQuadOptions>().apply {
@@ -336,8 +336,8 @@ public fun BoxQuadOptions(box: CSSBoxType? = null, relativeTo: GeometryNode? = n
 }
 
 public external interface ConvertCoordinateOptions : JsAny {
-    var fromBox: CSSBoxType?
-    var toBox: CSSBoxType?
+    public var fromBox: CSSBoxType?
+    public var toBox: CSSBoxType?
 }
 
 public fun ConvertCoordinateOptions(fromBox: CSSBoxType? = null, toBox: CSSBoxType? = null): ConvertCoordinateOptions = newJsObject<ConvertCoordinateOptions>().apply {
@@ -346,10 +346,10 @@ public fun ConvertCoordinateOptions(fromBox: CSSBoxType? = null, toBox: CSSBoxTy
 }
 
 public external interface GeometryUtils : JsAny {
-    fun getBoxQuads(options: BoxQuadOptions = definedExternally): JsArray<DOMQuad>
-    fun convertQuadFromNode(quad: DOMQuadInit, from: GeometryNode, options: ConvertCoordinateOptions = definedExternally): DOMQuad
-    fun convertRectFromNode(rect: DOMRectReadOnly, from: GeometryNode, options: ConvertCoordinateOptions = definedExternally): DOMQuad
-    fun convertPointFromNode(point: DOMPointInit, from: GeometryNode, options: ConvertCoordinateOptions = definedExternally): DOMPoint
+    public fun getBoxQuads(options: BoxQuadOptions = definedExternally): JsArray<DOMQuad>
+    public fun convertQuadFromNode(quad: DOMQuadInit, from: GeometryNode, options: ConvertCoordinateOptions = definedExternally): DOMQuad
+    public fun convertRectFromNode(rect: DOMRectReadOnly, from: GeometryNode, options: ConvertCoordinateOptions = definedExternally): DOMQuad
+    public fun convertPointFromNode(point: DOMPointInit, from: GeometryNode, options: ConvertCoordinateOptions = definedExternally): DOMPoint
 }
 
 /**
@@ -367,7 +367,7 @@ public abstract external class VisualViewport : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/offsetLeft)
      */
-    open val offsetLeft: Double
+    public open val offsetLeft: Double
 
     /**
      * The offsetTop read-only property of the VisualViewport interface returns the offset of the top edge of the visual
@@ -375,7 +375,7 @@ public abstract external class VisualViewport : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/offsetTop)
      */
-    open val offsetTop: Double
+    public open val offsetTop: Double
 
     /**
      * The pageLeft read-only property of the VisualViewport interface returns the x coordinate of the left edge of the
@@ -384,7 +384,7 @@ public abstract external class VisualViewport : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/pageLeft)
      */
-    open val pageLeft: Double
+    public open val pageLeft: Double
 
     /**
      * The pageTop read-only property of the VisualViewport interface returns the y coordinate of the top edge of the
@@ -393,7 +393,7 @@ public abstract external class VisualViewport : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/pageTop)
      */
-    open val pageTop: Double
+    public open val pageTop: Double
 
     /**
      * The width read-only property of the VisualViewport interface returns the width of the visual viewport, in CSS
@@ -401,7 +401,7 @@ public abstract external class VisualViewport : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/width)
      */
-    open val width: Double
+    public open val width: Double
 
     /**
      * The height read-only property of the VisualViewport interface returns the height of the visual viewport, in CSS
@@ -409,7 +409,7 @@ public abstract external class VisualViewport : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/height)
      */
-    open val height: Double
+    public open val height: Double
 
     /**
      * The scale read-only property of the VisualViewport interface returns the pinch-zoom scaling factor applied to the
@@ -417,7 +417,7 @@ public abstract external class VisualViewport : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scale)
      */
-    open val scale: Double
+    public open val scale: Double
 
     /**
      * The resize event of the VisualViewport interface is fired when the visual viewport is resized. This allows you to
@@ -426,7 +426,7 @@ public abstract external class VisualViewport : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/resize_event)
      */
-    open var onresize: ((Event) -> Unit)?
+    public open var onresize: ((Event) -> Unit)?
 
     /**
      * The scroll event of the VisualViewport interface is fired when the visual viewport is scrolled. This allows you
@@ -435,7 +435,7 @@ public abstract external class VisualViewport : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scroll_event)
      */
-    open var onscroll: ((Event) -> Unit)?
+    public open var onscroll: ((Event) -> Unit)?
 
     /**
      * The scrollend event of the VisualViewport interface is fired when a scrolling operation on the visual viewport
@@ -445,5 +445,5 @@ public abstract external class VisualViewport : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scrollend_event)
      */
-    open var onscrollend: ((Event) -> Unit)?
+    public open var onscrollend: ((Event) -> Unit)?
 }

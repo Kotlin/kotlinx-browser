@@ -25,7 +25,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/unloadEventStart)
      */
-    open val unloadEventStart: Double
+    public open val unloadEventStart: Double
 
     /**
      * The unloadEventEnd read-only property returns a DOMHighResTimeStamp representing the time immediately after the
@@ -33,7 +33,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/unloadEventEnd)
      */
-    open val unloadEventEnd: Double
+    public open val unloadEventEnd: Double
 
     /**
      * The domInteractive read-only property returns a DOMHighResTimeStamp representing the time immediately before the
@@ -41,7 +41,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domInteractive)
      */
-    open val domInteractive: Double
+    public open val domInteractive: Double
 
     /**
      * The domContentLoadedEventStart read-only property returns a DOMHighResTimeStamp representing the time immediately
@@ -50,7 +50,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * [MDN
      * Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventStart)
      */
-    open val domContentLoadedEventStart: Double
+    public open val domContentLoadedEventStart: Double
 
     /**
      * The domContentLoadedEventEnd read-only property returns a DOMHighResTimeStamp representing the time immediately
@@ -58,7 +58,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventEnd)
      */
-    open val domContentLoadedEventEnd: Double
+    public open val domContentLoadedEventEnd: Double
 
     /**
      * The domComplete read-only property returns a DOMHighResTimeStamp representing the time immediately before the
@@ -66,7 +66,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domComplete)
      */
-    open val domComplete: Double
+    public open val domComplete: Double
 
     /**
      * The loadEventStart read-only property returns a DOMHighResTimeStamp representing the time immediately before the
@@ -74,7 +74,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/loadEventStart)
      */
-    open val loadEventStart: Double
+    public open val loadEventStart: Double
 
     /**
      * The loadEventEnd read-only property returns a DOMHighResTimeStamp representing the time immediately after the
@@ -82,14 +82,14 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/loadEventEnd)
      */
-    open val loadEventEnd: Double
+    public open val loadEventEnd: Double
 
     /**
      * The type read-only property returns the type of navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/type)
      */
-    open val type: NavigationTimingType
+    public open val type: NavigationTimingType
 
     /**
      * The redirectCount read-only property returns a number representing the number of redirects since the last
@@ -97,7 +97,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/redirectCount)
      */
-    open val redirectCount: Short
+    public open val redirectCount: Short
 
     /**
      * A website can indicate that a particular Client Hint is critical to the page by including it in a Critical-CH
@@ -108,7 +108,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/criticalCHRestart)
      */
-    open val criticalCHRestart: Double
+    public open val criticalCHRestart: Double
 
     /**
      * The notRestoredReasons read-only property of the PerformanceNavigationTiming interface returns a
@@ -117,7 +117,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/notRestoredReasons)
      */
-    open val notRestoredReasons: NotRestoredReasons?
+    public open val notRestoredReasons: NotRestoredReasons?
 
     /**
      * The confidence read-only property of the PerformanceNavigationTiming interface returns a
@@ -126,7 +126,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/confidence)
      */
-    open val confidence: PerformanceTimingConfidence
+    public open val confidence: PerformanceTimingConfidence
 
     /**
      * The toJSON() method of the PerformanceNavigationTiming interface returns a JSON-serializable plain object
@@ -139,7 +139,7 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
 
 public external interface NavigationTimingType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val NavigationTimingType.Companion.NAVIGATE: NavigationTimingType get() = "navigate".toJsString().unsafeCast<NavigationTimingType>()
@@ -159,7 +159,7 @@ public abstract external class PerformanceTimingConfidence : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTimingConfidence/randomizedTriggerRate)
      */
-    open val randomizedTriggerRate: Double
+    public open val randomizedTriggerRate: Double
 
     /**
      * The value read-only property of the PerformanceTimingConfidence interface is a broad confidence measure of
@@ -167,7 +167,7 @@ public abstract external class PerformanceTimingConfidence : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTimingConfidence/value)
      */
-    open val value: PerformanceTimingConfidenceValue
+    public open val value: PerformanceTimingConfidenceValue
 
     /**
      * The toJSON() method of the PerformanceTimingConfidence interface returns a JSON-serializable plain object
@@ -175,12 +175,12 @@ public abstract external class PerformanceTimingConfidence : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTimingConfidence/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 }
 
 public external interface PerformanceTimingConfidenceValue : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val PerformanceTimingConfidenceValue.Companion.HIGH: PerformanceTimingConfidenceValue get() = "high".toJsString().unsafeCast<PerformanceTimingConfidenceValue>()
@@ -206,7 +206,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/navigationStart)
      */
-    open val navigationStart: Double
+    public open val navigationStart: Double
 
     /**
      * The legacy PerformanceTiming.unloadEventStart read-only property returns an unsigned long long representing the
@@ -217,7 +217,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/unloadEventStart)
      */
-    open val unloadEventStart: Double
+    public open val unloadEventStart: Double
 
     /**
      * The legacy PerformanceTiming.unloadEventEnd read-only property returns an unsigned long long representing the
@@ -229,7 +229,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/unloadEventEnd)
      */
-    open val unloadEventEnd: Double
+    public open val unloadEventEnd: Double
 
     /**
      * The legacy PerformanceTiming.redirectStart read-only property returns an unsigned long long representing the
@@ -240,7 +240,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/redirectStart)
      */
-    open val redirectStart: Double
+    public open val redirectStart: Double
 
     /**
      * The legacy PerformanceTiming.redirectEnd read-only property returns an unsigned long long representing the
@@ -252,7 +252,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/redirectEnd)
      */
-    open val redirectEnd: Double
+    public open val redirectEnd: Double
 
     /**
      * The legacy PerformanceTiming.fetchStart read-only property returns an unsigned long long representing the moment,
@@ -263,7 +263,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/fetchStart)
      */
-    open val fetchStart: Double
+    public open val fetchStart: Double
 
     /**
      * The legacy PerformanceTiming.domainLookupStart read-only property returns an unsigned long long representing the
@@ -275,7 +275,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domainLookupStart)
      */
-    open val domainLookupStart: Double
+    public open val domainLookupStart: Double
 
     /**
      * The legacy PerformanceTiming.domainLookupEnd read-only property returns an unsigned long long representing the
@@ -287,7 +287,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domainLookupEnd)
      */
-    open val domainLookupEnd: Double
+    public open val domainLookupEnd: Double
 
     /**
      * The legacy PerformanceTiming.connectStart read-only property returns an unsigned long long representing the
@@ -300,7 +300,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/connectStart)
      */
-    open val connectStart: Double
+    public open val connectStart: Double
 
     /**
      * The legacy PerformanceTiming.connectEnd read-only property returns an unsigned long long representing the moment,
@@ -313,7 +313,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/connectEnd)
      */
-    open val connectEnd: Double
+    public open val connectEnd: Double
 
     /**
      * The legacy PerformanceTiming.secureConnectionStart read-only property returns an unsigned long long representing
@@ -324,7 +324,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/secureConnectionStart)
      */
-    open val secureConnectionStart: Double
+    public open val secureConnectionStart: Double
 
     /**
      * The legacy PerformanceTiming.requestStart read-only property returns an unsigned long long representing the
@@ -336,7 +336,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/requestStart)
      */
-    open val requestStart: Double
+    public open val requestStart: Double
 
     /**
      * The legacy PerformanceTiming.responseStart read-only property returns an unsigned long long representing the
@@ -347,7 +347,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/responseStart)
      */
-    open val responseStart: Double
+    public open val responseStart: Double
 
     /**
      * The legacy PerformanceTiming.responseEnd read-only property returns an unsigned long long representing the
@@ -358,7 +358,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/responseEnd)
      */
-    open val responseEnd: Double
+    public open val responseEnd: Double
 
     /**
      * The legacy PerformanceTiming.domLoading read-only property returns an unsigned long long representing the moment,
@@ -369,7 +369,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domLoading)
      */
-    open val domLoading: Double
+    public open val domLoading: Double
 
     /**
      * The legacy PerformanceTiming.domInteractive read-only property returns an unsigned long long representing the
@@ -380,7 +380,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domInteractive)
      */
-    open val domInteractive: Double
+    public open val domInteractive: Double
 
     /**
      * The legacy PerformanceTiming.domContentLoadedEventStart read-only property returns an unsigned long long
@@ -391,7 +391,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domContentLoadedEventStart)
      */
-    open val domContentLoadedEventStart: Double
+    public open val domContentLoadedEventStart: Double
 
     /**
      * The legacy PerformanceTiming.domContentLoadedEventEnd read-only property returns an unsigned long long
@@ -402,7 +402,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domContentLoadedEventEnd)
      */
-    open val domContentLoadedEventEnd: Double
+    public open val domContentLoadedEventEnd: Double
 
     /**
      * The legacy PerformanceTiming.domComplete read-only property returns an unsigned long long representing the
@@ -413,7 +413,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domComplete)
      */
-    open val domComplete: Double
+    public open val domComplete: Double
 
     /**
      * The legacy PerformanceTiming.loadEventStart read-only property returns an unsigned long long representing the
@@ -424,7 +424,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/loadEventStart)
      */
-    open val loadEventStart: Double
+    public open val loadEventStart: Double
 
     /**
      * The legacy PerformanceTiming.loadEventEnd read-only property returns an unsigned long long representing the
@@ -435,7 +435,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/loadEventEnd)
      */
-    open val loadEventEnd: Double
+    public open val loadEventEnd: Double
 
     /**
      * The toJSON() method of the PerformanceTiming interface returns a JSON-serializable plain object representing the
@@ -445,7 +445,7 @@ public abstract external class PerformanceTiming : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 }
 
 /**
@@ -465,7 +465,7 @@ public abstract external class PerformanceNavigation : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigation/type)
      */
-    open val type: Short
+    public open val type: Short
 
     /**
      * The legacy PerformanceNavigation.redirectCount read-only property returns an unsigned short representing the
@@ -475,7 +475,7 @@ public abstract external class PerformanceNavigation : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigation/redirectCount)
      */
-    open val redirectCount: Short
+    public open val redirectCount: Short
 
     /**
      * The toJSON() method of the PerformanceNavigation interface returns a JSON-serializable plain object representing
@@ -485,12 +485,12 @@ public abstract external class PerformanceNavigation : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigation/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 
-    companion object {
-        val TYPE_NAVIGATE: Short
-        val TYPE_RELOAD: Short
-        val TYPE_BACK_FORWARD: Short
-        val TYPE_RESERVED: Short
+    public companion object {
+        public val TYPE_NAVIGATE: Short
+        public val TYPE_RELOAD: Short
+        public val TYPE_BACK_FORWARD: Short
+        public val TYPE_RESERVED: Short
     }
 }

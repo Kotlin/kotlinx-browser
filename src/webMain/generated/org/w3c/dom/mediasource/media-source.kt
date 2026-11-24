@@ -15,7 +15,7 @@ import org.w3c.dom.url.*
 
 public external interface ReadyState : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ReadyState.Companion.CLOSED: ReadyState get() = "closed".toJsString().unsafeCast<ReadyState>()
@@ -24,7 +24,7 @@ public inline val ReadyState.Companion.ENDED: ReadyState get() = "ended".toJsStr
 
 public external interface EndOfStreamError : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val EndOfStreamError.Companion.NETWORK: EndOfStreamError get() = "network".toJsString().unsafeCast<EndOfStreamError>()
@@ -43,7 +43,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/MediaSource)
      */
-    constructor()
+    public constructor()
 
     /**
      * The handle read-only property of the MediaSource interface returns a MediaSourceHandle object, a proxy for the
@@ -52,7 +52,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/handle)
      */
-    open val handle: MediaSourceHandle
+    public open val handle: MediaSourceHandle
 
     /**
      * The sourceBuffers read-only property of the MediaSource interface returns a SourceBufferList object containing
@@ -60,7 +60,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceBuffers)
      */
-    open val sourceBuffers: SourceBufferList
+    public open val sourceBuffers: SourceBufferList
 
     /**
      * The activeSourceBuffers read-only property of the MediaSource interface returns a SourceBufferList object
@@ -69,7 +69,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/activeSourceBuffers)
      */
-    open val activeSourceBuffers: SourceBufferList
+    public open val activeSourceBuffers: SourceBufferList
 
     /**
      * The readyState read-only property of the MediaSource interface returns an enum representing the state of the
@@ -77,7 +77,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/readyState)
      */
-    open val readyState: ReadyState
+    public open val readyState: ReadyState
 
     /**
      * The duration property of the MediaSource interface gets and sets the duration of the current media being
@@ -85,7 +85,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/duration)
      */
-    open var duration: Double
+    public open var duration: Double
 
     /**
      * The sourceopen event is fired when a MediaSource object's readyState changes to "open". This indicates that the
@@ -94,7 +94,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceopen_event)
      */
-    open var onsourceopen: ((Event) -> Unit)?
+    public open var onsourceopen: ((Event) -> Unit)?
 
     /**
      * The sourceended event is fired when a MediaSource object's readyState changes to "ended". This indicates that the
@@ -104,7 +104,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceended_event)
      */
-    open var onsourceended: ((Event) -> Unit)?
+    public open var onsourceended: ((Event) -> Unit)?
 
     /**
      * The sourceclose event is fired when a MediaSource object's readyState changes to "closed". This indicates that
@@ -112,7 +112,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceclose_event)
      */
-    open var onsourceclose: ((Event) -> Unit)?
+    public open var onsourceclose: ((Event) -> Unit)?
 
     /**
      * The addSourceBuffer() method of the MediaSource interface creates a new SourceBuffer of the given MIME type and
@@ -120,7 +120,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/addSourceBuffer)
      */
-    open fun addSourceBuffer(type: String): SourceBuffer
+    public open fun addSourceBuffer(type: String): SourceBuffer
 
     /**
      * The removeSourceBuffer() method of the MediaSource interface removes the given SourceBuffer from the
@@ -128,14 +128,14 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/removeSourceBuffer)
      */
-    open fun removeSourceBuffer(sourceBuffer: SourceBuffer)
+    public open fun removeSourceBuffer(sourceBuffer: SourceBuffer)
 
     /**
      * The endOfStream() method of the MediaSource interface signals the end of the stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/endOfStream)
      */
-    open fun endOfStream(error: EndOfStreamError = definedExternally)
+    public open fun endOfStream(error: EndOfStreamError = definedExternally)
 
     /**
      * The setLiveSeekableRange() method of the MediaSource interface sets the range that the user can seek to in the
@@ -143,7 +143,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/setLiveSeekableRange)
      */
-    open fun setLiveSeekableRange(start: Double, end: Double)
+    public open fun setLiveSeekableRange(start: Double, end: Double)
 
     /**
      * The clearLiveSeekableRange() method of the MediaSource interface clears a seekable range previously set with a
@@ -151,16 +151,16 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/clearLiveSeekableRange)
      */
-    open fun clearLiveSeekableRange()
+    public open fun clearLiveSeekableRange()
 
-    companion object {
+    public companion object {
         /**
          * The canConstructInDedicatedWorker read-only static property of the MediaSource interface returns true if
          * MediaSource worker support is implemented, providing a low-latency feature detection mechanism.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/canConstructInDedicatedWorker_static)
          */
-        val canConstructInDedicatedWorker: Boolean
+        public val canConstructInDedicatedWorker: Boolean
 
         /**
          * The MediaSource.isTypeSupported() static method returns a boolean value which is true if the given MIME type
@@ -168,7 +168,7 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/isTypeSupported_static)
          */
-        fun isTypeSupported(type: String): Boolean
+        public fun isTypeSupported(type: String): Boolean
     }
 }
 
@@ -184,7 +184,7 @@ public abstract external class MediaSourceHandle : JsAny
 
 public external interface AppendMode : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val AppendMode.Companion.SEGMENTS: AppendMode get() = "segments".toJsString().unsafeCast<AppendMode>()
@@ -203,7 +203,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/mode)
      */
-    open var mode: AppendMode
+    public open var mode: AppendMode
 
     /**
      * The updating read-only property of the SourceBuffer interface indicates whether the SourceBuffer is currently
@@ -211,7 +211,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updating)
      */
-    open val updating: Boolean
+    public open val updating: Boolean
 
     /**
      * The buffered read-only property of the SourceBuffer interface returns the time ranges that are currently buffered
@@ -219,7 +219,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/buffered)
      */
-    open val buffered: TimeRanges
+    public open val buffered: TimeRanges
 
     /**
      * The timestampOffset property of the SourceBuffer interface controls the offset applied to timestamps inside media
@@ -227,7 +227,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/timestampOffset)
      */
-    open var timestampOffset: Double
+    public open var timestampOffset: Double
 
     /**
      * The audioTracks read-only property of the SourceBuffer interface returns a list of the audio tracks currently
@@ -235,7 +235,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/audioTracks)
      */
-    open val audioTracks: AudioTrackList
+    public open val audioTracks: AudioTrackList
 
     /**
      * The videoTracks read-only property of the SourceBuffer interface returns a list of the video tracks currently
@@ -243,7 +243,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/videoTracks)
      */
-    open val videoTracks: VideoTrackList
+    public open val videoTracks: VideoTrackList
 
     /**
      * The textTracks read-only property of the SourceBuffer interface returns a list of the text tracks currently
@@ -251,7 +251,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/textTracks)
      */
-    open val textTracks: TextTrackList
+    public open val textTracks: TextTrackList
 
     /**
      * The appendWindowStart property of the SourceBuffer interface controls the timestamp for the start of the append
@@ -260,7 +260,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowStart)
      */
-    open var appendWindowStart: Double
+    public open var appendWindowStart: Double
 
     /**
      * The appendWindowEnd property of the SourceBuffer interface controls the timestamp for the end of the append
@@ -269,7 +269,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowEnd)
      */
-    open var appendWindowEnd: Double
+    public open var appendWindowEnd: Double
 
     /**
      * The updatestart event of the SourceBuffer interface signals the beginning of an appendBuffer() or remove()
@@ -277,7 +277,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updatestart_event)
      */
-    open var onupdatestart: ((Event) -> Unit)?
+    public open var onupdatestart: ((Event) -> Unit)?
 
     /**
      * The update event of the SourceBuffer interface signals the successful completion of an appendBuffer() or remove()
@@ -285,7 +285,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/update_event)
      */
-    open var onupdate: ((Event) -> Unit)?
+    public open var onupdate: ((Event) -> Unit)?
 
     /**
      * The updateend event of the SourceBuffer interface signals the (not necessarily successful) completion of an
@@ -294,7 +294,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updateend_event)
      */
-    open var onupdateend: ((Event) -> Unit)?
+    public open var onupdateend: ((Event) -> Unit)?
 
     /**
      * The error event of the SourceBuffer interface is fired when an error occurs during the processing of an
@@ -304,7 +304,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/error_event)
      */
-    open var onerror: ((Event) -> Unit)?
+    public open var onerror: ((Event) -> Unit)?
 
     /**
      * The abort event of the SourceBuffer interface is fired when the buffer appending is aborted, because the
@@ -314,7 +314,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort_event)
      */
-    open var onabort: ((Event) -> Unit)?
+    public open var onabort: ((Event) -> Unit)?
 
     /**
      * The appendBuffer() method of the SourceBuffer interface appends media segment data from an ArrayBuffer, a
@@ -322,14 +322,14 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendBuffer)
      */
-    open fun appendBuffer(data: BufferDataSource)
+    public open fun appendBuffer(data: BufferDataSource)
 
     /**
      * The abort() method of the SourceBuffer interface aborts the current segment and resets the segment parser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort)
      */
-    open fun abort()
+    public open fun abort()
 
     /**
      * The changeType() method of the SourceBuffer interface sets the MIME type that future calls to appendBuffer()
@@ -338,7 +338,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/changeType)
      */
-    open fun changeType(type: String)
+    public open fun changeType(type: String)
 
     /**
      * The remove() method of the SourceBuffer interface removes media segments within a specific time range from the
@@ -347,7 +347,7 @@ public abstract external class SourceBuffer : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/remove)
      */
-    open fun remove(start: Double, end: Double)
+    public open fun remove(start: Double, end: Double)
 }
 
 /**
@@ -362,9 +362,9 @@ public abstract external class SourceBufferList : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/length)
      */
-    open val length: Int
-    open var onaddsourcebuffer: ((Event) -> Unit)?
-    open var onremovesourcebuffer: ((Event) -> Unit)?
+    public open val length: Int
+    public open var onaddsourcebuffer: ((Event) -> Unit)?
+    public open var onremovesourcebuffer: ((Event) -> Unit)?
 }
 
 public operator fun SourceBufferList.get(index: Int): SourceBuffer? = getProperty(this, index)
@@ -384,7 +384,7 @@ public open external class ManagedMediaSource : MediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedMediaSource/ManagedMediaSource)
      */
-    constructor()
+    public constructor()
 
     /**
      * The streaming read-only property of the ManagedMediaSource interface is a boolean indicating whether the
@@ -392,7 +392,7 @@ public open external class ManagedMediaSource : MediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedMediaSource/streaming)
      */
-    open val streaming: Boolean
+    public open val streaming: Boolean
 
     /**
      * The startstreaming event of the ManagedMediaSource interface is fired when the streaming property changes from
@@ -401,7 +401,7 @@ public open external class ManagedMediaSource : MediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedMediaSource/startstreaming_event)
      */
-    open var onstartstreaming: ((Event) -> Unit)?
+    public open var onstartstreaming: ((Event) -> Unit)?
 
     /**
      * The endstreaming event of the ManagedMediaSource interface is fired when the streaming property changes from true
@@ -410,16 +410,16 @@ public open external class ManagedMediaSource : MediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedMediaSource/endstreaming_event)
      */
-    open var onendstreaming: ((Event) -> Unit)?
+    public open var onendstreaming: ((Event) -> Unit)?
 
-    companion object {
+    public companion object {
         /**
          * The canConstructInDedicatedWorker read-only static property of the MediaSource interface returns true if
          * MediaSource worker support is implemented, providing a low-latency feature detection mechanism.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/canConstructInDedicatedWorker_static)
          */
-        val canConstructInDedicatedWorker: Boolean
+        public val canConstructInDedicatedWorker: Boolean
 
         /**
          * The MediaSource.isTypeSupported() static method returns a boolean value which is true if the given MIME type
@@ -427,7 +427,7 @@ public open external class ManagedMediaSource : MediaSource {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/isTypeSupported_static)
          */
-        fun isTypeSupported(type: String): Boolean
+        public fun isTypeSupported(type: String): Boolean
     }
 }
 
@@ -446,7 +446,7 @@ public open external class BufferedChangeEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BufferedChangeEvent/BufferedChangeEvent)
      */
-    constructor(type: String, eventInitDict: BufferedChangeEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: BufferedChangeEventInit = definedExternally)
 
     /**
      * The addedRanges read-only property of the BufferedChangeEvent interface returns a TimeRanges object representing
@@ -455,7 +455,7 @@ public open external class BufferedChangeEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BufferedChangeEvent/addedRanges)
      */
-    open val addedRanges: TimeRanges
+    public open val addedRanges: TimeRanges
 
     /**
      * The removedRanges read-only property of the BufferedChangeEvent interface returns a TimeRanges object
@@ -465,19 +465,19 @@ public open external class BufferedChangeEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BufferedChangeEvent/removedRanges)
      */
-    open val removedRanges: TimeRanges
+    public open val removedRanges: TimeRanges
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface BufferedChangeEventInit : EventInit {
-    var addedRanges: TimeRanges?
-    var removedRanges: TimeRanges?
+    public var addedRanges: TimeRanges?
+    public var removedRanges: TimeRanges?
 }
 
 public fun BufferedChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, addedRanges: TimeRanges? = null, removedRanges: TimeRanges? = null): BufferedChangeEventInit = newJsObject<BufferedChangeEventInit>().apply {
@@ -504,5 +504,5 @@ public abstract external class ManagedSourceBuffer : SourceBuffer {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedSourceBuffer/bufferedchange_event)
      */
-    open var onbufferedchange: ((BufferedChangeEvent) -> Unit)?
+    public open var onbufferedchange: ((BufferedChangeEvent) -> Unit)?
 }

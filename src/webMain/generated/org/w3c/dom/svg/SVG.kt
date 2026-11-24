@@ -25,7 +25,7 @@ public abstract external class SVGElement : Element, ElementCSSInlineStyle, Glob
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/ownerSVGElement)
      */
-    open val ownerSVGElement: SVGSVGElement?
+    public open val ownerSVGElement: SVGSVGElement?
 
     /**
      * The viewportElement read-only property of the SVGElement interface represents the SVGElement which established
@@ -34,35 +34,35 @@ public abstract external class SVGElement : Element, ElementCSSInlineStyle, Glob
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/viewportElement)
      */
-    open val viewportElement: SVGElement?
+    public open val viewportElement: SVGElement?
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public external interface SVGBoundingBoxOptions : JsAny {
-    var fill: Boolean?
-    var stroke: Boolean?
-    var markers: Boolean?
-    var clipped: Boolean?
+    public var fill: Boolean?
+    public var stroke: Boolean?
+    public var markers: Boolean?
+    public var clipped: Boolean?
 }
 
 public fun SVGBoundingBoxOptions(fill: Boolean? = null, stroke: Boolean? = null, markers: Boolean? = null, clipped: Boolean? = null): SVGBoundingBoxOptions = newJsObject<SVGBoundingBoxOptions>().apply {
@@ -85,7 +85,7 @@ public abstract external class SVGGraphicsElement : SVGElement, SVGTests {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/transform)
      */
-    open val transform: SVGAnimatedTransformList
+    public open val transform: SVGAnimatedTransformList
 
     /**
      * The getBBox() method of the SVGGraphicsElement interface returns the smallest rectangle that contains the
@@ -94,7 +94,7 @@ public abstract external class SVGGraphicsElement : SVGElement, SVGTests {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getBBox)
      */
-    open fun getBBox(options: SVGBoundingBoxOptions = definedExternally): DOMRect
+    public open fun getBBox(options: SVGBoundingBoxOptions = definedExternally): DOMRect
 
     /**
      * The getCTM() method of the SVGGraphicsElement interface represents the matrix that transforms the current
@@ -102,7 +102,7 @@ public abstract external class SVGGraphicsElement : SVGElement, SVGTests {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getCTM)
      */
-    open fun getCTM(): DOMMatrix?
+    public open fun getCTM(): DOMMatrix?
 
     /**
      * The getScreenCTM() method of the SVGGraphicsElement interface represents the matrix that transforms the current
@@ -110,27 +110,27 @@ public abstract external class SVGGraphicsElement : SVGElement, SVGTests {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getScreenCTM)
      */
-    open fun getScreenCTM(): DOMMatrix?
+    public open fun getScreenCTM(): DOMMatrix?
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -147,7 +147,7 @@ public abstract external class SVGGeometryElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/pathLength)
      */
-    open val pathLength: SVGAnimatedNumber
+    public open val pathLength: SVGAnimatedNumber
 
     /**
      * The isPointInFill() method of the SVGGeometryElement interface determines whether a given point is within the
@@ -156,7 +156,7 @@ public abstract external class SVGGeometryElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInFill)
      */
-    open fun isPointInFill(point: DOMPointInit = definedExternally): Boolean
+    public open fun isPointInFill(point: DOMPointInit = definedExternally): Boolean
 
     /**
      * The isPointInStroke() method of the SVGGeometryElement interface determines whether a given point is within the
@@ -165,7 +165,7 @@ public abstract external class SVGGeometryElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInStroke)
      */
-    open fun isPointInStroke(point: DOMPointInit = definedExternally): Boolean
+    public open fun isPointInStroke(point: DOMPointInit = definedExternally): Boolean
 
     /**
      * The SVGGeometryElement.getTotalLength() method returns the user agent's computed value for the total length of
@@ -173,34 +173,34 @@ public abstract external class SVGGeometryElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getTotalLength)
      */
-    open fun getTotalLength(): Float
+    public open fun getTotalLength(): Float
 
     /**
      * The SVGGeometryElement.getPointAtLength() method returns the point at a given distance along the path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getPointAtLength)
      */
-    open fun getPointAtLength(distance: Float): DOMPoint
+    public open fun getPointAtLength(distance: Float): DOMPoint
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -215,7 +215,7 @@ public abstract external class SVGNumber : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumber/value)
      */
-    open var value: Float
+    public open var value: Float
 }
 
 /**
@@ -230,7 +230,7 @@ public abstract external class SVGLength : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/unitType)
      */
-    open val unitType: Short
+    public open val unitType: Short
 
     /**
      * The value property of the SVGLength interface represents the floating point value of the &lt;length&gt; in user
@@ -238,7 +238,7 @@ public abstract external class SVGLength : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/value)
      */
-    open var value: Float
+    public open var value: Float
 
     /**
      * The valueInSpecifiedUnits property of the SVGLength interface represents floating point value, in the units
@@ -246,7 +246,7 @@ public abstract external class SVGLength : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/valueInSpecifiedUnits)
      */
-    open var valueInSpecifiedUnits: Float
+    public open var valueInSpecifiedUnits: Float
 
     /**
      * The valueAsString property of the SVGLength interface represents the &lt;length&gt;'s value as a string, in the
@@ -254,7 +254,7 @@ public abstract external class SVGLength : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/valueAsString)
      */
-    open var valueAsString: String
+    public open var valueAsString: String
 
     /**
      * The newValueSpecifiedUnits() method of the SVGLength interface resets the value as a number with an associated
@@ -262,7 +262,7 @@ public abstract external class SVGLength : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/newValueSpecifiedUnits)
      */
-    open fun newValueSpecifiedUnits(unitType: Short, valueInSpecifiedUnits: Float)
+    public open fun newValueSpecifiedUnits(unitType: Short, valueInSpecifiedUnits: Float)
 
     /**
      * The convertToSpecifiedUnits() method of the SVGLength interface allows you to convert the length's value to the
@@ -270,20 +270,20 @@ public abstract external class SVGLength : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/convertToSpecifiedUnits)
      */
-    open fun convertToSpecifiedUnits(unitType: Short)
+    public open fun convertToSpecifiedUnits(unitType: Short)
 
-    companion object {
-        val SVG_LENGTHTYPE_UNKNOWN: Short
-        val SVG_LENGTHTYPE_NUMBER: Short
-        val SVG_LENGTHTYPE_PERCENTAGE: Short
-        val SVG_LENGTHTYPE_EMS: Short
-        val SVG_LENGTHTYPE_EXS: Short
-        val SVG_LENGTHTYPE_PX: Short
-        val SVG_LENGTHTYPE_CM: Short
-        val SVG_LENGTHTYPE_MM: Short
-        val SVG_LENGTHTYPE_IN: Short
-        val SVG_LENGTHTYPE_PT: Short
-        val SVG_LENGTHTYPE_PC: Short
+    public companion object {
+        public val SVG_LENGTHTYPE_UNKNOWN: Short
+        public val SVG_LENGTHTYPE_NUMBER: Short
+        public val SVG_LENGTHTYPE_PERCENTAGE: Short
+        public val SVG_LENGTHTYPE_EMS: Short
+        public val SVG_LENGTHTYPE_EXS: Short
+        public val SVG_LENGTHTYPE_PX: Short
+        public val SVG_LENGTHTYPE_CM: Short
+        public val SVG_LENGTHTYPE_MM: Short
+        public val SVG_LENGTHTYPE_IN: Short
+        public val SVG_LENGTHTYPE_PT: Short
+        public val SVG_LENGTHTYPE_PC: Short
     }
 }
 
@@ -299,14 +299,14 @@ public abstract external class SVGAngle : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/unitType)
      */
-    open val unitType: Short
+    public open val unitType: Short
 
     /**
      * The value property of the SVGAngle interface represents the floating point value of the &lt;angle&gt; in degrees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/value)
      */
-    open var value: Float
+    public open var value: Float
 
     /**
      * The valueInSpecifiedUnits property of the SVGAngle interface represents the value of this angle as a number, in
@@ -314,7 +314,7 @@ public abstract external class SVGAngle : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/valueInSpecifiedUnits)
      */
-    open var valueInSpecifiedUnits: Float
+    public open var valueInSpecifiedUnits: Float
 
     /**
      * The valueAsString property of the SVGAngle interface represents the angle's value as a string, in the units
@@ -322,7 +322,7 @@ public abstract external class SVGAngle : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/valueAsString)
      */
-    open var valueAsString: String
+    public open var valueAsString: String
 
     /**
      * The newValueSpecifiedUnits() method of the SVGAngle interface sets the value to a number with an associated
@@ -330,7 +330,7 @@ public abstract external class SVGAngle : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/newValueSpecifiedUnits)
      */
-    open fun newValueSpecifiedUnits(unitType: Short, valueInSpecifiedUnits: Float)
+    public open fun newValueSpecifiedUnits(unitType: Short, valueInSpecifiedUnits: Float)
 
     /**
      * The convertToSpecifiedUnits() method of the SVGAngle interface allows you to convert the angle's value to the
@@ -338,14 +338,14 @@ public abstract external class SVGAngle : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/convertToSpecifiedUnits)
      */
-    open fun convertToSpecifiedUnits(unitType: Short)
+    public open fun convertToSpecifiedUnits(unitType: Short)
 
-    companion object {
-        val SVG_ANGLETYPE_UNKNOWN: Short
-        val SVG_ANGLETYPE_UNSPECIFIED: Short
-        val SVG_ANGLETYPE_DEG: Short
-        val SVG_ANGLETYPE_RAD: Short
-        val SVG_ANGLETYPE_GRAD: Short
+    public companion object {
+        public val SVG_ANGLETYPE_UNKNOWN: Short
+        public val SVG_ANGLETYPE_UNSPECIFIED: Short
+        public val SVG_ANGLETYPE_DEG: Short
+        public val SVG_ANGLETYPE_RAD: Short
+        public val SVG_ANGLETYPE_GRAD: Short
     }
 }
 
@@ -361,7 +361,7 @@ public abstract external class SVGNumberList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The numberOfItems property of the SVGNumberList interface returns the number of items in the list. length is an
@@ -369,7 +369,7 @@ public abstract external class SVGNumberList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/numberOfItems)
      */
-    open val numberOfItems: Int
+    public open val numberOfItems: Int
 
     /**
      * The clear() method of the SVGNumberList interface clears all existing items from the list, with the result being
@@ -377,7 +377,7 @@ public abstract external class SVGNumberList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/clear)
      */
-    open fun clear()
+    public open fun clear()
 
     /**
      * The initialize() method of the SVGNumberList interface clears all existing items from the list and re-initializes
@@ -387,7 +387,7 @@ public abstract external class SVGNumberList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/initialize)
      */
-    open fun initialize(newItem: SVGNumber): SVGNumber
+    public open fun initialize(newItem: SVGNumber): SVGNumber
 
     /**
      * The getItem() method of the SVGNumberList interface returns the specified item from the list. The returned item
@@ -396,7 +396,7 @@ public abstract external class SVGNumberList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/getItem)
      */
-    open fun getItem(index: Int): SVGNumber
+    public open fun getItem(index: Int): SVGNumber
 
     /**
      * The insertItemBefore() method of the SVGNumberList interface inserts a new item into the list at the specified
@@ -404,7 +404,7 @@ public abstract external class SVGNumberList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/insertItemBefore)
      */
-    open fun insertItemBefore(newItem: SVGNumber, index: Int): SVGNumber
+    public open fun insertItemBefore(newItem: SVGNumber, index: Int): SVGNumber
 
     /**
      * The replaceItem() method of the SVGNumberList interface replaces an existing item in the list with a new item. If
@@ -414,14 +414,14 @@ public abstract external class SVGNumberList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/replaceItem)
      */
-    open fun replaceItem(newItem: SVGNumber, index: Int): SVGNumber
+    public open fun replaceItem(newItem: SVGNumber, index: Int): SVGNumber
 
     /**
      * The removeItem() method of the SVGNumberList interface removes an existing item at the given index from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/removeItem)
      */
-    open fun removeItem(index: Int): SVGNumber
+    public open fun removeItem(index: Int): SVGNumber
 
     /**
      * The appendItem() method of the SVGNumberList interface inserts a new item at the end of the list. If the given
@@ -430,7 +430,7 @@ public abstract external class SVGNumberList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/appendItem)
      */
-    open fun appendItem(newItem: SVGNumber): SVGNumber
+    public open fun appendItem(newItem: SVGNumber): SVGNumber
 }
 
 public operator fun SVGNumberList.get(index: Int): SVGNumber? = getProperty(this, index)
@@ -450,7 +450,7 @@ public abstract external class SVGLengthList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The numberOfItems property of the SVGLengthList interface returns the number of items in the list. length is an
@@ -458,7 +458,7 @@ public abstract external class SVGLengthList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/numberOfItems)
      */
-    open val numberOfItems: Int
+    public open val numberOfItems: Int
 
     /**
      * The clear() method of the SVGLengthList interface clears all existing items from the list, with the result being
@@ -466,7 +466,7 @@ public abstract external class SVGLengthList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/clear)
      */
-    open fun clear()
+    public open fun clear()
 
     /**
      * The initialize() method of the SVGLengthList interface clears all existing items from the list and re-initializes
@@ -476,7 +476,7 @@ public abstract external class SVGLengthList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/initialize)
      */
-    open fun initialize(newItem: SVGLength): SVGLength
+    public open fun initialize(newItem: SVGLength): SVGLength
 
     /**
      * The getItem() method of the SVGLengthList interface returns the specified item from the list. The returned item
@@ -485,7 +485,7 @@ public abstract external class SVGLengthList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/getItem)
      */
-    open fun getItem(index: Int): SVGLength
+    public open fun getItem(index: Int): SVGLength
 
     /**
      * The insertItemBefore() method of the SVGLengthList interface inserts a new item into the list at the specified
@@ -493,7 +493,7 @@ public abstract external class SVGLengthList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/insertItemBefore)
      */
-    open fun insertItemBefore(newItem: SVGLength, index: Int): SVGLength
+    public open fun insertItemBefore(newItem: SVGLength, index: Int): SVGLength
 
     /**
      * The replaceItem() method of the SVGLengthList interface replaces an existing item in the list with a new item. If
@@ -503,14 +503,14 @@ public abstract external class SVGLengthList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/replaceItem)
      */
-    open fun replaceItem(newItem: SVGLength, index: Int): SVGLength
+    public open fun replaceItem(newItem: SVGLength, index: Int): SVGLength
 
     /**
      * The removeItem() method of the SVGLengthList interface removes an existing item at the given index from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/removeItem)
      */
-    open fun removeItem(index: Int): SVGLength
+    public open fun removeItem(index: Int): SVGLength
 
     /**
      * The appendItem() method of the SVGLengthList interface inserts a new item at the end of the list. If the given
@@ -519,7 +519,7 @@ public abstract external class SVGLengthList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/appendItem)
      */
-    open fun appendItem(newItem: SVGLength): SVGLength
+    public open fun appendItem(newItem: SVGLength): SVGLength
 }
 
 public operator fun SVGLengthList.get(index: Int): SVGLength? = getProperty(this, index)
@@ -538,7 +538,7 @@ public abstract external class SVGStringList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The numberOfItems property of the SVGStringList interface returns the number of items in the list. length is an
@@ -546,7 +546,7 @@ public abstract external class SVGStringList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/numberOfItems)
      */
-    open val numberOfItems: Int
+    public open val numberOfItems: Int
 
     /**
      * The clear() method of the SVGStringList interface clears all existing items from the list, with the result being
@@ -554,7 +554,7 @@ public abstract external class SVGStringList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/clear)
      */
-    open fun clear()
+    public open fun clear()
 
     /**
      * The initialize() method of the SVGStringList interface clears all existing items from the list and re-initializes
@@ -564,7 +564,7 @@ public abstract external class SVGStringList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/initialize)
      */
-    open fun initialize(newItem: String): String
+    public open fun initialize(newItem: String): String
 
     /**
      * The getItem() method of the SVGStringList interface returns the specified item from the list. The returned item
@@ -573,7 +573,7 @@ public abstract external class SVGStringList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/getItem)
      */
-    open fun getItem(index: Int): String
+    public open fun getItem(index: Int): String
 
     /**
      * The insertItemBefore() method of the SVGStringList interface inserts a new item into the list at the specified
@@ -581,7 +581,7 @@ public abstract external class SVGStringList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/insertItemBefore)
      */
-    open fun insertItemBefore(newItem: String, index: Int): String
+    public open fun insertItemBefore(newItem: String, index: Int): String
 
     /**
      * The replaceItem() method of the SVGStringList interface replaces an existing item in the list with a new item.
@@ -589,14 +589,14 @@ public abstract external class SVGStringList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/replaceItem)
      */
-    open fun replaceItem(newItem: String, index: Int): String
+    public open fun replaceItem(newItem: String, index: Int): String
 
     /**
      * The removeItem() method of the SVGStringList interface removes an existing item at the given index from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/removeItem)
      */
-    open fun removeItem(index: Int): String
+    public open fun removeItem(index: Int): String
 
     /**
      * The appendItem() method of the SVGStringList interface inserts a new item at the end of the list. If the given
@@ -605,7 +605,7 @@ public abstract external class SVGStringList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/appendItem)
      */
-    open fun appendItem(newItem: String): String
+    public open fun appendItem(newItem: String): String
 }
 
 public operator fun SVGStringList.get(index: Int): String? = getStringProperty(this, index)
@@ -625,7 +625,7 @@ public abstract external class SVGAnimatedBoolean : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean/baseVal)
      */
-    open var baseVal: Boolean
+    public open var baseVal: Boolean
 
     /**
      * The animVal read-only property of the SVGAnimatedBoolean interface represents the current animated value of the
@@ -634,7 +634,7 @@ public abstract external class SVGAnimatedBoolean : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean/animVal)
      */
-    open val animVal: Boolean
+    public open val animVal: Boolean
 }
 
 /**
@@ -649,7 +649,7 @@ public abstract external class SVGAnimatedEnumeration : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/baseVal)
      */
-    open var baseVal: Short
+    public open var baseVal: Short
 
     /**
      * The animVal read-only property of the SVGAnimatedEnumeration interface represents the value of an SVG
@@ -657,7 +657,7 @@ public abstract external class SVGAnimatedEnumeration : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/animVal)
      */
-    open val animVal: Short
+    public open val animVal: Short
 }
 
 /**
@@ -672,7 +672,7 @@ public abstract external class SVGAnimatedInteger : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger/baseVal)
      */
-    open var baseVal: Int
+    public open var baseVal: Int
 
     /**
      * The animVal property of the SVGAnimatedInteger interface represents the animated value of an &lt;integer&gt;. If
@@ -680,7 +680,7 @@ public abstract external class SVGAnimatedInteger : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger/animVal)
      */
-    open val animVal: Int
+    public open val animVal: Int
 }
 
 /**
@@ -695,7 +695,7 @@ public abstract external class SVGAnimatedNumber : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber/baseVal)
      */
-    open var baseVal: Float
+    public open var baseVal: Float
 
     /**
      * The animVal read-only property of the SVGAnimatedNumber interface represents the animated value of an SVG
@@ -703,7 +703,7 @@ public abstract external class SVGAnimatedNumber : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber/animVal)
      */
-    open val animVal: Float
+    public open val animVal: Float
 }
 
 /**
@@ -717,7 +717,7 @@ public abstract external class SVGAnimatedLength : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength/baseVal)
      */
-    open val baseVal: SVGLength
+    public open val baseVal: SVGLength
 
     /**
      * The animVal property of the SVGAnimatedLength interface contains the current value of an SVG enumeration. If
@@ -725,7 +725,7 @@ public abstract external class SVGAnimatedLength : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength/animVal)
      */
-    open val animVal: SVGLength
+    public open val animVal: SVGLength
 }
 
 /**
@@ -741,7 +741,7 @@ public abstract external class SVGAnimatedAngle : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle/baseVal)
      */
-    open val baseVal: SVGAngle
+    public open val baseVal: SVGAngle
 
     /**
      * The animVal read-only property of the SVGAnimatedAngle interface represents the current animated value of the
@@ -750,7 +750,7 @@ public abstract external class SVGAnimatedAngle : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle/animVal)
      */
-    open val animVal: SVGAngle
+    public open val animVal: SVGAngle
 }
 
 /**
@@ -765,7 +765,7 @@ public abstract external class SVGAnimatedString : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/baseVal)
      */
-    open var baseVal: String
+    public open var baseVal: String
 
     /**
      * The animVal read-only property of the SVGAnimatedString interface is a string representing the animated value of
@@ -773,7 +773,7 @@ public abstract external class SVGAnimatedString : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/animVal)
      */
-    open val animVal: String
+    public open val animVal: String
 }
 
 /**
@@ -788,7 +788,7 @@ public abstract external class SVGAnimatedRect : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect/baseVal)
      */
-    open val baseVal: DOMRect
+    public open val baseVal: DOMRect
 
     /**
      * The animVal read-only property of the SVGAnimatedRect interface represents the current animated value of the
@@ -797,7 +797,7 @@ public abstract external class SVGAnimatedRect : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect/animVal)
      */
-    open val animVal: DOMRect
+    public open val animVal: DOMRect
 }
 
 /**
@@ -812,7 +812,7 @@ public abstract external class SVGAnimatedNumberList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList/baseVal)
      */
-    open val baseVal: SVGNumberList
+    public open val baseVal: SVGNumberList
 
     /**
      * The animVal read-only property of the SVGAnimatedNumberList interface represents the current animated value of an
@@ -820,7 +820,7 @@ public abstract external class SVGAnimatedNumberList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList/animVal)
      */
-    open val animVal: SVGNumberList
+    public open val animVal: SVGNumberList
 }
 
 /**
@@ -835,7 +835,7 @@ public abstract external class SVGAnimatedLengthList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList/baseVal)
      */
-    open val baseVal: SVGLengthList
+    public open val baseVal: SVGLengthList
 
     /**
      * The animVal read-only property of the SVGAnimatedLengthList interface represents the animated value of an
@@ -843,7 +843,7 @@ public abstract external class SVGAnimatedLengthList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList/animVal)
      */
-    open val animVal: SVGLengthList
+    public open val animVal: SVGLengthList
 }
 
 /**
@@ -854,10 +854,10 @@ public abstract external class SVGAnimatedLengthList : JsAny {
  */
 public abstract external class SVGUnitTypes : JsAny {
 
-    companion object {
-        val SVG_UNIT_TYPE_UNKNOWN: Short
-        val SVG_UNIT_TYPE_USERSPACEONUSE: Short
-        val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Short
+    public companion object {
+        public val SVG_UNIT_TYPE_UNKNOWN: Short
+        public val SVG_UNIT_TYPE_USERSPACEONUSE: Short
+        public val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Short
     }
 }
 
@@ -868,7 +868,7 @@ public external interface SVGTests : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/requiredExtensions)
      */
-    val requiredExtensions: SVGStringList
+    public val requiredExtensions: SVGStringList
 
     /**
      * The systemLanguage read-only property of the SVGGraphicsElement interface reflects the systemLanguage attribute
@@ -876,7 +876,7 @@ public external interface SVGTests : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/systemLanguage)
      */
-    val systemLanguage: SVGStringList
+    public val systemLanguage: SVGStringList
 }
 
 public external interface SVGFitToViewBox : JsAny {
@@ -886,7 +886,7 @@ public external interface SVGFitToViewBox : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/viewBox)
      */
-    val viewBox: SVGAnimatedRect
+    public val viewBox: SVGAnimatedRect
 
     /**
      * The preserveAspectRatio read-only property of the SVGSVGElement interface reflects the preserveAspectRatio
@@ -895,7 +895,7 @@ public external interface SVGFitToViewBox : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/preserveAspectRatio)
      */
-    val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
+    public val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 }
 
 public external interface SVGURIReference : JsAny {
@@ -905,7 +905,7 @@ public external interface SVGURIReference : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/href)
      */
-    val href: SVGAnimatedString
+    public val href: SVGAnimatedString
 }
 
 /**
@@ -924,7 +924,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/x)
      */
-    open val x: SVGAnimatedLength
+    public open val x: SVGAnimatedLength
 
     /**
      * The y read-only property of the SVGSVGElement interface describes the vertical coordinate of the position of that
@@ -934,7 +934,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/y)
      */
-    open val y: SVGAnimatedLength
+    public open val y: SVGAnimatedLength
 
     /**
      * The width read-only property of the SVGSVGElement interface describes the horizontal size of element as an
@@ -943,7 +943,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/width)
      */
-    open val width: SVGAnimatedLength
+    public open val width: SVGAnimatedLength
 
     /**
      * The height read-only property of the SVGSVGElement interface describes the vertical size of element as an
@@ -952,7 +952,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/height)
      */
-    open val height: SVGAnimatedLength
+    public open val height: SVGAnimatedLength
 
     /**
      * The currentScale property of the SVGSVGElement interface reflects the current scale factor relative to the
@@ -960,7 +960,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/currentScale)
      */
-    open var currentScale: Float
+    public open var currentScale: Float
 
     /**
      * The currentTranslate read-only property of the SVGSVGElement interface reflects the translation factor that takes
@@ -968,9 +968,9 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/currentTranslate)
      */
-    open val currentTranslate: DOMPoint
-    open fun getIntersectionList(rect: DOMRect, referenceElement: SVGElement?): NodeList
-    open fun getEnclosureList(rect: DOMRect, referenceElement: SVGElement?): NodeList
+    public open val currentTranslate: DOMPoint
+    public open fun getIntersectionList(rect: DOMRect, referenceElement: SVGElement?): NodeList
+    public open fun getEnclosureList(rect: DOMRect, referenceElement: SVGElement?): NodeList
 
     /**
      * The checkIntersection() method of the SVGSVGElement interface checks if the rendered content of the given element
@@ -978,7 +978,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/checkIntersection)
      */
-    open fun checkIntersection(element: SVGElement, rect: DOMRect): Boolean
+    public open fun checkIntersection(element: SVGElement, rect: DOMRect): Boolean
 
     /**
      * The checkEnclosure() method of the SVGSVGElement interface checks if the rendered content of the given element is
@@ -986,7 +986,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/checkEnclosure)
      */
-    open fun checkEnclosure(element: SVGElement, rect: DOMRect): Boolean
+    public open fun checkEnclosure(element: SVGElement, rect: DOMRect): Boolean
 
     /**
      * The deselectAll() method of the SVGSVGElement interface unselects any selected objects, including any selections
@@ -994,7 +994,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/deselectAll)
      */
-    open fun deselectAll()
+    public open fun deselectAll()
 
     /**
      * The createSVGNumber() method of the SVGSVGElement interface creates an SVGNumber object outside of any document
@@ -1002,7 +1002,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGNumber)
      */
-    open fun createSVGNumber(): SVGNumber
+    public open fun createSVGNumber(): SVGNumber
 
     /**
      * The createSVGLength() method of the SVGSVGElement interface creates an SVGLength object outside of any document
@@ -1010,7 +1010,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGLength)
      */
-    open fun createSVGLength(): SVGLength
+    public open fun createSVGLength(): SVGLength
 
     /**
      * The createSVGAngle() method of the SVGSVGElement interface creates an SVGAngle object outside of any document
@@ -1018,7 +1018,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGAngle)
      */
-    open fun createSVGAngle(): SVGAngle
+    public open fun createSVGAngle(): SVGAngle
 
     /**
      * The createSVGPoint() method of the SVGSVGElement interface creates a DOMPoint object outside of any document
@@ -1026,7 +1026,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGPoint)
      */
-    open fun createSVGPoint(): DOMPoint
+    public open fun createSVGPoint(): DOMPoint
 
     /**
      * The createSVGMatrix() method of the SVGSVGElement interface creates a DOMMatrix object outside of any document
@@ -1034,14 +1034,14 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGMatrix)
      */
-    open fun createSVGMatrix(): DOMMatrix
+    public open fun createSVGMatrix(): DOMMatrix
 
     /**
      * The createSVGRect() method of the SVGSVGElement interface creates a DOMRect object outside of any document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGRect)
      */
-    open fun createSVGRect(): DOMRect
+    public open fun createSVGRect(): DOMRect
 
     /**
      * The createSVGTransform() method of the SVGSVGElement interface creates an SVGTransform object outside of any
@@ -1049,7 +1049,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGTransform)
      */
-    open fun createSVGTransform(): SVGTransform
+    public open fun createSVGTransform(): SVGTransform
 
     /**
      * The createSVGTransformFromMatrix() method of the SVGSVGElement interface creates an SVGTransform object outside
@@ -1057,7 +1057,7 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGTransformFromMatrix)
      */
-    open fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
+    public open fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
 
     /**
      * The getElementById() method of the SVGSVGElement interface searches the SVG document fragment (i.e., the search
@@ -1065,31 +1065,31 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/getElementById)
      */
-    open fun getElementById(elementId: String): Element?
-    open fun suspendRedraw(maxWaitMilliseconds: Int): Int
-    open fun unsuspendRedraw(suspendHandleID: Int)
-    open fun unsuspendRedrawAll()
-    open fun forceRedraw()
+    public open fun getElementById(elementId: String): Element?
+    public open fun suspendRedraw(maxWaitMilliseconds: Int): Int
+    public open fun unsuspendRedraw(suspendHandleID: Int)
+    public open fun unsuspendRedrawAll()
+    public open fun forceRedraw()
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1100,25 +1100,25 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
  */
 public abstract external class SVGGElement : SVGGraphicsElement {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1129,25 +1129,25 @@ public abstract external class SVGGElement : SVGGraphicsElement {
  */
 public abstract external class SVGDefsElement : SVGGraphicsElement {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1158,25 +1158,25 @@ public abstract external class SVGDefsElement : SVGGraphicsElement {
  */
 public abstract external class SVGDescElement : SVGElement {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1187,25 +1187,25 @@ public abstract external class SVGDescElement : SVGElement {
  */
 public abstract external class SVGMetadataElement : SVGElement {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1216,25 +1216,25 @@ public abstract external class SVGMetadataElement : SVGElement {
  */
 public abstract external class SVGTitleElement : SVGElement {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1245,25 +1245,25 @@ public abstract external class SVGTitleElement : SVGElement {
  */
 public abstract external class SVGSymbolElement : SVGGraphicsElement, SVGFitToViewBox {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1280,7 +1280,7 @@ public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReferen
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/x)
      */
-    open val x: SVGAnimatedLength
+    public open val x: SVGAnimatedLength
 
     /**
      * The y read-only property of the SVGUseElement interface describes the y-axis coordinate of the start point of the
@@ -1289,7 +1289,7 @@ public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReferen
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/y)
      */
-    open val y: SVGAnimatedLength
+    public open val y: SVGAnimatedLength
 
     /**
      * The width read-only property of the SVGUseElement interface describes the width of the referenced element as an
@@ -1297,7 +1297,7 @@ public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReferen
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/width)
      */
-    open val width: SVGAnimatedLength
+    public open val width: SVGAnimatedLength
 
     /**
      * The height read-only property of the SVGUseElement interface describes the height of the referenced element as an
@@ -1305,27 +1305,27 @@ public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReferen
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/height)
      */
-    open val height: SVGAnimatedLength
+    public open val height: SVGAnimatedLength
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1336,30 +1336,30 @@ public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReferen
  */
 public abstract external class SVGSwitchElement : SVGGraphicsElement {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
 public external interface GetSVGDocument : JsAny {
-    fun getSVGDocument(): Document
+    public fun getSVGDocument(): Document
 }
 
 /**
@@ -1376,7 +1376,7 @@ public abstract external class SVGStyleElement : SVGElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/type)
      */
-    open var type: String
+    public open var type: String
 
     /**
      * The SVGStyleElement.media property is a media query string corresponding to the media attribute of the given SVG
@@ -1384,7 +1384,7 @@ public abstract external class SVGStyleElement : SVGElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/media)
      */
-    open var media: String
+    public open var media: String
 
     /**
      * The SVGStyleElement.title property is a string corresponding to the title attribute of the given SVG style
@@ -1392,7 +1392,7 @@ public abstract external class SVGStyleElement : SVGElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/title)
      */
-    open var title: String
+    public open var title: String
 
     /**
      * The SVGStyleElement.disabled property can be used to get and set whether the stylesheet is disabled (true) or not
@@ -1400,27 +1400,27 @@ public abstract external class SVGStyleElement : SVGElement, LinkStyle {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/disabled)
      */
-    open var disabled: Boolean
+    public open var disabled: Boolean
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1437,7 +1437,7 @@ public abstract external class SVGTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/type)
      */
-    open val type: Short
+    public open val type: Short
 
     /**
      * The matrix read-only property of the SVGTransform interface represents the transformation matrix that corresponds
@@ -1445,14 +1445,14 @@ public abstract external class SVGTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/matrix)
      */
-    open val matrix: DOMMatrix
+    public open val matrix: DOMMatrix
 
     /**
      * The angle read-only property of the SVGTransform interface represents the angle of the transformation in degrees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/angle)
      */
-    open val angle: Float
+    public open val angle: Float
 
     /**
      * The setMatrix() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_MATRIX, with
@@ -1460,7 +1460,7 @@ public abstract external class SVGTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setMatrix)
      */
-    open fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)
+    public open fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)
 
     /**
      * The setTranslate() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_TRANSLATE, with
@@ -1468,7 +1468,7 @@ public abstract external class SVGTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setTranslate)
      */
-    open fun setTranslate(tx: Float, ty: Float)
+    public open fun setTranslate(tx: Float, ty: Float)
 
     /**
      * The setScale() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_SCALE, with
@@ -1476,7 +1476,7 @@ public abstract external class SVGTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setScale)
      */
-    open fun setScale(sx: Float, sy: Float)
+    public open fun setScale(sx: Float, sy: Float)
 
     /**
      * The setRotate() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_ROTATE, with
@@ -1484,7 +1484,7 @@ public abstract external class SVGTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setRotate)
      */
-    open fun setRotate(angle: Float, cx: Float, cy: Float)
+    public open fun setRotate(angle: Float, cx: Float, cy: Float)
 
     /**
      * The setSkewX() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_SKEWX, with
@@ -1492,7 +1492,7 @@ public abstract external class SVGTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewX)
      */
-    open fun setSkewX(angle: Float)
+    public open fun setSkewX(angle: Float)
 
     /**
      * The setSkewY() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_SKEWY, with
@@ -1500,16 +1500,16 @@ public abstract external class SVGTransform : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewY)
      */
-    open fun setSkewY(angle: Float)
+    public open fun setSkewY(angle: Float)
 
-    companion object {
-        val SVG_TRANSFORM_UNKNOWN: Short
-        val SVG_TRANSFORM_MATRIX: Short
-        val SVG_TRANSFORM_TRANSLATE: Short
-        val SVG_TRANSFORM_SCALE: Short
-        val SVG_TRANSFORM_ROTATE: Short
-        val SVG_TRANSFORM_SKEWX: Short
-        val SVG_TRANSFORM_SKEWY: Short
+    public companion object {
+        public val SVG_TRANSFORM_UNKNOWN: Short
+        public val SVG_TRANSFORM_MATRIX: Short
+        public val SVG_TRANSFORM_TRANSLATE: Short
+        public val SVG_TRANSFORM_SCALE: Short
+        public val SVG_TRANSFORM_ROTATE: Short
+        public val SVG_TRANSFORM_SKEWX: Short
+        public val SVG_TRANSFORM_SKEWY: Short
     }
 }
 
@@ -1524,7 +1524,7 @@ public abstract external class SVGTransformList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The numberOfItems read-only property of the SVGTransformList interface represents the number of items in the
@@ -1532,7 +1532,7 @@ public abstract external class SVGTransformList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/numberOfItems)
      */
-    open val numberOfItems: Int
+    public open val numberOfItems: Int
 
     /**
      * The clear() method of the SVGTransformList interface clears all existing current items from the list, with the
@@ -1540,7 +1540,7 @@ public abstract external class SVGTransformList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/clear)
      */
-    open fun clear()
+    public open fun clear()
 
     /**
      * The initialize() method of the SVGTransformList interface clears all existing current items from the list and
@@ -1548,14 +1548,14 @@ public abstract external class SVGTransformList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/initialize)
      */
-    open fun initialize(newItem: SVGTransform): SVGTransform
+    public open fun initialize(newItem: SVGTransform): SVGTransform
 
     /**
      * The getItem() method of the SVGTransformList interface returns the specified item from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/getItem)
      */
-    open fun getItem(index: Int): SVGTransform
+    public open fun getItem(index: Int): SVGTransform
 
     /**
      * The insertItemBefore() method of the SVGTransformList interface inserts a new item into the list at the specified
@@ -1563,28 +1563,28 @@ public abstract external class SVGTransformList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/insertItemBefore)
      */
-    open fun insertItemBefore(newItem: SVGTransform, index: Int): SVGTransform
+    public open fun insertItemBefore(newItem: SVGTransform, index: Int): SVGTransform
 
     /**
      * The replaceItem() method of the SVGTransformList interface replaces an existing item in the list with a new item.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/replaceItem)
      */
-    open fun replaceItem(newItem: SVGTransform, index: Int): SVGTransform
+    public open fun replaceItem(newItem: SVGTransform, index: Int): SVGTransform
 
     /**
      * The removeItem() method of the SVGTransformList interface removes an existing item from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/removeItem)
      */
-    open fun removeItem(index: Int): SVGTransform
+    public open fun removeItem(index: Int): SVGTransform
 
     /**
      * The appendItem() method of the SVGTransformList interface inserts a new item at the end of the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/appendItem)
      */
-    open fun appendItem(newItem: SVGTransform): SVGTransform
+    public open fun appendItem(newItem: SVGTransform): SVGTransform
 
     /**
      * The createSVGTransformFromMatrix() method of the SVGTransformList interface creates an SVGTransform object which
@@ -1592,7 +1592,7 @@ public abstract external class SVGTransformList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/createSVGTransformFromMatrix)
      */
-    open fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
+    public open fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
 
     /**
      * The consolidate() method of the SVGTransformList interface consolidates the list of separate SVGTransform objects
@@ -1601,7 +1601,7 @@ public abstract external class SVGTransformList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/consolidate)
      */
-    open fun consolidate(): SVGTransform?
+    public open fun consolidate(): SVGTransform?
 }
 
 public operator fun SVGTransformList.get(index: Int): SVGTransform? = getProperty(this, index)
@@ -1620,7 +1620,7 @@ public abstract external class SVGAnimatedTransformList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList/baseVal)
      */
-    open val baseVal: SVGTransformList
+    public open val baseVal: SVGTransformList
 
     /**
      * The animVal read-only property of the SVGAnimatedTransformList interface represents the animated value of the
@@ -1628,7 +1628,7 @@ public abstract external class SVGAnimatedTransformList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList/animVal)
      */
-    open val animVal: SVGTransformList
+    public open val animVal: SVGTransformList
 }
 
 /**
@@ -1643,7 +1643,7 @@ public abstract external class SVGPreserveAspectRatio : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio/align)
      */
-    open var align: Short
+    public open var align: Short
 
     /**
      * The meetOrSlice property of the SVGPreserveAspectRatio interface reflects the type of the meet-or-slice value as
@@ -1651,23 +1651,23 @@ public abstract external class SVGPreserveAspectRatio : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio/meetOrSlice)
      */
-    open var meetOrSlice: Short
+    public open var meetOrSlice: Short
 
-    companion object {
-        val SVG_PRESERVEASPECTRATIO_UNKNOWN: Short
-        val SVG_PRESERVEASPECTRATIO_NONE: Short
-        val SVG_PRESERVEASPECTRATIO_XMINYMIN: Short
-        val SVG_PRESERVEASPECTRATIO_XMIDYMIN: Short
-        val SVG_PRESERVEASPECTRATIO_XMAXYMIN: Short
-        val SVG_PRESERVEASPECTRATIO_XMINYMID: Short
-        val SVG_PRESERVEASPECTRATIO_XMIDYMID: Short
-        val SVG_PRESERVEASPECTRATIO_XMAXYMID: Short
-        val SVG_PRESERVEASPECTRATIO_XMINYMAX: Short
-        val SVG_PRESERVEASPECTRATIO_XMIDYMAX: Short
-        val SVG_PRESERVEASPECTRATIO_XMAXYMAX: Short
-        val SVG_MEETORSLICE_UNKNOWN: Short
-        val SVG_MEETORSLICE_MEET: Short
-        val SVG_MEETORSLICE_SLICE: Short
+    public companion object {
+        public val SVG_PRESERVEASPECTRATIO_UNKNOWN: Short
+        public val SVG_PRESERVEASPECTRATIO_NONE: Short
+        public val SVG_PRESERVEASPECTRATIO_XMINYMIN: Short
+        public val SVG_PRESERVEASPECTRATIO_XMIDYMIN: Short
+        public val SVG_PRESERVEASPECTRATIO_XMAXYMIN: Short
+        public val SVG_PRESERVEASPECTRATIO_XMINYMID: Short
+        public val SVG_PRESERVEASPECTRATIO_XMIDYMID: Short
+        public val SVG_PRESERVEASPECTRATIO_XMAXYMID: Short
+        public val SVG_PRESERVEASPECTRATIO_XMINYMAX: Short
+        public val SVG_PRESERVEASPECTRATIO_XMIDYMAX: Short
+        public val SVG_PRESERVEASPECTRATIO_XMAXYMAX: Short
+        public val SVG_MEETORSLICE_UNKNOWN: Short
+        public val SVG_MEETORSLICE_MEET: Short
+        public val SVG_MEETORSLICE_SLICE: Short
     }
 }
 
@@ -1684,7 +1684,7 @@ public abstract external class SVGAnimatedPreserveAspectRatio : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio/baseVal)
      */
-    open val baseVal: SVGPreserveAspectRatio
+    public open val baseVal: SVGPreserveAspectRatio
 
     /**
      * The animVal read-only property of the SVGAnimatedPreserveAspectRatio interface represents the value of the
@@ -1692,7 +1692,7 @@ public abstract external class SVGAnimatedPreserveAspectRatio : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio/animVal)
      */
-    open val animVal: SVGPreserveAspectRatio
+    public open val animVal: SVGPreserveAspectRatio
 }
 
 /**
@@ -1710,7 +1710,7 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/x)
      */
-    open val x: SVGAnimatedLength
+    public open val x: SVGAnimatedLength
 
     /**
      * The y read-only property of the SVGRectElement interface describes the vertical coordinate of the position of an
@@ -1720,7 +1720,7 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/y)
      */
-    open val y: SVGAnimatedLength
+    public open val y: SVGAnimatedLength
 
     /**
      * The width read-only property of the SVGRectElement interface describes the horizontal size of an SVG rectangle as
@@ -1729,7 +1729,7 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/width)
      */
-    open val width: SVGAnimatedLength
+    public open val width: SVGAnimatedLength
 
     /**
      * The height read-only property of the SVGRectElement interface describes the vertical size of an SVG rectangle as
@@ -1738,7 +1738,7 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/height)
      */
-    open val height: SVGAnimatedLength
+    public open val height: SVGAnimatedLength
 
     /**
      * The rx read-only property of the SVGRectElement interface describes the horizontal curve of the corners of an SVG
@@ -1747,7 +1747,7 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/rx)
      */
-    open val rx: SVGAnimatedLength
+    public open val rx: SVGAnimatedLength
 
     /**
      * The ry read-only property of the SVGRectElement interface describes the vertical curve of the corners of an SVG
@@ -1756,27 +1756,27 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/ry)
      */
-    open val ry: SVGAnimatedLength
+    public open val ry: SVGAnimatedLength
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1792,7 +1792,7 @@ public abstract external class SVGCircleElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement/cx)
      */
-    open val cx: SVGAnimatedLength
+    public open val cx: SVGAnimatedLength
 
     /**
      * The cy read-only property of the SVGCircleElement interface reflects the cy attribute of a &lt;circle&gt; element
@@ -1800,7 +1800,7 @@ public abstract external class SVGCircleElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement/cy)
      */
-    open val cy: SVGAnimatedLength
+    public open val cy: SVGAnimatedLength
 
     /**
      * The r read-only property of the SVGCircleElement interface reflects the r attribute of a &lt;circle&gt; element
@@ -1808,27 +1808,27 @@ public abstract external class SVGCircleElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement/r)
      */
-    open val r: SVGAnimatedLength
+    public open val r: SVGAnimatedLength
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1845,7 +1845,7 @@ public abstract external class SVGEllipseElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/cx)
      */
-    open val cx: SVGAnimatedLength
+    public open val cx: SVGAnimatedLength
 
     /**
      * The cy read-only property of the SVGEllipseElement interface describes the y-axis coordinate of the center of the
@@ -1854,7 +1854,7 @@ public abstract external class SVGEllipseElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/cy)
      */
-    open val cy: SVGAnimatedLength
+    public open val cy: SVGAnimatedLength
 
     /**
      * The rx read-only property of the SVGEllipseElement interface describes the x-axis radius of the ellipse as an
@@ -1862,7 +1862,7 @@ public abstract external class SVGEllipseElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/rx)
      */
-    open val rx: SVGAnimatedLength
+    public open val rx: SVGAnimatedLength
 
     /**
      * The ry read-only property of the SVGEllipseElement interface describes the y-axis radius of the ellipse as an
@@ -1870,27 +1870,27 @@ public abstract external class SVGEllipseElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/ry)
      */
-    open val ry: SVGAnimatedLength
+    public open val ry: SVGAnimatedLength
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1907,7 +1907,7 @@ public abstract external class SVGLineElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/x1)
      */
-    open val x1: SVGAnimatedLength
+    public open val x1: SVGAnimatedLength
 
     /**
      * The y1 read-only property of the SVGLineElement interface describes the start of the SVG line along the y-axis as
@@ -1915,7 +1915,7 @@ public abstract external class SVGLineElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/y1)
      */
-    open val y1: SVGAnimatedLength
+    public open val y1: SVGAnimatedLength
 
     /**
      * The x2 read-only property of the SVGLineElement interface describes the x-axis coordinate value of the end of a
@@ -1923,7 +1923,7 @@ public abstract external class SVGLineElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/x2)
      */
-    open val x2: SVGAnimatedLength
+    public open val x2: SVGAnimatedLength
 
     /**
      * The y2 read-only property of the SVGLineElement interface describes the v-axis coordinate value of the end of a
@@ -1931,27 +1931,27 @@ public abstract external class SVGLineElement : SVGGeometryElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/y2)
      */
-    open val y2: SVGAnimatedLength
+    public open val y2: SVGAnimatedLength
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -1963,7 +1963,7 @@ public external interface SVGAnimatedPoints : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolylineElement/points)
      */
-    val points: SVGPointList
+    public val points: SVGPointList
 
     /**
      * The animatedPoints read-only property of the SVGPolylineElement interface reflects the animated value of the
@@ -1972,7 +1972,7 @@ public external interface SVGAnimatedPoints : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolylineElement/animatedPoints)
      */
-    val animatedPoints: SVGPointList
+    public val animatedPoints: SVGPointList
 }
 
 /**
@@ -1986,21 +1986,21 @@ public abstract external class SVGPointList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/length)
      */
-    open val length: Int
+    public open val length: Int
 
     /**
      * The numberOfItems read-only property of the SVGPointList interface returns the number of items in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/numberOfItems)
      */
-    open val numberOfItems: Int
+    public open val numberOfItems: Int
 
     /**
      * The clear() method of the SVGPointList interface removes all items from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/clear)
      */
-    open fun clear()
+    public open fun clear()
 
     /**
      * The initialize() method of the SVGPointList interface clears the list then adds a single new DOMPoint object to
@@ -2008,42 +2008,42 @@ public abstract external class SVGPointList : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/initialize)
      */
-    open fun initialize(newItem: DOMPoint): DOMPoint
+    public open fun initialize(newItem: DOMPoint): DOMPoint
 
     /**
      * The getItem() method of the SVGPointList interface gets one item from the list at the specified index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/getItem)
      */
-    open fun getItem(index: Int): DOMPoint
+    public open fun getItem(index: Int): DOMPoint
 
     /**
      * The insertItemBefore() method of the SVGPointList interface inserts a DOMPoint before another item in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/insertItemBefore)
      */
-    open fun insertItemBefore(newItem: DOMPoint, index: Int): DOMPoint
+    public open fun insertItemBefore(newItem: DOMPoint, index: Int): DOMPoint
 
     /**
      * The replaceItem() method of the SVGPointList interface replaces a DOMPoint in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/replaceItem)
      */
-    open fun replaceItem(newItem: DOMPoint, index: Int): DOMPoint
+    public open fun replaceItem(newItem: DOMPoint, index: Int): DOMPoint
 
     /**
      * The removeItem() method of the SVGPointList interface removes a DOMPoint from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/removeItem)
      */
-    open fun removeItem(index: Int): DOMPoint
+    public open fun removeItem(index: Int): DOMPoint
 
     /**
      * The appendItem() method of the SVGPointList interface adds a DOMPoint to the end of the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/appendItem)
      */
-    open fun appendItem(newItem: DOMPoint): DOMPoint
+    public open fun appendItem(newItem: DOMPoint): DOMPoint
 }
 
 public operator fun SVGPointList.get(index: Int): DOMPoint? = getProperty(this, index)
@@ -2058,25 +2058,25 @@ public operator fun SVGPointList.set(index: Int, newItem: DOMPoint) { setPropert
  */
 public abstract external class SVGPolylineElement : SVGGeometryElement, SVGAnimatedPoints {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2088,25 +2088,25 @@ public abstract external class SVGPolylineElement : SVGGeometryElement, SVGAnima
  */
 public abstract external class SVGPolygonElement : SVGGeometryElement, SVGAnimatedPoints {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2123,7 +2123,7 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/textLength)
      */
-    open val textLength: SVGAnimatedLength
+    public open val textLength: SVGAnimatedLength
 
     /**
      * The lengthAdjust read-only property of the SVGTextContentElement interface reflects the lengthAdjust attribute of
@@ -2131,7 +2131,7 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/lengthAdjust)
      */
-    open val lengthAdjust: SVGAnimatedEnumeration
+    public open val lengthAdjust: SVGAnimatedEnumeration
 
     /**
      * The getNumberOfChars() method of the SVGTextContentElement interface represents the total number of addressable
@@ -2139,7 +2139,7 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getNumberOfChars)
      */
-    open fun getNumberOfChars(): Int
+    public open fun getNumberOfChars(): Int
 
     /**
      * The getComputedTextLength() method of the SVGTextContentElement interface represents the computed length for the
@@ -2147,7 +2147,7 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getComputedTextLength)
      */
-    open fun getComputedTextLength(): Float
+    public open fun getComputedTextLength(): Float
 
     /**
      * The getSubStringLength() method of the SVGTextContentElement interface represents the computed length of the
@@ -2155,7 +2155,7 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getSubStringLength)
      */
-    open fun getSubStringLength(charnum: Int, nchars: Int): Float
+    public open fun getSubStringLength(charnum: Int, nchars: Int): Float
 
     /**
      * The getStartPositionOfChar() method of the SVGTextContentElement interface returns the position of a typographic
@@ -2163,7 +2163,7 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getStartPositionOfChar)
      */
-    open fun getStartPositionOfChar(charnum: Int): DOMPoint
+    public open fun getStartPositionOfChar(charnum: Int): DOMPoint
 
     /**
      * The getEndPositionOfChar() method of the SVGTextContentElement interface returns the trailing position of a
@@ -2171,7 +2171,7 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getEndPositionOfChar)
      */
-    open fun getEndPositionOfChar(charnum: Int): DOMPoint
+    public open fun getEndPositionOfChar(charnum: Int): DOMPoint
 
     /**
      * The getExtentOfChar() method of the SVGTextContentElement interface the represents computed tight bounding box of
@@ -2179,7 +2179,7 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getExtentOfChar)
      */
-    open fun getExtentOfChar(charnum: Int): DOMRect
+    public open fun getExtentOfChar(charnum: Int): DOMRect
 
     /**
      * The getRotationOfChar() method of the SVGTextContentElement interface the represents the rotation of a
@@ -2187,7 +2187,7 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getRotationOfChar)
      */
-    open fun getRotationOfChar(charnum: Int): Float
+    public open fun getRotationOfChar(charnum: Int): Float
 
     /**
      * The getCharNumAtPosition() method of the SVGTextContentElement interface represents the character which caused a
@@ -2197,31 +2197,31 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getCharNumAtPosition)
      */
-    open fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Int
-    open fun selectSubString(charnum: Int, nchars: Int)
+    public open fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Int
+    public open fun selectSubString(charnum: Int, nchars: Int)
 
-    companion object {
-        val LENGTHADJUST_UNKNOWN: Short
-        val LENGTHADJUST_SPACING: Short
-        val LENGTHADJUST_SPACINGANDGLYPHS: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val LENGTHADJUST_UNKNOWN: Short
+        public val LENGTHADJUST_SPACING: Short
+        public val LENGTHADJUST_SPACINGANDGLYPHS: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2239,7 +2239,7 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/x)
      */
-    open val x: SVGAnimatedLengthList
+    public open val x: SVGAnimatedLengthList
 
     /**
      * The y read-only property of the SVGTextPositioningElement interface describes the y-axis coordinate of the
@@ -2248,7 +2248,7 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/y)
      */
-    open val y: SVGAnimatedLengthList
+    public open val y: SVGAnimatedLengthList
 
     /**
      * The dx read-only property of the SVGTextPositioningElement interface describes the x-axis coordinate of the
@@ -2257,7 +2257,7 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/dx)
      */
-    open val dx: SVGAnimatedLengthList
+    public open val dx: SVGAnimatedLengthList
 
     /**
      * The dy read-only property of the SVGTextPositioningElement interface describes the y-axis coordinate of the
@@ -2266,7 +2266,7 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/dy)
      */
-    open val dy: SVGAnimatedLengthList
+    public open val dy: SVGAnimatedLengthList
 
     /**
      * The rotate read-only property of the SVGTextPositioningElement interface reflects the rotation of individual text
@@ -2274,30 +2274,30 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/rotate)
      */
-    open val rotate: SVGAnimatedNumberList
+    public open val rotate: SVGAnimatedNumberList
 
-    companion object {
-        val LENGTHADJUST_UNKNOWN: Short
-        val LENGTHADJUST_SPACING: Short
-        val LENGTHADJUST_SPACINGANDGLYPHS: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val LENGTHADJUST_UNKNOWN: Short
+        public val LENGTHADJUST_SPACING: Short
+        public val LENGTHADJUST_SPACINGANDGLYPHS: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2308,28 +2308,28 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
  */
 public abstract external class SVGTextElement : SVGTextPositioningElement {
 
-    companion object {
-        val LENGTHADJUST_UNKNOWN: Short
-        val LENGTHADJUST_SPACING: Short
-        val LENGTHADJUST_SPACINGANDGLYPHS: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val LENGTHADJUST_UNKNOWN: Short
+        public val LENGTHADJUST_SPACING: Short
+        public val LENGTHADJUST_SPACINGANDGLYPHS: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2340,28 +2340,28 @@ public abstract external class SVGTextElement : SVGTextPositioningElement {
  */
 public abstract external class SVGTSpanElement : SVGTextPositioningElement {
 
-    companion object {
-        val LENGTHADJUST_UNKNOWN: Short
-        val LENGTHADJUST_SPACING: Short
-        val LENGTHADJUST_SPACINGANDGLYPHS: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val LENGTHADJUST_UNKNOWN: Short
+        public val LENGTHADJUST_SPACING: Short
+        public val LENGTHADJUST_SPACINGANDGLYPHS: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2379,7 +2379,7 @@ public abstract external class SVGTextPathElement : SVGTextContentElement, SVGUR
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/startOffset)
      */
-    open val startOffset: SVGAnimatedLength
+    public open val startOffset: SVGAnimatedLength
 
     /**
      * The method read-only property of the SVGTextPathElement interface represents the method by which text should be
@@ -2387,7 +2387,7 @@ public abstract external class SVGTextPathElement : SVGTextContentElement, SVGUR
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/method)
      */
-    open val method: SVGAnimatedEnumeration
+    public open val method: SVGAnimatedEnumeration
 
     /**
      * The spacing read-only property of the SVGTextPathElement interface represents the spacing between typographic
@@ -2395,7 +2395,7 @@ public abstract external class SVGTextPathElement : SVGTextContentElement, SVGUR
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/spacing)
      */
-    open val spacing: SVGAnimatedEnumeration
+    public open val spacing: SVGAnimatedEnumeration
 
     /**
      * The side read-only property of the SVGTextPathElement interface represents the side of the path that the text is
@@ -2403,39 +2403,39 @@ public abstract external class SVGTextPathElement : SVGTextContentElement, SVGUR
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/side)
      */
-    open val side: SVGAnimatedEnumeration
+    public open val side: SVGAnimatedEnumeration
 
-    companion object {
-        val TEXTPATH_METHODTYPE_UNKNOWN: Short
-        val TEXTPATH_METHODTYPE_ALIGN: Short
-        val TEXTPATH_METHODTYPE_STRETCH: Short
-        val TEXTPATH_SPACINGTYPE_UNKNOWN: Short
-        val TEXTPATH_SPACINGTYPE_AUTO: Short
-        val TEXTPATH_SPACINGTYPE_EXACT: Short
-        val TEXTPATH_SIDETYPE_UNKNOWN: Short
-        val TEXTPATH_SIDETYPE_LEFT: Short
-        val TEXTPATH_SIDETYPE_RIGHT: Short
-        val LENGTHADJUST_UNKNOWN: Short
-        val LENGTHADJUST_SPACING: Short
-        val LENGTHADJUST_SPACINGANDGLYPHS: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val TEXTPATH_METHODTYPE_UNKNOWN: Short
+        public val TEXTPATH_METHODTYPE_ALIGN: Short
+        public val TEXTPATH_METHODTYPE_STRETCH: Short
+        public val TEXTPATH_SPACINGTYPE_UNKNOWN: Short
+        public val TEXTPATH_SPACINGTYPE_AUTO: Short
+        public val TEXTPATH_SPACINGTYPE_EXACT: Short
+        public val TEXTPATH_SIDETYPE_UNKNOWN: Short
+        public val TEXTPATH_SIDETYPE_LEFT: Short
+        public val TEXTPATH_SIDETYPE_RIGHT: Short
+        public val LENGTHADJUST_UNKNOWN: Short
+        public val LENGTHADJUST_SPACING: Short
+        public val LENGTHADJUST_SPACINGANDGLYPHS: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2451,7 +2451,7 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/x)
      */
-    open val x: SVGAnimatedLength
+    public open val x: SVGAnimatedLength
 
     /**
      * The y read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the y
@@ -2459,7 +2459,7 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/y)
      */
-    open val y: SVGAnimatedLength
+    public open val y: SVGAnimatedLength
 
     /**
      * The width read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the
@@ -2467,7 +2467,7 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/width)
      */
-    open val width: SVGAnimatedLength
+    public open val width: SVGAnimatedLength
 
     /**
      * The height read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the
@@ -2475,7 +2475,7 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/height)
      */
-    open val height: SVGAnimatedLength
+    public open val height: SVGAnimatedLength
 
     /**
      * The preserveAspectRatio read-only property of the SVGImageElement interface returns an
@@ -2484,7 +2484,7 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/preserveAspectRatio)
      */
-    open val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
+    public open val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 
     /**
      * The crossOrigin property of the SVGImageElement interface is a string which specifies the Cross-Origin Resource
@@ -2493,28 +2493,28 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/crossOrigin)
      */
-    open var crossOrigin: String?
-    open var referrerPolicy: String
+    public open var crossOrigin: String?
+    public open var referrerPolicy: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2532,7 +2532,7 @@ public abstract external class SVGForeignObjectElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/x)
      */
-    open val x: SVGAnimatedLength
+    public open val x: SVGAnimatedLength
 
     /**
      * The y read-only property of the SVGForeignObjectElement interface describes the y-axis coordinate of the
@@ -2541,7 +2541,7 @@ public abstract external class SVGForeignObjectElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/y)
      */
-    open val y: SVGAnimatedLength
+    public open val y: SVGAnimatedLength
 
     /**
      * The width read-only property of the SVGForeignObjectElement interface describes the width of the
@@ -2550,7 +2550,7 @@ public abstract external class SVGForeignObjectElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/width)
      */
-    open val width: SVGAnimatedLength
+    public open val width: SVGAnimatedLength
 
     /**
      * The height read-only property of the SVGForeignObjectElement interface describes the height of the
@@ -2559,27 +2559,27 @@ public abstract external class SVGForeignObjectElement : SVGGraphicsElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/height)
      */
-    open val height: SVGAnimatedLength
+    public open val height: SVGAnimatedLength
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2596,7 +2596,7 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refX)
      */
-    open val refX: SVGAnimatedLength
+    public open val refX: SVGAnimatedLength
 
     /**
      * The refY read-only property of the SVGMarkerElement interface returns an SVGAnimatedLength object containing the
@@ -2604,7 +2604,7 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refY)
      */
-    open val refY: SVGAnimatedLength
+    public open val refY: SVGAnimatedLength
 
     /**
      * The markerUnits read-only property of the SVGMarkerElement interface returns an SVGAnimatedEnumeration object.
@@ -2612,7 +2612,7 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerUnits)
      */
-    open val markerUnits: SVGAnimatedEnumeration
+    public open val markerUnits: SVGAnimatedEnumeration
 
     /**
      * The markerWidth read-only property of the SVGMarkerElement interface returns an SVGAnimatedLength object
@@ -2620,7 +2620,7 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerWidth)
      */
-    open val markerWidth: SVGAnimatedLength
+    public open val markerWidth: SVGAnimatedLength
 
     /**
      * The markerHeight read-only property of the SVGMarkerElement interface returns an SVGAnimatedLength object
@@ -2628,7 +2628,7 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerHeight)
      */
-    open val markerHeight: SVGAnimatedLength
+    public open val markerHeight: SVGAnimatedLength
 
     /**
      * The orientType read-only property of the SVGMarkerElement interface returns an SVGAnimatedEnumeration object
@@ -2636,7 +2636,7 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientType)
      */
-    open val orientType: SVGAnimatedEnumeration
+    public open val orientType: SVGAnimatedEnumeration
 
     /**
      * The orientAngle read-only property of the SVGMarkerElement interface returns an SVGAnimatedAngle object
@@ -2644,7 +2644,7 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientAngle)
      */
-    open val orientAngle: SVGAnimatedAngle
+    public open val orientAngle: SVGAnimatedAngle
 
     /**
      * The orient property of the SVGMarkerElement interface defines how the marker is rotated when it is placed at its
@@ -2652,14 +2652,14 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orient)
      */
-    open var orient: String
+    public open var orient: String
 
     /**
      * The setOrientToAuto() method of the SVGMarkerElement interface sets the value of the orient attribute to auto.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAuto)
      */
-    open fun setOrientToAuto()
+    public open fun setOrientToAuto()
 
     /**
      * The setOrientToAngle() method of the SVGMarkerElement interface sets the value of the orient attribute to the
@@ -2667,34 +2667,34 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAngle)
      */
-    open fun setOrientToAngle(angle: SVGAngle)
+    public open fun setOrientToAngle(angle: SVGAngle)
 
-    companion object {
-        val SVG_MARKERUNITS_UNKNOWN: Short
-        val SVG_MARKERUNITS_USERSPACEONUSE: Short
-        val SVG_MARKERUNITS_STROKEWIDTH: Short
-        val SVG_MARKER_ORIENT_UNKNOWN: Short
-        val SVG_MARKER_ORIENT_AUTO: Short
-        val SVG_MARKER_ORIENT_ANGLE: Short
-        val SVG_MARKER_ORIENT_AUTO_START_REVERSE: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val SVG_MARKERUNITS_UNKNOWN: Short
+        public val SVG_MARKERUNITS_USERSPACEONUSE: Short
+        public val SVG_MARKERUNITS_STROKEWIDTH: Short
+        public val SVG_MARKER_ORIENT_UNKNOWN: Short
+        public val SVG_MARKER_ORIENT_AUTO: Short
+        public val SVG_MARKER_ORIENT_ANGLE: Short
+        public val SVG_MARKER_ORIENT_AUTO_START_REVERSE: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2710,7 +2710,7 @@ public abstract external class SVGGradientElement : SVGElement, SVGURIReference 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/gradientUnits)
      */
-    open val gradientUnits: SVGAnimatedEnumeration
+    public open val gradientUnits: SVGAnimatedEnumeration
 
     /**
      * The gradientTransform read-only property of the SVGGradientElement interface reflects the gradientTransform
@@ -2718,7 +2718,7 @@ public abstract external class SVGGradientElement : SVGElement, SVGURIReference 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/gradientTransform)
      */
-    open val gradientTransform: SVGAnimatedTransformList
+    public open val gradientTransform: SVGAnimatedTransformList
 
     /**
      * The spreadMethod read-only property of the SVGGradientElement interface reflects the spreadMethod attribute of
@@ -2726,31 +2726,31 @@ public abstract external class SVGGradientElement : SVGElement, SVGURIReference 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/spreadMethod)
      */
-    open val spreadMethod: SVGAnimatedEnumeration
+    public open val spreadMethod: SVGAnimatedEnumeration
 
-    companion object {
-        val SVG_SPREADMETHOD_UNKNOWN: Short
-        val SVG_SPREADMETHOD_PAD: Short
-        val SVG_SPREADMETHOD_REFLECT: Short
-        val SVG_SPREADMETHOD_REPEAT: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val SVG_SPREADMETHOD_UNKNOWN: Short
+        public val SVG_SPREADMETHOD_PAD: Short
+        public val SVG_SPREADMETHOD_REFLECT: Short
+        public val SVG_SPREADMETHOD_REPEAT: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2767,7 +2767,7 @@ public abstract external class SVGLinearGradientElement : SVGGradientElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/x1)
      */
-    open val x1: SVGAnimatedLength
+    public open val x1: SVGAnimatedLength
 
     /**
      * The y1 read-only property of the SVGLinearGradientElement interface describes the y-axis coordinate of the start
@@ -2776,7 +2776,7 @@ public abstract external class SVGLinearGradientElement : SVGGradientElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/y1)
      */
-    open val y1: SVGAnimatedLength
+    public open val y1: SVGAnimatedLength
 
     /**
      * The x2 read-only property of the SVGLinearGradientElement interface describes the x-axis coordinate of the start
@@ -2785,7 +2785,7 @@ public abstract external class SVGLinearGradientElement : SVGGradientElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/x2)
      */
-    open val x2: SVGAnimatedLength
+    public open val x2: SVGAnimatedLength
 
     /**
      * The y2 read-only property of the SVGLinearGradientElement interface describes the y-axis coordinate of the start
@@ -2794,31 +2794,31 @@ public abstract external class SVGLinearGradientElement : SVGGradientElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/y2)
      */
-    open val y2: SVGAnimatedLength
+    public open val y2: SVGAnimatedLength
 
-    companion object {
-        val SVG_SPREADMETHOD_UNKNOWN: Short
-        val SVG_SPREADMETHOD_PAD: Short
-        val SVG_SPREADMETHOD_REFLECT: Short
-        val SVG_SPREADMETHOD_REPEAT: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val SVG_SPREADMETHOD_UNKNOWN: Short
+        public val SVG_SPREADMETHOD_PAD: Short
+        public val SVG_SPREADMETHOD_REFLECT: Short
+        public val SVG_SPREADMETHOD_REPEAT: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2835,7 +2835,7 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/cx)
      */
-    open val cx: SVGAnimatedLength
+    public open val cx: SVGAnimatedLength
 
     /**
      * The cy read-only property of the SVGRadialGradientElement interface describes the y-axis coordinate of the center
@@ -2844,7 +2844,7 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/cy)
      */
-    open val cy: SVGAnimatedLength
+    public open val cy: SVGAnimatedLength
 
     /**
      * The r read-only property of the SVGRadialGradientElement interface describes the radius of the radial gradient as
@@ -2852,7 +2852,7 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/r)
      */
-    open val r: SVGAnimatedLength
+    public open val r: SVGAnimatedLength
 
     /**
      * The fx read-only property of the SVGRadialGradientElement interface describes the x-axis coordinate of the focal
@@ -2861,7 +2861,7 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fx)
      */
-    open val fx: SVGAnimatedLength
+    public open val fx: SVGAnimatedLength
 
     /**
      * The fy read-only property of the SVGRadialGradientElement interface describes the y-axis coordinate of the focal
@@ -2870,7 +2870,7 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fy)
      */
-    open val fy: SVGAnimatedLength
+    public open val fy: SVGAnimatedLength
 
     /**
      * The fr read-only property of the SVGRadialGradientElement interface describes the radius of the focal circle of
@@ -2879,31 +2879,31 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fr)
      */
-    open val fr: SVGAnimatedLength
+    public open val fr: SVGAnimatedLength
 
-    companion object {
-        val SVG_SPREADMETHOD_UNKNOWN: Short
-        val SVG_SPREADMETHOD_PAD: Short
-        val SVG_SPREADMETHOD_REFLECT: Short
-        val SVG_SPREADMETHOD_REPEAT: Short
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val SVG_SPREADMETHOD_UNKNOWN: Short
+        public val SVG_SPREADMETHOD_PAD: Short
+        public val SVG_SPREADMETHOD_REFLECT: Short
+        public val SVG_SPREADMETHOD_REPEAT: Short
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2919,27 +2919,27 @@ public abstract external class SVGStopElement : SVGElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStopElement/offset)
      */
-    open val offset: SVGAnimatedNumber
+    public open val offset: SVGAnimatedNumber
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -2956,7 +2956,7 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternUnits)
      */
-    open val patternUnits: SVGAnimatedEnumeration
+    public open val patternUnits: SVGAnimatedEnumeration
 
     /**
      * The patternContentUnits read-only property of the SVGPatternElement interface reflects the patternContentUnits
@@ -2965,7 +2965,7 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternContentUnits)
      */
-    open val patternContentUnits: SVGAnimatedEnumeration
+    public open val patternContentUnits: SVGAnimatedEnumeration
 
     /**
      * The patternTransform read-only property of the SVGPatternElement interface reflects the patternTransform
@@ -2974,7 +2974,7 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternTransform)
      */
-    open val patternTransform: SVGAnimatedTransformList
+    public open val patternTransform: SVGAnimatedTransformList
 
     /**
      * The x read-only property of the SVGPatternElement interface describes the x-axis coordinate of the start point of
@@ -2983,7 +2983,7 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/x)
      */
-    open val x: SVGAnimatedLength
+    public open val x: SVGAnimatedLength
 
     /**
      * The y read-only property of the SVGPatternElement interface describes the y-axis coordinate of the start point of
@@ -2992,7 +2992,7 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/y)
      */
-    open val y: SVGAnimatedLength
+    public open val y: SVGAnimatedLength
 
     /**
      * The width read-only property of the SVGPatternElement interface describes the width of the pattern as an
@@ -3000,7 +3000,7 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/width)
      */
-    open val width: SVGAnimatedLength
+    public open val width: SVGAnimatedLength
 
     /**
      * The height read-only property of the SVGPatternElement interface describes the height of the pattern as an
@@ -3008,27 +3008,27 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/height)
      */
-    open val height: SVGAnimatedLength
+    public open val height: SVGAnimatedLength
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -3044,7 +3044,7 @@ public abstract external class SVGScriptElement : SVGElement, SVGURIReference, H
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement/type)
      */
-    open var type: String
+    public open var type: String
 
     /**
      * The crossOrigin property of the SVGScriptElement interface reflects the Cross-Origin Resource Sharing settings
@@ -3054,28 +3054,28 @@ public abstract external class SVGScriptElement : SVGElement, SVGURIReference, H
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement/crossOrigin)
      */
-    open var crossOrigin: String?
-    open var referrerPolicy: String
+    public open var crossOrigin: String?
+    public open var referrerPolicy: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -3092,7 +3092,7 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/target)
      */
-    open val target: SVGAnimatedString
+    public open val target: SVGAnimatedString
 
     /**
      * The download property of the SVGAElement interface returns a string indicating that the browser should treat the
@@ -3100,7 +3100,7 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/download)
      */
-    open var download: String
+    public open var download: String
 
     /**
      * The ping property of the SVGAElement interface returns a string that reflects the ping attribute, containing a
@@ -3109,7 +3109,7 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/ping)
      */
-    open var ping: String
+    public open var ping: String
 
     /**
      * The rel property of the SVGAElement interface returns a string reflecting the value of the rel attribute of the
@@ -3117,7 +3117,7 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/rel)
      */
-    open var rel: String
+    public open var rel: String
 
     /**
      * The read-only relList property of the SVGAElement returns a live DOMTokenList reflecting the space-separated
@@ -3125,7 +3125,7 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/relList)
      */
-    open val relList: DOMTokenList
+    public open val relList: DOMTokenList
 
     /**
      * The referrerPolicy property of the SVGAElement interface returns a string specifying which referrer to send when
@@ -3133,27 +3133,27 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/referrerPolicy)
      */
-    open var referrerPolicy: String
+    public open var referrerPolicy: String
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -3165,24 +3165,24 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
  */
 public abstract external class SVGViewElement : SVGElement, SVGFitToViewBox {
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }

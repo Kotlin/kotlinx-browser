@@ -13,28 +13,28 @@ import org.w3c.dom.events.*
 
 public external interface TouchType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val TouchType.Companion.DIRECT: TouchType get() = "direct".toJsString().unsafeCast<TouchType>()
 public inline val TouchType.Companion.STYLUS: TouchType get() = "stylus".toJsString().unsafeCast<TouchType>()
 
 public external interface TouchInit : JsAny {
-    var identifier: Int
-    var target: EventTarget
-    var clientX: Double?
-    var clientY: Double?
-    var screenX: Double?
-    var screenY: Double?
-    var pageX: Double?
-    var pageY: Double?
-    var radiusX: Float?
-    var radiusY: Float?
-    var rotationAngle: Float?
-    var force: Float?
-    var altitudeAngle: Double?
-    var azimuthAngle: Double?
-    var touchType: TouchType?
+    public var identifier: Int
+    public var target: EventTarget
+    public var clientX: Double?
+    public var clientY: Double?
+    public var screenX: Double?
+    public var screenY: Double?
+    public var pageX: Double?
+    public var pageY: Double?
+    public var radiusX: Float?
+    public var radiusY: Float?
+    public var rotationAngle: Float?
+    public var force: Float?
+    public var altitudeAngle: Double?
+    public var azimuthAngle: Double?
+    public var touchType: TouchType?
 }
 
 public fun TouchInit(identifier: Int, target: EventTarget, clientX: Double? = null, clientY: Double? = null, screenX: Double? = null, screenY: Double? = null, pageX: Double? = null, pageY: Double? = null, radiusX: Float? = null, radiusY: Float? = null, rotationAngle: Float? = null, force: Float? = null, altitudeAngle: Double? = null, azimuthAngle: Double? = null, touchType: TouchType? = null): TouchInit = newJsObject<TouchInit>().apply {
@@ -67,7 +67,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/Touch)
      */
-    constructor(touchInitDict: TouchInit)
+    public constructor(touchInitDict: TouchInit)
 
     /**
      * The identifier read-only property of the Touch interface returns a value uniquely identifying this point of
@@ -76,7 +76,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/identifier)
      */
-    open val identifier: Int
+    public open val identifier: Int
 
     /**
      * The read-only target property of the Touch interface returns the (EventTarget) on which the touch contact started
@@ -88,7 +88,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/target)
      */
-    open val target: EventTarget
+    public open val target: EventTarget
 
     /**
      * The screenX read-only property of the Touch interface returns the X coordinate of the touch point relative to the
@@ -96,7 +96,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/screenX)
      */
-    open val screenX: Double
+    public open val screenX: Double
 
     /**
      * The screenY read-only property of the Touch interface returns the Y coordinate of the touch point relative to the
@@ -104,7 +104,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/screenY)
      */
-    open val screenY: Double
+    public open val screenY: Double
 
     /**
      * The Touch.clientX read-only property returns the X coordinate of the touch point relative to the viewport, not
@@ -112,7 +112,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/clientX)
      */
-    open val clientX: Double
+    public open val clientX: Double
 
     /**
      * The Touch.clientY read-only property returns the Y coordinate of the touch point relative to the browser's
@@ -120,7 +120,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/clientY)
      */
-    open val clientY: Double
+    public open val clientY: Double
 
     /**
      * The Touch.pageX read-only property returns the X coordinate of the touch point relative to the viewport,
@@ -128,7 +128,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/pageX)
      */
-    open val pageX: Double
+    public open val pageX: Double
 
     /**
      * The Touch.pageY read-only property returns the Y coordinate of the touch point relative to the viewport,
@@ -136,7 +136,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/pageY)
      */
-    open val pageY: Double
+    public open val pageY: Double
 
     /**
      * The radiusX read-only property of the Touch interface returns the X radius of the ellipse that most closely
@@ -145,7 +145,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/radiusX)
      */
-    open val radiusX: Float
+    public open val radiusX: Float
 
     /**
      * The radiusY read-only property of the Touch interface returns the Y radius of the ellipse that most closely
@@ -154,7 +154,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/radiusY)
      */
-    open val radiusY: Float
+    public open val radiusY: Float
 
     /**
      * The rotationAngle read-only property of the Touch interface returns the rotation angle, in degrees, of the
@@ -165,7 +165,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/rotationAngle)
      */
-    open val rotationAngle: Float
+    public open val rotationAngle: Float
 
     /**
      * The Touch.force read-only property returns the amount of pressure the user is applying to the touch surface for a
@@ -173,7 +173,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/force)
      */
-    open val force: Float
+    public open val force: Float
 
     /**
      * The altitudeAngle read-only property of the Touch interface returns the angle between a transducer (a pointer or
@@ -182,7 +182,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/altitudeAngle)
      */
-    open val altitudeAngle: Float
+    public open val altitudeAngle: Float
 
     /**
      * The azimuthAngle read-only property of the Touch interface returns the angle between the Y-Z plane and the plane
@@ -191,7 +191,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/azimuthAngle)
      */
-    open val azimuthAngle: Float
+    public open val azimuthAngle: Float
 
     /**
      * The touchType read-only property of the Touch interface returns the type of device that triggered the touch, such
@@ -199,7 +199,7 @@ public open external class Touch : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/touchType)
      */
-    open val touchType: TouchType
+    public open val touchType: TouchType
 }
 
 /**
@@ -228,9 +228,9 @@ public abstract external class TouchList : ItemArrayLike<Touch> {
 public operator fun TouchList.get(index: Int): Touch? = getProperty(this, index)
 
 public external interface TouchEventInit : EventModifierInit {
-    var touches: JsArray<Touch>?
-    var targetTouches: JsArray<Touch>?
-    var changedTouches: JsArray<Touch>?
+    public var touches: JsArray<Touch>?
+    public var targetTouches: JsArray<Touch>?
+    public var changedTouches: JsArray<Touch>?
 }
 
 public fun TouchEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, touches: JsArray<Touch>? = null, targetTouches: JsArray<Touch>? = null, changedTouches: JsArray<Touch>? = null): TouchEventInit = newJsObject<TouchEventInit>().apply {
@@ -273,7 +273,7 @@ public open external class TouchEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/TouchEvent)
      */
-    constructor(type: String, eventInitDict: TouchEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: TouchEventInit = definedExternally)
 
     /**
      * touches is a read-only TouchList listing all the Touch objects for touch points that are currently in contact
@@ -282,7 +282,7 @@ public open external class TouchEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/touches)
      */
-    open val touches: TouchList
+    public open val touches: TouchList
 
     /**
      * The targetTouches read-only property is a TouchList listing all the Touch objects for touch points that are still
@@ -291,12 +291,12 @@ public open external class TouchEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/targetTouches)
      */
-    open val targetTouches: TouchList
+    public open val targetTouches: TouchList
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/changedTouches)
      */
-    open val changedTouches: TouchList
+    public open val changedTouches: TouchList
 
     /**
      * The read-only altKey property of the TouchEvent interface returns a boolean value indicating whether or not the
@@ -305,7 +305,7 @@ public open external class TouchEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/altKey)
      */
-    open val altKey: Boolean
+    public open val altKey: Boolean
 
     /**
      * The read-only metaKey property of the TouchEvent interface returns a boolean value indicating whether or not the
@@ -314,7 +314,7 @@ public open external class TouchEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/metaKey)
      */
-    open val metaKey: Boolean
+    public open val metaKey: Boolean
 
     /**
      * The read-only ctrlKey property of the TouchEvent interface returns a boolean value indicating whether the control
@@ -323,7 +323,7 @@ public open external class TouchEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/ctrlKey)
      */
-    open val ctrlKey: Boolean
+    public open val ctrlKey: Boolean
 
     /**
      * The read-only shiftKey property of the TouchEvent interface returns a boolean value indicating whether or not the
@@ -332,13 +332,13 @@ public open external class TouchEvent : UIEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/shiftKey)
      */
-    open val shiftKey: Boolean
-    open fun getModifierState(keyArg: String): Boolean
+    public open val shiftKey: Boolean
+    public open fun getModifierState(keyArg: String): Boolean
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }

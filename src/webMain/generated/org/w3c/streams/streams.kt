@@ -28,7 +28,7 @@ public open external class ReadableStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/ReadableStream)
      */
-    constructor(underlyingSource: JsAny = definedExternally, strategy: QueuingStrategy = definedExternally)
+    public constructor(underlyingSource: JsAny = definedExternally, strategy: QueuingStrategy = definedExternally)
 
     /**
      * The locked read-only property of the ReadableStream interface returns whether or not the readable stream is
@@ -36,14 +36,14 @@ public open external class ReadableStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/locked)
      */
-    open val locked: Boolean
+    public open val locked: Boolean
 
     /**
      * The cancel() method of the ReadableStream interface returns a Promise that resolves when the stream is canceled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
      */
-    open fun cancel(reason: JsAny? = definedExternally): Promise<JsAny?>
+    public open fun cancel(reason: JsAny? = definedExternally): Promise<JsAny?>
 
     /**
      * The getReader() method of the ReadableStream interface creates a reader and locks the stream to it. While the
@@ -51,7 +51,7 @@ public open external class ReadableStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/getReader)
      */
-    open fun getReader(options: ReadableStreamGetReaderOptions = definedExternally): ReadableStreamReader
+    public open fun getReader(options: ReadableStreamGetReaderOptions = definedExternally): ReadableStreamReader
 
     /**
      * The pipeThrough() method of the ReadableStream interface provides a chainable way of piping the current stream
@@ -59,7 +59,7 @@ public open external class ReadableStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeThrough)
      */
-    open fun pipeThrough(transform: ReadableWritablePair, options: StreamPipeOptions = definedExternally): ReadableStream
+    public open fun pipeThrough(transform: ReadableWritablePair, options: StreamPipeOptions = definedExternally): ReadableStream
 
     /**
      * The pipeTo() method of the ReadableStream interface pipes the current ReadableStream to a given WritableStream
@@ -68,7 +68,7 @@ public open external class ReadableStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
      */
-    open fun pipeTo(destination: WritableStream, options: StreamPipeOptions = definedExternally): Promise<JsAny?>
+    public open fun pipeTo(destination: WritableStream, options: StreamPipeOptions = definedExternally): Promise<JsAny?>
 
     /**
      * The tee() method of the ReadableStream interface tees the current readable stream, returning a two-element array
@@ -76,29 +76,29 @@ public open external class ReadableStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/tee)
      */
-    open fun tee(): JsArray<ReadableStream>
+    public open fun tee(): JsArray<ReadableStream>
     // not printed yet: async_iterable
 
-    companion object {
+    public companion object {
         /**
          * The ReadableStream.from() static method returns a ReadableStream from a provided iterable or async iterable
          * object.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
          */
-        fun from(asyncIterable: JsAny): ReadableStream
+        public fun from(asyncIterable: JsAny): ReadableStream
     }
 }
 
 public external interface ReadableStreamReaderMode : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ReadableStreamReaderMode.Companion.BYOB: ReadableStreamReaderMode get() = "byob".toJsString().unsafeCast<ReadableStreamReaderMode>()
 
 public external interface ReadableStreamGetReaderOptions : JsAny {
-    var mode: ReadableStreamReaderMode?
+    public var mode: ReadableStreamReaderMode?
 }
 
 public fun ReadableStreamGetReaderOptions(mode: ReadableStreamReaderMode? = null): ReadableStreamGetReaderOptions = newJsObject<ReadableStreamGetReaderOptions>().apply {
@@ -106,7 +106,7 @@ public fun ReadableStreamGetReaderOptions(mode: ReadableStreamReaderMode? = null
 }
 
 public external interface ReadableStreamIteratorOptions : JsAny {
-    var preventCancel: Boolean?
+    public var preventCancel: Boolean?
 }
 
 public fun ReadableStreamIteratorOptions(preventCancel: Boolean? = null): ReadableStreamIteratorOptions = newJsObject<ReadableStreamIteratorOptions>().apply {
@@ -114,8 +114,8 @@ public fun ReadableStreamIteratorOptions(preventCancel: Boolean? = null): Readab
 }
 
 public external interface ReadableWritablePair : JsAny {
-    var readable: ReadableStream
-    var writable: WritableStream
+    public var readable: ReadableStream
+    public var writable: WritableStream
 }
 
 public fun ReadableWritablePair(readable: ReadableStream, writable: WritableStream): ReadableWritablePair = newJsObject<ReadableWritablePair>().apply {
@@ -124,10 +124,10 @@ public fun ReadableWritablePair(readable: ReadableStream, writable: WritableStre
 }
 
 public external interface StreamPipeOptions : JsAny {
-    var preventClose: Boolean?
-    var preventAbort: Boolean?
-    var preventCancel: Boolean?
-    var signal: AbortSignal?
+    public var preventClose: Boolean?
+    public var preventAbort: Boolean?
+    public var preventCancel: Boolean?
+    public var signal: AbortSignal?
 }
 
 public fun StreamPipeOptions(preventClose: Boolean? = null, preventAbort: Boolean? = null, preventCancel: Boolean? = null, signal: AbortSignal? = null): StreamPipeOptions = newJsObject<StreamPipeOptions>().apply {
@@ -138,11 +138,11 @@ public fun StreamPipeOptions(preventClose: Boolean? = null, preventAbort: Boolea
 }
 
 public external interface UnderlyingSource : JsAny {
-    var start: ((ReadableStreamController) -> JsAny?)?
-    var pull: ((ReadableStreamController) -> Promise<JsAny?>)?
-    var cancel: ((JsAny?) -> Promise<JsAny?>)?
-    var type: ReadableStreamType?
-    var autoAllocateChunkSize: Double?
+    public var start: ((ReadableStreamController) -> JsAny?)?
+    public var pull: ((ReadableStreamController) -> Promise<JsAny?>)?
+    public var cancel: ((JsAny?) -> Promise<JsAny?>)?
+    public var type: ReadableStreamType?
+    public var autoAllocateChunkSize: Double?
 }
 
 public fun UnderlyingSource(start: ((ReadableStreamController) -> JsAny?)? = null, pull: ((ReadableStreamController) -> Promise<JsAny?>)? = null, cancel: ((JsAny?) -> Promise<JsAny?>)? = null, type: ReadableStreamType? = null, autoAllocateChunkSize: Double? = null): UnderlyingSource = newJsObject<UnderlyingSource>().apply {
@@ -155,7 +155,7 @@ public fun UnderlyingSource(start: ((ReadableStreamController) -> JsAny?)? = nul
 
 public external interface ReadableStreamType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ReadableStreamType.Companion.BYTES: ReadableStreamType get() = "bytes".toJsString().unsafeCast<ReadableStreamType>()
@@ -168,7 +168,7 @@ public external interface ReadableStreamGenericReader : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/closed)
      */
-    val closed: Promise<JsAny?>
+    public val closed: Promise<JsAny?>
 
     /**
      * The cancel() method of the ReadableStreamDefaultReader interface returns a Promise that resolves when the stream
@@ -176,7 +176,7 @@ public external interface ReadableStreamGenericReader : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/cancel)
      */
-    fun cancel(reason: JsAny? = definedExternally): Promise<JsAny?>
+    public fun cancel(reason: JsAny? = definedExternally): Promise<JsAny?>
 }
 
 /**
@@ -192,7 +192,7 @@ public open external class ReadableStreamDefaultReader : ReadableStreamGenericRe
      * [MDN
      * Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/ReadableStreamDefaultReader)
      */
-    constructor(stream: ReadableStream)
+    public constructor(stream: ReadableStream)
 
     /**
      * The read() method of the ReadableStreamDefaultReader interface returns a Promise providing access to the next
@@ -200,14 +200,14 @@ public open external class ReadableStreamDefaultReader : ReadableStreamGenericRe
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/read)
      */
-    open fun read(): Promise<ReadableStreamReadResult>
+    public open fun read(): Promise<ReadableStreamReadResult>
 
     /**
      * The releaseLock() method of the ReadableStreamDefaultReader interface releases the reader's lock on the stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/releaseLock)
      */
-    open fun releaseLock()
+    public open fun releaseLock()
 
     /**
      * The closed read-only property of the ReadableStreamDefaultReader interface returns a Promise that fulfills when
@@ -228,8 +228,8 @@ public open external class ReadableStreamDefaultReader : ReadableStreamGenericRe
 }
 
 public external interface ReadableStreamReadResult : JsAny {
-    var value: JsAny?
-    var done: Boolean?
+    public var value: JsAny?
+    public var done: Boolean?
 }
 
 public fun ReadableStreamReadResult(value: JsAny? = null, done: Boolean? = null): ReadableStreamReadResult = newJsObject<ReadableStreamReadResult>().apply {
@@ -250,7 +250,7 @@ public open external class ReadableStreamBYOBReader : ReadableStreamGenericReade
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/ReadableStreamBYOBReader)
      */
-    constructor(stream: ReadableStream)
+    public constructor(stream: ReadableStream)
 
     /**
      * The read() method of the ReadableStreamBYOBReader interface is used to read data into a view on a user-supplied
@@ -260,7 +260,7 @@ public open external class ReadableStreamBYOBReader : ReadableStreamGenericReade
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
      */
-    open fun read(view: ArrayBufferView, options: ReadableStreamBYOBReaderReadOptions = definedExternally): Promise<ReadableStreamReadResult>
+    public open fun read(view: ArrayBufferView, options: ReadableStreamBYOBReaderReadOptions = definedExternally): Promise<ReadableStreamReadResult>
 
     /**
      * The releaseLock() method of the ReadableStreamBYOBReader interface releases the reader's lock on the stream.
@@ -268,7 +268,7 @@ public open external class ReadableStreamBYOBReader : ReadableStreamGenericReade
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/releaseLock)
      */
-    open fun releaseLock()
+    public open fun releaseLock()
 
     /**
      * The closed read-only property of the ReadableStreamBYOBReader interface returns a Promise that fulfills when the
@@ -288,7 +288,7 @@ public open external class ReadableStreamBYOBReader : ReadableStreamGenericReade
 }
 
 public external interface ReadableStreamBYOBReaderReadOptions : JsAny {
-    var min: Double?
+    public var min: Double?
 }
 
 public fun ReadableStreamBYOBReaderReadOptions(min: Double? = null): ReadableStreamBYOBReaderReadOptions = newJsObject<ReadableStreamBYOBReaderReadOptions>().apply {
@@ -308,14 +308,14 @@ public abstract external class ReadableStreamDefaultController : ReadableStreamC
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/desiredSize)
      */
-    open val desiredSize: Double?
+    public open val desiredSize: Double?
 
     /**
      * The close() method of the ReadableStreamDefaultController interface closes the associated stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/close)
      */
-    open fun close()
+    public open fun close()
 
     /**
      * The enqueue() method of the ReadableStreamDefaultController interface enqueues a given chunk in the associated
@@ -323,7 +323,7 @@ public abstract external class ReadableStreamDefaultController : ReadableStreamC
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/enqueue)
      */
-    open fun enqueue(chunk: JsAny? = definedExternally)
+    public open fun enqueue(chunk: JsAny? = definedExternally)
 
     /**
      * The error() method of the ReadableStreamDefaultController interface causes any future interactions with the
@@ -331,7 +331,7 @@ public abstract external class ReadableStreamDefaultController : ReadableStreamC
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/error)
      */
-    open fun error(e: JsAny? = definedExternally)
+    public open fun error(e: JsAny? = definedExternally)
 }
 
 /**
@@ -349,7 +349,7 @@ public abstract external class ReadableByteStreamController : ReadableStreamCont
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/byobRequest)
      */
-    open val byobRequest: ReadableStreamBYOBRequest?
+    public open val byobRequest: ReadableStreamBYOBRequest?
 
     /**
      * The desiredSize read-only property of the ReadableByteStreamController interface returns the number of bytes
@@ -357,14 +357,14 @@ public abstract external class ReadableByteStreamController : ReadableStreamCont
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/desiredSize)
      */
-    open val desiredSize: Double?
+    public open val desiredSize: Double?
 
     /**
      * The close() method of the ReadableByteStreamController interface closes the associated stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/close)
      */
-    open fun close()
+    public open fun close()
 
     /**
      * The enqueue() method of the ReadableByteStreamController interface enqueues a given chunk on the associated
@@ -372,7 +372,7 @@ public abstract external class ReadableByteStreamController : ReadableStreamCont
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/enqueue)
      */
-    open fun enqueue(chunk: ArrayBufferView)
+    public open fun enqueue(chunk: ArrayBufferView)
 
     /**
      * The error() method of the ReadableByteStreamController interface causes any future interactions with the
@@ -380,7 +380,7 @@ public abstract external class ReadableByteStreamController : ReadableStreamCont
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/error)
      */
-    open fun error(e: JsAny? = definedExternally)
+    public open fun error(e: JsAny? = definedExternally)
 }
 
 /**
@@ -395,7 +395,7 @@ public abstract external class ReadableStreamBYOBRequest : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/view)
      */
-    open val view: Uint8Array?
+    public open val view: Uint8Array?
 
     /**
      * The respond() method of the ReadableStreamBYOBRequest interface is used to signal to the associated readable byte
@@ -403,7 +403,7 @@ public abstract external class ReadableStreamBYOBRequest : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respond)
      */
-    open fun respond(bytesWritten: Double)
+    public open fun respond(bytesWritten: Double)
 
     /**
      * The respondWithNewView() method of the ReadableStreamBYOBRequest interface specifies a new view that the consumer
@@ -411,7 +411,7 @@ public abstract external class ReadableStreamBYOBRequest : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respondWithNewView)
      */
-    open fun respondWithNewView(view: ArrayBufferView)
+    public open fun respondWithNewView(view: ArrayBufferView)
 }
 
 /**
@@ -426,7 +426,7 @@ public open external class WritableStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/WritableStream)
      */
-    constructor(underlyingSink: JsAny = definedExternally, strategy: QueuingStrategy = definedExternally)
+    public constructor(underlyingSink: JsAny = definedExternally, strategy: QueuingStrategy = definedExternally)
 
     /**
      * The locked read-only property of the WritableStream interface returns a boolean indicating whether the
@@ -434,7 +434,7 @@ public open external class WritableStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/locked)
      */
-    open val locked: Boolean
+    public open val locked: Boolean
 
     /**
      * The abort() method of the WritableStream interface aborts the stream, signaling that the producer can no longer
@@ -443,7 +443,7 @@ public open external class WritableStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/abort)
      */
-    open fun abort(reason: JsAny? = definedExternally): Promise<JsAny?>
+    public open fun abort(reason: JsAny? = definedExternally): Promise<JsAny?>
 
     /**
      * The close() method of the WritableStream interface closes the associated stream. All chunks written before this
@@ -451,7 +451,7 @@ public open external class WritableStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/close)
      */
-    open fun close(): Promise<JsAny?>
+    public open fun close(): Promise<JsAny?>
 
     /**
      * The getWriter() method of the WritableStream interface returns a new instance of WritableStreamDefaultWriter and
@@ -460,15 +460,15 @@ public open external class WritableStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/getWriter)
      */
-    open fun getWriter(): WritableStreamDefaultWriter
+    public open fun getWriter(): WritableStreamDefaultWriter
 }
 
 public external interface UnderlyingSink : JsAny {
-    var start: ((WritableStreamDefaultController) -> JsAny?)?
-    var write: ((JsAny?, WritableStreamDefaultController) -> Promise<JsAny?>)?
-    var close: (() -> Promise<JsAny?>)?
-    var abort: ((JsAny?) -> Promise<JsAny?>)?
-    var type: JsAny?
+    public var start: ((WritableStreamDefaultController) -> JsAny?)?
+    public var write: ((JsAny?, WritableStreamDefaultController) -> Promise<JsAny?>)?
+    public var close: (() -> Promise<JsAny?>)?
+    public var abort: ((JsAny?) -> Promise<JsAny?>)?
+    public var type: JsAny?
 }
 
 public fun UnderlyingSink(start: ((WritableStreamDefaultController) -> JsAny?)? = null, write: ((JsAny?, WritableStreamDefaultController) -> Promise<JsAny?>)? = null, close: (() -> Promise<JsAny?>)? = null, abort: ((JsAny?) -> Promise<JsAny?>)? = null, type: JsAny? = null): UnderlyingSink = newJsObject<UnderlyingSink>().apply {
@@ -492,7 +492,7 @@ public open external class WritableStreamDefaultWriter : JsAny {
      * [MDN
      * Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/WritableStreamDefaultWriter)
      */
-    constructor(stream: WritableStream)
+    public constructor(stream: WritableStream)
 
     /**
      * The closed read-only property of the WritableStreamDefaultWriter interface returns a Promise that fulfills if the
@@ -500,7 +500,7 @@ public open external class WritableStreamDefaultWriter : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/closed)
      */
-    open val closed: Promise<JsAny?>
+    public open val closed: Promise<JsAny?>
 
     /**
      * The desiredSize read-only property of the WritableStreamDefaultWriter interface returns the desired size required
@@ -508,7 +508,7 @@ public open external class WritableStreamDefaultWriter : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/desiredSize)
      */
-    open val desiredSize: Double?
+    public open val desiredSize: Double?
 
     /**
      * The ready read-only property of the WritableStreamDefaultWriter interface returns a Promise that resolves when
@@ -517,7 +517,7 @@ public open external class WritableStreamDefaultWriter : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/ready)
      */
-    open val ready: Promise<JsAny?>
+    public open val ready: Promise<JsAny?>
 
     /**
      * The abort() method of the WritableStreamDefaultWriter interface aborts the stream, signaling that the producer
@@ -526,14 +526,14 @@ public open external class WritableStreamDefaultWriter : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
      */
-    open fun abort(reason: JsAny? = definedExternally): Promise<JsAny?>
+    public open fun abort(reason: JsAny? = definedExternally): Promise<JsAny?>
 
     /**
      * The close() method of the WritableStreamDefaultWriter interface closes the associated writable stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close)
      */
-    open fun close(): Promise<JsAny?>
+    public open fun close(): Promise<JsAny?>
 
     /**
      * The releaseLock() method of the WritableStreamDefaultWriter interface releases the writer's lock on the
@@ -543,7 +543,7 @@ public open external class WritableStreamDefaultWriter : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/releaseLock)
      */
-    open fun releaseLock()
+    public open fun releaseLock()
 
     /**
      * The write() method of the WritableStreamDefaultWriter interface writes a passed chunk of data to a WritableStream
@@ -552,7 +552,7 @@ public open external class WritableStreamDefaultWriter : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
      */
-    open fun write(chunk: JsAny? = definedExternally): Promise<JsAny?>
+    public open fun write(chunk: JsAny? = definedExternally): Promise<JsAny?>
 }
 
 /**
@@ -569,7 +569,7 @@ public abstract external class WritableStreamDefaultController : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController/signal)
      */
-    open val signal: AbortSignal
+    public open val signal: AbortSignal
 
     /**
      * The error() method of the WritableStreamDefaultController interface causes any future interactions with the
@@ -577,7 +577,7 @@ public abstract external class WritableStreamDefaultController : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController/error)
      */
-    open fun error(e: JsAny? = definedExternally)
+    public open fun error(e: JsAny? = definedExternally)
 }
 
 /**
@@ -593,7 +593,7 @@ public open external class TransformStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream/TransformStream)
      */
-    constructor(transformer: JsAny = definedExternally, writableStrategy: QueuingStrategy = definedExternally, readableStrategy: QueuingStrategy = definedExternally)
+    public constructor(transformer: JsAny = definedExternally, writableStrategy: QueuingStrategy = definedExternally, readableStrategy: QueuingStrategy = definedExternally)
 
     /**
      * The readable read-only property of the TransformStream interface returns the ReadableStream instance controlled
@@ -601,7 +601,7 @@ public open external class TransformStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream/readable)
      */
-    open val readable: ReadableStream
+    public open val readable: ReadableStream
 
     /**
      * The writable read-only property of the TransformStream interface returns the WritableStream instance controlled
@@ -610,16 +610,16 @@ public open external class TransformStream : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream/writable)
      */
-    open val writable: WritableStream
+    public open val writable: WritableStream
 }
 
 public external interface Transformer : JsAny {
-    var start: ((TransformStreamDefaultController) -> JsAny?)?
-    var transform: ((JsAny?, TransformStreamDefaultController) -> Promise<JsAny?>)?
-    var flush: ((TransformStreamDefaultController) -> Promise<JsAny?>)?
-    var cancel: ((JsAny?) -> Promise<JsAny?>)?
-    var readableType: JsAny?
-    var writableType: JsAny?
+    public var start: ((TransformStreamDefaultController) -> JsAny?)?
+    public var transform: ((JsAny?, TransformStreamDefaultController) -> Promise<JsAny?>)?
+    public var flush: ((TransformStreamDefaultController) -> Promise<JsAny?>)?
+    public var cancel: ((JsAny?) -> Promise<JsAny?>)?
+    public var readableType: JsAny?
+    public var writableType: JsAny?
 }
 
 public fun Transformer(start: ((TransformStreamDefaultController) -> JsAny?)? = null, transform: ((JsAny?, TransformStreamDefaultController) -> Promise<JsAny?>)? = null, flush: ((TransformStreamDefaultController) -> Promise<JsAny?>)? = null, cancel: ((JsAny?) -> Promise<JsAny?>)? = null, readableType: JsAny? = null, writableType: JsAny? = null): Transformer = newJsObject<Transformer>().apply {
@@ -644,7 +644,7 @@ public abstract external class TransformStreamDefaultController : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/desiredSize)
      */
-    open val desiredSize: Double?
+    public open val desiredSize: Double?
 
     /**
      * The enqueue() method of the TransformStreamDefaultController interface enqueues the given chunk in the readable
@@ -652,7 +652,7 @@ public abstract external class TransformStreamDefaultController : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/enqueue)
      */
-    open fun enqueue(chunk: JsAny? = definedExternally)
+    public open fun enqueue(chunk: JsAny? = definedExternally)
 
     /**
      * The error() method of the TransformStreamDefaultController interface errors both sides of the stream. Any further
@@ -660,7 +660,7 @@ public abstract external class TransformStreamDefaultController : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/error)
      */
-    open fun error(reason: JsAny? = definedExternally)
+    public open fun error(reason: JsAny? = definedExternally)
 
     /**
      * The terminate() method of the TransformStreamDefaultController interface closes the readable side and errors the
@@ -668,12 +668,12 @@ public abstract external class TransformStreamDefaultController : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/terminate)
      */
-    open fun terminate()
+    public open fun terminate()
 }
 
 public external interface QueuingStrategy : JsAny {
-    var highWaterMark: Double?
-    var size: ((JsAny?) -> Double)?
+    public var highWaterMark: Double?
+    public var size: ((JsAny?) -> Double)?
 }
 
 public fun QueuingStrategy(highWaterMark: Double? = null, size: ((JsAny?) -> Double)? = null): QueuingStrategy = newJsObject<QueuingStrategy>().apply {
@@ -682,7 +682,7 @@ public fun QueuingStrategy(highWaterMark: Double? = null, size: ((JsAny?) -> Dou
 }
 
 public external interface QueuingStrategyInit : JsAny {
-    var highWaterMark: Double
+    public var highWaterMark: Double
 }
 
 public fun QueuingStrategyInit(highWaterMark: Double): QueuingStrategyInit = newJsObject<QueuingStrategyInit>().apply {
@@ -701,7 +701,7 @@ public open external class ByteLengthQueuingStrategy : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/ByteLengthQueuingStrategy)
      */
-    constructor(init: QueuingStrategyInit)
+    public constructor(init: QueuingStrategyInit)
 
     /**
      * The read-only ByteLengthQueuingStrategy.highWaterMark property returns the total number of bytes that can be
@@ -709,14 +709,14 @@ public open external class ByteLengthQueuingStrategy : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/highWaterMark)
      */
-    open val highWaterMark: Double
+    public open val highWaterMark: Double
 
     /**
      * The size() method of the ByteLengthQueuingStrategy interface returns the given chunk's byteLength property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/size)
      */
-    open val size: (JsAny?) -> JsAny?
+    public open val size: (JsAny?) -> JsAny?
 }
 
 /**
@@ -731,7 +731,7 @@ public open external class CountQueuingStrategy : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy/CountQueuingStrategy)
      */
-    constructor(init: QueuingStrategyInit)
+    public constructor(init: QueuingStrategyInit)
 
     /**
      * The read-only CountQueuingStrategy.highWaterMark property returns the total number of chunks that can be
@@ -739,7 +739,7 @@ public open external class CountQueuingStrategy : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy/highWaterMark)
      */
-    open val highWaterMark: Double
+    public open val highWaterMark: Double
 
     /**
      * The size() method of the CountQueuingStrategy interface always returns 1, so that the total queue size is a count
@@ -747,10 +747,10 @@ public open external class CountQueuingStrategy : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy/size)
      */
-    open val size: (JsAny?) -> JsAny?
+    public open val size: (JsAny?) -> JsAny?
 }
 
 public external interface GenericTransformStream : JsAny {
-    val readable: ReadableStream
-    val writable: WritableStream
+    public val readable: ReadableStream
+    public val writable: WritableStream
 }

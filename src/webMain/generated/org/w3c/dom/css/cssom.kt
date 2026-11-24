@@ -26,7 +26,7 @@ public abstract external class MediaList : ItemArrayLike<JsString> {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/mediaText)
      */
-    open var mediaText: String
+    public open var mediaText: String
 
     /**
      * The read-only length property of the MediaList interface returns the number of media queries in the list.
@@ -49,14 +49,14 @@ public abstract external class MediaList : ItemArrayLike<JsString> {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/appendMedium)
      */
-    open fun appendMedium(medium: String)
+    public open fun appendMedium(medium: String)
 
     /**
      * The deleteMedium() method of the MediaList interface removes from this MediaList the given media query.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/deleteMedium)
      */
-    open fun deleteMedium(medium: String)
+    public open fun deleteMedium(medium: String)
 }
 
 public operator fun MediaList.get(index: Int): String? = getStringProperty(this, index)
@@ -74,14 +74,14 @@ public abstract external class StyleSheet : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/type)
      */
-    open val type: String
+    public open val type: String
 
     /**
      * The href property of the StyleSheet interface returns the location of the style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/href)
      */
-    open val href: String?
+    public open val href: String?
 
     /**
      * The ownerNode read-only property of the StyleSheet interface returns the node that associates this style sheet
@@ -89,7 +89,7 @@ public abstract external class StyleSheet : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/ownerNode)
      */
-    open val ownerNode: UnionElementOrProcessingInstruction?
+    public open val ownerNode: UnionElementOrProcessingInstruction?
 
     /**
      * The parentStyleSheet read-only property of the StyleSheet interface returns the style sheet, if any, that is
@@ -97,14 +97,14 @@ public abstract external class StyleSheet : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/parentStyleSheet)
      */
-    open val parentStyleSheet: CSSStyleSheet?
+    public open val parentStyleSheet: CSSStyleSheet?
 
     /**
      * The title read-only property of the StyleSheet interface returns the advisory title of the current style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/title)
      */
-    open val title: String?
+    public open val title: String?
 
     /**
      * The read-only media property of the StyleSheet interface contains a MediaList object representing the intended
@@ -112,7 +112,7 @@ public abstract external class StyleSheet : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/media)
      */
-    open val media: MediaList
+    public open val media: MediaList
 
     /**
      * The disabled property of the StyleSheet interface determines whether the style sheet is prevented from applying
@@ -120,7 +120,7 @@ public abstract external class StyleSheet : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/disabled)
      */
-    open var disabled: Boolean
+    public open var disabled: Boolean
 }
 
 /**
@@ -135,7 +135,7 @@ public open external class CSSStyleSheet : StyleSheet {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/CSSStyleSheet)
      */
-    constructor(options: CSSStyleSheetInit = definedExternally)
+    public constructor(options: CSSStyleSheetInit = definedExternally)
 
     /**
      * The read-only CSSStyleSheet property ownerRule returns the CSSImportRule corresponding to the \@import at-rule
@@ -144,7 +144,7 @@ public open external class CSSStyleSheet : StyleSheet {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/ownerRule)
      */
-    open val ownerRule: CSSRule?
+    public open val ownerRule: CSSRule?
 
     /**
      * The read-only CSSStyleSheet property cssRules returns a live CSSRuleList which provides a real-time, up-to-date
@@ -152,21 +152,21 @@ public open external class CSSStyleSheet : StyleSheet {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/cssRules)
      */
-    open val cssRules: CSSRuleList
+    public open val cssRules: CSSRuleList
 
     /**
      * The CSSStyleSheet.insertRule() method inserts a new CSS rule into the current style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/insertRule)
      */
-    open fun insertRule(rule: String, index: Int = definedExternally): Int
+    public open fun insertRule(rule: String, index: Int = definedExternally): Int
 
     /**
      * The CSSStyleSheet method deleteRule() removes a rule from the stylesheet object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/deleteRule)
      */
-    open fun deleteRule(index: Int)
+    public open fun deleteRule(index: Int)
 
     /**
      * The replace() method of the CSSStyleSheet interface asynchronously replaces the content of the stylesheet with
@@ -174,7 +174,7 @@ public open external class CSSStyleSheet : StyleSheet {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
      */
-    open fun replace(text: String): Promise<CSSStyleSheet>
+    public open fun replace(text: String): Promise<CSSStyleSheet>
 
     /**
      * The replaceSync() method of the CSSStyleSheet interface synchronously replaces the content of the stylesheet with
@@ -182,7 +182,7 @@ public open external class CSSStyleSheet : StyleSheet {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replaceSync)
      */
-    open fun replaceSync(text: String)
+    public open fun replaceSync(text: String)
 
     /**
      * The rules read-only property of the CSSStyleSheet interface is a deprecated legacy property. Functionally
@@ -193,7 +193,7 @@ public open external class CSSStyleSheet : StyleSheet {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/rules)
      */
-    open val rules: CSSRuleList
+    public open val rules: CSSRuleList
 
     /**
      * The obsolete CSSStyleSheet interface's addRule() legacy method adds a new rule to the stylesheet. You should
@@ -203,7 +203,7 @@ public open external class CSSStyleSheet : StyleSheet {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/addRule)
      */
-    open fun addRule(selector: String = definedExternally, style: String = definedExternally, index: Int = definedExternally): Int
+    public open fun addRule(selector: String = definedExternally, style: String = definedExternally, index: Int = definedExternally): Int
 
     /**
      * The obsolete CSSStyleSheet method removeRule() removes a rule from the stylesheet object. It is functionally
@@ -213,13 +213,13 @@ public open external class CSSStyleSheet : StyleSheet {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/removeRule)
      */
-    open fun removeRule(index: Int = definedExternally)
+    public open fun removeRule(index: Int = definedExternally)
 }
 
 public external interface CSSStyleSheetInit : JsAny {
-    var baseURL: String?
-    var media: JsAny?
-    var disabled: Boolean?
+    public var baseURL: String?
+    public var media: JsAny?
+    public var disabled: Boolean?
 }
 
 public fun CSSStyleSheetInit(baseURL: String? = null, media: JsAny? = null, disabled: Boolean? = null): CSSStyleSheetInit = newJsObject<CSSStyleSheetInit>().apply {
@@ -260,7 +260,7 @@ public external interface LinkStyle : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sheet)
      */
-    val sheet: CSSStyleSheet?
+    public val sheet: CSSStyleSheet?
 }
 
 /**
@@ -299,7 +299,7 @@ public abstract external class CSSRule : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/cssText)
      */
-    open var cssText: String
+    public open var cssText: String
 
     /**
      * The parentRule read-only property of the CSSRule interface returns the containing rule of the current rule if
@@ -307,7 +307,7 @@ public abstract external class CSSRule : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/parentRule)
      */
-    open val parentRule: CSSRule?
+    public open val parentRule: CSSRule?
 
     /**
      * The parentStyleSheet read-only property of the CSSRule interface returns the StyleSheet object in which the
@@ -315,7 +315,7 @@ public abstract external class CSSRule : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/parentStyleSheet)
      */
-    open val parentStyleSheet: CSSStyleSheet?
+    public open val parentStyleSheet: CSSStyleSheet?
 
     /**
      * The read-only type property of the CSSRule interface is a deprecated property that returns an integer indicating
@@ -325,18 +325,18 @@ public abstract external class CSSRule : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/type)
      */
-    open val type: Short
+    public open val type: Short
 
-    companion object {
-        val STYLE_RULE: Short
-        val CHARSET_RULE: Short
-        val IMPORT_RULE: Short
-        val MEDIA_RULE: Short
-        val FONT_FACE_RULE: Short
-        val PAGE_RULE: Short
-        val MARGIN_RULE: Short
-        val NAMESPACE_RULE: Short
-        val SUPPORTS_RULE: Short
+    public companion object {
+        public val STYLE_RULE: Short
+        public val CHARSET_RULE: Short
+        public val IMPORT_RULE: Short
+        public val MEDIA_RULE: Short
+        public val FONT_FACE_RULE: Short
+        public val PAGE_RULE: Short
+        public val MARGIN_RULE: Short
+        public val NAMESPACE_RULE: Short
+        public val SUPPORTS_RULE: Short
     }
 }
 
@@ -352,7 +352,7 @@ public abstract external class CSSStyleRule : CSSGroupingRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/selectorText)
      */
-    open var selectorText: String
+    public open var selectorText: String
 
     /**
      * The read-only style property of the CSSStyleRule interface contains a CSSStyleProperties object representing the
@@ -360,18 +360,18 @@ public abstract external class CSSStyleRule : CSSGroupingRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/style)
      */
-    open val style: CSSStyleProperties
+    public open val style: CSSStyleProperties
 
-    companion object {
-        val STYLE_RULE: Short
-        val CHARSET_RULE: Short
-        val IMPORT_RULE: Short
-        val MEDIA_RULE: Short
-        val FONT_FACE_RULE: Short
-        val PAGE_RULE: Short
-        val MARGIN_RULE: Short
-        val NAMESPACE_RULE: Short
-        val SUPPORTS_RULE: Short
+    public companion object {
+        public val STYLE_RULE: Short
+        public val CHARSET_RULE: Short
+        public val IMPORT_RULE: Short
+        public val MEDIA_RULE: Short
+        public val FONT_FACE_RULE: Short
+        public val PAGE_RULE: Short
+        public val MARGIN_RULE: Short
+        public val NAMESPACE_RULE: Short
+        public val SUPPORTS_RULE: Short
     }
 }
 
@@ -386,7 +386,7 @@ public abstract external class CSSImportRule : CSSRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/href)
      */
-    open val href: String
+    public open val href: String
 
     /**
      * The read-only media property of the CSSImportRule interface returns a MediaList object representing the media
@@ -394,7 +394,7 @@ public abstract external class CSSImportRule : CSSRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/media)
      */
-    open val media: MediaList
+    public open val media: MediaList
 
     /**
      * The read-only styleSheet property of the CSSImportRule interface returns the CSS Stylesheet specified by the
@@ -402,7 +402,7 @@ public abstract external class CSSImportRule : CSSRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/styleSheet)
      */
-    open val styleSheet: CSSStyleSheet?
+    public open val styleSheet: CSSStyleSheet?
 
     /**
      * The read-only layerName property of the CSSImportRule interface returns the name of the cascade layer created by
@@ -410,7 +410,7 @@ public abstract external class CSSImportRule : CSSRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/layerName)
      */
-    open val layerName: String?
+    public open val layerName: String?
 
     /**
      * The read-only supportsText property of the CSSImportRule interface returns the supports condition specified by
@@ -418,18 +418,18 @@ public abstract external class CSSImportRule : CSSRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/supportsText)
      */
-    open val supportsText: String?
+    public open val supportsText: String?
 
-    companion object {
-        val STYLE_RULE: Short
-        val CHARSET_RULE: Short
-        val IMPORT_RULE: Short
-        val MEDIA_RULE: Short
-        val FONT_FACE_RULE: Short
-        val PAGE_RULE: Short
-        val MARGIN_RULE: Short
-        val NAMESPACE_RULE: Short
-        val SUPPORTS_RULE: Short
+    public companion object {
+        public val STYLE_RULE: Short
+        public val CHARSET_RULE: Short
+        public val IMPORT_RULE: Short
+        public val MEDIA_RULE: Short
+        public val FONT_FACE_RULE: Short
+        public val PAGE_RULE: Short
+        public val MARGIN_RULE: Short
+        public val NAMESPACE_RULE: Short
+        public val SUPPORTS_RULE: Short
     }
 }
 
@@ -446,32 +446,32 @@ public abstract external class CSSGroupingRule : CSSRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/cssRules)
      */
-    open val cssRules: CSSRuleList
+    public open val cssRules: CSSRuleList
 
     /**
      * The insertRule() method of the CSSGroupingRule interface adds a new CSS rule to a list of CSS rules.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/insertRule)
      */
-    open fun insertRule(rule: String, index: Int = definedExternally): Int
+    public open fun insertRule(rule: String, index: Int = definedExternally): Int
 
     /**
      * The deleteRule() method of the CSSGroupingRule interface removes a CSS rule from a list of child CSS rules.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/deleteRule)
      */
-    open fun deleteRule(index: Int)
+    public open fun deleteRule(index: Int)
 
-    companion object {
-        val STYLE_RULE: Short
-        val CHARSET_RULE: Short
-        val IMPORT_RULE: Short
-        val MEDIA_RULE: Short
-        val FONT_FACE_RULE: Short
-        val PAGE_RULE: Short
-        val MARGIN_RULE: Short
-        val NAMESPACE_RULE: Short
-        val SUPPORTS_RULE: Short
+    public companion object {
+        public val STYLE_RULE: Short
+        public val CHARSET_RULE: Short
+        public val IMPORT_RULE: Short
+        public val MEDIA_RULE: Short
+        public val FONT_FACE_RULE: Short
+        public val PAGE_RULE: Short
+        public val MARGIN_RULE: Short
+        public val NAMESPACE_RULE: Short
+        public val SUPPORTS_RULE: Short
     }
 }
 
@@ -486,51 +486,51 @@ public abstract external class CSSPageDescriptors : CSSStyleDeclaration {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margin)
      */
-    open var margin: String
+    public open var margin: String
 
     /**
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margintop)
      */
-    open var marginTop: String
+    public open var marginTop: String
 
     /**
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginright)
      */
-    open var marginRight: String
+    public open var marginRight: String
 
     /**
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginbottom)
      */
-    open var marginBottom: String
+    public open var marginBottom: String
 
     /**
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginleft)
      */
-    open var marginLeft: String
+    public open var marginLeft: String
 
     /**
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#size)
      */
-    open var size: String
+    public open var size: String
 
     /**
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#pageorientation)
      */
-    open var pageOrientation: String
-    open var marks: String
-    open var bleed: String
+    public open var pageOrientation: String
+    public open var marks: String
+    public open var bleed: String
 }
 
 /**
@@ -545,7 +545,7 @@ public abstract external class CSSPageRule : CSSGroupingRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule/selectorText)
      */
-    open var selectorText: String
+    public open var selectorText: String
 
     /**
      * The read-only style property of the CSSPageRule interface contains a CSSPageDescriptors object representing the
@@ -553,35 +553,35 @@ public abstract external class CSSPageRule : CSSGroupingRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule/style)
      */
-    open val style: CSSPageDescriptors
+    public open val style: CSSPageDescriptors
 
-    companion object {
-        val STYLE_RULE: Short
-        val CHARSET_RULE: Short
-        val IMPORT_RULE: Short
-        val MEDIA_RULE: Short
-        val FONT_FACE_RULE: Short
-        val PAGE_RULE: Short
-        val MARGIN_RULE: Short
-        val NAMESPACE_RULE: Short
-        val SUPPORTS_RULE: Short
+    public companion object {
+        public val STYLE_RULE: Short
+        public val CHARSET_RULE: Short
+        public val IMPORT_RULE: Short
+        public val MEDIA_RULE: Short
+        public val FONT_FACE_RULE: Short
+        public val PAGE_RULE: Short
+        public val MARGIN_RULE: Short
+        public val NAMESPACE_RULE: Short
+        public val SUPPORTS_RULE: Short
     }
 }
 
 public abstract external class CSSMarginRule : CSSRule {
-    open val name: String
-    open val style: CSSStyleDeclaration
+    public open val name: String
+    public open val style: CSSStyleDeclaration
 
-    companion object {
-        val STYLE_RULE: Short
-        val CHARSET_RULE: Short
-        val IMPORT_RULE: Short
-        val MEDIA_RULE: Short
-        val FONT_FACE_RULE: Short
-        val PAGE_RULE: Short
-        val MARGIN_RULE: Short
-        val NAMESPACE_RULE: Short
-        val SUPPORTS_RULE: Short
+    public companion object {
+        public val STYLE_RULE: Short
+        public val CHARSET_RULE: Short
+        public val IMPORT_RULE: Short
+        public val MEDIA_RULE: Short
+        public val FONT_FACE_RULE: Short
+        public val PAGE_RULE: Short
+        public val MARGIN_RULE: Short
+        public val NAMESPACE_RULE: Short
+        public val SUPPORTS_RULE: Short
     }
 }
 
@@ -597,7 +597,7 @@ public abstract external class CSSNamespaceRule : CSSRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule/namespaceURI)
      */
-    open val namespaceURI: String
+    public open val namespaceURI: String
 
     /**
      * The read-only prefix property of the CSSNamespaceRule returns a string with the name of the prefix associated to
@@ -605,18 +605,18 @@ public abstract external class CSSNamespaceRule : CSSRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule/prefix)
      */
-    open val prefix: String
+    public open val prefix: String
 
-    companion object {
-        val STYLE_RULE: Short
-        val CHARSET_RULE: Short
-        val IMPORT_RULE: Short
-        val MEDIA_RULE: Short
-        val FONT_FACE_RULE: Short
-        val PAGE_RULE: Short
-        val MARGIN_RULE: Short
-        val NAMESPACE_RULE: Short
-        val SUPPORTS_RULE: Short
+    public companion object {
+        public val STYLE_RULE: Short
+        public val CHARSET_RULE: Short
+        public val IMPORT_RULE: Short
+        public val MEDIA_RULE: Short
+        public val FONT_FACE_RULE: Short
+        public val PAGE_RULE: Short
+        public val MARGIN_RULE: Short
+        public val NAMESPACE_RULE: Short
+        public val SUPPORTS_RULE: Short
     }
 }
 
@@ -630,7 +630,7 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssText)
      */
-    open var cssText: String
+    public open var cssText: String
 
     /**
      * The read-only property returns an integer that represents the number of style declarations in this CSS
@@ -653,7 +653,7 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyValue)
      */
-    open fun getPropertyValue(property: String): String
+    public open fun getPropertyValue(property: String): String
 
     /**
      * The CSSStyleDeclaration.getPropertyPriority() method interface returns a string that provides all explicitly set
@@ -661,7 +661,7 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyPriority)
      */
-    open fun getPropertyPriority(property: String): String
+    public open fun getPropertyPriority(property: String): String
 
     /**
      * The CSSStyleDeclaration.setProperty() method interface sets a new value for a property on a CSS style declaration
@@ -669,14 +669,14 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/setProperty)
      */
-    open fun setProperty(property: String, value: String, priority: String = definedExternally)
+    public open fun setProperty(property: String, value: String, priority: String = definedExternally)
 
     /**
      * The CSSStyleDeclaration.removeProperty() method interface removes a property from a CSS style declaration object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/removeProperty)
      */
-    open fun removeProperty(property: String): String
+    public open fun removeProperty(property: String): String
 
     /**
      * The CSSStyleDeclaration.parentRule read-only property returns a CSSRule that is the parent of this style block,
@@ -684,7 +684,7 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/parentRule)
      */
-    open val parentRule: CSSRule?
+    public open val parentRule: CSSRule?
 }
 
 public operator fun CSSStyleDeclaration.get(index: Int): String? = getStringProperty(this, index)
@@ -701,770 +701,770 @@ public abstract external class CSSStyleProperties : CSSStyleDeclaration {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleProperties/cssFloat)
      */
-    open var cssFloat: String
-    open var accentColor: String
-    open var alignContent: String
-    open var alignItems: String
-    open var alignSelf: String
-    open var alignmentBaseline: String
-    open var all: String
-    open var anchorName: String
-    open var anchorScope: String
-    open var animation: String
-    open var animationComposition: String
-    open var animationDelay: String
-    open var animationDelayEnd: String
-    open var animationDelayStart: String
-    open var animationDirection: String
-    open var animationDuration: String
-    open var animationFillMode: String
-    open var animationIterationCount: String
-    open var animationName: String
-    open var animationPlayState: String
-    open var animationRange: String
-    open var animationRangeCenter: String
-    open var animationRangeEnd: String
-    open var animationRangeStart: String
-    open var animationTimeline: String
-    open var animationTimingFunction: String
-    open var animationTrigger: String
-    open var appearance: String
-    open var aspectRatio: String
-    open var backdropFilter: String
-    open var backfaceVisibility: String
-    open var background: String
-    open var backgroundAttachment: String
-    open var backgroundBlendMode: String
-    open var backgroundClip: String
-    open var backgroundColor: String
-    open var backgroundImage: String
-    open var backgroundOrigin: String
-    open var backgroundPosition: String
-    open var backgroundPositionBlock: String
-    open var backgroundPositionInline: String
-    open var backgroundPositionX: String
-    open var backgroundPositionY: String
-    open var backgroundRepeat: String
-    open var backgroundRepeatBlock: String
-    open var backgroundRepeatInline: String
-    open var backgroundRepeatX: String
-    open var backgroundRepeatY: String
-    open var backgroundSize: String
-    open var backgroundTbd: String
-    open var baselineShift: String
-    open var baselineSource: String
-    open var blockEllipsis: String
-    open var blockSize: String
-    open var blockStep: String
-    open var blockStepAlign: String
-    open var blockStepInsert: String
-    open var blockStepRound: String
-    open var blockStepSize: String
-    open var bookmarkLabel: String
-    open var bookmarkLevel: String
-    open var bookmarkState: String
-    open var border: String
-    open var borderBlock: String
-    open var borderBlockClip: String
-    open var borderBlockColor: String
-    open var borderBlockEnd: String
-    open var borderBlockEndClip: String
-    open var borderBlockEndColor: String
-    open var borderBlockEndRadius: String
-    open var borderBlockEndStyle: String
-    open var borderBlockEndWidth: String
-    open var borderBlockStart: String
-    open var borderBlockStartClip: String
-    open var borderBlockStartColor: String
-    open var borderBlockStartRadius: String
-    open var borderBlockStartStyle: String
-    open var borderBlockStartWidth: String
-    open var borderBlockStyle: String
-    open var borderBlockWidth: String
-    open var borderBottom: String
-    open var borderBottomClip: String
-    open var borderBottomColor: String
-    open var borderBottomLeftRadius: String
-    open var borderBottomRadius: String
-    open var borderBottomRightRadius: String
-    open var borderBottomStyle: String
-    open var borderBottomWidth: String
-    open var borderBoundary: String
-    open var borderClip: String
-    open var borderCollapse: String
-    open var borderColor: String
-    open var borderEndEndRadius: String
-    open var borderEndStartRadius: String
-    open var borderImage: String
-    open var borderImageOutset: String
-    open var borderImageRepeat: String
-    open var borderImageSlice: String
-    open var borderImageSource: String
-    open var borderImageWidth: String
-    open var borderInline: String
-    open var borderInlineClip: String
-    open var borderInlineColor: String
-    open var borderInlineEnd: String
-    open var borderInlineEndClip: String
-    open var borderInlineEndColor: String
-    open var borderInlineEndRadius: String
-    open var borderInlineEndStyle: String
-    open var borderInlineEndWidth: String
-    open var borderInlineStart: String
-    open var borderInlineStartClip: String
-    open var borderInlineStartColor: String
-    open var borderInlineStartRadius: String
-    open var borderInlineStartStyle: String
-    open var borderInlineStartWidth: String
-    open var borderInlineStyle: String
-    open var borderInlineWidth: String
-    open var borderLeft: String
-    open var borderLeftClip: String
-    open var borderLeftColor: String
-    open var borderLeftRadius: String
-    open var borderLeftStyle: String
-    open var borderLeftWidth: String
-    open var borderLimit: String
-    open var borderRadius: String
-    open var borderRight: String
-    open var borderRightClip: String
-    open var borderRightColor: String
-    open var borderRightRadius: String
-    open var borderRightStyle: String
-    open var borderRightWidth: String
-    open var borderShape: String
-    open var borderSpacing: String
-    open var borderStartEndRadius: String
-    open var borderStartStartRadius: String
-    open var borderStyle: String
-    open var borderTop: String
-    open var borderTopClip: String
-    open var borderTopColor: String
-    open var borderTopLeftRadius: String
-    open var borderTopRadius: String
-    open var borderTopRightRadius: String
-    open var borderTopStyle: String
-    open var borderTopWidth: String
-    open var borderWidth: String
-    open var bottom: String
-    open var boxDecorationBreak: String
-    open var boxShadow: String
-    open var boxShadowBlur: String
-    open var boxShadowColor: String
-    open var boxShadowOffset: String
-    open var boxShadowPosition: String
-    open var boxShadowSpread: String
-    open var boxSizing: String
-    open var boxSnap: String
-    open var breakAfter: String
-    open var breakBefore: String
-    open var breakInside: String
-    open var captionSide: String
-    open var caret: String
-    open var caretAnimation: String
-    open var caretColor: String
-    open var caretShape: String
-    open var clear: String
-    open var clip: String
-    open var clipPath: String
-    open var clipRule: String
-    open var color: String
-    open var colorAdjust: String
-    open var colorInterpolation: String
-    open var colorInterpolationFilters: String
-    open var colorScheme: String
-    open var columnCount: String
-    open var columnFill: String
-    open var columnGap: String
-    open var columnHeight: String
-    open var columnRule: String
-    open var columnRuleBreak: String
-    open var columnRuleColor: String
-    open var columnRuleInset: String
-    open var columnRuleInsetCap: String
-    open var columnRuleInsetCapEnd: String
-    open var columnRuleInsetCapStart: String
-    open var columnRuleInsetEnd: String
-    open var columnRuleInsetJunction: String
-    open var columnRuleInsetJunctionEnd: String
-    open var columnRuleInsetJunctionStart: String
-    open var columnRuleInsetStart: String
-    open var columnRuleStyle: String
-    open var columnRuleVisibilityItems: String
-    open var columnRuleWidth: String
-    open var columnSpan: String
-    open var columnWidth: String
-    open var columnWrap: String
-    open var columns: String
-    open var contain: String
-    open var containIntrinsicBlockSize: String
-    open var containIntrinsicHeight: String
-    open var containIntrinsicInlineSize: String
-    open var containIntrinsicSize: String
-    open var containIntrinsicWidth: String
-    open var container: String
-    open var containerName: String
-    open var containerType: String
-    open var content: String
-    open var contentVisibility: String
-    open var `continue`: String
-    open var copyInto: String
-    open var corner: String
-    open var cornerBlockEnd: String
-    open var cornerBlockEndShape: String
-    open var cornerBlockStart: String
-    open var cornerBlockStartShape: String
-    open var cornerBottom: String
-    open var cornerBottomLeft: String
-    open var cornerBottomLeftShape: String
-    open var cornerBottomRight: String
-    open var cornerBottomRightShape: String
-    open var cornerBottomShape: String
-    open var cornerEndEnd: String
-    open var cornerEndEndShape: String
-    open var cornerEndStart: String
-    open var cornerEndStartShape: String
-    open var cornerInlineEnd: String
-    open var cornerInlineEndShape: String
-    open var cornerInlineStart: String
-    open var cornerInlineStartShape: String
-    open var cornerLeft: String
-    open var cornerLeftShape: String
-    open var cornerRight: String
-    open var cornerRightShape: String
-    open var cornerShape: String
-    open var cornerStartEnd: String
-    open var cornerStartEndShape: String
-    open var cornerStartStart: String
-    open var cornerStartStartShape: String
-    open var cornerTop: String
-    open var cornerTopLeft: String
-    open var cornerTopLeftShape: String
-    open var cornerTopRight: String
-    open var cornerTopRightShape: String
-    open var cornerTopShape: String
-    open var counterIncrement: String
-    open var counterReset: String
-    open var counterSet: String
-    open var cue: String
-    open var cueAfter: String
-    open var cueBefore: String
-    open var cursor: String
-    open var cx: String
-    open var cy: String
-    open var d: String
-    open var direction: String
-    open var display: String
-    open var dominantBaseline: String
-    open var dynamicRangeLimit: String
-    open var emptyCells: String
-    open var eventTrigger: String
-    open var eventTriggerName: String
-    open var eventTriggerSource: String
-    open var fieldSizing: String
-    open var fill: String
-    open var fillBreak: String
-    open var fillColor: String
-    open var fillImage: String
-    open var fillOpacity: String
-    open var fillOrigin: String
-    open var fillPosition: String
-    open var fillRepeat: String
-    open var fillRule: String
-    open var fillSize: String
-    open var filter: String
-    open var fitTolerance: String
-    open var flex: String
-    open var flexBasis: String
-    open var flexDirection: String
-    open var flexFlow: String
-    open var flexGrow: String
-    open var flexLineCount: String
-    open var flexShrink: String
-    open var flexWrap: String
-    open var float: String
-    open var floatDefer: String
-    open var floatOffset: String
-    open var floatReference: String
-    open var floodColor: String
-    open var floodOpacity: String
-    open var flowFrom: String
-    open var flowInto: String
-    open var font: String
-    open var fontFamily: String
-    open var fontFeatureSettings: String
-    open var fontKerning: String
-    open var fontLanguageOverride: String
-    open var fontOpticalSizing: String
-    open var fontPalette: String
-    open var fontSize: String
-    open var fontSizeAdjust: String
-    open var fontStretch: String
-    open var fontStyle: String
-    open var fontSynthesis: String
-    open var fontSynthesisPosition: String
-    open var fontSynthesisSmallCaps: String
-    open var fontSynthesisStyle: String
-    open var fontSynthesisWeight: String
-    open var fontVariant: String
-    open var fontVariantAlternates: String
-    open var fontVariantCaps: String
-    open var fontVariantEastAsian: String
-    open var fontVariantEmoji: String
-    open var fontVariantLigatures: String
-    open var fontVariantNumeric: String
-    open var fontVariantPosition: String
-    open var fontVariationSettings: String
-    open var fontWeight: String
-    open var fontWidth: String
-    open var footnoteDisplay: String
-    open var footnotePolicy: String
-    open var forcedColorAdjust: String
-    open var frameSizing: String
-    open var gap: String
-    open var glyphOrientationVertical: String
-    open var grid: String
-    open var gridArea: String
-    open var gridAutoColumns: String
-    open var gridAutoFlow: String
-    open var gridAutoRows: String
-    open var gridColumn: String
-    open var gridColumnEnd: String
-    open var gridColumnGap: String
-    open var gridColumnStart: String
-    open var gridGap: String
-    open var gridRow: String
-    open var gridRowEnd: String
-    open var gridRowGap: String
-    open var gridRowStart: String
-    open var gridTemplate: String
-    open var gridTemplateAreas: String
-    open var gridTemplateColumns: String
-    open var gridTemplateRows: String
-    open var hangingPunctuation: String
-    open var height: String
-    open var hyphenateCharacter: String
-    open var hyphenateLimitChars: String
-    open var hyphenateLimitLast: String
-    open var hyphenateLimitLines: String
-    open var hyphenateLimitZone: String
-    open var hyphens: String
-    open var imageAnimation: String
-    open var imageOrientation: String
-    open var imageRendering: String
-    open var imageResolution: String
-    open var initialLetter: String
-    open var initialLetterAlign: String
-    open var initialLetterWrap: String
-    open var inlineSize: String
-    open var inlineSizing: String
-    open var inputSecurity: String
-    open var inset: String
-    open var insetBlock: String
-    open var insetBlockEnd: String
-    open var insetBlockStart: String
-    open var insetInline: String
-    open var insetInlineEnd: String
-    open var insetInlineStart: String
-    open var interactivity: String
-    open var interestDelay: String
-    open var interestDelayEnd: String
-    open var interestDelayStart: String
-    open var interpolateSize: String
-    open var isolation: String
-    open var justifyContent: String
-    open var justifyItems: String
-    open var justifySelf: String
-    open var left: String
-    open var letterSpacing: String
-    open var lightingColor: String
-    open var lineBreak: String
-    open var lineClamp: String
-    open var lineFitEdge: String
-    open var lineGrid: String
-    open var lineHeight: String
-    open var lineHeightStep: String
-    open var linePadding: String
-    open var lineSnap: String
-    open var linkParameters: String
-    open var listStyle: String
-    open var listStyleImage: String
-    open var listStylePosition: String
-    open var listStyleType: String
-    open var margin: String
-    open var marginBlock: String
-    open var marginBlockEnd: String
-    open var marginBlockStart: String
-    open var marginBottom: String
-    open var marginBreak: String
-    open var marginInline: String
-    open var marginInlineEnd: String
-    open var marginInlineStart: String
-    open var marginLeft: String
-    open var marginRight: String
-    open var marginTop: String
-    open var marginTrim: String
-    open var marker: String
-    open var markerEnd: String
-    open var markerMid: String
-    open var markerSide: String
-    open var markerStart: String
-    open var mask: String
-    open var maskBorder: String
-    open var maskBorderMode: String
-    open var maskBorderOutset: String
-    open var maskBorderRepeat: String
-    open var maskBorderSlice: String
-    open var maskBorderSource: String
-    open var maskBorderWidth: String
-    open var maskClip: String
-    open var maskComposite: String
-    open var maskImage: String
-    open var maskMode: String
-    open var maskOrigin: String
-    open var maskPosition: String
-    open var maskRepeat: String
-    open var maskSize: String
-    open var maskType: String
-    open var mathDepth: String
-    open var mathShift: String
-    open var mathStyle: String
-    open var maxBlockSize: String
-    open var maxHeight: String
-    open var maxInlineSize: String
-    open var maxLines: String
-    open var maxSize: String
-    open var maxWidth: String
-    open var minBlockSize: String
-    open var minHeight: String
-    open var minInlineSize: String
-    open var minIntrinsicSizing: String
-    open var minSize: String
-    open var minWidth: String
-    open var mixBlendMode: String
-    open var navDown: String
-    open var navLeft: String
-    open var navRight: String
-    open var navUp: String
-    open var objectFit: String
-    open var objectPosition: String
-    open var objectViewBox: String
-    open var offset: String
-    open var offsetAnchor: String
-    open var offsetDistance: String
-    open var offsetPath: String
-    open var offsetPosition: String
-    open var offsetRotate: String
-    open var opacity: String
-    open var order: String
-    open var orphans: String
-    open var outline: String
-    open var outlineColor: String
-    open var outlineOffset: String
-    open var outlineStyle: String
-    open var outlineWidth: String
-    open var overflow: String
-    open var overflowAnchor: String
-    open var overflowBlock: String
-    open var overflowClipMargin: String
-    open var overflowClipMarginBlock: String
-    open var overflowClipMarginBlockEnd: String
-    open var overflowClipMarginBlockStart: String
-    open var overflowClipMarginBottom: String
-    open var overflowClipMarginInline: String
-    open var overflowClipMarginInlineEnd: String
-    open var overflowClipMarginInlineStart: String
-    open var overflowClipMarginLeft: String
-    open var overflowClipMarginRight: String
-    open var overflowClipMarginTop: String
-    open var overflowInline: String
-    open var overflowWrap: String
-    open var overflowX: String
-    open var overflowY: String
-    open var overlay: String
-    open var overscrollBehavior: String
-    open var overscrollBehaviorBlock: String
-    open var overscrollBehaviorInline: String
-    open var overscrollBehaviorX: String
-    open var overscrollBehaviorY: String
-    open var padding: String
-    open var paddingBlock: String
-    open var paddingBlockEnd: String
-    open var paddingBlockStart: String
-    open var paddingBottom: String
-    open var paddingInline: String
-    open var paddingInlineEnd: String
-    open var paddingInlineStart: String
-    open var paddingLeft: String
-    open var paddingRight: String
-    open var paddingTop: String
-    open var page: String
-    open var pageBreakAfter: String
-    open var pageBreakBefore: String
-    open var pageBreakInside: String
-    open var paintOrder: String
-    open var pathLength: String
-    open var pause: String
-    open var pauseAfter: String
-    open var pauseBefore: String
-    open var perspective: String
-    open var perspectiveOrigin: String
-    open var placeContent: String
-    open var placeItems: String
-    open var placeSelf: String
-    open var pointerEvents: String
-    open var pointerTimeline: String
-    open var pointerTimelineAxis: String
-    open var pointerTimelineName: String
-    open var position: String
-    open var positionAnchor: String
-    open var positionArea: String
-    open var positionTry: String
-    open var positionTryFallbacks: String
-    open var positionTryOrder: String
-    open var positionVisibility: String
-    open var printColorAdjust: String
-    open var quotes: String
-    open var r: String
-    open var readingFlow: String
-    open var readingOrder: String
-    open var regionFragment: String
-    open var resize: String
-    open var rest: String
-    open var restAfter: String
-    open var restBefore: String
-    open var right: String
-    open var rotate: String
-    open var rowGap: String
-    open var rowRule: String
-    open var rowRuleBreak: String
-    open var rowRuleColor: String
-    open var rowRuleInset: String
-    open var rowRuleInsetCap: String
-    open var rowRuleInsetCapEnd: String
-    open var rowRuleInsetCapStart: String
-    open var rowRuleInsetEnd: String
-    open var rowRuleInsetJunction: String
-    open var rowRuleInsetJunctionEnd: String
-    open var rowRuleInsetJunctionStart: String
-    open var rowRuleInsetStart: String
-    open var rowRuleStyle: String
-    open var rowRuleVisibilityItems: String
-    open var rowRuleWidth: String
-    open var rubyAlign: String
-    open var rubyMerge: String
-    open var rubyOverhang: String
-    open var rubyPosition: String
-    open var rule: String
-    open var ruleBreak: String
-    open var ruleColor: String
-    open var ruleInset: String
-    open var ruleInsetCap: String
-    open var ruleInsetEnd: String
-    open var ruleInsetJunction: String
-    open var ruleInsetStart: String
-    open var ruleOverlap: String
-    open var ruleStyle: String
-    open var ruleVisibilityItems: String
-    open var ruleWidth: String
-    open var rx: String
-    open var ry: String
-    open var scale: String
-    open var scrollAxisLock: String
-    open var scrollBehavior: String
-    open var scrollInitialTarget: String
-    open var scrollMargin: String
-    open var scrollMarginBlock: String
-    open var scrollMarginBlockEnd: String
-    open var scrollMarginBlockStart: String
-    open var scrollMarginBottom: String
-    open var scrollMarginInline: String
-    open var scrollMarginInlineEnd: String
-    open var scrollMarginInlineStart: String
-    open var scrollMarginLeft: String
-    open var scrollMarginRight: String
-    open var scrollMarginTop: String
-    open var scrollMarkerGroup: String
-    open var scrollPadding: String
-    open var scrollPaddingBlock: String
-    open var scrollPaddingBlockEnd: String
-    open var scrollPaddingBlockStart: String
-    open var scrollPaddingBottom: String
-    open var scrollPaddingInline: String
-    open var scrollPaddingInlineEnd: String
-    open var scrollPaddingInlineStart: String
-    open var scrollPaddingLeft: String
-    open var scrollPaddingRight: String
-    open var scrollPaddingTop: String
-    open var scrollSnapAlign: String
-    open var scrollSnapStop: String
-    open var scrollSnapType: String
-    open var scrollTargetGroup: String
-    open var scrollTimeline: String
-    open var scrollTimelineAxis: String
-    open var scrollTimelineName: String
-    open var scrollbarColor: String
-    open var scrollbarGutter: String
-    open var scrollbarWidth: String
-    open var shapeImageThreshold: String
-    open var shapeInside: String
-    open var shapeMargin: String
-    open var shapeOutside: String
-    open var shapePadding: String
-    open var shapeRendering: String
-    open var size: String
-    open var sliderOrientation: String
-    open var spatialNavigationAction: String
-    open var spatialNavigationContain: String
-    open var spatialNavigationFunction: String
-    open var speak: String
-    open var speakAs: String
-    open var stopColor: String
-    open var stopOpacity: String
-    open var stringSet: String
-    open var stroke: String
-    open var strokeAlign: String
-    open var strokeAlignment: String
-    open var strokeBreak: String
-    open var strokeColor: String
-    open var strokeDashCorner: String
-    open var strokeDashJustify: String
-    open var strokeDashadjust: String
-    open var strokeDasharray: String
-    open var strokeDashcorner: String
-    open var strokeDashoffset: String
-    open var strokeImage: String
-    open var strokeLinecap: String
-    open var strokeLinejoin: String
-    open var strokeMiterlimit: String
-    open var strokeOpacity: String
-    open var strokeOrigin: String
-    open var strokePosition: String
-    open var strokeRepeat: String
-    open var strokeSize: String
-    open var strokeWidth: String
-    open var tabSize: String
-    open var tableLayout: String
-    open var textAlign: String
-    open var textAlignAll: String
-    open var textAlignLast: String
-    open var textAnchor: String
-    open var textAutospace: String
-    open var textBox: String
-    open var textBoxEdge: String
-    open var textBoxTrim: String
-    open var textCombineUpright: String
-    open var textDecoration: String
-    open var textDecorationColor: String
-    open var textDecorationInset: String
-    open var textDecorationLine: String
-    open var textDecorationSkip: String
-    open var textDecorationSkipBox: String
-    open var textDecorationSkipInk: String
-    open var textDecorationSkipSelf: String
-    open var textDecorationSkipSpaces: String
-    open var textDecorationStyle: String
-    open var textDecorationThickness: String
-    open var textEmphasis: String
-    open var textEmphasisColor: String
-    open var textEmphasisPosition: String
-    open var textEmphasisSkip: String
-    open var textEmphasisStyle: String
-    open var textFit: String
-    open var textGroupAlign: String
-    open var textIndent: String
-    open var textJustify: String
-    open var textOrientation: String
-    open var textOverflow: String
-    open var textRendering: String
-    open var textShadow: String
-    open var textSizeAdjust: String
-    open var textSpacing: String
-    open var textSpacingTrim: String
-    open var textTransform: String
-    open var textUnderlineOffset: String
-    open var textUnderlinePosition: String
-    open var textWrap: String
-    open var textWrapMode: String
-    open var textWrapStyle: String
-    open var timelineScope: String
-    open var timelineTrigger: String
-    open var timelineTriggerActivationRange: String
-    open var timelineTriggerActivationRangeEnd: String
-    open var timelineTriggerActivationRangeStart: String
-    open var timelineTriggerActiveRange: String
-    open var timelineTriggerActiveRangeEnd: String
-    open var timelineTriggerActiveRangeStart: String
-    open var timelineTriggerName: String
-    open var timelineTriggerRange: String
-    open var timelineTriggerSource: String
-    open var top: String
-    open var touchAction: String
-    open var transform: String
-    open var transformBox: String
-    open var transformOrigin: String
-    open var transformStyle: String
-    open var transition: String
-    open var transitionBehavior: String
-    open var transitionDelay: String
-    open var transitionDuration: String
-    open var transitionProperty: String
-    open var transitionTimingFunction: String
-    open var translate: String
-    open var triggerScope: String
-    open var unicodeBidi: String
-    open var userSelect: String
-    open var vectorEffect: String
-    open var verticalAlign: String
-    open var viewTimeline: String
-    open var viewTimelineAxis: String
-    open var viewTimelineInset: String
-    open var viewTimelineName: String
-    open var viewTransitionClass: String
-    open var viewTransitionGroup: String
-    open var viewTransitionName: String
-    open var viewTransitionScope: String
-    open var visibility: String
-    open var voiceBalance: String
-    open var voiceDuration: String
-    open var voiceFamily: String
-    open var voicePitch: String
-    open var voiceRange: String
-    open var voiceRate: String
-    open var voiceStress: String
-    open var voiceVolume: String
-    open var webkitBoxAlign: String
-    open var webkitBoxFlex: String
-    open var webkitBoxOrdinalGroup: String
-    open var webkitBoxOrient: String
-    open var webkitBoxPack: String
-    open var webkitLineClamp: String
-    open var webkitTextFillColor: String
-    open var webkitTextStroke: String
-    open var webkitTextStrokeColor: String
-    open var webkitTextStrokeWidth: String
-    open var webkitUserSelect: String
-    open var whiteSpace: String
-    open var whiteSpaceCollapse: String
-    open var whiteSpaceTrim: String
-    open var widows: String
-    open var width: String
-    open var willChange: String
-    open var windowDrag: String
-    open var wordBreak: String
-    open var wordSpaceTransform: String
-    open var wordSpacing: String
-    open var wordWrap: String
-    open var wrapAfter: String
-    open var wrapBefore: String
-    open var wrapFlow: String
-    open var wrapInside: String
-    open var wrapThrough: String
-    open var writingMode: String
-    open var x: String
-    open var y: String
-    open var zIndex: String
-    open var zoom: String
+    public open var cssFloat: String
+    public open var accentColor: String
+    public open var alignContent: String
+    public open var alignItems: String
+    public open var alignSelf: String
+    public open var alignmentBaseline: String
+    public open var all: String
+    public open var anchorName: String
+    public open var anchorScope: String
+    public open var animation: String
+    public open var animationComposition: String
+    public open var animationDelay: String
+    public open var animationDelayEnd: String
+    public open var animationDelayStart: String
+    public open var animationDirection: String
+    public open var animationDuration: String
+    public open var animationFillMode: String
+    public open var animationIterationCount: String
+    public open var animationName: String
+    public open var animationPlayState: String
+    public open var animationRange: String
+    public open var animationRangeCenter: String
+    public open var animationRangeEnd: String
+    public open var animationRangeStart: String
+    public open var animationTimeline: String
+    public open var animationTimingFunction: String
+    public open var animationTrigger: String
+    public open var appearance: String
+    public open var aspectRatio: String
+    public open var backdropFilter: String
+    public open var backfaceVisibility: String
+    public open var background: String
+    public open var backgroundAttachment: String
+    public open var backgroundBlendMode: String
+    public open var backgroundClip: String
+    public open var backgroundColor: String
+    public open var backgroundImage: String
+    public open var backgroundOrigin: String
+    public open var backgroundPosition: String
+    public open var backgroundPositionBlock: String
+    public open var backgroundPositionInline: String
+    public open var backgroundPositionX: String
+    public open var backgroundPositionY: String
+    public open var backgroundRepeat: String
+    public open var backgroundRepeatBlock: String
+    public open var backgroundRepeatInline: String
+    public open var backgroundRepeatX: String
+    public open var backgroundRepeatY: String
+    public open var backgroundSize: String
+    public open var backgroundTbd: String
+    public open var baselineShift: String
+    public open var baselineSource: String
+    public open var blockEllipsis: String
+    public open var blockSize: String
+    public open var blockStep: String
+    public open var blockStepAlign: String
+    public open var blockStepInsert: String
+    public open var blockStepRound: String
+    public open var blockStepSize: String
+    public open var bookmarkLabel: String
+    public open var bookmarkLevel: String
+    public open var bookmarkState: String
+    public open var border: String
+    public open var borderBlock: String
+    public open var borderBlockClip: String
+    public open var borderBlockColor: String
+    public open var borderBlockEnd: String
+    public open var borderBlockEndClip: String
+    public open var borderBlockEndColor: String
+    public open var borderBlockEndRadius: String
+    public open var borderBlockEndStyle: String
+    public open var borderBlockEndWidth: String
+    public open var borderBlockStart: String
+    public open var borderBlockStartClip: String
+    public open var borderBlockStartColor: String
+    public open var borderBlockStartRadius: String
+    public open var borderBlockStartStyle: String
+    public open var borderBlockStartWidth: String
+    public open var borderBlockStyle: String
+    public open var borderBlockWidth: String
+    public open var borderBottom: String
+    public open var borderBottomClip: String
+    public open var borderBottomColor: String
+    public open var borderBottomLeftRadius: String
+    public open var borderBottomRadius: String
+    public open var borderBottomRightRadius: String
+    public open var borderBottomStyle: String
+    public open var borderBottomWidth: String
+    public open var borderBoundary: String
+    public open var borderClip: String
+    public open var borderCollapse: String
+    public open var borderColor: String
+    public open var borderEndEndRadius: String
+    public open var borderEndStartRadius: String
+    public open var borderImage: String
+    public open var borderImageOutset: String
+    public open var borderImageRepeat: String
+    public open var borderImageSlice: String
+    public open var borderImageSource: String
+    public open var borderImageWidth: String
+    public open var borderInline: String
+    public open var borderInlineClip: String
+    public open var borderInlineColor: String
+    public open var borderInlineEnd: String
+    public open var borderInlineEndClip: String
+    public open var borderInlineEndColor: String
+    public open var borderInlineEndRadius: String
+    public open var borderInlineEndStyle: String
+    public open var borderInlineEndWidth: String
+    public open var borderInlineStart: String
+    public open var borderInlineStartClip: String
+    public open var borderInlineStartColor: String
+    public open var borderInlineStartRadius: String
+    public open var borderInlineStartStyle: String
+    public open var borderInlineStartWidth: String
+    public open var borderInlineStyle: String
+    public open var borderInlineWidth: String
+    public open var borderLeft: String
+    public open var borderLeftClip: String
+    public open var borderLeftColor: String
+    public open var borderLeftRadius: String
+    public open var borderLeftStyle: String
+    public open var borderLeftWidth: String
+    public open var borderLimit: String
+    public open var borderRadius: String
+    public open var borderRight: String
+    public open var borderRightClip: String
+    public open var borderRightColor: String
+    public open var borderRightRadius: String
+    public open var borderRightStyle: String
+    public open var borderRightWidth: String
+    public open var borderShape: String
+    public open var borderSpacing: String
+    public open var borderStartEndRadius: String
+    public open var borderStartStartRadius: String
+    public open var borderStyle: String
+    public open var borderTop: String
+    public open var borderTopClip: String
+    public open var borderTopColor: String
+    public open var borderTopLeftRadius: String
+    public open var borderTopRadius: String
+    public open var borderTopRightRadius: String
+    public open var borderTopStyle: String
+    public open var borderTopWidth: String
+    public open var borderWidth: String
+    public open var bottom: String
+    public open var boxDecorationBreak: String
+    public open var boxShadow: String
+    public open var boxShadowBlur: String
+    public open var boxShadowColor: String
+    public open var boxShadowOffset: String
+    public open var boxShadowPosition: String
+    public open var boxShadowSpread: String
+    public open var boxSizing: String
+    public open var boxSnap: String
+    public open var breakAfter: String
+    public open var breakBefore: String
+    public open var breakInside: String
+    public open var captionSide: String
+    public open var caret: String
+    public open var caretAnimation: String
+    public open var caretColor: String
+    public open var caretShape: String
+    public open var clear: String
+    public open var clip: String
+    public open var clipPath: String
+    public open var clipRule: String
+    public open var color: String
+    public open var colorAdjust: String
+    public open var colorInterpolation: String
+    public open var colorInterpolationFilters: String
+    public open var colorScheme: String
+    public open var columnCount: String
+    public open var columnFill: String
+    public open var columnGap: String
+    public open var columnHeight: String
+    public open var columnRule: String
+    public open var columnRuleBreak: String
+    public open var columnRuleColor: String
+    public open var columnRuleInset: String
+    public open var columnRuleInsetCap: String
+    public open var columnRuleInsetCapEnd: String
+    public open var columnRuleInsetCapStart: String
+    public open var columnRuleInsetEnd: String
+    public open var columnRuleInsetJunction: String
+    public open var columnRuleInsetJunctionEnd: String
+    public open var columnRuleInsetJunctionStart: String
+    public open var columnRuleInsetStart: String
+    public open var columnRuleStyle: String
+    public open var columnRuleVisibilityItems: String
+    public open var columnRuleWidth: String
+    public open var columnSpan: String
+    public open var columnWidth: String
+    public open var columnWrap: String
+    public open var columns: String
+    public open var contain: String
+    public open var containIntrinsicBlockSize: String
+    public open var containIntrinsicHeight: String
+    public open var containIntrinsicInlineSize: String
+    public open var containIntrinsicSize: String
+    public open var containIntrinsicWidth: String
+    public open var container: String
+    public open var containerName: String
+    public open var containerType: String
+    public open var content: String
+    public open var contentVisibility: String
+    public open var `continue`: String
+    public open var copyInto: String
+    public open var corner: String
+    public open var cornerBlockEnd: String
+    public open var cornerBlockEndShape: String
+    public open var cornerBlockStart: String
+    public open var cornerBlockStartShape: String
+    public open var cornerBottom: String
+    public open var cornerBottomLeft: String
+    public open var cornerBottomLeftShape: String
+    public open var cornerBottomRight: String
+    public open var cornerBottomRightShape: String
+    public open var cornerBottomShape: String
+    public open var cornerEndEnd: String
+    public open var cornerEndEndShape: String
+    public open var cornerEndStart: String
+    public open var cornerEndStartShape: String
+    public open var cornerInlineEnd: String
+    public open var cornerInlineEndShape: String
+    public open var cornerInlineStart: String
+    public open var cornerInlineStartShape: String
+    public open var cornerLeft: String
+    public open var cornerLeftShape: String
+    public open var cornerRight: String
+    public open var cornerRightShape: String
+    public open var cornerShape: String
+    public open var cornerStartEnd: String
+    public open var cornerStartEndShape: String
+    public open var cornerStartStart: String
+    public open var cornerStartStartShape: String
+    public open var cornerTop: String
+    public open var cornerTopLeft: String
+    public open var cornerTopLeftShape: String
+    public open var cornerTopRight: String
+    public open var cornerTopRightShape: String
+    public open var cornerTopShape: String
+    public open var counterIncrement: String
+    public open var counterReset: String
+    public open var counterSet: String
+    public open var cue: String
+    public open var cueAfter: String
+    public open var cueBefore: String
+    public open var cursor: String
+    public open var cx: String
+    public open var cy: String
+    public open var d: String
+    public open var direction: String
+    public open var display: String
+    public open var dominantBaseline: String
+    public open var dynamicRangeLimit: String
+    public open var emptyCells: String
+    public open var eventTrigger: String
+    public open var eventTriggerName: String
+    public open var eventTriggerSource: String
+    public open var fieldSizing: String
+    public open var fill: String
+    public open var fillBreak: String
+    public open var fillColor: String
+    public open var fillImage: String
+    public open var fillOpacity: String
+    public open var fillOrigin: String
+    public open var fillPosition: String
+    public open var fillRepeat: String
+    public open var fillRule: String
+    public open var fillSize: String
+    public open var filter: String
+    public open var fitTolerance: String
+    public open var flex: String
+    public open var flexBasis: String
+    public open var flexDirection: String
+    public open var flexFlow: String
+    public open var flexGrow: String
+    public open var flexLineCount: String
+    public open var flexShrink: String
+    public open var flexWrap: String
+    public open var float: String
+    public open var floatDefer: String
+    public open var floatOffset: String
+    public open var floatReference: String
+    public open var floodColor: String
+    public open var floodOpacity: String
+    public open var flowFrom: String
+    public open var flowInto: String
+    public open var font: String
+    public open var fontFamily: String
+    public open var fontFeatureSettings: String
+    public open var fontKerning: String
+    public open var fontLanguageOverride: String
+    public open var fontOpticalSizing: String
+    public open var fontPalette: String
+    public open var fontSize: String
+    public open var fontSizeAdjust: String
+    public open var fontStretch: String
+    public open var fontStyle: String
+    public open var fontSynthesis: String
+    public open var fontSynthesisPosition: String
+    public open var fontSynthesisSmallCaps: String
+    public open var fontSynthesisStyle: String
+    public open var fontSynthesisWeight: String
+    public open var fontVariant: String
+    public open var fontVariantAlternates: String
+    public open var fontVariantCaps: String
+    public open var fontVariantEastAsian: String
+    public open var fontVariantEmoji: String
+    public open var fontVariantLigatures: String
+    public open var fontVariantNumeric: String
+    public open var fontVariantPosition: String
+    public open var fontVariationSettings: String
+    public open var fontWeight: String
+    public open var fontWidth: String
+    public open var footnoteDisplay: String
+    public open var footnotePolicy: String
+    public open var forcedColorAdjust: String
+    public open var frameSizing: String
+    public open var gap: String
+    public open var glyphOrientationVertical: String
+    public open var grid: String
+    public open var gridArea: String
+    public open var gridAutoColumns: String
+    public open var gridAutoFlow: String
+    public open var gridAutoRows: String
+    public open var gridColumn: String
+    public open var gridColumnEnd: String
+    public open var gridColumnGap: String
+    public open var gridColumnStart: String
+    public open var gridGap: String
+    public open var gridRow: String
+    public open var gridRowEnd: String
+    public open var gridRowGap: String
+    public open var gridRowStart: String
+    public open var gridTemplate: String
+    public open var gridTemplateAreas: String
+    public open var gridTemplateColumns: String
+    public open var gridTemplateRows: String
+    public open var hangingPunctuation: String
+    public open var height: String
+    public open var hyphenateCharacter: String
+    public open var hyphenateLimitChars: String
+    public open var hyphenateLimitLast: String
+    public open var hyphenateLimitLines: String
+    public open var hyphenateLimitZone: String
+    public open var hyphens: String
+    public open var imageAnimation: String
+    public open var imageOrientation: String
+    public open var imageRendering: String
+    public open var imageResolution: String
+    public open var initialLetter: String
+    public open var initialLetterAlign: String
+    public open var initialLetterWrap: String
+    public open var inlineSize: String
+    public open var inlineSizing: String
+    public open var inputSecurity: String
+    public open var inset: String
+    public open var insetBlock: String
+    public open var insetBlockEnd: String
+    public open var insetBlockStart: String
+    public open var insetInline: String
+    public open var insetInlineEnd: String
+    public open var insetInlineStart: String
+    public open var interactivity: String
+    public open var interestDelay: String
+    public open var interestDelayEnd: String
+    public open var interestDelayStart: String
+    public open var interpolateSize: String
+    public open var isolation: String
+    public open var justifyContent: String
+    public open var justifyItems: String
+    public open var justifySelf: String
+    public open var left: String
+    public open var letterSpacing: String
+    public open var lightingColor: String
+    public open var lineBreak: String
+    public open var lineClamp: String
+    public open var lineFitEdge: String
+    public open var lineGrid: String
+    public open var lineHeight: String
+    public open var lineHeightStep: String
+    public open var linePadding: String
+    public open var lineSnap: String
+    public open var linkParameters: String
+    public open var listStyle: String
+    public open var listStyleImage: String
+    public open var listStylePosition: String
+    public open var listStyleType: String
+    public open var margin: String
+    public open var marginBlock: String
+    public open var marginBlockEnd: String
+    public open var marginBlockStart: String
+    public open var marginBottom: String
+    public open var marginBreak: String
+    public open var marginInline: String
+    public open var marginInlineEnd: String
+    public open var marginInlineStart: String
+    public open var marginLeft: String
+    public open var marginRight: String
+    public open var marginTop: String
+    public open var marginTrim: String
+    public open var marker: String
+    public open var markerEnd: String
+    public open var markerMid: String
+    public open var markerSide: String
+    public open var markerStart: String
+    public open var mask: String
+    public open var maskBorder: String
+    public open var maskBorderMode: String
+    public open var maskBorderOutset: String
+    public open var maskBorderRepeat: String
+    public open var maskBorderSlice: String
+    public open var maskBorderSource: String
+    public open var maskBorderWidth: String
+    public open var maskClip: String
+    public open var maskComposite: String
+    public open var maskImage: String
+    public open var maskMode: String
+    public open var maskOrigin: String
+    public open var maskPosition: String
+    public open var maskRepeat: String
+    public open var maskSize: String
+    public open var maskType: String
+    public open var mathDepth: String
+    public open var mathShift: String
+    public open var mathStyle: String
+    public open var maxBlockSize: String
+    public open var maxHeight: String
+    public open var maxInlineSize: String
+    public open var maxLines: String
+    public open var maxSize: String
+    public open var maxWidth: String
+    public open var minBlockSize: String
+    public open var minHeight: String
+    public open var minInlineSize: String
+    public open var minIntrinsicSizing: String
+    public open var minSize: String
+    public open var minWidth: String
+    public open var mixBlendMode: String
+    public open var navDown: String
+    public open var navLeft: String
+    public open var navRight: String
+    public open var navUp: String
+    public open var objectFit: String
+    public open var objectPosition: String
+    public open var objectViewBox: String
+    public open var offset: String
+    public open var offsetAnchor: String
+    public open var offsetDistance: String
+    public open var offsetPath: String
+    public open var offsetPosition: String
+    public open var offsetRotate: String
+    public open var opacity: String
+    public open var order: String
+    public open var orphans: String
+    public open var outline: String
+    public open var outlineColor: String
+    public open var outlineOffset: String
+    public open var outlineStyle: String
+    public open var outlineWidth: String
+    public open var overflow: String
+    public open var overflowAnchor: String
+    public open var overflowBlock: String
+    public open var overflowClipMargin: String
+    public open var overflowClipMarginBlock: String
+    public open var overflowClipMarginBlockEnd: String
+    public open var overflowClipMarginBlockStart: String
+    public open var overflowClipMarginBottom: String
+    public open var overflowClipMarginInline: String
+    public open var overflowClipMarginInlineEnd: String
+    public open var overflowClipMarginInlineStart: String
+    public open var overflowClipMarginLeft: String
+    public open var overflowClipMarginRight: String
+    public open var overflowClipMarginTop: String
+    public open var overflowInline: String
+    public open var overflowWrap: String
+    public open var overflowX: String
+    public open var overflowY: String
+    public open var overlay: String
+    public open var overscrollBehavior: String
+    public open var overscrollBehaviorBlock: String
+    public open var overscrollBehaviorInline: String
+    public open var overscrollBehaviorX: String
+    public open var overscrollBehaviorY: String
+    public open var padding: String
+    public open var paddingBlock: String
+    public open var paddingBlockEnd: String
+    public open var paddingBlockStart: String
+    public open var paddingBottom: String
+    public open var paddingInline: String
+    public open var paddingInlineEnd: String
+    public open var paddingInlineStart: String
+    public open var paddingLeft: String
+    public open var paddingRight: String
+    public open var paddingTop: String
+    public open var page: String
+    public open var pageBreakAfter: String
+    public open var pageBreakBefore: String
+    public open var pageBreakInside: String
+    public open var paintOrder: String
+    public open var pathLength: String
+    public open var pause: String
+    public open var pauseAfter: String
+    public open var pauseBefore: String
+    public open var perspective: String
+    public open var perspectiveOrigin: String
+    public open var placeContent: String
+    public open var placeItems: String
+    public open var placeSelf: String
+    public open var pointerEvents: String
+    public open var pointerTimeline: String
+    public open var pointerTimelineAxis: String
+    public open var pointerTimelineName: String
+    public open var position: String
+    public open var positionAnchor: String
+    public open var positionArea: String
+    public open var positionTry: String
+    public open var positionTryFallbacks: String
+    public open var positionTryOrder: String
+    public open var positionVisibility: String
+    public open var printColorAdjust: String
+    public open var quotes: String
+    public open var r: String
+    public open var readingFlow: String
+    public open var readingOrder: String
+    public open var regionFragment: String
+    public open var resize: String
+    public open var rest: String
+    public open var restAfter: String
+    public open var restBefore: String
+    public open var right: String
+    public open var rotate: String
+    public open var rowGap: String
+    public open var rowRule: String
+    public open var rowRuleBreak: String
+    public open var rowRuleColor: String
+    public open var rowRuleInset: String
+    public open var rowRuleInsetCap: String
+    public open var rowRuleInsetCapEnd: String
+    public open var rowRuleInsetCapStart: String
+    public open var rowRuleInsetEnd: String
+    public open var rowRuleInsetJunction: String
+    public open var rowRuleInsetJunctionEnd: String
+    public open var rowRuleInsetJunctionStart: String
+    public open var rowRuleInsetStart: String
+    public open var rowRuleStyle: String
+    public open var rowRuleVisibilityItems: String
+    public open var rowRuleWidth: String
+    public open var rubyAlign: String
+    public open var rubyMerge: String
+    public open var rubyOverhang: String
+    public open var rubyPosition: String
+    public open var rule: String
+    public open var ruleBreak: String
+    public open var ruleColor: String
+    public open var ruleInset: String
+    public open var ruleInsetCap: String
+    public open var ruleInsetEnd: String
+    public open var ruleInsetJunction: String
+    public open var ruleInsetStart: String
+    public open var ruleOverlap: String
+    public open var ruleStyle: String
+    public open var ruleVisibilityItems: String
+    public open var ruleWidth: String
+    public open var rx: String
+    public open var ry: String
+    public open var scale: String
+    public open var scrollAxisLock: String
+    public open var scrollBehavior: String
+    public open var scrollInitialTarget: String
+    public open var scrollMargin: String
+    public open var scrollMarginBlock: String
+    public open var scrollMarginBlockEnd: String
+    public open var scrollMarginBlockStart: String
+    public open var scrollMarginBottom: String
+    public open var scrollMarginInline: String
+    public open var scrollMarginInlineEnd: String
+    public open var scrollMarginInlineStart: String
+    public open var scrollMarginLeft: String
+    public open var scrollMarginRight: String
+    public open var scrollMarginTop: String
+    public open var scrollMarkerGroup: String
+    public open var scrollPadding: String
+    public open var scrollPaddingBlock: String
+    public open var scrollPaddingBlockEnd: String
+    public open var scrollPaddingBlockStart: String
+    public open var scrollPaddingBottom: String
+    public open var scrollPaddingInline: String
+    public open var scrollPaddingInlineEnd: String
+    public open var scrollPaddingInlineStart: String
+    public open var scrollPaddingLeft: String
+    public open var scrollPaddingRight: String
+    public open var scrollPaddingTop: String
+    public open var scrollSnapAlign: String
+    public open var scrollSnapStop: String
+    public open var scrollSnapType: String
+    public open var scrollTargetGroup: String
+    public open var scrollTimeline: String
+    public open var scrollTimelineAxis: String
+    public open var scrollTimelineName: String
+    public open var scrollbarColor: String
+    public open var scrollbarGutter: String
+    public open var scrollbarWidth: String
+    public open var shapeImageThreshold: String
+    public open var shapeInside: String
+    public open var shapeMargin: String
+    public open var shapeOutside: String
+    public open var shapePadding: String
+    public open var shapeRendering: String
+    public open var size: String
+    public open var sliderOrientation: String
+    public open var spatialNavigationAction: String
+    public open var spatialNavigationContain: String
+    public open var spatialNavigationFunction: String
+    public open var speak: String
+    public open var speakAs: String
+    public open var stopColor: String
+    public open var stopOpacity: String
+    public open var stringSet: String
+    public open var stroke: String
+    public open var strokeAlign: String
+    public open var strokeAlignment: String
+    public open var strokeBreak: String
+    public open var strokeColor: String
+    public open var strokeDashCorner: String
+    public open var strokeDashJustify: String
+    public open var strokeDashadjust: String
+    public open var strokeDasharray: String
+    public open var strokeDashcorner: String
+    public open var strokeDashoffset: String
+    public open var strokeImage: String
+    public open var strokeLinecap: String
+    public open var strokeLinejoin: String
+    public open var strokeMiterlimit: String
+    public open var strokeOpacity: String
+    public open var strokeOrigin: String
+    public open var strokePosition: String
+    public open var strokeRepeat: String
+    public open var strokeSize: String
+    public open var strokeWidth: String
+    public open var tabSize: String
+    public open var tableLayout: String
+    public open var textAlign: String
+    public open var textAlignAll: String
+    public open var textAlignLast: String
+    public open var textAnchor: String
+    public open var textAutospace: String
+    public open var textBox: String
+    public open var textBoxEdge: String
+    public open var textBoxTrim: String
+    public open var textCombineUpright: String
+    public open var textDecoration: String
+    public open var textDecorationColor: String
+    public open var textDecorationInset: String
+    public open var textDecorationLine: String
+    public open var textDecorationSkip: String
+    public open var textDecorationSkipBox: String
+    public open var textDecorationSkipInk: String
+    public open var textDecorationSkipSelf: String
+    public open var textDecorationSkipSpaces: String
+    public open var textDecorationStyle: String
+    public open var textDecorationThickness: String
+    public open var textEmphasis: String
+    public open var textEmphasisColor: String
+    public open var textEmphasisPosition: String
+    public open var textEmphasisSkip: String
+    public open var textEmphasisStyle: String
+    public open var textFit: String
+    public open var textGroupAlign: String
+    public open var textIndent: String
+    public open var textJustify: String
+    public open var textOrientation: String
+    public open var textOverflow: String
+    public open var textRendering: String
+    public open var textShadow: String
+    public open var textSizeAdjust: String
+    public open var textSpacing: String
+    public open var textSpacingTrim: String
+    public open var textTransform: String
+    public open var textUnderlineOffset: String
+    public open var textUnderlinePosition: String
+    public open var textWrap: String
+    public open var textWrapMode: String
+    public open var textWrapStyle: String
+    public open var timelineScope: String
+    public open var timelineTrigger: String
+    public open var timelineTriggerActivationRange: String
+    public open var timelineTriggerActivationRangeEnd: String
+    public open var timelineTriggerActivationRangeStart: String
+    public open var timelineTriggerActiveRange: String
+    public open var timelineTriggerActiveRangeEnd: String
+    public open var timelineTriggerActiveRangeStart: String
+    public open var timelineTriggerName: String
+    public open var timelineTriggerRange: String
+    public open var timelineTriggerSource: String
+    public open var top: String
+    public open var touchAction: String
+    public open var transform: String
+    public open var transformBox: String
+    public open var transformOrigin: String
+    public open var transformStyle: String
+    public open var transition: String
+    public open var transitionBehavior: String
+    public open var transitionDelay: String
+    public open var transitionDuration: String
+    public open var transitionProperty: String
+    public open var transitionTimingFunction: String
+    public open var translate: String
+    public open var triggerScope: String
+    public open var unicodeBidi: String
+    public open var userSelect: String
+    public open var vectorEffect: String
+    public open var verticalAlign: String
+    public open var viewTimeline: String
+    public open var viewTimelineAxis: String
+    public open var viewTimelineInset: String
+    public open var viewTimelineName: String
+    public open var viewTransitionClass: String
+    public open var viewTransitionGroup: String
+    public open var viewTransitionName: String
+    public open var viewTransitionScope: String
+    public open var visibility: String
+    public open var voiceBalance: String
+    public open var voiceDuration: String
+    public open var voiceFamily: String
+    public open var voicePitch: String
+    public open var voiceRange: String
+    public open var voiceRate: String
+    public open var voiceStress: String
+    public open var voiceVolume: String
+    public open var webkitBoxAlign: String
+    public open var webkitBoxFlex: String
+    public open var webkitBoxOrdinalGroup: String
+    public open var webkitBoxOrient: String
+    public open var webkitBoxPack: String
+    public open var webkitLineClamp: String
+    public open var webkitTextFillColor: String
+    public open var webkitTextStroke: String
+    public open var webkitTextStrokeColor: String
+    public open var webkitTextStrokeWidth: String
+    public open var webkitUserSelect: String
+    public open var whiteSpace: String
+    public open var whiteSpaceCollapse: String
+    public open var whiteSpaceTrim: String
+    public open var widows: String
+    public open var width: String
+    public open var willChange: String
+    public open var windowDrag: String
+    public open var wordBreak: String
+    public open var wordSpaceTransform: String
+    public open var wordSpacing: String
+    public open var wordWrap: String
+    public open var wrapAfter: String
+    public open var wrapBefore: String
+    public open var wrapFlow: String
+    public open var wrapInside: String
+    public open var wrapThrough: String
+    public open var writingMode: String
+    public open var x: String
+    public open var y: String
+    public open var zIndex: String
+    public open var zoom: String
 }
 
 public external interface ElementCSSInlineStyle : JsAny {
@@ -1474,7 +1474,7 @@ public external interface ElementCSSInlineStyle : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/style)
      */
-    val style: CSSStyleProperties
+    public val style: CSSStyleProperties
 }
 
 /**
@@ -1484,7 +1484,7 @@ public external interface ElementCSSInlineStyle : JsAny {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS)
  */
 public external object CSS {
-    fun escape(ident: String): String
-    fun supports(property: String, value: String): Boolean
-    fun supports(conditionText: String): Boolean
+    public fun escape(ident: String): String
+    public fun supports(property: String, value: String): Boolean
+    public fun supports(conditionText: String): Boolean
 }

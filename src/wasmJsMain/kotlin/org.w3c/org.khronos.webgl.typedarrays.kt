@@ -16,11 +16,11 @@ import kotlin.js.*
  * Exposes the JavaScript [ArrayBuffer](https://developer.mozilla.org/en/docs/Web/API/ArrayBuffer) to Kotlin
  */
 public actual open external class ArrayBuffer actual constructor(length: Int) : BufferDataSource, JsAny {
-    actual open val byteLength: Int
-    actual fun slice(begin: Int, end: Int): ArrayBuffer
+    public actual open val byteLength: Int
+    public actual fun slice(begin: Int, end: Int): ArrayBuffer
 
-    actual companion object {
-        actual fun isView(value: JsAny?): Boolean
+    public actual companion object {
+        public actual fun isView(value: JsAny?): Boolean
     }
 }
 
@@ -28,29 +28,29 @@ public actual open external class ArrayBuffer actual constructor(length: Int) : 
  * Exposes the JavaScript [ArrayBufferView](https://developer.mozilla.org/en/docs/Web/API/ArrayBufferView) to Kotlin
  */
 public actual external interface ArrayBufferView : BufferDataSource, JsAny {
-    actual val buffer: ArrayBuffer
-    actual val byteOffset: Int
-    actual val byteLength: Int
+    public actual val buffer: ArrayBuffer
+    public actual val byteOffset: Int
+    public actual val byteLength: Int
 }
 
 /**
  * Exposes the JavaScript [Int8Array](https://developer.mozilla.org/en/docs/Web/API/Int8Array) to Kotlin
  */
 public actual open external class Int8Array : ArrayBufferView, JsAny {
-    actual constructor(length: Int)
-    actual constructor(array: Int8Array)
-    actual constructor(array: JsArray<JsNumber>)
-    actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
-    actual open val length: Int
+    public actual constructor(length: Int)
+    public actual constructor(array: Int8Array)
+    public actual constructor(array: JsArray<JsNumber>)
+    public actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
+    public actual open val length: Int
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int
-    actual fun set(array: Int8Array, offset: Int)
-    actual fun set(array: JsArray<JsNumber>, offset: Int)
-    actual fun subarray(start: Int, end: Int): Int8Array
+    public actual fun set(array: Int8Array, offset: Int)
+    public actual fun set(array: JsArray<JsNumber>, offset: Int)
+    public actual fun subarray(start: Int, end: Int): Int8Array
 
-    actual companion object {
-        actual val BYTES_PER_ELEMENT: Int
+    public actual companion object {
+        public actual val BYTES_PER_ELEMENT: Int
     }
 }
 
@@ -62,26 +62,26 @@ public actual operator fun Int8Array.get(index: Int): Byte = getMethodImplForInt
 @Suppress("UNUSED_PARAMETER")
 internal fun setMethodImplForInt8Array(obj: Int8Array, index: Int, value: Byte) { js("obj[index] = value;") }
 
-public actual operator fun Int8Array.set(index: Int, value: Byte) = setMethodImplForInt8Array(this, index, value)
+public actual operator fun Int8Array.set(index: Int, value: Byte): Unit = setMethodImplForInt8Array(this, index, value)
 
 /**
  * Exposes the JavaScript [Uint8Array](https://developer.mozilla.org/en/docs/Web/API/Uint8Array) to Kotlin
  */
 public actual open external class Uint8Array : ArrayBufferView, JsAny {
-    actual constructor(length: Int)
-    actual constructor(array: Uint8Array)
-    actual constructor(array: JsArray<JsNumber>)
-    actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
-    actual open val length: Int
+    public actual constructor(length: Int)
+    public actual constructor(array: Uint8Array)
+    public actual constructor(array: JsArray<JsNumber>)
+    public actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
+    public actual open val length: Int
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int
-    actual fun set(array: Uint8Array, offset: Int)
-    actual fun set(array: JsArray<JsNumber>, offset: Int)
-    actual fun subarray(start: Int, end: Int): Uint8Array
+    public actual fun set(array: Uint8Array, offset: Int)
+    public actual fun set(array: JsArray<JsNumber>, offset: Int)
+    public actual fun subarray(start: Int, end: Int): Uint8Array
 
-    actual companion object {
-        actual val BYTES_PER_ELEMENT: Int
+    public actual companion object {
+        public actual val BYTES_PER_ELEMENT: Int
     }
 }
 
@@ -93,26 +93,26 @@ public actual operator fun Uint8Array.get(index: Int): UByte = getMethodImplForU
 @Suppress("UNUSED_PARAMETER")
 internal fun setMethodImplForUint8Array(obj: Uint8Array, index: Int, value: Int) { js("obj[index] = value;") }
 
-public actual operator fun Uint8Array.set(index: Int, value: UByte) = setMethodImplForUint8Array(this, index, value.toInt())
+public actual operator fun Uint8Array.set(index: Int, value: UByte): Unit = setMethodImplForUint8Array(this, index, value.toInt())
 
 /**
  * Exposes the JavaScript [Uint8ClampedArray](https://developer.mozilla.org/en/docs/Web/API/Uint8ClampedArray) to Kotlin
  */
 public actual open external class Uint8ClampedArray : ArrayBufferView, JsAny {
-    actual constructor(length: Int)
-    actual constructor(array: Uint8ClampedArray)
-    actual constructor(array: JsArray<JsNumber>)
-    actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
-    actual open val length: Int
+    public actual constructor(length: Int)
+    public actual constructor(array: Uint8ClampedArray)
+    public actual constructor(array: JsArray<JsNumber>)
+    public actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
+    public actual open val length: Int
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int
-    actual fun set(array: Uint8ClampedArray, offset: Int)
-    actual fun set(array: JsArray<JsNumber>, offset: Int)
-    actual fun subarray(start: Int, end: Int): Uint8ClampedArray
+    public actual fun set(array: Uint8ClampedArray, offset: Int)
+    public actual fun set(array: JsArray<JsNumber>, offset: Int)
+    public actual fun subarray(start: Int, end: Int): Uint8ClampedArray
 
-    actual companion object {
-        actual val BYTES_PER_ELEMENT: Int
+    public actual companion object {
+        public actual val BYTES_PER_ELEMENT: Int
     }
 }
 
@@ -124,26 +124,26 @@ public actual operator fun Uint8ClampedArray.get(index: Int): UByte = getMethodI
 @Suppress("UNUSED_PARAMETER")
 internal fun setMethodImplForUint8ClampedArray(obj: Uint8ClampedArray, index: Int, value: Int) { js("obj[index] = value;") }
 
-public actual operator fun Uint8ClampedArray.set(index: Int, value: UByte) = setMethodImplForUint8ClampedArray(this, index, value.toInt())
+public actual operator fun Uint8ClampedArray.set(index: Int, value: UByte): Unit = setMethodImplForUint8ClampedArray(this, index, value.toInt())
 
 /**
  * Exposes the JavaScript [Int16Array](https://developer.mozilla.org/en/docs/Web/API/Int16Array) to Kotlin
  */
 public actual open external class Int16Array : ArrayBufferView, JsAny {
-    actual constructor(length: Int)
-    actual constructor(array: Int16Array)
-    actual constructor(array: JsArray<JsNumber>)
-    actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
-    actual open val length: Int
+    public actual constructor(length: Int)
+    public actual constructor(array: Int16Array)
+    public actual constructor(array: JsArray<JsNumber>)
+    public actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
+    public actual open val length: Int
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int
-    actual fun set(array: Int16Array, offset: Int)
-    actual fun set(array: JsArray<JsNumber>, offset: Int)
-    actual fun subarray(start: Int, end: Int): Int16Array
+    public actual fun set(array: Int16Array, offset: Int)
+    public actual fun set(array: JsArray<JsNumber>, offset: Int)
+    public actual fun subarray(start: Int, end: Int): Int16Array
 
-    actual companion object {
-        actual val BYTES_PER_ELEMENT: Int
+    public actual companion object {
+        public actual val BYTES_PER_ELEMENT: Int
     }
 }
 
@@ -155,26 +155,26 @@ public actual operator fun Int16Array.get(index: Int): Short = getMethodImplForI
 @Suppress("UNUSED_PARAMETER")
 internal fun setMethodImplForInt16Array(obj: Int16Array, index: Int, value: Short) { js("obj[index] = value;") }
 
-public actual operator fun Int16Array.set(index: Int, value: Short) = setMethodImplForInt16Array(this, index, value)
+public actual operator fun Int16Array.set(index: Int, value: Short): Unit = setMethodImplForInt16Array(this, index, value)
 
 /**
  * Exposes the JavaScript [Uint16Array](https://developer.mozilla.org/en/docs/Web/API/Uint16Array) to Kotlin
  */
 public actual open external class Uint16Array : ArrayBufferView, JsAny {
-    actual constructor(length: Int)
-    actual constructor(array: Uint16Array)
-    actual constructor(array: JsArray<JsNumber>)
-    actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
-    actual open val length: Int
+    public actual constructor(length: Int)
+    public actual constructor(array: Uint16Array)
+    public actual constructor(array: JsArray<JsNumber>)
+    public actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
+    public actual open val length: Int
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int
-    actual fun set(array: Uint16Array, offset: Int)
-    actual fun set(array: JsArray<JsNumber>, offset: Int)
-    actual fun subarray(start: Int, end: Int): Uint16Array
+    public actual fun set(array: Uint16Array, offset: Int)
+    public actual fun set(array: JsArray<JsNumber>, offset: Int)
+    public actual fun subarray(start: Int, end: Int): Uint16Array
 
-    actual companion object {
-        actual val BYTES_PER_ELEMENT: Int
+    public actual companion object {
+        public actual val BYTES_PER_ELEMENT: Int
     }
 }
 
@@ -186,26 +186,26 @@ public actual operator fun Uint16Array.get(index: Int): UShort = getMethodImplFo
 @Suppress("UNUSED_PARAMETER")
 internal fun setMethodImplForUint16Array(obj: Uint16Array, index: Int, value: Int) { js("obj[index] = value;") }
 
-public actual operator fun Uint16Array.set(index: Int, value: UShort) = setMethodImplForUint16Array(this, index, value.toInt())
+public actual operator fun Uint16Array.set(index: Int, value: UShort): Unit = setMethodImplForUint16Array(this, index, value.toInt())
 
 /**
  * Exposes the JavaScript [Int32Array](https://developer.mozilla.org/en/docs/Web/API/Int32Array) to Kotlin
  */
 public actual open external class Int32Array : ArrayBufferView, JsAny {
-    actual constructor(length: Int)
-    actual constructor(array: Int32Array)
-    actual constructor(array: JsArray<JsNumber>)
-    actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
-    actual open val length: Int
+    public actual constructor(length: Int)
+    public actual constructor(array: Int32Array)
+    public actual constructor(array: JsArray<JsNumber>)
+    public actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
+    public actual open val length: Int
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int
-    actual fun set(array: Int32Array, offset: Int)
-    actual fun set(array: JsArray<JsNumber>, offset: Int)
-    actual fun subarray(start: Int, end: Int): Int32Array
+    public actual fun set(array: Int32Array, offset: Int)
+    public actual fun set(array: JsArray<JsNumber>, offset: Int)
+    public actual fun subarray(start: Int, end: Int): Int32Array
 
-    actual companion object {
-        actual val BYTES_PER_ELEMENT: Int
+    public actual companion object {
+        public actual val BYTES_PER_ELEMENT: Int
     }
 }
 
@@ -217,26 +217,26 @@ public actual operator fun Int32Array.get(index: Int): Int = getMethodImplForInt
 @Suppress("UNUSED_PARAMETER")
 internal fun setMethodImplForInt32Array(obj: Int32Array, index: Int, value: Int) { js("obj[index] = value;") }
 
-public actual operator fun Int32Array.set(index: Int, value: Int) = setMethodImplForInt32Array(this, index, value)
+public actual operator fun Int32Array.set(index: Int, value: Int): Unit = setMethodImplForInt32Array(this, index, value)
 
 /**
  * Exposes the JavaScript [Uint32Array](https://developer.mozilla.org/en/docs/Web/API/Uint32Array) to Kotlin
  */
 public actual open external class Uint32Array : ArrayBufferView, JsAny {
-    actual constructor(length: Int)
-    actual constructor(array: Uint32Array)
-    actual constructor(array: JsArray<JsNumber>)
-    actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
-    actual open val length: Int
+    public actual constructor(length: Int)
+    public actual constructor(array: Uint32Array)
+    public actual constructor(array: JsArray<JsNumber>)
+    public actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
+    public actual open val length: Int
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int
-    actual fun set(array: Uint32Array, offset: Int)
-    actual fun set(array: JsArray<JsNumber>, offset: Int)
-    actual fun subarray(start: Int, end: Int): Uint32Array
+    public actual fun set(array: Uint32Array, offset: Int)
+    public actual fun set(array: JsArray<JsNumber>, offset: Int)
+    public actual fun subarray(start: Int, end: Int): Uint32Array
 
-    actual companion object {
-        actual val BYTES_PER_ELEMENT: Int
+    public actual companion object {
+        public actual val BYTES_PER_ELEMENT: Int
     }
 }
 
@@ -248,26 +248,26 @@ public actual operator fun Uint32Array.get(index: Int): UInt = getMethodImplForU
 @Suppress("UNUSED_PARAMETER")
 internal fun setMethodImplForUint32Array(obj: Uint32Array, index: Int, value: Int) { js("obj[index] = value;") }
 
-public actual operator fun Uint32Array.set(index: Int, value: UInt) = setMethodImplForUint32Array(this, index, value.toInt())
+public actual operator fun Uint32Array.set(index: Int, value: UInt): Unit = setMethodImplForUint32Array(this, index, value.toInt())
 
 /**
  * Exposes the JavaScript [Float32Array](https://developer.mozilla.org/en/docs/Web/API/Float32Array) to Kotlin
  */
 public actual open external class Float32Array : ArrayBufferView, JsAny {
-    actual constructor(length: Int)
-    actual constructor(array: Float32Array)
-    actual constructor(array: JsArray<JsNumber>)
-    actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
-    actual open val length: Int
+    public actual constructor(length: Int)
+    public actual constructor(array: Float32Array)
+    public actual constructor(array: JsArray<JsNumber>)
+    public actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
+    public actual open val length: Int
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int
-    actual fun set(array: Float32Array, offset: Int)
-    actual fun set(array: JsArray<JsNumber>, offset: Int)
-    actual fun subarray(start: Int, end: Int): Float32Array
+    public actual fun set(array: Float32Array, offset: Int)
+    public actual fun set(array: JsArray<JsNumber>, offset: Int)
+    public actual fun subarray(start: Int, end: Int): Float32Array
 
-    actual companion object {
-        actual val BYTES_PER_ELEMENT: Int
+    public actual companion object {
+        public actual val BYTES_PER_ELEMENT: Int
     }
 }
 
@@ -279,26 +279,26 @@ public actual operator fun Float32Array.get(index: Int): Float = getMethodImplFo
 @Suppress("UNUSED_PARAMETER")
 internal fun setMethodImplForFloat32Array(obj: Float32Array, index: Int, value: Float) { js("obj[index] = value;") }
 
-public actual operator fun Float32Array.set(index: Int, value: Float) = setMethodImplForFloat32Array(this, index, value)
+public actual operator fun Float32Array.set(index: Int, value: Float): Unit = setMethodImplForFloat32Array(this, index, value)
 
 /**
  * Exposes the JavaScript [Float64Array](https://developer.mozilla.org/en/docs/Web/API/Float64Array) to Kotlin
  */
 public actual open external class Float64Array : ArrayBufferView, JsAny {
-    actual constructor(length: Int)
-    actual constructor(array: Float64Array)
-    actual constructor(array: JsArray<JsNumber>)
-    actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
-    actual open val length: Int
+    public actual constructor(length: Int)
+    public actual constructor(array: Float64Array)
+    public actual constructor(array: JsArray<JsNumber>)
+    public actual constructor(buffer: ArrayBuffer, byteOffset: Int, length: Int)
+    public actual open val length: Int
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int
-    actual fun set(array: Float64Array, offset: Int)
-    actual fun set(array: JsArray<JsNumber>, offset: Int)
-    actual fun subarray(start: Int, end: Int): Float64Array
+    public actual fun set(array: Float64Array, offset: Int)
+    public actual fun set(array: JsArray<JsNumber>, offset: Int)
+    public actual fun subarray(start: Int, end: Int): Float64Array
 
-    actual companion object {
-        actual val BYTES_PER_ELEMENT: Int
+    public actual companion object {
+        public actual val BYTES_PER_ELEMENT: Int
     }
 }
 
@@ -310,7 +310,7 @@ public actual operator fun Float64Array.get(index: Int): Double = getMethodImplF
 @Suppress("UNUSED_PARAMETER")
 internal fun setMethodImplForFloat64Array(obj: Float64Array, index: Int, value: Double) { js("obj[index] = value;") }
 
-public actual operator fun Float64Array.set(index: Int, value: Double) = setMethodImplForFloat64Array(this, index, value)
+public actual operator fun Float64Array.set(index: Int, value: Double): Unit = setMethodImplForFloat64Array(this, index, value)
 
 /**
  * Exposes the JavaScript [DataView](https://developer.mozilla.org/en/docs/Web/API/DataView) to Kotlin
@@ -319,22 +319,22 @@ public actual open external class DataView actual constructor(buffer: ArrayBuffe
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int
-    actual fun getInt8(byteOffset: Int): Byte
-    actual fun getUint8(byteOffset: Int): Byte
-    actual fun getInt16(byteOffset: Int, littleEndian: Boolean): Short
-    actual fun getUint16(byteOffset: Int, littleEndian: Boolean): Short
-    actual fun getInt32(byteOffset: Int, littleEndian: Boolean): Int
-    actual fun getUint32(byteOffset: Int, littleEndian: Boolean): Int
-    actual fun getFloat32(byteOffset: Int, littleEndian: Boolean): Float
-    actual fun getFloat64(byteOffset: Int, littleEndian: Boolean): Double
-    actual fun setInt8(byteOffset: Int, value: Byte)
-    actual fun setUint8(byteOffset: Int, value: Byte)
-    actual fun setInt16(byteOffset: Int, value: Short, littleEndian: Boolean)
-    actual fun setUint16(byteOffset: Int, value: Short, littleEndian: Boolean)
-    actual fun setInt32(byteOffset: Int, value: Int, littleEndian: Boolean)
-    actual fun setUint32(byteOffset: Int, value: Int, littleEndian: Boolean)
-    actual fun setFloat32(byteOffset: Int, value: Float, littleEndian: Boolean)
-    actual fun setFloat64(byteOffset: Int, value: Double, littleEndian: Boolean)
+    public actual fun getInt8(byteOffset: Int): Byte
+    public actual fun getUint8(byteOffset: Int): Byte
+    public actual fun getInt16(byteOffset: Int, littleEndian: Boolean): Short
+    public actual fun getUint16(byteOffset: Int, littleEndian: Boolean): Short
+    public actual fun getInt32(byteOffset: Int, littleEndian: Boolean): Int
+    public actual fun getUint32(byteOffset: Int, littleEndian: Boolean): Int
+    public actual fun getFloat32(byteOffset: Int, littleEndian: Boolean): Float
+    public actual fun getFloat64(byteOffset: Int, littleEndian: Boolean): Double
+    public actual fun setInt8(byteOffset: Int, value: Byte)
+    public actual fun setUint8(byteOffset: Int, value: Byte)
+    public actual fun setInt16(byteOffset: Int, value: Short, littleEndian: Boolean)
+    public actual fun setUint16(byteOffset: Int, value: Short, littleEndian: Boolean)
+    public actual fun setInt32(byteOffset: Int, value: Int, littleEndian: Boolean)
+    public actual fun setUint32(byteOffset: Int, value: Int, littleEndian: Boolean)
+    public actual fun setFloat32(byteOffset: Int, value: Float, littleEndian: Boolean)
+    public actual fun setFloat64(byteOffset: Int, value: Double, littleEndian: Boolean)
 }
 
 public actual external interface BufferDataSource

@@ -23,7 +23,7 @@ public abstract external class SVGClipPathElement : SVGElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGClipPathElement/clipPathUnits)
      */
-    open val clipPathUnits: SVGAnimatedEnumeration
+    public open val clipPathUnits: SVGAnimatedEnumeration
 
     /**
      * The read-only transform property of the SVGClipPathElement interface reflects the transform attribute of a
@@ -31,27 +31,27 @@ public abstract external class SVGClipPathElement : SVGElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGClipPathElement/transform)
      */
-    open val transform: SVGAnimatedTransformList
+    public open val transform: SVGAnimatedTransformList
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }
 
@@ -68,7 +68,7 @@ public abstract external class SVGMaskElement : SVGElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/maskUnits)
      */
-    open val maskUnits: SVGAnimatedEnumeration
+    public open val maskUnits: SVGAnimatedEnumeration
 
     /**
      * The read-only maskContentUnits property of the SVGMaskElement interface reflects the maskContentUnits attribute.
@@ -76,7 +76,7 @@ public abstract external class SVGMaskElement : SVGElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/maskContentUnits)
      */
-    open val maskContentUnits: SVGAnimatedEnumeration
+    public open val maskContentUnits: SVGAnimatedEnumeration
 
     /**
      * The read-only x property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the value
@@ -85,7 +85,7 @@ public abstract external class SVGMaskElement : SVGElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/x)
      */
-    open val x: SVGAnimatedLength
+    public open val x: SVGAnimatedLength
 
     /**
      * The read-only y property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the value
@@ -94,7 +94,7 @@ public abstract external class SVGMaskElement : SVGElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/y)
      */
-    open val y: SVGAnimatedLength
+    public open val y: SVGAnimatedLength
 
     /**
      * The read-only width property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the
@@ -102,7 +102,7 @@ public abstract external class SVGMaskElement : SVGElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/width)
      */
-    open val width: SVGAnimatedLength
+    public open val width: SVGAnimatedLength
 
     /**
      * The read-only height property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the
@@ -110,26 +110,26 @@ public abstract external class SVGMaskElement : SVGElement {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/height)
      */
-    open val height: SVGAnimatedLength
+    public open val height: SVGAnimatedLength
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }

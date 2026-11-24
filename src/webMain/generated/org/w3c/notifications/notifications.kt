@@ -24,21 +24,21 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/Notification)
      */
-    constructor(title: String, options: NotificationOptions = definedExternally)
+    public constructor(title: String, options: NotificationOptions = definedExternally)
 
     /**
      * The click event of the Notification interface fires when the user clicks on displayed Notification.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/click_event)
      */
-    open var onclick: ((Event) -> Unit)?
+    public open var onclick: ((Event) -> Unit)?
 
     /**
      * The show event of the Notification interface fires when a Notification is displayed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/show_event)
      */
-    open var onshow: ((Event) -> Unit)?
+    public open var onshow: ((Event) -> Unit)?
 
     /**
      * The error event of the Notification interface fires when something goes wrong with a Notification (in many cases
@@ -46,14 +46,14 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/error_event)
      */
-    open var onerror: ((Event) -> Unit)?
+    public open var onerror: ((Event) -> Unit)?
 
     /**
      * The close event of the Notification interface fires when a Notification is closed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close_event)
      */
-    open var onclose: ((Event) -> Unit)?
+    public open var onclose: ((Event) -> Unit)?
 
     /**
      * The title read-only property of the Notification interface indicates the title of the notification, as specified
@@ -61,7 +61,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/title)
      */
-    open val title: String
+    public open val title: String
 
     /**
      * The dir read-only property of the Notification interface indicates the text direction of the notification, as
@@ -69,7 +69,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/dir)
      */
-    open val dir: NotificationDirection
+    public open val dir: NotificationDirection
 
     /**
      * The lang read-only property of the Notification interface indicates the language used in the notification, as
@@ -77,7 +77,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/lang)
      */
-    open val lang: String
+    public open val lang: String
 
     /**
      * The body read-only property of the Notification interface indicates the body string of the notification, as
@@ -85,7 +85,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/body)
      */
-    open val body: String
+    public open val body: String
 
     /**
      * The navigate read-only property of the Notification interface contains the URL the user agent will navigate to
@@ -93,7 +93,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/navigate)
      */
-    open val navigate: String
+    public open val navigate: String
 
     /**
      * The tag read-only property of the Notification interface signifies an identifying tag for the notification, as
@@ -101,7 +101,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/tag)
      */
-    open val tag: String
+    public open val tag: String
 
     /**
      * The image read-only property of the Notification interface returns a string containing the URL of a large image
@@ -110,7 +110,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/image)
      */
-    open val image: String
+    public open val image: String
 
     /**
      * The icon read-only property of the Notification interface returns a string containing the URL of a small image
@@ -119,7 +119,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/icon)
      */
-    open val icon: String
+    public open val icon: String
 
     /**
      * The badge read-only property of the Notification interface returns a string containing the URL of a small icon
@@ -129,7 +129,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/badge)
      */
-    open val badge: String
+    public open val badge: String
 
     /**
      * The timestamp read-only property of the Notification interface returns a number, as specified in the timestamp
@@ -137,7 +137,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/timestamp)
      */
-    open val timestamp: Double
+    public open val timestamp: Double
 
     /**
      * The renotify read-only property of the Notification interface specifies whether the user should be notified after
@@ -145,7 +145,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/renotify)
      */
-    open val renotify: Boolean
+    public open val renotify: Boolean
 
     /**
      * The silent read-only property of the Notification interface specifies whether the notification should be silent,
@@ -154,7 +154,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/silent)
      */
-    open val silent: Boolean?
+    public open val silent: Boolean?
 
     /**
      * The requireInteraction read-only property of the Notification interface returns a boolean value indicating that a
@@ -162,7 +162,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requireInteraction)
      */
-    open val requireInteraction: Boolean
+    public open val requireInteraction: Boolean
 
     /**
      * The data read-only property of the Notification interface returns a structured clone of the notification's data,
@@ -170,7 +170,7 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/data)
      */
-    open val data: JsAny?
+    public open val data: JsAny?
 
     /**
      * The actions read-only property of the Notification interface provides the actions available for users to select
@@ -178,23 +178,23 @@ public open external class Notification : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/actions)
      */
-    open val actions: JsArray<NotificationAction>
+    public open val actions: JsArray<NotificationAction>
 
     /**
      * The close() method of the Notification interface is used to close/remove a previously displayed notification.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close)
      */
-    open fun close()
+    public open fun close()
 
-    companion object {
+    public companion object {
         /**
          * The permission read-only static property of the Notification interface indicates the current permission
          * granted by the user for the current origin to display web notifications.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/permission_static)
          */
-        val permission: NotificationPermission
+        public val permission: NotificationPermission
 
         /**
          * The requestPermission() static method of the Notification interface requests permission from the user for the
@@ -202,7 +202,7 @@ public open external class Notification : EventTarget {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requestPermission_static)
          */
-        fun requestPermission(deprecatedCallback: (NotificationPermission) -> Unit = definedExternally): Promise<NotificationPermission>
+        public fun requestPermission(deprecatedCallback: (NotificationPermission) -> Unit = definedExternally): Promise<NotificationPermission>
 
         /**
          * The maxActions read-only static property of the Notification interface returns the maximum number of actions
@@ -210,25 +210,25 @@ public open external class Notification : EventTarget {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/maxActions_static)
          */
-        val maxActions: Int
+        public val maxActions: Int
     }
 }
 
 public external interface NotificationOptions : JsAny {
-    var dir: NotificationDirection?
-    var lang: String?
-    var body: String?
-    var navigate: String?
-    var tag: String?
-    var image: String?
-    var icon: String?
-    var badge: String?
-    var timestamp: Double?
-    var renotify: Boolean?
-    var silent: Boolean?
-    var requireInteraction: Boolean?
-    var data: JsAny?
-    var actions: JsArray<NotificationAction>?
+    public var dir: NotificationDirection?
+    public var lang: String?
+    public var body: String?
+    public var navigate: String?
+    public var tag: String?
+    public var image: String?
+    public var icon: String?
+    public var badge: String?
+    public var timestamp: Double?
+    public var renotify: Boolean?
+    public var silent: Boolean?
+    public var requireInteraction: Boolean?
+    public var data: JsAny?
+    public var actions: JsArray<NotificationAction>?
 }
 
 public fun NotificationOptions(dir: NotificationDirection? = null, lang: String? = null, body: String? = null, navigate: String? = null, tag: String? = null, image: String? = null, icon: String? = null, badge: String? = null, timestamp: Double? = null, renotify: Boolean? = null, silent: Boolean? = null, requireInteraction: Boolean? = null, data: JsAny? = null, actions: JsArray<NotificationAction>? = null): NotificationOptions = newJsObject<NotificationOptions>().apply {
@@ -250,7 +250,7 @@ public fun NotificationOptions(dir: NotificationDirection? = null, lang: String?
 
 public external interface NotificationPermission : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val NotificationPermission.Companion.DEFAULT: NotificationPermission get() = "default".toJsString().unsafeCast<NotificationPermission>()
@@ -259,7 +259,7 @@ public inline val NotificationPermission.Companion.GRANTED: NotificationPermissi
 
 public external interface NotificationDirection : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val NotificationDirection.Companion.AUTO: NotificationDirection get() = "auto".toJsString().unsafeCast<NotificationDirection>()
@@ -267,10 +267,10 @@ public inline val NotificationDirection.Companion.LTR: NotificationDirection get
 public inline val NotificationDirection.Companion.RTL: NotificationDirection get() = "rtl".toJsString().unsafeCast<NotificationDirection>()
 
 public external interface NotificationAction : JsAny {
-    var action: String
-    var title: String
-    var navigate: String?
-    var icon: String?
+    public var action: String
+    public var title: String
+    public var navigate: String?
+    public var icon: String?
 }
 
 public fun NotificationAction(action: String, title: String, navigate: String? = null, icon: String? = null): NotificationAction = newJsObject<NotificationAction>().apply {
@@ -281,7 +281,7 @@ public fun NotificationAction(action: String, title: String, navigate: String? =
 }
 
 public external interface GetNotificationOptions : JsAny {
-    var tag: String?
+    public var tag: String?
 }
 
 public fun GetNotificationOptions(tag: String? = null): GetNotificationOptions = newJsObject<GetNotificationOptions>().apply {
@@ -300,7 +300,7 @@ public open external class NotificationEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/NotificationEvent)
      */
-    constructor(type: String, eventInitDict: NotificationEventInit)
+    public constructor(type: String, eventInitDict: NotificationEventInit)
 
     /**
      * The notification read-only property of the NotificationEvent interface returns the instance of the Notification
@@ -310,7 +310,7 @@ public open external class NotificationEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/notification)
      */
-    open val notification: Notification
+    public open val notification: Notification
 
     /**
      * The action read-only property of the NotificationEvent interface returns the string ID of the notification button
@@ -320,19 +320,19 @@ public open external class NotificationEvent : ExtendableEvent {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/action)
      */
-    open val action: String
+    public open val action: String
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface NotificationEventInit : ExtendableEventInit {
-    var notification: Notification
-    var action: String?
+    public var notification: Notification
+    public var action: String?
 }
 
 public fun NotificationEventInit(notification: Notification, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, action: String? = null): NotificationEventInit = newJsObject<NotificationEventInit>().apply {

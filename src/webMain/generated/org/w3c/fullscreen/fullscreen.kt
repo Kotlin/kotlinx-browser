@@ -13,7 +13,7 @@ import org.w3c.dom.*
 
 public external interface FullscreenNavigationUI : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val FullscreenNavigationUI.Companion.AUTO: FullscreenNavigationUI get() = "auto".toJsString().unsafeCast<FullscreenNavigationUI>()
@@ -22,15 +22,15 @@ public inline val FullscreenNavigationUI.Companion.HIDE: FullscreenNavigationUI 
 
 public external interface FullscreenKeyboardLock : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val FullscreenKeyboardLock.Companion.BROWSER: FullscreenKeyboardLock get() = "browser".toJsString().unsafeCast<FullscreenKeyboardLock>()
 public inline val FullscreenKeyboardLock.Companion.NONE: FullscreenKeyboardLock get() = "none".toJsString().unsafeCast<FullscreenKeyboardLock>()
 
 public external interface FullscreenOptions : JsAny {
-    var keyboardLock: FullscreenKeyboardLock?
-    var navigationUI: FullscreenNavigationUI?
+    public var keyboardLock: FullscreenKeyboardLock?
+    public var navigationUI: FullscreenNavigationUI?
 }
 
 public fun FullscreenOptions(keyboardLock: FullscreenKeyboardLock? = null, navigationUI: FullscreenNavigationUI? = null): FullscreenOptions = newJsObject<FullscreenOptions>().apply {

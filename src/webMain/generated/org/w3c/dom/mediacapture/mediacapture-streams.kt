@@ -25,7 +25,7 @@ public open external class MediaStream : EventTarget, MediaProvider {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/MediaStream)
      */
-    constructor()
+    public constructor()
 
     /**
      * The MediaStream() constructor returns a newly-created MediaStream, which serves as a collection of media tracks,
@@ -33,7 +33,7 @@ public open external class MediaStream : EventTarget, MediaProvider {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/MediaStream)
      */
-    constructor(stream: MediaStream)
+    public constructor(stream: MediaStream)
 
     /**
      * The MediaStream() constructor returns a newly-created MediaStream, which serves as a collection of media tracks,
@@ -41,7 +41,7 @@ public open external class MediaStream : EventTarget, MediaProvider {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/MediaStream)
      */
-    constructor(tracks: JsArray<MediaStreamTrack>)
+    public constructor(tracks: JsArray<MediaStreamTrack>)
 
     /**
      * The id read-only property of the MediaStream interface is a string containing 36 characters denoting a unique
@@ -49,7 +49,7 @@ public open external class MediaStream : EventTarget, MediaProvider {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/id)
      */
-    open val id: String
+    public open val id: String
 
     /**
      * The getAudioTracks() method of the MediaStream interface returns a sequence that represents all the
@@ -57,7 +57,7 @@ public open external class MediaStream : EventTarget, MediaProvider {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getAudioTracks)
      */
-    open fun getAudioTracks(): JsArray<MediaStreamTrack>
+    public open fun getAudioTracks(): JsArray<MediaStreamTrack>
 
     /**
      * The getVideoTracks() method of the MediaStream interface returns a sequence of MediaStreamTrack objects
@@ -65,7 +65,7 @@ public open external class MediaStream : EventTarget, MediaProvider {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getVideoTracks)
      */
-    open fun getVideoTracks(): JsArray<MediaStreamTrack>
+    public open fun getVideoTracks(): JsArray<MediaStreamTrack>
 
     /**
      * The getTracks() method of the MediaStream interface returns a sequence that represents all the MediaStreamTrack
@@ -73,7 +73,7 @@ public open external class MediaStream : EventTarget, MediaProvider {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getTracks)
      */
-    open fun getTracks(): JsArray<MediaStreamTrack>
+    public open fun getTracks(): JsArray<MediaStreamTrack>
 
     /**
      * The getTrackById() method of the MediaStream interface returns a MediaStreamTrack object representing the track
@@ -81,7 +81,7 @@ public open external class MediaStream : EventTarget, MediaProvider {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getTrackById)
      */
-    open fun getTrackById(trackId: String): MediaStreamTrack?
+    public open fun getTrackById(trackId: String): MediaStreamTrack?
 
     /**
      * The addTrack() method of the MediaStream interface adds a new track to the stream. The track is specified as a
@@ -89,14 +89,14 @@ public open external class MediaStream : EventTarget, MediaProvider {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addTrack)
      */
-    open fun addTrack(track: MediaStreamTrack)
+    public open fun addTrack(track: MediaStreamTrack)
 
     /**
      * The removeTrack() method of the MediaStream interface removes a MediaStreamTrack from a stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removeTrack)
      */
-    open fun removeTrack(track: MediaStreamTrack)
+    public open fun removeTrack(track: MediaStreamTrack)
 
     /**
      * The clone() method of the MediaStream interface creates a duplicate of the MediaStream. This new MediaStream
@@ -105,7 +105,7 @@ public open external class MediaStream : EventTarget, MediaProvider {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/clone)
      */
-    open fun clone(): MediaStream
+    public open fun clone(): MediaStream
 
     /**
      * The active read-only property of the MediaStream interface returns a Boolean value which is true if the stream is
@@ -115,21 +115,21 @@ public open external class MediaStream : EventTarget, MediaProvider {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/active)
      */
-    open val active: Boolean
+    public open val active: Boolean
 
     /**
      * The addtrack event is fired when a new MediaStreamTrack object has been added to a MediaStream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addtrack_event)
      */
-    open var onaddtrack: ((MediaStreamTrackEvent) -> Unit)?
+    public open var onaddtrack: ((MediaStreamTrackEvent) -> Unit)?
 
     /**
      * The removetrack event is fired when a new MediaStreamTrack object has been removed from a MediaStream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removetrack_event)
      */
-    open var onremovetrack: ((MediaStreamTrackEvent) -> Unit)?
+    public open var onremovetrack: ((MediaStreamTrackEvent) -> Unit)?
 }
 
 /**
@@ -146,7 +146,7 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/kind)
      */
-    open val kind: String
+    public open val kind: String
 
     /**
      * The id read-only property of the MediaStreamTrack interface returns a string containing a unique identifier
@@ -154,7 +154,7 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/id)
      */
-    open val id: String
+    public open val id: String
 
     /**
      * The label read-only property of the MediaStreamTrack interface returns a string containing a user agent-assigned
@@ -162,7 +162,7 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/label)
      */
-    open val label: String
+    public open val label: String
 
     /**
      * The enabled property of the MediaStreamTrack interface is a Boolean value which is true if the track is allowed
@@ -170,7 +170,7 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/enabled)
      */
-    open var enabled: Boolean
+    public open var enabled: Boolean
 
     /**
      * The muted read-only property of the MediaStreamTrack interface returns a boolean value indicating whether or not
@@ -178,14 +178,14 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/muted)
      */
-    open val muted: Boolean
+    public open val muted: Boolean
 
     /**
      * The mute event is sent to a MediaStreamTrack when the track's source is temporarily unable to provide media data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/mute_event)
      */
-    open var onmute: ((Event) -> Unit)?
+    public open var onmute: ((Event) -> Unit)?
 
     /**
      * The unmute event is sent to a MediaStreamTrack when the track's source is once again able to provide media data
@@ -193,7 +193,7 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/unmute_event)
      */
-    open var onunmute: ((Event) -> Unit)?
+    public open var onunmute: ((Event) -> Unit)?
 
     /**
      * The readyState read-only property of the MediaStreamTrack interface returns an enumerated value giving the status
@@ -201,7 +201,7 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/readyState)
      */
-    open val readyState: MediaStreamTrackState
+    public open val readyState: MediaStreamTrackState
 
     /**
      * The ended event of the MediaStreamTrack interface is fired when playback or streaming has stopped because the end
@@ -209,7 +209,7 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/ended_event)
      */
-    open var onended: ((Event) -> Unit)?
+    public open var onended: ((Event) -> Unit)?
 
     /**
      * The clone() method of the MediaStreamTrack interface creates a duplicate of the MediaStreamTrack. This new
@@ -217,14 +217,14 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/clone)
      */
-    open fun clone(): MediaStreamTrack
+    public open fun clone(): MediaStreamTrack
 
     /**
      * The stop() method of the MediaStreamTrack interface stops the track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/stop)
      */
-    open fun stop()
+    public open fun stop()
 
     /**
      * The getCapabilities() method of the MediaStreamTrack interface returns an object detailing the accepted values or
@@ -233,7 +233,7 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getCapabilities)
      */
-    open fun getCapabilities(): MediaTrackCapabilities
+    public open fun getCapabilities(): MediaTrackCapabilities
 
     /**
      * The getConstraints() method of the MediaStreamTrack interface returns a MediaTrackConstraints object containing
@@ -243,7 +243,7 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getConstraints)
      */
-    open fun getConstraints(): MediaTrackConstraints
+    public open fun getConstraints(): MediaTrackConstraints
 
     /**
      * The getSettings() method of the MediaStreamTrack interface returns an object containing the current values of
@@ -251,7 +251,7 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings)
      */
-    open fun getSettings(): MediaTrackSettings
+    public open fun getSettings(): MediaTrackSettings
 
     /**
      * The applyConstraints() method of the MediaStreamTrack interface applies a set of constraints to the track; these
@@ -260,34 +260,34 @@ public abstract external class MediaStreamTrack : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints)
      */
-    open fun applyConstraints(constraints: MediaTrackConstraints = definedExternally): Promise<JsAny?>
+    public open fun applyConstraints(constraints: MediaTrackConstraints = definedExternally): Promise<JsAny?>
 }
 
 public external interface MediaStreamTrackState : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val MediaStreamTrackState.Companion.LIVE: MediaStreamTrackState get() = "live".toJsString().unsafeCast<MediaStreamTrackState>()
 public inline val MediaStreamTrackState.Companion.ENDED: MediaStreamTrackState get() = "ended".toJsString().unsafeCast<MediaStreamTrackState>()
 
 public external interface MediaTrackSupportedConstraints : JsAny {
-    var width: Boolean?
-    var height: Boolean?
-    var aspectRatio: Boolean?
-    var frameRate: Boolean?
-    var facingMode: Boolean?
-    var resizeMode: Boolean?
-    var sampleRate: Boolean?
-    var sampleSize: Boolean?
-    var echoCancellation: Boolean?
-    var autoGainControl: Boolean?
-    var noiseSuppression: Boolean?
-    var latency: Boolean?
-    var channelCount: Boolean?
-    var deviceId: Boolean?
-    var groupId: Boolean?
-    var backgroundBlur: Boolean?
+    public var width: Boolean?
+    public var height: Boolean?
+    public var aspectRatio: Boolean?
+    public var frameRate: Boolean?
+    public var facingMode: Boolean?
+    public var resizeMode: Boolean?
+    public var sampleRate: Boolean?
+    public var sampleSize: Boolean?
+    public var echoCancellation: Boolean?
+    public var autoGainControl: Boolean?
+    public var noiseSuppression: Boolean?
+    public var latency: Boolean?
+    public var channelCount: Boolean?
+    public var deviceId: Boolean?
+    public var groupId: Boolean?
+    public var backgroundBlur: Boolean?
 }
 
 public fun MediaTrackSupportedConstraints(width: Boolean? = null, height: Boolean? = null, aspectRatio: Boolean? = null, frameRate: Boolean? = null, facingMode: Boolean? = null, resizeMode: Boolean? = null, sampleRate: Boolean? = null, sampleSize: Boolean? = null, echoCancellation: Boolean? = null, autoGainControl: Boolean? = null, noiseSuppression: Boolean? = null, latency: Boolean? = null, channelCount: Boolean? = null, deviceId: Boolean? = null, groupId: Boolean? = null, backgroundBlur: Boolean? = null): MediaTrackSupportedConstraints = newJsObject<MediaTrackSupportedConstraints>().apply {
@@ -310,22 +310,22 @@ public fun MediaTrackSupportedConstraints(width: Boolean? = null, height: Boolea
 }
 
 public external interface MediaTrackCapabilities : JsAny {
-    var width: ULongRange?
-    var height: ULongRange?
-    var aspectRatio: DoubleRange?
-    var frameRate: DoubleRange?
-    var facingMode: JsArray<JsString>?
-    var resizeMode: JsArray<JsString>?
-    var sampleRate: ULongRange?
-    var sampleSize: ULongRange?
-    var echoCancellation: JsArray<JsAny>?
-    var autoGainControl: JsArray<JsBoolean>?
-    var noiseSuppression: JsArray<JsBoolean>?
-    var latency: DoubleRange?
-    var channelCount: ULongRange?
-    var deviceId: String?
-    var groupId: String?
-    var backgroundBlur: JsArray<JsBoolean>?
+    public var width: ULongRange?
+    public var height: ULongRange?
+    public var aspectRatio: DoubleRange?
+    public var frameRate: DoubleRange?
+    public var facingMode: JsArray<JsString>?
+    public var resizeMode: JsArray<JsString>?
+    public var sampleRate: ULongRange?
+    public var sampleSize: ULongRange?
+    public var echoCancellation: JsArray<JsAny>?
+    public var autoGainControl: JsArray<JsBoolean>?
+    public var noiseSuppression: JsArray<JsBoolean>?
+    public var latency: DoubleRange?
+    public var channelCount: ULongRange?
+    public var deviceId: String?
+    public var groupId: String?
+    public var backgroundBlur: JsArray<JsBoolean>?
 }
 
 public fun MediaTrackCapabilities(width: ULongRange? = null, height: ULongRange? = null, aspectRatio: DoubleRange? = null, frameRate: DoubleRange? = null, facingMode: JsArray<JsString>? = null, resizeMode: JsArray<JsString>? = null, sampleRate: ULongRange? = null, sampleSize: ULongRange? = null, echoCancellation: JsArray<JsAny>? = null, autoGainControl: JsArray<JsBoolean>? = null, noiseSuppression: JsArray<JsBoolean>? = null, latency: DoubleRange? = null, channelCount: ULongRange? = null, deviceId: String? = null, groupId: String? = null, backgroundBlur: JsArray<JsBoolean>? = null): MediaTrackCapabilities = newJsObject<MediaTrackCapabilities>().apply {
@@ -348,7 +348,7 @@ public fun MediaTrackCapabilities(width: ULongRange? = null, height: ULongRange?
 }
 
 public external interface MediaTrackConstraints : MediaTrackConstraintSet {
-    var advanced: JsArray<MediaTrackConstraintSet>?
+    public var advanced: JsArray<MediaTrackConstraintSet>?
 }
 
 public fun MediaTrackConstraints(width: JsAny? = null, height: JsAny? = null, aspectRatio: JsAny? = null, frameRate: JsAny? = null, facingMode: JsAny? = null, resizeMode: JsAny? = null, sampleRate: JsAny? = null, sampleSize: JsAny? = null, echoCancellation: JsAny? = null, autoGainControl: JsAny? = null, noiseSuppression: JsAny? = null, latency: JsAny? = null, channelCount: JsAny? = null, deviceId: JsAny? = null, groupId: JsAny? = null, backgroundBlur: JsAny? = null, advanced: JsArray<MediaTrackConstraintSet>? = null): MediaTrackConstraints = newJsObject<MediaTrackConstraints>().apply {
@@ -372,22 +372,22 @@ public fun MediaTrackConstraints(width: JsAny? = null, height: JsAny? = null, as
 }
 
 public external interface MediaTrackConstraintSet : JsAny {
-    var width: JsAny?
-    var height: JsAny?
-    var aspectRatio: JsAny?
-    var frameRate: JsAny?
-    var facingMode: JsAny?
-    var resizeMode: JsAny?
-    var sampleRate: JsAny?
-    var sampleSize: JsAny?
-    var echoCancellation: JsAny?
-    var autoGainControl: JsAny?
-    var noiseSuppression: JsAny?
-    var latency: JsAny?
-    var channelCount: JsAny?
-    var deviceId: JsAny?
-    var groupId: JsAny?
-    var backgroundBlur: JsAny?
+    public var width: JsAny?
+    public var height: JsAny?
+    public var aspectRatio: JsAny?
+    public var frameRate: JsAny?
+    public var facingMode: JsAny?
+    public var resizeMode: JsAny?
+    public var sampleRate: JsAny?
+    public var sampleSize: JsAny?
+    public var echoCancellation: JsAny?
+    public var autoGainControl: JsAny?
+    public var noiseSuppression: JsAny?
+    public var latency: JsAny?
+    public var channelCount: JsAny?
+    public var deviceId: JsAny?
+    public var groupId: JsAny?
+    public var backgroundBlur: JsAny?
 }
 
 public fun MediaTrackConstraintSet(width: JsAny? = null, height: JsAny? = null, aspectRatio: JsAny? = null, frameRate: JsAny? = null, facingMode: JsAny? = null, resizeMode: JsAny? = null, sampleRate: JsAny? = null, sampleSize: JsAny? = null, echoCancellation: JsAny? = null, autoGainControl: JsAny? = null, noiseSuppression: JsAny? = null, latency: JsAny? = null, channelCount: JsAny? = null, deviceId: JsAny? = null, groupId: JsAny? = null, backgroundBlur: JsAny? = null): MediaTrackConstraintSet = newJsObject<MediaTrackConstraintSet>().apply {
@@ -410,22 +410,22 @@ public fun MediaTrackConstraintSet(width: JsAny? = null, height: JsAny? = null, 
 }
 
 public external interface MediaTrackSettings : JsAny {
-    var width: Int?
-    var height: Int?
-    var aspectRatio: Double?
-    var frameRate: Double?
-    var facingMode: String?
-    var resizeMode: String?
-    var sampleRate: Int?
-    var sampleSize: Int?
-    var echoCancellation: JsAny?
-    var autoGainControl: Boolean?
-    var noiseSuppression: Boolean?
-    var latency: Double?
-    var channelCount: Int?
-    var deviceId: String?
-    var groupId: String?
-    var backgroundBlur: Boolean?
+    public var width: Int?
+    public var height: Int?
+    public var aspectRatio: Double?
+    public var frameRate: Double?
+    public var facingMode: String?
+    public var resizeMode: String?
+    public var sampleRate: Int?
+    public var sampleSize: Int?
+    public var echoCancellation: JsAny?
+    public var autoGainControl: Boolean?
+    public var noiseSuppression: Boolean?
+    public var latency: Double?
+    public var channelCount: Int?
+    public var deviceId: String?
+    public var groupId: String?
+    public var backgroundBlur: Boolean?
 }
 
 public fun MediaTrackSettings(width: Int? = null, height: Int? = null, aspectRatio: Double? = null, frameRate: Double? = null, facingMode: String? = null, resizeMode: String? = null, sampleRate: Int? = null, sampleSize: Int? = null, echoCancellation: JsAny? = null, autoGainControl: Boolean? = null, noiseSuppression: Boolean? = null, latency: Double? = null, channelCount: Int? = null, deviceId: String? = null, groupId: String? = null, backgroundBlur: Boolean? = null): MediaTrackSettings = newJsObject<MediaTrackSettings>().apply {
@@ -449,7 +449,7 @@ public fun MediaTrackSettings(width: Int? = null, height: Int? = null, aspectRat
 
 public external interface VideoFacingModeEnum : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val VideoFacingModeEnum.Companion.USER: VideoFacingModeEnum get() = "user".toJsString().unsafeCast<VideoFacingModeEnum>()
@@ -459,7 +459,7 @@ public inline val VideoFacingModeEnum.Companion.RIGHT: VideoFacingModeEnum get()
 
 public external interface VideoResizeModeEnum : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val VideoResizeModeEnum.Companion.NONE: VideoResizeModeEnum get() = "none".toJsString().unsafeCast<VideoResizeModeEnum>()
@@ -467,7 +467,7 @@ public inline val VideoResizeModeEnum.Companion.CROP_AND_SCALE: VideoResizeModeE
 
 public external interface EchoCancellationModeEnum : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val EchoCancellationModeEnum.Companion.ALL: EchoCancellationModeEnum get() = "all".toJsString().unsafeCast<EchoCancellationModeEnum>()
@@ -487,7 +487,7 @@ public open external class MediaStreamTrackEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent/MediaStreamTrackEvent)
      */
-    constructor(type: String, eventInitDict: MediaStreamTrackEventInit)
+    public constructor(type: String, eventInitDict: MediaStreamTrackEventInit)
 
     /**
      * The track read-only property of the MediaStreamTrackEvent interface returns the MediaStreamTrack associated with
@@ -495,18 +495,18 @@ public open external class MediaStreamTrackEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent/track)
      */
-    open val track: MediaStreamTrack
+    public open val track: MediaStreamTrack
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface MediaStreamTrackEventInit : EventInit {
-    var track: MediaStreamTrack
+    public var track: MediaStreamTrack
 }
 
 public fun MediaStreamTrackEventInit(track: MediaStreamTrack, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): MediaStreamTrackEventInit = newJsObject<MediaStreamTrackEventInit>().apply {
@@ -533,7 +533,7 @@ public open external class OverconstrainedError : DOMException {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OverconstrainedError/OverconstrainedError)
      */
-    constructor(constraint: String, message: String = definedExternally)
+    public constructor(constraint: String, message: String = definedExternally)
 
     /**
      * The constraint read-only property of the OverconstrainedError interface returns the constraint that was supplied
@@ -541,34 +541,34 @@ public open external class OverconstrainedError : DOMException {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OverconstrainedError/constraint)
      */
-    open val constraint: String
+    public open val constraint: String
 
-    companion object {
-        val INDEX_SIZE_ERR: Short
-        val DOMSTRING_SIZE_ERR: Short
-        val HIERARCHY_REQUEST_ERR: Short
-        val WRONG_DOCUMENT_ERR: Short
-        val INVALID_CHARACTER_ERR: Short
-        val NO_DATA_ALLOWED_ERR: Short
-        val NO_MODIFICATION_ALLOWED_ERR: Short
-        val NOT_FOUND_ERR: Short
-        val NOT_SUPPORTED_ERR: Short
-        val INUSE_ATTRIBUTE_ERR: Short
-        val INVALID_STATE_ERR: Short
-        val SYNTAX_ERR: Short
-        val INVALID_MODIFICATION_ERR: Short
-        val NAMESPACE_ERR: Short
-        val INVALID_ACCESS_ERR: Short
-        val VALIDATION_ERR: Short
-        val TYPE_MISMATCH_ERR: Short
-        val SECURITY_ERR: Short
-        val NETWORK_ERR: Short
-        val ABORT_ERR: Short
-        val URL_MISMATCH_ERR: Short
-        val QUOTA_EXCEEDED_ERR: Short
-        val TIMEOUT_ERR: Short
-        val INVALID_NODE_TYPE_ERR: Short
-        val DATA_CLONE_ERR: Short
+    public companion object {
+        public val INDEX_SIZE_ERR: Short
+        public val DOMSTRING_SIZE_ERR: Short
+        public val HIERARCHY_REQUEST_ERR: Short
+        public val WRONG_DOCUMENT_ERR: Short
+        public val INVALID_CHARACTER_ERR: Short
+        public val NO_DATA_ALLOWED_ERR: Short
+        public val NO_MODIFICATION_ALLOWED_ERR: Short
+        public val NOT_FOUND_ERR: Short
+        public val NOT_SUPPORTED_ERR: Short
+        public val INUSE_ATTRIBUTE_ERR: Short
+        public val INVALID_STATE_ERR: Short
+        public val SYNTAX_ERR: Short
+        public val INVALID_MODIFICATION_ERR: Short
+        public val NAMESPACE_ERR: Short
+        public val INVALID_ACCESS_ERR: Short
+        public val VALIDATION_ERR: Short
+        public val TYPE_MISMATCH_ERR: Short
+        public val SECURITY_ERR: Short
+        public val NETWORK_ERR: Short
+        public val ABORT_ERR: Short
+        public val URL_MISMATCH_ERR: Short
+        public val QUOTA_EXCEEDED_ERR: Short
+        public val TIMEOUT_ERR: Short
+        public val INVALID_NODE_TYPE_ERR: Short
+        public val DATA_CLONE_ERR: Short
     }
 }
 
@@ -588,7 +588,7 @@ public abstract external class MediaDevices : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/devicechange_event)
      */
-    open var ondevicechange: ((DeviceChangeEvent) -> Unit)?
+    public open var ondevicechange: ((DeviceChangeEvent) -> Unit)?
 
     /**
      * The enumerateDevices() method of the MediaDevices interface requests a list of the currently available media
@@ -597,7 +597,7 @@ public abstract external class MediaDevices : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
      */
-    open fun enumerateDevices(): Promise<JsArray<MediaDeviceInfo>>
+    public open fun enumerateDevices(): Promise<JsArray<MediaDeviceInfo>>
 
     /**
      * The getSupportedConstraints() method of the MediaDevices interface returns an object whose member fields each
@@ -605,7 +605,7 @@ public abstract external class MediaDevices : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints)
      */
-    open fun getSupportedConstraints(): MediaTrackSupportedConstraints
+    public open fun getSupportedConstraints(): MediaTrackSupportedConstraints
 
     /**
      * The getUserMedia() method of the MediaDevices interface prompts the user for permission to use a media input
@@ -613,7 +613,7 @@ public abstract external class MediaDevices : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
      */
-    open fun getUserMedia(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
+    public open fun getUserMedia(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
 }
 
 /**
@@ -631,7 +631,7 @@ public abstract external class MediaDeviceInfo : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/deviceId)
      */
-    open val deviceId: String
+    public open val deviceId: String
 
     /**
      * The kind read-only property of the MediaDeviceInfo interface returns an enumerated value, that is either
@@ -639,7 +639,7 @@ public abstract external class MediaDeviceInfo : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/kind)
      */
-    open val kind: MediaDeviceKind
+    public open val kind: MediaDeviceKind
 
     /**
      * The label read-only property of the MediaDeviceInfo interface returns a string describing this device (for
@@ -647,14 +647,14 @@ public abstract external class MediaDeviceInfo : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/label)
      */
-    open val label: String
+    public open val label: String
 
     /**
      * The groupId read-only property of the MediaDeviceInfo interface returns a string that is a group identifier.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/groupId)
      */
-    open val groupId: String
+    public open val groupId: String
 
     /**
      * The toJSON() method of the MediaDeviceInfo interface returns a JSON-serializable plain object representing the
@@ -662,12 +662,12 @@ public abstract external class MediaDeviceInfo : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/toJSON)
      */
-    open fun toJSON(): JsAny
+    public open fun toJSON(): JsAny
 }
 
 public external interface MediaDeviceKind : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val MediaDeviceKind.Companion.AUDIOINPUT: MediaDeviceKind get() = "audioinput".toJsString().unsafeCast<MediaDeviceKind>()
@@ -689,24 +689,24 @@ public abstract external class InputDeviceInfo : MediaDeviceInfo {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputDeviceInfo/getCapabilities)
      */
-    open fun getCapabilities(): MediaTrackCapabilities
+    public open fun getCapabilities(): MediaTrackCapabilities
 }
 
 public open external class DeviceChangeEvent : Event {
-    constructor(type: String, eventInitDict: DeviceChangeEventInit = definedExternally)
-    open val devices: JsArray<MediaDeviceInfo>
-    open val userInsertedDevices: JsArray<MediaDeviceInfo>
+    public constructor(type: String, eventInitDict: DeviceChangeEventInit = definedExternally)
+    public open val devices: JsArray<MediaDeviceInfo>
+    public open val userInsertedDevices: JsArray<MediaDeviceInfo>
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface DeviceChangeEventInit : EventInit {
-    var devices: JsArray<MediaDeviceInfo>?
+    public var devices: JsArray<MediaDeviceInfo>?
 }
 
 public fun DeviceChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, devices: JsArray<MediaDeviceInfo>? = null): DeviceChangeEventInit = newJsObject<DeviceChangeEventInit>().apply {
@@ -717,8 +717,8 @@ public fun DeviceChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? 
 }
 
 public external interface MediaStreamConstraints : JsAny {
-    var video: JsAny?
-    var audio: JsAny?
+    public var video: JsAny?
+    public var audio: JsAny?
 }
 
 public fun MediaStreamConstraints(video: JsAny? = null, audio: JsAny? = null): MediaStreamConstraints = newJsObject<MediaStreamConstraints>().apply {
@@ -727,8 +727,8 @@ public fun MediaStreamConstraints(video: JsAny? = null, audio: JsAny? = null): M
 }
 
 public external interface DoubleRange : JsAny {
-    var max: Double?
-    var min: Double?
+    public var max: Double?
+    public var min: Double?
 }
 
 public fun DoubleRange(max: Double? = null, min: Double? = null): DoubleRange = newJsObject<DoubleRange>().apply {
@@ -737,8 +737,8 @@ public fun DoubleRange(max: Double? = null, min: Double? = null): DoubleRange = 
 }
 
 public external interface ConstrainDoubleRange : DoubleRange {
-    var exact: Double?
-    var ideal: Double?
+    public var exact: Double?
+    public var ideal: Double?
 }
 
 public fun ConstrainDoubleRange(max: Double? = null, min: Double? = null, exact: Double? = null, ideal: Double? = null): ConstrainDoubleRange = newJsObject<ConstrainDoubleRange>().apply {
@@ -749,8 +749,8 @@ public fun ConstrainDoubleRange(max: Double? = null, min: Double? = null, exact:
 }
 
 public external interface ULongRange : JsAny {
-    var max: Int?
-    var min: Int?
+    public var max: Int?
+    public var min: Int?
 }
 
 public fun ULongRange(max: Int? = null, min: Int? = null): ULongRange = newJsObject<ULongRange>().apply {
@@ -759,8 +759,8 @@ public fun ULongRange(max: Int? = null, min: Int? = null): ULongRange = newJsObj
 }
 
 public external interface ConstrainULongRange : ULongRange {
-    var exact: Int?
-    var ideal: Int?
+    public var exact: Int?
+    public var ideal: Int?
 }
 
 public fun ConstrainULongRange(max: Int? = null, min: Int? = null, exact: Int? = null, ideal: Int? = null): ConstrainULongRange = newJsObject<ConstrainULongRange>().apply {
@@ -771,8 +771,8 @@ public fun ConstrainULongRange(max: Int? = null, min: Int? = null, exact: Int? =
 }
 
 public external interface ConstrainBooleanParameters : JsAny {
-    var exact: Boolean?
-    var ideal: Boolean?
+    public var exact: Boolean?
+    public var ideal: Boolean?
 }
 
 public fun ConstrainBooleanParameters(exact: Boolean? = null, ideal: Boolean? = null): ConstrainBooleanParameters = newJsObject<ConstrainBooleanParameters>().apply {
@@ -781,8 +781,8 @@ public fun ConstrainBooleanParameters(exact: Boolean? = null, ideal: Boolean? = 
 }
 
 public external interface ConstrainDOMStringParameters : JsAny {
-    var exact: JsAny?
-    var ideal: JsAny?
+    public var exact: JsAny?
+    public var ideal: JsAny?
 }
 
 public fun ConstrainDOMStringParameters(exact: JsAny? = null, ideal: JsAny? = null): ConstrainDOMStringParameters = newJsObject<ConstrainDOMStringParameters>().apply {
@@ -791,8 +791,8 @@ public fun ConstrainDOMStringParameters(exact: JsAny? = null, ideal: JsAny? = nu
 }
 
 public external interface ConstrainBooleanOrDOMStringParameters : JsAny {
-    var exact: JsAny?
-    var ideal: JsAny?
+    public var exact: JsAny?
+    public var ideal: JsAny?
 }
 
 public fun ConstrainBooleanOrDOMStringParameters(exact: JsAny? = null, ideal: JsAny? = null): ConstrainBooleanOrDOMStringParameters = newJsObject<ConstrainBooleanOrDOMStringParameters>().apply {

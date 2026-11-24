@@ -13,7 +13,7 @@ import org.w3c.dom.*
 import org.w3c.files.*
 
 public external interface ClipboardEventInit : EventInit {
-    var clipboardData: DataTransfer?
+    public var clipboardData: DataTransfer?
 }
 
 public fun ClipboardEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, clipboardData: DataTransfer? = null): ClipboardEventInit = newJsObject<ClipboardEventInit>().apply {
@@ -36,24 +36,24 @@ public open external class ClipboardEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/ClipboardEvent)
      */
-    constructor(type: String, eventInitDict: ClipboardEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: ClipboardEventInit = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/clipboardData)
      */
-    open val clipboardData: DataTransfer?
+    public open val clipboardData: DataTransfer?
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
 public external interface ClipboardChangeEventInit : EventInit {
-    var types: JsArray<JsString>?
-    var changeId: JsBigInt?
+    public var types: JsArray<JsString>?
+    public var changeId: JsBigInt?
 }
 
 public fun ClipboardChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, types: JsArray<JsString>? = null, changeId: JsBigInt? = null): ClipboardChangeEventInit = newJsObject<ClipboardChangeEventInit>().apply {
@@ -78,7 +78,7 @@ public open external class ClipboardChangeEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent/ClipboardChangeEvent)
      */
-    constructor(type: String, eventInitDict: ClipboardChangeEventInit = definedExternally)
+    public constructor(type: String, eventInitDict: ClipboardChangeEventInit = definedExternally)
 
     /**
      * The types read-only property of the ClipboardChangeEvent interface returns an array of strings representing the
@@ -87,7 +87,7 @@ public open external class ClipboardChangeEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent/types)
      */
-    open val types: JsArray<JsString>
+    public open val types: JsArray<JsString>
 
     /**
      * The changeId read-only property of the ClipboardChangeEvent interface returns an integer representing a unique
@@ -95,13 +95,13 @@ public open external class ClipboardChangeEvent : Event {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent/changeId)
      */
-    open val changeId: JsBigInt
+    public open val changeId: JsBigInt
 
-    companion object {
-        val NONE: Short
-        val CAPTURING_PHASE: Short
-        val AT_TARGET: Short
-        val BUBBLING_PHASE: Short
+    public companion object {
+        public val NONE: Short
+        public val CAPTURING_PHASE: Short
+        public val AT_TARGET: Short
+        public val BUBBLING_PHASE: Short
     }
 }
 
@@ -120,7 +120,7 @@ public open external class ClipboardItem : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/ClipboardItem)
      */
-    constructor(items: JsAny, options: ClipboardItemOptions = definedExternally)
+    public constructor(items: JsAny, options: ClipboardItemOptions = definedExternally)
 
     /**
      * The read-only presentationStyle property of the ClipboardItem interface returns a string indicating how an item
@@ -128,7 +128,7 @@ public open external class ClipboardItem : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/presentationStyle)
      */
-    open val presentationStyle: PresentationStyle
+    public open val presentationStyle: PresentationStyle
 
     /**
      * The read-only types property of the ClipboardItem interface returns an Array of MIME types available within the
@@ -136,7 +136,7 @@ public open external class ClipboardItem : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/types)
      */
-    open val types: JsArray<JsString>
+    public open val types: JsArray<JsString>
 
     /**
      * The getType() method of the ClipboardItem interface returns a Promise that resolves with a Blob of the requested
@@ -144,22 +144,22 @@ public open external class ClipboardItem : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
      */
-    open fun getType(type: String): Promise<Blob>
+    public open fun getType(type: String): Promise<Blob>
 
-    companion object {
+    public companion object {
         /**
          * The supports() static method of the ClipboardItem interface returns true if the given MIME type is supported
          * by the clipboard, and false otherwise.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/supports_static)
          */
-        fun supports(type: String): Boolean
+        public fun supports(type: String): Boolean
     }
 }
 
 public external interface PresentationStyle : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val PresentationStyle.Companion.UNSPECIFIED: PresentationStyle get() = "unspecified".toJsString().unsafeCast<PresentationStyle>()
@@ -167,7 +167,7 @@ public inline val PresentationStyle.Companion.INLINE: PresentationStyle get() = 
 public inline val PresentationStyle.Companion.ATTACHMENT: PresentationStyle get() = "attachment".toJsString().unsafeCast<PresentationStyle>()
 
 public external interface ClipboardItemOptions : JsAny {
-    var presentationStyle: PresentationStyle?
+    public var presentationStyle: PresentationStyle?
 }
 
 public fun ClipboardItemOptions(presentationStyle: PresentationStyle? = null): ClipboardItemOptions = newJsObject<ClipboardItemOptions>().apply {
@@ -189,7 +189,7 @@ public abstract external class Clipboard : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)
      */
-    open fun read(formats: ClipboardUnsanitizedFormats = definedExternally): Promise<JsArray<ClipboardItem>>
+    public open fun read(formats: ClipboardUnsanitizedFormats = definedExternally): Promise<JsArray<ClipboardItem>>
 
     /**
      * The readText() method of the Clipboard interface returns a Promise which fulfills with a copy of the textual
@@ -197,7 +197,7 @@ public abstract external class Clipboard : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/readText)
      */
-    open fun readText(): Promise<JsString>
+    public open fun readText(): Promise<JsString>
 
     /**
      * The write() method of the Clipboard interface is used to write data such as images, text, and custom types, to
@@ -205,7 +205,7 @@ public abstract external class Clipboard : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
      */
-    open fun write(data: JsArray<ClipboardItem>): Promise<JsAny?>
+    public open fun write(data: JsArray<ClipboardItem>): Promise<JsAny?>
 
     /**
      * The writeText() method of the Clipboard interface writes the specified text to the system clipboard, returning a
@@ -213,11 +213,11 @@ public abstract external class Clipboard : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText)
      */
-    open fun writeText(data: String): Promise<JsAny?>
+    public open fun writeText(data: String): Promise<JsAny?>
 }
 
 public external interface ClipboardUnsanitizedFormats : JsAny {
-    var unsanitized: JsArray<JsString>?
+    public var unsanitized: JsArray<JsString>?
 }
 
 public fun ClipboardUnsanitizedFormats(unsanitized: JsArray<JsString>? = null): ClipboardUnsanitizedFormats = newJsObject<ClipboardUnsanitizedFormats>().apply {

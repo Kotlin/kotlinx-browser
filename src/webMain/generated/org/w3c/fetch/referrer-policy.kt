@@ -12,7 +12,7 @@ import kotlin.js.*
 
 public external interface ReferrerPolicy : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val ReferrerPolicy.Companion.EMPTY: ReferrerPolicy get() = "".toJsString().unsafeCast<ReferrerPolicy>()

@@ -238,5 +238,7 @@ These were all found by runtime tests; check them before relying on similar cons
 - Every generated file starts with `generatedFileHeader` (`generator/src/main/kotlin/helpers/header.kt`): fixed text
   and `\n`, so output is byte-identical on every date and OS.
 - Source files carry the Apache 2.0 header pointing to "the LICENSE file" at the repository root.
+- The library compiles in explicit API mode (`explicitApi()`): public declarations and members, generated or not,
+  state `public` and their return types. Overrides are exempt, so the backend prints `public` on everything else.
 - Generator failures list every problem at once (`LoweringException`, `SurfaceException`) instead of stopping at the
   first.

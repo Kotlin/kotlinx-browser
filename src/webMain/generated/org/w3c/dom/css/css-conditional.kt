@@ -20,18 +20,18 @@ public abstract external class CSSConditionRule : CSSGroupingRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSConditionRule/conditionText)
      */
-    open val conditionText: String
+    public open val conditionText: String
 
-    companion object {
-        val STYLE_RULE: Short
-        val CHARSET_RULE: Short
-        val IMPORT_RULE: Short
-        val MEDIA_RULE: Short
-        val FONT_FACE_RULE: Short
-        val PAGE_RULE: Short
-        val MARGIN_RULE: Short
-        val NAMESPACE_RULE: Short
-        val SUPPORTS_RULE: Short
+    public companion object {
+        public val STYLE_RULE: Short
+        public val CHARSET_RULE: Short
+        public val IMPORT_RULE: Short
+        public val MEDIA_RULE: Short
+        public val FONT_FACE_RULE: Short
+        public val PAGE_RULE: Short
+        public val MARGIN_RULE: Short
+        public val NAMESPACE_RULE: Short
+        public val SUPPORTS_RULE: Short
     }
 }
 
@@ -47,19 +47,19 @@ public abstract external class CSSMediaRule : CSSConditionRule {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMediaRule/media)
      */
-    open val media: MediaList
-    open val matches: Boolean
+    public open val media: MediaList
+    public open val matches: Boolean
 
-    companion object {
-        val STYLE_RULE: Short
-        val CHARSET_RULE: Short
-        val IMPORT_RULE: Short
-        val MEDIA_RULE: Short
-        val FONT_FACE_RULE: Short
-        val PAGE_RULE: Short
-        val MARGIN_RULE: Short
-        val NAMESPACE_RULE: Short
-        val SUPPORTS_RULE: Short
+    public companion object {
+        public val STYLE_RULE: Short
+        public val CHARSET_RULE: Short
+        public val IMPORT_RULE: Short
+        public val MEDIA_RULE: Short
+        public val FONT_FACE_RULE: Short
+        public val PAGE_RULE: Short
+        public val MARGIN_RULE: Short
+        public val NAMESPACE_RULE: Short
+        public val SUPPORTS_RULE: Short
     }
 }
 
@@ -69,17 +69,17 @@ public abstract external class CSSMediaRule : CSSConditionRule {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSupportsRule)
  */
 public abstract external class CSSSupportsRule : CSSConditionRule {
-    open val matches: Boolean
+    public open val matches: Boolean
 
-    companion object {
-        val STYLE_RULE: Short
-        val CHARSET_RULE: Short
-        val IMPORT_RULE: Short
-        val MEDIA_RULE: Short
-        val FONT_FACE_RULE: Short
-        val PAGE_RULE: Short
-        val MARGIN_RULE: Short
-        val NAMESPACE_RULE: Short
-        val SUPPORTS_RULE: Short
+    public companion object {
+        public val STYLE_RULE: Short
+        public val CHARSET_RULE: Short
+        public val IMPORT_RULE: Short
+        public val MEDIA_RULE: Short
+        public val FONT_FACE_RULE: Short
+        public val PAGE_RULE: Short
+        public val MARGIN_RULE: Short
+        public val NAMESPACE_RULE: Short
+        public val SUPPORTS_RULE: Short
     }
 }

@@ -244,7 +244,7 @@ private class SpecFile(
                     .filter { !it.extAttrs.has("HTMLConstructor") }
                     .forEach {
                         kdoc(docs.ofMember(i.name, it), it.extAttrs)
-                        line("constructor(${parameters(it.arguments, defaults = true)})")
+                        line("public constructor(${parameters(it.arguments, defaults = true)})")
                     }
             }
 
@@ -276,7 +276,7 @@ private class SpecFile(
                 i.members.any { it is IdlConstant } -> {
                     line()
                     line("@Suppress(\"COMPANION_OBJECT_IN_EXTERNAL_INTERFACE\")")
-                    line("companion object")
+                    line("public companion object")
                 }
             }
         }
@@ -334,7 +334,7 @@ private class SpecFile(
     private fun printFactory(factory: FactoryClass) {
         val shape = kotlinBackend.lowered.shapes[factory.name]
         block("public open external class ${factory.name} : ${supertypes(shape)}") {
-            line("constructor(${parameters(factory.arguments, defaults = true)})")
+            line("public constructor(${parameters(factory.arguments, defaults = true)})")
             for (added in kotlinBackend.lowered.overrides[factory.name].added) {
                 member(added, owner = factory.name, modifier = "override ", shape = shape)
             }
@@ -365,7 +365,7 @@ private class SpecFile(
         kdoc(docs.ofDefinition(d.name), d.extAttrs)
         block("public external interface ${d.name} : ${supertypes(listOfNotNull(d.inheritance))}") {
             for (f in d.members) {
-                line("var ${name(f.name)}: ${fieldType(f)}")
+                line("public var ${name(f.name)}: ${fieldType(f)}")
             }
         }
 
@@ -401,7 +401,7 @@ private class SpecFile(
         kdoc(docs.ofDefinition(e.name), e.extAttrs)
         block("public external interface ${e.name} : ${type(KotlinType.Named(JS_ANY))}") {
             line("@Suppress(\"COMPANION_OBJECT_IN_EXTERNAL_INTERFACE\")")
-            line("companion object")
+            line("public companion object")
         }
 
         val byName = e.values.groupBy(::enumValueName)
@@ -509,7 +509,7 @@ private class SpecFile(
     private fun companion(owner: String, constants: List<IdlConstant>, statics: List<InheritedMember>) {
         if (constants.isEmpty() && statics.isEmpty()) return
         line()
-        block("companion object") {
+        block("public companion object") {
             constants.forEach { constant(owner, it) }
             statics.forEach { member(it, owner = owner, modifier = "", shape = null) }
         }
@@ -524,6 +524,8 @@ private class SpecFile(
      * [owner], the declaration being printed, if MDN documents it there, else the one of the declaring interface.
      */
     private fun member(m: InheritedMember, owner: String, modifier: String, shape: Shape?) {
+        // Explicit API mode: every member is `public`, except an override, which keeps the overridden visibility.
+        val visibility = if (modifier == "override ") "" else "public "
         // CSS property attributes have a dashed twin of each camel-case name (`margin-top` of `marginTop`), which
         // is not a Kotlin identifier; the camel-case one is enough.
         if (m.member is IdlAttribute && '-' in m.member.name) return
@@ -533,7 +535,7 @@ private class SpecFile(
             is IdlAttribute -> {
                 val keyword = if (member.readonly) "val" else "var"
                 kdoc(doc, member.extAttrs)
-                line("$modifier$keyword ${name(member.name)}: ${attributeType(member, m.declaredIn)}")
+                line("$visibility$modifier$keyword ${name(member.name)}: ${attributeType(member, m.declaredIn)}")
             }
 
             is IdlOperation -> when {
@@ -550,7 +552,7 @@ private class SpecFile(
                         returnType(member.returnType!!)
                     }
                     val defaults = modifier != "override "
-                    val signature = "${modifier}fun ${name(member.name)}"
+                    val signature = "$visibility${modifier}fun ${name(member.name)}"
                     kdoc(doc, member.extAttrs)
                     line("$signature(${parameters(member.arguments, defaults)})$returnType")
                     if (member.arguments.any { callbackInterface(it.type) != null } &&
@@ -569,7 +571,7 @@ private class SpecFile(
 
     private fun constant(owner: String, c: IdlConstant) {
         kdoc(docs.ofMember(owner, c), c.extAttrs)
-        line("val ${name(c.name)}: ${type(map(c.type, TypePosition.VALUE))}")
+        line("public val ${name(c.name)}: ${type(map(c.type, TypePosition.VALUE))}")
     }
 
     private fun isItemGetter(op: IdlOperation) = op.special == IdlOperationSpecial.GETTER && op.name == "item"

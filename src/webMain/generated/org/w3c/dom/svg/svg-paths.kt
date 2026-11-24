@@ -12,12 +12,12 @@ import kotlin.js.*
 import org.w3c.dom.*
 
 public abstract external class SVGPathSegment : JsAny {
-    open var type: String
-    open var values: JsArray<JsNumber>
+    public open var type: String
+    public open var values: JsArray<JsNumber>
 }
 
 public external interface SVGPathDataSettings : JsAny {
-    var normalize: Boolean?
+    public var normalize: Boolean?
 }
 
 public fun SVGPathDataSettings(normalize: Boolean? = null): SVGPathDataSettings = newJsObject<SVGPathDataSettings>().apply {
@@ -31,14 +31,14 @@ public external interface SVGPathData : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/getPathData)
      */
-    fun getPathData(settings: SVGPathDataSettings = definedExternally): JsArray<SVGPathSegment>
+    public fun getPathData(settings: SVGPathDataSettings = definedExternally): JsArray<SVGPathSegment>
 
     /**
      * The SVGPathElement.setPathData() method sets the sequence of path segments as the new path data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/setPathData)
      */
-    fun setPathData(pathData: JsArray<SVGPathSegment>)
+    public fun setPathData(pathData: JsArray<SVGPathSegment>)
 }
 
 /**
@@ -77,26 +77,26 @@ public abstract external class SVGPathElement : SVGGeometryElement, SVGPathData 
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/getPathSegmentAtLength)
      */
-    open fun getPathSegmentAtLength(distance: Float): SVGPathSegment?
+    public open fun getPathSegmentAtLength(distance: Float): SVGPathSegment?
 
-    companion object {
-        val ELEMENT_NODE: Short
-        val ATTRIBUTE_NODE: Short
-        val TEXT_NODE: Short
-        val CDATA_SECTION_NODE: Short
-        val ENTITY_REFERENCE_NODE: Short
-        val ENTITY_NODE: Short
-        val PROCESSING_INSTRUCTION_NODE: Short
-        val COMMENT_NODE: Short
-        val DOCUMENT_NODE: Short
-        val DOCUMENT_TYPE_NODE: Short
-        val DOCUMENT_FRAGMENT_NODE: Short
-        val NOTATION_NODE: Short
-        val DOCUMENT_POSITION_DISCONNECTED: Short
-        val DOCUMENT_POSITION_PRECEDING: Short
-        val DOCUMENT_POSITION_FOLLOWING: Short
-        val DOCUMENT_POSITION_CONTAINS: Short
-        val DOCUMENT_POSITION_CONTAINED_BY: Short
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
+    public companion object {
+        public val ELEMENT_NODE: Short
+        public val ATTRIBUTE_NODE: Short
+        public val TEXT_NODE: Short
+        public val CDATA_SECTION_NODE: Short
+        public val ENTITY_REFERENCE_NODE: Short
+        public val ENTITY_NODE: Short
+        public val PROCESSING_INSTRUCTION_NODE: Short
+        public val COMMENT_NODE: Short
+        public val DOCUMENT_NODE: Short
+        public val DOCUMENT_TYPE_NODE: Short
+        public val DOCUMENT_FRAGMENT_NODE: Short
+        public val NOTATION_NODE: Short
+        public val DOCUMENT_POSITION_DISCONNECTED: Short
+        public val DOCUMENT_POSITION_PRECEDING: Short
+        public val DOCUMENT_POSITION_FOLLOWING: Short
+        public val DOCUMENT_POSITION_CONTAINS: Short
+        public val DOCUMENT_POSITION_CONTAINED_BY: Short
+        public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
 }

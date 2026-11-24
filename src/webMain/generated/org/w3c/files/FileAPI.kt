@@ -28,21 +28,21 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/Blob)
      */
-    constructor(blobParts: JsArray<JsAny> = definedExternally, options: BlobPropertyBag = definedExternally)
+    public constructor(blobParts: JsArray<JsAny> = definedExternally, options: BlobPropertyBag = definedExternally)
 
     /**
      * The size read-only property of the Blob interface returns the size of the Blob or File in bytes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/size)
      */
-    open val size: Double
+    public open val size: Double
 
     /**
      * The type read-only property of the Blob interface returns the MIME type of the file.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/type)
      */
-    open val type: String
+    public open val type: String
 
     /**
      * The slice() method of the Blob interface creates and returns a new Blob object which contains data from a subset
@@ -50,7 +50,7 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice)
      */
-    open fun slice(start: Double = definedExternally, end: Double = definedExternally, contentType: String = definedExternally): Blob
+    public open fun slice(start: Double = definedExternally, end: Double = definedExternally, contentType: String = definedExternally): Blob
 
     /**
      * The stream() method of the Blob interface returns a ReadableStream which upon reading returns the data contained
@@ -58,7 +58,7 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/stream)
      */
-    open fun stream(): ReadableStream
+    public open fun stream(): ReadableStream
 
     /**
      * The text() method of the Blob interface returns a Promise that resolves with a string containing the contents of
@@ -66,7 +66,7 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)
      */
-    open fun text(): Promise<JsString>
+    public open fun text(): Promise<JsString>
 
     /**
      * The arrayBuffer() method of the Blob interface returns a Promise that resolves with the contents of the blob as
@@ -74,7 +74,7 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer)
      */
-    open fun arrayBuffer(): Promise<ArrayBuffer>
+    public open fun arrayBuffer(): Promise<ArrayBuffer>
 
     /**
      * The textStream() method of the Blob interface returns a ReadableStream that can be used to read the contents of
@@ -82,7 +82,7 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/textStream)
      */
-    open fun textStream(): ReadableStream
+    public open fun textStream(): ReadableStream
 
     /**
      * The bytes() method of the Blob interface returns a Promise that resolves with a Uint8Array containing the
@@ -90,20 +90,20 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/bytes)
      */
-    open fun bytes(): Promise<Uint8Array>
+    public open fun bytes(): Promise<Uint8Array>
 }
 
 public external interface EndingType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
-    companion object
+    public companion object
 }
 
 public inline val EndingType.Companion.TRANSPARENT: EndingType get() = "transparent".toJsString().unsafeCast<EndingType>()
 public inline val EndingType.Companion.NATIVE: EndingType get() = "native".toJsString().unsafeCast<EndingType>()
 
 public external interface BlobPropertyBag : JsAny {
-    var type: String?
-    var endings: EndingType?
+    public var type: String?
+    public var endings: EndingType?
 }
 
 public fun BlobPropertyBag(type: String? = null, endings: EndingType? = null): BlobPropertyBag = newJsObject<BlobPropertyBag>().apply {
@@ -122,7 +122,7 @@ public open external class File : Blob {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/File)
      */
-    constructor(fileBits: JsArray<JsAny>, fileName: String, options: FilePropertyBag = definedExternally)
+    public constructor(fileBits: JsArray<JsAny>, fileName: String, options: FilePropertyBag = definedExternally)
 
     /**
      * The name read-only property of the File interface returns the name of the file represented by a File object. For
@@ -130,7 +130,7 @@ public open external class File : Blob {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/name)
      */
-    open val name: String
+    public open val name: String
 
     /**
      * The lastModified read-only property of the File interface provides the last modified date of the file as the
@@ -139,11 +139,11 @@ public open external class File : Blob {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/lastModified)
      */
-    open val lastModified: Double
+    public open val lastModified: Double
 }
 
 public external interface FilePropertyBag : BlobPropertyBag {
-    var lastModified: Double?
+    public var lastModified: Double?
 }
 
 public fun FilePropertyBag(type: String? = null, endings: EndingType? = null, lastModified: Double? = null): FilePropertyBag = newJsObject<FilePropertyBag>().apply {
@@ -191,7 +191,7 @@ public open external class FileReader : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/FileReader)
      */
-    constructor()
+    public constructor()
 
     /**
      * The readAsArrayBuffer() method of the FileReader interface is used to start reading the contents of a specified
@@ -200,7 +200,7 @@ public open external class FileReader : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsArrayBuffer)
      */
-    open fun readAsArrayBuffer(blob: Blob)
+    public open fun readAsArrayBuffer(blob: Blob)
 
     /**
      * The readAsBinaryString() method of the FileReader interface is used to start reading the contents of the
@@ -211,7 +211,7 @@ public open external class FileReader : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsBinaryString)
      */
-    open fun readAsBinaryString(blob: Blob)
+    public open fun readAsBinaryString(blob: Blob)
 
     /**
      * The readAsText() method of the FileReader interface is used to read the contents of the specified Blob or File.
@@ -220,7 +220,7 @@ public open external class FileReader : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsText)
      */
-    open fun readAsText(blob: Blob, encoding: String = definedExternally)
+    public open fun readAsText(blob: Blob, encoding: String = definedExternally)
 
     /**
      * The readAsDataURL() method of the FileReader interface is used to read the contents of the specified Blob or
@@ -230,7 +230,7 @@ public open external class FileReader : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsDataURL)
      */
-    open fun readAsDataURL(blob: Blob)
+    public open fun readAsDataURL(blob: Blob)
 
     /**
      * The abort() method of the FileReader interface aborts the read operation. Upon return, the readyState will be
@@ -238,7 +238,7 @@ public open external class FileReader : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/abort)
      */
-    open fun abort()
+    public open fun abort()
 
     /**
      * The readyState read-only property of the FileReader interface provides the current state of the reading
@@ -246,7 +246,7 @@ public open external class FileReader : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readyState)
      */
-    open val readyState: Short
+    public open val readyState: Short
 
     /**
      * The result read-only property of the FileReader interface returns the file's contents. This property is only
@@ -255,35 +255,35 @@ public open external class FileReader : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/result)
      */
-    open val result: JsAny?
+    public open val result: JsAny?
 
     /**
      * The error read-only property of the FileReader interface returns the error that occurred while reading the file.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/error)
      */
-    open val error: DOMException?
+    public open val error: DOMException?
 
     /**
      * The loadstart event of the FileReader interface is fired when a file read operation has begun.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadstart_event)
      */
-    open var onloadstart: ((ProgressEvent) -> Unit)?
+    public open var onloadstart: ((ProgressEvent) -> Unit)?
 
     /**
      * The progress event of the FileReader interface is fired periodically as the FileReader reads data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/progress_event)
      */
-    open var onprogress: ((ProgressEvent) -> Unit)?
+    public open var onprogress: ((ProgressEvent) -> Unit)?
 
     /**
      * The load event of the FileReader interface is fired when a file has been read successfully.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/load_event)
      */
-    open var onload: ((ProgressEvent) -> Unit)?
+    public open var onload: ((ProgressEvent) -> Unit)?
 
     /**
      * The abort event of the FileReader interface is fired when a read has been aborted: for instance because the
@@ -291,7 +291,7 @@ public open external class FileReader : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/abort_event)
      */
-    open var onabort: ((ProgressEvent) -> Unit)?
+    public open var onabort: ((ProgressEvent) -> Unit)?
 
     /**
      * The error event of the FileReader interface is fired when the read failed due to an error (for example, because
@@ -299,19 +299,19 @@ public open external class FileReader : EventTarget {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/error_event)
      */
-    open var onerror: ((ProgressEvent) -> Unit)?
+    public open var onerror: ((ProgressEvent) -> Unit)?
 
     /**
      * The loadend event of the FileReader interface is fired when a file read has completed, successfully or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadend_event)
      */
-    open var onloadend: ((ProgressEvent) -> Unit)?
+    public open var onloadend: ((ProgressEvent) -> Unit)?
 
-    companion object {
-        val EMPTY: Short
-        val LOADING: Short
-        val DONE: Short
+    public companion object {
+        public val EMPTY: Short
+        public val LOADING: Short
+        public val DONE: Short
     }
 }
 
@@ -327,7 +327,7 @@ public open external class FileReaderSync : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/FileReaderSync)
      */
-    constructor()
+    public constructor()
 
     /**
      * The readAsArrayBuffer() method of the FileReaderSync interface allows you to read File or Blob objects in a
@@ -336,7 +336,7 @@ public open external class FileReaderSync : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsArrayBuffer)
      */
-    open fun readAsArrayBuffer(blob: Blob): ArrayBuffer
+    public open fun readAsArrayBuffer(blob: Blob): ArrayBuffer
 
     /**
      * The readAsBinaryString() method of the FileReaderSync interface allows you to read File or Blob objects in a
@@ -347,7 +347,7 @@ public open external class FileReaderSync : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsBinaryString)
      */
-    open fun readAsBinaryString(blob: Blob): String
+    public open fun readAsBinaryString(blob: Blob): String
 
     /**
      * The readAsText() method of the FileReaderSync interface allows you to read File or Blob objects in a synchronous
@@ -356,7 +356,7 @@ public open external class FileReaderSync : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsText)
      */
-    open fun readAsText(blob: Blob, encoding: String = definedExternally): String
+    public open fun readAsText(blob: Blob, encoding: String = definedExternally): String
 
     /**
      * The readAsDataURL() method of the FileReaderSync interface allows you to read File or Blob objects in a
@@ -365,5 +365,5 @@ public open external class FileReaderSync : JsAny {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsDataURL)
      */
-    open fun readAsDataURL(blob: Blob): String
+    public open fun readAsDataURL(blob: Blob): String
 }
