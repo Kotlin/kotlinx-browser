@@ -17,7 +17,8 @@ declarations are generated from the specifications' Web IDL. There is one copy i
 | `src/webMain/generated/` | Generated declarations, one file per spec, at `<package path>/<spec>.kt` | **No.** Regenerate |
 | `src/webMain/kotlin/kotlinx/browser/` | `window`, `document`, `localStorage`, `sessionStorage` | Yes |
 | `src/webMain/kotlin/kotlinx/dom/` | DOM helpers (`addClass`, `appendText`, …), `ItemArrayLike` and `asList()`, `JsObjects.kt` (internal helpers the generated code calls) | Yes |
-| `src/{web,js,wasmJs}Main/kotlin/org.w3c/org.khronos.webgl.typedarrays.kt` | ECMAScript built-ins Web IDL refers to (`ArrayBuffer`, typed arrays, `DataView`) | Yes |
+| `src/webMain/kotlin/org.w3c/org.khronos.webgl.typedarrays.kt` | ECMAScript built-ins Web IDL refers to (`ArrayBuffer`, typed arrays, `DataView`), external declarations for both targets | Yes |
+| `src/jsMain/kotlin/org.w3c/org.khronos.webgl.typedarrays.kt` | JS-only factories and `set` overloads taking a Kotlin array (`Int8Array(arrayOf<Byte>(1))`), kept from the Kotlin/JS declarations | Yes |
 | `src/{web,js,wasmJs}Main/kotlin/arrayCopy*.kt`, `src/webTest/kotlin/arrayCopyTest.kt` | Typed-array ↔ Kotlin-array conversions and their test | **No.** `./gradlew :generator:generateUtils` |
 | `src/webTest/kotlin/` | Runtime tests run on Node for both targets (`InteropTest`, `SmokeTest`) | Yes |
 | `api/kotlinx-browser.klib.api` | ABI dump for both targets in one file | **No.** `./gradlew updateKotlinAbi` |

@@ -57,8 +57,6 @@ kotlin {
 
     compilerOptions {
         optIn.add("kotlin.js.ExperimentalWasmJsInterop")
-        // The typed-array built-ins are expect/actual classes (Beta), declared once in webMain for both targets.
-        freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 
     js {
