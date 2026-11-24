@@ -12,10 +12,10 @@ enum class ShapeKind {
     /** `external interface`: mixins and callback interfaces. */
     INTERFACE,
 
-    /** `external abstract class`: an interface without its own constructor ("Illegal constructor" in JS). */
+    /** `abstract external class`: an interface without its own constructor ("Illegal constructor" in JS). */
     ABSTRACT_CLASS,
 
-    /** `external open class`: an interface with its own `constructor(...)`. */
+    /** `open external class`: an interface with its own `constructor(...)`. */
     OPEN_CLASS,
 
     /** `external object`: a namespace. */

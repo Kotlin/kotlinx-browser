@@ -16,7 +16,7 @@ import org.w3c.dom.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent)
  */
-public external open class UIEvent : Event {
+public open external class UIEvent : Event {
     /**
      * The UIEvent() constructor creates a new UIEvent object.
      *
@@ -87,7 +87,7 @@ public fun UIEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, co
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent)
  */
-public external open class FocusEvent : UIEvent {
+public open external class FocusEvent : UIEvent {
     /**
      * The FocusEvent() constructor returns a newly created FocusEvent object with an optional EventTarget. When the
      * event has both a source and a destination, the relatedTarget value must be set to the other target.
@@ -128,7 +128,7 @@ public fun FocusEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent)
  */
-public external open class InputEvent : UIEvent {
+public open external class InputEvent : UIEvent {
     /**
      * The InputEvent() constructor creates a new InputEvent object.
      *
@@ -193,7 +193,7 @@ public fun InputEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)
  */
-public external open class KeyboardEvent : UIEvent {
+public open external class KeyboardEvent : UIEvent {
     /**
      * The KeyboardEvent() constructor creates a new KeyboardEvent object.
      *
@@ -412,7 +412,7 @@ public fun EventModifierInit(bubbles: Boolean? = null, cancelable: Boolean? = nu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent)
  */
-public external open class CompositionEvent : UIEvent {
+public open external class CompositionEvent : UIEvent {
     /**
      * The CompositionEvent() constructor creates a new CompositionEvent object.
      *
@@ -468,7 +468,7 @@ public fun CompositionEventInit(bubbles: Boolean? = null, cancelable: Boolean? =
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEvent)
  */
-public external abstract class TextEvent : UIEvent {
+public abstract external class TextEvent : UIEvent {
     /**
      * The data read-only property of the TextEvent interface returns the last character added to the input element.
      *

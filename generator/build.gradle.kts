@@ -31,6 +31,7 @@ val idlIrDir = layout.buildDirectory.dir("idl-ir")
 val prepareWebref by tasks.registering(NodeTask::class) {
     description =
         "Parses the pinned @webref/idl with webidl2 and writes it, @webref/events, @webref/css and BCD to build/webref."
+    group = "generation"
     dependsOn(tasks.npmInstall)
     script = repositoryRoot.file("scripts/prepare-webref.js")
 
@@ -51,6 +52,7 @@ val webref: Provider<Directory> = prepareWebref.map { webrefDir.get() }
 
 val updateMdnSummaries by tasks.registering(NodeTask::class) {
     description = "Fetches the MDN summaries of the Web API pages into mdn/ (committed; MDN has no versioned release)."
+    group = "generation"
     script = repositoryRoot.file("scripts/fetch-mdn.js")
     args.add(repositoryRoot.dir("mdn").asFile.path)
     outputs.files(repositoryRoot.file("mdn/summaries.json"), repositoryRoot.file("mdn/commit"))
@@ -61,6 +63,7 @@ val updateMdnSummaries by tasks.registering(NodeTask::class) {
 val generateWebApi by tasks.registering(JavaExec::class) {
     mustRunAfter(updateMdnSummaries)
     description = "Regenerates src/webMain/generated and surface-report.txt from the pinned Web IDL."
+    group = "generation"
     mainClass = "org.jetbrains.kotlin.tools.idl.GenerateWebApiKt"
     classpath = sourceSets["main"].runtimeClasspath
     webrefProperties()
@@ -79,6 +82,7 @@ val generateWebApi by tasks.registering(JavaExec::class) {
 
 val generateUtils by tasks.registering(JavaExec::class) {
     description = "Regenerates the typed-array conversion helpers (arrayCopy*.kt) and their test."
+    group = "generation"
     mainClass = "org.jetbrains.kotlin.generators.helpers.GenerateKt"
     classpath = sourceSets["main"].runtimeClasspath
 
@@ -87,6 +91,7 @@ val generateUtils by tasks.registering(JavaExec::class) {
 
 val dumpIdlIr by tasks.registering(JavaExec::class) {
     description = "Renders the IR of the whole webref corpus back as Web IDL into build/idl-ir."
+    group = "generation"
     mainClass = "org.jetbrains.kotlin.tools.idl.DumpIdlIrKt"
     classpath = sourceSets["main"].runtimeClasspath
     webrefProperties()
@@ -96,6 +101,7 @@ val dumpIdlIr by tasks.registering(JavaExec::class) {
 
 val checkIrRoundTrip by tasks.registering(NodeTask::class) {
     description = "Checks that the IR is lossless: dumpIdlIr's output re-parses with webidl2 into the parsed corpus."
+    group = "verification"
     dependsOn(tasks.npmInstall)
     script = repositoryRoot.file("scripts/check-ir-roundtrip.js")
 

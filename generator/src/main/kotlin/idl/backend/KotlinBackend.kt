@@ -220,17 +220,24 @@ private class SpecFile(
 
     private fun printInterface(i: IdlInterface) {
         val shape = kotlinBackend.lowered.shapes[i.name]
+
         val keyword = when (shape.kind) {
             ShapeKind.INTERFACE -> "interface"
-            ShapeKind.ABSTRACT_CLASS -> "abstract class"
-            ShapeKind.OPEN_CLASS -> "open class"
+            ShapeKind.ABSTRACT_CLASS, ShapeKind.OPEN_CLASS -> "class"
             ShapeKind.OBJECT -> error("${i.name} is an interface")
         }
+
+        val modifier = when (shape.kind) {
+            ShapeKind.INTERFACE -> ""
+            ShapeKind.ABSTRACT_CLASS -> "abstract "
+            ShapeKind.OPEN_CLASS -> "open "
+        }
+
         val overrides = kotlinBackend.lowered.overrides[i.name]
         val isClass = shape.kind != ShapeKind.INTERFACE
 
         kdoc(docs.ofDefinition(i.name), i.extAttrs)
-        block("public external $keyword ${i.name} : ${supertypes(shape)}") {
+        block("public ${modifier}external $keyword ${i.name} : ${supertypes(shape)}") {
             if (shape.kind == ShapeKind.OPEN_CLASS) {
                 i.members
                     .filterIsInstance<IdlConstructor>()
@@ -326,7 +333,7 @@ private class SpecFile(
 
     private fun printFactory(factory: FactoryClass) {
         val shape = kotlinBackend.lowered.shapes[factory.name]
-        block("public external open class ${factory.name} : ${supertypes(shape)}") {
+        block("public open external class ${factory.name} : ${supertypes(shape)}") {
             line("constructor(${parameters(factory.arguments, defaults = true)})")
             for (added in kotlinBackend.lowered.overrides[factory.name].added) {
                 member(added, owner = factory.name, modifier = "override ", shape = shape)

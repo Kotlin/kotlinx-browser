@@ -15,7 +15,7 @@ import kotlin.js.*
 /**
  * Exposes the JavaScript [ArrayBuffer](https://developer.mozilla.org/en/docs/Web/API/ArrayBuffer) to Kotlin
  */
-public actual external open class ArrayBuffer actual constructor(length: Int) : BufferDataSource, JsAny {
+public actual open external class ArrayBuffer actual constructor(length: Int) : BufferDataSource, JsAny {
     actual open val byteLength: Int
     actual fun slice(begin: Int, end: Int): ArrayBuffer
 
@@ -36,7 +36,7 @@ public actual external interface ArrayBufferView : BufferDataSource, JsAny {
 /**
  * Exposes the JavaScript [Int8Array](https://developer.mozilla.org/en/docs/Web/API/Int8Array) to Kotlin
  */
-public actual external open class Int8Array : ArrayBufferView, JsAny {
+public actual open external class Int8Array : ArrayBufferView, JsAny {
     actual constructor(length: Int)
     actual constructor(array: Int8Array)
     actual constructor(array: JsArray<JsNumber>)
@@ -67,7 +67,7 @@ public actual operator fun Int8Array.set(index: Int, value: Byte) = setMethodImp
 /**
  * Exposes the JavaScript [Uint8Array](https://developer.mozilla.org/en/docs/Web/API/Uint8Array) to Kotlin
  */
-public actual external open class Uint8Array : ArrayBufferView, JsAny {
+public actual open external class Uint8Array : ArrayBufferView, JsAny {
     actual constructor(length: Int)
     actual constructor(array: Uint8Array)
     actual constructor(array: JsArray<JsNumber>)
@@ -98,7 +98,7 @@ public actual operator fun Uint8Array.set(index: Int, value: UByte) = setMethodI
 /**
  * Exposes the JavaScript [Uint8ClampedArray](https://developer.mozilla.org/en/docs/Web/API/Uint8ClampedArray) to Kotlin
  */
-public actual external open class Uint8ClampedArray : ArrayBufferView, JsAny {
+public actual open external class Uint8ClampedArray : ArrayBufferView, JsAny {
     actual constructor(length: Int)
     actual constructor(array: Uint8ClampedArray)
     actual constructor(array: JsArray<JsNumber>)
@@ -129,7 +129,7 @@ public actual operator fun Uint8ClampedArray.set(index: Int, value: UByte) = set
 /**
  * Exposes the JavaScript [Int16Array](https://developer.mozilla.org/en/docs/Web/API/Int16Array) to Kotlin
  */
-public actual external open class Int16Array : ArrayBufferView, JsAny {
+public actual open external class Int16Array : ArrayBufferView, JsAny {
     actual constructor(length: Int)
     actual constructor(array: Int16Array)
     actual constructor(array: JsArray<JsNumber>)
@@ -160,7 +160,7 @@ public actual operator fun Int16Array.set(index: Int, value: Short) = setMethodI
 /**
  * Exposes the JavaScript [Uint16Array](https://developer.mozilla.org/en/docs/Web/API/Uint16Array) to Kotlin
  */
-public actual external open class Uint16Array : ArrayBufferView, JsAny {
+public actual open external class Uint16Array : ArrayBufferView, JsAny {
     actual constructor(length: Int)
     actual constructor(array: Uint16Array)
     actual constructor(array: JsArray<JsNumber>)
@@ -191,7 +191,7 @@ public actual operator fun Uint16Array.set(index: Int, value: UShort) = setMetho
 /**
  * Exposes the JavaScript [Int32Array](https://developer.mozilla.org/en/docs/Web/API/Int32Array) to Kotlin
  */
-public actual external open class Int32Array : ArrayBufferView, JsAny {
+public actual open external class Int32Array : ArrayBufferView, JsAny {
     actual constructor(length: Int)
     actual constructor(array: Int32Array)
     actual constructor(array: JsArray<JsNumber>)
@@ -222,7 +222,7 @@ public actual operator fun Int32Array.set(index: Int, value: Int) = setMethodImp
 /**
  * Exposes the JavaScript [Uint32Array](https://developer.mozilla.org/en/docs/Web/API/Uint32Array) to Kotlin
  */
-public actual external open class Uint32Array : ArrayBufferView, JsAny {
+public actual open external class Uint32Array : ArrayBufferView, JsAny {
     actual constructor(length: Int)
     actual constructor(array: Uint32Array)
     actual constructor(array: JsArray<JsNumber>)
@@ -253,7 +253,7 @@ public actual operator fun Uint32Array.set(index: Int, value: UInt) = setMethodI
 /**
  * Exposes the JavaScript [Float32Array](https://developer.mozilla.org/en/docs/Web/API/Float32Array) to Kotlin
  */
-public actual external open class Float32Array : ArrayBufferView, JsAny {
+public actual open external class Float32Array : ArrayBufferView, JsAny {
     actual constructor(length: Int)
     actual constructor(array: Float32Array)
     actual constructor(array: JsArray<JsNumber>)
@@ -284,7 +284,7 @@ public actual operator fun Float32Array.set(index: Int, value: Float) = setMetho
 /**
  * Exposes the JavaScript [Float64Array](https://developer.mozilla.org/en/docs/Web/API/Float64Array) to Kotlin
  */
-public actual external open class Float64Array : ArrayBufferView, JsAny {
+public actual open external class Float64Array : ArrayBufferView, JsAny {
     actual constructor(length: Int)
     actual constructor(array: Float64Array)
     actual constructor(array: JsArray<JsNumber>)
@@ -315,7 +315,7 @@ public actual operator fun Float64Array.set(index: Int, value: Double) = setMeth
 /**
  * Exposes the JavaScript [DataView](https://developer.mozilla.org/en/docs/Web/API/DataView) to Kotlin
  */
-public actual external open class DataView actual constructor(buffer: ArrayBuffer, byteOffset: Int, byteLength: Int) : ArrayBufferView, JsAny {
+public actual open external class DataView actual constructor(buffer: ArrayBuffer, byteOffset: Int, byteLength: Int) : ArrayBufferView, JsAny {
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int

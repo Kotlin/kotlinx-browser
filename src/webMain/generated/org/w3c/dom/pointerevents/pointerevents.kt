@@ -82,7 +82,7 @@ public fun PointerEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nul
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent)
  */
-public external open class PointerEvent : MouseEvent {
+public open external class PointerEvent : MouseEvent {
     /**
      * The PointerEvent() constructor creates a new synthetic and untrusted PointerEvent object instance.
      *
@@ -276,7 +276,7 @@ public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent)
  */
-public external open class MouseEvent : UIEvent {
+public open external class MouseEvent : UIEvent {
     /**
      * The MouseEvent() constructor creates a new MouseEvent object.
      *
@@ -509,7 +509,7 @@ public fun WheelEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent)
  */
-public external open class WheelEvent : MouseEvent {
+public open external class WheelEvent : MouseEvent {
     /**
      * The WheelEvent() constructor returns a new WheelEvent object.
      *

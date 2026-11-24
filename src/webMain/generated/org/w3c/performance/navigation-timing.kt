@@ -18,7 +18,7 @@ import org.w3c.dom.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming)
  */
-public external abstract class PerformanceNavigationTiming : PerformanceResourceTiming {
+public abstract external class PerformanceNavigationTiming : PerformanceResourceTiming {
     /**
      * The unloadEventStart read-only property returns a DOMHighResTimeStamp representing the time immediately before
      * the previous document's unload event handler starts.
@@ -152,7 +152,7 @@ public inline val NavigationTimingType.Companion.BACK_FORWARD: NavigationTimingT
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTimingConfidence)
  */
-public external abstract class PerformanceTimingConfidence : JsAny {
+public abstract external class PerformanceTimingConfidence : JsAny {
     /**
      * The randomizedTriggerRate read-only property of the PerformanceTimingConfidence interface indicates how often
      * noise is applied when exposing the PerformanceTimingConfidence.value.
@@ -195,7 +195,7 @@ public inline val PerformanceTimingConfidenceValue.Companion.LOW: PerformanceTim
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming)
  */
-public external abstract class PerformanceTiming : JsAny {
+public abstract external class PerformanceTiming : JsAny {
     /**
      * The legacy PerformanceTiming.navigationStart read-only property returns an unsigned long long representing the
      * moment, in milliseconds since the UNIX epoch, right after the prompt for unload terminates on the previous
@@ -456,7 +456,7 @@ public external abstract class PerformanceTiming : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigation)
  */
-public external abstract class PerformanceNavigation : JsAny {
+public abstract external class PerformanceNavigation : JsAny {
     /**
      * The legacy PerformanceNavigation.type read-only property returns an unsigned short containing a constant
      * describing how the navigation to this page was done.

@@ -54,7 +54,7 @@ public fun ScrollResult(interrupted: Boolean): ScrollResult = newJsObject<Scroll
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList)
  */
-public external abstract class MediaQueryList : EventTarget {
+public abstract external class MediaQueryList : EventTarget {
     /**
      * The media read-only property of the MediaQueryList interface is a string representing a serialized media query.
      *
@@ -128,7 +128,7 @@ public fun MediaQueryList.addListener(callback: (Event) -> Unit): () -> Unit {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent)
  */
-public external open class MediaQueryListEvent : Event {
+public open external class MediaQueryListEvent : Event {
     /**
      * The MediaQueryListEvent() constructor creates a new MediaQueryListEvent object.
      *
@@ -179,7 +179,7 @@ public fun MediaQueryListEventInit(bubbles: Boolean? = null, cancelable: Boolean
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen)
  */
-public external abstract class Screen : JsAny {
+public abstract external class Screen : JsAny {
     /**
      * The availWidth read-only property of the Screen interface returns the amount of horizontal space (in CSS pixels)
      * available to the window.
@@ -243,7 +243,7 @@ public fun CaretPositionFromPointOptions(shadowRoots: JsArray<ShadowRoot>? = nul
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition)
  */
-public external abstract class CaretPosition : JsAny {
+public abstract external class CaretPosition : JsAny {
     /**
      * The offsetNode property of the CaretPosition interface returns a Node containing the found node at the caret's
      * position.
@@ -359,7 +359,7 @@ public external interface GeometryUtils : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport)
  */
-public external abstract class VisualViewport : EventTarget {
+public abstract external class VisualViewport : EventTarget {
     /**
      * The offsetLeft read-only property of the VisualViewport interface returns the offset of the left edge of the
      * visual viewport from the left edge of the layout viewport in CSS pixels, or 0 if current document is not fully

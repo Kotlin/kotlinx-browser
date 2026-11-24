@@ -23,7 +23,7 @@ public external interface HTMLOrSVGScriptElement : JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event)
  */
-public external open class Event : JsAny {
+public open external class Event : JsAny {
     /**
      * The Event() constructor creates a new Event object. An event created in this way is called a synthetic event, as
      * opposed to an event fired by the browser, and can be dispatched by a script.
@@ -216,7 +216,7 @@ public fun EventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, comp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomEvent)
  */
-public external open class CustomEvent : Event {
+public open external class CustomEvent : Event {
     /**
      * The CustomEvent() constructor creates a new CustomEvent object.
      *
@@ -266,7 +266,7 @@ public fun CustomEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget)
  */
-public external open class EventTarget : JsAny {
+public open external class EventTarget : JsAny {
     /**
      * The EventTarget() constructor creates a new EventTarget object instance.
      *
@@ -437,7 +437,7 @@ public fun AddEventListenerOptions(capture: Boolean? = null, passive: Boolean? =
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortController)
  */
-public external open class AbortController : JsAny {
+public open external class AbortController : JsAny {
     /**
      * The AbortController() constructor creates a new AbortController object instance.
      *
@@ -468,7 +468,7 @@ public external open class AbortController : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal)
  */
-public external abstract class AbortSignal : EventTarget {
+public abstract external class AbortSignal : EventTarget {
     /**
      * The aborted read-only property returns a value that indicates whether the asynchronous operations the signal is
      * communicating with are aborted (true) or not (false).
@@ -842,7 +842,7 @@ public external interface Slottable : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeList)
  */
-public external abstract class NodeList : ItemArrayLike<Node> {
+public abstract external class NodeList : ItemArrayLike<Node> {
     /**
      * Returns a node from a NodeList by index. This method doesn't throw exceptions as long as you provide arguments. A
      * value of null is returned if the index is out of range, and a TypeError is thrown if no argument is provided.
@@ -868,7 +868,7 @@ public operator fun NodeList.get(index: Int): Node? = getProperty(this, index)
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCollection)
  */
-public external abstract class HTMLCollection : UnionElementOrHTMLCollection, ItemArrayLike<Element> {
+public abstract external class HTMLCollection : UnionElementOrHTMLCollection, ItemArrayLike<Element> {
     /**
      * The HTMLCollection.length property returns the number of items in a HTMLCollection.
      *
@@ -902,7 +902,7 @@ public operator fun HTMLCollection.get(name: String): Element? = getProperty(thi
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver)
  */
-public external open class MutationObserver : JsAny {
+public open external class MutationObserver : JsAny {
     /**
      * The DOM MutationObserver() constructor — part of the MutationObserver interface — creates and returns a new
      * observer which invokes a specified callback when DOM events occur.
@@ -961,7 +961,7 @@ public fun MutationObserverInit(childList: Boolean? = null, attributes: Boolean?
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord)
  */
-public external abstract class MutationRecord : JsAny {
+public abstract external class MutationRecord : JsAny {
     /**
      * The MutationRecord read-only property type is the type of the MutationRecord observed by a MutationObserver.
      *
@@ -1042,7 +1042,7 @@ public external abstract class MutationRecord : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node)
  */
-public external abstract class Node : EventTarget {
+public abstract external class Node : EventTarget {
     /**
      * The read-only nodeType property of a Node interface is an integer that identifies what the node is. It
      * distinguishes different kinds of nodes from each other, such as elements, text, and comments.
@@ -1310,7 +1310,7 @@ public fun GetRootNodeOptions(composed: Boolean? = null): GetRootNodeOptions = n
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document)
  */
-public external open class Document : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, GeometryNode {
+public open external class Document : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, GeometryNode {
     /**
      * The Document constructor creates a new Document object that is a web page loaded in the browser and serving as an
      * entry point into the page's content.
@@ -2799,7 +2799,7 @@ public operator fun Document.get(name: String): JsAny? = getProperty(this, name)
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLDocument)
  */
-public external abstract class XMLDocument : Document {
+public abstract external class XMLDocument : Document {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -2865,7 +2865,7 @@ public fun ImportNodeOptions(customElementRegistry: CustomElementRegistry? = nul
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation)
  */
-public external abstract class DOMImplementation : JsAny {
+public abstract external class DOMImplementation : JsAny {
     /**
      * The DOMImplementation.createDocumentType() method returns a DocumentType object which can either be used with
      * DOMImplementation.createDocument upon document creation or can be put into the document via methods like
@@ -2905,7 +2905,7 @@ public external abstract class DOMImplementation : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType)
  */
-public external abstract class DocumentType : Node, ChildNode {
+public abstract external class DocumentType : Node, ChildNode {
     /**
      * The read-only name property of the DocumentType returns the type of the document.
      *
@@ -2954,7 +2954,7 @@ public external abstract class DocumentType : Node, ChildNode {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentFragment)
  */
-public external open class DocumentFragment : Node, NonElementParentNode, ParentNode {
+public open external class DocumentFragment : Node, NonElementParentNode, ParentNode {
     /**
      * The DocumentFragment() constructor returns a new, empty DocumentFragment object.
      *
@@ -3128,7 +3128,7 @@ public external open class DocumentFragment : Node, NonElementParentNode, Parent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot)
  */
-public external abstract class ShadowRoot : DocumentFragment, DocumentOrShadowRoot {
+public abstract external class ShadowRoot : DocumentFragment, DocumentOrShadowRoot {
     /**
      * The mode read-only property of the ShadowRoot specifies its mode — either open or closed. This defines whether or
      * not the shadow root's internal features are accessible from JavaScript.
@@ -3258,7 +3258,7 @@ public inline val SlotAssignmentMode.Companion.NAMED: SlotAssignmentMode get() =
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element)
  */
-public external abstract class Element : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction {
+public abstract external class Element : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction {
     /**
      * The Element.namespaceURI read-only property returns the namespace URI of the element, or null if the element is
      * not in a namespace.
@@ -3848,7 +3848,7 @@ public fun ShadowRootInit(mode: ShadowRootMode, delegatesFocus: Boolean? = null,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap)
  */
-public external abstract class NamedNodeMap : ItemArrayLike<Attr> {
+public abstract external class NamedNodeMap : ItemArrayLike<Attr> {
     /**
      * The read-only length property of the NamedNodeMap interface is the number of objects stored in the map.
      *
@@ -3923,7 +3923,7 @@ public operator fun NamedNodeMap.get(qualifiedName: String): Attr? = getProperty
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Attr)
  */
-public external abstract class Attr : Node {
+public abstract external class Attr : Node {
     /**
      * The read-only namespaceURI property of the Attr interface returns the namespace URI of the attribute, or null if
      * the element is not in a namespace.
@@ -4010,7 +4010,7 @@ public external abstract class Attr : Node {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData)
  */
-public external abstract class CharacterData : Node, NonDocumentTypeChildNode, ChildNode {
+public abstract external class CharacterData : Node, NonDocumentTypeChildNode, ChildNode {
     /**
      * The data property of the CharacterData interface represents the value of the current object's data.
      *
@@ -4094,7 +4094,7 @@ public external abstract class CharacterData : Node, NonDocumentTypeChildNode, C
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Text)
  */
-public external open class Text : CharacterData, Slottable, GeometryUtils, UnionElementOrText {
+public open external class Text : CharacterData, Slottable, GeometryUtils, UnionElementOrText {
     /**
      * The Text() constructor returns a new Text object with the optional string given in parameter as its textual
      * content.
@@ -4271,7 +4271,7 @@ public external open class Text : CharacterData, Slottable, GeometryUtils, Union
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CDATASection)
  */
-public external abstract class CDATASection : Text {
+public abstract external class CDATASection : Text {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -4301,7 +4301,7 @@ public external abstract class CDATASection : Text {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProcessingInstruction)
  */
-public external open class ProcessingInstruction : CharacterData, LinkStyle, UnionElementOrProcessingInstruction {
+public open external class ProcessingInstruction : CharacterData, LinkStyle, UnionElementOrProcessingInstruction {
     constructor(target: String, data: String = definedExternally)
 
     /**
@@ -4517,7 +4517,7 @@ public external open class ProcessingInstruction : CharacterData, LinkStyle, Uni
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Comment)
  */
-public external open class Comment : CharacterData {
+public open external class Comment : CharacterData {
     /**
      * The Comment() constructor returns a newly created Comment object with the optional string given in parameter as
      * its textual content.
@@ -4665,7 +4665,7 @@ public external open class Comment : CharacterData {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbstractRange)
  */
-public external abstract class AbstractRange : JsAny {
+public abstract external class AbstractRange : JsAny {
     /**
      * The read-only startContainer property of the AbstractRange interface returns the Node in which the start of the
      * range is located.
@@ -4727,7 +4727,7 @@ public fun StaticRangeInit(startContainer: Node, startOffset: Int, endContainer:
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StaticRange)
  */
-public external open class StaticRange : AbstractRange {
+public open external class StaticRange : AbstractRange {
     /**
      * The StaticRange() constructor creates a new StaticRange object representing a span of content within the DOM.
      *
@@ -4741,7 +4741,7 @@ public external open class StaticRange : AbstractRange {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range)
  */
-public external open class Range : AbstractRange {
+public open external class Range : AbstractRange {
     /**
      * The Range() constructor returns a newly created Range object whose start and end are offset 0 of the global
      * document object.
@@ -4960,7 +4960,7 @@ public external open class Range : AbstractRange {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator)
  */
-public external abstract class NodeIterator : JsAny {
+public abstract external class NodeIterator : JsAny {
     /**
      * The NodeIterator.root read-only property represents the Node that is the root of what the NodeIterator traverses.
      *
@@ -5032,7 +5032,7 @@ public external abstract class NodeIterator : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker)
  */
-public external abstract class TreeWalker : JsAny {
+public abstract external class TreeWalker : JsAny {
     /**
      * The TreeWalker.root read-only property returns the root Node that the TreeWalker traverses.
      *
@@ -5151,7 +5151,7 @@ public inline val NodeFilter.Companion.SHOW_NOTATION: Int get() = 0x800
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList)
  */
-public external abstract class DOMTokenList : ItemArrayLike<JsString> {
+public abstract external class DOMTokenList : ItemArrayLike<JsString> {
     /**
      * The read-only length property of the DOMTokenList interface is an integer representing the number of objects
      * stored in the object.
@@ -5233,7 +5233,7 @@ public operator fun DOMTokenList.get(index: Int): String? = getStringProperty(th
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult)
  */
-public external abstract class XPathResult : JsAny {
+public abstract external class XPathResult : JsAny {
     /**
      * The read-only resultType property of the XPathResult interface represents the type of the result, as defined by
      * the type constants.
@@ -5328,7 +5328,7 @@ public external abstract class XPathResult : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathExpression)
  */
-public external abstract class XPathExpression : JsAny {
+public abstract external class XPathExpression : JsAny {
     /**
      * The evaluate() method of the XPathExpression interface executes an XPath expression on the given node or document
      * and returns an XPathResult.
@@ -5389,7 +5389,7 @@ public external interface XPathEvaluatorBase : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathEvaluator)
  */
-public external open class XPathEvaluator : XPathEvaluatorBase {
+public open external class XPathEvaluator : XPathEvaluatorBase {
     /**
      * The XPathEvaluator() constructor creates a new XPathEvaluator.
      *
@@ -5449,7 +5449,7 @@ public external open class XPathEvaluator : XPathEvaluatorBase {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor)
  */
-public external open class XSLTProcessor : JsAny {
+public open external class XSLTProcessor : JsAny {
     /**
      * The XSLTProcessor() constructor creates a new XSLTProcessor object instance.
      *

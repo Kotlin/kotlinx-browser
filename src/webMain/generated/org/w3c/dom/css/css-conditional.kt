@@ -14,7 +14,7 @@ package org.w3c.dom.css
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSConditionRule)
  */
-public external abstract class CSSConditionRule : CSSGroupingRule {
+public abstract external class CSSConditionRule : CSSGroupingRule {
     /**
      * The read-only conditionText property of the CSSConditionRule interface returns or sets the text of the CSS rule.
      *
@@ -40,7 +40,7 @@ public external abstract class CSSConditionRule : CSSGroupingRule {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMediaRule)
  */
-public external abstract class CSSMediaRule : CSSConditionRule {
+public abstract external class CSSMediaRule : CSSConditionRule {
     /**
      * The read-only media property of the CSSMediaRule interface contains a MediaList object representing the media
      * query list of the \@media rule.
@@ -68,7 +68,7 @@ public external abstract class CSSMediaRule : CSSConditionRule {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSupportsRule)
  */
-public external abstract class CSSSupportsRule : CSSConditionRule {
+public abstract external class CSSSupportsRule : CSSConditionRule {
     open val matches: Boolean
 
     companion object {

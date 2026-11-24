@@ -55,7 +55,7 @@ public external interface MessageEventSource : JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAllCollection)
  */
-public external abstract class HTMLAllCollection : JsAny {
+public abstract external class HTMLAllCollection : JsAny {
     /**
      * The HTMLAllCollection.length property returns the number of items in this HTMLAllCollection.
      *
@@ -96,7 +96,7 @@ public operator fun HTMLAllCollection.get(name: String): UnionElementOrHTMLColle
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormControlsCollection)
  */
-public external abstract class HTMLFormControlsCollection : HTMLCollection
+public abstract external class HTMLFormControlsCollection : HTMLCollection
 
 public operator fun HTMLFormControlsCollection.get(name: String): UnionElementOrRadioNodeList? = getProperty(this, name)
 
@@ -106,7 +106,7 @@ public operator fun HTMLFormControlsCollection.get(name: String): UnionElementOr
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RadioNodeList)
  */
-public external abstract class RadioNodeList : NodeList, UnionElementOrRadioNodeList {
+public abstract external class RadioNodeList : NodeList, UnionElementOrRadioNodeList {
     /**
      * If the underlying element collection contains radio buttons, the RadioNodeList.value property represents the
      * checked radio button. On retrieving the value property, the value of the currently checked radio button is
@@ -126,7 +126,7 @@ public external abstract class RadioNodeList : NodeList, UnionElementOrRadioNode
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection)
  */
-public external abstract class HTMLOptionsCollection : HTMLCollection {
+public abstract external class HTMLOptionsCollection : HTMLCollection {
     /**
      * The length property of the HTMLOptionsCollection interface returns the number of &lt;option&gt; elements in the
      * collection. The property can get or set the size of the collection.
@@ -187,7 +187,7 @@ public operator fun HTMLOptionsCollection.set(index: Int, option: HTMLOptionElem
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList)
  */
-public external abstract class DOMStringList : ItemArrayLike<JsString> {
+public abstract external class DOMStringList : ItemArrayLike<JsString> {
     /**
      * The read-only length property indicates the number of strings in the DOMStringList.
      *
@@ -235,7 +235,7 @@ public inline val DocumentVisibilityState.Companion.HIDDEN: DocumentVisibilitySt
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement)
  */
-public external abstract class HTMLElement : Element, GlobalEventHandlers, ElementContentEditable, HTMLOrSVGOrMathMLElement, ElementCSSInlineStyle {
+public abstract external class HTMLElement : Element, GlobalEventHandlers, ElementContentEditable, HTMLOrSVGOrMathMLElement, ElementCSSInlineStyle {
     /**
      * The HTMLElement.title property represents the title of the element: the text usually displayed in a 'tooltip'
      * popup when the mouse is over the node.
@@ -515,7 +515,7 @@ public fun TogglePopoverOptions(source: HTMLElement? = null, force: Boolean? = n
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLUnknownElement)
  */
-public external abstract class HTMLUnknownElement : HTMLElement {
+public abstract external class HTMLUnknownElement : HTMLElement {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -594,7 +594,7 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringMap)
  */
-public external abstract class DOMStringMap : JsAny {
+public abstract external class DOMStringMap : JsAny {
     // not printed yet: deleter <anonymous>(DOMString)
 }
 
@@ -608,7 +608,7 @@ public operator fun DOMStringMap.set(name: String, value: String) { setStringPro
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHtmlElement)
  */
-public external abstract class HTMLHtmlElement : HTMLElement {
+public abstract external class HTMLHtmlElement : HTMLElement {
     /**
      * Returns version information about the document type definition (DTD) of a document. While this property is
      * recognized by Mozilla, the return value for this property is always an empty string.
@@ -647,7 +647,7 @@ public external abstract class HTMLHtmlElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHeadElement)
  */
-public external abstract class HTMLHeadElement : HTMLElement {
+public abstract external class HTMLHeadElement : HTMLElement {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -677,7 +677,7 @@ public external abstract class HTMLHeadElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTitleElement)
  */
-public external abstract class HTMLTitleElement : HTMLElement {
+public abstract external class HTMLTitleElement : HTMLElement {
     /**
      * The text property of the HTMLTitleElement interface represents the child text content of the document's title as
      * a string. It contains the &lt;title&gt; element's content as text; if HTML tags are included within the
@@ -715,7 +715,7 @@ public external abstract class HTMLTitleElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement)
  */
-public external abstract class HTMLBaseElement : HTMLElement {
+public abstract external class HTMLBaseElement : HTMLElement {
     /**
      * The href property of the HTMLBaseElement interface contains a string that is the URL to use as the base for
      * relative URLs.
@@ -762,7 +762,7 @@ public external abstract class HTMLBaseElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement)
  */
-public external abstract class HTMLLinkElement : HTMLElement, LinkStyle {
+public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
     /**
      * The href property of the HTMLLinkElement interface contains a string that is the URL associated with the link.
      *
@@ -928,7 +928,7 @@ public external abstract class HTMLLinkElement : HTMLElement, LinkStyle {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement)
  */
-public external abstract class HTMLMetaElement : HTMLElement {
+public abstract external class HTMLMetaElement : HTMLElement {
     /**
      * The HTMLMetaElement.name property is used in combination with HTMLMetaElement.content to define the name-value
      * pairs for the metadata of a document. The name attribute defines the metadata name and the content attribute
@@ -1004,7 +1004,7 @@ public external abstract class HTMLMetaElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement)
  */
-public external abstract class HTMLStyleElement : HTMLElement, LinkStyle {
+public abstract external class HTMLStyleElement : HTMLElement, LinkStyle {
     /**
      * The HTMLStyleElement.disabled property can be used to get and set whether the stylesheet is disabled (true) or
      * not (false).
@@ -1067,7 +1067,7 @@ public external abstract class HTMLStyleElement : HTMLElement, LinkStyle {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBodyElement)
  */
-public external abstract class HTMLBodyElement : HTMLElement, WindowEventHandlers {
+public abstract external class HTMLBodyElement : HTMLElement, WindowEventHandlers {
     open var text: String
     open var link: String
     open var vLink: String
@@ -1103,7 +1103,7 @@ public external abstract class HTMLBodyElement : HTMLElement, WindowEventHandler
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHeadingElement)
  */
-public external abstract class HTMLHeadingElement : HTMLElement {
+public abstract external class HTMLHeadingElement : HTMLElement {
     open var align: String
 
     companion object {
@@ -1134,7 +1134,7 @@ public external abstract class HTMLHeadingElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLParagraphElement)
  */
-public external abstract class HTMLParagraphElement : HTMLElement {
+public abstract external class HTMLParagraphElement : HTMLElement {
     open var align: String
 
     companion object {
@@ -1165,7 +1165,7 @@ public external abstract class HTMLParagraphElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHRElement)
  */
-public external abstract class HTMLHRElement : HTMLElement {
+public abstract external class HTMLHRElement : HTMLElement {
     open var align: String
     open var color: String
     open var noShade: Boolean
@@ -1200,7 +1200,7 @@ public external abstract class HTMLHRElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLPreElement)
  */
-public external abstract class HTMLPreElement : HTMLElement {
+public abstract external class HTMLPreElement : HTMLElement {
     open var width: Int
 
     companion object {
@@ -1232,7 +1232,7 @@ public external abstract class HTMLPreElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLQuoteElement)
  */
-public external abstract class HTMLQuoteElement : HTMLElement {
+public abstract external class HTMLQuoteElement : HTMLElement {
     /**
      * The cite property of the HTMLQuoteElement interface indicates the URL for the source of the quotation. It
      * reflects the &lt;q&gt; element's cite attribute.
@@ -1269,7 +1269,7 @@ public external abstract class HTMLQuoteElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement)
  */
-public external abstract class HTMLOListElement : HTMLElement {
+public abstract external class HTMLOListElement : HTMLElement {
     /**
      * The reversed property of the HTMLOListElement interface indicates order of a list.
      *
@@ -1332,7 +1332,7 @@ public external abstract class HTMLOListElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLUListElement)
  */
-public external abstract class HTMLUListElement : HTMLElement {
+public abstract external class HTMLUListElement : HTMLElement {
     /**
      * The compact property of the HTMLUListElement interface indicates that spacing between list items should be
      * reduced. The exact handling of the compact attribute is browser-specific. Instead of using this property,
@@ -1373,7 +1373,7 @@ public external abstract class HTMLUListElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMenuElement)
  */
-public external abstract class HTMLMenuElement : HTMLElement {
+public abstract external class HTMLMenuElement : HTMLElement {
     /**
      * The compact property of the HTMLMenuElement interface indicates that spacing between list items should be
      * reduced. The exact handling of the compact attribute is browser-specific. Instead of using this property,
@@ -1413,7 +1413,7 @@ public external abstract class HTMLMenuElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLIElement)
  */
-public external abstract class HTMLLIElement : HTMLElement {
+public abstract external class HTMLLIElement : HTMLElement {
     /**
      * The value property of the HTMLLIElement interface indicates the ordinal position of the list element inside a
      * given &lt;ol&gt;. It can be smaller than 0. If the &lt;li&gt; element is not a child of an &lt;ol&gt; element,
@@ -1452,7 +1452,7 @@ public external abstract class HTMLLIElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDListElement)
  */
-public external abstract class HTMLDListElement : HTMLElement {
+public abstract external class HTMLDListElement : HTMLElement {
     /**
      * The compact property of the HTMLDListElement interface indicates that spacing between list items should be
      * reduced. The exact handling of the compact attribute is browser-specific. Instead of using this property,
@@ -1492,7 +1492,7 @@ public external abstract class HTMLDListElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDivElement)
  */
-public external abstract class HTMLDivElement : HTMLElement {
+public abstract external class HTMLDivElement : HTMLElement {
     open var align: String
 
     companion object {
@@ -1525,7 +1525,7 @@ public external abstract class HTMLDivElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement)
  */
-public external abstract class HTMLAnchorElement : HTMLElement, HyperlinkElementUtils, HTMLHyperlinkElementUtils {
+public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElementUtils, HTMLHyperlinkElementUtils {
     /**
      * The download property of the HTMLAnchorElement interface is a string indicating that the linked resource is
      * intended to be downloaded rather than displayed in the browser. The value, if any, represents the proposed name
@@ -1610,7 +1610,7 @@ public external abstract class HTMLAnchorElement : HTMLElement, HyperlinkElement
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataElement)
  */
-public external abstract class HTMLDataElement : HTMLElement {
+public abstract external class HTMLDataElement : HTMLElement {
     /**
      * The value property of the HTMLDataElement interface returns a string reflecting the value HTML attribute.
      *
@@ -1646,7 +1646,7 @@ public external abstract class HTMLDataElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTimeElement)
  */
-public external abstract class HTMLTimeElement : HTMLElement {
+public abstract external class HTMLTimeElement : HTMLElement {
     /**
      * The dateTime property of the HTMLTimeElement interface is a string that reflects the datetime HTML attribute,
      * containing a machine-readable form of the element's date and time value.
@@ -1683,7 +1683,7 @@ public external abstract class HTMLTimeElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSpanElement)
  */
-public external abstract class HTMLSpanElement : HTMLElement {
+public abstract external class HTMLSpanElement : HTMLElement {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -1712,7 +1712,7 @@ public external abstract class HTMLSpanElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBRElement)
  */
-public external abstract class HTMLBRElement : HTMLElement {
+public abstract external class HTMLBRElement : HTMLElement {
     open var clear: String
 
     companion object {
@@ -1866,7 +1866,7 @@ public external interface HTMLHyperlinkElementUtils : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement)
  */
-public external abstract class HTMLModElement : HTMLElement {
+public abstract external class HTMLModElement : HTMLElement {
     /**
      * The cite property of the HTMLModElement interface indicates the URL of the resource explaining the modification.
      * It reflects the cite attribute of the &lt;del&gt; element and &lt;ins&gt; elements.
@@ -1911,7 +1911,7 @@ public external abstract class HTMLModElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLPictureElement)
  */
-public external abstract class HTMLPictureElement : HTMLElement {
+public abstract external class HTMLPictureElement : HTMLElement {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -1941,7 +1941,7 @@ public external abstract class HTMLPictureElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement)
  */
-public external abstract class HTMLSourceElement : HTMLElement {
+public abstract external class HTMLSourceElement : HTMLElement {
     /**
      * The src property of the HTMLSourceElement interface is a string indicating the URL of a media resource to use as
      * the source for the element.
@@ -2027,7 +2027,7 @@ public external abstract class HTMLSourceElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement)
  */
-public external abstract class HTMLImageElement : HTMLElement, CanvasImageSource, TexImageSource {
+public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource, TexImageSource {
     /**
      * The alt property of the HTMLImageElement interface provides fallback (alternate) text to display when the image
      * specified by the &lt;img&gt; element is not displayed, whether because of an error, because the user has disabled
@@ -2295,7 +2295,7 @@ public external abstract class HTMLImageElement : HTMLElement, CanvasImageSource
     }
 }
 
-public external open class Image : HTMLImageElement {
+public open external class Image : HTMLImageElement {
     constructor(width: Int = definedExternally, height: Int = definedExternally)
 
     /**
@@ -3589,7 +3589,7 @@ public external open class Image : HTMLImageElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement)
  */
-public external abstract class HTMLIFrameElement : HTMLElement {
+public abstract external class HTMLIFrameElement : HTMLElement {
     /**
      * The HTMLIFrameElement.src A string that reflects the src HTML attribute, containing the address of the content to
      * be embedded.
@@ -3730,7 +3730,7 @@ public external abstract class HTMLIFrameElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement)
  */
-public external abstract class HTMLEmbedElement : HTMLElement {
+public abstract external class HTMLEmbedElement : HTMLElement {
     /**
      * The src property of the HTMLEmbedElement interface returns a string that indicates the URL of the resource being
      * embedded.
@@ -3802,7 +3802,7 @@ public external abstract class HTMLEmbedElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement)
  */
-public external abstract class HTMLObjectElement : HTMLElement {
+public abstract external class HTMLObjectElement : HTMLElement {
     /**
      * The data property of the HTMLObjectElement interface returns a string that reflects the data HTML attribute,
      * specifying the address of a resource's data.
@@ -3973,7 +3973,7 @@ public external abstract class HTMLObjectElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement)
  */
-public external abstract class HTMLVideoElement : HTMLMediaElement, CanvasImageSource, TexImageSource {
+public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageSource, TexImageSource {
     /**
      * The width property of the HTMLVideoElement interface returns an integer that reflects the width attribute of the
      * &lt;video&gt; element, specifying the displayed width of the resource in CSS pixels.
@@ -4052,7 +4052,7 @@ public external abstract class HTMLVideoElement : HTMLMediaElement, CanvasImageS
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAudioElement)
  */
-public external abstract class HTMLAudioElement : HTMLMediaElement {
+public abstract external class HTMLAudioElement : HTMLMediaElement {
 
     companion object {
         val NETWORK_EMPTY: Short
@@ -4085,7 +4085,7 @@ public external abstract class HTMLAudioElement : HTMLMediaElement {
     }
 }
 
-public external open class Audio : HTMLAudioElement {
+public open external class Audio : HTMLAudioElement {
     constructor(src: String = definedExternally)
 
     /**
@@ -5389,7 +5389,7 @@ public external open class Audio : HTMLAudioElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement)
  */
-public external abstract class HTMLTrackElement : HTMLElement {
+public abstract external class HTMLTrackElement : HTMLElement {
     /**
      * The kind property of the HTMLTrackElement interface represents the type of track, or how the text track is meant
      * to be used. It reflects the &lt;track&gt; element's enumerated kind attribute.
@@ -5485,7 +5485,7 @@ public inline val CanPlayTypeResult.Companion.PROBABLY: CanPlayTypeResult get() 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement)
  */
-public external abstract class HTMLMediaElement : HTMLElement {
+public abstract external class HTMLMediaElement : HTMLElement {
     /**
      * The error read-only property of the HTMLMediaElement interface is the MediaError object for the most recent
      * error, or null if there has not been an error. When an error event is received by the element, you can determine
@@ -5849,7 +5849,7 @@ public external abstract class HTMLMediaElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError)
  */
-public external abstract class MediaError : JsAny {
+public abstract external class MediaError : JsAny {
     /**
      * The read-only property MediaError.code returns a numeric value which represents the kind of error that occurred
      * on a media element. To get a text string with specific diagnostic information, see MediaError.message.
@@ -5881,7 +5881,7 @@ public external abstract class MediaError : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList)
  */
-public external abstract class AudioTrackList : EventTarget {
+public abstract external class AudioTrackList : EventTarget {
     /**
      * The read-only AudioTrackList property length returns the number of entries in the AudioTrackList, each of which
      * is an AudioTrack representing one audio track in the media element. A value of 0 indicates that there are no
@@ -5930,7 +5930,7 @@ public operator fun AudioTrackList.get(index: Int): AudioTrack? = getProperty(th
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack)
  */
-public external abstract class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTrack {
+public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTrack {
     /**
      * The id read-only property of the AudioTrack interface contains a string which uniquely identifies the track
      * represented by the AudioTrack.
@@ -5986,7 +5986,7 @@ public external abstract class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList)
  */
-public external abstract class VideoTrackList : EventTarget {
+public abstract external class VideoTrackList : EventTarget {
     /**
      * The read-only VideoTrackList property length returns the number of entries in the VideoTrackList, each of which
      * is a VideoTrack representing one video track in the media element.
@@ -6041,7 +6041,7 @@ public operator fun VideoTrackList.get(index: Int): VideoTrack? = getProperty(th
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack)
  */
-public external abstract class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTrack {
+public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTrack {
     /**
      * The id read-only property of the VideoTrack interface contains a string which uniquely identifies the track
      * represented by the VideoTrack.
@@ -6096,7 +6096,7 @@ public external abstract class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList)
  */
-public external abstract class TextTrackList : EventTarget {
+public abstract external class TextTrackList : EventTarget {
     /**
      * The read-only TextTrackList property length returns the number of entries in the TextTrackList, each of which is
      * a TextTrack representing one track in the media element.
@@ -6162,7 +6162,7 @@ public inline val TextTrackKind.Companion.METADATA: TextTrackKind get() = "metad
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack)
  */
-public external abstract class TextTrack : EventTarget, UnionAudioTrackOrTextTrackOrVideoTrack {
+public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTrackOrVideoTrack {
     /**
      * The kind read-only property of the TextTrack interface returns the kind of text track this object represents.
      * This decides how the track will be handled by a user agent.
@@ -6264,7 +6264,7 @@ public external abstract class TextTrack : EventTarget, UnionAudioTrackOrTextTra
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCueList)
  */
-public external abstract class TextTrackCueList : JsAny {
+public abstract external class TextTrackCueList : JsAny {
     /**
      * The length read-only property of the TextTrackCueList interface returns the number of cues in the list.
      *
@@ -6289,7 +6289,7 @@ public operator fun TextTrackCueList.get(index: Int): TextTrackCue? = getPropert
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue)
  */
-public external abstract class TextTrackCue : EventTarget {
+public abstract external class TextTrackCue : EventTarget {
     /**
      * The track read-only property of the TextTrackCue interface returns the TextTrack object that this cue belongs to.
      *
@@ -6349,7 +6349,7 @@ public external abstract class TextTrackCue : EventTarget {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges)
  */
-public external abstract class TimeRanges : JsAny {
+public abstract external class TimeRanges : JsAny {
     /**
      * The TimeRanges.length read-only property returns the number of ranges in the object.
      *
@@ -6380,7 +6380,7 @@ public external abstract class TimeRanges : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent)
  */
-public external open class TrackEvent : Event {
+public open external class TrackEvent : Event {
     /**
      * The TrackEvent() constructor creates and returns a new TrackEvent object describing an event which occurred on a
      * list of tracks (AudioTrackList, VideoTrackList, or TextTrackList).
@@ -6422,7 +6422,7 @@ public fun TrackEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement)
  */
-public external abstract class HTMLMapElement : HTMLElement {
+public abstract external class HTMLMapElement : HTMLElement {
     /**
      * The name property of the HTMLMapElement represents the unique name &lt;map&gt; element. Its value can be used
      * with the useMap attribute of the &lt;img&gt; element to reference a &lt;map&gt; element.
@@ -6468,7 +6468,7 @@ public external abstract class HTMLMapElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement)
  */
-public external abstract class HTMLAreaElement : HTMLElement, HyperlinkElementUtils, HTMLHyperlinkElementUtils {
+public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUtils, HTMLHyperlinkElementUtils {
     /**
      * The alt property of the HTMLAreaElement interface specifies the text of the hyperlink, defining the textual label
      * for an image map's link. It reflects the &lt;area&gt; element's alt attribute.
@@ -6566,7 +6566,7 @@ public external abstract class HTMLAreaElement : HTMLElement, HyperlinkElementUt
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement)
  */
-public external abstract class HTMLTableElement : HTMLElement {
+public abstract external class HTMLTableElement : HTMLElement {
     /**
      * The caption property of the HTMLTableElement interface represents the first &lt;caption&gt; element child of the
      * given &lt;table&gt;, or null if no such element exists.
@@ -6800,7 +6800,7 @@ public external abstract class HTMLTableElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCaptionElement)
  */
-public external abstract class HTMLTableCaptionElement : HTMLElement {
+public abstract external class HTMLTableCaptionElement : HTMLElement {
     /**
      * The align property of the HTMLTableCaptionElement interface is a string indicating how to horizontally align text
      * in the &lt;caption&gt; table element.
@@ -6838,7 +6838,7 @@ public external abstract class HTMLTableCaptionElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement)
  */
-public external abstract class HTMLTableColElement : HTMLElement {
+public abstract external class HTMLTableColElement : HTMLElement {
     /**
      * The span property of the HTMLTableColElement interface represents the number of columns this &lt;col&gt; or
      * &lt;colgroup&gt; must span; this lets the column occupy space across multiple columns of the table. It reflects
@@ -6918,7 +6918,7 @@ public external abstract class HTMLTableColElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement)
  */
-public external abstract class HTMLTableSectionElement : HTMLElement {
+public abstract external class HTMLTableSectionElement : HTMLElement {
     /**
      * The rows read-only property of the HTMLTableSectionElement interface returns a live HTMLCollection containing the
      * rows in the section. The HTMLCollection is live and is automatically updated when rows are added or removed.
@@ -7012,7 +7012,7 @@ public external abstract class HTMLTableSectionElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement)
  */
-public external abstract class HTMLTableRowElement : HTMLElement {
+public abstract external class HTMLTableRowElement : HTMLElement {
     /**
      * The rowIndex read-only property of the HTMLTableRowElement interface represents the position of a row within the
      * whole &lt;table&gt;.
@@ -7131,7 +7131,7 @@ public external abstract class HTMLTableRowElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement)
  */
-public external abstract class HTMLTableCellElement : HTMLElement {
+public abstract external class HTMLTableCellElement : HTMLElement {
     /**
      * The colSpan property of the HTMLTableCellElement interface represents the number of columns this cell must span;
      * this lets the cell occupy space across multiple columns of the table. It reflects the colspan attribute.
@@ -7270,7 +7270,7 @@ public external abstract class HTMLTableCellElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement)
  */
-public external abstract class HTMLFormElement : HTMLElement {
+public abstract external class HTMLFormElement : HTMLElement {
     /**
      * The HTMLFormElement.acceptCharset property represents the character encoding for the given &lt;form&gt; element.
      *
@@ -7444,7 +7444,7 @@ public operator fun HTMLFormElement.get(name: String): UnionElementOrRadioNodeLi
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement)
  */
-public external abstract class HTMLLabelElement : HTMLElement {
+public abstract external class HTMLLabelElement : HTMLElement {
     /**
      * The form read-only property of the HTMLLabelElement interface returns an HTMLFormElement object that owns the
      * control associated with this &lt;label&gt;, or null if this label is not associated with a labelable
@@ -7500,7 +7500,7 @@ public external abstract class HTMLLabelElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement)
  */
-public external abstract class HTMLInputElement : HTMLElement, PopoverTargetAttributes {
+public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttributes {
     /**
      * The accept property of the HTMLInputElement interface reflects the &lt;input&gt; element's accept attribute,
      * generally a comma-separated list of unique file type specifiers providing a hint for the expected file type for
@@ -8000,7 +8000,7 @@ public external abstract class HTMLInputElement : HTMLElement, PopoverTargetAttr
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement)
  */
-public external abstract class HTMLButtonElement : HTMLElement, PopoverTargetAttributes {
+public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAttributes {
     /**
      * The command property of the HTMLButtonElement interface gets and sets the action to be performed on an element
      * being controlled by this button. For this to have an effect, commandfor must be set.
@@ -8192,7 +8192,7 @@ public external abstract class HTMLButtonElement : HTMLElement, PopoverTargetAtt
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement)
  */
-public external abstract class HTMLSelectElement : HTMLElement, ItemArrayLike<HTMLOptionElement> {
+public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HTMLOptionElement> {
     /**
      * The autocomplete property of the HTMLSelectElement interface indicates whether the value of the control can be
      * automatically completed by the browser. It reflects the &lt;select&gt; element's autocomplete attribute.
@@ -8455,7 +8455,7 @@ public operator fun HTMLSelectElement.set(index: Int, option: HTMLOptionElement?
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataListElement)
  */
-public external abstract class HTMLDataListElement : HTMLElement {
+public abstract external class HTMLDataListElement : HTMLElement {
     /**
      * The options read-only property of the HTMLDataListElement interface returns an HTMLCollection of
      * HTMLOptionElement elements contained in a &lt;datalist&gt;. The descendant &lt;option&gt; elements provide
@@ -8494,7 +8494,7 @@ public external abstract class HTMLDataListElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement)
  */
-public external abstract class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGroupElementOrHTMLOptionElement {
+public abstract external class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGroupElementOrHTMLOptionElement {
     /**
      * The disabled property of the HTMLOptGroupElement interface is a boolean value that reflects the &lt;optgroup&gt;
      * element's disabled attribute, which indicates whether the control is disabled.
@@ -8539,7 +8539,7 @@ public external abstract class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGr
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement)
  */
-public external abstract class HTMLOptionElement : HTMLElement, UnionHTMLOptGroupElementOrHTMLOptionElement {
+public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGroupElementOrHTMLOptionElement {
     /**
      * The disabled property of the HTMLOptionElement is a boolean value that indicates whether the &lt;option&gt;
      * element is unavailable to be selected. The property reflects the value of the disabled HTML attribute.
@@ -8631,7 +8631,7 @@ public external abstract class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
     }
 }
 
-public external open class Option : HTMLOptionElement {
+public open external class Option : HTMLOptionElement {
     constructor(text: String = definedExternally, value: String = definedExternally, defaultSelected: Boolean = definedExternally, selected: Boolean = definedExternally)
 
     /**
@@ -9925,7 +9925,7 @@ public external open class Option : HTMLOptionElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement)
  */
-public external abstract class HTMLTextAreaElement : HTMLElement {
+public abstract external class HTMLTextAreaElement : HTMLElement {
     /**
      * The autocomplete property of the HTMLTextAreaElement interface indicates whether the value of the control can be
      * automatically completed by the browser. It reflects the &lt;textarea&gt; element's autocomplete attribute.
@@ -10216,7 +10216,7 @@ public external abstract class HTMLTextAreaElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement)
  */
-public external abstract class HTMLOutputElement : HTMLElement {
+public abstract external class HTMLOutputElement : HTMLElement {
     /**
      * The read-only htmlFor property of the HTMLOutputElement returns a live DOMTokenList object containing a list of
      * ids of those elements contributing input values to (or otherwise affected) the calculation. It reflects the
@@ -10356,7 +10356,7 @@ public external abstract class HTMLOutputElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement)
  */
-public external abstract class HTMLProgressElement : HTMLElement {
+public abstract external class HTMLProgressElement : HTMLElement {
     /**
      * The value property of the HTMLProgressElement interface represents the current progress of the &lt;progress&gt;
      * element.
@@ -10418,7 +10418,7 @@ public external abstract class HTMLProgressElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement)
  */
-public external abstract class HTMLMeterElement : HTMLElement {
+public abstract external class HTMLMeterElement : HTMLElement {
     /**
      * The value property of the HTMLMeterElement interface represents the current value of the &lt;meter&gt; element as
      * a floating-point number. It reflects the element's value attribute. If no value is set, it is the
@@ -10509,7 +10509,7 @@ public external abstract class HTMLMeterElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement)
  */
-public external abstract class HTMLFieldSetElement : HTMLElement {
+public abstract external class HTMLFieldSetElement : HTMLElement {
     /**
      * The disabled property of the HTMLFieldSetElement interface is a boolean value that reflects the &lt;fieldset&gt;
      * element's disabled attribute, which indicates whether the control is disabled.
@@ -10631,7 +10631,7 @@ public external abstract class HTMLFieldSetElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLegendElement)
  */
-public external abstract class HTMLLegendElement : HTMLElement {
+public abstract external class HTMLLegendElement : HTMLElement {
     /**
      * The form read-only property of the HTMLLegendElement interface returns an HTMLFormElement object that owns the
      * HTMLFieldSetElement associated with this &lt;legend&gt;, or null if this legend is not associated with a
@@ -10669,7 +10669,7 @@ public external abstract class HTMLLegendElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectedContentElement)
  */
-public external abstract class HTMLSelectedContentElement : HTMLElement {
+public abstract external class HTMLSelectedContentElement : HTMLElement {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -10709,7 +10709,7 @@ public inline val SelectionMode.Companion.PRESERVE: SelectionMode get() = "prese
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState)
  */
-public external abstract class ValidityState : JsAny {
+public abstract external class ValidityState : JsAny {
     /**
      * The read-only valueMissing property of the ValidityState interface indicates if a required control, such as an
      * &lt;input&gt;, &lt;select&gt;, or &lt;textarea&gt;, has an empty value.
@@ -10807,7 +10807,7 @@ public external abstract class ValidityState : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent)
  */
-public external open class SubmitEvent : Event {
+public open external class SubmitEvent : Event {
     /**
      * The SubmitEvent() constructor creates and returns a new SubmitEvent object, which is used to represent a submit
      * event fired at an HTML form.
@@ -10850,7 +10850,7 @@ public fun SubmitEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent)
  */
-public external open class FormDataEvent : Event {
+public open external class FormDataEvent : Event {
     /**
      * The FormDataEvent() constructor creates a new FormDataEvent object.
      *
@@ -10891,7 +10891,7 @@ public fun FormDataEventInit(formData: FormData, bubbles: Boolean? = null, cance
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement)
  */
-public external abstract class HTMLDetailsElement : HTMLElement {
+public abstract external class HTMLDetailsElement : HTMLElement {
     /**
      * The name property of the HTMLDetailsElement interface reflects the name attribute of &lt;details&gt; elements. It
      * enables multiple &lt;details&gt; elements to be connected together, where only one of the &lt;details&gt;
@@ -10938,7 +10938,7 @@ public external abstract class HTMLDetailsElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement)
  */
-public external abstract class HTMLDialogElement : HTMLElement {
+public abstract external class HTMLDialogElement : HTMLElement {
     /**
      * The open property of the HTMLDialogElement interface is a boolean value reflecting the open HTML attribute,
      * indicating whether the &lt;dialog&gt; is available for interaction.
@@ -11023,7 +11023,7 @@ public external abstract class HTMLDialogElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement)
  */
-public external abstract class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptElement {
+public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptElement {
     /**
      * The type property of the HTMLScriptElement interface is a string that reflects the type of the script.
      *
@@ -11176,7 +11176,7 @@ public external abstract class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement)
  */
-public external abstract class HTMLTemplateElement : HTMLElement {
+public abstract external class HTMLTemplateElement : HTMLElement {
     /**
      * The content property of the HTMLTemplateElement interface returns the &lt;template&gt; element's template
      * contents as a DocumentFragment. This content's ownerDocument is a separate Document from the one that contains
@@ -11272,7 +11272,7 @@ public external abstract class HTMLTemplateElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement)
  */
-public external abstract class HTMLSlotElement : HTMLElement {
+public abstract external class HTMLSlotElement : HTMLElement {
     /**
      * The name property of the HTMLSlotElement interface returns or sets the slot name. A slot is a placeholder inside
      * a web component that users can fill with their own markup.
@@ -11342,7 +11342,7 @@ public fun AssignedNodesOptions(flatten: Boolean? = null): AssignedNodesOptions 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement)
  */
-public external abstract class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasElementOrOffscreenCanvas {
+public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasElementOrOffscreenCanvas {
     /**
      * The HTMLCanvasElement.width property is a positive integer reflecting the width HTML attribute of the
      * &lt;canvas&gt; element interpreted in CSS pixels. When the attribute is not specified, or if it is set to an
@@ -11462,7 +11462,7 @@ public inline val ImageSmoothingQuality.Companion.HIGH: ImageSmoothingQuality ge
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D)
  */
-public external abstract class CanvasRenderingContext2D : CanvasSettings, CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasUserInterface, CanvasText, CanvasDrawImage, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath, RenderingContext {
+public abstract external class CanvasRenderingContext2D : CanvasSettings, CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasUserInterface, CanvasText, CanvasDrawImage, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath, RenderingContext {
     /**
      * The CanvasRenderingContext2D.canvas property, part of the Canvas API, is a read-only reference to the
      * HTMLCanvasElement object that is associated with a given context.
@@ -12310,7 +12310,7 @@ public external interface CanvasPath : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasGradient)
  */
-public external abstract class CanvasGradient : JsAny {
+public abstract external class CanvasGradient : JsAny {
     /**
      * The CanvasGradient.addColorStop() method adds a new color stop, defined by an offset and a color, to a given
      * canvas gradient.
@@ -12326,7 +12326,7 @@ public external abstract class CanvasGradient : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasPattern)
  */
-public external abstract class CanvasPattern : JsAny {
+public abstract external class CanvasPattern : JsAny {
     /**
      * The CanvasPattern.setTransform() method uses a DOMMatrix object as the pattern's transformation matrix and
      * invokes it on the pattern.
@@ -12342,7 +12342,7 @@ public external abstract class CanvasPattern : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics)
  */
-public external abstract class TextMetrics : JsAny {
+public abstract external class TextMetrics : JsAny {
     /**
      * The read-only width property of the TextMetrics interface contains the text's advance width (the width of that
      * inline box) in CSS pixels.
@@ -12459,7 +12459,7 @@ public external abstract class TextMetrics : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D)
  */
-public external open class Path2D : CanvasPath {
+public open external class Path2D : CanvasPath {
     /**
      * The Path2D() constructor returns a newly instantiated Path2D object, optionally with another path as an argument
      * (creates a copy), or optionally with a string consisting of SVG path data.
@@ -12607,7 +12607,7 @@ public external open class Path2D : CanvasPath {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext)
  */
-public external abstract class ImageBitmapRenderingContext : RenderingContext, OffscreenRenderingContext {
+public abstract external class ImageBitmapRenderingContext : RenderingContext, OffscreenRenderingContext {
     /**
      * The ImageBitmapRenderingContext.canvas property, part of the Canvas API, is a read-only reference to the
      * HTMLCanvasElement or OffscreenCanvas object that is associated with the given context.
@@ -12661,7 +12661,7 @@ public inline val OffscreenRenderingContextId.Companion.WEBGPU: OffscreenRenderi
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)
  */
-public external open class OffscreenCanvas : EventTarget, UnionHTMLCanvasElementOrOffscreenCanvas {
+public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElementOrOffscreenCanvas {
     /**
      * The OffscreenCanvas() constructor returns a newly instantiated OffscreenCanvas object.
      *
@@ -12731,7 +12731,7 @@ public external open class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D)
  */
-public external abstract class OffscreenCanvasRenderingContext2D : CanvasSettings, CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasText, CanvasDrawImage, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath, OffscreenRenderingContext {
+public abstract external class OffscreenCanvasRenderingContext2D : CanvasSettings, CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasText, CanvasDrawImage, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath, OffscreenRenderingContext {
     /**
      * The CanvasRenderingContext2D.canvas property, part of the Canvas API, is a read-only reference to the
      * HTMLCanvasElement object that is associated with a given context.
@@ -12758,7 +12758,7 @@ public inline val PredefinedColorSpace.Companion.DISPLAY_P3_LINEAR: PredefinedCo
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry)
  */
-public external open class CustomElementRegistry : JsAny {
+public open external class CustomElementRegistry : JsAny {
     /**
      * The CustomElementRegistry() constructor creates a new CustomElementRegistry object for scoped usage.
      *
@@ -12831,7 +12831,7 @@ public fun ElementDefinitionOptions(extends: String? = null): ElementDefinitionO
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals)
  */
-public external abstract class ElementInternals : ARIAMixin {
+public abstract external class ElementInternals : ARIAMixin {
     /**
      * The shadowRoot read-only property of the ElementInternals interface returns the ShadowRoot for this element.
      *
@@ -13038,7 +13038,7 @@ public fun ValidityStateFlags(valueMissing: Boolean? = null, typeMismatch: Boole
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomStateSet)
  */
-public external abstract class CustomStateSet : JsAny {
+public abstract external class CustomStateSet : JsAny {
     // not printed yet: setlike
 }
 
@@ -13048,7 +13048,7 @@ public external abstract class CustomStateSet : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisibilityStateEntry)
  */
-public external abstract class VisibilityStateEntry : PerformanceEntry {
+public abstract external class VisibilityStateEntry : PerformanceEntry {
     override val name: String
     override val entryType: String
     override val startTime: Double
@@ -13060,7 +13060,7 @@ public external abstract class VisibilityStateEntry : PerformanceEntry {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation)
  */
-public external abstract class UserActivation : JsAny {
+public abstract external class UserActivation : JsAny {
     /**
      * The read-only hasBeenActive property of the UserActivation interface indicates whether the current window has
      * sticky user activation.
@@ -13084,7 +13084,7 @@ public external abstract class UserActivation : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent)
  */
-public external open class ToggleEvent : Event {
+public open external class ToggleEvent : Event {
     /**
      * The ToggleEvent() constructor creates a new ToggleEvent object.
      *
@@ -13145,7 +13145,7 @@ public fun ToggleEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent)
  */
-public external open class CommandEvent : Event {
+public open external class CommandEvent : Event {
     /**
      * The CommandEvent() constructor creates a new CommandEvent object.
      *
@@ -13238,7 +13238,7 @@ public external interface ElementContentEditable : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher)
  */
-public external open class CloseWatcher : EventTarget {
+public open external class CloseWatcher : EventTarget {
     /**
      * The CloseWatcher() constructor creates a new CloseWatcher object.
      *
@@ -13303,7 +13303,7 @@ public fun CloseWatcherOptions(signal: AbortSignal? = null): CloseWatcherOptions
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer)
  */
-public external open class DataTransfer : JsAny {
+public open external class DataTransfer : JsAny {
     /**
      * The DataTransfer constructor creates a new DataTransfer object instance.
      *
@@ -13397,7 +13397,7 @@ public external open class DataTransfer : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList)
  */
-public external abstract class DataTransferItemList : JsAny {
+public abstract external class DataTransferItemList : JsAny {
     /**
      * The length read-only property of the DataTransferItemList interface returns the number of items currently in the
      * drag item list.
@@ -13450,7 +13450,7 @@ public operator fun DataTransferItemList.get(index: Int): DataTransferItem? = ge
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem)
  */
-public external abstract class DataTransferItem : JsAny {
+public abstract external class DataTransferItem : JsAny {
     /**
      * The kind read-only property of the DataTransferItem interface returns the kind–a string or a file–of the object
      * representing the drag data item.
@@ -13493,7 +13493,7 @@ public external abstract class DataTransferItem : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent)
  */
-public external open class DragEvent : MouseEvent {
+public open external class DragEvent : MouseEvent {
     /**
      * This constructor is used to create a synthetic DragEvent object.
      *
@@ -13569,7 +13569,7 @@ public external interface PopoverTargetAttributes : JsAny {
     var popoverTargetAction: String
 }
 
-public external open class Origin : JsAny {
+public open external class Origin : JsAny {
     constructor()
     open val opaque: Boolean
     open fun isSameOrigin(other: Origin): Boolean
@@ -13586,7 +13586,7 @@ public external open class Origin : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window)
  */
-public external abstract class Window : EventTarget, GlobalEventHandlers, WindowEventHandlers, WindowOrWorkerGlobalScope, AnimationFrameProvider, WindowSessionStorage, WindowLocalStorage, MessageEventSource {
+public abstract external class Window : EventTarget, GlobalEventHandlers, WindowEventHandlers, WindowOrWorkerGlobalScope, AnimationFrameProvider, WindowSessionStorage, WindowLocalStorage, MessageEventSource {
     /**
      * The window read-only property of the Window interface points to the window object itself.
      *
@@ -14150,7 +14150,7 @@ public fun WindowPostMessageOptions(transfer: JsArray<JsAny>? = null, targetOrig
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BarProp)
  */
-public external abstract class BarProp : JsAny {
+public abstract external class BarProp : JsAny {
     /**
      * The visible read-only property of the BarProp interface returns true if the user interface element it represents
      * is visible.
@@ -14167,7 +14167,7 @@ public external abstract class BarProp : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location)
  */
-public external abstract class Location : JsAny {
+public abstract external class Location : JsAny {
     /**
      * The href property of the Location interface is a stringifier that returns a string containing the whole URL, and
      * allows the href to be updated.
@@ -14294,7 +14294,7 @@ public inline val ScrollRestoration.Companion.MANUAL: ScrollRestoration get() = 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History)
  */
-public external abstract class History : JsAny {
+public abstract external class History : JsAny {
     /**
      * The length read-only property of the History interface returns an integer representing the number of entries in
      * the session history, including the currently loaded page.
@@ -14366,7 +14366,7 @@ public external abstract class History : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation)
  */
-public external abstract class Navigation : EventTarget {
+public abstract external class Navigation : EventTarget {
     /**
      * The entries() method of the Navigation interface returns an array of NavigationHistoryEntry objects representing
      * all existing history entries.
@@ -14564,7 +14564,7 @@ public inline val NavigationType.Companion.TRAVERSE: NavigationType get() = "tra
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry)
  */
-public external abstract class NavigationHistoryEntry : EventTarget {
+public abstract external class NavigationHistoryEntry : EventTarget {
     /**
      * The url read-only property of the NavigationHistoryEntry interface returns the absolute URL of this history
      * entry. If the entry corresponds to a different Document than the current one (like sameDocument property is
@@ -14635,7 +14635,7 @@ public external abstract class NavigationHistoryEntry : EventTarget {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition)
  */
-public external abstract class NavigationTransition : JsAny {
+public abstract external class NavigationTransition : JsAny {
     /**
      * The navigationType read-only property of the NavigationTransition interface returns the type of the ongoing
      * navigation.
@@ -14684,7 +14684,7 @@ public external abstract class NavigationTransition : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation)
  */
-public external abstract class NavigationActivation : JsAny {
+public abstract external class NavigationActivation : JsAny {
     /**
      * The from read-only property of the NavigationActivation interface contains a NavigationHistoryEntry object
      * representing the history entry for the outgoing ("from") document in the navigation.
@@ -14719,7 +14719,7 @@ public external abstract class NavigationActivation : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent)
  */
-public external open class NavigateEvent : Event {
+public open external class NavigateEvent : Event {
     /**
      * The NavigateEvent() constructor creates a new NavigateEvent object instance.
      *
@@ -14911,7 +14911,7 @@ public inline val NavigationScrollBehavior.Companion.MANUAL: NavigationScrollBeh
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPrecommitController)
  */
-public external abstract class NavigationPrecommitController : JsAny {
+public abstract external class NavigationPrecommitController : JsAny {
     /**
      * The redirect() method of the NavigationPrecommitController interface redirects the browser to a specified URL and
      * specifies history behavior and any desired state information.
@@ -14935,7 +14935,7 @@ public external abstract class NavigationPrecommitController : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination)
  */
-public external abstract class NavigationDestination : JsAny {
+public abstract external class NavigationDestination : JsAny {
     /**
      * The url read-only property of the NavigationDestination interface returns the URL being navigated to.
      *
@@ -14991,7 +14991,7 @@ public external abstract class NavigationDestination : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent)
  */
-public external open class NavigationCurrentEntryChangeEvent : Event {
+public open external class NavigationCurrentEntryChangeEvent : Event {
     /**
      * The NavigationCurrentEntryChangeEvent() constructor creates a new NavigationCurrentEntryChangeEvent object.
      *
@@ -15043,7 +15043,7 @@ public fun NavigationCurrentEntryChangeEventInit(from: NavigationHistoryEntry, b
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent)
  */
-public external open class PopStateEvent : Event {
+public open external class PopStateEvent : Event {
     /**
      * The PopStateEvent() constructor creates a new PopStateEvent object.
      *
@@ -15093,7 +15093,7 @@ public fun PopStateEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent)
  */
-public external open class HashChangeEvent : Event {
+public open external class HashChangeEvent : Event {
     /**
      * The HashChangeEvent() constructor creates a new HashChangeEvent object, that is used by the hashchange event
      * fired at the window object when the fragment of the URL changes.
@@ -15144,7 +15144,7 @@ public fun HashChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent)
  */
-public external open class PageSwapEvent : Event {
+public open external class PageSwapEvent : Event {
     /**
      * The PageSwapEvent() constructor creates a new PageSwapEvent object instance.
      *
@@ -15184,7 +15184,7 @@ public fun PageSwapEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageRevealEvent)
  */
-public external open class PageRevealEvent : Event {
+public open external class PageRevealEvent : Event {
     /**
      * The PageRevealEvent() constructor creates a new PageRevealEvent object instance.
      *
@@ -15214,7 +15214,7 @@ public fun PageRevealEventInit(bubbles: Boolean? = null, cancelable: Boolean? = 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent)
  */
-public external open class PageTransitionEvent : Event {
+public open external class PageTransitionEvent : Event {
     /**
      * The PageTransitionEvent() constructor creates a new PageTransitionEvent object, that is used by the pageshow or
      * pagehide events, fired at the window object when a page is loaded or unloaded.
@@ -15255,7 +15255,7 @@ public fun PageTransitionEventInit(bubbles: Boolean? = null, cancelable: Boolean
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BeforeUnloadEvent)
  */
-public external abstract class BeforeUnloadEvent : Event {
+public abstract external class BeforeUnloadEvent : Event {
 
     companion object {
         val NONE: Short
@@ -15271,7 +15271,7 @@ public external abstract class BeforeUnloadEvent : Event {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasonDetails)
  */
-public external abstract class NotRestoredReasonDetails : JsAny {
+public abstract external class NotRestoredReasonDetails : JsAny {
     /**
      * The reason read-only property of the NotRestoredReasonDetails interface returns a string describing a reason that
      * the page was blocked from using the back/forward cache (bfcache).
@@ -15295,7 +15295,7 @@ public external abstract class NotRestoredReasonDetails : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons)
  */
-public external abstract class NotRestoredReasons : JsAny {
+public abstract external class NotRestoredReasons : JsAny {
     /**
      * The src read-only property of the NotRestoredReasons interface returns a string representing the path to the
      * source of the &lt;iframe&gt; the document is contained in (for example &lt;iframe src="b.html"&gt;).
@@ -15360,7 +15360,7 @@ public external abstract class NotRestoredReasons : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent)
  */
-public external open class ErrorEvent : Event {
+public open external class ErrorEvent : Event {
     /**
      * The ErrorEvent() constructor creates a new ErrorEvent object.
      *
@@ -15441,7 +15441,7 @@ public fun ErrorEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent)
  */
-public external open class PromiseRejectionEvent : Event {
+public open external class PromiseRejectionEvent : Event {
     /**
      * The PromiseRejectionEvent() constructor returns a new PromiseRejectionEvent object, which represents events fired
      * when a JavaScript Promise is rejected.
@@ -16193,7 +16193,7 @@ public fun GetHTMLOptions(serializableShadowRoots: Boolean? = null, shadowRoots:
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser)
  */
-public external open class DOMParser : JsAny {
+public open external class DOMParser : JsAny {
     /**
      * The DOMParser() constructor creates a new DOMParser object. This object can be used to parse the text of a
      * document using the parseFromString() method.
@@ -16228,7 +16228,7 @@ public inline val DOMParserSupportedType.Companion.IMAGE_SVG_XML: DOMParserSuppo
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer)
  */
-public external open class XMLSerializer : JsAny {
+public open external class XMLSerializer : JsAny {
     /**
      * The XMLSerializer() constructor creates a new XMLSerializer.
      *
@@ -16251,7 +16251,7 @@ public external open class XMLSerializer : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer)
  */
-public external open class Sanitizer : JsAny {
+public open external class Sanitizer : JsAny {
     /**
      * The Sanitizer() constructor creates a new Sanitizer object, which can be used to filter unwanted elements and
      * attributes from HTML or documents before they are inserted/parsed into the DOM.
@@ -16466,7 +16466,7 @@ public fun SanitizerConfig(elements: JsArray<JsAny>? = null, removeElements: JsA
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator)
  */
-public external abstract class Navigator : NavigatorID, NavigatorLanguage, NavigatorOnLine, NavigatorContentUtils, NavigatorCookies, NavigatorPlugins, NavigatorConcurrentHardware {
+public abstract external class Navigator : NavigatorID, NavigatorLanguage, NavigatorOnLine, NavigatorContentUtils, NavigatorCookies, NavigatorPlugins, NavigatorConcurrentHardware {
     /**
      * The read-only userActivation property of the Navigator interface returns a UserActivation object which contains
      * information about the current window's user activation state.
@@ -16738,7 +16738,7 @@ public external interface NavigatorPlugins : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PluginArray)
  */
-public external abstract class PluginArray : ItemArrayLike<Plugin> {
+public abstract external class PluginArray : ItemArrayLike<Plugin> {
     open fun refresh()
     override val length: Int
     override fun item(index: Int): Plugin?
@@ -16757,7 +16757,7 @@ public operator fun PluginArray.get(name: String): Plugin? = getProperty(this, n
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MimeTypeArray)
  */
-public external abstract class MimeTypeArray : ItemArrayLike<MimeType> {
+public abstract external class MimeTypeArray : ItemArrayLike<MimeType> {
     override val length: Int
     override fun item(index: Int): MimeType?
     open fun namedItem(name: String): MimeType?
@@ -16774,7 +16774,7 @@ public operator fun MimeTypeArray.get(name: String): MimeType? = getProperty(thi
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Plugin)
  */
-public external abstract class Plugin : ItemArrayLike<MimeType> {
+public abstract external class Plugin : ItemArrayLike<MimeType> {
     open val name: String
     open val description: String
     open val filename: String
@@ -16795,7 +16795,7 @@ public operator fun Plugin.get(name: String): MimeType? = getProperty(this, name
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MimeType)
  */
-public external abstract class MimeType : JsAny {
+public abstract external class MimeType : JsAny {
     open val type: String
     open val description: String
     open val suffixes: String
@@ -16825,7 +16825,7 @@ public fun ImageDataSettings(colorSpace: PredefinedColorSpace? = null, pixelForm
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData)
  */
-public external open class ImageData : TexImageSource {
+public open external class ImageData : TexImageSource {
     /**
      * The ImageData() constructor returns a newly instantiated ImageData object built from the typed array given and
      * having the specified width and height.
@@ -16887,7 +16887,7 @@ public external open class ImageData : TexImageSource {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap)
  */
-public external abstract class ImageBitmap : CanvasImageSource, TexImageSource {
+public abstract external class ImageBitmap : CanvasImageSource, TexImageSource {
     /**
      * The ImageBitmap.width read-only property returns the ImageBitmap object's width in CSS pixels.
      *
@@ -16986,7 +16986,7 @@ public external interface AnimationFrameProvider : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
  */
-public external open class MessageEvent : Event {
+public open external class MessageEvent : Event {
     /**
      * The MessageEvent() constructor creates a new MessageEvent object.
      *
@@ -17066,7 +17066,7 @@ public fun MessageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nul
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource)
  */
-public external open class EventSource : EventTarget {
+public open external class EventSource : EventTarget {
     /**
      * The EventSource() constructor returns a newly-created EventSource, which represents a remote resource.
      *
@@ -17147,7 +17147,7 @@ public fun EventSourceInit(withCredentials: Boolean? = null): EventSourceInit = 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageChannel)
  */
-public external open class MessageChannel : JsAny {
+public open external class MessageChannel : JsAny {
     /**
      * The MessageChannel() constructor of the MessageChannel interface returns a new MessageChannel object with two new
      * MessagePort objects.
@@ -17195,7 +17195,7 @@ public external interface MessageEventTarget : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort)
  */
-public external abstract class MessagePort : EventTarget, MessageEventTarget, MessageEventSource, UnionClientOrMessagePortOrServiceWorker {
+public abstract external class MessagePort : EventTarget, MessageEventTarget, MessageEventSource, UnionClientOrMessagePortOrServiceWorker {
     /**
      * The postMessage() method of the MessagePort interface sends a message from the port, and optionally, transfers
      * ownership of objects to other browsing contexts.
@@ -17245,7 +17245,7 @@ public fun StructuredSerializeOptions(transfer: JsArray<JsAny>? = null): Structu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel)
  */
-public external open class BroadcastChannel : EventTarget {
+public open external class BroadcastChannel : EventTarget {
     /**
      * The BroadcastChannel() constructor creates a new BroadcastChannel and connects it to the underlying channel.
      *
@@ -17303,7 +17303,7 @@ public external open class BroadcastChannel : EventTarget {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope)
  */
-public external abstract class WorkerGlobalScope : EventTarget, WindowOrWorkerGlobalScope {
+public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGlobalScope {
     /**
      * The self read-only property of the WorkerGlobalScope interface returns a reference to the WorkerGlobalScope
      * itself. Most of the time it is a specific scope like DedicatedWorkerGlobalScope, SharedWorkerGlobalScope, or
@@ -17392,7 +17392,7 @@ public external abstract class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope)
  */
-public external abstract class DedicatedWorkerGlobalScope : WorkerGlobalScope, AnimationFrameProvider, MessageEventTarget {
+public abstract external class DedicatedWorkerGlobalScope : WorkerGlobalScope, AnimationFrameProvider, MessageEventTarget {
     /**
      * The name read-only property of the DedicatedWorkerGlobalScope interface returns the name that the Worker was
      * (optionally) given when it was created. This is the name that the Worker() constructor can pass to get a
@@ -17435,7 +17435,7 @@ public external abstract class DedicatedWorkerGlobalScope : WorkerGlobalScope, A
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope)
  */
-public external abstract class SharedWorkerGlobalScope : WorkerGlobalScope {
+public abstract external class SharedWorkerGlobalScope : WorkerGlobalScope {
     /**
      * The name read-only property of the SharedWorkerGlobalScope interface returns the name that the SharedWorker was
      * (optionally) given when it was created. This is the name that the SharedWorker() constructor can pass to get a
@@ -17476,7 +17476,7 @@ public external interface AbstractWorker : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker)
  */
-public external open class Worker : EventTarget, AbstractWorker, MessageEventTarget {
+public open external class Worker : EventTarget, AbstractWorker, MessageEventTarget {
     /**
      * The Worker() constructor creates a Worker object that executes the classic script or module at the specified URL.
      *
@@ -17561,7 +17561,7 @@ public inline val WorkerType.Companion.MODULE: WorkerType get() = "module".toJsS
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker)
  */
-public external open class SharedWorker : EventTarget, AbstractWorker {
+public open external class SharedWorker : EventTarget, AbstractWorker {
     /**
      * The SharedWorker() constructor creates a SharedWorker object that executes the script at the specified URL.
      *
@@ -17626,7 +17626,7 @@ public external interface NavigatorConcurrentHardware : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator)
  */
-public external abstract class WorkerNavigator : NavigatorID, NavigatorLanguage, NavigatorOnLine, NavigatorConcurrentHardware {
+public abstract external class WorkerNavigator : NavigatorID, NavigatorLanguage, NavigatorOnLine, NavigatorConcurrentHardware {
     /**
      * The serviceWorker read-only property of the WorkerNavigator interface returns the ServiceWorkerContainer object
      * for the associated document, which provides access to registration, removal, upgrade, and communication with the
@@ -17646,7 +17646,7 @@ public external abstract class WorkerNavigator : NavigatorID, NavigatorLanguage,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation)
  */
-public external abstract class WorkerLocation : JsAny {
+public abstract external class WorkerLocation : JsAny {
     /**
      * The href property of a WorkerLocation object returns a string containing the serialized URL for the worker's
      * location.
@@ -17720,7 +17720,7 @@ public external abstract class WorkerLocation : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkletGlobalScope)
  */
-public external abstract class WorkletGlobalScope : JsAny
+public abstract external class WorkletGlobalScope : JsAny
 
 /**
  * The Worklet interface is a lightweight version of Web Workers and gives developers access to low-level parts of the
@@ -17730,7 +17730,7 @@ public external abstract class WorkletGlobalScope : JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet)
  */
-public external abstract class Worklet : JsAny {
+public abstract external class Worklet : JsAny {
     /**
      * The addModule() method of the Worklet interface loads the module in the given JavaScript file and adds it to the
      * current Worklet.
@@ -17754,7 +17754,7 @@ public fun WorkletOptions(credentials: RequestCredentials? = null): WorkletOptio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage)
  */
-public external abstract class Storage : JsAny {
+public abstract external class Storage : JsAny {
     /**
      * The length read-only property of the Storage interface returns the number of data items stored in a given Storage
      * object.
@@ -17836,7 +17836,7 @@ public external interface WindowLocalStorage : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent)
  */
-public external open class StorageEvent : Event {
+public open external class StorageEvent : Event {
     /**
      * The StorageEvent() constructor creates a new StorageEvent object.
      *
@@ -17924,7 +17924,7 @@ public fun StorageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nul
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMarqueeElement)
  */
-public external abstract class HTMLMarqueeElement : HTMLElement {
+public abstract external class HTMLMarqueeElement : HTMLElement {
     open var behavior: String
     open var bgColor: String
     open var direction: String
@@ -17969,7 +17969,7 @@ public external abstract class HTMLMarqueeElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFrameSetElement)
  */
-public external abstract class HTMLFrameSetElement : HTMLElement, WindowEventHandlers {
+public abstract external class HTMLFrameSetElement : HTMLElement, WindowEventHandlers {
     open var cols: String
     open var rows: String
 
@@ -17995,7 +17995,7 @@ public external abstract class HTMLFrameSetElement : HTMLElement, WindowEventHan
     }
 }
 
-public external abstract class HTMLFrameElement : HTMLElement {
+public abstract external class HTMLFrameElement : HTMLElement {
     open var name: String
     open var scrolling: String
     open var src: String
@@ -18029,7 +18029,7 @@ public external abstract class HTMLFrameElement : HTMLElement {
     }
 }
 
-public external abstract class HTMLDirectoryElement : HTMLElement {
+public abstract external class HTMLDirectoryElement : HTMLElement {
     open var compact: Boolean
 
     companion object {
@@ -18062,7 +18062,7 @@ public external abstract class HTMLDirectoryElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFontElement)
  */
-public external abstract class HTMLFontElement : HTMLElement {
+public abstract external class HTMLFontElement : HTMLElement {
     /**
      * The obsolete HTMLFontElement.color property is a string that reflects the color HTML attribute, containing either
      * a named color or a color specified in the hexadecimal #RRGGBB format.
@@ -18124,7 +18124,7 @@ public external abstract class HTMLFontElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLParamElement)
  */
-public external abstract class HTMLParamElement : HTMLElement {
+public abstract external class HTMLParamElement : HTMLElement {
     open var name: String
     open var value: String
     open var type: String
@@ -18152,7 +18152,7 @@ public external abstract class HTMLParamElement : HTMLElement {
     }
 }
 
-public external abstract class External : JsAny {
+public abstract external class External : JsAny {
     open fun AddSearchProvider()
     open fun IsSearchProviderInstalled()
 }

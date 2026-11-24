@@ -18,7 +18,7 @@ import org.w3c.dom.css.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement)
  */
-public external abstract class SVGElement : Element, ElementCSSInlineStyle, GlobalEventHandlers, HTMLOrSVGOrMathMLElement {
+public abstract external class SVGElement : Element, ElementCSSInlineStyle, GlobalEventHandlers, HTMLOrSVGOrMathMLElement {
     /**
      * The ownerSVGElement read-only property of the SVGElement interface reflects the nearest ancestor &lt;svg&gt;
      * element. null if the given element is the outermost &lt;svg&gt; element.
@@ -78,7 +78,7 @@ public fun SVGBoundingBoxOptions(fill: Boolean? = null, stroke: Boolean? = null,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement)
  */
-public external abstract class SVGGraphicsElement : SVGElement, SVGTests {
+public abstract external class SVGGraphicsElement : SVGElement, SVGTests {
     /**
      * The transform read-only property of the SVGGraphicsElement interface reflects the computed value of the transform
      * property and its corresponding transform attribute of the given element.
@@ -140,7 +140,7 @@ public external abstract class SVGGraphicsElement : SVGElement, SVGTests {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement)
  */
-public external abstract class SVGGeometryElement : SVGGraphicsElement {
+public abstract external class SVGGeometryElement : SVGGraphicsElement {
     /**
      * The SVGGeometryElement.pathLength property reflects the pathLength attribute and returns the total length of the
      * path, in user units.
@@ -209,7 +209,7 @@ public external abstract class SVGGeometryElement : SVGGraphicsElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumber)
  */
-public external abstract class SVGNumber : JsAny {
+public abstract external class SVGNumber : JsAny {
     /**
      * The value property of the SVGNumber interface represents the number.
      *
@@ -223,7 +223,7 @@ public external abstract class SVGNumber : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength)
  */
-public external abstract class SVGLength : JsAny {
+public abstract external class SVGLength : JsAny {
     /**
      * The unitType property of the SVGLength interface represents the type of the value as specified by one of the
      * SVG_LENGTHTYPE_* constants defined on this interface.
@@ -292,7 +292,7 @@ public external abstract class SVGLength : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle)
  */
-public external abstract class SVGAngle : JsAny {
+public abstract external class SVGAngle : JsAny {
     /**
      * The unitType property of the SVGAngle interface is one of the unit type constants and represents the units in
      * which this angle's value is expressed.
@@ -354,7 +354,7 @@ public external abstract class SVGAngle : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList)
  */
-public external abstract class SVGNumberList : JsAny {
+public abstract external class SVGNumberList : JsAny {
     /**
      * The length property of the SVGNumberList interface returns the number of items in the list. It is an alias of
      * numberOfItems to make SVG lists more array-like.
@@ -443,7 +443,7 @@ public operator fun SVGNumberList.set(index: Int, newItem: SVGNumber) { setPrope
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList)
  */
-public external abstract class SVGLengthList : JsAny {
+public abstract external class SVGLengthList : JsAny {
     /**
      * The length property of the SVGLengthList interface returns the number of items in the list. It is an alias of
      * numberOfItems to make SVG lists more array-like.
@@ -531,7 +531,7 @@ public operator fun SVGLengthList.set(index: Int, newItem: SVGLength) { setPrope
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList)
  */
-public external abstract class SVGStringList : JsAny {
+public abstract external class SVGStringList : JsAny {
     /**
      * The length property of the SVGStringList interface returns the number of items in the list. It is an alias of
      * numberOfItems to make SVG lists more array-like.
@@ -617,7 +617,7 @@ public operator fun SVGStringList.set(index: Int, newItem: String) { setStringPr
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean)
  */
-public external abstract class SVGAnimatedBoolean : JsAny {
+public abstract external class SVGAnimatedBoolean : JsAny {
     /**
      * The baseVal property of the SVGAnimatedBoolean interface is the value of the associated animatable boolean SVG
      * attribute in its base (none-animated) state. It reflects the value of the associated animatable boolean attribute
@@ -643,7 +643,7 @@ public external abstract class SVGAnimatedBoolean : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration)
  */
-public external abstract class SVGAnimatedEnumeration : JsAny {
+public abstract external class SVGAnimatedEnumeration : JsAny {
     /**
      * The baseVal property of the SVGAnimatedEnumeration interface represents the value of an SVG enumeration.
      *
@@ -665,7 +665,7 @@ public external abstract class SVGAnimatedEnumeration : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger)
  */
-public external abstract class SVGAnimatedInteger : JsAny {
+public abstract external class SVGAnimatedInteger : JsAny {
     /**
      * The baseVal property of the SVGAnimatedInteger interface represents the base (non-animated) value of an
      * animatable &lt;integer&gt;.
@@ -688,7 +688,7 @@ public external abstract class SVGAnimatedInteger : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber)
  */
-public external abstract class SVGAnimatedNumber : JsAny {
+public abstract external class SVGAnimatedNumber : JsAny {
     /**
      * The baseVal property of the SVGAnimatedNumber interface represents the base (non-animated) value of an animatable
      * numeric attribute.
@@ -711,7 +711,7 @@ public external abstract class SVGAnimatedNumber : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength)
  */
-public external abstract class SVGAnimatedLength : JsAny {
+public abstract external class SVGAnimatedLength : JsAny {
     /**
      * The baseVal property of the SVGAnimatedLength interface contains the initial value of an SVG enumeration.
      *
@@ -733,7 +733,7 @@ public external abstract class SVGAnimatedLength : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle)
  */
-public external abstract class SVGAnimatedAngle : JsAny {
+public abstract external class SVGAnimatedAngle : JsAny {
     /**
      * The baseVal read-only property of the SVGAnimatedAngle interface represents the base (non-animated) value of the
      * associated &lt;angle&gt; on an SVG element. This property is used to retrieve the static value of the
@@ -759,7 +759,7 @@ public external abstract class SVGAnimatedAngle : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString)
  */
-public external abstract class SVGAnimatedString : JsAny {
+public abstract external class SVGAnimatedString : JsAny {
     /**
      * The baseVal property of the SVGAnimatedString interface gets or sets the base value of the given attribute.
      *
@@ -781,7 +781,7 @@ public external abstract class SVGAnimatedString : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect)
  */
-public external abstract class SVGAnimatedRect : JsAny {
+public abstract external class SVGAnimatedRect : JsAny {
     /**
      * The baseVal read-only property of the SVGAnimatedRect interface represents the current non-animated value of the
      * viewBox attribute of an SVG element.
@@ -805,7 +805,7 @@ public external abstract class SVGAnimatedRect : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList)
  */
-public external abstract class SVGAnimatedNumberList : JsAny {
+public abstract external class SVGAnimatedNumberList : JsAny {
     /**
      * The baseVal read-only property of the SVGAnimatedNumberList interface represents the base (non-animated) value of
      * an animatable attribute that accepts a list of &lt;number&gt; values.
@@ -828,7 +828,7 @@ public external abstract class SVGAnimatedNumberList : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList)
  */
-public external abstract class SVGAnimatedLengthList : JsAny {
+public abstract external class SVGAnimatedLengthList : JsAny {
     /**
      * The baseVal read-only property of the SVGAnimatedLengthList interface represents the base (non-animated) value of
      * an animatable attribute that accepts a list of &lt;length&gt;, &lt;percentage&gt;, or &lt;number&gt; values.
@@ -852,7 +852,7 @@ public external abstract class SVGAnimatedLengthList : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUnitTypes)
  */
-public external abstract class SVGUnitTypes : JsAny {
+public abstract external class SVGUnitTypes : JsAny {
 
     companion object {
         val SVG_UNIT_TYPE_UNKNOWN: Short
@@ -915,7 +915,7 @@ public external interface SVGURIReference : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement)
  */
-public external abstract class SVGSVGElement : SVGGraphicsElement, SVGFitToViewBox, WindowEventHandlers {
+public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewBox, WindowEventHandlers {
     /**
      * The x read-only property of the SVGSVGElement interface describes the horizontal coordinate of the position of
      * that SVG as an SVGAnimatedLength. When an &lt;svg&gt; is nested within another &lt;svg&gt;, the horizontal
@@ -1098,7 +1098,7 @@ public external abstract class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGElement)
  */
-public external abstract class SVGGElement : SVGGraphicsElement {
+public abstract external class SVGGElement : SVGGraphicsElement {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -1127,7 +1127,7 @@ public external abstract class SVGGElement : SVGGraphicsElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGDefsElement)
  */
-public external abstract class SVGDefsElement : SVGGraphicsElement {
+public abstract external class SVGDefsElement : SVGGraphicsElement {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -1156,7 +1156,7 @@ public external abstract class SVGDefsElement : SVGGraphicsElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGDescElement)
  */
-public external abstract class SVGDescElement : SVGElement {
+public abstract external class SVGDescElement : SVGElement {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -1185,7 +1185,7 @@ public external abstract class SVGDescElement : SVGElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMetadataElement)
  */
-public external abstract class SVGMetadataElement : SVGElement {
+public abstract external class SVGMetadataElement : SVGElement {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -1214,7 +1214,7 @@ public external abstract class SVGMetadataElement : SVGElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTitleElement)
  */
-public external abstract class SVGTitleElement : SVGElement {
+public abstract external class SVGTitleElement : SVGElement {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -1243,7 +1243,7 @@ public external abstract class SVGTitleElement : SVGElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSymbolElement)
  */
-public external abstract class SVGSymbolElement : SVGGraphicsElement, SVGFitToViewBox {
+public abstract external class SVGSymbolElement : SVGGraphicsElement, SVGFitToViewBox {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -1272,7 +1272,7 @@ public external abstract class SVGSymbolElement : SVGGraphicsElement, SVGFitToVi
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement)
  */
-public external abstract class SVGUseElement : SVGGraphicsElement, SVGURIReference {
+public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReference {
     /**
      * The x read-only property of the SVGUseElement interface describes the x-axis coordinate of the start point of the
      * referenced element as an SVGAnimatedLength. It reflects the computed value of the x attribute on the &lt;use&gt;
@@ -1334,7 +1334,7 @@ public external abstract class SVGUseElement : SVGGraphicsElement, SVGURIReferen
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSwitchElement)
  */
-public external abstract class SVGSwitchElement : SVGGraphicsElement {
+public abstract external class SVGSwitchElement : SVGGraphicsElement {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -1367,7 +1367,7 @@ public external interface GetSVGDocument : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement)
  */
-public external abstract class SVGStyleElement : SVGElement, LinkStyle {
+public abstract external class SVGStyleElement : SVGElement, LinkStyle {
     /**
      * The SVGStyleElement.type property returns the type of the current style. The value reflects the associated SVG
      * &lt;style&gt; element's type attribute.
@@ -1430,7 +1430,7 @@ public external abstract class SVGStyleElement : SVGElement, LinkStyle {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform)
  */
-public external abstract class SVGTransform : JsAny {
+public abstract external class SVGTransform : JsAny {
     /**
      * The type read-only property of the SVGTransform interface represents the type of transformation applied,
      * specified by one of the SVG_TRANSFORM_* constants defined on this interface.
@@ -1518,7 +1518,7 @@ public external abstract class SVGTransform : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList)
  */
-public external abstract class SVGTransformList : JsAny {
+public abstract external class SVGTransformList : JsAny {
     /**
      * The length read-only property of the SVGTransformList interface represents the number of items in the list.
      *
@@ -1613,7 +1613,7 @@ public operator fun SVGTransformList.set(index: Int, newItem: SVGTransform) { se
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList)
  */
-public external abstract class SVGAnimatedTransformList : JsAny {
+public abstract external class SVGAnimatedTransformList : JsAny {
     /**
      * The baseVal read-only property of the SVGAnimatedTransformList interface represents the non-animated value of the
      * transform attribute of an SVG element.
@@ -1636,7 +1636,7 @@ public external abstract class SVGAnimatedTransformList : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio)
  */
-public external abstract class SVGPreserveAspectRatio : JsAny {
+public abstract external class SVGPreserveAspectRatio : JsAny {
     /**
      * The align property of the SVGPreserveAspectRatio interface reflects the type of the alignment value as specified
      * by one of the SVG_PRESERVEASPECTRATIO_* constants defined on this interface.
@@ -1677,7 +1677,7 @@ public external abstract class SVGPreserveAspectRatio : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio)
  */
-public external abstract class SVGAnimatedPreserveAspectRatio : JsAny {
+public abstract external class SVGAnimatedPreserveAspectRatio : JsAny {
     /**
      * The baseVal read-only property of the SVGAnimatedPreserveAspectRatio interface represents the base (non-animated)
      * value of the preserveAspectRatio attribute of an SVG element.
@@ -1701,7 +1701,7 @@ public external abstract class SVGAnimatedPreserveAspectRatio : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement)
  */
-public external abstract class SVGRectElement : SVGGeometryElement {
+public abstract external class SVGRectElement : SVGGeometryElement {
     /**
      * The x read-only property of the SVGRectElement interface describes the horizontal coordinate of the position of
      * an SVG rectangle as a SVGAnimatedLength. The &lt;coordinate&gt; is a length in the user coordinate system that is
@@ -1785,7 +1785,7 @@ public external abstract class SVGRectElement : SVGGeometryElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement)
  */
-public external abstract class SVGCircleElement : SVGGeometryElement {
+public abstract external class SVGCircleElement : SVGGeometryElement {
     /**
      * The cx read-only property of the SVGCircleElement interface reflects the cx attribute of a &lt;circle&gt; element
      * and by that defines the x-coordinate of the circle's center.&lt;
@@ -1837,7 +1837,7 @@ public external abstract class SVGCircleElement : SVGGeometryElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement)
  */
-public external abstract class SVGEllipseElement : SVGGeometryElement {
+public abstract external class SVGEllipseElement : SVGGeometryElement {
     /**
      * The cx read-only property of the SVGEllipseElement interface describes the x-axis coordinate of the center of the
      * ellipse as an SVGAnimatedLength. It reflects the computed value of the cx attribute on the &lt;ellipse&gt;
@@ -1900,7 +1900,7 @@ public external abstract class SVGEllipseElement : SVGGeometryElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement)
  */
-public external abstract class SVGLineElement : SVGGeometryElement {
+public abstract external class SVGLineElement : SVGGeometryElement {
     /**
      * The x1 read-only property of the SVGLineElement interface describes the start of the SVG line along the x-axis as
      * an SVGAnimatedLength. It reflects the &lt;line&gt; element's x1 geometric attribute.
@@ -1980,7 +1980,7 @@ public external interface SVGAnimatedPoints : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList)
  */
-public external abstract class SVGPointList : JsAny {
+public abstract external class SVGPointList : JsAny {
     /**
      * The length read-only property of the SVGPointList interface returns the number of items in the list.
      *
@@ -2056,7 +2056,7 @@ public operator fun SVGPointList.set(index: Int, newItem: DOMPoint) { setPropert
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolylineElement)
  */
-public external abstract class SVGPolylineElement : SVGGeometryElement, SVGAnimatedPoints {
+public abstract external class SVGPolylineElement : SVGGeometryElement, SVGAnimatedPoints {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -2086,7 +2086,7 @@ public external abstract class SVGPolylineElement : SVGGeometryElement, SVGAnima
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolygonElement)
  */
-public external abstract class SVGPolygonElement : SVGGeometryElement, SVGAnimatedPoints {
+public abstract external class SVGPolygonElement : SVGGeometryElement, SVGAnimatedPoints {
 
     companion object {
         val ELEMENT_NODE: Short
@@ -2116,7 +2116,7 @@ public external abstract class SVGPolygonElement : SVGGeometryElement, SVGAnimat
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement)
  */
-public external abstract class SVGTextContentElement : SVGGraphicsElement {
+public abstract external class SVGTextContentElement : SVGGraphicsElement {
     /**
      * The textLength read-only property of the SVGTextContentElement interface reflects the textLength attribute of the
      * given element.
@@ -2231,7 +2231,7 @@ public external abstract class SVGTextContentElement : SVGGraphicsElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement)
  */
-public external abstract class SVGTextPositioningElement : SVGTextContentElement {
+public abstract external class SVGTextPositioningElement : SVGTextContentElement {
     /**
      * The x read-only property of the SVGTextPositioningElement interface describes the x-axis coordinate of the
      * SVGTextElement or SVGTSpanElement as an SVGAnimatedLengthList. It reflects the x attribute's horizontal position
@@ -2306,7 +2306,7 @@ public external abstract class SVGTextPositioningElement : SVGTextContentElement
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextElement)
  */
-public external abstract class SVGTextElement : SVGTextPositioningElement {
+public abstract external class SVGTextElement : SVGTextPositioningElement {
 
     companion object {
         val LENGTHADJUST_UNKNOWN: Short
@@ -2338,7 +2338,7 @@ public external abstract class SVGTextElement : SVGTextPositioningElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTSpanElement)
  */
-public external abstract class SVGTSpanElement : SVGTextPositioningElement {
+public abstract external class SVGTSpanElement : SVGTextPositioningElement {
 
     companion object {
         val LENGTHADJUST_UNKNOWN: Short
@@ -2370,7 +2370,7 @@ public external abstract class SVGTSpanElement : SVGTextPositioningElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement)
  */
-public external abstract class SVGTextPathElement : SVGTextContentElement, SVGURIReference {
+public abstract external class SVGTextPathElement : SVGTextContentElement, SVGURIReference {
     /**
      * The startOffset read-only property of the SVGTextPathElement interface reflects the X component of the
      * startOffset attribute of the given &lt;textPath&gt;, which defines an offset from the start of the path for the
@@ -2444,7 +2444,7 @@ public external abstract class SVGTextPathElement : SVGTextContentElement, SVGUR
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement)
  */
-public external abstract class SVGImageElement : SVGGraphicsElement, SVGURIReference, CanvasImageSource {
+public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIReference, CanvasImageSource {
     /**
      * The x read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the x
      * attribute of the given &lt;image&gt; element.
@@ -2524,7 +2524,7 @@ public external abstract class SVGImageElement : SVGGraphicsElement, SVGURIRefer
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement)
  */
-public external abstract class SVGForeignObjectElement : SVGGraphicsElement {
+public abstract external class SVGForeignObjectElement : SVGGraphicsElement {
     /**
      * The x read-only property of the SVGForeignObjectElement interface describes the x-axis coordinate of the
      * &lt;foreignObject&gt; element. It reflects the computed value of the x attribute on the &lt;foreignObject&gt;
@@ -2589,7 +2589,7 @@ public external abstract class SVGForeignObjectElement : SVGGraphicsElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement)
  */
-public external abstract class SVGMarkerElement : SVGElement, SVGFitToViewBox {
+public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
     /**
      * The refX read-only property of the SVGMarkerElement interface returns an SVGAnimatedLength object containing the
      * value of the refX attribute of the &lt;marker&gt;.
@@ -2703,7 +2703,7 @@ public external abstract class SVGMarkerElement : SVGElement, SVGFitToViewBox {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement)
  */
-public external abstract class SVGGradientElement : SVGElement, SVGURIReference {
+public abstract external class SVGGradientElement : SVGElement, SVGURIReference {
     /**
      * The gradientUnits read-only property of the SVGGradientElement interface reflects the gradientUnits attribute of
      * the given element. It takes one of the SVG_UNIT_TYPE_* constants defined in SVGUnitTypes.
@@ -2759,7 +2759,7 @@ public external abstract class SVGGradientElement : SVGElement, SVGURIReference 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement)
  */
-public external abstract class SVGLinearGradientElement : SVGGradientElement {
+public abstract external class SVGLinearGradientElement : SVGGradientElement {
     /**
      * The x1 read-only property of the SVGLinearGradientElement interface describes the x-axis coordinate of the start
      * point of the gradient as an SVGAnimatedLength. It reflects the computed value of the x1 attribute on the
@@ -2827,7 +2827,7 @@ public external abstract class SVGLinearGradientElement : SVGGradientElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement)
  */
-public external abstract class SVGRadialGradientElement : SVGGradientElement {
+public abstract external class SVGRadialGradientElement : SVGGradientElement {
     /**
      * The cx read-only property of the SVGRadialGradientElement interface describes the x-axis coordinate of the center
      * of the radial gradient as an SVGAnimatedLength. It reflects the computed value of the cx attribute on the
@@ -2912,7 +2912,7 @@ public external abstract class SVGRadialGradientElement : SVGGradientElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStopElement)
  */
-public external abstract class SVGStopElement : SVGElement {
+public abstract external class SVGStopElement : SVGElement {
     /**
      * The offset read-only property of the SVGStopElement interface reflects the offset attribute of the given
      * &lt;stop&gt; element.
@@ -2948,7 +2948,7 @@ public external abstract class SVGStopElement : SVGElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement)
  */
-public external abstract class SVGPatternElement : SVGElement, SVGFitToViewBox, SVGURIReference {
+public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, SVGURIReference {
     /**
      * The patternUnits read-only property of the SVGPatternElement interface reflects the patternUnits attribute of the
      * given &lt;pattern&gt; element. It specifies the coordinate system for the pattern content and takes one of the
@@ -3037,7 +3037,7 @@ public external abstract class SVGPatternElement : SVGElement, SVGFitToViewBox, 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement)
  */
-public external abstract class SVGScriptElement : SVGElement, SVGURIReference, HTMLOrSVGScriptElement {
+public abstract external class SVGScriptElement : SVGElement, SVGURIReference, HTMLOrSVGScriptElement {
     /**
      * The type property of the SVGScriptElement interface reflects the type attribute of the given &lt;script&gt;
      * element.
@@ -3085,7 +3085,7 @@ public external abstract class SVGScriptElement : SVGElement, SVGURIReference, H
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement)
  */
-public external abstract class SVGAElement : SVGGraphicsElement, SVGURIReference, HyperlinkElementUtils {
+public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference, HyperlinkElementUtils {
     /**
      * The SVGAElement.target read-only property of SVGAElement returns an SVGAnimatedString object that specifies the
      * portion of a target window, frame, pane into which a document is to be opened when a link is activated.
@@ -3163,7 +3163,7 @@ public external abstract class SVGAElement : SVGGraphicsElement, SVGURIReference
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGViewElement)
  */
-public external abstract class SVGViewElement : SVGElement, SVGFitToViewBox {
+public abstract external class SVGViewElement : SVGElement, SVGFitToViewBox {
 
     companion object {
         val ELEMENT_NODE: Short

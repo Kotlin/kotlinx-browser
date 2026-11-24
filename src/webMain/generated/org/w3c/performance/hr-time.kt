@@ -16,7 +16,7 @@ import org.w3c.dom.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance)
  */
-public external abstract class Performance : EventTarget {
+public abstract external class Performance : EventTarget {
     /**
      * The performance.now() method returns a high resolution timestamp in milliseconds. It represents the time elapsed
      * since Performance.timeOrigin (the time when navigation has started in window contexts, or the time when the

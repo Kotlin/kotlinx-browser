@@ -24,7 +24,7 @@ public external interface UnionClientOrMessagePortOrServiceWorker : JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker)
  */
-public external abstract class ServiceWorker : EventTarget, AbstractWorker, MessageEventSource, UnionClientOrMessagePortOrServiceWorker {
+public abstract external class ServiceWorker : EventTarget, AbstractWorker, MessageEventSource, UnionClientOrMessagePortOrServiceWorker {
     /**
      * The scriptURL read-only property of the ServiceWorker interface returns the ServiceWorker serialized script URL
      * defined as part of ServiceWorkerRegistration. Must be on the same origin as the document that registers the
@@ -89,7 +89,7 @@ public inline val ServiceWorkerState.Companion.REDUNDANT: ServiceWorkerState get
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration)
  */
-public external abstract class ServiceWorkerRegistration : EventTarget {
+public abstract external class ServiceWorkerRegistration : EventTarget {
     /**
      * The installing read-only property of the ServiceWorkerRegistration interface returns a service worker whose
      * ServiceWorker.state is installing. This property is initially set to null.
@@ -207,7 +207,7 @@ public inline val ServiceWorkerUpdateViaCache.Companion.NONE: ServiceWorkerUpdat
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer)
  */
-public external abstract class ServiceWorkerContainer : EventTarget {
+public abstract external class ServiceWorkerContainer : EventTarget {
     /**
      * The controller read-only property of the ServiceWorkerContainer interface represents the active service worker
      * controlling the current page (associated with this ServiceWorkerContainer), or null if the page has no active or
@@ -304,7 +304,7 @@ public fun RegistrationOptions(scope: String? = null, type: WorkerType? = null, 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager)
  */
-public external abstract class NavigationPreloadManager : JsAny {
+public abstract external class NavigationPreloadManager : JsAny {
     /**
      * The enable() method of the NavigationPreloadManager interface is used to enable preloading of resources managed
      * by the service worker. It returns a promise that resolves with undefined.
@@ -359,7 +359,7 @@ public fun NavigationPreloadState(enabled: Boolean? = null, headerValue: String?
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope)
  */
-public external abstract class ServiceWorkerGlobalScope : WorkerGlobalScope {
+public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
     /**
      * The clients read-only property of the ServiceWorkerGlobalScope interface returns the Clients object associated
      * with the service worker.
@@ -458,7 +458,7 @@ public external abstract class ServiceWorkerGlobalScope : WorkerGlobalScope {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client)
  */
-public external abstract class Client : UnionClientOrMessagePortOrServiceWorker {
+public abstract external class Client : UnionClientOrMessagePortOrServiceWorker {
     /**
      * The url read-only property of the Client interface returns the URL of the current service worker client.
      *
@@ -513,7 +513,7 @@ public external abstract class Client : UnionClientOrMessagePortOrServiceWorker 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient)
  */
-public external abstract class WindowClient : Client {
+public abstract external class WindowClient : Client {
     /**
      * The visibilityState read-only property of the WindowClient interface indicates the visibility of the current
      * client. This value can be one of "hidden", "visible", or "prerender".
@@ -570,7 +570,7 @@ public inline val FrameType.Companion.NONE: FrameType get() = "none".toJsString(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients)
  */
-public external abstract class Clients : JsAny {
+public abstract external class Clients : JsAny {
     /**
      * The get() method of the Clients interface gets a service worker client matching a given id and returns it in a
      * Promise.
@@ -634,7 +634,7 @@ public inline val ClientType.Companion.ALL: ClientType get() = "all".toJsString(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent)
  */
-public external open class ExtendableEvent : Event {
+public open external class ExtendableEvent : Event {
     /**
      * The ExtendableEvent() constructor creates a new ExtendableEvent object.
      *
@@ -674,7 +674,7 @@ public fun ExtendableEventInit(bubbles: Boolean? = null, cancelable: Boolean? = 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InstallEvent)
  */
-public external open class InstallEvent : ExtendableEvent {
+public open external class InstallEvent : ExtendableEvent {
     /**
      * The InstallEvent() constructor creates a new InstallEvent object.
      *
@@ -771,7 +771,7 @@ public inline val RouterSourceEnum.Companion.RACE_NETWORK_AND_FETCH_HANDLER: Rou
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent)
  */
-public external open class FetchEvent : ExtendableEvent {
+public open external class FetchEvent : ExtendableEvent {
     /**
      * The FetchEvent() constructor creates a new FetchEvent object.
      *
@@ -864,7 +864,7 @@ public fun FetchEventInit(request: Request, bubbles: Boolean? = null, cancelable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent)
  */
-public external open class ExtendableMessageEvent : ExtendableEvent {
+public open external class ExtendableMessageEvent : ExtendableEvent {
     /**
      * The ExtendableMessageEvent() constructor creates a new ExtendableMessageEvent object.
      *
@@ -950,7 +950,7 @@ public fun ExtendableMessageEventInit(bubbles: Boolean? = null, cancelable: Bool
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache)
  */
-public external abstract class Cache : JsAny {
+public abstract external class Cache : JsAny {
     /**
      * The match() method of the Cache interface returns a Promise that resolves to the Response associated with the
      * first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
@@ -1090,7 +1090,7 @@ public fun CacheQueryOptions(ignoreSearch: Boolean? = null, ignoreMethod: Boolea
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage)
  */
-public external abstract class CacheStorage : JsAny {
+public abstract external class CacheStorage : JsAny {
     /**
      * The match() method of the CacheStorage interface checks if a given Request or URL string is a key for a stored
      * Response. This method returns a Promise for a Response, or a Promise which resolves to undefined if no match is

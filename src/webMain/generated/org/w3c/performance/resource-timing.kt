@@ -17,7 +17,7 @@ import kotlin.js.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming)
  */
-public external abstract class PerformanceResourceTiming : PerformanceEntry {
+public abstract external class PerformanceResourceTiming : PerformanceEntry {
     /**
      * The initiatorType read-only property is a string representing web platform feature that initiated the resource
      * load.

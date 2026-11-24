@@ -11,7 +11,7 @@ package org.w3c.dom.svg
 import kotlin.js.*
 import org.w3c.dom.*
 
-public external abstract class SVGPathSegment : JsAny {
+public abstract external class SVGPathSegment : JsAny {
     open var type: String
     open var values: JsArray<JsNumber>
 }
@@ -46,7 +46,7 @@ public external interface SVGPathData : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement)
  */
-public external abstract class SVGPathElement : SVGGeometryElement, SVGPathData {
+public abstract external class SVGPathElement : SVGGeometryElement, SVGPathData {
     /**
      * The pathLength read-only property of the SVGPathElement interface reflects the pathLength attribute of the given
      * &lt;path&gt; element.

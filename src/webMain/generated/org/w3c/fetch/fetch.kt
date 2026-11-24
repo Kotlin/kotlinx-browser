@@ -22,7 +22,7 @@ import org.w3c.xhr.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers)
  */
-public external open class Headers : JsAny {
+public open external class Headers : JsAny {
     /**
      * The Headers() constructor creates a new Headers object.
      *
@@ -174,7 +174,7 @@ public external interface Body : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request)
  */
-public external open class Request : Body {
+public open external class Request : Body {
     /**
      * The Request() constructor creates a new Request object.
      *
@@ -521,7 +521,7 @@ public inline val RequestPriority.Companion.AUTO: RequestPriority get() = "auto"
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response)
  */
-public external open class Response : Body {
+public open external class Response : Body {
     /**
      * The Response() constructor creates a new Response object.
      *
@@ -786,7 +786,7 @@ public fun DeferredRequestInit(method: String? = null, headers: JsAny? = null, b
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchLaterResult)
  */
-public external abstract class FetchLaterResult : JsAny {
+public abstract external class FetchLaterResult : JsAny {
     /**
      * The activated read-only property of the FetchLaterResult interface returns a boolean specifying whether the
      * deferred fetch has been sent.

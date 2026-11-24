@@ -16,7 +16,7 @@ import kotlin.js.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/QuotaExceededError)
  */
-public external open class QuotaExceededError : DOMException {
+public open external class QuotaExceededError : DOMException {
     /**
      * The QuotaExceededError() constructor creates a new QuotaExceededError object.
      *
@@ -85,7 +85,7 @@ public fun QuotaExceededErrorOptions(quota: Double? = null, requested: Double? =
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException)
  */
-public external open class DOMException : JsAny {
+public open external class DOMException : JsAny {
     /**
      * The DOMException() constructor returns a DOMException object with a specified message and name.
      *

@@ -16,7 +16,7 @@ import org.w3c.dom.svg.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGClipPathElement)
  */
-public external abstract class SVGClipPathElement : SVGElement {
+public abstract external class SVGClipPathElement : SVGElement {
     /**
      * The read-only clipPathUnits property of the SVGClipPathElement interface reflects the clipPathUnits attribute of
      * a &lt;clipPath&gt; element which defines the coordinate system to use for the content of the element.
@@ -61,7 +61,7 @@ public external abstract class SVGClipPathElement : SVGElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement)
  */
-public external abstract class SVGMaskElement : SVGElement {
+public abstract external class SVGMaskElement : SVGElement {
     /**
      * The read-only maskUnits property of the SVGMaskElement interface reflects the maskUnits attribute of a
      * &lt;mask&gt; element which defines the coordinate system to use for the mask of the element.

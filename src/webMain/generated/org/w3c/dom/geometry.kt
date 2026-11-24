@@ -17,7 +17,7 @@ import org.khronos.webgl.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly)
  */
-public external open class DOMPointReadOnly : JsAny {
+public open external class DOMPointReadOnly : JsAny {
     /**
      * The DOMPointReadOnly() constructor returns a new DOMPointReadOnly object representing a point in 2D or 3D space,
      * optionally with perspective, whose values cannot be altered by script code.
@@ -91,7 +91,7 @@ public external open class DOMPointReadOnly : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint)
  */
-public external open class DOMPoint : DOMPointReadOnly {
+public open external class DOMPoint : DOMPointReadOnly {
     /**
      * The DOMPoint() constructor creates and returns a new DOMPoint object, given the values for some or all of its
      * properties.
@@ -159,7 +159,7 @@ public fun DOMPointInit(x: Double? = null, y: Double? = null, z: Double? = null,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly)
  */
-public external open class DOMRectReadOnly : JsAny {
+public open external class DOMRectReadOnly : JsAny {
     /**
      * The DOMRectReadOnly() constructor creates a new DOMRectReadOnly object.
      *
@@ -251,7 +251,7 @@ public external open class DOMRectReadOnly : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect)
  */
-public external open class DOMRect : DOMRectReadOnly {
+public open external class DOMRect : DOMRectReadOnly {
     /**
      * The DOMRect() constructor creates a new DOMRect object.
      *
@@ -322,7 +322,7 @@ public fun DOMRectInit(x: Double? = null, y: Double? = null, width: Double? = nu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectList)
  */
-public external abstract class DOMRectList : ItemArrayLike<DOMRect> {
+public abstract external class DOMRectList : ItemArrayLike<DOMRect> {
     /**
      * The read-only length property of the DOMRectList interface returns the number of DOMRect objects in the list.
      *
@@ -348,7 +348,7 @@ public operator fun DOMRectList.get(index: Int): DOMRect? = getProperty(this, in
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad)
  */
-public external open class DOMQuad : JsAny {
+public open external class DOMQuad : JsAny {
     /**
      * The DOMQuad() constructor creates and returns a new DOMQuad object, given the values for some or all of its
      * properties.
@@ -445,7 +445,7 @@ public fun DOMQuadInit(p1: DOMPointInit? = null, p2: DOMPointInit? = null, p3: D
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly)
  */
-public external open class DOMMatrixReadOnly : JsAny {
+public open external class DOMMatrixReadOnly : JsAny {
     /**
      * The DOMMatrixReadOnly() constructor creates a new DOMMatrixReadOnly object which represents a 4x4 matrix,
      * suitable for 2D and 3D operations.
@@ -863,7 +863,7 @@ public external open class DOMMatrixReadOnly : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix)
  */
-public external open class DOMMatrix : DOMMatrixReadOnly {
+public open external class DOMMatrix : DOMMatrixReadOnly {
     /**
      * The DOMMatrix() constructor creates a new DOMMatrix object which represents a 4x4 matrix, suitable for 2D and 3D
      * operations.

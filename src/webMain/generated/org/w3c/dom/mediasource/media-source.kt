@@ -36,7 +36,7 @@ public inline val EndOfStreamError.Companion.DECODE: EndOfStreamError get() = "d
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource)
  */
-public external open class MediaSource : EventTarget, UnionBlobOrMediaSource {
+public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
     /**
      * The MediaSource() constructor of the MediaSource interface constructs and returns a new MediaSource object with
      * no associated source buffers.
@@ -180,7 +180,7 @@ public external open class MediaSource : EventTarget, UnionBlobOrMediaSource {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSourceHandle)
  */
-public external abstract class MediaSourceHandle : JsAny
+public abstract external class MediaSourceHandle : JsAny
 
 public external interface AppendMode : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
@@ -196,7 +196,7 @@ public inline val AppendMode.Companion.SEQUENCE: AppendMode get() = "sequence".t
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer)
  */
-public external abstract class SourceBuffer : EventTarget {
+public abstract external class SourceBuffer : EventTarget {
     /**
      * The mode property of the SourceBuffer interface controls whether media segments can be appended to the
      * SourceBuffer in any order, or in a strict sequence.
@@ -355,7 +355,7 @@ public external abstract class SourceBuffer : EventTarget {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList)
  */
-public external abstract class SourceBufferList : EventTarget {
+public abstract external class SourceBufferList : EventTarget {
     /**
      * The length read-only property of the SourceBufferList interface returns the number of SourceBuffer objects in the
      * list.
@@ -377,7 +377,7 @@ public operator fun SourceBufferList.get(index: Int): SourceBuffer? = getPropert
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedMediaSource)
  */
-public external open class ManagedMediaSource : MediaSource {
+public open external class ManagedMediaSource : MediaSource {
     /**
      * The ManagedMediaSource() constructor of the ManagedMediaSource interface constructs and returns a new
      * ManagedMediaSource object instance with no associated source buffers.
@@ -439,7 +439,7 @@ public external open class ManagedMediaSource : MediaSource {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BufferedChangeEvent)
  */
-public external open class BufferedChangeEvent : Event {
+public open external class BufferedChangeEvent : Event {
     /**
      * The BufferedChangeEvent() constructor of the BufferedChangeEvent interface creates a new BufferedChangeEvent
      * object instance.
@@ -496,7 +496,7 @@ public fun BufferedChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedSourceBuffer)
  */
-public external abstract class ManagedSourceBuffer : SourceBuffer {
+public abstract external class ManagedSourceBuffer : SourceBuffer {
     /**
      * The bufferedchange event of the ManagedSourceBuffer interface is fired when the ManagedSourceBuffer's buffered
      * range changes. This can occur following a call to appendBuffer(), remove(), endOfStream(), or as a consequence of

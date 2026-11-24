@@ -18,7 +18,7 @@ import org.w3c.dom.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream)
  */
-public external open class MediaStream : EventTarget, MediaProvider {
+public open external class MediaStream : EventTarget, MediaProvider {
     /**
      * The MediaStream() constructor returns a newly-created MediaStream, which serves as a collection of media tracks,
      * each represented by a MediaStreamTrack object.
@@ -138,7 +138,7 @@ public external open class MediaStream : EventTarget, MediaProvider {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack)
  */
-public external abstract class MediaStreamTrack : EventTarget {
+public abstract external class MediaStreamTrack : EventTarget {
     /**
      * The kind read-only property of the MediaStreamTrack interface returns a string set to "audio" if the track is an
      * audio track and to "video" if it is a video track. It doesn't change if the track is disassociated from its
@@ -480,7 +480,7 @@ public inline val EchoCancellationModeEnum.Companion.REMOTE_ONLY: EchoCancellati
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent)
  */
-public external open class MediaStreamTrackEvent : Event {
+public open external class MediaStreamTrackEvent : Event {
     /**
      * The MediaStreamTrackEvent() constructor returns a new MediaStreamTrackEvent object, which represents an event
      * signaling that a MediaStreamTrack has been added to or removed from a MediaStream.
@@ -524,7 +524,7 @@ public fun MediaStreamTrackEventInit(track: MediaStreamTrack, bubbles: Boolean? 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OverconstrainedError)
  */
-public external open class OverconstrainedError : DOMException {
+public open external class OverconstrainedError : DOMException {
     /**
      * The OverconstrainedError() constructor creates a new OverconstrainedError object which indicates that the set of
      * desired capabilities for the current MediaStreamTrack cannot currently be met. When this event is thrown on a
@@ -581,7 +581,7 @@ public external open class OverconstrainedError : DOMException {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices)
  */
-public external abstract class MediaDevices : EventTarget {
+public abstract external class MediaDevices : EventTarget {
     /**
      * The devicechange event is sent to a MediaDevices instance whenever a media device such as a camera, microphone,
      * or speaker is connected to or removed from the system.
@@ -624,7 +624,7 @@ public external abstract class MediaDevices : EventTarget {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo)
  */
-public external abstract class MediaDeviceInfo : JsAny {
+public abstract external class MediaDeviceInfo : JsAny {
     /**
      * The deviceId read-only property of the MediaDeviceInfo interface returns a string that is an identifier for the
      * represented device and is persisted across sessions.
@@ -682,7 +682,7 @@ public inline val MediaDeviceKind.Companion.VIDEOINPUT: MediaDeviceKind get() = 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputDeviceInfo)
  */
-public external abstract class InputDeviceInfo : MediaDeviceInfo {
+public abstract external class InputDeviceInfo : MediaDeviceInfo {
     /**
      * The getCapabilities() method of the InputDeviceInfo interface returns a MediaTrackCapabilities object describing
      * the primary audio or video track of the device's MediaStream.
@@ -692,7 +692,7 @@ public external abstract class InputDeviceInfo : MediaDeviceInfo {
     open fun getCapabilities(): MediaTrackCapabilities
 }
 
-public external open class DeviceChangeEvent : Event {
+public open external class DeviceChangeEvent : Event {
     constructor(type: String, eventInitDict: DeviceChangeEventInit = definedExternally)
     open val devices: JsArray<MediaDeviceInfo>
     open val userInsertedDevices: JsArray<MediaDeviceInfo>

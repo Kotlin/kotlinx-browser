@@ -15,7 +15,7 @@ import kotlin.js.*
 /**
  * Exposes the JavaScript [ArrayBuffer](https://developer.mozilla.org/en/docs/Web/API/ArrayBuffer) to Kotlin
  */
-actual external open class ArrayBuffer actual constructor(length: Int) : BufferDataSource {
+public actual open external class ArrayBuffer actual constructor(length: Int) : BufferDataSource {
     actual open val byteLength: Int
     actual fun slice(begin: Int, end: Int): ArrayBuffer
 
@@ -27,7 +27,7 @@ actual external open class ArrayBuffer actual constructor(length: Int) : BufferD
 /**
  * Exposes the JavaScript [ArrayBufferView](https://developer.mozilla.org/en/docs/Web/API/ArrayBufferView) to Kotlin
  */
-actual external interface ArrayBufferView : BufferDataSource {
+public actual external interface ArrayBufferView : BufferDataSource {
     actual val buffer: ArrayBuffer
     actual val byteOffset: Int
     actual val byteLength: Int
@@ -36,7 +36,7 @@ actual external interface ArrayBufferView : BufferDataSource {
 /**
  * Exposes the JavaScript [Int8Array](https://developer.mozilla.org/en/docs/Web/API/Int8Array) to Kotlin
  */
-actual external open class Int8Array : ArrayBufferView {
+public actual open external class Int8Array : ArrayBufferView {
     actual constructor(length: Int)
     actual constructor(array: Int8Array)
     constructor(array: Array<Byte>)
@@ -58,16 +58,16 @@ actual external open class Int8Array : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Int8Array.get(index: Int): Byte = asDynamic()[index]
+public actual inline operator fun Int8Array.get(index: Int): Byte = asDynamic()[index]
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Int8Array.set(index: Int, value: Byte) { asDynamic()[index] = value }
+public actual inline operator fun Int8Array.set(index: Int, value: Byte) { asDynamic()[index] = value }
 
 /**
  * Exposes the JavaScript [Uint8Array](https://developer.mozilla.org/en/docs/Web/API/Uint8Array) to Kotlin
  */
-actual external open class Uint8Array : ArrayBufferView {
+public actual open external class Uint8Array : ArrayBufferView {
     actual constructor(length: Int)
     actual constructor(array: Uint8Array)
     constructor(array: Array<Byte>)
@@ -89,16 +89,16 @@ actual external open class Uint8Array : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint8Array.get(index: Int): UByte = asDynamic()[index].unsafeCast<Int>().toUByte()
+public actual inline operator fun Uint8Array.get(index: Int): UByte = asDynamic()[index].unsafeCast<Int>().toUByte()
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint8Array.set(index: Int, value: UByte) { asDynamic()[index] = value.toInt() }
+public actual inline operator fun Uint8Array.set(index: Int, value: UByte) { asDynamic()[index] = value.toInt() }
 
 /**
  * Exposes the JavaScript [Uint8ClampedArray](https://developer.mozilla.org/en/docs/Web/API/Uint8ClampedArray) to Kotlin
  */
-actual external open class Uint8ClampedArray : ArrayBufferView {
+public actual open external class Uint8ClampedArray : ArrayBufferView {
     actual constructor(length: Int)
     actual constructor(array: Uint8ClampedArray)
     constructor(array: Array<Byte>)
@@ -120,16 +120,16 @@ actual external open class Uint8ClampedArray : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint8ClampedArray.get(index: Int): UByte = asDynamic()[index].unsafeCast<Int>().toUByte()
+public actual inline operator fun Uint8ClampedArray.get(index: Int): UByte = asDynamic()[index].unsafeCast<Int>().toUByte()
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint8ClampedArray.set(index: Int, value: UByte) { asDynamic()[index] = value.toInt() }
+public actual inline operator fun Uint8ClampedArray.set(index: Int, value: UByte) { asDynamic()[index] = value.toInt() }
 
 /**
  * Exposes the JavaScript [Int16Array](https://developer.mozilla.org/en/docs/Web/API/Int16Array) to Kotlin
  */
-actual external open class Int16Array : ArrayBufferView {
+public actual open external class Int16Array : ArrayBufferView {
     actual constructor(length: Int)
     actual constructor(array: Int16Array)
     constructor(array: Array<Short>)
@@ -151,16 +151,16 @@ actual external open class Int16Array : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Int16Array.get(index: Int): Short = asDynamic()[index]
+public actual inline operator fun Int16Array.get(index: Int): Short = asDynamic()[index]
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Int16Array.set(index: Int, value: Short) { asDynamic()[index] = value }
+public actual inline operator fun Int16Array.set(index: Int, value: Short) { asDynamic()[index] = value }
 
 /**
  * Exposes the JavaScript [Uint16Array](https://developer.mozilla.org/en/docs/Web/API/Uint16Array) to Kotlin
  */
-actual external open class Uint16Array : ArrayBufferView {
+public actual open external class Uint16Array : ArrayBufferView {
     actual constructor(length: Int)
     actual constructor(array: Uint16Array)
     constructor(array: Array<Short>)
@@ -182,16 +182,16 @@ actual external open class Uint16Array : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint16Array.get(index: Int): UShort = asDynamic()[index].unsafeCast<Int>().toUShort()
+public actual inline operator fun Uint16Array.get(index: Int): UShort = asDynamic()[index].unsafeCast<Int>().toUShort()
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint16Array.set(index: Int, value: UShort) { asDynamic()[index] = value.toInt() }
+public actual inline operator fun Uint16Array.set(index: Int, value: UShort) { asDynamic()[index] = value.toInt() }
 
 /**
  * Exposes the JavaScript [Int32Array](https://developer.mozilla.org/en/docs/Web/API/Int32Array) to Kotlin
  */
-actual external open class Int32Array : ArrayBufferView {
+public actual open external class Int32Array : ArrayBufferView {
     actual constructor(length: Int)
     actual constructor(array: Int32Array)
     constructor(array: Array<Int>)
@@ -213,16 +213,16 @@ actual external open class Int32Array : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Int32Array.get(index: Int): Int = asDynamic()[index]
+public actual inline operator fun Int32Array.get(index: Int): Int = asDynamic()[index]
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Int32Array.set(index: Int, value: Int) { asDynamic()[index] = value }
+public actual inline operator fun Int32Array.set(index: Int, value: Int) { asDynamic()[index] = value }
 
 /**
  * Exposes the JavaScript [Uint32Array](https://developer.mozilla.org/en/docs/Web/API/Uint32Array) to Kotlin
  */
-actual external open class Uint32Array : ArrayBufferView {
+public actual open external class Uint32Array : ArrayBufferView {
     actual constructor(length: Int)
     actual constructor(array: Uint32Array)
     constructor(array: Array<Int>)
@@ -244,16 +244,16 @@ actual external open class Uint32Array : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint32Array.get(index: Int): UInt = asDynamic()[index].unsafeCast<Double>().toUInt()
+public actual inline operator fun Uint32Array.get(index: Int): UInt = asDynamic()[index].unsafeCast<Double>().toUInt()
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Uint32Array.set(index: Int, value: UInt) { asDynamic()[index] = value.toInt() }
+public actual inline operator fun Uint32Array.set(index: Int, value: UInt) { asDynamic()[index] = value.toInt() }
 
 /**
  * Exposes the JavaScript [Float32Array](https://developer.mozilla.org/en/docs/Web/API/Float32Array) to Kotlin
  */
-actual external open class Float32Array : ArrayBufferView {
+public actual open external class Float32Array : ArrayBufferView {
     actual constructor(length: Int)
     actual constructor(array: Float32Array)
     constructor(array: Array<Float>)
@@ -275,16 +275,16 @@ actual external open class Float32Array : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Float32Array.get(index: Int): Float = asDynamic()[index]
+public actual inline operator fun Float32Array.get(index: Int): Float = asDynamic()[index]
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Float32Array.set(index: Int, value: Float) { asDynamic()[index] = value }
+public actual inline operator fun Float32Array.set(index: Int, value: Float) { asDynamic()[index] = value }
 
 /**
  * Exposes the JavaScript [Float64Array](https://developer.mozilla.org/en/docs/Web/API/Float64Array) to Kotlin
  */
-actual external open class Float64Array : ArrayBufferView {
+public actual open external class Float64Array : ArrayBufferView {
     actual constructor(length: Int)
     actual constructor(array: Float64Array)
     actual constructor(array: Array<Double>)
@@ -304,16 +304,16 @@ actual external open class Float64Array : ArrayBufferView {
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Float64Array.get(index: Int): Double = asDynamic()[index]
+public actual inline operator fun Float64Array.get(index: Int): Double = asDynamic()[index]
 
 @Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
 @kotlin.internal.InlineOnly
-actual inline operator fun Float64Array.set(index: Int, value: Double) { asDynamic()[index] = value }
+public actual inline operator fun Float64Array.set(index: Int, value: Double) { asDynamic()[index] = value }
 
 /**
  * Exposes the JavaScript [DataView](https://developer.mozilla.org/en/docs/Web/API/DataView) to Kotlin
  */
-actual external open class DataView actual constructor(buffer: ArrayBuffer, byteOffset: Int, byteLength: Int) : ArrayBufferView {
+public actual open external class DataView actual constructor(buffer: ArrayBuffer, byteOffset: Int, byteLength: Int) : ArrayBufferView {
     actual override val buffer: ArrayBuffer
     actual override val byteOffset: Int
     actual override val byteLength: Int
@@ -335,4 +335,4 @@ actual external open class DataView actual constructor(buffer: ArrayBuffer, byte
     actual fun setFloat64(byteOffset: Int, value: Double, littleEndian: Boolean)
 }
 
-actual external interface BufferDataSource
+public actual external interface BufferDataSource

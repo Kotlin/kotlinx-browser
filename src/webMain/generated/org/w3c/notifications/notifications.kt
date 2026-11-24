@@ -18,7 +18,7 @@ import org.w3c.workers.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification)
  */
-public external open class Notification : EventTarget {
+public open external class Notification : EventTarget {
     /**
      * The Notification() constructor creates a new Notification object instance, which represents a user notification.
      *
@@ -294,7 +294,7 @@ public fun GetNotificationOptions(tag: String? = null): GetNotificationOptions =
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent)
  */
-public external open class NotificationEvent : ExtendableEvent {
+public open external class NotificationEvent : ExtendableEvent {
     /**
      * The NotificationEvent() constructor creates a new NotificationEvent object.
      *

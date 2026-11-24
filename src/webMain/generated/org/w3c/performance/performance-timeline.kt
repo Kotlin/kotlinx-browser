@@ -17,7 +17,7 @@ import org.w3c.dom.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)
  */
-public external abstract class PerformanceEntry : JsAny {
+public abstract external class PerformanceEntry : JsAny {
     open val id: Double
 
     /**
@@ -75,7 +75,7 @@ public external abstract class PerformanceEntry : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
  */
-public external open class PerformanceObserver : JsAny {
+public open external class PerformanceObserver : JsAny {
     /**
      * The PerformanceObserver() constructor creates a new PerformanceObserver object with the given observer callback.
      * The observer callback is invoked when performance entry events are recorded for the entry types that have been
@@ -146,7 +146,7 @@ public fun PerformanceObserverInit(entryTypes: JsArray<JsString>? = null, type: 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList)
  */
-public external abstract class PerformanceObserverEntryList : JsAny {
+public abstract external class PerformanceObserverEntryList : JsAny {
     /**
      * The getEntries() method of the PerformanceObserverEntryList interface returns a list of explicitly observed
      * performance entry objects. The list's members are determined by the set of entry types specified in the call to

@@ -51,7 +51,7 @@ public fun WebGLContextAttributes(alpha: Boolean? = null, depth: Boolean? = null
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLObject)
  */
-public external abstract class WebGLObject : JsAny {
+public abstract external class WebGLObject : JsAny {
     open var label: String
 }
 
@@ -61,7 +61,7 @@ public external abstract class WebGLObject : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLBuffer)
  */
-public external abstract class WebGLBuffer : WebGLObject
+public abstract external class WebGLBuffer : WebGLObject
 
 /**
  * The WebGLFramebuffer interface is part of the WebGL API and represents a collection of buffers that serve as a
@@ -69,7 +69,7 @@ public external abstract class WebGLBuffer : WebGLObject
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLFramebuffer)
  */
-public external abstract class WebGLFramebuffer : WebGLObject
+public abstract external class WebGLFramebuffer : WebGLObject
 
 /**
  * The WebGLProgram is part of the WebGL API and is a combination of two compiled WebGLShaders consisting of a vertex
@@ -77,7 +77,7 @@ public external abstract class WebGLFramebuffer : WebGLObject
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLProgram)
  */
-public external abstract class WebGLProgram : WebGLObject
+public abstract external class WebGLProgram : WebGLObject
 
 /**
  * The WebGLRenderbuffer interface is part of the WebGL API and represents a buffer that can contain an image, or that
@@ -85,7 +85,7 @@ public external abstract class WebGLProgram : WebGLObject
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderbuffer)
  */
-public external abstract class WebGLRenderbuffer : WebGLObject
+public abstract external class WebGLRenderbuffer : WebGLObject
 
 /**
  * The WebGLShader is part of the WebGL API and can either be a vertex or a fragment shader. A WebGLProgram requires
@@ -93,7 +93,7 @@ public external abstract class WebGLRenderbuffer : WebGLObject
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLShader)
  */
-public external abstract class WebGLShader : WebGLObject
+public abstract external class WebGLShader : WebGLObject
 
 /**
  * The WebGLTexture interface is part of the WebGL API and represents an opaque texture object providing storage and
@@ -101,7 +101,7 @@ public external abstract class WebGLShader : WebGLObject
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLTexture)
  */
-public external abstract class WebGLTexture : WebGLObject
+public abstract external class WebGLTexture : WebGLObject
 
 /**
  * The WebGLUniformLocation interface is part of the WebGL API and represents the location of a uniform variable in a
@@ -109,7 +109,7 @@ public external abstract class WebGLTexture : WebGLObject
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLUniformLocation)
  */
-public external abstract class WebGLUniformLocation : JsAny
+public abstract external class WebGLUniformLocation : JsAny
 
 /**
  * The WebGLActiveInfo interface is part of the WebGL API and represents the information returned by calling the
@@ -117,7 +117,7 @@ public external abstract class WebGLUniformLocation : JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLActiveInfo)
  */
-public external abstract class WebGLActiveInfo : JsAny {
+public abstract external class WebGLActiveInfo : JsAny {
     /**
      * The read-only WebGLActiveInfo.size property is a Number representing the size of the requested data returned by
      * calling the getActiveAttrib() or getActiveUniform() methods.
@@ -149,7 +149,7 @@ public external abstract class WebGLActiveInfo : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLShaderPrecisionFormat)
  */
-public external abstract class WebGLShaderPrecisionFormat : JsAny {
+public abstract external class WebGLShaderPrecisionFormat : JsAny {
     /**
      * The read-only WebGLShaderPrecisionFormat.rangeMin property returns the base 2 log of the absolute value of the
      * minimum value that can be represented.
@@ -1798,7 +1798,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext)
  */
-public external abstract class WebGLRenderingContext : WebGLRenderingContextBase, WebGLRenderingContextOverloads, RenderingContext, OffscreenRenderingContext {
+public abstract external class WebGLRenderingContext : WebGLRenderingContextBase, WebGLRenderingContextOverloads, RenderingContext, OffscreenRenderingContext {
 
     companion object {
         val DEPTH_BUFFER_BIT: Int
@@ -2107,7 +2107,7 @@ public external abstract class WebGLRenderingContext : WebGLRenderingContextBase
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent)
  */
-public external open class WebGLContextEvent : Event {
+public open external class WebGLContextEvent : Event {
     /**
      * The WebGLContextEvent() constructor creates a new WebGLContextEvent object.
      *

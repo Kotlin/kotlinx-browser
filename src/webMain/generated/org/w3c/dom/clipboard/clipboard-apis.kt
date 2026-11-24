@@ -29,7 +29,7 @@ public fun ClipboardEventInit(bubbles: Boolean? = null, cancelable: Boolean? = n
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)
  */
-public external open class ClipboardEvent : Event {
+public open external class ClipboardEvent : Event {
     /**
      * The ClipboardEvent() constructor returns a new ClipboardEvent, representing an event providing information
      * related to modification of the clipboard, that is cut, copy, and paste events.
@@ -70,7 +70,7 @@ public fun ClipboardChangeEventInit(bubbles: Boolean? = null, cancelable: Boolea
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent)
  */
-public external open class ClipboardChangeEvent : Event {
+public open external class ClipboardChangeEvent : Event {
     /**
      * The ClipboardChangeEvent() constructor creates a new ClipboardChangeEvent object instance when a clipboardchange
      * event occurs. The clipboardchange event fires whenever the system clipboard contents are changed either by a web
@@ -113,7 +113,7 @@ public external open class ClipboardChangeEvent : Event {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem)
  */
-public external open class ClipboardItem : JsAny {
+public open external class ClipboardItem : JsAny {
     /**
      * The ClipboardItem() constructor creates a new ClipboardItem object, which represents data to be stored or
      * retrieved via the Clipboard API clipboard.write() and clipboard.read() methods, respectively.
@@ -182,7 +182,7 @@ public fun ClipboardItemOptions(presentationStyle: PresentationStyle? = null): C
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard)
  */
-public external abstract class Clipboard : EventTarget {
+public abstract external class Clipboard : EventTarget {
     /**
      * The read() method of the Clipboard interface returns a Promise that fulfills with a copy of the clipboard's
      * contents.

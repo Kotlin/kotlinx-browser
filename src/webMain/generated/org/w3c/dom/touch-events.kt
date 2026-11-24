@@ -61,7 +61,7 @@ public fun TouchInit(identifier: Int, target: EventTarget, clientX: Double? = nu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch)
  */
-public external open class Touch : JsAny {
+public open external class Touch : JsAny {
     /**
      * The Touch() constructor creates a new Touch object.
      *
@@ -209,7 +209,7 @@ public external open class Touch : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchList)
  */
-public external abstract class TouchList : ItemArrayLike<Touch> {
+public abstract external class TouchList : ItemArrayLike<Touch> {
     /**
      * The length read-only property indicates the number of items (touch points) in a given TouchList.
      *
@@ -267,7 +267,7 @@ public fun TouchEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent)
  */
-public external open class TouchEvent : UIEvent {
+public open external class TouchEvent : UIEvent {
     /**
      * The TouchEvent() constructor creates a new TouchEvent object.
      *

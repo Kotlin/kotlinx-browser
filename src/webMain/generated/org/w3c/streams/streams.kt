@@ -22,7 +22,7 @@ public external interface ReadableStreamController : JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream)
  */
-public external open class ReadableStream : JsAny {
+public open external class ReadableStream : JsAny {
     /**
      * The ReadableStream() constructor creates and returns a readable stream object from the given handlers.
      *
@@ -185,7 +185,7 @@ public external interface ReadableStreamGenericReader : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader)
  */
-public external open class ReadableStreamDefaultReader : ReadableStreamGenericReader, ReadableStreamReader {
+public open external class ReadableStreamDefaultReader : ReadableStreamGenericReader, ReadableStreamReader {
     /**
      * The ReadableStreamDefaultReader() constructor creates and returns a ReadableStreamDefaultReader object instance.
      *
@@ -244,7 +244,7 @@ public fun ReadableStreamReadResult(value: JsAny? = null, done: Boolean? = null)
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader)
  */
-public external open class ReadableStreamBYOBReader : ReadableStreamGenericReader, ReadableStreamReader {
+public open external class ReadableStreamBYOBReader : ReadableStreamGenericReader, ReadableStreamReader {
     /**
      * The ReadableStreamBYOBReader() constructor creates and returns a ReadableStreamBYOBReader object instance.
      *
@@ -301,7 +301,7 @@ public fun ReadableStreamBYOBReaderReadOptions(min: Double? = null): ReadableStr
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController)
  */
-public external abstract class ReadableStreamDefaultController : ReadableStreamController {
+public abstract external class ReadableStreamDefaultController : ReadableStreamController {
     /**
      * The desiredSize read-only property of the ReadableStreamDefaultController interface returns the desired size
      * required to fill the stream's internal queue.
@@ -342,7 +342,7 @@ public external abstract class ReadableStreamDefaultController : ReadableStreamC
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController)
  */
-public external abstract class ReadableByteStreamController : ReadableStreamController {
+public abstract external class ReadableByteStreamController : ReadableStreamController {
     /**
      * The byobRequest read-only property of the ReadableByteStreamController interface returns the current BYOB
      * request, or null if there are no pending requests.
@@ -389,7 +389,7 @@ public external abstract class ReadableByteStreamController : ReadableStreamCont
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest)
  */
-public external abstract class ReadableStreamBYOBRequest : JsAny {
+public abstract external class ReadableStreamBYOBRequest : JsAny {
     /**
      * The view getter property of the ReadableStreamBYOBRequest interface returns the current view.
      *
@@ -420,7 +420,7 @@ public external abstract class ReadableStreamBYOBRequest : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream)
  */
-public external open class WritableStream : JsAny {
+public open external class WritableStream : JsAny {
     /**
      * The WritableStream() constructor creates a new WritableStream object instance.
      *
@@ -485,7 +485,7 @@ public fun UnderlyingSink(start: ((WritableStreamDefaultController) -> JsAny?)? 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)
  */
-public external open class WritableStreamDefaultWriter : JsAny {
+public open external class WritableStreamDefaultWriter : JsAny {
     /**
      * The WritableStreamDefaultWriter() constructor creates a new WritableStreamDefaultWriter object instance.
      *
@@ -562,7 +562,7 @@ public external open class WritableStreamDefaultWriter : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController)
  */
-public external abstract class WritableStreamDefaultController : JsAny {
+public abstract external class WritableStreamDefaultController : JsAny {
     /**
      * The read-only signal property of the WritableStreamDefaultController interface returns the AbortSignal associated
      * with the controller.
@@ -586,7 +586,7 @@ public external abstract class WritableStreamDefaultController : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream)
  */
-public external open class TransformStream : JsAny {
+public open external class TransformStream : JsAny {
     /**
      * The TransformStream() constructor creates a new TransformStream object which represents a pair of streams: a
      * WritableStream representing the writable side, and a ReadableStream representing the readable side.
@@ -637,7 +637,7 @@ public fun Transformer(start: ((TransformStreamDefaultController) -> JsAny?)? = 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController)
  */
-public external abstract class TransformStreamDefaultController : JsAny {
+public abstract external class TransformStreamDefaultController : JsAny {
     /**
      * The desiredSize read-only property of the TransformStreamDefaultController interface returns the desired size to
      * fill the queue of the associated ReadableStream.
@@ -695,7 +695,7 @@ public fun QueuingStrategyInit(highWaterMark: Double): QueuingStrategyInit = new
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy)
  */
-public external open class ByteLengthQueuingStrategy : JsAny {
+public open external class ByteLengthQueuingStrategy : JsAny {
     /**
      * The ByteLengthQueuingStrategy() constructor creates and returns a ByteLengthQueuingStrategy object instance.
      *
@@ -725,7 +725,7 @@ public external open class ByteLengthQueuingStrategy : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy)
  */
-public external open class CountQueuingStrategy : JsAny {
+public open external class CountQueuingStrategy : JsAny {
     /**
      * The CountQueuingStrategy() constructor creates and returns a CountQueuingStrategy object instance.
      *

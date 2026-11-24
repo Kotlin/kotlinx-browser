@@ -21,7 +21,7 @@ import org.w3c.xhr.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob)
  */
-public external open class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
+public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
     /**
      * The Blob() constructor returns a new Blob object. The content of the blob consists of the concatenation of the
      * values given in the parameter blobParts.
@@ -116,7 +116,7 @@ public fun BlobPropertyBag(type: String? = null, endings: EndingType? = null): B
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File)
  */
-public external open class File : Blob {
+public open external class File : Blob {
     /**
      * The File() constructor creates a new File object instance.
      *
@@ -160,7 +160,7 @@ public fun FilePropertyBag(type: String? = null, endings: EndingType? = null, la
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileList)
  */
-public external abstract class FileList : ItemArrayLike<File> {
+public abstract external class FileList : ItemArrayLike<File> {
     /**
      * The item() method of the FileList interface returns a File object representing the file at the specified index in
      * the file list.
@@ -185,7 +185,7 @@ public operator fun FileList.get(index: Int): File? = getProperty(this, index)
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader)
  */
-public external open class FileReader : EventTarget {
+public open external class FileReader : EventTarget {
     /**
      * The FileReader() constructor creates a new FileReader.
      *
@@ -321,7 +321,7 @@ public external open class FileReader : EventTarget {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync)
  */
-public external open class FileReaderSync : JsAny {
+public open external class FileReaderSync : JsAny {
     /**
      * The FileReaderSync() constructor creates a new FileReaderSync.
      *

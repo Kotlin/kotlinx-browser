@@ -19,7 +19,7 @@ public external interface UnionBlobOrMediaSource : MediaProvider
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL)
  */
-public external open class URL : JsAny {
+public open external class URL : JsAny {
     /**
      * The URL() constructor returns a newly created URL object representing the URL defined by the parameters.
      *
@@ -174,7 +174,7 @@ public external open class URL : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams)
  */
-public external open class URLSearchParams : JsAny {
+public open external class URLSearchParams : JsAny {
     /**
      * The URLSearchParams() constructor creates and returns a new URLSearchParams object.
      *

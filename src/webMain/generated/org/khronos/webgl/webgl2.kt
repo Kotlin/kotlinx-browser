@@ -17,7 +17,7 @@ import org.w3c.dom.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLQuery)
  */
-public external abstract class WebGLQuery : WebGLObject
+public abstract external class WebGLQuery : WebGLObject
 
 /**
  * The WebGLSampler interface is part of the WebGL 2 API and stores sampling parameters for WebGLTexture access inside
@@ -25,7 +25,7 @@ public external abstract class WebGLQuery : WebGLObject
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLSampler)
  */
-public external abstract class WebGLSampler : WebGLObject
+public abstract external class WebGLSampler : WebGLObject
 
 /**
  * The WebGLSync interface is part of the WebGL 2 API and is used to synchronize activities between the GPU and the
@@ -33,7 +33,7 @@ public external abstract class WebGLSampler : WebGLObject
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLSync)
  */
-public external abstract class WebGLSync : WebGLObject
+public abstract external class WebGLSync : WebGLObject
 
 /**
  * The WebGLTransformFeedback interface is part of the WebGL 2 API and enables transform feedback, which is the process
@@ -42,7 +42,7 @@ public external abstract class WebGLSync : WebGLObject
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLTransformFeedback)
  */
-public external abstract class WebGLTransformFeedback : WebGLObject
+public abstract external class WebGLTransformFeedback : WebGLObject
 
 /**
  * The WebGLVertexArrayObject interface is part of the WebGL 2 API, represents vertex array objects (VAOs) pointing to
@@ -50,7 +50,7 @@ public external abstract class WebGLTransformFeedback : WebGLObject
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLVertexArrayObject)
  */
-public external abstract class WebGLVertexArrayObject : WebGLObject
+public abstract external class WebGLVertexArrayObject : WebGLObject
 
 public external interface WebGL2RenderingContextBase : JsAny {
     /**
@@ -1589,7 +1589,7 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext)
  */
-public external abstract class WebGL2RenderingContext : WebGLRenderingContextBase, WebGL2RenderingContextBase, WebGL2RenderingContextOverloads, RenderingContext, OffscreenRenderingContext {
+public abstract external class WebGL2RenderingContext : WebGLRenderingContextBase, WebGL2RenderingContextBase, WebGL2RenderingContextOverloads, RenderingContext, OffscreenRenderingContext {
 
     companion object {
         val DEPTH_BUFFER_BIT: Int

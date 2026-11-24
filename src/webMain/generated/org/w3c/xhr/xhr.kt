@@ -20,7 +20,7 @@ import org.w3c.files.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestEventTarget)
  */
-public external abstract class XMLHttpRequestEventTarget : EventTarget {
+public abstract external class XMLHttpRequestEventTarget : EventTarget {
     open var onloadstart: ((ProgressEvent) -> Unit)?
     open var onprogress: ((ProgressEvent) -> Unit)?
     open var onabort: ((ProgressEvent) -> Unit)?
@@ -37,7 +37,7 @@ public external abstract class XMLHttpRequestEventTarget : EventTarget {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload)
  */
-public external abstract class XMLHttpRequestUpload : XMLHttpRequestEventTarget
+public abstract external class XMLHttpRequestUpload : XMLHttpRequestEventTarget
 
 public external interface XMLHttpRequestResponseType : JsAny {
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
@@ -57,7 +57,7 @@ public inline val XMLHttpRequestResponseType.Companion.TEXT: XMLHttpRequestRespo
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
  */
-public external open class XMLHttpRequest : XMLHttpRequestEventTarget {
+public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
     /**
      * The XMLHttpRequest() constructor creates a new XMLHttpRequest.
      *
@@ -288,7 +288,7 @@ public external open class XMLHttpRequest : XMLHttpRequestEventTarget {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData)
  */
-public external open class FormData : JsAny {
+public open external class FormData : JsAny {
     /**
      * The FormData() constructor creates a new FormData object.
      *
@@ -367,7 +367,7 @@ public external open class FormData : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent)
  */
-public external open class ProgressEvent : Event {
+public open external class ProgressEvent : Event {
     /**
      * The ProgressEvent() constructor returns a new ProgressEvent object, representing the current completion of a long
      * process.

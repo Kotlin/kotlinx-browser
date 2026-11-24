@@ -49,7 +49,7 @@ public external interface MessageEventSource : JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement)
  */
-public external abstract class HTMLElement : Element, GlobalEventHandlers, ElementContentEditable, HTMLOrSVGOrMathMLElement, ElementCSSInlineStyle {
+public abstract external class HTMLElement : Element, GlobalEventHandlers, ElementContentEditable, HTMLOrSVGOrMathMLElement, ElementCSSInlineStyle {
     /**
      * The HTMLElement.title property represents the title of the element: the text usually displayed in a 'tooltip'
      * popup when the mouse is over the node.
@@ -312,7 +312,7 @@ public external abstract class HTMLElement : Element, GlobalEventHandlers, Eleme
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringMap)
  */
-public external abstract class DOMStringMap : JsAny {
+public abstract external class DOMStringMap : JsAny {
     // not printed yet: deleter <anonymous>(DOMString)
 }
 
@@ -328,7 +328,7 @@ public operator fun DOMStringMap.set(name: String, value: String) { setStringPro
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement)
  */
-public external abstract class HTMLAnchorElement : HTMLElement, HyperlinkElementUtils, HTMLHyperlinkElementUtils {
+public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElementUtils, HTMLHyperlinkElementUtils {
     /**
      * The download property of the HTMLAnchorElement interface is a string indicating that the linked resource is
      * intended to be downloaded rather than displayed in the browser. The value, if any, represents the proposed name
@@ -413,7 +413,7 @@ public external abstract class HTMLAnchorElement : HTMLElement, HyperlinkElement
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement)
  */
-public external abstract class HTMLImageElement : HTMLElement, CanvasImageSource, TexImageSource {
+public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource, TexImageSource {
     /**
      * The alt property of the HTMLImageElement interface provides fallback (alternate) text to display when the image
      * specified by the &lt;img&gt; element is not displayed, whether because of an error, because the user has disabled
@@ -681,7 +681,7 @@ public external abstract class HTMLImageElement : HTMLElement, CanvasImageSource
     }
 }
 
-public external open class Image : HTMLImageElement {
+public open external class Image : HTMLImageElement {
     constructor(width: Int = definedExternally, height: Int = definedExternally)
 
     /**
@@ -1976,7 +1976,7 @@ public external open class Image : HTMLImageElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement)
  */
-public external abstract class HTMLTableCellElement : HTMLElement {
+public abstract external class HTMLTableCellElement : HTMLElement {
     /**
      * The colSpan property of the HTMLTableCellElement interface represents the number of columns this cell must span;
      * this lets the cell occupy space across multiple columns of the table. It reflects the colspan attribute.
@@ -2115,7 +2115,7 @@ public external abstract class HTMLTableCellElement : HTMLElement {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D)
  */
-public external abstract class CanvasRenderingContext2D : CanvasSettings, CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasUserInterface, CanvasText, CanvasDrawImage, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath, RenderingContext {
+public abstract external class CanvasRenderingContext2D : CanvasSettings, CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasUserInterface, CanvasText, CanvasDrawImage, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath, RenderingContext {
     /**
      * The CanvasRenderingContext2D.canvas property, part of the Canvas API, is a read-only reference to the
      * HTMLCanvasElement object that is associated with a given context.
@@ -2157,7 +2157,7 @@ public external interface CanvasDrawImage : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomStateSet)
  */
-public external abstract class CustomStateSet : JsAny {
+public abstract external class CustomStateSet : JsAny {
     // not printed yet: setlike
 }
 
@@ -2700,7 +2700,7 @@ public external interface HTMLOrSVGScriptElement : JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event)
  */
-public external open class Event : JsAny {
+public open external class Event : JsAny {
     /**
      * The Event() constructor creates a new Event object. An event created in this way is called a synthetic event, as
      * opposed to an event fired by the browser, and can be dispatched by a script.
@@ -2894,7 +2894,7 @@ public fun EventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, comp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget)
  */
-public external open class EventTarget : JsAny {
+public open external class EventTarget : JsAny {
     /**
      * The EventTarget() constructor creates a new EventTarget object instance.
      *
@@ -3044,7 +3044,7 @@ public external interface EventListener : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal)
  */
-public external abstract class AbortSignal : EventTarget {
+public abstract external class AbortSignal : EventTarget {
     /**
      * The aborted read-only property returns a value that indicates whether the asynchronous operations the signal is
      * communicating with are aborted (true) or not (false).
@@ -3293,7 +3293,7 @@ public external interface ParentNode : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeList)
  */
-public external abstract class NodeList : ItemArrayLike<Node> {
+public abstract external class NodeList : ItemArrayLike<Node> {
     /**
      * Returns a node from a NodeList by index. This method doesn't throw exceptions as long as you provide arguments. A
      * value of null is returned if the index is out of range, and a TypeError is thrown if no argument is provided.
@@ -3321,7 +3321,7 @@ public operator fun NodeList.get(index: Int): Node? = getProperty(this, index)
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node)
  */
-public external abstract class Node : EventTarget {
+public abstract external class Node : EventTarget {
     /**
      * The read-only nodeType property of a Node interface is an integer that identifies what the node is. It
      * distinguishes different kinds of nodes from each other, such as elements, text, and comments.
@@ -3581,7 +3581,7 @@ public external abstract class Node : EventTarget {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document)
  */
-public external open class Document : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, GeometryNode {
+public open external class Document : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, GeometryNode {
     /**
      * The Document constructor creates a new Document object that is a web page loaded in the browser and serving as an
      * entry point into the page's content.
@@ -5070,7 +5070,7 @@ public operator fun Document.get(name: String): JsAny? = getProperty(this, name)
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element)
  */
-public external abstract class Element : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction {
+public abstract external class Element : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction {
     /**
      * The Element.namespaceURI read-only property returns the namespace URI of the element, or null if the element is
      * not in a namespace.
@@ -5820,7 +5820,7 @@ import org.w3c.dom.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent)
  */
-public external open class ClipboardChangeEvent : Event {
+public open external class ClipboardChangeEvent : Event {
     /**
      * The ClipboardChangeEvent() constructor creates a new ClipboardChangeEvent object instance when a clipboardchange
      * event occurs. The clipboardchange event fires whenever the system clipboard contents are changed either by a web
@@ -6167,7 +6167,7 @@ public external interface WebGLRenderingContextOverloads : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext)
  */
-public external abstract class WebGLRenderingContext : WebGLRenderingContextBase, WebGLRenderingContextOverloads, RenderingContext, OffscreenRenderingContext {
+public abstract external class WebGLRenderingContext : WebGLRenderingContextBase, WebGLRenderingContextOverloads, RenderingContext, OffscreenRenderingContext {
 
     companion object {
         val DEPTH_BUFFER_BIT: Int
@@ -6492,7 +6492,7 @@ import org.w3c.files.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData)
  */
-public external open class FormData : JsAny {
+public open external class FormData : JsAny {
     /**
      * The FormData() constructor creates a new FormData object.
      *
@@ -6584,7 +6584,7 @@ import org.w3c.dom.*
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers)
  */
-public external open class Headers : JsAny {
+public open external class Headers : JsAny {
     /**
      * The Headers() constructor creates a new Headers object.
      *

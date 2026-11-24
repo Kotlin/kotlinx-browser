@@ -19,7 +19,7 @@ public external interface UnionElementOrProcessingInstruction : JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList)
  */
-public external abstract class MediaList : ItemArrayLike<JsString> {
+public abstract external class MediaList : ItemArrayLike<JsString> {
     /**
      * The mediaText property of the MediaList interface is a stringifier that returns a string representing the
      * MediaList as text, and also allows you to set a new MediaList.
@@ -67,7 +67,7 @@ public operator fun MediaList.get(index: Int): String? = getStringProperty(this,
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet)
  */
-public external abstract class StyleSheet : JsAny {
+public abstract external class StyleSheet : JsAny {
     /**
      * The type read-only property of the StyleSheet interface specifies the style sheet language for the given style
      * sheet.
@@ -129,7 +129,7 @@ public external abstract class StyleSheet : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet)
  */
-public external open class CSSStyleSheet : StyleSheet {
+public open external class CSSStyleSheet : StyleSheet {
     /**
      * The CSSStyleSheet() constructor creates a new CSSStyleSheet object which represents a single Stylesheet.
      *
@@ -234,7 +234,7 @@ public fun CSSStyleSheetInit(baseURL: String? = null, media: JsAny? = null, disa
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList)
  */
-public external abstract class StyleSheetList : ItemArrayLike<CSSStyleSheet> {
+public abstract external class StyleSheetList : ItemArrayLike<CSSStyleSheet> {
     /**
      * The item() method of the StyleSheetList interface returns a single CSSStyleSheet object.
      *
@@ -268,7 +268,7 @@ public external interface LinkStyle : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList)
  */
-public external abstract class CSSRuleList : ItemArrayLike<CSSRule> {
+public abstract external class CSSRuleList : ItemArrayLike<CSSRule> {
     /**
      * The item() method of the CSSRuleList interface returns the CSSRule object at the specified index or null if the
      * specified index doesn't exist.
@@ -293,7 +293,7 @@ public operator fun CSSRuleList.get(index: Int): CSSRule? = getProperty(this, in
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule)
  */
-public external abstract class CSSRule : JsAny {
+public abstract external class CSSRule : JsAny {
     /**
      * The cssText property of the CSSRule interface returns the actual text of a CSSStyleSheet style-rule.
      *
@@ -345,7 +345,7 @@ public external abstract class CSSRule : JsAny {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule)
  */
-public external abstract class CSSStyleRule : CSSGroupingRule {
+public abstract external class CSSStyleRule : CSSGroupingRule {
     /**
      * The selectorText property of the CSSStyleRule interface gets and sets the selectors associated with the
      * CSSStyleRule.
@@ -380,7 +380,7 @@ public external abstract class CSSStyleRule : CSSGroupingRule {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule)
  */
-public external abstract class CSSImportRule : CSSRule {
+public abstract external class CSSImportRule : CSSRule {
     /**
      * The read-only href property of the CSSImportRule interface returns the URL specified by the \@import at-rule.
      *
@@ -439,7 +439,7 @@ public external abstract class CSSImportRule : CSSRule {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule)
  */
-public external abstract class CSSGroupingRule : CSSRule {
+public abstract external class CSSGroupingRule : CSSRule {
     /**
      * The cssRules property of the CSSGroupingRule interface returns a CSSRuleList containing a collection of CSSRule
      * objects.
@@ -480,7 +480,7 @@ public external abstract class CSSGroupingRule : CSSRule {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors)
  */
-public external abstract class CSSPageDescriptors : CSSStyleDeclaration {
+public abstract external class CSSPageDescriptors : CSSStyleDeclaration {
     /**
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
@@ -538,7 +538,7 @@ public external abstract class CSSPageDescriptors : CSSStyleDeclaration {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule)
  */
-public external abstract class CSSPageRule : CSSGroupingRule {
+public abstract external class CSSPageRule : CSSGroupingRule {
     /**
      * The selectorText property of the CSSPageRule interface gets and sets the selectors associated with the
      * CSSPageRule.
@@ -568,7 +568,7 @@ public external abstract class CSSPageRule : CSSGroupingRule {
     }
 }
 
-public external abstract class CSSMarginRule : CSSRule {
+public abstract external class CSSMarginRule : CSSRule {
     open val name: String
     open val style: CSSStyleDeclaration
 
@@ -590,7 +590,7 @@ public external abstract class CSSMarginRule : CSSRule {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule)
  */
-public external abstract class CSSNamespaceRule : CSSRule {
+public abstract external class CSSNamespaceRule : CSSRule {
     /**
      * The read-only namespaceURI property of the CSSNamespaceRule returns a string containing the text of the URI of
      * the given namespace.
@@ -623,7 +623,7 @@ public external abstract class CSSNamespaceRule : CSSRule {
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration)
  */
-public external abstract class CSSStyleDeclaration : ItemArrayLike<JsString> {
+public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
     /**
      * The cssText property of the CSSStyleDeclaration interface returns or sets the text of the element's inline style
      * declaration only.
@@ -695,7 +695,7 @@ public operator fun CSSStyleDeclaration.get(index: Int): String? = getStringProp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleProperties)
  */
-public external abstract class CSSStyleProperties : CSSStyleDeclaration {
+public abstract external class CSSStyleProperties : CSSStyleDeclaration {
     /**
      * The cssFloat property of the CSSStyleProperties interface returns the CSS float property.
      *

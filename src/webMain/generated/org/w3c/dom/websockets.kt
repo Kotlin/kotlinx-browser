@@ -26,7 +26,7 @@ public inline val BinaryType.Companion.ARRAYBUFFER: BinaryType get() = "arraybuf
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket)
  */
-public external open class WebSocket : EventTarget {
+public open external class WebSocket : EventTarget {
     /**
      * The WebSocket() constructor returns a new WebSocket object and immediately attempts to establish a connection to
      * the specified WebSocket URL.
@@ -186,7 +186,7 @@ public external open class WebSocket : EventTarget {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent)
  */
-public external open class CloseEvent : Event {
+public open external class CloseEvent : Event {
     /**
      * The CloseEvent() constructor creates a new CloseEvent object.
      *
