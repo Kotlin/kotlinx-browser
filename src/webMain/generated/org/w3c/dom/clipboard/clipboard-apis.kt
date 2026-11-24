@@ -23,8 +23,24 @@ public fun ClipboardEventInit(bubbles: Boolean? = null, cancelable: Boolean? = n
     if (clipboardData != null) this.clipboardData = clipboardData
 }
 
+/**
+ * The ClipboardEvent interface of the Clipboard API represents events providing information related to modification of
+ * the clipboard, that is cut, copy, and paste events.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)
+ */
 public external open class ClipboardEvent : Event {
+    /**
+     * The ClipboardEvent() constructor returns a new ClipboardEvent, representing an event providing information
+     * related to modification of the clipboard, that is cut, copy, and paste events.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/ClipboardEvent)
+     */
     constructor(type: String, eventInitDict: ClipboardEventInit = definedExternally)
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/clipboardData)
+     */
     open val clipboardData: DataTransfer?
 
     companion object {
@@ -48,9 +64,37 @@ public fun ClipboardChangeEventInit(bubbles: Boolean? = null, cancelable: Boolea
     if (changeId != null) this.changeId = changeId
 }
 
+/**
+ * The ClipboardChangeEvent interface of the Clipboard API represents events fired whenever the contents of the system
+ * clipboard are changed.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent)
+ */
 public external open class ClipboardChangeEvent : Event {
+    /**
+     * The ClipboardChangeEvent() constructor creates a new ClipboardChangeEvent object instance when a clipboardchange
+     * event occurs. The clipboardchange event fires whenever the system clipboard contents are changed either by a web
+     * app or any other system application.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent/ClipboardChangeEvent)
+     */
     constructor(type: String, eventInitDict: ClipboardChangeEventInit = definedExternally)
+
+    /**
+     * The types read-only property of the ClipboardChangeEvent interface returns an array of strings representing the
+     * mandatory MIME types available on the system clipboard when the ClipboardChangeEvent event was fired. Optional
+     * types and custom formats are not included to limit fingerprinting.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent/types)
+     */
     open val types: JsArray<JsString>
+
+    /**
+     * The changeId read-only property of the ClipboardChangeEvent interface returns an integer representing a unique
+     * identifier for this specific clipboard change operation.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent/changeId)
+     */
     open val changeId: JsBigInt
 
     companion object {
@@ -61,13 +105,54 @@ public external open class ClipboardChangeEvent : Event {
     }
 }
 
+/**
+ * The ClipboardItem interface of the Clipboard API represents a single item of data copied to, or read from, the
+ * clipboard, used with Clipboard.write() and Clipboard.read() respectively.
+ *
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem)
+ */
 public external open class ClipboardItem : JsAny {
+    /**
+     * The ClipboardItem() constructor creates a new ClipboardItem object, which represents data to be stored or
+     * retrieved via the Clipboard API clipboard.write() and clipboard.read() methods, respectively.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/ClipboardItem)
+     */
     constructor(items: JsAny, options: ClipboardItemOptions = definedExternally)
+
+    /**
+     * The read-only presentationStyle property of the ClipboardItem interface returns a string indicating how an item
+     * should be presented.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/presentationStyle)
+     */
     open val presentationStyle: PresentationStyle
+
+    /**
+     * The read-only types property of the ClipboardItem interface returns an Array of MIME types available within the
+     * ClipboardItem.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/types)
+     */
     open val types: JsArray<JsString>
+
+    /**
+     * The getType() method of the ClipboardItem interface returns a Promise that resolves with a Blob of the requested
+     * MIME type or an error if the MIME type is not found.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
+     */
     open fun getType(type: String): Promise<Blob>
 
     companion object {
+        /**
+         * The supports() static method of the ClipboardItem interface returns true if the given MIME type is supported
+         * by the clipboard, and false otherwise.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/supports_static)
+         */
         fun supports(type: String): Boolean
     }
 }
@@ -89,10 +174,45 @@ public fun ClipboardItemOptions(presentationStyle: PresentationStyle? = null): C
     if (presentationStyle != null) this.presentationStyle = presentationStyle
 }
 
+/**
+ * The Clipboard interface of the Clipboard API provides read and write access to the contents of the system clipboard.
+ * This allows a web application to implement cut, copy, and paste features.
+ *
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard)
+ */
 public external abstract class Clipboard : EventTarget {
+    /**
+     * The read() method of the Clipboard interface returns a Promise that fulfills with a copy of the clipboard's
+     * contents.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)
+     */
     open fun read(formats: ClipboardUnsanitizedFormats = definedExternally): Promise<JsArray<ClipboardItem>>
+
+    /**
+     * The readText() method of the Clipboard interface returns a Promise which fulfills with a copy of the textual
+     * contents of the system clipboard.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/readText)
+     */
     open fun readText(): Promise<JsString>
+
+    /**
+     * The write() method of the Clipboard interface is used to write data such as images, text, and custom types, to
+     * the system clipboard.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
+     */
     open fun write(data: JsArray<ClipboardItem>): Promise<JsAny?>
+
+    /**
+     * The writeText() method of the Clipboard interface writes the specified text to the system clipboard, returning a
+     * Promise that is resolved once the system clipboard has been updated.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText)
+     */
     open fun writeText(data: String): Promise<JsAny?>
 }
 

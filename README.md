@@ -107,3 +107,8 @@ To build and run all checks, execute:
 
 The sources in `src/webMain/generated` are generated; see the [development guide](docs/development.md) before
 changing them.
+
+## License
+
+Apache License 2.0, see [LICENSE](LICENSE). The KDoc of the generated declarations includes summaries from
+[MDN Web Docs](https://developer.mozilla.org/) by Mozilla Contributors under CC-BY-SA 2.5; see [NOTICE](NOTICE).

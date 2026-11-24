@@ -13,36 +13,206 @@ import org.w3c.dom.*
 
 public external interface UnionElementOrProcessingInstruction : JsAny
 
+/**
+ * The MediaList interface represents the media queries of a stylesheet, e.g., those set using a &lt;link&gt; element's
+ * media attribute.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList)
+ */
 public external abstract class MediaList : ItemArrayLike<JsString> {
+    /**
+     * The mediaText property of the MediaList interface is a stringifier that returns a string representing the
+     * MediaList as text, and also allows you to set a new MediaList.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/mediaText)
+     */
     open var mediaText: String
+
+    /**
+     * The read-only length property of the MediaList interface returns the number of media queries in the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/length)
+     */
     override val length: Int
+
+    /**
+     * The item() method of the MediaList interface returns the media query at the specified index, or null if the
+     * specified index doesn't exist.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/item)
+     */
     override fun item(index: Int): JsString?
+
+    /**
+     * The appendMedium() method of the MediaList interface adds a media query to the list. If the media query is
+     * already in the collection, this method does nothing.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/appendMedium)
+     */
     open fun appendMedium(medium: String)
+
+    /**
+     * The deleteMedium() method of the MediaList interface removes from this MediaList the given media query.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/deleteMedium)
+     */
     open fun deleteMedium(medium: String)
 }
 
 public operator fun MediaList.get(index: Int): String? = getStringProperty(this, index)
 
+/**
+ * An object implementing the StyleSheet interface represents a single style sheet. CSS style sheets will further
+ * implement the more specialized CSSStyleSheet interface.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet)
+ */
 public external abstract class StyleSheet : JsAny {
+    /**
+     * The type read-only property of the StyleSheet interface specifies the style sheet language for the given style
+     * sheet.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/type)
+     */
     open val type: String
+
+    /**
+     * The href property of the StyleSheet interface returns the location of the style sheet.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/href)
+     */
     open val href: String?
+
+    /**
+     * The ownerNode read-only property of the StyleSheet interface returns the node that associates this style sheet
+     * with the document.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/ownerNode)
+     */
     open val ownerNode: UnionElementOrProcessingInstruction?
+
+    /**
+     * The parentStyleSheet read-only property of the StyleSheet interface returns the style sheet, if any, that is
+     * including the given style sheet.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/parentStyleSheet)
+     */
     open val parentStyleSheet: CSSStyleSheet?
+
+    /**
+     * The title read-only property of the StyleSheet interface returns the advisory title of the current style sheet.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/title)
+     */
     open val title: String?
+
+    /**
+     * The read-only media property of the StyleSheet interface contains a MediaList object representing the intended
+     * destination media for style information.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/media)
+     */
     open val media: MediaList
+
+    /**
+     * The disabled property of the StyleSheet interface determines whether the style sheet is prevented from applying
+     * to the document.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/disabled)
+     */
     open var disabled: Boolean
 }
 
+/**
+ * The CSSStyleSheet interface represents a single CSS stylesheet, and lets you inspect and modify the list of rules
+ * contained in the stylesheet. It inherits properties and methods from its parent, StyleSheet.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet)
+ */
 public external open class CSSStyleSheet : StyleSheet {
+    /**
+     * The CSSStyleSheet() constructor creates a new CSSStyleSheet object which represents a single Stylesheet.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/CSSStyleSheet)
+     */
     constructor(options: CSSStyleSheetInit = definedExternally)
+
+    /**
+     * The read-only CSSStyleSheet property ownerRule returns the CSSImportRule corresponding to the \@import at-rule
+     * which imported the stylesheet into the document. If the stylesheet wasn't imported into the document using
+     * \@import, the returned value is null.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/ownerRule)
+     */
     open val ownerRule: CSSRule?
+
+    /**
+     * The read-only CSSStyleSheet property cssRules returns a live CSSRuleList which provides a real-time, up-to-date
+     * list of every CSS rule which comprises the stylesheet. Each item in the list is a CSSRule defining a single rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/cssRules)
+     */
     open val cssRules: CSSRuleList
+
+    /**
+     * The CSSStyleSheet.insertRule() method inserts a new CSS rule into the current style sheet.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/insertRule)
+     */
     open fun insertRule(rule: String, index: Int = definedExternally): Int
+
+    /**
+     * The CSSStyleSheet method deleteRule() removes a rule from the stylesheet object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/deleteRule)
+     */
     open fun deleteRule(index: Int)
+
+    /**
+     * The replace() method of the CSSStyleSheet interface asynchronously replaces the content of the stylesheet with
+     * the content passed into it. The method returns a promise that resolves with the CSSStyleSheet object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
+     */
     open fun replace(text: String): Promise<CSSStyleSheet>
+
+    /**
+     * The replaceSync() method of the CSSStyleSheet interface synchronously replaces the content of the stylesheet with
+     * the content passed into it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replaceSync)
+     */
     open fun replaceSync(text: String)
+
+    /**
+     * The rules read-only property of the CSSStyleSheet interface is a deprecated legacy property. Functionally
+     * identical to the preferred cssRules property, it provides access to a live-updating list of the CSS rules
+     * comprising the stylesheet.
+     *
+     * Deprecated: MDN no longer recommends using this feature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/rules)
+     */
     open val rules: CSSRuleList
+
+    /**
+     * The obsolete CSSStyleSheet interface's addRule() legacy method adds a new rule to the stylesheet. You should
+     * avoid using this method, and should instead use the more standard insertRule() method.
+     *
+     * Deprecated: MDN no longer recommends using this feature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/addRule)
+     */
     open fun addRule(selector: String = definedExternally, style: String = definedExternally, index: Int = definedExternally): Int
+
+    /**
+     * The obsolete CSSStyleSheet method removeRule() removes a rule from the stylesheet object. It is functionally
+     * identical to the standard, preferred method deleteRule().
+     *
+     * Deprecated: MDN no longer recommends using this feature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/removeRule)
+     */
     open fun removeRule(index: Int = definedExternally)
 }
 
@@ -58,28 +228,103 @@ public fun CSSStyleSheetInit(baseURL: String? = null, media: JsAny? = null, disa
     if (disabled != null) this.disabled = disabled
 }
 
+/**
+ * The StyleSheetList interface represents a list of CSSStyleSheet objects. An instance of this object can be returned
+ * by Document.styleSheets.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList)
+ */
 public external abstract class StyleSheetList : ItemArrayLike<CSSStyleSheet> {
+    /**
+     * The item() method of the StyleSheetList interface returns a single CSSStyleSheet object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/item)
+     */
     override fun item(index: Int): CSSStyleSheet?
+
+    /**
+     * The length read-only property of the StyleSheetList interface returns the number of CSSStyleSheet objects in the
+     * collection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/length)
+     */
     override val length: Int
 }
 
 public operator fun StyleSheetList.get(index: Int): CSSStyleSheet? = getProperty(this, index)
 
 public external interface LinkStyle : JsAny {
+    /**
+     * The sheet read-only property of the HTMLLinkElement interface contains the stylesheet associated with that
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sheet)
+     */
     val sheet: CSSStyleSheet?
 }
 
+/**
+ * A CSSRuleList represents an ordered collection of read-only CSSRule objects.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList)
+ */
 public external abstract class CSSRuleList : ItemArrayLike<CSSRule> {
+    /**
+     * The item() method of the CSSRuleList interface returns the CSSRule object at the specified index or null if the
+     * specified index doesn't exist.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList/item)
+     */
     override fun item(index: Int): CSSRule?
+
+    /**
+     * The length property of the CSSRuleList interface returns the number of CSSRule objects in the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList/length)
+     */
     override val length: Int
 }
 
 public operator fun CSSRuleList.get(index: Int): CSSRule? = getProperty(this, index)
 
+/**
+ * The CSSRule interface represents a single CSS rule. There are several types of rules which inherit properties from
+ * CSSRule.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule)
+ */
 public external abstract class CSSRule : JsAny {
+    /**
+     * The cssText property of the CSSRule interface returns the actual text of a CSSStyleSheet style-rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/cssText)
+     */
     open var cssText: String
+
+    /**
+     * The parentRule read-only property of the CSSRule interface returns the containing rule of the current rule if
+     * this exists, or otherwise returns null.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/parentRule)
+     */
     open val parentRule: CSSRule?
+
+    /**
+     * The parentStyleSheet read-only property of the CSSRule interface returns the StyleSheet object in which the
+     * current rule is defined.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/parentStyleSheet)
+     */
     open val parentStyleSheet: CSSStyleSheet?
+
+    /**
+     * The read-only type property of the CSSRule interface is a deprecated property that returns an integer indicating
+     * which type of rule the CSSRule represents.
+     *
+     * Deprecated: MDN no longer recommends using this feature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/type)
+     */
     open val type: Short
 
     companion object {
@@ -95,8 +340,26 @@ public external abstract class CSSRule : JsAny {
     }
 }
 
+/**
+ * The CSSStyleRule interface represents a single CSS style rule.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule)
+ */
 public external abstract class CSSStyleRule : CSSGroupingRule {
+    /**
+     * The selectorText property of the CSSStyleRule interface gets and sets the selectors associated with the
+     * CSSStyleRule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/selectorText)
+     */
     open var selectorText: String
+
+    /**
+     * The read-only style property of the CSSStyleRule interface contains a CSSStyleProperties object representing the
+     * properties list in this style rule's body.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/style)
+     */
     open val style: CSSStyleProperties
 
     companion object {
@@ -112,11 +375,49 @@ public external abstract class CSSStyleRule : CSSGroupingRule {
     }
 }
 
+/**
+ * The CSSImportRule interface represents an \@import at-rule.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule)
+ */
 public external abstract class CSSImportRule : CSSRule {
+    /**
+     * The read-only href property of the CSSImportRule interface returns the URL specified by the \@import at-rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/href)
+     */
     open val href: String
+
+    /**
+     * The read-only media property of the CSSImportRule interface returns a MediaList object representing the media
+     * query list of the \@import rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/media)
+     */
     open val media: MediaList
+
+    /**
+     * The read-only styleSheet property of the CSSImportRule interface returns the CSS Stylesheet specified by the
+     * \@import at-rule. This will be in the form of a CSSStyleSheet object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/styleSheet)
+     */
     open val styleSheet: CSSStyleSheet?
+
+    /**
+     * The read-only layerName property of the CSSImportRule interface returns the name of the cascade layer created by
+     * the \@import at-rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/layerName)
+     */
     open val layerName: String?
+
+    /**
+     * The read-only supportsText property of the CSSImportRule interface returns the supports condition specified by
+     * the \@import at-rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/supportsText)
+     */
     open val supportsText: String?
 
     companion object {
@@ -132,9 +433,33 @@ public external abstract class CSSImportRule : CSSRule {
     }
 }
 
+/**
+ * The CSSGroupingRule interface of the CSS Object Model represents any CSS at-rule that contains other rules nested
+ * within it.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule)
+ */
 public external abstract class CSSGroupingRule : CSSRule {
+    /**
+     * The cssRules property of the CSSGroupingRule interface returns a CSSRuleList containing a collection of CSSRule
+     * objects.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/cssRules)
+     */
     open val cssRules: CSSRuleList
+
+    /**
+     * The insertRule() method of the CSSGroupingRule interface adds a new CSS rule to a list of CSS rules.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/insertRule)
+     */
     open fun insertRule(rule: String, index: Int = definedExternally): Int
+
+    /**
+     * The deleteRule() method of the CSSGroupingRule interface removes a CSS rule from a list of child CSS rules.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/deleteRule)
+     */
     open fun deleteRule(index: Int)
 
     companion object {
@@ -150,20 +475,84 @@ public external abstract class CSSGroupingRule : CSSRule {
     }
 }
 
+/**
+ * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors)
+ */
 public external abstract class CSSPageDescriptors : CSSStyleDeclaration {
+    /**
+     * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margin)
+     */
     open var margin: String
+
+    /**
+     * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margintop)
+     */
     open var marginTop: String
+
+    /**
+     * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginright)
+     */
     open var marginRight: String
+
+    /**
+     * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginbottom)
+     */
     open var marginBottom: String
+
+    /**
+     * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginleft)
+     */
     open var marginLeft: String
+
+    /**
+     * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#size)
+     */
     open var size: String
+
+    /**
+     * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#pageorientation)
+     */
     open var pageOrientation: String
     open var marks: String
     open var bleed: String
 }
 
+/**
+ * CSSPageRule represents a single CSS \@page rule.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule)
+ */
 public external abstract class CSSPageRule : CSSGroupingRule {
+    /**
+     * The selectorText property of the CSSPageRule interface gets and sets the selectors associated with the
+     * CSSPageRule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule/selectorText)
+     */
     open var selectorText: String
+
+    /**
+     * The read-only style property of the CSSPageRule interface contains a CSSPageDescriptors object representing the
+     * descriptors available in the \@page rule's body.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule/style)
+     */
     open val style: CSSPageDescriptors
 
     companion object {
@@ -196,8 +585,26 @@ public external abstract class CSSMarginRule : CSSRule {
     }
 }
 
+/**
+ * The CSSNamespaceRule interface describes an object representing a single CSS \@namespace at-rule.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule)
+ */
 public external abstract class CSSNamespaceRule : CSSRule {
+    /**
+     * The read-only namespaceURI property of the CSSNamespaceRule returns a string containing the text of the URI of
+     * the given namespace.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule/namespaceURI)
+     */
     open val namespaceURI: String
+
+    /**
+     * The read-only prefix property of the CSSNamespaceRule returns a string with the name of the prefix associated to
+     * this namespace. If there is no such prefix, it returns an empty string.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule/prefix)
+     */
     open val prefix: String
 
     companion object {
@@ -213,20 +620,87 @@ public external abstract class CSSNamespaceRule : CSSRule {
     }
 }
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration)
+ */
 public external abstract class CSSStyleDeclaration : ItemArrayLike<JsString> {
+    /**
+     * The cssText property of the CSSStyleDeclaration interface returns or sets the text of the element's inline style
+     * declaration only.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssText)
+     */
     open var cssText: String
+
+    /**
+     * The read-only property returns an integer that represents the number of style declarations in this CSS
+     * declaration block.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/length)
+     */
     override val length: Int
+
+    /**
+     * The CSSStyleDeclaration.item() method interface returns a CSS property name from a CSSStyleDeclaration by index.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/item)
+     */
     override fun item(index: Int): JsString
+
+    /**
+     * The CSSStyleDeclaration.getPropertyValue() method interface returns a string containing the value of a specified
+     * CSS property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyValue)
+     */
     open fun getPropertyValue(property: String): String
+
+    /**
+     * The CSSStyleDeclaration.getPropertyPriority() method interface returns a string that provides all explicitly set
+     * priorities on the CSS property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyPriority)
+     */
     open fun getPropertyPriority(property: String): String
+
+    /**
+     * The CSSStyleDeclaration.setProperty() method interface sets a new value for a property on a CSS style declaration
+     * object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/setProperty)
+     */
     open fun setProperty(property: String, value: String, priority: String = definedExternally)
+
+    /**
+     * The CSSStyleDeclaration.removeProperty() method interface removes a property from a CSS style declaration object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/removeProperty)
+     */
     open fun removeProperty(property: String): String
+
+    /**
+     * The CSSStyleDeclaration.parentRule read-only property returns a CSSRule that is the parent of this style block,
+     * e.g., a CSSStyleRule representing the style for a CSS selector.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/parentRule)
+     */
     open val parentRule: CSSRule?
 }
 
 public operator fun CSSStyleDeclaration.get(index: Int): String? = getStringProperty(this, index)
 
+/**
+ * The CSSStyleProperties interface of the CSS Object Model (CSSOM) represents inline or computed styles available on an
+ * element, or the styles associated with a CSS style rule.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleProperties)
+ */
 public external abstract class CSSStyleProperties : CSSStyleDeclaration {
+    /**
+     * The cssFloat property of the CSSStyleProperties interface returns the CSS float property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleProperties/cssFloat)
+     */
     open var cssFloat: String
     open var accentColor: String
     open var alignContent: String
@@ -994,9 +1468,21 @@ public external abstract class CSSStyleProperties : CSSStyleDeclaration {
 }
 
 public external interface ElementCSSInlineStyle : JsAny {
+    /**
+     * The read-only style property of the HTMLElement interface returns the inline style of an element in the form of a
+     * live CSSStyleProperties object. This object can be used to get and set the inline styles of an element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/style)
+     */
     val style: CSSStyleProperties
 }
 
+/**
+ * The CSS interface holds useful CSS-related methods. No objects with this interface are implemented: it contains only
+ * static methods and is therefore a utilitarian interface.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS)
+ */
 public external object CSS {
     fun escape(ident: String): String
     fun supports(property: String, value: String): Boolean

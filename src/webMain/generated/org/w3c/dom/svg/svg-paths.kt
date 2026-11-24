@@ -25,14 +25,58 @@ public fun SVGPathDataSettings(normalize: Boolean? = null): SVGPathDataSettings 
 }
 
 public external interface SVGPathData : JsAny {
+    /**
+     * The SVGPathElement.getPathData() method returns the sequence of path segments that corresponds to the path data,
+     * optionally normalizing the values and segment types.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/getPathData)
+     */
     fun getPathData(settings: SVGPathDataSettings = definedExternally): JsArray<SVGPathSegment>
+
+    /**
+     * The SVGPathElement.setPathData() method sets the sequence of path segments as the new path data.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/setPathData)
+     */
     fun setPathData(pathData: JsArray<SVGPathSegment>)
 }
 
+/**
+ * The SVGPathElement interface corresponds to the &lt;path&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement)
+ */
 public external abstract class SVGPathElement : SVGGeometryElement, SVGPathData {
+    /**
+     * The pathLength read-only property of the SVGPathElement interface reflects the pathLength attribute of the given
+     * &lt;path&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/pathLength)
+     */
     override val pathLength: SVGAnimatedNumber
+
+    /**
+     * The getTotalLength() method of the SVGPathElement interface returns the user agent's computed value for the total
+     * length of the path in user units.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/getTotalLength)
+     */
     override fun getTotalLength(): Float
+
+    /**
+     * The getPointAtLength() method of the SVGPathElement interface returns the point at a given distance along the
+     * path.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/getPointAtLength)
+     */
     override fun getPointAtLength(distance: Float): DOMPoint
+
+    /**
+     * The getPathSegmentAtLength() method of the SVGPathElement interface returns the path segment at a given distance
+     * along the path.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/getPathSegmentAtLength)
+     */
     open fun getPathSegmentAtLength(distance: Float): SVGPathSegment?
 
     companion object {

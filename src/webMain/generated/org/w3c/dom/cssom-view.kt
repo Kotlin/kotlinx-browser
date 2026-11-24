@@ -48,26 +48,108 @@ public fun ScrollResult(interrupted: Boolean): ScrollResult = newJsObject<Scroll
     this.interrupted = interrupted
 }
 
+/**
+ * A MediaQueryList object stores information on a media query applied to a document, with support for both immediate
+ * and event-driven matching against the state of the document.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList)
+ */
 public external abstract class MediaQueryList : EventTarget {
+    /**
+     * The media read-only property of the MediaQueryList interface is a string representing a serialized media query.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/media)
+     */
     open val media: String
+
+    /**
+     * The matches read-only property of the MediaQueryList interface is a boolean value that returns true if the
+     * document currently matches the media query list, or false if not.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/matches)
+     */
     open val matches: Boolean
+
+    /**
+     * The deprecated addListener() method of the MediaQueryList interface adds a listener to the MediaQueryListener
+     * that will run a custom callback function in response to the media query status changing.
+     *
+     * Deprecated: MDN no longer recommends using this feature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/addListener)
+     */
     open fun addListener(callback: EventListener?)
+
+    /**
+     * The removeListener() method of the MediaQueryList interface removes a listener from the MediaQueryListener.
+     *
+     * Deprecated: MDN no longer recommends using this feature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/removeListener)
+     */
     open fun removeListener(callback: EventListener?)
+
+    /**
+     * The removeListener() method of the MediaQueryList interface removes a listener from the MediaQueryListener.
+     *
+     * Deprecated: MDN no longer recommends using this feature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/removeListener)
+     */
     open fun removeListener(callback: (Event) -> Unit)
+
+    /**
+     * The change event of the MediaQueryList interface fires when the status of media query support changes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/change_event)
+     */
     open var onchange: ((MediaQueryListEvent) -> Unit)?
 }
 
 private fun toEventListener(callback: (Event) -> Unit): EventListener = js("callback")
 
+/**
+ * The deprecated addListener() method of the MediaQueryList interface adds a listener to the MediaQueryListener that
+ * will run a custom callback function in response to the media query status changing.
+ *
+ * Deprecated: MDN no longer recommends using this feature.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/addListener)
+ */
 public fun MediaQueryList.addListener(callback: (Event) -> Unit): () -> Unit {
     val listener = toEventListener(callback)
     addListener(listener)
     return { removeListener(listener) }
 }
 
+/**
+ * The MediaQueryListEvent object stores information on the changes that have happened to a MediaQueryList object —
+ * instances are available as the event object on a function referenced by a change event.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent)
+ */
 public external open class MediaQueryListEvent : Event {
+    /**
+     * The MediaQueryListEvent() constructor creates a new MediaQueryListEvent object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/MediaQueryListEvent)
+     */
     constructor(type: String, eventInitDict: MediaQueryListEventInit = definedExternally)
+
+    /**
+     * The media read-only property of the MediaQueryListEvent interface is a string representing a serialized media
+     * query.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/media)
+     */
     open val media: String
+
+    /**
+     * The matches read-only property of the MediaQueryListEvent interface is a boolean value that is true if the
+     * document currently matches the media query list, or false if not.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/matches)
+     */
     open val matches: Boolean
 
     companion object {
@@ -91,12 +173,59 @@ public fun MediaQueryListEventInit(bubbles: Boolean? = null, cancelable: Boolean
     if (matches != null) this.matches = matches
 }
 
+/**
+ * The Screen interface represents a screen, usually the one on which the current window is being rendered, and is
+ * obtained using window.screen.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen)
+ */
 public external abstract class Screen : JsAny {
+    /**
+     * The availWidth read-only property of the Screen interface returns the amount of horizontal space (in CSS pixels)
+     * available to the window.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/availWidth)
+     */
     open val availWidth: Int
+
+    /**
+     * The read-only Screen interface's availHeight property returns the height, in CSS pixels, of the space available
+     * for Web content on the screen. Since Screen is exposed on the Window interface's window.screen property, you
+     * access availHeight using window.screen.availHeight.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/availHeight)
+     */
     open val availHeight: Int
+
+    /**
+     * The Screen.width read-only property returns the width of the screen in CSS pixels.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/width)
+     */
     open val width: Int
+
+    /**
+     * The Screen.height read-only property returns the height of the screen in CSS pixels.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/height)
+     */
     open val height: Int
+
+    /**
+     * The Screen.colorDepth read-only property returns the color depth of the screen. Per the CSSOM, some
+     * implementations return 24 for compatibility reasons. See the browser compatibility section for those that don't.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/colorDepth)
+     */
     open val colorDepth: Int
+
+    /**
+     * The pixelDepth read-only property of the Screen interface returns the bit depth of the screen. Per the CSSOM,
+     * some implementations return 24 for compatibility reasons. See the browser compatibility section for those that
+     * don't.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/pixelDepth)
+     */
     open val pixelDepth: Int
 }
 
@@ -108,9 +237,34 @@ public fun CaretPositionFromPointOptions(shadowRoots: JsArray<ShadowRoot>? = nul
     if (shadowRoots != null) this.shadowRoots = shadowRoots
 }
 
+/**
+ * The CaretPosition interface represents the caret position, an indicator for the text insertion point. You can get a
+ * CaretPosition using the Document.caretPositionFromPoint() method.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition)
+ */
 public external abstract class CaretPosition : JsAny {
+    /**
+     * The offsetNode property of the CaretPosition interface returns a Node containing the found node at the caret's
+     * position.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition/offsetNode)
+     */
     open val offsetNode: Node
+
+    /**
+     * The offset property of the CaretPosition interface returns an integer representing the offset of the selection in
+     * the caret position node.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition/offset)
+     */
     open val offset: Int
+
+    /**
+     * The getClientRect() method of the CaretPosition interface returns the client rectangle for the caret range.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition/getClientRect)
+     */
     open fun getClientRect(): DOMRect?
 }
 
@@ -198,15 +352,98 @@ public external interface GeometryUtils : JsAny {
     fun convertPointFromNode(point: DOMPointInit, from: GeometryNode, options: ConvertCoordinateOptions = definedExternally): DOMPoint
 }
 
+/**
+ * The VisualViewport interface of the CSSOM view API represents the visual viewport for a given window. For a page
+ * containing frames, each &lt;iframe&gt; , as well as the containing page, will have a unique window object. Each
+ * window on a page will have a unique VisualViewport representing the properties associated with that window.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport)
+ */
 public external abstract class VisualViewport : EventTarget {
+    /**
+     * The offsetLeft read-only property of the VisualViewport interface returns the offset of the left edge of the
+     * visual viewport from the left edge of the layout viewport in CSS pixels, or 0 if current document is not fully
+     * active.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/offsetLeft)
+     */
     open val offsetLeft: Double
+
+    /**
+     * The offsetTop read-only property of the VisualViewport interface returns the offset of the top edge of the visual
+     * viewport from the top edge of the layout viewport in CSS pixels, or 0 if current document is not fully active.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/offsetTop)
+     */
     open val offsetTop: Double
+
+    /**
+     * The pageLeft read-only property of the VisualViewport interface returns the x coordinate of the left edge of the
+     * visual viewport relative to the initial containing block origin, in CSS pixels, or 0 if current document is not
+     * fully active.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/pageLeft)
+     */
     open val pageLeft: Double
+
+    /**
+     * The pageTop read-only property of the VisualViewport interface returns the y coordinate of the top edge of the
+     * visual viewport relative to the initial containing block origin, in CSS pixels, or 0 if current document is not
+     * fully active.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/pageTop)
+     */
     open val pageTop: Double
+
+    /**
+     * The width read-only property of the VisualViewport interface returns the width of the visual viewport, in CSS
+     * pixels, or 0 if current document is not fully active.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/width)
+     */
     open val width: Double
+
+    /**
+     * The height read-only property of the VisualViewport interface returns the height of the visual viewport, in CSS
+     * pixels, or 0 if current document is not fully active.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/height)
+     */
     open val height: Double
+
+    /**
+     * The scale read-only property of the VisualViewport interface returns the pinch-zoom scaling factor applied to the
+     * visual viewport, or 0 if current document is not fully active, or 1 if there is no output device.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scale)
+     */
     open val scale: Double
+
+    /**
+     * The resize event of the VisualViewport interface is fired when the visual viewport is resized. This allows you to
+     * position elements relative to the visual viewport as it is zoomed, which would normally be anchored to the layout
+     * viewport.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/resize_event)
+     */
     open var onresize: ((Event) -> Unit)?
+
+    /**
+     * The scroll event of the VisualViewport interface is fired when the visual viewport is scrolled. This allows you
+     * to position elements relative to the visual viewport as it is scrolled, which would normally be anchored to the
+     * layout viewport.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scroll_event)
+     */
     open var onscroll: ((Event) -> Unit)?
+
+    /**
+     * The scrollend event of the VisualViewport interface is fired when a scrolling operation on the visual viewport
+     * ends. This allows you to update an element when a scrolling action is completed. For example, you could use the
+     * resize and scroll events to keep an element fixed to the visual viewport as it is pinch-zoomed and scrolled, and
+     * update it with new content when scrolling ends using scrollend.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scrollend_event)
+     */
     open var onscrollend: ((Event) -> Unit)?
 }

@@ -134,3 +134,10 @@ for files at fixed places in the repository. The IR round-trip check became the 
 of `check`. What was given up: a fresh clone's first build needs the npm registry (as it already did for the
 library's tests), and the raw upstream change is no longer a committed diff (compare `generator/build/webref/`
 before and after a bump to see it).
+
+## Amendment (2026-11-24): MDN summaries are committed
+
+The KDoc takes MDN's page summaries from `https://developer.mozilla.org/en-US/metadata.json`. Unlike the webref
+packages and BCD, MDN content has no versioned release to pin, so `mdn/summaries.json` and `mdn/commit` are committed,
+updated only by `./gradlew :generator:updateMdnSummaries`, and reviewed like generated code. This is the one committed
+input, and it is committed for pinning, not to avoid Node or the network. The text is CC-BY-SA 2.5; see `NOTICE`.

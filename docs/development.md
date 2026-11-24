@@ -22,8 +22,10 @@ declarations are generated from the specifications' Web IDL. There is one copy i
 | `src/webTest/kotlin/` | Runtime tests run on Node for both targets (`InteropTest`, `SmokeTest`) | Yes |
 | `api/kotlinx-browser.klib.api` | ABI dump for both targets in one file | **No.** `./gradlew updateKotlinAbi` |
 | `generator/` | The generator (Kotlin/JVM, Gradle subproject `:generator`) | Yes |
-| `package.json`, `package-lock.json` | The pinned generator inputs: `@webref/idl`, `@webref/events`, `@webref/css`, `webidl2` | Only to bump them (see [Bumping webref](#bumping-webref)) |
-| `scripts/` | `prepare-webref.js` (parses the pinned packages into JSON) and `check-ir-roundtrip.js`, run by Gradle | Yes |
+| `package.json`, `package-lock.json` | The pinned generator inputs: `@webref/idl`, `@webref/events`, `@webref/css`, `webidl2`, `@mdn/browser-compat-data` | Only to bump them (see [Bumping webref](#bumping-webref)) |
+| `mdn/summaries.json`, `mdn/commit` | MDN's summary of each Web API page, for the KDoc, and the `mdn/content` commit it is from. CC-BY-SA 2.5, see `NOTICE` | **No.** `./gradlew :generator:updateMdnSummaries` (see [KDoc](#kdoc)) |
+| `NOTICE` | Attribution of the MDN content in the KDoc; packed into every published jar | When an attributed input changes |
+| `scripts/` | `prepare-webref.js` (parses the pinned packages into JSON), `check-ir-roundtrip.js`, run by Gradle; `fetch-mdn.js`, run by `updateMdnSummaries` | Yes |
 | `surface-report.txt` | Everything pruned from the allowlisted specs, and why | **No.** Regenerate |
 | `docs/` | This guide, the migration guide, decision records | Yes |
 
@@ -78,10 +80,11 @@ The ABI diff is the user-visible change.
 ## The pipeline
 
 ```
-@webref/idl, @webref/events, @webref/css, webidl2   (package-lock.json: exact versions and integrity hashes)
+@webref/idl, @webref/events, @webref/css, webidl2, BCD   (package-lock.json: exact versions and integrity hashes)
         │  :generator:npmInstall, :generator:prepareWebref   (gradle-node-plugin)
         ▼
-generator/build/webref/webref-idl.json (parsed by webidl2.js), webref-events.json, webref-css.json   (not committed)
+generator/build/webref/webref-idl.json (parsed by webidl2.js), webref-events.json, webref-css.json, bcd-api.json
+        │                                                    (not committed)    + mdn/summaries.json (committed)
         │  :generator:generateWebApi   (JVM)
         ▼
 frontend ─► surface ─► lowering ─► backend ─► src/webMain/generated/**/*.kt, surface-report.txt   (committed)
@@ -94,6 +97,7 @@ All generator code is under `generator/src/main/kotlin/idl/`.
 | Inputs | `IdlInput.kt`, `Specs.kt` | `GeneratorPaths` (locations from system properties); `SPEC_ALLOWLIST` (spec → Kotlin package), `EXCLUDED_SPECS`, `EXCLUDED_TYPES` |
 | Front-end | `frontend/WebIdl2JsonFrontend.kt` | Reads `webref-idl.json` into the IR (`ir/IdlIR.kt`). The IR is lossless: `checkIrRoundTrip` prints it back and compares |
 | | `frontend/WebrefEvents.kt` | Which event each `on…` handler receives |
+| | `frontend/WebDocs.kt` | The KDoc inputs: MDN page and deprecation per declaration (BCD), MDN summaries |
 | | `frontend/WebrefCss.kt` | Adds the CSS property attributes of `CSSStyleProperties`, which CSSOM defines in prose rather than IDL, as a partial interface |
 | Surface | `surface/Surface.kt`, `surface/Builtins.kt` | Starts from the whole corpus. Keeps the allowlisted specs and prunes references into excluded specs and types (recorded in `surface-report.txt`). Any reference left unresolved fails generation |
 | Lowering | `lowering/Lowering.kt` | In order: `mergePartials`, `resolveTypedefs`, `UnionMarkers`, `expandUnionOverloads`, `Shapes`, `EventHandlerTypes`, `Overrides` |
@@ -166,6 +170,31 @@ Review in this order:
 2. The ABI diff: what users get.
 
 To see the raw upstream change, compare `generator/build/webref/` before and after the bump.
+
+## KDoc
+
+Every generated declaration that MDN documents gets KDoc: MDN's summary of the page, a deprecation note if BCD marks
+it deprecated, "Available only in secure contexts." for `[SecureContext]`, and a link to the page.
+
+- **Links and deprecation** come from `@mdn/browser-compat-data` (BCD, CC0), pinned in `package-lock.json` and
+  extracted by `prepareWebref` into `bcd-api.json`. BCD keys are IDL names: `Element.getAttribute`, `URL.URL` for the
+  constructor, `URL.canParse_static`, `Element.click_event` (used for `onclick`).
+- **Summaries** come from MDN's `metadata.json`, which has no versioned release. `updateMdnSummaries` fetches it and
+  writes the Web API summaries to `mdn/summaries.json` and the `mdn/content` commit to `mdn/commit`; both are
+  committed, so the text is pinned and its changes are reviewed. Run it deliberately, then regenerate:
+  ```shell
+  ./gradlew :generator:updateMdnSummaries
+  ./gradlew :generator:generateWebApi
+  ./gradlew :generator:test -PupdateGolden=true
+  ```
+- **Licence.** The summaries are MDN prose under CC-BY-SA 2.5 by Mozilla Contributors, not Apache 2.0. `NOTICE`
+  attributes them, every comment links to its page, and every published jar contains `META-INF/NOTICE`. Don't
+  copy MDN text anywhere else in the repository.
+- **Lookup** (`backend/DocComments.kt`): an interface by name; a member on its own interface, else, for a mixin member,
+  on the interfaces that include the mixin and their ancestors, in `includes` order. So `ParentNode.append` is
+  documented with MDN's page of `Document.append`. Dictionaries, enums and typedefs have no BCD entries.
+- **Text:** a summary ending in a sentence that introduces a list (`…the following values:`) loses that sentence;
+  `[`, `]`, `<`, `>`, `&`, `*/` and a leading `@` are escaped; lines are wrapped at 120 columns.
 
 Generation fails on anything unresolved or ambiguous, for example a new reference into a spec that isn't allowlisted,
 or two enum values with the same Kotlin name. Resolve these explicitly; don't silence them.

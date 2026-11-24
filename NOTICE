@@ -1,0 +1,19 @@
+kotlinx-browser
+Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
+
+This product is licensed under the Apache License 2.0 (see LICENSE), except for the
+material listed below.
+
+=========================================================================
+MDN Web Docs Attribution
+=========================================================================
+The KDoc documentation comments in src/webMain/generated/ include content
+adapted (shortened and reformatted as KDoc) from MDN Web Docs
+(https://developer.mozilla.org/) by Mozilla Contributors, licensed under the
+Creative Commons Attribution-ShareAlike 2.5 Generic license (CC-BY-SA 2.5):
+https://creativecommons.org/licenses/by-sa/2.5/
+
+The source summaries are in mdn/summaries.json, taken from mdn/content at the
+commit in mdn/commit. Each comment links to the MDN page it is adapted from.
+These excerpts are not covered by the Apache License 2.0 that applies to the
+rest of this project.

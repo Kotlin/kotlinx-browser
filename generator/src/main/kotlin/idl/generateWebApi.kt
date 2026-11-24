@@ -13,7 +13,7 @@ import java.nio.file.Path
 /** The generated `webMain` sources: path relative to [GeneratorPaths.generatedSources] → content, sorted by path. */
 fun generateWebApi(): Map<String, String> {
     val lowered = loadSurface().ir.lower(loadEvents())
-    val backend = KotlinBackend(lowered)
+    val backend = KotlinBackend(lowered, loadWebDocs())
     return lowered.ir.specs
         .associate { backend.path(it) to backend.file(it) }
         .toSortedMap()

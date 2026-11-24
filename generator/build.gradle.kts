@@ -30,7 +30,7 @@ val idlIrDir = layout.buildDirectory.dir("idl-ir")
 
 val prepareWebref by tasks.registering(NodeTask::class) {
     description =
-        "Parses the pinned @webref/idl with webidl2 and writes it, @webref/events and @webref/css to build/webref."
+        "Parses the pinned @webref/idl with webidl2 and writes it, @webref/events, @webref/css and BCD to build/webref."
     dependsOn(tasks.npmInstall)
     script = repositoryRoot.file("scripts/prepare-webref.js")
 
@@ -49,11 +49,22 @@ val prepareWebref by tasks.registering(NodeTask::class) {
 
 val webref: Provider<Directory> = prepareWebref.map { webrefDir.get() }
 
+val updateMdnSummaries by tasks.registering(NodeTask::class) {
+    description = "Fetches the MDN summaries of the Web API pages into mdn/ (committed; MDN has no versioned release)."
+    script = repositoryRoot.file("scripts/fetch-mdn.js")
+    args.add(repositoryRoot.dir("mdn").asFile.path)
+    outputs.files(repositoryRoot.file("mdn/summaries.json"), repositoryRoot.file("mdn/commit"))
+    // Fetches the latest MDN metadata: never up to date.
+    outputs.upToDateWhen { false }
+}
+
 val generateWebApi by tasks.registering(JavaExec::class) {
+    mustRunAfter(updateMdnSummaries)
     description = "Regenerates src/webMain/generated and surface-report.txt from the pinned Web IDL."
     mainClass = "org.jetbrains.kotlin.tools.idl.GenerateWebApiKt"
     classpath = sourceSets["main"].runtimeClasspath
     webrefProperties()
+    docsProperties()
 
     locationProperty(
         "kotlinx.browser.generatedSources",
@@ -105,8 +116,10 @@ tasks.check {
 }
 
 tasks.test {
+    mustRunAfter(updateMdnSummaries)
     useJUnitPlatform()
     webrefProperties()
+    docsProperties()
 
     property("kotlinx.browser.generatedSources", repositoryRoot.dir("src/webMain/generated"))
     property("kotlinx.browser.surfaceReport", repositoryRoot.file("surface-report.txt"))
@@ -127,4 +140,10 @@ fun <T> T.webrefProperties() where T : Task, T : JavaForkOptions {
     property("kotlinx.browser.webrefIdl", webref.map { it.file("webref-idl.json") })
     property("kotlinx.browser.webrefEvents", webref.map { it.file("webref-events.json") })
     property("kotlinx.browser.webrefCss", webref.map { it.file("webref-css.json") })
+}
+
+/** The KDoc inputs: BCD (MDN pages, deprecation) and the committed MDN summaries. */
+fun <T> T.docsProperties() where T : Task, T : JavaForkOptions {
+    property("kotlinx.browser.bcd", webref.map { it.file("bcd-api.json") })
+    property("kotlinx.browser.mdnSummaries", repositoryRoot.file("mdn/summaries.json"))
 }

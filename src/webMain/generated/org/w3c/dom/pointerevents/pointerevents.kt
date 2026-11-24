@@ -75,22 +75,151 @@ public fun PointerEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nul
     if (predictedEvents != null) this.predictedEvents = predictedEvents
 }
 
+/**
+ * The PointerEvent interface represents the state of a DOM event produced by a pointer such as the geometry of the
+ * contact point, the device type that generated the event, the amount of pressure that was applied on the contact
+ * surface, etc.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent)
+ */
 public external open class PointerEvent : MouseEvent {
+    /**
+     * The PointerEvent() constructor creates a new synthetic and untrusted PointerEvent object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/PointerEvent)
+     */
     constructor(type: String, eventInitDict: PointerEventInit = definedExternally)
+
+    /**
+     * The pointerId read-only property of the PointerEvent interface is an identifier assigned to the pointer that
+     * triggered the event. The identifier is unique, being different from the identifiers of all other active pointer
+     * events.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId)
+     */
     open val pointerId: Int
+
+    /**
+     * The width read-only property of the PointerEvent interface represents the width of the pointer's contact geometry
+     * along the x-axis, measured in CSS pixels. Depending on the source of the pointer device (such as a finger), for a
+     * given pointer, each event may produce a different value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/width)
+     */
     open val width: Double
+
+    /**
+     * The height read-only property of the PointerEvent interface represents the height of the pointer's contact
+     * geometry, along the y-axis (in CSS pixels). Depending on the source of the pointer device (for example a finger),
+     * for a given pointer, each event may produce a different value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/height)
+     */
     open val height: Double
+
+    /**
+     * The pressure read-only property of the PointerEvent interface indicates the normalized pressure of the pointer
+     * input.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pressure)
+     */
     open val pressure: Float
+
+    /**
+     * The tangentialPressure read-only property of the PointerEvent interface represents the normalized tangential
+     * pressure of the pointer input (also known as barrel pressure or cylinder stress).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tangentialPressure)
+     */
     open val tangentialPressure: Float
+
+    /**
+     * The tiltX read-only property of the PointerEvent interface is the angle (in degrees) between the Y-Z plane of the
+     * pointer and the screen. This property is typically only useful for a pen/stylus pointer type.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltX)
+     */
     open val tiltX: Int
+
+    /**
+     * The tiltY read-only property of the PointerEvent interface is the angle (in degrees) between the X-Z plane of the
+     * pointer and the screen. This property is typically only useful for a pen/stylus pointer type.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltY)
+     */
     open val tiltY: Int
+
+    /**
+     * The twist read-only property of the PointerEvent interface represents the clockwise rotation of the pointer
+     * (e.g., pen stylus) around its major axis, in degrees.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/twist)
+     */
     open val twist: Int
+
+    /**
+     * The altitudeAngle read-only property of the PointerEvent interface represents the angle between a transducer (a
+     * pointer or stylus) axis and the X-Y plane of a device screen. The altitude angle describes whether the transducer
+     * is perpendicular to the screen, parallel, or at some angle in between.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/altitudeAngle)
+     */
     open val altitudeAngle: Double
+
+    /**
+     * The azimuthAngle read-only property of the PointerEvent interface represents the angle between the Y-Z plane and
+     * the plane containing both the transducer (pointer or stylus) axis and the Y axis.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/azimuthAngle)
+     */
     open val azimuthAngle: Double
+
+    /**
+     * The pointerType read-only property of the PointerEvent interface indicates the device type (mouse, pen, or touch)
+     * that caused a given pointer event.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerType)
+     */
     open val pointerType: String
+
+    /**
+     * The isPrimary read-only property of the PointerEvent interface indicates whether or not the pointer device that
+     * created the event is the primary pointer. It returns true if the pointer that caused the event to be fired is the
+     * primary one and returns false otherwise.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/isPrimary)
+     */
     open val isPrimary: Boolean
+
+    /**
+     * The persistentDeviceId read-only property of the PointerEvent interface is a unique identifier for the pointing
+     * device generating the PointerEvent. This provides a secure, reliable way to identify multiple pointing devices
+     * (such as pens) interacting with the screen simultaneously.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/persistentDeviceId)
+     */
     open val persistentDeviceId: Int
+
+    /**
+     * The getCoalescedEvents() method of the PointerEvent interface returns a sequence of PointerEvent instances that
+     * were coalesced (merged) into a single pointermove or pointerrawupdate event. Instead of a stream of many
+     * pointermove events, user agents coalesce multiple updates into a single event. This helps with performance as the
+     * user agent has less event handling to perform, but there is a reduction in the granularity and accuracy when
+     * tracking, especially with fast and large movements.
+     *
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getCoalescedEvents)
+     */
     open fun getCoalescedEvents(): JsArray<PointerEvent>
+
+    /**
+     * The getPredictedEvents() method of the PointerEvent interface returns a sequence of PointerEvent instances that
+     * are estimated future pointer positions. How the predicted positions are calculated depends on the user agent, but
+     * they are based on past points, current velocity, and trajectory.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getPredictedEvents)
+     */
     open fun getPredictedEvents(): JsArray<PointerEvent>
 
     companion object {
@@ -141,28 +270,187 @@ public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
     if (relatedTarget != null) this.relatedTarget = relatedTarget
 }
 
+/**
+ * The MouseEvent interface represents events that occur due to the user interacting with a pointing device (such as a
+ * mouse). Common events using this interface include click, dblclick, mouseup, mousedown.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+ */
 public external open class MouseEvent : UIEvent {
+    /**
+     * The MouseEvent() constructor creates a new MouseEvent object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/MouseEvent)
+     */
     constructor(type: String, eventInitDict: MouseEventInit = definedExternally)
+
+    /**
+     * The screenX read-only property of the MouseEvent interface provides the horizontal coordinate (offset) of the
+     * mouse pointer in screen coordinates.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenX)
+     */
     open val screenX: Int
+
+    /**
+     * The screenY read-only property of the MouseEvent interface provides the vertical coordinate (offset) of the mouse
+     * pointer in screen coordinates.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenY)
+     */
     open val screenY: Int
+
+    /**
+     * The clientX read-only property of the MouseEvent interface provides the horizontal coordinate within the
+     * application's viewport at which the event occurred (as opposed to the coordinate within the page).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientX)
+     */
     open val clientX: Int
+
+    /**
+     * The clientY read-only property of the MouseEvent interface provides the vertical coordinate within the
+     * application's viewport at which the event occurred (as opposed to the coordinate within the page).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientY)
+     */
     open val clientY: Int
+
+    /**
+     * The MouseEvent.layerX read-only property returns the horizontal coordinate of the event relative to the current
+     * layer.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerX)
+     */
     open val layerX: Int
+
+    /**
+     * The MouseEvent.layerY read-only property returns the vertical coordinate of the event relative to the current
+     * layer.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerY)
+     */
     open val layerY: Int
+
+    /**
+     * The MouseEvent.ctrlKey read-only property is a boolean value that indicates whether the ctrl key was pressed or
+     * not when a given mouse event occurs.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/ctrlKey)
+     */
     open val ctrlKey: Boolean
+
+    /**
+     * The MouseEvent.shiftKey read-only property is a boolean value that indicates whether the shift key was pressed or
+     * not when a given mouse event occurs.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/shiftKey)
+     */
     open val shiftKey: Boolean
+
+    /**
+     * The MouseEvent.altKey read-only property is a boolean value that indicates whether the alt key was pressed or not
+     * when a given mouse event occurs.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/altKey)
+     */
     open val altKey: Boolean
+
+    /**
+     * The MouseEvent.metaKey read-only property is a boolean value that indicates whether the meta key was pressed or
+     * not when a given mouse event occurs.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/metaKey)
+     */
     open val metaKey: Boolean
+
+    /**
+     * The MouseEvent.button read-only property indicates which button was pressed or released on the mouse to trigger
+     * the event.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/button)
+     */
     open val button: Short
+
+    /**
+     * The MouseEvent.buttons read-only property indicates which buttons are pressed on the mouse (or other input
+     * device) when a mouse event is triggered.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/buttons)
+     */
     open val buttons: Short
+
+    /**
+     * The MouseEvent.relatedTarget read-only property is the secondary target for the mouse event, if there is one.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/relatedTarget)
+     */
     open val relatedTarget: EventTarget?
+
+    /**
+     * The MouseEvent.getModifierState() method returns the current state of the specified modifier key: true if the
+     * modifier is active (i.e., the modifier key is pressed or locked), otherwise, false.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/getModifierState)
+     */
     open fun getModifierState(keyArg: String): Boolean
+
+    /**
+     * The pageX read-only property of the MouseEvent interface returns the X (horizontal) coordinate (in pixels) at
+     * which the mouse was clicked, relative to the left edge of the entire document. This includes any portion of the
+     * document not currently visible.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageX)
+     */
     open val pageX: Double
+
+    /**
+     * The pageY read-only property of the MouseEvent interface returns the Y (vertical) coordinate (in pixels) at which
+     * the mouse was clicked, relative to the top edge of the entire document. This includes any portion of the document
+     * not currently visible.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageY)
+     */
     open val pageY: Double
+
+    /**
+     * The x read-only property of the MouseEvent interface is an alias for the MouseEvent.clientX property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/x)
+     */
     open val x: Double
+
+    /**
+     * The y read-only property of the MouseEvent interface is an alias for the MouseEvent.clientY property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/y)
+     */
     open val y: Double
+
+    /**
+     * The offsetX read-only property of the MouseEvent interface provides the offset in the X coordinate of the mouse
+     * pointer between that event and the padding edge of the target node.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/offsetX)
+     */
     open val offsetX: Double
+
+    /**
+     * The offsetY read-only property of the MouseEvent interface provides the offset in the Y coordinate of the mouse
+     * pointer between that event and the padding edge of the target node.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/offsetY)
+     */
     open val offsetY: Double
+
+    /**
+     * The MouseEvent.initMouseEvent() method initializes the value of a mouse event once it's been created (normally
+     * using the Document.createEvent() method).
+     *
+     * Deprecated: MDN no longer recommends using this feature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/initMouseEvent)
+     */
     open fun initMouseEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, detailArg: Int = definedExternally, screenXArg: Int = definedExternally, screenYArg: Int = definedExternally, clientXArg: Int = definedExternally, clientYArg: Int = definedExternally, ctrlKeyArg: Boolean = definedExternally, altKeyArg: Boolean = definedExternally, shiftKeyArg: Boolean = definedExternally, metaKeyArg: Boolean = definedExternally, buttonArg: Short = definedExternally, relatedTargetArg: EventTarget? = definedExternally)
 
     companion object {
@@ -216,11 +504,49 @@ public fun WheelEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
     if (momentum != null) this.momentum = momentum
 }
 
+/**
+ * The WheelEvent interface represents events that occur due to the user moving a mouse wheel or similar input device.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent)
+ */
 public external open class WheelEvent : MouseEvent {
+    /**
+     * The WheelEvent() constructor returns a new WheelEvent object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/WheelEvent)
+     */
     constructor(type: String, eventInitDict: WheelEventInit = definedExternally)
+
+    /**
+     * The WheelEvent.deltaX read-only property is a double representing the horizontal scroll amount in the
+     * WheelEvent.deltaMode unit.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaX)
+     */
     open val deltaX: Double
+
+    /**
+     * The WheelEvent.deltaY read-only property is a double representing the vertical scroll amount in the
+     * WheelEvent.deltaMode unit.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaY)
+     */
     open val deltaY: Double
+
+    /**
+     * The WheelEvent.deltaZ read-only property is a double representing the scroll amount along the z-axis, in the
+     * WheelEvent.deltaMode unit.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaZ)
+     */
     open val deltaZ: Double
+
+    /**
+     * The WheelEvent.deltaMode read-only property returns an unsigned long representing the unit of the delta values
+     * scroll amount.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaMode)
+     */
     open val deltaMode: Int
     open val momentum: Boolean
 

@@ -10,35 +10,220 @@ package org.w3c.performance
 
 import kotlin.js.*
 
+/**
+ * The PerformanceResourceTiming interface enables retrieval and analysis of detailed network timing data regarding the
+ * loading of an application's resources. An application can use the timing metrics to determine, for example, the
+ * length of time it takes to fetch a specific resource, such as an XMLHttpRequest, &lt;SVG&gt;, image, or script.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming)
+ */
 public external abstract class PerformanceResourceTiming : PerformanceEntry {
+    /**
+     * The initiatorType read-only property is a string representing web platform feature that initiated the resource
+     * load.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/initiatorType)
+     */
     open val initiatorType: String
+
+    /**
+     * The deliveryType read-only property is a string indicating how the resource was delivered — for example from the
+     * cache or from a navigational prefetch.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/deliveryType)
+     */
     open val deliveryType: String
+
+    /**
+     * The nextHopProtocol read-only property is a string representing the network protocol used to fetch the resource,
+     * as identified by the ALPN Protocol ID (RFC7301).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/nextHopProtocol)
+     */
     open val nextHopProtocol: String
+
+    /**
+     * The workerStart read-only property of the PerformanceResourceTiming interface returns a DOMHighResTimeStamp
+     * immediately before dispatching the FetchEvent if a Service Worker thread is already running, or immediately
+     * before starting the Service Worker thread if it is not already running. If the resource is not intercepted by a
+     * Service Worker the property will always return 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/workerStart)
+     */
     open val workerStart: Double
+
+    /**
+     * The redirectStart read-only property returns a timestamp representing the start time of the fetch which that
+     * initiates the redirect.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/redirectStart)
+     */
     open val redirectStart: Double
+
+    /**
+     * The redirectEnd read-only property returns a timestamp immediately after receiving the last byte of the response
+     * of the last redirect.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/redirectEnd)
+     */
     open val redirectEnd: Double
+
+    /**
+     * The fetchStart read-only property represents a timestamp immediately before the browser starts to fetch the
+     * resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/fetchStart)
+     */
     open val fetchStart: Double
+
+    /**
+     * The domainLookupStart read-only property returns the timestamp immediately before the browser starts the domain
+     * name lookup for the resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/domainLookupStart)
+     */
     open val domainLookupStart: Double
+
+    /**
+     * The domainLookupEnd read-only property returns the timestamp immediately after the browser finishes the
+     * domain-name lookup for the resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/domainLookupEnd)
+     */
     open val domainLookupEnd: Double
+
+    /**
+     * The connectStart read-only property returns the timestamp immediately before the user agent starts establishing
+     * the connection to the server to retrieve the resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/connectStart)
+     */
     open val connectStart: Double
+
+    /**
+     * The connectEnd read-only property returns the timestamp immediately after the browser finishes establishing the
+     * connection to the server to retrieve the resource. The timestamp value includes the time interval to establish
+     * the transport connection, as well as other time intervals such as TLS handshake and SOCKS authentication.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/connectEnd)
+     */
     open val connectEnd: Double
+
+    /**
+     * The secureConnectionStart read-only property returns a timestamp immediately before the browser starts the
+     * handshake process to secure the current connection. If a secure connection is not used, the property returns
+     * zero.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/secureConnectionStart)
+     */
     open val secureConnectionStart: Double
+
+    /**
+     * The requestStart read-only property returns a timestamp of the time immediately before the browser starts
+     * requesting the resource from the server, cache, or local resource. If the transport connection fails and the
+     * browser retries the request, the value returned will be the start of the retry request.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/requestStart)
+     */
     open val requestStart: Double
+
+    /**
+     * The finalResponseHeadersStart read-only property returns a timestamp immediately after the browser receives the
+     * first byte of the final document response (for example, 200 OK) from the server.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/finalResponseHeadersStart)
+     */
     open val finalResponseHeadersStart: Double
+
+    /**
+     * The firstInterimResponseStart read-only property returns a timestamp immediately after the browser receives the
+     * first byte of the interim 1xx response (for example, 100 Continue or 103 Early Hints) from the server.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/firstInterimResponseStart)
+     */
     open val firstInterimResponseStart: Double
+
+    /**
+     * The responseStart read-only property returns a timestamp immediately after the browser receives the first byte of
+     * the response from the server, cache, or local resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/responseStart)
+     */
     open val responseStart: Double
+
+    /**
+     * The responseEnd read-only property returns a timestamp immediately after the browser receives the last byte of
+     * the resource or immediately before the transport connection is closed, whichever comes first.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/responseEnd)
+     */
     open val responseEnd: Double
     open val workerRouterEvaluationStart: Double
     open val workerCacheLookupStart: Double
     open val workerMatchedRouterSource: String
     open val workerFinalRouterSource: String
+
+    /**
+     * The transferSize read-only property represents the size (in octets) of the fetched resource. This is the size of
+     * the response body plus a fixed value that stands in for the size of the response headers.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/transferSize)
+     */
     open val transferSize: Double
+
+    /**
+     * The encodedBodySize read-only property represents the size (in octets) received from the fetch (HTTP or cache) of
+     * the payload body before removing any applied content encodings (like gzip or Brotli).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/encodedBodySize)
+     */
     open val encodedBodySize: Double
+
+    /**
+     * The decodedBodySize read-only property returns the size (in octets) received from the fetch (HTTP or cache) of
+     * the message body after removing any applied content encoding (like gzip or Brotli).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/decodedBodySize)
+     */
     open val decodedBodySize: Double
+
+    /**
+     * The responseStatus read-only property represents the HTTP response status code returned when fetching the
+     * resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/responseStatus)
+     */
     open val responseStatus: Short
+
+    /**
+     * The renderBlockingStatus read-only property returns the render-blocking status of the resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/renderBlockingStatus)
+     */
     open val renderBlockingStatus: RenderBlockingStatusType
+
+    /**
+     * The contentType read-only property of the PerformanceResourceTiming interface is a string indicating the content
+     * type of the fetched resource, formatted as a MIME type and subtype separated by a forward slash.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/contentType)
+     */
     open val contentType: String
+
+    /**
+     * The contentEncoding read-only property of the PerformanceResourceTiming interface is a string indicating the
+     * content encoding of the fetched resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/contentEncoding)
+     */
     open val contentEncoding: String
+
+    /**
+     * The toJSON() method of the PerformanceResourceTiming interface returns a JSON-serializable plain object
+     * representing the PerformanceResourceTiming object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/toJSON)
+     */
     override fun toJSON(): JsAny
 }
 

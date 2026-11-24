@@ -10,6 +10,7 @@ import org.jetbrains.kotlin.tools.idl.GoldenSliceTest.Companion.GOLDEN_SLICE
 import org.jetbrains.kotlin.tools.idl.GoldenSliceTest.Companion.slice
 import org.jetbrains.kotlin.tools.idl.loadEvents
 import org.jetbrains.kotlin.tools.idl.loadSurface
+import org.jetbrains.kotlin.tools.idl.loadWebDocs
 import org.jetbrains.kotlin.tools.idl.ir.IdlInterface
 import org.jetbrains.kotlin.tools.idl.ir.IdlOperation
 import org.jetbrains.kotlin.tools.idl.ir.IdlOperationSpecial
@@ -23,7 +24,7 @@ class KotlinBackendTest {
     /** The Kotlin printed for the golden slice; lookups (packages, shapes, overrides) use the whole surface. */
     @Test
     fun goldenKotlinSlice() {
-        val backend = KotlinBackend(lowered)
+        val backend = KotlinBackend(lowered, loadWebDocs())
         val printed = lowered.ir
             .slice(GOLDEN_SLICE)
             .specs
@@ -34,7 +35,7 @@ class KotlinBackendTest {
     /** Fails on anything the backend cannot print, such as two enum values with the same Kotlin name. */
     @Test
     fun everySpecPrints() {
-        val backend = KotlinBackend(lowered)
+        val backend = KotlinBackend(lowered, loadWebDocs())
         lowered.ir.specs.forEach { backend.file(it) }
     }
 

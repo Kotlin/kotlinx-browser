@@ -21,6 +21,7 @@ typed-array built-ins and `JsObjects.kt`.
    - `api/kotlinx-browser.klib.api`
    - `surface-report.txt`
    - the goldens in `generator/src/test/resources/golden/`
+   - `mdn/summaries.json`, `mdn/commit` (`./gradlew :generator:updateMdnSummaries`)
 
    Change the generator or its inputs, then regenerate. Tests fail on any drift.
 2. **Every generator change is followed by the full regeneration sequence** and a review of the resulting diffs:
@@ -61,6 +62,7 @@ typed-array built-ins and `JsObjects.kt`.
 | Event handler types (`onclick: (PointerEvent) -> Unit`) | `lowering/EventHandlerTypes.kt` |
 | How anything is printed | `generator/src/main/kotlin/idl/backend/KotlinBackend.kt` |
 | Inputs outside Web IDL (CSS properties, events) | `generator/src/main/kotlin/idl/frontend/WebrefCss.kt`, `WebrefEvents.kt` |
+| KDoc (MDN summaries and links, which declaration gets which page) | `frontend/WebDocs.kt`, `backend/DocComments.kt` |
 | Helpers the generated code calls (`newJsObject`, `getProperty`, …) | `src/webMain/kotlin/kotlinx/dom/JsObjects.kt` |
 
 ## Verifying a change
@@ -92,5 +94,7 @@ typed-array built-ins and `JsObjects.kt`.
 
 - Kotlin official style, explicit `public` on top-level library declarations, KDoc on non-obvious generator code saying why, not what.
 - Source files start with the Apache 2.0 header that points to "the LICENSE file".
+- MDN text is CC-BY-SA 2.5 (see `NOTICE`): it only enters the repository through `mdn/summaries.json` and the
+  generated KDoc. Don't paste MDN prose into hand-written code or docs.
 - Tests: small IR via `LoweringTestDsl` for a single pass; `Real*Test` for facts about the pinned corpus; goldens for
   printed output.

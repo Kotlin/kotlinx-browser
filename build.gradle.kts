@@ -29,6 +29,15 @@ repositories {
     mavenCentral()
 }
 
+// The generated KDoc includes MDN content under CC-BY-SA 2.5: every published jar (sources jars carry the KDoc)
+// ships the attribution next to the license.
+tasks.withType<org.gradle.jvm.tasks.Jar>().configureEach {
+    metaInf {
+        from(layout.projectDirectory.file("NOTICE"))
+        from(layout.projectDirectory.file("LICENSE"))
+    }
+}
+
 val artifactId = "kotlinx-browser"
 val deployVersion = properties["deployVersion"]?.toString()
 val versionSuffix = properties["versionSuffix"]?.toString()

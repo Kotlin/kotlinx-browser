@@ -6,6 +6,8 @@
 package org.jetbrains.kotlin.tools.idl.backend
 
 import org.jetbrains.kotlin.generators.helpers.generatedFileHeader
+import org.jetbrains.kotlin.tools.idl.frontend.WebDoc
+import org.jetbrains.kotlin.tools.idl.frontend.WebDocs
 import org.jetbrains.kotlin.tools.idl.ir.*
 import org.jetbrains.kotlin.tools.idl.lowering.*
 import org.jetbrains.kotlin.tools.idl.mapping.KotlinType
@@ -24,7 +26,10 @@ import org.jetbrains.kotlin.tools.idl.mapping.WasmTypeMapping
  * `open` from [LoweredIR.overrides]. `iterable`/`maplike`/`setlike` and deleters are not printed yet; each leaves a
  * `// not printed yet:` line, so the golden file shows what is missing.
  */
-class KotlinBackend(internal val lowered: LoweredIR) {
+class KotlinBackend(internal val lowered: LoweredIR, docs: WebDocs = WebDocs.EMPTY) {
+
+    /** The KDoc of the declarations: MDN summaries and links (see [DocLookup]). */
+    internal val docs = DocLookup(docs, lowered.ir)
 
     val definitions: Map<String, IdlNamedDefinition> = lowered.ir.definitions
         .filterIsInstance<IdlNamedDefinition>()
@@ -224,18 +229,23 @@ private class SpecFile(
         val overrides = kotlinBackend.lowered.overrides[i.name]
         val isClass = shape.kind != ShapeKind.INTERFACE
 
+        kdoc(docs.ofDefinition(i.name), i.extAttrs)
         block("public external $keyword ${i.name} : ${supertypes(shape)}") {
             if (shape.kind == ShapeKind.OPEN_CLASS) {
                 i.members
                     .filterIsInstance<IdlConstructor>()
                     .filter { !it.extAttrs.has("HTMLConstructor") }
-                    .forEach { line("constructor(${parameters(it.arguments, defaults = true)})") }
+                    .forEach {
+                        kdoc(docs.ofMember(i.name, it), it.extAttrs)
+                        line("constructor(${parameters(it.arguments, defaults = true)})")
+                    }
             }
 
             for (m in i.members) {
                 if (m is IdlConstructor || m is IdlConstant || m.isStatic() || overrides.isDropped(m)) continue
                 member(
                     InheritedMember(m, i.name),
+                    owner = i.name,
                     modifier = when {
                         overrides.isOverride(m) -> "override "
                         isClass -> "open "
@@ -246,14 +256,14 @@ private class SpecFile(
             }
 
             for (added in overrides.added) {
-                member(added, modifier = "override ", shape = shape)
+                member(added, owner = i.name, modifier = "override ", shape = shape)
             }
 
             when {
                 isClass -> {
                     val statics = i.members.filter { it.isStatic() }.map { InheritedMember(it, i.name) } +
                             shape.inheritedStatics
-                    companion(shape.constants.map { it.constant }, statics)
+                    companion(i.name, shape.constants.map { it.constant }, statics)
                 }
 
                 i.members.any { it is IdlConstant } -> {
@@ -280,6 +290,7 @@ private class SpecFile(
         val constants = i.members.filterIsInstance<IdlConstant>()
         if (constants.isEmpty()) return
         for (c in constants) {
+            kdoc(docs.ofMember(i.name, c), c.extAttrs)
             val type = map(c.type, TypePosition.VALUE)
             val literal = constantLiteral(c, type) ?: error("${i.name}.${c.name}: no Kotlin literal for ${c.value} as $type")
             line("public inline val ${i.name}.Companion.${name(c.name)}: ${type(type)} get() = $literal")
@@ -318,19 +329,20 @@ private class SpecFile(
         block("public external open class ${factory.name} : ${supertypes(shape)}") {
             line("constructor(${parameters(factory.arguments, defaults = true)})")
             for (added in kotlinBackend.lowered.overrides[factory.name].added) {
-                member(added, modifier = "override ", shape = shape)
+                member(added, owner = factory.name, modifier = "override ", shape = shape)
             }
-            companion(shape.constants.map { it.constant }, shape.inheritedStatics)
+            companion(factory.name, shape.constants.map { it.constant }, shape.inheritedStatics)
         }
     }
 
     private fun printNamespace(n: IdlNamespace) {
+        kdoc(docs.ofDefinition(n.name), n.extAttrs)
         block("public external object ${n.name}") {
             for (m in n.members) {
                 if (m is IdlConstant) {
-                    constant(m)
+                    constant(n.name, m)
                 } else {
-                    member(InheritedMember(m, n.name), modifier = "", shape = null)
+                    member(InheritedMember(m, n.name), owner = n.name, modifier = "", shape = null)
                 }
             }
         }
@@ -343,6 +355,7 @@ private class SpecFile(
      * converts `null` instead of applying the member's default (`{cancelable: null}` is not `{}`).
      */
     private fun printDictionary(d: IdlDictionary) {
+        kdoc(docs.ofDefinition(d.name), d.extAttrs)
         block("public external interface ${d.name} : ${supertypes(listOfNotNull(d.inheritance))}") {
             for (f in d.members) {
                 line("var ${name(f.name)}: ${fieldType(f)}")
@@ -378,6 +391,7 @@ private class SpecFile(
      * suppressed (Key Decision 13).
      */
     private fun printEnum(e: IdlEnum) {
+        kdoc(docs.ofDefinition(e.name), e.extAttrs)
         block("public external interface ${e.name} : ${type(KotlinType.Named(JS_ANY))}") {
             line("@Suppress(\"COMPANION_OBJECT_IN_EXTERNAL_INTERFACE\")")
             line("companion object")
@@ -455,6 +469,7 @@ private class SpecFile(
             }
 
             val arguments = op.arguments.joinToString(", ") { if (it == callback) "listener" else name(it.name) }
+            kdoc(docs.ofMember(i.name, op), op.extAttrs)
             block("public fun ${i.name}.${op.name}(${parameters(op.arguments, defaults = false, lambdas = true)}): () -> Unit") {
                 line("val listener = $converter(${name(callback.name)})")
                 line("${op.name}($arguments)")
@@ -484,12 +499,12 @@ private class SpecFile(
     }
 
     /** The companion of a class: its constants and static members, read from the JS class. */
-    private fun companion(constants: List<IdlConstant>, statics: List<InheritedMember>) {
+    private fun companion(owner: String, constants: List<IdlConstant>, statics: List<InheritedMember>) {
         if (constants.isEmpty() && statics.isEmpty()) return
         line()
         block("companion object") {
-            constants.forEach(::constant)
-            statics.forEach { member(it, modifier = "", shape = null) }
+            constants.forEach { constant(owner, it) }
+            statics.forEach { member(it, owner = owner, modifier = "", shape = null) }
         }
     }
 
@@ -498,16 +513,19 @@ private class SpecFile(
 
     /**
      * [m] as a member of the declaration being printed. An inherited member is printed as [m]'s declaring
-     * interface prints it: its event handler type is the one narrowed for that interface.
+     * interface prints it: its event handler type is the one narrowed for that interface. Its KDoc is the one of
+     * [owner], the declaration being printed, if MDN documents it there, else the one of the declaring interface.
      */
-    private fun member(m: InheritedMember, modifier: String, shape: Shape?) {
+    private fun member(m: InheritedMember, owner: String, modifier: String, shape: Shape?) {
         // CSS property attributes have a dashed twin of each camel-case name (`margin-top` of `marginTop`), which
         // is not a Kotlin identifier; the camel-case one is enough.
         if (m.member is IdlAttribute && '-' in m.member.name) return
+        val doc = docs.ofMember(owner, m.member) ?: docs.ofMember(m.declaredIn, m.member)
 
         when (val member = m.member) {
             is IdlAttribute -> {
                 val keyword = if (member.readonly) "val" else "var"
+                kdoc(doc, member.extAttrs)
                 line("$modifier$keyword ${name(member.name)}: ${attributeType(member, m.declaredIn)}")
             }
 
@@ -526,10 +544,12 @@ private class SpecFile(
                     }
                     val defaults = modifier != "override "
                     val signature = "${modifier}fun ${name(member.name)}"
+                    kdoc(doc, member.extAttrs)
                     line("$signature(${parameters(member.arguments, defaults)})$returnType")
                     if (member.arguments.any { callbackInterface(it.type) != null } &&
                         "${m.declaredIn}.${member.name}" !in LISTENER_REGISTRATIONS
                     ) {
+                        kdoc(doc, member.extAttrs)
                         line("$signature(${parameters(member.arguments, defaults, lambdas = true)})$returnType")
                     }
                 }
@@ -540,7 +560,8 @@ private class SpecFile(
         }
     }
 
-    private fun constant(c: IdlConstant) {
+    private fun constant(owner: String, c: IdlConstant) {
+        kdoc(docs.ofMember(owner, c), c.extAttrs)
         line("val ${name(c.name)}: ${type(map(c.type, TypePosition.VALUE))}")
     }
 
@@ -703,6 +724,17 @@ private class SpecFile(
 
     // -------------------------------------------------------------------------------------------------------------
     // Text
+
+    private val docs get() = kotlinBackend.docs
+
+    /** The KDoc of the next declaration, if there is anything to say: see [kdocLines]. */
+    private fun kdoc(doc: WebDoc?, extAttrs: List<IdlExtendedAttribute>) {
+        val lines = kdocLines(doc, secureContext = extAttrs.has("SecureContext"), indent = indent * 4)
+        if (lines.isEmpty()) return
+        // A documented declaration is set apart from the one before it, unless it opens a block.
+        if (!out.endsWith("{\n") && !out.endsWith("\n\n") && out.isNotEmpty()) line()
+        lines.forEach(::line)
+    }
 
     private fun line(text: String = "") {
         if (text.isNotEmpty()) repeat(indent) { out.append("    ") }

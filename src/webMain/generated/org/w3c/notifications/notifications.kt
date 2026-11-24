@@ -12,32 +12,204 @@ import kotlin.js.*
 import org.w3c.dom.*
 import org.w3c.workers.*
 
+/**
+ * The Notification interface of the Notifications API is used to configure and display desktop notifications to the
+ * user.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification)
+ */
 public external open class Notification : EventTarget {
+    /**
+     * The Notification() constructor creates a new Notification object instance, which represents a user notification.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/Notification)
+     */
     constructor(title: String, options: NotificationOptions = definedExternally)
+
+    /**
+     * The click event of the Notification interface fires when the user clicks on displayed Notification.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/click_event)
+     */
     open var onclick: ((Event) -> Unit)?
+
+    /**
+     * The show event of the Notification interface fires when a Notification is displayed.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/show_event)
+     */
     open var onshow: ((Event) -> Unit)?
+
+    /**
+     * The error event of the Notification interface fires when something goes wrong with a Notification (in many cases
+     * an error preventing the notification from being displayed.)
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/error_event)
+     */
     open var onerror: ((Event) -> Unit)?
+
+    /**
+     * The close event of the Notification interface fires when a Notification is closed.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close_event)
+     */
     open var onclose: ((Event) -> Unit)?
+
+    /**
+     * The title read-only property of the Notification interface indicates the title of the notification, as specified
+     * in the title parameter of the Notification() constructor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/title)
+     */
     open val title: String
+
+    /**
+     * The dir read-only property of the Notification interface indicates the text direction of the notification, as
+     * specified in the dir option of the Notification() constructor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/dir)
+     */
     open val dir: NotificationDirection
+
+    /**
+     * The lang read-only property of the Notification interface indicates the language used in the notification, as
+     * specified in the lang option of the Notification() constructor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/lang)
+     */
     open val lang: String
+
+    /**
+     * The body read-only property of the Notification interface indicates the body string of the notification, as
+     * specified in the body option of the Notification() constructor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/body)
+     */
     open val body: String
+
+    /**
+     * The navigate read-only property of the Notification interface contains the URL the user agent will navigate to
+     * when the user activates the notification.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/navigate)
+     */
     open val navigate: String
+
+    /**
+     * The tag read-only property of the Notification interface signifies an identifying tag for the notification, as
+     * specified in the tag option of the Notification() constructor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/tag)
+     */
     open val tag: String
+
+    /**
+     * The image read-only property of the Notification interface returns a string containing the URL of a large image
+     * displayed as part of the notification's content body — for example, a news photo or product thumbnail. It has the
+     * highest visual priority of the three image options (image, icon, badge).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/image)
+     */
     open val image: String
+
+    /**
+     * The icon read-only property of the Notification interface returns a string containing the URL of a small image
+     * that reinforces the notification — for example, an app logo or a photo of the message sender. It is displayed
+     * alongside the notification title and body.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/icon)
+     */
     open val icon: String
+
+    /**
+     * The badge read-only property of the Notification interface returns a string containing the URL of a small icon
+     * representing the web application itself. The badge is used by the platform when there is not enough space to
+     * display the full notification — for example, in a status bar. On Android, the badge should accommodate up to 4x
+     * display resolution (about 96×96px), and the image will be automatically masked to a monochrome silhouette.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/badge)
+     */
     open val badge: String
+
+    /**
+     * The timestamp read-only property of the Notification interface returns a number, as specified in the timestamp
+     * option of the Notification() constructor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/timestamp)
+     */
     open val timestamp: Double
+
+    /**
+     * The renotify read-only property of the Notification interface specifies whether the user should be notified after
+     * a new notification replaces an old one, as specified in the renotify option of the Notification() constructor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/renotify)
+     */
     open val renotify: Boolean
+
+    /**
+     * The silent read-only property of the Notification interface specifies whether the notification should be silent,
+     * i.e., no sounds or vibrations should be issued regardless of the device settings. This is controlled via the
+     * silent option of the Notification() constructor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/silent)
+     */
     open val silent: Boolean?
+
+    /**
+     * The requireInteraction read-only property of the Notification interface returns a boolean value indicating that a
+     * notification should remain active until the user clicks or dismisses it, rather than closing automatically.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requireInteraction)
+     */
     open val requireInteraction: Boolean
+
+    /**
+     * The data read-only property of the Notification interface returns a structured clone of the notification's data,
+     * as specified in the data option of the Notification() constructor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/data)
+     */
     open val data: JsAny?
+
+    /**
+     * The actions read-only property of the Notification interface provides the actions available for users to select
+     * when interacting with the notification.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/actions)
+     */
     open val actions: JsArray<NotificationAction>
+
+    /**
+     * The close() method of the Notification interface is used to close/remove a previously displayed notification.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close)
+     */
     open fun close()
 
     companion object {
+        /**
+         * The permission read-only static property of the Notification interface indicates the current permission
+         * granted by the user for the current origin to display web notifications.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/permission_static)
+         */
         val permission: NotificationPermission
+
+        /**
+         * The requestPermission() static method of the Notification interface requests permission from the user for the
+         * current origin to display notifications.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requestPermission_static)
+         */
         fun requestPermission(deprecatedCallback: (NotificationPermission) -> Unit = definedExternally): Promise<NotificationPermission>
+
+        /**
+         * The maxActions read-only static property of the Notification interface returns the maximum number of actions
+         * that can be displayed in a notification.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/maxActions_static)
+         */
         val maxActions: Int
     }
 }
@@ -116,9 +288,38 @@ public fun GetNotificationOptions(tag: String? = null): GetNotificationOptions =
     if (tag != null) this.tag = tag
 }
 
+/**
+ * The NotificationEvent interface of the Notifications API represents a notification event dispatched on the
+ * ServiceWorkerGlobalScope of a ServiceWorker.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent)
+ */
 public external open class NotificationEvent : ExtendableEvent {
+    /**
+     * The NotificationEvent() constructor creates a new NotificationEvent object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/NotificationEvent)
+     */
     constructor(type: String, eventInitDict: NotificationEventInit)
+
+    /**
+     * The notification read-only property of the NotificationEvent interface returns the instance of the Notification
+     * that was clicked to fire the event. The Notification provides read-only access to many properties that were set
+     * at the instantiation time of the Notification such as tag and data attributes that allow you to store information
+     * for deferred use in the notificationclick event.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/notification)
+     */
     open val notification: Notification
+
+    /**
+     * The action read-only property of the NotificationEvent interface returns the string ID of the notification button
+     * the user clicked. This value returns an empty string if the user clicked the notification somewhere other than an
+     * action button, or the notification does not have a button. The notification id is set during the creation of the
+     * Notification via the actions array attribute and can't be modified unless the notification is replaced.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/action)
+     */
     open val action: String
 
     companion object {

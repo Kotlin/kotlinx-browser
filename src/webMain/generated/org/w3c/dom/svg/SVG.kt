@@ -12,8 +12,28 @@ import kotlin.js.*
 import org.w3c.dom.*
 import org.w3c.dom.css.*
 
+/**
+ * All of the SVG DOM interfaces that correspond directly to elements in the SVG language derive from the SVGElement
+ * interface.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement)
+ */
 public external abstract class SVGElement : Element, ElementCSSInlineStyle, GlobalEventHandlers, HTMLOrSVGOrMathMLElement {
+    /**
+     * The ownerSVGElement read-only property of the SVGElement interface reflects the nearest ancestor &lt;svg&gt;
+     * element. null if the given element is the outermost &lt;svg&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/ownerSVGElement)
+     */
     open val ownerSVGElement: SVGSVGElement?
+
+    /**
+     * The viewportElement read-only property of the SVGElement interface represents the SVGElement which established
+     * the current viewport. Often the nearest ancestor &lt;svg&gt; element. null if the given element is the outermost
+     * &lt;svg&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/viewportElement)
+     */
     open val viewportElement: SVGElement?
 
     companion object {
@@ -52,10 +72,44 @@ public fun SVGBoundingBoxOptions(fill: Boolean? = null, stroke: Boolean? = null,
     if (clipped != null) this.clipped = clipped
 }
 
+/**
+ * The SVGGraphicsElement interface represents SVG elements whose primary purpose is to directly render graphics into a
+ * group.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement)
+ */
 public external abstract class SVGGraphicsElement : SVGElement, SVGTests {
+    /**
+     * The transform read-only property of the SVGGraphicsElement interface reflects the computed value of the transform
+     * property and its corresponding transform attribute of the given element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/transform)
+     */
     open val transform: SVGAnimatedTransformList
+
+    /**
+     * The getBBox() method of the SVGGraphicsElement interface returns the smallest rectangle that contains the
+     * element. The rectangle is measured in the user coordinate system of the element, with the geometry attributes of
+     * the element and its descendants applied.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getBBox)
+     */
     open fun getBBox(options: SVGBoundingBoxOptions = definedExternally): DOMRect
+
+    /**
+     * The getCTM() method of the SVGGraphicsElement interface represents the matrix that transforms the current
+     * element's coordinate system to its SVG viewport's coordinate system.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getCTM)
+     */
     open fun getCTM(): DOMMatrix?
+
+    /**
+     * The getScreenCTM() method of the SVGGraphicsElement interface represents the matrix that transforms the current
+     * element's coordinate system to the coordinate system of the SVG viewport for the SVG document fragment.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getScreenCTM)
+     */
     open fun getScreenCTM(): DOMMatrix?
 
     companion object {
@@ -80,11 +134,52 @@ public external abstract class SVGGraphicsElement : SVGElement, SVGTests {
     }
 }
 
+/**
+ * The SVGGeometryElement interface represents SVG elements whose rendering is defined by geometry with an equivalent
+ * path, and which can be filled and stroked. This includes paths and the basic shapes.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement)
+ */
 public external abstract class SVGGeometryElement : SVGGraphicsElement {
+    /**
+     * The SVGGeometryElement.pathLength property reflects the pathLength attribute and returns the total length of the
+     * path, in user units.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/pathLength)
+     */
     open val pathLength: SVGAnimatedNumber
+
+    /**
+     * The isPointInFill() method of the SVGGeometryElement interface determines whether a given point is within the
+     * fill shape of an element. The point argument is interpreted as a point in the local coordinate system of the
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInFill)
+     */
     open fun isPointInFill(point: DOMPointInit = definedExternally): Boolean
+
+    /**
+     * The isPointInStroke() method of the SVGGeometryElement interface determines whether a given point is within the
+     * stroke shape of an element. The point argument is interpreted as a point in the local coordinate system of the
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInStroke)
+     */
     open fun isPointInStroke(point: DOMPointInit = definedExternally): Boolean
+
+    /**
+     * The SVGGeometryElement.getTotalLength() method returns the user agent's computed value for the total length of
+     * the path in user units.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getTotalLength)
+     */
     open fun getTotalLength(): Float
+
+    /**
+     * The SVGGeometryElement.getPointAtLength() method returns the point at a given distance along the path.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getPointAtLength)
+     */
     open fun getPointAtLength(distance: Float): DOMPoint
 
     companion object {
@@ -109,16 +204,72 @@ public external abstract class SVGGeometryElement : SVGGraphicsElement {
     }
 }
 
+/**
+ * The SVGNumber interface corresponds to the &lt;number&gt; basic data type.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumber)
+ */
 public external abstract class SVGNumber : JsAny {
+    /**
+     * The value property of the SVGNumber interface represents the number.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumber/value)
+     */
     open var value: Float
 }
 
+/**
+ * The SVGLength interface correspond to the &lt;length&gt; basic data type.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength)
+ */
 public external abstract class SVGLength : JsAny {
+    /**
+     * The unitType property of the SVGLength interface represents the type of the value as specified by one of the
+     * SVG_LENGTHTYPE_* constants defined on this interface.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/unitType)
+     */
     open val unitType: Short
+
+    /**
+     * The value property of the SVGLength interface represents the floating point value of the &lt;length&gt; in user
+     * units.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/value)
+     */
     open var value: Float
+
+    /**
+     * The valueInSpecifiedUnits property of the SVGLength interface represents floating point value, in the units
+     * expressed by unitType.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/valueInSpecifiedUnits)
+     */
     open var valueInSpecifiedUnits: Float
+
+    /**
+     * The valueAsString property of the SVGLength interface represents the &lt;length&gt;'s value as a string, in the
+     * units expressed by unitType.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/valueAsString)
+     */
     open var valueAsString: String
+
+    /**
+     * The newValueSpecifiedUnits() method of the SVGLength interface resets the value as a number with an associated
+     * unitType, thereby replacing the values for all of the attributes on the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/newValueSpecifiedUnits)
+     */
     open fun newValueSpecifiedUnits(unitType: Short, valueInSpecifiedUnits: Float)
+
+    /**
+     * The convertToSpecifiedUnits() method of the SVGLength interface allows you to convert the length's value to the
+     * specified unit type.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/convertToSpecifiedUnits)
+     */
     open fun convertToSpecifiedUnits(unitType: Short)
 
     companion object {
@@ -136,12 +287,57 @@ public external abstract class SVGLength : JsAny {
     }
 }
 
+/**
+ * The SVGAngle interface is used to represent a value that can be an &lt;angle&gt; or &lt;number&gt; value.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle)
+ */
 public external abstract class SVGAngle : JsAny {
+    /**
+     * The unitType property of the SVGAngle interface is one of the unit type constants and represents the units in
+     * which this angle's value is expressed.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/unitType)
+     */
     open val unitType: Short
+
+    /**
+     * The value property of the SVGAngle interface represents the floating point value of the &lt;angle&gt; in degrees.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/value)
+     */
     open var value: Float
+
+    /**
+     * The valueInSpecifiedUnits property of the SVGAngle interface represents the value of this angle as a number, in
+     * the units expressed by the angle's unitType.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/valueInSpecifiedUnits)
+     */
     open var valueInSpecifiedUnits: Float
+
+    /**
+     * The valueAsString property of the SVGAngle interface represents the angle's value as a string, in the units
+     * expressed by unitType.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/valueAsString)
+     */
     open var valueAsString: String
+
+    /**
+     * The newValueSpecifiedUnits() method of the SVGAngle interface sets the value to a number with an associated
+     * unitType, thereby replacing the values for all of the attributes on the object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/newValueSpecifiedUnits)
+     */
     open fun newValueSpecifiedUnits(unitType: Short, valueInSpecifiedUnits: Float)
+
+    /**
+     * The convertToSpecifiedUnits() method of the SVGAngle interface allows you to convert the angle's value to the
+     * specified unit type.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/convertToSpecifiedUnits)
+     */
     open fun convertToSpecifiedUnits(unitType: Short)
 
     companion object {
@@ -153,15 +349,87 @@ public external abstract class SVGAngle : JsAny {
     }
 }
 
+/**
+ * The SVGNumberList interface defines a list of numbers.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList)
+ */
 public external abstract class SVGNumberList : JsAny {
+    /**
+     * The length property of the SVGNumberList interface returns the number of items in the list. It is an alias of
+     * numberOfItems to make SVG lists more array-like.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/length)
+     */
     open val length: Int
+
+    /**
+     * The numberOfItems property of the SVGNumberList interface returns the number of items in the list. length is an
+     * alias of it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/numberOfItems)
+     */
     open val numberOfItems: Int
+
+    /**
+     * The clear() method of the SVGNumberList interface clears all existing items from the list, with the result being
+     * an empty list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/clear)
+     */
     open fun clear()
+
+    /**
+     * The initialize() method of the SVGNumberList interface clears all existing items from the list and re-initializes
+     * the list to hold the single item specified by the parameter. If the inserted item is already in a list, it is
+     * removed from its previous list before it is inserted into this list. The inserted item is the item itself and not
+     * a copy. The return value is the item inserted into the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/initialize)
+     */
     open fun initialize(newItem: SVGNumber): SVGNumber
+
+    /**
+     * The getItem() method of the SVGNumberList interface returns the specified item from the list. The returned item
+     * is the item itself and not a copy. Any changes made to the item are immediately reflected in the list. The first
+     * item is indexed 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/getItem)
+     */
     open fun getItem(index: Int): SVGNumber
+
+    /**
+     * The insertItemBefore() method of the SVGNumberList interface inserts a new item into the list at the specified
+     * position. The first item is indexed 0. The inserted item is the item itself and not a copy.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/insertItemBefore)
+     */
     open fun insertItemBefore(newItem: SVGNumber, index: Int): SVGNumber
+
+    /**
+     * The replaceItem() method of the SVGNumberList interface replaces an existing item in the list with a new item. If
+     * the new item is already in a list, it is removed from its previous list before it is inserted into this list. The
+     * inserted item is the item itself and not a copy. If the item is already in this list, note that the index of the
+     * item to replace is before the removal of the item.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/replaceItem)
+     */
     open fun replaceItem(newItem: SVGNumber, index: Int): SVGNumber
+
+    /**
+     * The removeItem() method of the SVGNumberList interface removes an existing item at the given index from the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/removeItem)
+     */
     open fun removeItem(index: Int): SVGNumber
+
+    /**
+     * The appendItem() method of the SVGNumberList interface inserts a new item at the end of the list. If the given
+     * item is already in a list, it is removed from its previous list before it is inserted into this list. The
+     * inserted item is the item itself and not a copy.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/appendItem)
+     */
     open fun appendItem(newItem: SVGNumber): SVGNumber
 }
 
@@ -169,15 +437,88 @@ public operator fun SVGNumberList.get(index: Int): SVGNumber? = getProperty(this
 
 public operator fun SVGNumberList.set(index: Int, newItem: SVGNumber) { setProperty(this, index, newItem) }
 
+/**
+ * The SVGLengthList interface defines a list of SVGLength objects. It is used for the baseVal and animVal properties of
+ * SVGAnimatedLengthList.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList)
+ */
 public external abstract class SVGLengthList : JsAny {
+    /**
+     * The length property of the SVGLengthList interface returns the number of items in the list. It is an alias of
+     * numberOfItems to make SVG lists more array-like.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/length)
+     */
     open val length: Int
+
+    /**
+     * The numberOfItems property of the SVGLengthList interface returns the number of items in the list. length is an
+     * alias of it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/numberOfItems)
+     */
     open val numberOfItems: Int
+
+    /**
+     * The clear() method of the SVGLengthList interface clears all existing items from the list, with the result being
+     * an empty list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/clear)
+     */
     open fun clear()
+
+    /**
+     * The initialize() method of the SVGLengthList interface clears all existing items from the list and re-initializes
+     * the list to hold the single item specified by the parameter. If the inserted item is already in a list, it is
+     * removed from its previous list before it is inserted into this list. The inserted item is the item itself and not
+     * a copy. The return value is the item inserted into the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/initialize)
+     */
     open fun initialize(newItem: SVGLength): SVGLength
+
+    /**
+     * The getItem() method of the SVGLengthList interface returns the specified item from the list. The returned item
+     * is the item itself and not a copy. Any changes made to the item are immediately reflected in the list. The first
+     * item is indexed 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/getItem)
+     */
     open fun getItem(index: Int): SVGLength
+
+    /**
+     * The insertItemBefore() method of the SVGLengthList interface inserts a new item into the list at the specified
+     * position. The first item is indexed 0. The inserted item is the item itself and not a copy.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/insertItemBefore)
+     */
     open fun insertItemBefore(newItem: SVGLength, index: Int): SVGLength
+
+    /**
+     * The replaceItem() method of the SVGLengthList interface replaces an existing item in the list with a new item. If
+     * the new item is already in a list, it is removed from its previous list before it is inserted into this list. The
+     * inserted item is the item itself and not a copy. If the item is already in this list, note that the index of the
+     * item to replace is before the removal of the item.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/replaceItem)
+     */
     open fun replaceItem(newItem: SVGLength, index: Int): SVGLength
+
+    /**
+     * The removeItem() method of the SVGLengthList interface removes an existing item at the given index from the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/removeItem)
+     */
     open fun removeItem(index: Int): SVGLength
+
+    /**
+     * The appendItem() method of the SVGLengthList interface inserts a new item at the end of the list. If the given
+     * item is already in a list, it is removed from its previous list before it is inserted into this list. The
+     * inserted item is the item itself and not a copy.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/appendItem)
+     */
     open fun appendItem(newItem: SVGLength): SVGLength
 }
 
@@ -185,15 +526,85 @@ public operator fun SVGLengthList.get(index: Int): SVGLength? = getProperty(this
 
 public operator fun SVGLengthList.set(index: Int, newItem: SVGLength) { setProperty(this, index, newItem) }
 
+/**
+ * The SVGStringList interface defines a list of strings.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList)
+ */
 public external abstract class SVGStringList : JsAny {
+    /**
+     * The length property of the SVGStringList interface returns the number of items in the list. It is an alias of
+     * numberOfItems to make SVG lists more array-like.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/length)
+     */
     open val length: Int
+
+    /**
+     * The numberOfItems property of the SVGStringList interface returns the number of items in the list. length is an
+     * alias of it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/numberOfItems)
+     */
     open val numberOfItems: Int
+
+    /**
+     * The clear() method of the SVGStringList interface clears all existing items from the list, with the result being
+     * an empty list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/clear)
+     */
     open fun clear()
+
+    /**
+     * The initialize() method of the SVGStringList interface clears all existing items from the list and re-initializes
+     * the list to hold the single item specified by the parameter. If the inserted item is already in a list, it is
+     * removed from its previous list before it is inserted into this list. The inserted item is the item itself and not
+     * a copy. The return value is the item inserted into the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/initialize)
+     */
     open fun initialize(newItem: String): String
+
+    /**
+     * The getItem() method of the SVGStringList interface returns the specified item from the list. The returned item
+     * is the item itself and not a copy. Any changes made to the item are immediately reflected in the list. The first
+     * item is indexed 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/getItem)
+     */
     open fun getItem(index: Int): String
+
+    /**
+     * The insertItemBefore() method of the SVGStringList interface inserts a new item into the list at the specified
+     * position. The first item is indexed 0. The inserted item is the item itself and not a copy.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/insertItemBefore)
+     */
     open fun insertItemBefore(newItem: String, index: Int): String
+
+    /**
+     * The replaceItem() method of the SVGStringList interface replaces an existing item in the list with a new item.
+     * The inserted item is the item itself and not a copy.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/replaceItem)
+     */
     open fun replaceItem(newItem: String, index: Int): String
+
+    /**
+     * The removeItem() method of the SVGStringList interface removes an existing item at the given index from the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/removeItem)
+     */
     open fun removeItem(index: Int): String
+
+    /**
+     * The appendItem() method of the SVGStringList interface inserts a new item at the end of the list. If the given
+     * item is already in a list, it is removed from its previous list before it is inserted into this list. The
+     * inserted item is the item itself and not a copy.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/appendItem)
+     */
     open fun appendItem(newItem: String): String
 }
 
@@ -201,56 +612,246 @@ public operator fun SVGStringList.get(index: Int): String? = getStringProperty(t
 
 public operator fun SVGStringList.set(index: Int, newItem: String) { setStringProperty(this, index, newItem) }
 
+/**
+ * The SVGAnimatedBoolean interface is used for attributes of type boolean which can be animated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean)
+ */
 public external abstract class SVGAnimatedBoolean : JsAny {
+    /**
+     * The baseVal property of the SVGAnimatedBoolean interface is the value of the associated animatable boolean SVG
+     * attribute in its base (none-animated) state. It reflects the value of the associated animatable boolean attribute
+     * when no animations are applied.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean/baseVal)
+     */
     open var baseVal: Boolean
+
+    /**
+     * The animVal read-only property of the SVGAnimatedBoolean interface represents the current animated value of the
+     * associated animatable boolean SVG attribute. If the attribute is not animated, animVal is the same as
+     * SVGAnimatedBoolean.baseVal.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean/animVal)
+     */
     open val animVal: Boolean
 }
 
+/**
+ * The SVGAnimatedEnumeration interface describes attribute values which are constants from a particular enumeration and
+ * which can be animated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration)
+ */
 public external abstract class SVGAnimatedEnumeration : JsAny {
+    /**
+     * The baseVal property of the SVGAnimatedEnumeration interface represents the value of an SVG enumeration.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/baseVal)
+     */
     open var baseVal: Short
+
+    /**
+     * The animVal read-only property of the SVGAnimatedEnumeration interface represents the value of an SVG
+     * enumeration.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/animVal)
+     */
     open val animVal: Short
 }
 
+/**
+ * The SVGAnimatedInteger interface is used for attributes of basic type &lt;integer&gt; which can be animated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger)
+ */
 public external abstract class SVGAnimatedInteger : JsAny {
+    /**
+     * The baseVal property of the SVGAnimatedInteger interface represents the base (non-animated) value of an
+     * animatable &lt;integer&gt;.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger/baseVal)
+     */
     open var baseVal: Int
+
+    /**
+     * The animVal property of the SVGAnimatedInteger interface represents the animated value of an &lt;integer&gt;. If
+     * no animation is applied, animVal equals baseVal.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger/animVal)
+     */
     open val animVal: Int
 }
 
+/**
+ * The SVGAnimatedNumber interface represents attributes of type &lt;number&gt; which can be animated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber)
+ */
 public external abstract class SVGAnimatedNumber : JsAny {
+    /**
+     * The baseVal property of the SVGAnimatedNumber interface represents the base (non-animated) value of an animatable
+     * numeric attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber/baseVal)
+     */
     open var baseVal: Float
+
+    /**
+     * The animVal read-only property of the SVGAnimatedNumber interface represents the animated value of an SVG
+     * element's numeric attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber/animVal)
+     */
     open val animVal: Float
 }
 
+/**
+ * The SVGAnimatedLength interface represents attributes of type &lt;length&gt; which can be animated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength)
+ */
 public external abstract class SVGAnimatedLength : JsAny {
+    /**
+     * The baseVal property of the SVGAnimatedLength interface contains the initial value of an SVG enumeration.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength/baseVal)
+     */
     open val baseVal: SVGLength
+
+    /**
+     * The animVal property of the SVGAnimatedLength interface contains the current value of an SVG enumeration. If
+     * there is no animation, it is the same value as the baseVal.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength/animVal)
+     */
     open val animVal: SVGLength
 }
 
+/**
+ * The SVGAnimatedAngle interface is used for attributes of basic type &lt;angle&gt; which can be animated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle)
+ */
 public external abstract class SVGAnimatedAngle : JsAny {
+    /**
+     * The baseVal read-only property of the SVGAnimatedAngle interface represents the base (non-animated) value of the
+     * associated &lt;angle&gt; on an SVG element. This property is used to retrieve the static value of the
+     * &lt;angle&gt;, unaffected by any ongoing animations.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle/baseVal)
+     */
     open val baseVal: SVGAngle
+
+    /**
+     * The animVal read-only property of the SVGAnimatedAngle interface represents the current animated value of the
+     * associated &lt;angle&gt; on an SVG element. If the attribute is not currently being animated, animVal will be the
+     * same as the baseVal.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle/animVal)
+     */
     open val animVal: SVGAngle
 }
 
+/**
+ * The SVGAnimatedString interface represents string attributes which can be animated from each SVG declaration. You
+ * need to create SVG attribute before doing anything else, everything should be declared inside this.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString)
+ */
 public external abstract class SVGAnimatedString : JsAny {
+    /**
+     * The baseVal property of the SVGAnimatedString interface gets or sets the base value of the given attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/baseVal)
+     */
     open var baseVal: String
+
+    /**
+     * The animVal read-only property of the SVGAnimatedString interface is a string representing the animated value of
+     * the reflected attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/animVal)
+     */
     open val animVal: String
 }
 
+/**
+ * The SVGAnimatedRect interface represents an SVGRect attribute that can be animated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect)
+ */
 public external abstract class SVGAnimatedRect : JsAny {
+    /**
+     * The baseVal read-only property of the SVGAnimatedRect interface represents the current non-animated value of the
+     * viewBox attribute of an SVG element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect/baseVal)
+     */
     open val baseVal: DOMRect
+
+    /**
+     * The animVal read-only property of the SVGAnimatedRect interface represents the current animated value of the
+     * viewBox attribute of an SVG element as a read-only DOMRectReadOnly object. It provides access to the rectangle's
+     * dynamic state, including the x, y, width, and height values during the animation.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect/animVal)
+     */
     open val animVal: DOMRect
 }
 
+/**
+ * The SVGAnimatedNumberList interface represents a list of attributes of type &lt;number&gt; which can be animated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList)
+ */
 public external abstract class SVGAnimatedNumberList : JsAny {
+    /**
+     * The baseVal read-only property of the SVGAnimatedNumberList interface represents the base (non-animated) value of
+     * an animatable attribute that accepts a list of &lt;number&gt; values.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList/baseVal)
+     */
     open val baseVal: SVGNumberList
+
+    /**
+     * The animVal read-only property of the SVGAnimatedNumberList interface represents the current animated value of an
+     * animatable attribute that accepts a list of &lt;number&gt; values.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList/animVal)
+     */
     open val animVal: SVGNumberList
 }
 
+/**
+ * The SVGAnimatedLengthList interface is used for attributes of type SVGLengthList which can be animated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList)
+ */
 public external abstract class SVGAnimatedLengthList : JsAny {
+    /**
+     * The baseVal read-only property of the SVGAnimatedLengthList interface represents the base (non-animated) value of
+     * an animatable attribute that accepts a list of &lt;length&gt;, &lt;percentage&gt;, or &lt;number&gt; values.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList/baseVal)
+     */
     open val baseVal: SVGLengthList
+
+    /**
+     * The animVal read-only property of the SVGAnimatedLengthList interface represents the animated value of an
+     * attribute that accepts a list of &lt;length&gt;, &lt;percentage&gt;, or &lt;number&gt; values.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList/animVal)
+     */
     open val animVal: SVGLengthList
 }
 
+/**
+ * The SVGUnitTypes interface defines a commonly used set of constants used for reflecting gradientUnits,
+ * patternContentUnits and other similar attributes.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUnitTypes)
+ */
 public external abstract class SVGUnitTypes : JsAny {
 
     companion object {
@@ -261,39 +862,209 @@ public external abstract class SVGUnitTypes : JsAny {
 }
 
 public external interface SVGTests : JsAny {
+    /**
+     * The requiredExtensions read-only property of the SVGGraphicsElement interface reflects the requiredExtensions
+     * attribute of the given element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/requiredExtensions)
+     */
     val requiredExtensions: SVGStringList
+
+    /**
+     * The systemLanguage read-only property of the SVGGraphicsElement interface reflects the systemLanguage attribute
+     * of the given element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/systemLanguage)
+     */
     val systemLanguage: SVGStringList
 }
 
 public external interface SVGFitToViewBox : JsAny {
+    /**
+     * The viewBox read-only property of the SVGSVGElement interface reflects the &lt;svg&gt; element's viewBox
+     * attribute as an SVGAnimatedRect.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/viewBox)
+     */
     val viewBox: SVGAnimatedRect
+
+    /**
+     * The preserveAspectRatio read-only property of the SVGSVGElement interface reflects the preserveAspectRatio
+     * attribute of the given element. It defines how the SVG element's content should be scaled to fit the given space,
+     * preserving its aspect ratio.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/preserveAspectRatio)
+     */
     val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 }
 
 public external interface SVGURIReference : JsAny {
+    /**
+     * The href read-only property of the SVGUseElement interface reflects the href or xlink:href attribute of the given
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/href)
+     */
     val href: SVGAnimatedString
 }
 
+/**
+ * The SVGSVGElement interface provides access to the properties of &lt;svg&gt; elements, as well as methods to
+ * manipulate them. This interface contains also various miscellaneous commonly-used utility methods, such as matrix
+ * operations and the ability to control the time of redraw on visual rendering devices.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement)
+ */
 public external abstract class SVGSVGElement : SVGGraphicsElement, SVGFitToViewBox, WindowEventHandlers {
+    /**
+     * The x read-only property of the SVGSVGElement interface describes the horizontal coordinate of the position of
+     * that SVG as an SVGAnimatedLength. When an &lt;svg&gt; is nested within another &lt;svg&gt;, the horizontal
+     * coordinate is a length in the user coordinate system that is the given distance from the origin of the user
+     * coordinate system along the x-axis. Its syntax is the same as that for &lt;length&gt;.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/x)
+     */
     open val x: SVGAnimatedLength
+
+    /**
+     * The y read-only property of the SVGSVGElement interface describes the vertical coordinate of the position of that
+     * SVG as an SVGAnimatedLength. When an &lt;svg&gt; is nested within another &lt;svg&gt;, the vertical coordinate is
+     * a length in the user coordinate system that is the given distance from the origin of the user coordinate system
+     * along the y-axis. Its syntax is the same as that for &lt;length&gt;.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/y)
+     */
     open val y: SVGAnimatedLength
+
+    /**
+     * The width read-only property of the SVGSVGElement interface describes the horizontal size of element as an
+     * SVGAnimatedLength. It reflects the &lt;svg&gt; element's width attribute, which may not be the SVG's rendered
+     * width.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/width)
+     */
     open val width: SVGAnimatedLength
+
+    /**
+     * The height read-only property of the SVGSVGElement interface describes the vertical size of element as an
+     * SVGAnimatedLength. It reflects the &lt;svg&gt; element's height attribute, which may not be the SVG's rendered
+     * height.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/height)
+     */
     open val height: SVGAnimatedLength
+
+    /**
+     * The currentScale property of the SVGSVGElement interface reflects the current scale factor relative to the
+     * initial view to take into account user magnification and panning operations on the outermost &lt;svg&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/currentScale)
+     */
     open var currentScale: Float
+
+    /**
+     * The currentTranslate read-only property of the SVGSVGElement interface reflects the translation factor that takes
+     * into account user "magnification" corresponding to an outermost &lt;svg&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/currentTranslate)
+     */
     open val currentTranslate: DOMPoint
     open fun getIntersectionList(rect: DOMRect, referenceElement: SVGElement?): NodeList
     open fun getEnclosureList(rect: DOMRect, referenceElement: SVGElement?): NodeList
+
+    /**
+     * The checkIntersection() method of the SVGSVGElement interface checks if the rendered content of the given element
+     * intersects the supplied rectangle.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/checkIntersection)
+     */
     open fun checkIntersection(element: SVGElement, rect: DOMRect): Boolean
+
+    /**
+     * The checkEnclosure() method of the SVGSVGElement interface checks if the rendered content of the given element is
+     * entirely contained within the supplied rectangle.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/checkEnclosure)
+     */
     open fun checkEnclosure(element: SVGElement, rect: DOMRect): Boolean
+
+    /**
+     * The deselectAll() method of the SVGSVGElement interface unselects any selected objects, including any selections
+     * of text strings and type-in bars.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/deselectAll)
+     */
     open fun deselectAll()
+
+    /**
+     * The createSVGNumber() method of the SVGSVGElement interface creates an SVGNumber object outside of any document
+     * trees.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGNumber)
+     */
     open fun createSVGNumber(): SVGNumber
+
+    /**
+     * The createSVGLength() method of the SVGSVGElement interface creates an SVGLength object outside of any document
+     * trees.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGLength)
+     */
     open fun createSVGLength(): SVGLength
+
+    /**
+     * The createSVGAngle() method of the SVGSVGElement interface creates an SVGAngle object outside of any document
+     * trees.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGAngle)
+     */
     open fun createSVGAngle(): SVGAngle
+
+    /**
+     * The createSVGPoint() method of the SVGSVGElement interface creates a DOMPoint object outside of any document
+     * trees.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGPoint)
+     */
     open fun createSVGPoint(): DOMPoint
+
+    /**
+     * The createSVGMatrix() method of the SVGSVGElement interface creates a DOMMatrix object outside of any document
+     * trees.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGMatrix)
+     */
     open fun createSVGMatrix(): DOMMatrix
+
+    /**
+     * The createSVGRect() method of the SVGSVGElement interface creates a DOMRect object outside of any document trees.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGRect)
+     */
     open fun createSVGRect(): DOMRect
+
+    /**
+     * The createSVGTransform() method of the SVGSVGElement interface creates an SVGTransform object outside of any
+     * document trees.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGTransform)
+     */
     open fun createSVGTransform(): SVGTransform
+
+    /**
+     * The createSVGTransformFromMatrix() method of the SVGSVGElement interface creates an SVGTransform object outside
+     * of any document trees, based on the given DOMMatrix object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGTransformFromMatrix)
+     */
     open fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
+
+    /**
+     * The getElementById() method of the SVGSVGElement interface searches the SVG document fragment (i.e., the search
+     * is restricted to a subset of the document tree) for an Element whose id property matches the specified string.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/getElementById)
+     */
     open fun getElementById(elementId: String): Element?
     open fun suspendRedraw(maxWaitMilliseconds: Int): Int
     open fun unsuspendRedraw(suspendHandleID: Int)
@@ -322,6 +1093,11 @@ public external abstract class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
     }
 }
 
+/**
+ * The SVGGElement interface corresponds to the &lt;g&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGElement)
+ */
 public external abstract class SVGGElement : SVGGraphicsElement {
 
     companion object {
@@ -346,6 +1122,11 @@ public external abstract class SVGGElement : SVGGraphicsElement {
     }
 }
 
+/**
+ * The SVGDefsElement interface corresponds to the &lt;defs&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGDefsElement)
+ */
 public external abstract class SVGDefsElement : SVGGraphicsElement {
 
     companion object {
@@ -370,6 +1151,11 @@ public external abstract class SVGDefsElement : SVGGraphicsElement {
     }
 }
 
+/**
+ * The SVGDescElement interface corresponds to the &lt;desc&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGDescElement)
+ */
 public external abstract class SVGDescElement : SVGElement {
 
     companion object {
@@ -394,6 +1180,11 @@ public external abstract class SVGDescElement : SVGElement {
     }
 }
 
+/**
+ * The SVGMetadataElement interface corresponds to the &lt;metadata&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMetadataElement)
+ */
 public external abstract class SVGMetadataElement : SVGElement {
 
     companion object {
@@ -418,6 +1209,11 @@ public external abstract class SVGMetadataElement : SVGElement {
     }
 }
 
+/**
+ * The SVGTitleElement interface corresponds to the &lt;title&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTitleElement)
+ */
 public external abstract class SVGTitleElement : SVGElement {
 
     companion object {
@@ -442,6 +1238,11 @@ public external abstract class SVGTitleElement : SVGElement {
     }
 }
 
+/**
+ * The SVGSymbolElement interface corresponds to the &lt;symbol&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSymbolElement)
+ */
 public external abstract class SVGSymbolElement : SVGGraphicsElement, SVGFitToViewBox {
 
     companion object {
@@ -466,10 +1267,44 @@ public external abstract class SVGSymbolElement : SVGGraphicsElement, SVGFitToVi
     }
 }
 
+/**
+ * The SVGUseElement interface corresponds to the &lt;use&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement)
+ */
 public external abstract class SVGUseElement : SVGGraphicsElement, SVGURIReference {
+    /**
+     * The x read-only property of the SVGUseElement interface describes the x-axis coordinate of the start point of the
+     * referenced element as an SVGAnimatedLength. It reflects the computed value of the x attribute on the &lt;use&gt;
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/x)
+     */
     open val x: SVGAnimatedLength
+
+    /**
+     * The y read-only property of the SVGUseElement interface describes the y-axis coordinate of the start point of the
+     * referenced element as an SVGAnimatedLength. It reflects the computed value of the y attribute on the &lt;use&gt;
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/y)
+     */
     open val y: SVGAnimatedLength
+
+    /**
+     * The width read-only property of the SVGUseElement interface describes the width of the referenced element as an
+     * SVGAnimatedLength. It reflects the computed value of the width attribute on the &lt;use&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/width)
+     */
     open val width: SVGAnimatedLength
+
+    /**
+     * The height read-only property of the SVGUseElement interface describes the height of the referenced element as an
+     * SVGAnimatedLength. It reflects the computed value of the height attribute on the &lt;use&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/height)
+     */
     open val height: SVGAnimatedLength
 
     companion object {
@@ -494,6 +1329,11 @@ public external abstract class SVGUseElement : SVGGraphicsElement, SVGURIReferen
     }
 }
 
+/**
+ * The SVGSwitchElement interface corresponds to the &lt;switch&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSwitchElement)
+ */
 public external abstract class SVGSwitchElement : SVGGraphicsElement {
 
     companion object {
@@ -522,10 +1362,44 @@ public external interface GetSVGDocument : JsAny {
     fun getSVGDocument(): Document
 }
 
+/**
+ * The SVGStyleElement interface corresponds to the SVG &lt;style&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement)
+ */
 public external abstract class SVGStyleElement : SVGElement, LinkStyle {
+    /**
+     * The SVGStyleElement.type property returns the type of the current style. The value reflects the associated SVG
+     * &lt;style&gt; element's type attribute.
+     *
+     * Deprecated: MDN no longer recommends using this feature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/type)
+     */
     open var type: String
+
+    /**
+     * The SVGStyleElement.media property is a media query string corresponding to the media attribute of the given SVG
+     * style element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/media)
+     */
     open var media: String
+
+    /**
+     * The SVGStyleElement.title property is a string corresponding to the title attribute of the given SVG style
+     * element. It may be used to select between alternate style sheets.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/title)
+     */
     open var title: String
+
+    /**
+     * The SVGStyleElement.disabled property can be used to get and set whether the stylesheet is disabled (true) or not
+     * (false).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/disabled)
+     */
     open var disabled: Boolean
 
     companion object {
@@ -550,15 +1424,82 @@ public external abstract class SVGStyleElement : SVGElement, LinkStyle {
     }
 }
 
+/**
+ * The SVGTransform interface reflects one of the component transformations within an SVGTransformList; thus, an
+ * SVGTransform object corresponds to a single component (e.g., scale(…) or matrix(…)) within a transform attribute.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform)
+ */
 public external abstract class SVGTransform : JsAny {
+    /**
+     * The type read-only property of the SVGTransform interface represents the type of transformation applied,
+     * specified by one of the SVG_TRANSFORM_* constants defined on this interface.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/type)
+     */
     open val type: Short
+
+    /**
+     * The matrix read-only property of the SVGTransform interface represents the transformation matrix that corresponds
+     * to the transformation type.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/matrix)
+     */
     open val matrix: DOMMatrix
+
+    /**
+     * The angle read-only property of the SVGTransform interface represents the angle of the transformation in degrees.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/angle)
+     */
     open val angle: Float
+
+    /**
+     * The setMatrix() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_MATRIX, with
+     * parameter matrix defining the new transformation.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setMatrix)
+     */
     open fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)
+
+    /**
+     * The setTranslate() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_TRANSLATE, with
+     * parameters tx and ty defining the translation amounts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setTranslate)
+     */
     open fun setTranslate(tx: Float, ty: Float)
+
+    /**
+     * The setScale() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_SCALE, with
+     * parameters sx and sy defining the scale amounts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setScale)
+     */
     open fun setScale(sx: Float, sy: Float)
+
+    /**
+     * The setRotate() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_ROTATE, with
+     * parameter angle defining the rotation angle and parameters cx and cy defining the optional center of rotation.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setRotate)
+     */
     open fun setRotate(angle: Float, cx: Float, cy: Float)
+
+    /**
+     * The setSkewX() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_SKEWX, with
+     * parameter angle defining the amount of skew along the X-axis.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewX)
+     */
     open fun setSkewX(angle: Float)
+
+    /**
+     * The setSkewY() method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_SKEWY, with
+     * parameter angle defining the amount of skew along the Y-axis.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewY)
+     */
     open fun setSkewY(angle: Float)
 
     companion object {
@@ -572,17 +1513,94 @@ public external abstract class SVGTransform : JsAny {
     }
 }
 
+/**
+ * The SVGTransformList interface defines a list of SVGTransform objects.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList)
+ */
 public external abstract class SVGTransformList : JsAny {
+    /**
+     * The length read-only property of the SVGTransformList interface represents the number of items in the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/length)
+     */
     open val length: Int
+
+    /**
+     * The numberOfItems read-only property of the SVGTransformList interface represents the number of items in the
+     * list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/numberOfItems)
+     */
     open val numberOfItems: Int
+
+    /**
+     * The clear() method of the SVGTransformList interface clears all existing current items from the list, with the
+     * result being an empty list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/clear)
+     */
     open fun clear()
+
+    /**
+     * The initialize() method of the SVGTransformList interface clears all existing current items from the list and
+     * re-initializes the list to hold the single item specified by the parameter.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/initialize)
+     */
     open fun initialize(newItem: SVGTransform): SVGTransform
+
+    /**
+     * The getItem() method of the SVGTransformList interface returns the specified item from the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/getItem)
+     */
     open fun getItem(index: Int): SVGTransform
+
+    /**
+     * The insertItemBefore() method of the SVGTransformList interface inserts a new item into the list at the specified
+     * position.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/insertItemBefore)
+     */
     open fun insertItemBefore(newItem: SVGTransform, index: Int): SVGTransform
+
+    /**
+     * The replaceItem() method of the SVGTransformList interface replaces an existing item in the list with a new item.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/replaceItem)
+     */
     open fun replaceItem(newItem: SVGTransform, index: Int): SVGTransform
+
+    /**
+     * The removeItem() method of the SVGTransformList interface removes an existing item from the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/removeItem)
+     */
     open fun removeItem(index: Int): SVGTransform
+
+    /**
+     * The appendItem() method of the SVGTransformList interface inserts a new item at the end of the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/appendItem)
+     */
     open fun appendItem(newItem: SVGTransform): SVGTransform
+
+    /**
+     * The createSVGTransformFromMatrix() method of the SVGTransformList interface creates an SVGTransform object which
+     * is initialized to a transform of type SVG_TRANSFORM_MATRIX and whose values are the given matrix.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/createSVGTransformFromMatrix)
+     */
     open fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
+
+    /**
+     * The consolidate() method of the SVGTransformList interface consolidates the list of separate SVGTransform objects
+     * by multiplying the equivalent transformation matrices together to result in a list consisting of a single
+     * SVGTransform object of type SVG_TRANSFORM_MATRIX.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/consolidate)
+     */
     open fun consolidate(): SVGTransform?
 }
 
@@ -590,13 +1608,49 @@ public operator fun SVGTransformList.get(index: Int): SVGTransform? = getPropert
 
 public operator fun SVGTransformList.set(index: Int, newItem: SVGTransform) { setProperty(this, index, newItem) }
 
+/**
+ * The SVGAnimatedTransformList interface represents attributes which take a list of numbers and which can be animated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList)
+ */
 public external abstract class SVGAnimatedTransformList : JsAny {
+    /**
+     * The baseVal read-only property of the SVGAnimatedTransformList interface represents the non-animated value of the
+     * transform attribute of an SVG element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList/baseVal)
+     */
     open val baseVal: SVGTransformList
+
+    /**
+     * The animVal read-only property of the SVGAnimatedTransformList interface represents the animated value of the
+     * transform attribute of an SVG element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList/animVal)
+     */
     open val animVal: SVGTransformList
 }
 
+/**
+ * The SVGPreserveAspectRatio interface corresponds to the preserveAspectRatio attribute.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio)
+ */
 public external abstract class SVGPreserveAspectRatio : JsAny {
+    /**
+     * The align property of the SVGPreserveAspectRatio interface reflects the type of the alignment value as specified
+     * by one of the SVG_PRESERVEASPECTRATIO_* constants defined on this interface.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio/align)
+     */
     open var align: Short
+
+    /**
+     * The meetOrSlice property of the SVGPreserveAspectRatio interface reflects the type of the meet-or-slice value as
+     * specified by one of the SVG_MEETORSLICE_* constants defined on this interface.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio/meetOrSlice)
+     */
     open var meetOrSlice: Short
 
     companion object {
@@ -617,17 +1671,91 @@ public external abstract class SVGPreserveAspectRatio : JsAny {
     }
 }
 
+/**
+ * The SVGAnimatedPreserveAspectRatio interface represents attributes of type SVGPreserveAspectRatio which can be
+ * animated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio)
+ */
 public external abstract class SVGAnimatedPreserveAspectRatio : JsAny {
+    /**
+     * The baseVal read-only property of the SVGAnimatedPreserveAspectRatio interface represents the base (non-animated)
+     * value of the preserveAspectRatio attribute of an SVG element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio/baseVal)
+     */
     open val baseVal: SVGPreserveAspectRatio
+
+    /**
+     * The animVal read-only property of the SVGAnimatedPreserveAspectRatio interface represents the value of the
+     * preserveAspectRatio attribute of an SVG element after any animations or transformations are applied.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio/animVal)
+     */
     open val animVal: SVGPreserveAspectRatio
 }
 
+/**
+ * The SVGRectElement interface provides access to the properties of &lt;rect&gt; elements, as well as methods to
+ * manipulate them.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement)
+ */
 public external abstract class SVGRectElement : SVGGeometryElement {
+    /**
+     * The x read-only property of the SVGRectElement interface describes the horizontal coordinate of the position of
+     * an SVG rectangle as a SVGAnimatedLength. The &lt;coordinate&gt; is a length in the user coordinate system that is
+     * the given distance from the origin of the user coordinate system along the x-axis. Its syntax is the same as that
+     * for &lt;length&gt;.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/x)
+     */
     open val x: SVGAnimatedLength
+
+    /**
+     * The y read-only property of the SVGRectElement interface describes the vertical coordinate of the position of an
+     * SVG rectangle as a SVGAnimatedLength. The &lt;coordinate&gt; is a length in the user coordinate system that is
+     * the given distance from the origin of the user coordinate system along the y-axis. Its syntax is the same as that
+     * for &lt;length&gt;.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/y)
+     */
     open val y: SVGAnimatedLength
+
+    /**
+     * The width read-only property of the SVGRectElement interface describes the horizontal size of an SVG rectangle as
+     * a SVGAnimatedLength. The length is in user coordinate system units along the x-axis. Its syntax is the same as
+     * that for &lt;length&gt;.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/width)
+     */
     open val width: SVGAnimatedLength
+
+    /**
+     * The height read-only property of the SVGRectElement interface describes the vertical size of an SVG rectangle as
+     * a SVGAnimatedLength. The length is in user coordinate system units along the y-axis. Its syntax is the same as
+     * that for &lt;length&gt;.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/height)
+     */
     open val height: SVGAnimatedLength
+
+    /**
+     * The rx read-only property of the SVGRectElement interface describes the horizontal curve of the corners of an SVG
+     * rectangle as a SVGAnimatedLength. The length is in user coordinate system units along the x-axis. Its syntax is
+     * the same as that for &lt;length&gt;.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/rx)
+     */
     open val rx: SVGAnimatedLength
+
+    /**
+     * The ry read-only property of the SVGRectElement interface describes the vertical curve of the corners of an SVG
+     * rectangle as a SVGAnimatedLength. The length is in user coordinate system units along the y-axis. Its syntax is
+     * the same as that for &lt;length&gt;.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/ry)
+     */
     open val ry: SVGAnimatedLength
 
     companion object {
@@ -652,9 +1780,34 @@ public external abstract class SVGRectElement : SVGGeometryElement {
     }
 }
 
+/**
+ * The SVGCircleElement interface is an interface for the &lt;circle&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement)
+ */
 public external abstract class SVGCircleElement : SVGGeometryElement {
+    /**
+     * The cx read-only property of the SVGCircleElement interface reflects the cx attribute of a &lt;circle&gt; element
+     * and by that defines the x-coordinate of the circle's center.&lt;
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement/cx)
+     */
     open val cx: SVGAnimatedLength
+
+    /**
+     * The cy read-only property of the SVGCircleElement interface reflects the cy attribute of a &lt;circle&gt; element
+     * and by that defines the y-coordinate of the circle's center.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement/cy)
+     */
     open val cy: SVGAnimatedLength
+
+    /**
+     * The r read-only property of the SVGCircleElement interface reflects the r attribute of a &lt;circle&gt; element
+     * and by that defines the radius of the circle.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement/r)
+     */
     open val r: SVGAnimatedLength
 
     companion object {
@@ -679,10 +1832,44 @@ public external abstract class SVGCircleElement : SVGGeometryElement {
     }
 }
 
+/**
+ * The SVGEllipseElement interface provides access to the properties of &lt;ellipse&gt; elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement)
+ */
 public external abstract class SVGEllipseElement : SVGGeometryElement {
+    /**
+     * The cx read-only property of the SVGEllipseElement interface describes the x-axis coordinate of the center of the
+     * ellipse as an SVGAnimatedLength. It reflects the computed value of the cx attribute on the &lt;ellipse&gt;
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/cx)
+     */
     open val cx: SVGAnimatedLength
+
+    /**
+     * The cy read-only property of the SVGEllipseElement interface describes the y-axis coordinate of the center of the
+     * ellipse as an SVGAnimatedLength. It reflects the computed value of the cy attribute on the &lt;ellipse&gt;
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/cy)
+     */
     open val cy: SVGAnimatedLength
+
+    /**
+     * The rx read-only property of the SVGEllipseElement interface describes the x-axis radius of the ellipse as an
+     * SVGAnimatedLength. It reflects the computed value of the rx attribute on the &lt;ellipse&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/rx)
+     */
     open val rx: SVGAnimatedLength
+
+    /**
+     * The ry read-only property of the SVGEllipseElement interface describes the y-axis radius of the ellipse as an
+     * SVGAnimatedLength. It reflects the computed value of the ry attribute on the &lt;ellipse&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/ry)
+     */
     open val ry: SVGAnimatedLength
 
     companion object {
@@ -707,10 +1894,43 @@ public external abstract class SVGEllipseElement : SVGGeometryElement {
     }
 }
 
+/**
+ * The SVGLineElement interface provides access to the properties of &lt;line&gt; elements, as well as methods to
+ * manipulate them.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement)
+ */
 public external abstract class SVGLineElement : SVGGeometryElement {
+    /**
+     * The x1 read-only property of the SVGLineElement interface describes the start of the SVG line along the x-axis as
+     * an SVGAnimatedLength. It reflects the &lt;line&gt; element's x1 geometric attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/x1)
+     */
     open val x1: SVGAnimatedLength
+
+    /**
+     * The y1 read-only property of the SVGLineElement interface describes the start of the SVG line along the y-axis as
+     * an SVGAnimatedLength. It reflects the &lt;line&gt; element's y1 geometric attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/y1)
+     */
     open val y1: SVGAnimatedLength
+
+    /**
+     * The x2 read-only property of the SVGLineElement interface describes the x-axis coordinate value of the end of a
+     * line as an SVGAnimatedLength. It reflects the &lt;line&gt; element's x2 geometric attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/x2)
+     */
     open val x2: SVGAnimatedLength
+
+    /**
+     * The y2 read-only property of the SVGLineElement interface describes the v-axis coordinate value of the end of a
+     * line as an SVGAnimatedLength. It reflects the &lt;line&gt; element's y2 geometric attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/y2)
+     */
     open val y2: SVGAnimatedLength
 
     companion object {
@@ -736,19 +1956,93 @@ public external abstract class SVGLineElement : SVGGeometryElement {
 }
 
 public external interface SVGAnimatedPoints : JsAny {
+    /**
+     * The points read-only property of the SVGPolylineElement interface reflects the base (i.e., static) value of the
+     * element's points attribute. Modifications via the SVGPointList object are reflected in the points attribute, and
+     * vice versa.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolylineElement/points)
+     */
     val points: SVGPointList
+
+    /**
+     * The animatedPoints read-only property of the SVGPolylineElement interface reflects the animated value of the
+     * element's points attribute. If the points attribute is not being animated, it contains the same value as the
+     * points property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolylineElement/animatedPoints)
+     */
     val animatedPoints: SVGPointList
 }
 
+/**
+ * The SVGPointList interface represents a list of DOMPoint objects.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList)
+ */
 public external abstract class SVGPointList : JsAny {
+    /**
+     * The length read-only property of the SVGPointList interface returns the number of items in the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/length)
+     */
     open val length: Int
+
+    /**
+     * The numberOfItems read-only property of the SVGPointList interface returns the number of items in the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/numberOfItems)
+     */
     open val numberOfItems: Int
+
+    /**
+     * The clear() method of the SVGPointList interface removes all items from the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/clear)
+     */
     open fun clear()
+
+    /**
+     * The initialize() method of the SVGPointList interface clears the list then adds a single new DOMPoint object to
+     * the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/initialize)
+     */
     open fun initialize(newItem: DOMPoint): DOMPoint
+
+    /**
+     * The getItem() method of the SVGPointList interface gets one item from the list at the specified index.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/getItem)
+     */
     open fun getItem(index: Int): DOMPoint
+
+    /**
+     * The insertItemBefore() method of the SVGPointList interface inserts a DOMPoint before another item in the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/insertItemBefore)
+     */
     open fun insertItemBefore(newItem: DOMPoint, index: Int): DOMPoint
+
+    /**
+     * The replaceItem() method of the SVGPointList interface replaces a DOMPoint in the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/replaceItem)
+     */
     open fun replaceItem(newItem: DOMPoint, index: Int): DOMPoint
+
+    /**
+     * The removeItem() method of the SVGPointList interface removes a DOMPoint from the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/removeItem)
+     */
     open fun removeItem(index: Int): DOMPoint
+
+    /**
+     * The appendItem() method of the SVGPointList interface adds a DOMPoint to the end of the list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/appendItem)
+     */
     open fun appendItem(newItem: DOMPoint): DOMPoint
 }
 
@@ -756,6 +2050,12 @@ public operator fun SVGPointList.get(index: Int): DOMPoint? = getProperty(this, 
 
 public operator fun SVGPointList.set(index: Int, newItem: DOMPoint) { setProperty(this, index, newItem) }
 
+/**
+ * The SVGPolylineElement interface provides access to the properties of &lt;polyline&gt; elements, as well as methods
+ * to manipulate them.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolylineElement)
+ */
 public external abstract class SVGPolylineElement : SVGGeometryElement, SVGAnimatedPoints {
 
     companion object {
@@ -780,6 +2080,12 @@ public external abstract class SVGPolylineElement : SVGGeometryElement, SVGAnima
     }
 }
 
+/**
+ * The SVGPolygonElement interface provides access to the properties of &lt;polygon&gt; elements, as well as methods to
+ * manipulate them.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolygonElement)
+ */
 public external abstract class SVGPolygonElement : SVGGeometryElement, SVGAnimatedPoints {
 
     companion object {
@@ -804,16 +2110,93 @@ public external abstract class SVGPolygonElement : SVGGeometryElement, SVGAnimat
     }
 }
 
+/**
+ * The SVGTextContentElement interface is implemented by elements that support rendering child text content. It is
+ * inherited by various text-related interfaces, such as SVGTextElement, SVGTSpanElement, and SVGTextPathElement.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement)
+ */
 public external abstract class SVGTextContentElement : SVGGraphicsElement {
+    /**
+     * The textLength read-only property of the SVGTextContentElement interface reflects the textLength attribute of the
+     * given element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/textLength)
+     */
     open val textLength: SVGAnimatedLength
+
+    /**
+     * The lengthAdjust read-only property of the SVGTextContentElement interface reflects the lengthAdjust attribute of
+     * the given element. It takes one of the LENGTHADJUST_* constants defined on this interface.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/lengthAdjust)
+     */
     open val lengthAdjust: SVGAnimatedEnumeration
+
+    /**
+     * The getNumberOfChars() method of the SVGTextContentElement interface represents the total number of addressable
+     * characters available for rendering within the current element, regardless of whether they will be rendered.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getNumberOfChars)
+     */
     open fun getNumberOfChars(): Int
+
+    /**
+     * The getComputedTextLength() method of the SVGTextContentElement interface represents the computed length for the
+     * text within the element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getComputedTextLength)
+     */
     open fun getComputedTextLength(): Float
+
+    /**
+     * The getSubStringLength() method of the SVGTextContentElement interface represents the computed length of the
+     * formatted text advance distance for a substring of text within the element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getSubStringLength)
+     */
     open fun getSubStringLength(charnum: Int, nchars: Int): Float
+
+    /**
+     * The getStartPositionOfChar() method of the SVGTextContentElement interface returns the position of a typographic
+     * character after text layout has been performed.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getStartPositionOfChar)
+     */
     open fun getStartPositionOfChar(charnum: Int): DOMPoint
+
+    /**
+     * The getEndPositionOfChar() method of the SVGTextContentElement interface returns the trailing position of a
+     * typographic character after text layout has been performed.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getEndPositionOfChar)
+     */
     open fun getEndPositionOfChar(charnum: Int): DOMPoint
+
+    /**
+     * The getExtentOfChar() method of the SVGTextContentElement interface the represents computed tight bounding box of
+     * the glyph cell that corresponds to a given typographic character.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getExtentOfChar)
+     */
     open fun getExtentOfChar(charnum: Int): DOMRect
+
+    /**
+     * The getRotationOfChar() method of the SVGTextContentElement interface the represents the rotation of a
+     * typographic character.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getRotationOfChar)
+     */
     open fun getRotationOfChar(charnum: Int): Float
+
+    /**
+     * The getCharNumAtPosition() method of the SVGTextContentElement interface represents the character which caused a
+     * text glyph to be rendered at a given position in the coordinate system. Because the relationship between
+     * characters and glyphs is not one-to-one, only the first character of the relevant typographic character is
+     * returned.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getCharNumAtPosition)
+     */
     open fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Int
     open fun selectSubString(charnum: Int, nchars: Int)
 
@@ -842,11 +2225,55 @@ public external abstract class SVGTextContentElement : SVGGraphicsElement {
     }
 }
 
+/**
+ * The SVGTextPositioningElement interface is implemented by elements that support attributes that position individual
+ * text glyphs. It is inherited by SVGTextElement and SVGTSpanElement.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement)
+ */
 public external abstract class SVGTextPositioningElement : SVGTextContentElement {
+    /**
+     * The x read-only property of the SVGTextPositioningElement interface describes the x-axis coordinate of the
+     * SVGTextElement or SVGTSpanElement as an SVGAnimatedLengthList. It reflects the x attribute's horizontal position
+     * of the individual text glyphs in the user coordinate system.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/x)
+     */
     open val x: SVGAnimatedLengthList
+
+    /**
+     * The y read-only property of the SVGTextPositioningElement interface describes the y-axis coordinate of the
+     * SVGTextElement or SVGTSpanElement as an SVGAnimatedLengthList. It reflects the y attribute's vertical position of
+     * the individual text glyphs in the user coordinate system.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/y)
+     */
     open val y: SVGAnimatedLengthList
+
+    /**
+     * The dx read-only property of the SVGTextPositioningElement interface describes the x-axis coordinate of the
+     * SVGTextElement or SVGTSpanElement as an SVGAnimatedLengthList. It reflects the dx attribute's horizontal
+     * displacement of the individual text glyphs in the user coordinate system.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/dx)
+     */
     open val dx: SVGAnimatedLengthList
+
+    /**
+     * The dy read-only property of the SVGTextPositioningElement interface describes the y-axis coordinate of the
+     * SVGTextElement or SVGTSpanElement as an SVGAnimatedLengthList. It reflects the dy attribute's vertical
+     * displacement of the individual text glyphs in the user coordinate system.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/dy)
+     */
     open val dy: SVGAnimatedLengthList
+
+    /**
+     * The rotate read-only property of the SVGTextPositioningElement interface reflects the rotation of individual text
+     * glyphs, as specified by the rotate attribute of the given element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/rotate)
+     */
     open val rotate: SVGAnimatedNumberList
 
     companion object {
@@ -874,6 +2301,11 @@ public external abstract class SVGTextPositioningElement : SVGTextContentElement
     }
 }
 
+/**
+ * The SVGTextElement interface corresponds to the &lt;text&gt; elements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextElement)
+ */
 public external abstract class SVGTextElement : SVGTextPositioningElement {
 
     companion object {
@@ -901,6 +2333,11 @@ public external abstract class SVGTextElement : SVGTextPositioningElement {
     }
 }
 
+/**
+ * The SVGTSpanElement interface represents a &lt;tspan&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTSpanElement)
+ */
 public external abstract class SVGTSpanElement : SVGTextPositioningElement {
 
     companion object {
@@ -928,10 +2365,44 @@ public external abstract class SVGTSpanElement : SVGTextPositioningElement {
     }
 }
 
+/**
+ * The SVGTextPathElement interface corresponds to the &lt;textPath&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement)
+ */
 public external abstract class SVGTextPathElement : SVGTextContentElement, SVGURIReference {
+    /**
+     * The startOffset read-only property of the SVGTextPathElement interface reflects the X component of the
+     * startOffset attribute of the given &lt;textPath&gt;, which defines an offset from the start of the path for the
+     * initial current text position along the path after converting the path to the &lt;textPath&gt; element's
+     * coordinate system.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/startOffset)
+     */
     open val startOffset: SVGAnimatedLength
+
+    /**
+     * The method read-only property of the SVGTextPathElement interface represents the method by which text should be
+     * rendered along the path.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/method)
+     */
     open val method: SVGAnimatedEnumeration
+
+    /**
+     * The spacing read-only property of the SVGTextPathElement interface represents the spacing between typographic
+     * characters that are to be rendered along a path.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/spacing)
+     */
     open val spacing: SVGAnimatedEnumeration
+
+    /**
+     * The side read-only property of the SVGTextPathElement interface represents the side of the path that the text is
+     * placed on (relative to the path direction).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/side)
+     */
     open val side: SVGAnimatedEnumeration
 
     companion object {
@@ -968,12 +2439,60 @@ public external abstract class SVGTextPathElement : SVGTextContentElement, SVGUR
     }
 }
 
+/**
+ * The SVGImageElement interface corresponds to the &lt;image&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement)
+ */
 public external abstract class SVGImageElement : SVGGraphicsElement, SVGURIReference, CanvasImageSource {
+    /**
+     * The x read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the x
+     * attribute of the given &lt;image&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/x)
+     */
     open val x: SVGAnimatedLength
+
+    /**
+     * The y read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the y
+     * attribute of the given &lt;image&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/y)
+     */
     open val y: SVGAnimatedLength
+
+    /**
+     * The width read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the
+     * width attribute of the given &lt;image&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/width)
+     */
     open val width: SVGAnimatedLength
+
+    /**
+     * The height read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the
+     * height attribute of the given &lt;image&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/height)
+     */
     open val height: SVGAnimatedLength
+
+    /**
+     * The preserveAspectRatio read-only property of the SVGImageElement interface returns an
+     * SVGAnimatedPreserveAspectRatio corresponding to the preserveAspectRatio attribute of the given &lt;image&gt;
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/preserveAspectRatio)
+     */
     open val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
+
+    /**
+     * The crossOrigin property of the SVGImageElement interface is a string which specifies the Cross-Origin Resource
+     * Sharing (CORS) setting to use when retrieving the image. It reflects the crossorigin content attribute of the
+     * given &lt;image&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/crossOrigin)
+     */
     open var crossOrigin: String?
     open var referrerPolicy: String
 
@@ -999,10 +2518,47 @@ public external abstract class SVGImageElement : SVGGraphicsElement, SVGURIRefer
     }
 }
 
+/**
+ * The SVGForeignObjectElement interface provides access to the properties of &lt;foreignObject&gt; elements, as well as
+ * methods to manipulate them.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement)
+ */
 public external abstract class SVGForeignObjectElement : SVGGraphicsElement {
+    /**
+     * The x read-only property of the SVGForeignObjectElement interface describes the x-axis coordinate of the
+     * &lt;foreignObject&gt; element. It reflects the computed value of the x attribute on the &lt;foreignObject&gt;
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/x)
+     */
     open val x: SVGAnimatedLength
+
+    /**
+     * The y read-only property of the SVGForeignObjectElement interface describes the y-axis coordinate of the
+     * &lt;foreignObject&gt; element. It reflects the computed value of the y attribute on the &lt;foreignObject&gt;
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/y)
+     */
     open val y: SVGAnimatedLength
+
+    /**
+     * The width read-only property of the SVGForeignObjectElement interface describes the width of the
+     * &lt;foreignObject&gt; element. It reflects the computed value of the width attribute on the &lt;foreignObject&gt;
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/width)
+     */
     open val width: SVGAnimatedLength
+
+    /**
+     * The height read-only property of the SVGForeignObjectElement interface describes the height of the
+     * &lt;foreignObject&gt; element. It reflects the computed value of the height attribute on the
+     * &lt;foreignObject&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/height)
+     */
     open val height: SVGAnimatedLength
 
     companion object {
@@ -1027,16 +2583,90 @@ public external abstract class SVGForeignObjectElement : SVGGraphicsElement {
     }
 }
 
+/**
+ * The SVGMarkerElement interface provides access to the properties of &lt;marker&gt; elements, as well as methods to
+ * manipulate them. The &lt;marker&gt; element defines the graphics used for drawing marks on a shape.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement)
+ */
 public external abstract class SVGMarkerElement : SVGElement, SVGFitToViewBox {
+    /**
+     * The refX read-only property of the SVGMarkerElement interface returns an SVGAnimatedLength object containing the
+     * value of the refX attribute of the &lt;marker&gt;.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refX)
+     */
     open val refX: SVGAnimatedLength
+
+    /**
+     * The refY read-only property of the SVGMarkerElement interface returns an SVGAnimatedLength object containing the
+     * value of the refY attribute of the &lt;marker&gt;.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refY)
+     */
     open val refY: SVGAnimatedLength
+
+    /**
+     * The markerUnits read-only property of the SVGMarkerElement interface returns an SVGAnimatedEnumeration object.
+     * This object returns an integer which represents the keyword values that the markerUnits attribute accepts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerUnits)
+     */
     open val markerUnits: SVGAnimatedEnumeration
+
+    /**
+     * The markerWidth read-only property of the SVGMarkerElement interface returns an SVGAnimatedLength object
+     * containing the width of the &lt;marker&gt; viewport as defined by the markerWidth attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerWidth)
+     */
     open val markerWidth: SVGAnimatedLength
+
+    /**
+     * The markerHeight read-only property of the SVGMarkerElement interface returns an SVGAnimatedLength object
+     * containing the height of the &lt;marker&gt; viewport as defined by the markerHeight attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerHeight)
+     */
     open val markerHeight: SVGAnimatedLength
+
+    /**
+     * The orientType read-only property of the SVGMarkerElement interface returns an SVGAnimatedEnumeration object
+     * indicating whether the orient attribute is auto, an angle value, or something else.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientType)
+     */
     open val orientType: SVGAnimatedEnumeration
+
+    /**
+     * The orientAngle read-only property of the SVGMarkerElement interface returns an SVGAnimatedAngle object
+     * containing the angle of the orient attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientAngle)
+     */
     open val orientAngle: SVGAnimatedAngle
+
+    /**
+     * The orient property of the SVGMarkerElement interface defines how the marker is rotated when it is placed at its
+     * position on the shape. It reflects the orient attribute value of the corresponding &lt;marker&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orient)
+     */
     open var orient: String
+
+    /**
+     * The setOrientToAuto() method of the SVGMarkerElement interface sets the value of the orient attribute to auto.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAuto)
+     */
     open fun setOrientToAuto()
+
+    /**
+     * The setOrientToAngle() method of the SVGMarkerElement interface sets the value of the orient attribute to the
+     * value in the SVGAngle passed in.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAngle)
+     */
     open fun setOrientToAngle(angle: SVGAngle)
 
     companion object {
@@ -1068,9 +2698,34 @@ public external abstract class SVGMarkerElement : SVGElement, SVGFitToViewBox {
     }
 }
 
+/**
+ * The SVGGradient interface is a base interface used by SVGLinearGradientElement and SVGRadialGradientElement.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement)
+ */
 public external abstract class SVGGradientElement : SVGElement, SVGURIReference {
+    /**
+     * The gradientUnits read-only property of the SVGGradientElement interface reflects the gradientUnits attribute of
+     * the given element. It takes one of the SVG_UNIT_TYPE_* constants defined in SVGUnitTypes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/gradientUnits)
+     */
     open val gradientUnits: SVGAnimatedEnumeration
+
+    /**
+     * The gradientTransform read-only property of the SVGGradientElement interface reflects the gradientTransform
+     * attribute of the given element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/gradientTransform)
+     */
     open val gradientTransform: SVGAnimatedTransformList
+
+    /**
+     * The spreadMethod read-only property of the SVGGradientElement interface reflects the spreadMethod attribute of
+     * the given element. It takes one of the SVG_SPREADMETHOD_* constants defined on this interface.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/spreadMethod)
+     */
     open val spreadMethod: SVGAnimatedEnumeration
 
     companion object {
@@ -1099,10 +2754,46 @@ public external abstract class SVGGradientElement : SVGElement, SVGURIReference 
     }
 }
 
+/**
+ * The SVGLinearGradientElement interface corresponds to the &lt;linearGradient&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement)
+ */
 public external abstract class SVGLinearGradientElement : SVGGradientElement {
+    /**
+     * The x1 read-only property of the SVGLinearGradientElement interface describes the x-axis coordinate of the start
+     * point of the gradient as an SVGAnimatedLength. It reflects the computed value of the x1 attribute on the
+     * &lt;linearGradient&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/x1)
+     */
     open val x1: SVGAnimatedLength
+
+    /**
+     * The y1 read-only property of the SVGLinearGradientElement interface describes the y-axis coordinate of the start
+     * point of the gradient as an SVGAnimatedLength. It reflects the computed value of the y1 attribute on the
+     * &lt;linearGradient&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/y1)
+     */
     open val y1: SVGAnimatedLength
+
+    /**
+     * The x2 read-only property of the SVGLinearGradientElement interface describes the x-axis coordinate of the start
+     * point of the gradient as an SVGAnimatedLength. It reflects the computed value of the x2 attribute on the
+     * &lt;linearGradient&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/x2)
+     */
     open val x2: SVGAnimatedLength
+
+    /**
+     * The y2 read-only property of the SVGLinearGradientElement interface describes the y-axis coordinate of the start
+     * point of the gradient as an SVGAnimatedLength. It reflects the computed value of the y2 attribute on the
+     * &lt;linearGradient&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/y2)
+     */
     open val y2: SVGAnimatedLength
 
     companion object {
@@ -1131,12 +2822,63 @@ public external abstract class SVGLinearGradientElement : SVGGradientElement {
     }
 }
 
+/**
+ * The SVGRadialGradientElement interface corresponds to the &lt;RadialGradient&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement)
+ */
 public external abstract class SVGRadialGradientElement : SVGGradientElement {
+    /**
+     * The cx read-only property of the SVGRadialGradientElement interface describes the x-axis coordinate of the center
+     * of the radial gradient as an SVGAnimatedLength. It reflects the computed value of the cx attribute on the
+     * &lt;radialGradient&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/cx)
+     */
     open val cx: SVGAnimatedLength
+
+    /**
+     * The cy read-only property of the SVGRadialGradientElement interface describes the y-axis coordinate of the center
+     * of the radial gradient as an SVGAnimatedLength. It reflects the computed value of the cy attribute on the
+     * &lt;radialGradient&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/cy)
+     */
     open val cy: SVGAnimatedLength
+
+    /**
+     * The r read-only property of the SVGRadialGradientElement interface describes the radius of the radial gradient as
+     * an SVGAnimatedLength. It reflects the computed value of the r attribute on the &lt;radialGradient&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/r)
+     */
     open val r: SVGAnimatedLength
+
+    /**
+     * The fx read-only property of the SVGRadialGradientElement interface describes the x-axis coordinate of the focal
+     * point of the radial gradient as an SVGAnimatedLength. It reflects the computed value of the fx attribute on the
+     * &lt;radialGradient&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fx)
+     */
     open val fx: SVGAnimatedLength
+
+    /**
+     * The fy read-only property of the SVGRadialGradientElement interface describes the y-axis coordinate of the focal
+     * point of the radial gradient as an SVGAnimatedLength. It reflects the computed value of the fy attribute on the
+     * &lt;radialGradient&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fy)
+     */
     open val fy: SVGAnimatedLength
+
+    /**
+     * The fr read-only property of the SVGRadialGradientElement interface describes the radius of the focal circle of
+     * the radial gradient as an SVGAnimatedLength. It reflects the computed value of the fr attribute on the
+     * &lt;radialGradient&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fr)
+     */
     open val fr: SVGAnimatedLength
 
     companion object {
@@ -1165,7 +2907,18 @@ public external abstract class SVGRadialGradientElement : SVGGradientElement {
     }
 }
 
+/**
+ * The SVGStopElement interface corresponds to the &lt;stop&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStopElement)
+ */
 public external abstract class SVGStopElement : SVGElement {
+    /**
+     * The offset read-only property of the SVGStopElement interface reflects the offset attribute of the given
+     * &lt;stop&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStopElement/offset)
+     */
     open val offset: SVGAnimatedNumber
 
     companion object {
@@ -1190,13 +2943,71 @@ public external abstract class SVGStopElement : SVGElement {
     }
 }
 
+/**
+ * The SVGPatternElement interface corresponds to the &lt;pattern&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement)
+ */
 public external abstract class SVGPatternElement : SVGElement, SVGFitToViewBox, SVGURIReference {
+    /**
+     * The patternUnits read-only property of the SVGPatternElement interface reflects the patternUnits attribute of the
+     * given &lt;pattern&gt; element. It specifies the coordinate system for the pattern content and takes one of the
+     * constants defined in SVGUnitTypes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternUnits)
+     */
     open val patternUnits: SVGAnimatedEnumeration
+
+    /**
+     * The patternContentUnits read-only property of the SVGPatternElement interface reflects the patternContentUnits
+     * attribute of the given &lt;pattern&gt; element. It specifies the coordinate system for the pattern content and
+     * takes one of the constants defined in SVGUnitTypes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternContentUnits)
+     */
     open val patternContentUnits: SVGAnimatedEnumeration
+
+    /**
+     * The patternTransform read-only property of the SVGPatternElement interface reflects the patternTransform
+     * attribute of the given &lt;pattern&gt; element. This property holds the transformation applied to the pattern
+     * itself, allowing for operations like translate, rotate, scale, and skew.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternTransform)
+     */
     open val patternTransform: SVGAnimatedTransformList
+
+    /**
+     * The x read-only property of the SVGPatternElement interface describes the x-axis coordinate of the start point of
+     * the pattern as an SVGAnimatedLength. It reflects the computed value of the x attribute on the &lt;pattern&gt;
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/x)
+     */
     open val x: SVGAnimatedLength
+
+    /**
+     * The y read-only property of the SVGPatternElement interface describes the y-axis coordinate of the start point of
+     * the pattern as an SVGAnimatedLength. It reflects the computed value of the y attribute on the &lt;pattern&gt;
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/y)
+     */
     open val y: SVGAnimatedLength
+
+    /**
+     * The width read-only property of the SVGPatternElement interface describes the width of the pattern as an
+     * SVGAnimatedLength. It reflects the computed value of the width attribute on the &lt;pattern&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/width)
+     */
     open val width: SVGAnimatedLength
+
+    /**
+     * The height read-only property of the SVGPatternElement interface describes the height of the pattern as an
+     * SVGAnimatedLength. It reflects the computed value of the height attribute on the &lt;pattern&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/height)
+     */
     open val height: SVGAnimatedLength
 
     companion object {
@@ -1221,8 +3032,28 @@ public external abstract class SVGPatternElement : SVGElement, SVGFitToViewBox, 
     }
 }
 
+/**
+ * The SVGScriptElement interface corresponds to the SVG &lt;script&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement)
+ */
 public external abstract class SVGScriptElement : SVGElement, SVGURIReference, HTMLOrSVGScriptElement {
+    /**
+     * The type property of the SVGScriptElement interface reflects the type attribute of the given &lt;script&gt;
+     * element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement/type)
+     */
     open var type: String
+
+    /**
+     * The crossOrigin property of the SVGScriptElement interface reflects the Cross-Origin Resource Sharing settings
+     * for the &lt;script&gt; element. For classic scripts from other origins, this controls whether full error
+     * information will be exposed. For module scripts, it controls the script itself and any scripts it imports. See
+     * CORS settings attributes for details.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement/crossOrigin)
+     */
     open var crossOrigin: String?
     open var referrerPolicy: String
 
@@ -1248,12 +3079,60 @@ public external abstract class SVGScriptElement : SVGElement, SVGURIReference, H
     }
 }
 
+/**
+ * The SVGAElement interface provides access to the properties of an &lt;a&gt; element, as well as methods to manipulate
+ * them.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement)
+ */
 public external abstract class SVGAElement : SVGGraphicsElement, SVGURIReference, HyperlinkElementUtils {
+    /**
+     * The SVGAElement.target read-only property of SVGAElement returns an SVGAnimatedString object that specifies the
+     * portion of a target window, frame, pane into which a document is to be opened when a link is activated.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/target)
+     */
     open val target: SVGAnimatedString
+
+    /**
+     * The download property of the SVGAElement interface returns a string indicating that the browser should treat the
+     * linked URL as a download.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/download)
+     */
     open var download: String
+
+    /**
+     * The ping property of the SVGAElement interface returns a string that reflects the ping attribute, containing a
+     * space-separated list of URLs to which, when the hyperlink is followed, POST requests with the body PING will be
+     * sent by the browser (in the background). Typically used for tracking.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/ping)
+     */
     open var ping: String
+
+    /**
+     * The rel property of the SVGAElement interface returns a string reflecting the value of the rel attribute of the
+     * SVG &lt;a&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/rel)
+     */
     open var rel: String
+
+    /**
+     * The read-only relList property of the SVGAElement returns a live DOMTokenList reflecting the space-separated
+     * string &lt;list-of-Link-Types&gt; values of the rel attribute of the SVG &lt;a&gt; element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/relList)
+     */
     open val relList: DOMTokenList
+
+    /**
+     * The referrerPolicy property of the SVGAElement interface returns a string specifying which referrer to send when
+     * fetching the URL.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/referrerPolicy)
+     */
     open var referrerPolicy: String
 
     companion object {
@@ -1278,6 +3157,12 @@ public external abstract class SVGAElement : SVGGraphicsElement, SVGURIReference
     }
 }
 
+/**
+ * The SVGViewElement interface provides access to the properties of &lt;view&gt; elements, as well as methods to
+ * manipulate them.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGViewElement)
+ */
 public external abstract class SVGViewElement : SVGElement, SVGFitToViewBox {
 
     companion object {

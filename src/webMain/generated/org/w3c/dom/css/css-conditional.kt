@@ -8,7 +8,18 @@
 
 package org.w3c.dom.css
 
+/**
+ * An object implementing the CSSConditionRule interface represents a single condition CSS at-rule, which consists of a
+ * condition and a statement block.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSConditionRule)
+ */
 public external abstract class CSSConditionRule : CSSGroupingRule {
+    /**
+     * The read-only conditionText property of the CSSConditionRule interface returns or sets the text of the CSS rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSConditionRule/conditionText)
+     */
     open val conditionText: String
 
     companion object {
@@ -24,7 +35,18 @@ public external abstract class CSSConditionRule : CSSGroupingRule {
     }
 }
 
+/**
+ * The CSSMediaRule interface represents a single CSS \@media rule.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMediaRule)
+ */
 public external abstract class CSSMediaRule : CSSConditionRule {
+    /**
+     * The read-only media property of the CSSMediaRule interface contains a MediaList object representing the media
+     * query list of the \@media rule.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMediaRule/media)
+     */
     open val media: MediaList
     open val matches: Boolean
 
@@ -41,6 +63,11 @@ public external abstract class CSSMediaRule : CSSConditionRule {
     }
 }
 
+/**
+ * The CSSSupportsRule interface represents a single CSS \@supports at-rule.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSupportsRule)
+ */
 public external abstract class CSSSupportsRule : CSSConditionRule {
     open val matches: Boolean
 

@@ -46,165 +46,1158 @@ public fun WebGLContextAttributes(alpha: Boolean? = null, depth: Boolean? = null
     if (desynchronized != null) this.desynchronized = desynchronized
 }
 
+/**
+ * The WebGLObject is part of the WebGL API and is the parent interface for all WebGL objects.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLObject)
+ */
 public external abstract class WebGLObject : JsAny {
     open var label: String
 }
 
+/**
+ * The WebGLBuffer interface is part of the WebGL API and represents an opaque buffer object storing data such as
+ * vertices or colors.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLBuffer)
+ */
 public external abstract class WebGLBuffer : WebGLObject
 
+/**
+ * The WebGLFramebuffer interface is part of the WebGL API and represents a collection of buffers that serve as a
+ * rendering destination.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLFramebuffer)
+ */
 public external abstract class WebGLFramebuffer : WebGLObject
 
+/**
+ * The WebGLProgram is part of the WebGL API and is a combination of two compiled WebGLShaders consisting of a vertex
+ * shader and a fragment shader (both written in GLSL).
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLProgram)
+ */
 public external abstract class WebGLProgram : WebGLObject
 
+/**
+ * The WebGLRenderbuffer interface is part of the WebGL API and represents a buffer that can contain an image, or that
+ * can be a source or target of a rendering operation.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderbuffer)
+ */
 public external abstract class WebGLRenderbuffer : WebGLObject
 
+/**
+ * The WebGLShader is part of the WebGL API and can either be a vertex or a fragment shader. A WebGLProgram requires
+ * both types of shaders.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLShader)
+ */
 public external abstract class WebGLShader : WebGLObject
 
+/**
+ * The WebGLTexture interface is part of the WebGL API and represents an opaque texture object providing storage and
+ * state for texturing operations.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLTexture)
+ */
 public external abstract class WebGLTexture : WebGLObject
 
+/**
+ * The WebGLUniformLocation interface is part of the WebGL API and represents the location of a uniform variable in a
+ * shader program.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLUniformLocation)
+ */
 public external abstract class WebGLUniformLocation : JsAny
 
+/**
+ * The WebGLActiveInfo interface is part of the WebGL API and represents the information returned by calling the
+ * WebGLRenderingContext.getActiveAttrib() and WebGLRenderingContext.getActiveUniform() methods.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLActiveInfo)
+ */
 public external abstract class WebGLActiveInfo : JsAny {
+    /**
+     * The read-only WebGLActiveInfo.size property is a Number representing the size of the requested data returned by
+     * calling the getActiveAttrib() or getActiveUniform() methods.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLActiveInfo/size)
+     */
     open val size: Int
+
+    /**
+     * The read-only WebGLActiveInfo.type property represents the type of the requested data returned by calling the
+     * getActiveAttrib() or getActiveUniform() methods.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLActiveInfo/type)
+     */
     open val type: Int
+
+    /**
+     * The read-only WebGLActiveInfo.name property represents the name of the requested data returned by calling the
+     * getActiveAttrib() or getActiveUniform() methods.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLActiveInfo/name)
+     */
     open val name: String
 }
 
+/**
+ * The WebGLShaderPrecisionFormat interface is part of the WebGL API and represents the information returned by calling
+ * the WebGLRenderingContext.getShaderPrecisionFormat() method.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLShaderPrecisionFormat)
+ */
 public external abstract class WebGLShaderPrecisionFormat : JsAny {
+    /**
+     * The read-only WebGLShaderPrecisionFormat.rangeMin property returns the base 2 log of the absolute value of the
+     * minimum value that can be represented.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLShaderPrecisionFormat/rangeMin)
+     */
     open val rangeMin: Int
+
+    /**
+     * The read-only WebGLShaderPrecisionFormat.rangeMax property returns the base 2 log of the absolute value of the
+     * maximum value that can be represented.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLShaderPrecisionFormat/rangeMax)
+     */
     open val rangeMax: Int
+
+    /**
+     * The read-only WebGLShaderPrecisionFormat.precision property returns the number of bits of precision that can be
+     * represented.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLShaderPrecisionFormat/precision)
+     */
     open val precision: Int
 }
 
 public external interface WebGLRenderingContextBase : JsAny {
+    /**
+     * The WebGLRenderingContext.canvas property is a read-only reference to the HTMLCanvasElement or OffscreenCanvas
+     * object that is associated with the context. It might be null if it is not associated with a &lt;canvas&gt;
+     * element or an OffscreenCanvas object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/canvas)
+     */
     val canvas: UnionHTMLCanvasElementOrOffscreenCanvas
+
+    /**
+     * The read-only WebGLRenderingContext.drawingBufferWidth property represents the actual width of the current
+     * drawing buffer. It should match the width attribute of the &lt;canvas&gt; element associated with this context,
+     * but might differ if the implementation is not able to provide the requested width.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferWidth)
+     */
     val drawingBufferWidth: Int
+
+    /**
+     * The read-only WebGLRenderingContext.drawingBufferHeight property represents the actual height of the current
+     * drawing buffer. It should match the height attribute of the &lt;canvas&gt; element associated with this context,
+     * but might differ if the implementation is not able to provide the requested height.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferHeight)
+     */
     val drawingBufferHeight: Int
     val drawingBufferFormat: Int
+
+    /**
+     * The WebGLRenderingContext.drawingBufferColorSpace property specifies the color space of the WebGL drawing buffer.
+     * Along with the default (srgb), the display-p3 color space can be used.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferColorSpace)
+     */
     var drawingBufferColorSpace: PredefinedColorSpace
+
+    /**
+     * The WebGLRenderingContext.unpackColorSpace property specifies the color space to convert to when importing
+     * textures. Along with the default (srgb), the display-p3 color space can be used.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/unpackColorSpace)
+     */
     var unpackColorSpace: PredefinedColorSpace
+
+    /**
+     * The WebGLRenderingContext.getContextAttributes() method returns a WebGLContextAttributes object that contains the
+     * actual context parameters. Might return null, if the context is lost.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getContextAttributes)
+     */
     fun getContextAttributes(): WebGLContextAttributes?
+
+    /**
+     * The WebGLRenderingContext.isContextLost() method returns a boolean value indicating whether or not the WebGL
+     * context has been lost and must be re-established before rendering can resume.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isContextLost)
+     */
     fun isContextLost(): Boolean
+
+    /**
+     * The WebGLRenderingContext.getSupportedExtensions() method returns a list of all the supported WebGL extensions.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getSupportedExtensions)
+     */
     fun getSupportedExtensions(): JsArray<JsString>?
+
+    /**
+     * The WebGLRenderingContext.getExtension() method enables a WebGL extension.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getExtension)
+     */
     fun getExtension(name: String): JsAny?
     fun drawingBufferStorage(sizedFormat: Int, width: Int, height: Int)
+
+    /**
+     * The WebGLRenderingContext.activeTexture() method of the WebGL API specifies which texture unit to make active.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/activeTexture)
+     */
     fun activeTexture(texture: Int)
+
+    /**
+     * The WebGLRenderingContext.attachShader() method of the WebGL API attaches either a fragment or vertex WebGLShader
+     * to a WebGLProgram.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/attachShader)
+     */
     fun attachShader(program: WebGLProgram, shader: WebGLShader)
+
+    /**
+     * The WebGLRenderingContext.bindAttribLocation() method of the WebGL API binds a generic vertex index to an
+     * attribute variable.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindAttribLocation)
+     */
     fun bindAttribLocation(program: WebGLProgram, index: Int, name: String)
+
+    /**
+     * The WebGLRenderingContext.bindBuffer() method of the WebGL API binds a given WebGLBuffer to a target.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindBuffer)
+     */
     fun bindBuffer(target: Int, buffer: WebGLBuffer?)
+
+    /**
+     * The WebGLRenderingContext.bindFramebuffer() method of the WebGL API binds to the specified target the provided
+     * WebGLFramebuffer, or, if the framebuffer argument is null, the default WebGLFramebuffer, which is associated with
+     * the canvas rendering context.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindFramebuffer)
+     */
     fun bindFramebuffer(target: Int, framebuffer: WebGLFramebuffer?)
+
+    /**
+     * The WebGLRenderingContext.bindRenderbuffer() method of the WebGL API binds a given WebGLRenderbuffer to a target,
+     * which must be gl.RENDERBUFFER.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindRenderbuffer)
+     */
     fun bindRenderbuffer(target: Int, renderbuffer: WebGLRenderbuffer?)
+
+    /**
+     * The WebGLRenderingContext.bindTexture() method of the WebGL API binds a given WebGLTexture to a target (binding
+     * point).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindTexture)
+     */
     fun bindTexture(target: Int, texture: WebGLTexture?)
+
+    /**
+     * The WebGLRenderingContext.blendColor() method of the WebGL API is used to set the source and destination blending
+     * factors.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendColor)
+     */
     fun blendColor(red: Float, green: Float, blue: Float, alpha: Float)
+
+    /**
+     * The WebGLRenderingContext.blendEquation() method of the WebGL API is used to set both the RGB blend equation and
+     * alpha blend equation to a single equation.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendEquation)
+     */
     fun blendEquation(mode: Int)
+
+    /**
+     * The WebGLRenderingContext.blendEquationSeparate() method of the WebGL API is used to set the RGB blend equation
+     * and alpha blend equation separately.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendEquationSeparate)
+     */
     fun blendEquationSeparate(modeRGB: Int, modeAlpha: Int)
+
+    /**
+     * The WebGLRenderingContext.blendFunc() method of the WebGL API defines which function is used for blending pixel
+     * arithmetic.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendFunc)
+     */
     fun blendFunc(sfactor: Int, dfactor: Int)
+
+    /**
+     * The WebGLRenderingContext.blendFuncSeparate() method of the WebGL API defines which function is used for blending
+     * pixel arithmetic for RGB and alpha components separately.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendFuncSeparate)
+     */
     fun blendFuncSeparate(srcRGB: Int, dstRGB: Int, srcAlpha: Int, dstAlpha: Int)
+
+    /**
+     * The WebGLRenderingContext.checkFramebufferStatus() method of the WebGL API returns the completeness status of the
+     * WebGLFramebuffer object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/checkFramebufferStatus)
+     */
     fun checkFramebufferStatus(target: Int): Int
+
+    /**
+     * The WebGLRenderingContext.clear() method of the WebGL API clears buffers to preset values.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clear)
+     */
     fun clear(mask: Int)
+
+    /**
+     * The WebGLRenderingContext.clearColor() method of the WebGL API specifies the color values used when clearing
+     * color buffers.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearColor)
+     */
     fun clearColor(red: Float, green: Float, blue: Float, alpha: Float)
+
+    /**
+     * The WebGLRenderingContext.clearDepth() method of the WebGL API specifies the clear value for the depth buffer.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearDepth)
+     */
     fun clearDepth(depth: Float)
+
+    /**
+     * The WebGLRenderingContext.clearStencil() method of the WebGL API specifies the clear value for the stencil
+     * buffer.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearStencil)
+     */
     fun clearStencil(s: Int)
+
+    /**
+     * The WebGLRenderingContext.colorMask() method of the WebGL API sets which color components to enable or to disable
+     * when drawing or rendering to a WebGLFramebuffer.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/colorMask)
+     */
     fun colorMask(red: Boolean, green: Boolean, blue: Boolean, alpha: Boolean)
+
+    /**
+     * The WebGLRenderingContext.compileShader() method of the WebGL API compiles a GLSL shader into binary data so that
+     * it can be used by a WebGLProgram.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compileShader)
+     */
     fun compileShader(shader: WebGLShader)
+
+    /**
+     * The copyTexImage2D() method of the WebGLRenderingContext interface of the WebGL API copies pixels from the
+     * current WebGLFramebuffer into a 2D texture image.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/copyTexImage2D)
+     */
     fun copyTexImage2D(target: Int, level: Int, internalformat: Int, x: Int, y: Int, width: Int, height: Int, border: Int)
+
+    /**
+     * The copyTexSubImage2D() method of the WebGLRenderingContext interface of the WebGL API copies pixels from the
+     * current WebGLFramebuffer into a 2D texture sub-image.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/copyTexSubImage2D)
+     */
     fun copyTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, x: Int, y: Int, width: Int, height: Int)
+
+    /**
+     * The WebGLRenderingContext.createBuffer() method of the WebGL API creates and initializes a WebGLBuffer storing
+     * data such as vertices or colors.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createBuffer)
+     */
     fun createBuffer(): WebGLBuffer
+
+    /**
+     * The WebGLRenderingContext.createFramebuffer() method of the WebGL API creates and initializes a WebGLFramebuffer
+     * object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createFramebuffer)
+     */
     fun createFramebuffer(): WebGLFramebuffer
+
+    /**
+     * The WebGLRenderingContext.createProgram() method of the WebGL API creates and initializes a WebGLProgram object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createProgram)
+     */
     fun createProgram(): WebGLProgram
+
+    /**
+     * The WebGLRenderingContext.createRenderbuffer() method of the WebGL API creates and initializes a
+     * WebGLRenderbuffer object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createRenderbuffer)
+     */
     fun createRenderbuffer(): WebGLRenderbuffer
+
+    /**
+     * The WebGLRenderingContext method createShader() of the WebGL API creates a WebGLShader that can then be
+     * configured further using WebGLRenderingContext.shaderSource() and WebGLRenderingContext.compileShader().
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createShader)
+     */
     fun createShader(type: Int): WebGLShader?
+
+    /**
+     * The WebGLRenderingContext.createTexture() method of the WebGL API creates and initializes a WebGLTexture object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createTexture)
+     */
     fun createTexture(): WebGLTexture
+
+    /**
+     * The WebGLRenderingContext.cullFace() method of the WebGL API specifies whether or not front- and/or back-facing
+     * polygons can be culled.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/cullFace)
+     */
     fun cullFace(mode: Int)
+
+    /**
+     * The WebGLRenderingContext.deleteBuffer() method of the WebGL API deletes a given WebGLBuffer. This method has no
+     * effect if the buffer has already been deleted. Normally you don't need to call this method yourself, when the
+     * buffer object is dereferenced it will be marked as free.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteBuffer)
+     */
     fun deleteBuffer(buffer: WebGLBuffer?)
+
+    /**
+     * The WebGLRenderingContext.deleteFramebuffer() method of the WebGL API deletes a given WebGLFramebuffer object.
+     * This method has no effect if the frame buffer has already been deleted.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteFramebuffer)
+     */
     fun deleteFramebuffer(framebuffer: WebGLFramebuffer?)
+
+    /**
+     * The WebGLRenderingContext.deleteProgram() method of the WebGL API deletes a given WebGLProgram object. This
+     * method has no effect if the program has already been deleted.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteProgram)
+     */
     fun deleteProgram(program: WebGLProgram?)
+
+    /**
+     * The WebGLRenderingContext.deleteRenderbuffer() method of the WebGL API deletes a given WebGLRenderbuffer object.
+     * This method has no effect if the render buffer has already been deleted.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteRenderbuffer)
+     */
     fun deleteRenderbuffer(renderbuffer: WebGLRenderbuffer?)
+
+    /**
+     * The WebGLRenderingContext.deleteShader() method of the WebGL API marks a given WebGLShader object for deletion.
+     * It will then be deleted whenever the shader is no longer in use. This method has no effect if the shader has
+     * already been deleted, and the WebGLShader is automatically marked for deletion when it is destroyed by the
+     * garbage collector.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteShader)
+     */
     fun deleteShader(shader: WebGLShader?)
+
+    /**
+     * The WebGLRenderingContext.deleteTexture() method of the WebGL API deletes a given WebGLTexture object. This
+     * method has no effect if the texture has already been deleted.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteTexture)
+     */
     fun deleteTexture(texture: WebGLTexture?)
+
+    /**
+     * The WebGLRenderingContext.depthFunc() method of the WebGL API specifies a function that compares incoming pixel
+     * depth to the current depth buffer value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthFunc)
+     */
     fun depthFunc(func: Int)
+
+    /**
+     * The WebGLRenderingContext.depthMask() method of the WebGL API sets whether writing into the depth buffer is
+     * enabled or disabled.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthMask)
+     */
     fun depthMask(flag: Boolean)
+
+    /**
+     * The WebGLRenderingContext.depthRange() method of the WebGL API specifies the depth range mapping from normalized
+     * device coordinates to window or viewport coordinates.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthRange)
+     */
     fun depthRange(zNear: Float, zFar: Float)
+
+    /**
+     * The WebGLRenderingContext.detachShader() method of the WebGL API detaches a previously attached WebGLShader from
+     * a WebGLProgram.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/detachShader)
+     */
     fun detachShader(program: WebGLProgram, shader: WebGLShader)
+
+    /**
+     * The WebGLRenderingContext.disable() method of the WebGL API disables specific WebGL capabilities for this
+     * context.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/disable)
+     */
     fun disable(cap: Int)
+
+    /**
+     * The WebGLRenderingContext.disableVertexAttribArray() method of the WebGL API turns the generic vertex attribute
+     * array off at a given index position.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/disableVertexAttribArray)
+     */
     fun disableVertexAttribArray(index: Int)
+
+    /**
+     * The WebGLRenderingContext.drawArrays() method of the WebGL API renders primitives from array data.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawArrays)
+     */
     fun drawArrays(mode: Int, first: Int, count: Int)
+
+    /**
+     * The WebGLRenderingContext.drawElements() method of the WebGL API renders primitives from array data.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawElements)
+     */
     fun drawElements(mode: Int, count: Int, type: Int, offset: Double)
+
+    /**
+     * The WebGLRenderingContext.enable() method of the WebGL API enables specific WebGL capabilities for this context.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/enable)
+     */
     fun enable(cap: Int)
+
+    /**
+     * The WebGLRenderingContext method enableVertexAttribArray(), part of the WebGL API, turns on the generic vertex
+     * attribute array at the specified index into the list of attribute arrays.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/enableVertexAttribArray)
+     */
     fun enableVertexAttribArray(index: Int)
+
+    /**
+     * The WebGLRenderingContext.finish() method of the WebGL API blocks execution until all previously called commands
+     * are finished.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/finish)
+     */
     fun finish()
+
+    /**
+     * The WebGLRenderingContext.flush() method of the WebGL API empties different buffer commands, causing all commands
+     * to be executed as quickly as possible.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/flush)
+     */
     fun flush()
+
+    /**
+     * The WebGLRenderingContext.framebufferRenderbuffer() method of the WebGL API attaches a WebGLRenderbuffer object
+     * to a WebGLFramebuffer object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/framebufferRenderbuffer)
+     */
     fun framebufferRenderbuffer(target: Int, attachment: Int, renderbuffertarget: Int, renderbuffer: WebGLRenderbuffer?)
+
+    /**
+     * The WebGLRenderingContext.framebufferTexture2D() method of the WebGL API attaches a texture to a
+     * WebGLFramebuffer.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/framebufferTexture2D)
+     */
     fun framebufferTexture2D(target: Int, attachment: Int, textarget: Int, texture: WebGLTexture?, level: Int)
+
+    /**
+     * The WebGLRenderingContext.frontFace() method of the WebGL API specifies whether polygons are front- or
+     * back-facing by setting a winding orientation.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/frontFace)
+     */
     fun frontFace(mode: Int)
+
+    /**
+     * The WebGLRenderingContext.generateMipmap() method of the WebGL API generates a set of mipmaps for a WebGLTexture
+     * object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/generateMipmap)
+     */
     fun generateMipmap(target: Int)
+
+    /**
+     * The WebGLRenderingContext.getActiveAttrib() method of the WebGL API returns a WebGLActiveInfo object containing
+     * size, type, and name of a vertex attribute. It is generally used when querying unknown attributes either for
+     * debugging or generic library creation.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getActiveAttrib)
+     */
     fun getActiveAttrib(program: WebGLProgram, index: Int): WebGLActiveInfo?
+
+    /**
+     * The WebGLRenderingContext.getActiveUniform() method of the WebGL API returns a WebGLActiveInfo object containing
+     * size, type, and name of a uniform attribute. It is generally used when querying unknown uniforms either for
+     * debugging or generic library creation.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getActiveUniform)
+     */
     fun getActiveUniform(program: WebGLProgram, index: Int): WebGLActiveInfo?
+
+    /**
+     * The WebGLRenderingContext.getAttachedShaders() method of the WebGL API returns a list of WebGLShader objects
+     * attached to a WebGLProgram.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getAttachedShaders)
+     */
     fun getAttachedShaders(program: WebGLProgram): JsArray<WebGLShader>?
+
+    /**
+     * The WebGLRenderingContext.getAttribLocation() method of the WebGL API returns the location of an attribute
+     * variable in a given WebGLProgram.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getAttribLocation)
+     */
     fun getAttribLocation(program: WebGLProgram, name: String): Int
+
+    /**
+     * The WebGLRenderingContext.getBufferParameter() method of the WebGL API returns information about the buffer.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getBufferParameter)
+     */
     fun getBufferParameter(target: Int, pname: Int): JsAny?
+
+    /**
+     * The WebGLRenderingContext.getParameter() method of the WebGL API returns a value for the passed parameter name.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getParameter)
+     */
     fun getParameter(pname: Int): JsAny?
+
+    /**
+     * The WebGLRenderingContext.getError() method of the WebGL API returns error information.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getError)
+     */
     fun getError(): Int
+
+    /**
+     * The WebGLRenderingContext.getFramebufferAttachmentParameter() method of the WebGL API returns information about a
+     * framebuffer's attachment.
+     *
+     * [MDN
+     * Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter)
+     */
     fun getFramebufferAttachmentParameter(target: Int, attachment: Int, pname: Int): JsAny?
+
+    /**
+     * The WebGLRenderingContext.getProgramParameter() method of the WebGL API returns information about the given
+     * program.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getProgramParameter)
+     */
     fun getProgramParameter(program: WebGLProgram, pname: Int): JsAny?
+
+    /**
+     * The WebGLRenderingContext.getProgramInfoLog returns the information log for the specified WebGLProgram object. It
+     * contains errors that occurred during failed linking or validation of WebGLProgram objects.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getProgramInfoLog)
+     */
     fun getProgramInfoLog(program: WebGLProgram): String?
+
+    /**
+     * The WebGLRenderingContext.getRenderbufferParameter() method of the WebGL API returns information about the
+     * renderbuffer.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getRenderbufferParameter)
+     */
     fun getRenderbufferParameter(target: Int, pname: Int): JsAny?
+
+    /**
+     * The WebGLRenderingContext.getShaderParameter() method of the WebGL API returns information about the given
+     * shader.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderParameter)
+     */
     fun getShaderParameter(shader: WebGLShader, pname: Int): JsAny?
+
+    /**
+     * The WebGLRenderingContext.getShaderPrecisionFormat() method of the WebGL API returns a new
+     * WebGLShaderPrecisionFormat object describing the range and precision for the specified shader numeric format.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderPrecisionFormat)
+     */
     fun getShaderPrecisionFormat(shadertype: Int, precisiontype: Int): WebGLShaderPrecisionFormat?
+
+    /**
+     * The WebGLRenderingContext.getShaderInfoLog returns the information log for the specified WebGLShader object. It
+     * contains warnings, debugging and compile information.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderInfoLog)
+     */
     fun getShaderInfoLog(shader: WebGLShader): String?
+
+    /**
+     * The WebGLRenderingContext.getShaderSource() method of the WebGL API returns the source code of a WebGLShader as a
+     * string.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderSource)
+     */
     fun getShaderSource(shader: WebGLShader): String?
+
+    /**
+     * The WebGLRenderingContext.getTexParameter() method of the WebGL API returns information about the given texture.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getTexParameter)
+     */
     fun getTexParameter(target: Int, pname: Int): JsAny?
+
+    /**
+     * The WebGLRenderingContext.getUniform() method of the WebGL API returns the value of a uniform variable at a given
+     * location.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getUniform)
+     */
     fun getUniform(program: WebGLProgram, location: WebGLUniformLocation): JsAny?
+
+    /**
+     * Part of the WebGL API, the WebGLRenderingContext method getUniformLocation() returns the location of a specific
+     * uniform variable which is part of a given WebGLProgram.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getUniformLocation)
+     */
     fun getUniformLocation(program: WebGLProgram, name: String): WebGLUniformLocation?
+
+    /**
+     * The WebGLRenderingContext.getVertexAttrib() method of the WebGL API returns information about a vertex attribute
+     * at a given position.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getVertexAttrib)
+     */
     fun getVertexAttrib(index: Int, pname: Int): JsAny?
+
+    /**
+     * The WebGLRenderingContext.getVertexAttribOffset() method of the WebGL API returns the address of a specified
+     * vertex attribute.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getVertexAttribOffset)
+     */
     fun getVertexAttribOffset(index: Int, pname: Int): Double
+
+    /**
+     * The WebGLRenderingContext.hint() method of the WebGL API specifies hints for certain behaviors. The
+     * interpretation of these hints depend on the implementation.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/hint)
+     */
     fun hint(target: Int, mode: Int)
+
+    /**
+     * The WebGLRenderingContext.isBuffer() method of the WebGL API returns true if the passed WebGLBuffer is valid and
+     * false otherwise.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isBuffer)
+     */
     fun isBuffer(buffer: WebGLBuffer?): Boolean
+
+    /**
+     * The WebGLRenderingContext.isEnabled() method of the WebGL API tests whether a specific WebGL capability is
+     * enabled or not for this context.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isEnabled)
+     */
     fun isEnabled(cap: Int): Boolean
+
+    /**
+     * The WebGLRenderingContext.isFramebuffer() method of the WebGL API returns true if the passed WebGLFramebuffer is
+     * valid and false otherwise.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isFramebuffer)
+     */
     fun isFramebuffer(framebuffer: WebGLFramebuffer?): Boolean
+
+    /**
+     * The WebGLRenderingContext.isProgram() method of the WebGL API returns true if the passed WebGLProgram is valid,
+     * false otherwise.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isProgram)
+     */
     fun isProgram(program: WebGLProgram?): Boolean
+
+    /**
+     * The WebGLRenderingContext.isRenderbuffer() method of the WebGL API returns true if the passed WebGLRenderbuffer
+     * is valid and false otherwise.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isRenderbuffer)
+     */
     fun isRenderbuffer(renderbuffer: WebGLRenderbuffer?): Boolean
+
+    /**
+     * The WebGLRenderingContext.isShader() method of the WebGL API returns true if the passed WebGLShader is valid,
+     * false otherwise.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isShader)
+     */
     fun isShader(shader: WebGLShader?): Boolean
+
+    /**
+     * The WebGLRenderingContext.isTexture() method of the WebGL API returns true if the passed WebGLTexture is valid
+     * and false otherwise.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isTexture)
+     */
     fun isTexture(texture: WebGLTexture?): Boolean
+
+    /**
+     * The WebGLRenderingContext.lineWidth() method of the WebGL API sets the line width of rasterized lines.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/lineWidth)
+     */
     fun lineWidth(width: Float)
+
+    /**
+     * The WebGLRenderingContext interface's linkProgram() method links a given WebGLProgram, completing the process of
+     * preparing the GPU code for the program's fragment and vertex shaders.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/linkProgram)
+     */
     fun linkProgram(program: WebGLProgram)
+
+    /**
+     * The WebGLRenderingContext.pixelStorei() method of the WebGL API specifies the pixel storage modes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/pixelStorei)
+     */
     fun pixelStorei(pname: Int, param: Int)
+
+    /**
+     * The WebGLRenderingContext.polygonOffset() method of the WebGL API specifies the scale factors and units to
+     * calculate depth values.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/polygonOffset)
+     */
     fun polygonOffset(factor: Float, units: Float)
+
+    /**
+     * The WebGLRenderingContext.renderbufferStorage() method of the WebGL API creates and initializes a renderbuffer
+     * object's data store.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/renderbufferStorage)
+     */
     fun renderbufferStorage(target: Int, internalformat: Int, width: Int, height: Int)
+
+    /**
+     * The WebGLRenderingContext.sampleCoverage() method of the WebGL API specifies multi-sample coverage parameters for
+     * anti-aliasing effects.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/sampleCoverage)
+     */
     fun sampleCoverage(value: Float, invert: Boolean)
+
+    /**
+     * The WebGLRenderingContext.scissor() method of the WebGL API sets a scissor box, which limits the drawing to a
+     * specified rectangle.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/scissor)
+     */
     fun scissor(x: Int, y: Int, width: Int, height: Int)
+
+    /**
+     * The WebGLRenderingContext.shaderSource() method of the WebGL API sets the source code of a WebGLShader.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/shaderSource)
+     */
     fun shaderSource(shader: WebGLShader, source: String)
+
+    /**
+     * The WebGLRenderingContext.stencilFunc() method of the WebGL API sets the front and back function and reference
+     * value for stencil testing.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilFunc)
+     */
     fun stencilFunc(func: Int, ref: Int, mask: Int)
+
+    /**
+     * The WebGLRenderingContext.stencilFuncSeparate() method of the WebGL API sets the front and/or back function and
+     * reference value for stencil testing.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilFuncSeparate)
+     */
     fun stencilFuncSeparate(face: Int, func: Int, ref: Int, mask: Int)
+
+    /**
+     * The WebGLRenderingContext.stencilMask() method of the WebGL API controls enabling and disabling of both the front
+     * and back writing of individual bits in the stencil planes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilMask)
+     */
     fun stencilMask(mask: Int)
+
+    /**
+     * The WebGLRenderingContext.stencilMaskSeparate() method of the WebGL API controls enabling and disabling of front
+     * and/or back writing of individual bits in the stencil planes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilMaskSeparate)
+     */
     fun stencilMaskSeparate(face: Int, mask: Int)
+
+    /**
+     * The WebGLRenderingContext.stencilOp() method of the WebGL API sets both the front and back-facing stencil test
+     * actions.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilOp)
+     */
     fun stencilOp(fail: Int, zfail: Int, zpass: Int)
+
+    /**
+     * The WebGLRenderingContext.stencilOpSeparate() method of the WebGL API sets the front and/or back-facing stencil
+     * test actions.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilOpSeparate)
+     */
     fun stencilOpSeparate(face: Int, fail: Int, zfail: Int, zpass: Int)
+
+    /**
+     * The WebGLRenderingContext.texParameter\[fi\]() methods of the WebGL API set texture parameters.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texParameter)
+     */
     fun texParameterf(target: Int, pname: Int, param: Float)
+
+    /**
+     * The WebGLRenderingContext.texParameter\[fi\]() methods of the WebGL API set texture parameters.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texParameter)
+     */
     fun texParameteri(target: Int, pname: Int, param: Int)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform1f(location: WebGLUniformLocation?, x: Float)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform2f(location: WebGLUniformLocation?, x: Float, y: Float)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform3f(location: WebGLUniformLocation?, x: Float, y: Float, z: Float)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform4f(location: WebGLUniformLocation?, x: Float, y: Float, z: Float, w: Float)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform1i(location: WebGLUniformLocation?, x: Int)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform2i(location: WebGLUniformLocation?, x: Int, y: Int)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform3i(location: WebGLUniformLocation?, x: Int, y: Int, z: Int)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform4i(location: WebGLUniformLocation?, x: Int, y: Int, z: Int, w: Int)
+
+    /**
+     * The WebGLRenderingContext.useProgram() method of the WebGL API sets the specified WebGLProgram as part of the
+     * current rendering state.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/useProgram)
+     */
     fun useProgram(program: WebGLProgram?)
+
+    /**
+     * The WebGLRenderingContext.validateProgram() method of the WebGL API validates a WebGLProgram. It checks if it is
+     * successfully linked and if it can be used in the current WebGL state.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/validateProgram)
+     */
     fun validateProgram(program: WebGLProgram)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib1f(index: Int, x: Float)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib2f(index: Int, x: Float, y: Float)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib3f(index: Int, x: Float, y: Float, z: Float)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib4f(index: Int, x: Float, y: Float, z: Float, w: Float)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib1fv(index: Int, values: Float32Array)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib1fv(index: Int, values: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib2fv(index: Int, values: Float32Array)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib2fv(index: Int, values: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib3fv(index: Int, values: Float32Array)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib3fv(index: Int, values: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib4fv(index: Int, values: Float32Array)
+
+    /**
+     * The WebGLRenderingContext.vertexAttrib\[1234\]f\[v\]() methods of the WebGL API specify constant values for
+     * generic vertex attributes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
+     */
     fun vertexAttrib4fv(index: Int, values: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.vertexAttribPointer() method of the WebGL API binds the buffer currently bound to
+     * gl.ARRAY_BUFFER to a generic vertex attribute of the current vertex buffer object and specifies its layout.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttribPointer)
+     */
     fun vertexAttribPointer(index: Int, size: Int, type: Int, normalized: Boolean, stride: Int, offset: Double)
+
+    /**
+     * The WebGLRenderingContext.viewport() method of the WebGL API sets the viewport, which specifies the affine
+     * transformation of x and y from normalized device coordinates to window coordinates.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/viewport)
+     */
     fun viewport(x: Int, y: Int, width: Int, height: Int)
 
     @Suppress("COMPANION_OBJECT_IN_EXTERNAL_INTERFACE")
@@ -510,40 +1503,301 @@ public inline val WebGLRenderingContextBase.Companion.UNPACK_COLORSPACE_CONVERSI
 public inline val WebGLRenderingContextBase.Companion.BROWSER_DEFAULT_WEBGL: Int get() = 0x9244
 
 public external interface WebGLRenderingContextOverloads : JsAny {
+    /**
+     * The WebGLRenderingContext.bufferData() method of the WebGL API initializes and creates the buffer object's data
+     * store.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bufferData)
+     */
     fun bufferData(target: Int, size: Double, usage: Int)
+
+    /**
+     * The WebGLRenderingContext.bufferData() method of the WebGL API initializes and creates the buffer object's data
+     * store.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bufferData)
+     */
     fun bufferData(target: Int, data: BufferDataSource?, usage: Int)
+
+    /**
+     * The WebGLRenderingContext.bufferSubData() method of the WebGL API updates a subset of a buffer object's data
+     * store.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bufferSubData)
+     */
     fun bufferSubData(target: Int, offset: Double, data: BufferDataSource)
+
+    /**
+     * The compressedTexImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a
+     * two-dimensional texture image in a compressed format.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexImage2D)
+     */
     fun compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, data: ArrayBufferView)
+
+    /**
+     * The compressedTexSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a
+     * two-dimensional sub-rectangle for a texture image in a compressed format.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexSubImage2D)
+     */
     fun compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, data: ArrayBufferView)
+
+    /**
+     * The WebGLRenderingContext.readPixels() method of the WebGL API reads a block of pixels from a specified rectangle
+     * of the current color framebuffer into a TypedArray or a DataView object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/readPixels)
+     */
     fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?)
+
+    /**
+     * The texImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
+     * texture image.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
+     */
     fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, pixels: ArrayBufferView?)
+
+    /**
+     * The texImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
+     * texture image.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
+     */
     fun texImage2D(target: Int, level: Int, internalformat: Int, format: Int, type: Int, source: TexImageSource)
+
+    /**
+     * The texSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
+     * sub-rectangle for a texture image.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
+     */
     fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?)
+
+    /**
+     * The texSubImage2D() method of the WebGLRenderingContext interface of the WebGL API specifies a two-dimensional
+     * sub-rectangle for a texture image.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
+     */
     fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, type: Int, source: TexImageSource)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform1fv(location: WebGLUniformLocation?, v: Float32Array)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform1fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform2fv(location: WebGLUniformLocation?, v: Float32Array)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform2fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform3fv(location: WebGLUniformLocation?, v: Float32Array)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform3fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform4fv(location: WebGLUniformLocation?, v: Float32Array)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform4fv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform1iv(location: WebGLUniformLocation?, v: Int32Array)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform1iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform2iv(location: WebGLUniformLocation?, v: Int32Array)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform2iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform3iv(location: WebGLUniformLocation?, v: Int32Array)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform3iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform4iv(location: WebGLUniformLocation?, v: Int32Array)
+
+    /**
+     * The WebGLRenderingContext.uniform\[1234\]\[fi\]\[v\]() methods of the WebGL API specify values of uniform
+     * variables. All active uniform variables defined in a program object are initialized to 0 when the program object
+     * is linked successfully. They retain the values assigned to them by a call to this method until the next
+     * successful link operation occurs on the program object, when they are once again initialized to 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     */
     fun uniform4iv(location: WebGLUniformLocation?, v: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
+     * variables.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+     */
     fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, value: Float32Array)
+
+    /**
+     * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
+     * variables.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+     */
     fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, value: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
+     * variables.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+     */
     fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, value: Float32Array)
+
+    /**
+     * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
+     * variables.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+     */
     fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, value: JsArray<JsNumber>)
+
+    /**
+     * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
+     * variables.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+     */
     fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, value: Float32Array)
+
+    /**
+     * The WebGLRenderingContext.uniformMatrix\[234\]fv() methods of the WebGL API specify matrix values for uniform
+     * variables.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+     */
     fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, value: JsArray<JsNumber>)
 }
 
+/**
+ * The WebGLRenderingContext interface provides an interface to the OpenGL ES 2.0 graphics rendering context for the
+ * drawing surface of an HTML &lt;canvas&gt; element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext)
+ */
 public external abstract class WebGLRenderingContext : WebGLRenderingContextBase, WebGLRenderingContextOverloads, RenderingContext, OffscreenRenderingContext {
 
     companion object {
@@ -847,8 +2101,26 @@ public external abstract class WebGLRenderingContext : WebGLRenderingContextBase
     }
 }
 
+/**
+ * The WebGLContextEvent interface is part of the WebGL API and is an interface for an event that is generated in
+ * response to a status change to the WebGL rendering context.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent)
+ */
 public external open class WebGLContextEvent : Event {
+    /**
+     * The WebGLContextEvent() constructor creates a new WebGLContextEvent object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent/WebGLContextEvent)
+     */
     constructor(type: String, eventInit: WebGLContextEventInit = definedExternally)
+
+    /**
+     * The read-only WebGLContextEvent.statusMessage property contains additional event status information, or is an
+     * empty string if no additional information is available.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent/statusMessage)
+     */
     open val statusMessage: String
 
     companion object {

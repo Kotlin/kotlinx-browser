@@ -3,7 +3,10 @@
 //  - webref-idl.json: the Web IDL of every spec in @webref/idl, parsed by webidl2 (spec shortname → definitions);
 //  - webref-events.json: @webref/events, the event each `on…` handler receives;
 //  - webref-css.json: the properties of @webref/css, for the CSSStyleProperties attributes that CSSOM defines in prose
-//    rather than IDL.
+//    rather than IDL;
+//  - bcd-api.json: from @mdn/browser-compat-data (BCD), the MDN page and status of every Web API interface and of its
+//    members, constructors (`Element.Element`), static members (`URL.canParse_static`) and events (`Element.click_event`),
+//    for the KDoc of the generated declarations.
 // Run by `./gradlew :generator:prepareWebref` with the Node.js of gradle-node-plugin; not committed.
 // @webref/idl, @webref/events and @webref/css must come from the same webref crawl (compare `npm view <pkg> time`).
 
@@ -13,9 +16,15 @@ import {listAll as listIdl} from '@webref/idl';
 import events from '@webref/events';
 import css from '@webref/css';
 import {parse} from 'webidl2';
+import bcd from '@mdn/browser-compat-data/forLegacyNode';
 
 async function write(outDir, name, value) {
     await fs.writeFile(path.join(outDir, name), JSON.stringify(value, null, 2) + '\n', 'utf-8');
+}
+
+/** What the KDoc uses of a BCD compat statement: the MDN page, if there is one, and whether it is deprecated. */
+function docs(compat) {
+    return {mdnUrl: compat.mdn_url ?? null, deprecated: compat.status?.deprecated ?? false};
 }
 
 async function main() {
@@ -45,7 +54,17 @@ async function main() {
     const {properties} = await css.listAll();
     await write(outDir, 'webref-css.json', properties);
 
-    console.log(`Wrote ${Object.keys(idl).length} specs, events and ${properties.length} CSS properties to ${outDir}.`);
+    const api = {};
+    for (const [name, entry] of Object.entries(bcd.api)) {
+        const members = {};
+        for (const [key, member] of Object.entries(entry)) {
+            if (key !== '__compat' && member.__compat) members[key] = docs(member.__compat);
+        }
+        api[name] = {...docs(entry.__compat), members};
+    }
+    await write(outDir, 'bcd-api.json', api);
+
+    console.log(`Wrote ${Object.keys(idl).length} specs, events, ${properties.length} CSS properties and BCD for ${Object.keys(api).length} interfaces to ${outDir}.`);
 }
 
 main().catch(err => {

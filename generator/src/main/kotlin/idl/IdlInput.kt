@@ -7,6 +7,7 @@ package org.jetbrains.kotlin.tools.idl
 
 import org.jetbrains.kotlin.tools.idl.frontend.IdlFrontend
 import org.jetbrains.kotlin.tools.idl.frontend.IdlSource
+import org.jetbrains.kotlin.tools.idl.frontend.WebDocs
 import org.jetbrains.kotlin.tools.idl.frontend.WebIdl2JsonFrontend
 import org.jetbrains.kotlin.tools.idl.frontend.WebrefCss
 import org.jetbrains.kotlin.tools.idl.frontend.WebrefCssProperty
@@ -34,6 +35,12 @@ object GeneratorPaths {
 
     /** The properties of `@webref/css`, from the same crawl as [webrefIdl]. Written by `prepareWebref`. */
     val webrefCss: Path get() = path("kotlinx.browser.webrefCss")
+
+    /** From `@mdn/browser-compat-data`: the MDN page and status of each Web API declaration. Written by `prepareWebref`. */
+    val bcd: Path get() = path("kotlinx.browser.bcd")
+
+    /** MDN's summary of each Web API page (committed, CC-BY-SA 2.5): written by `updateMdnSummaries`. */
+    val mdnSummaries: Path get() = path("kotlinx.browser.mdnSummaries")
 
     /** The generated `webMain` declarations (committed): written by `generateWebApi`, verified by `GeneratedSourcesTest`. */
     val generatedSources: Path get() = path("kotlinx.browser.generatedSources")
@@ -82,6 +89,9 @@ fun loadSurface(
 
 /** The properties of the pinned `@webref/css`. */
 fun loadCssProperties(): List<WebrefCssProperty> = WebrefCss.fromFile(GeneratorPaths.webrefCss)
+
+/** The KDoc of the generated declarations: BCD and the committed MDN summaries. */
+fun loadWebDocs(): WebDocs = WebDocs.fromFiles(GeneratorPaths.bcd, GeneratorPaths.mdnSummaries)
 
 /** The pinned `@webref/events`. */
 fun loadEvents(): List<WebrefEvent> = WebrefEvents.fromFile(GeneratorPaths.webrefEvents)

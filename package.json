@@ -14,6 +14,7 @@
   "author": "",
   "type": "module",
   "dependencies": {
+    "@mdn/browser-compat-data": "8.1.10",
     "@webref/css": "8.7.8",
     "@webref/events": "1.27.1",
     "@webref/idl": "3.86.0",
