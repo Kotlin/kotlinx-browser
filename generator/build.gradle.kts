@@ -1,8 +1,8 @@
 import com.github.gradle.node.task.NodeTask
 
 plugins {
-    kotlin("jvm")
-    id("com.github.node-gradle.node") version "7.1.0"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.node.gradle)
 }
 
 repositories {
@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.google.code.gson:gson:2.11.0")
+    implementation(libs.gson)
 
     testImplementation(kotlin("test"))
 }
@@ -19,7 +19,7 @@ val repositoryRoot = rootProject.layout.projectDirectory
 
 node {
     download = true
-    version = "26.13.1"
+    version = libs.versions.nodejs
     npmInstallCommand = "ci"
     nodeProjectDir = repositoryRoot
 }

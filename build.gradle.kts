@@ -1,7 +1,8 @@
 @file:OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
 
 plugins {
-    kotlin("multiplatform") version "2.5.0-Beta2"
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.kotlin.jvm) apply false
     `maven-publish`
     signing
 }
@@ -44,6 +45,8 @@ kotlin {
 
     compilerOptions {
         optIn.add("kotlin.js.ExperimentalWasmJsInterop")
+        // The typed-array built-ins are expect/actual classes (Beta), declared once in webMain for both targets.
+        freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 
     js {
