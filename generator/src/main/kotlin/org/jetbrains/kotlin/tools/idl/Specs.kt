@@ -113,9 +113,15 @@ data class TypeCorrection(
     val reason: String,
 )
 
+/**
+ * CSSOM View defines these as `double` (its `partial interface MouseEvent` and `partial dictionary MouseEventInit`),
+ * UI Events as `long`. Webref's curated IDL drops the CSSOM View versions as duplicates
+ * (`ed/idlpatches/cssom-view.idl.patch`, csswg-drafts#4084); browsers follow CSSOM View for pointer events.
+ */
 private const val FRACTIONAL_COORDINATES =
-    "Pointer events (click, pointermove, …) report sub-pixel coordinates: Chromium returns clientX = 10.5 for a " +
-            "PointerEvent. As `long`, JS holds 10.5 in an Int and Wasm truncates it to 10."
+    "CSSOM View defines it as double; webref's curated IDL drops that as a duplicate of UI Events' long " +
+            "(idlpatches/cssom-view.idl.patch, csswg-drafts#4084). Pointer events report sub-pixel values " +
+            "(Chromium: clientX = 10.5), which an Int holds wrongly on JS and truncates on Wasm."
 
 /** See [TypeCorrection]. Applied by `correctTypes`, right after partials are merged. */
 val TYPE_CORRECTIONS: List<TypeCorrection> = listOf("screenX", "screenY", "clientX", "clientY")

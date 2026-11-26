@@ -108,8 +108,9 @@ All generator code is under `generator/src/main/kotlin/org/jetbrains/kotlin/tool
 The lowerings, briefly:
 
 - **`mergePartials`:** folds `partial interface`/`partial dictionary` declarations into the main definition.
-- **`correctTypes`:** gives the members listed in `TYPE_CORRECTIONS` the type browsers actually use
-  (`MouseEvent.clientX` is `double`, not `long`).
+- **`correctTypes`:** gives the members listed in `TYPE_CORRECTIONS` the type browsers actually use. Today these
+  restore CSSOM View's `double` for `MouseEvent.clientX` and the like, which webref's curated IDL drops as duplicates
+  of UI Events' `long`.
 - **`simplifyTimerHandlers`:** `setTimeout`/`setInterval` take a `() -> Unit` handler and no `arguments` (KT-60392).
 - **`resolveTypedefs`:** replaces every typedef with its type.
 - **`UnionMarkers`:** a union whose members are all interfaces becomes an empty marker interface that every member
