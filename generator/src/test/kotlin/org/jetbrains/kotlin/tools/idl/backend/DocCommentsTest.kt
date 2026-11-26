@@ -122,9 +122,9 @@ class DocCommentsTest {
     @Test
     fun pinnedCoverage() {
         val kdocs = generateWebApi().values.flatMap { file -> Regex("/\\*\\*\n(.*?)\\*/", RegexOption.DOT_MATCHES_ALL).findAll(file).map { it.groupValues[1] } }
-        assertEquals(4673, kdocs.size)
-        assertEquals(4644, kdocs.count { "[MDN Reference]" in it })
-        assertEquals(4633, kdocs.count { "[MDN Reference]" in it && !it.trimStart().startsWith("* [MDN Reference]") })
+        assertEquals(4706, kdocs.size)
+        assertEquals(4677, kdocs.count { "[MDN Reference]" in it })
+        assertEquals(4666, kdocs.count { "[MDN Reference]" in it && !it.trimStart().startsWith("* [MDN Reference]") })
         assertEquals(175, kdocs.count { "Deprecated:" in it })
     }
 

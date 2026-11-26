@@ -442,9 +442,9 @@ interface Node : EventTarget {
   [CEReactions] Node replaceChild(Node node, Node child);
   [CEReactions] Node removeChild(Node child);
 };
-// shape: open class : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, GeometryNode
+// shape: open class : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, FontFaceSource, GeometryNode
 //   copied constants: Node(18)
-//   adds: GlobalEventHandlers(91); NonElementParentNode(1); DocumentOrShadowRoot(6); ParentNode(16); XPathEvaluatorBase(3); GeometryUtils(4); ARIANotifyMixin(1)
+//   adds: GlobalEventHandlers(91); NonElementParentNode(1); DocumentOrShadowRoot(6); ParentNode(16); XPathEvaluatorBase(3); GeometryUtils(4); ARIANotifyMixin(1); FontFaceSource(1)
 [Exposed=Window, LegacyOverrideBuiltIns]
 interface Document : Node {
   constructor();
@@ -775,3 +775,5 @@ Element includes ARIANotifyMixin;
 Document includes ARIANotifyMixin;
 // spec: web-animations (org.w3c.animations)
 Element includes Animatable;
+// spec: css-font-loading (org.w3c.css.fonts)
+Document includes FontFaceSource;

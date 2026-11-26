@@ -13,6 +13,7 @@ package org.w3c.dom
 
 import kotlin.js.*
 import org.w3c.animations.*
+import org.w3c.css.fonts.*
 import org.w3c.dom.clipboard.*
 import org.w3c.dom.css.*
 import org.w3c.dom.events.*
@@ -1615,7 +1616,7 @@ public fun GetRootNodeOptions(composed: Boolean? = null): GetRootNodeOptions {
  *
  * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
-public open external class Document : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, GeometryNode {
+public open external class Document : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, FontFaceSource, GeometryNode {
     /**
      * The Document constructor creates a new Document object that is a web page loaded in the browser and serving as an
      * entry point into the page's content.
@@ -3419,6 +3420,15 @@ public open external class Document : Node, GlobalEventHandlers, NonElementParen
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun ariaNotify(announcement: String, options: AriaNotificationOptions)
+
+    /**
+     * The fonts read-only property of the Document interface returns the FontFaceSet interface of the document.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fonts)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override val fonts: FontFaceSet
 
     public companion object {
         public val ELEMENT_NODE: Short

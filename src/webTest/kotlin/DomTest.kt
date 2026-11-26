@@ -10,6 +10,7 @@ import org.khronos.webgl.Uint8Array
 import org.khronos.webgl.get
 import org.w3c.dom.*
 import org.w3c.animations.*
+import org.w3c.css.fonts.*
 import org.w3c.dom.pointerevents.PointerEvent
 import org.w3c.encoding.TextDecoder
 import org.w3c.encoding.TextEncoder
@@ -197,6 +198,11 @@ class DomTest {
 
         assertEquals(3, TextEncoder().encode("hé").length)
         assertEquals("hé", TextDecoder().decode(TextEncoder().encode("hé")))
+
+        val face = FontFace("kotlinx-browser-test", "local(serif)")
+        assertEquals(str(FontFaceLoadStatus.UNLOADED), str(face.status))
+        document.fonts.add(face)
+        assertTrue(document.fonts.delete(face))
 
         assertNotNull(window.indexedDB)
         assertNotNull(window.navigator.getGamepads())

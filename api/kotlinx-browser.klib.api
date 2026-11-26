@@ -43,6 +43,21 @@ abstract interface org.w3c.animations/KeyframeEffectOptions : org.w3c.animations
         abstract fun <set-pseudoElement>(kotlin/String?) // org.w3c.animations/KeyframeEffectOptions.pseudoElement.<set-pseudoElement>|<set-pseudoElement>(kotlin.String?){}[0]
 }
 
+abstract interface org.w3c.css.fonts/FontFaceSetLoadEventInit : org.w3c.dom/EventInit { // org.w3c.css.fonts/FontFaceSetLoadEventInit|null[0]
+    abstract var fontfaces // org.w3c.css.fonts/FontFaceSetLoadEventInit.fontfaces|{}fontfaces[0]
+        // Targets: [js]
+        abstract fun <get-fontfaces>(): kotlin/Array<org.w3c.css.fonts/FontFace>? // org.w3c.css.fonts/FontFaceSetLoadEventInit.fontfaces.<get-fontfaces>|<get-fontfaces>(){}[0]
+
+        // Targets: [js]
+        abstract fun <set-fontfaces>(kotlin/Array<org.w3c.css.fonts/FontFace>?) // org.w3c.css.fonts/FontFaceSetLoadEventInit.fontfaces.<set-fontfaces>|<set-fontfaces>(kotlin.Array<org.w3c.css.fonts.FontFace>?){}[0]
+
+        // Targets: [wasmJs]
+        abstract fun <get-fontfaces>(): kotlin.js/JsArray<org.w3c.css.fonts/FontFace>? // org.w3c.css.fonts/FontFaceSetLoadEventInit.fontfaces.<get-fontfaces>|<get-fontfaces>(){}[0]
+
+        // Targets: [wasmJs]
+        abstract fun <set-fontfaces>(kotlin.js/JsArray<org.w3c.css.fonts/FontFace>?) // org.w3c.css.fonts/FontFaceSetLoadEventInit.fontfaces.<set-fontfaces>|<set-fontfaces>(kotlin.js.JsArray<org.w3c.css.fonts.FontFace>?){}[0]
+}
+
 abstract interface org.w3c.dom.clipboard/ClipboardChangeEventInit : org.w3c.dom/EventInit { // org.w3c.dom.clipboard/ClipboardChangeEventInit|null[0]
     abstract var changeId // org.w3c.dom.clipboard/ClipboardChangeEventInit.changeId|{}changeId[0]
         // Targets: [js]
@@ -3373,6 +3388,36 @@ abstract class org.khronos.webgl/WebGLTransformFeedback : org.khronos.webgl/WebG
 
 abstract class org.khronos.webgl/WebGLVertexArrayObject : org.khronos.webgl/WebGLObject { // org.khronos.webgl/WebGLVertexArrayObject|null[0]
     constructor <init>() // org.khronos.webgl/WebGLVertexArrayObject.<init>|<init>(){}[0]
+}
+
+abstract class org.w3c.css.fonts/FontFaceSet : org.w3c.dom/EventTarget { // org.w3c.css.fonts/FontFaceSet|null[0]
+    constructor <init>() // org.w3c.css.fonts/FontFaceSet.<init>|<init>(){}[0]
+
+    open val ready // org.w3c.css.fonts/FontFaceSet.ready|{}ready[0]
+        open fun <get-ready>(): kotlin.js/Promise<org.w3c.css.fonts/FontFaceSet> // org.w3c.css.fonts/FontFaceSet.ready.<get-ready>|<get-ready>(){}[0]
+    open val status // org.w3c.css.fonts/FontFaceSet.status|{}status[0]
+        open fun <get-status>(): org.w3c.css.fonts/FontFaceSetLoadStatus // org.w3c.css.fonts/FontFaceSet.status.<get-status>|<get-status>(){}[0]
+
+    open var onloading // org.w3c.css.fonts/FontFaceSet.onloading|{}onloading[0]
+        open fun <get-onloading>(): kotlin/Function1<org.w3c.css.fonts/FontFaceSetLoadEvent, kotlin/Unit>? // org.w3c.css.fonts/FontFaceSet.onloading.<get-onloading>|<get-onloading>(){}[0]
+        open fun <set-onloading>(kotlin/Function1<org.w3c.css.fonts/FontFaceSetLoadEvent, kotlin/Unit>?) // org.w3c.css.fonts/FontFaceSet.onloading.<set-onloading>|<set-onloading>(kotlin.Function1<org.w3c.css.fonts.FontFaceSetLoadEvent,kotlin.Unit>?){}[0]
+    open var onloadingdone // org.w3c.css.fonts/FontFaceSet.onloadingdone|{}onloadingdone[0]
+        open fun <get-onloadingdone>(): kotlin/Function1<org.w3c.css.fonts/FontFaceSetLoadEvent, kotlin/Unit>? // org.w3c.css.fonts/FontFaceSet.onloadingdone.<get-onloadingdone>|<get-onloadingdone>(){}[0]
+        open fun <set-onloadingdone>(kotlin/Function1<org.w3c.css.fonts/FontFaceSetLoadEvent, kotlin/Unit>?) // org.w3c.css.fonts/FontFaceSet.onloadingdone.<set-onloadingdone>|<set-onloadingdone>(kotlin.Function1<org.w3c.css.fonts.FontFaceSetLoadEvent,kotlin.Unit>?){}[0]
+    open var onloadingerror // org.w3c.css.fonts/FontFaceSet.onloadingerror|{}onloadingerror[0]
+        open fun <get-onloadingerror>(): kotlin/Function1<org.w3c.css.fonts/FontFaceSetLoadEvent, kotlin/Unit>? // org.w3c.css.fonts/FontFaceSet.onloadingerror.<get-onloadingerror>|<get-onloadingerror>(){}[0]
+        open fun <set-onloadingerror>(kotlin/Function1<org.w3c.css.fonts/FontFaceSetLoadEvent, kotlin/Unit>?) // org.w3c.css.fonts/FontFaceSet.onloadingerror.<set-onloadingerror>|<set-onloadingerror>(kotlin.Function1<org.w3c.css.fonts.FontFaceSetLoadEvent,kotlin.Unit>?){}[0]
+
+    open fun add(org.w3c.css.fonts/FontFace): org.w3c.css.fonts/FontFaceSet // org.w3c.css.fonts/FontFaceSet.add|add(org.w3c.css.fonts.FontFace){}[0]
+    open fun check(kotlin/String, kotlin/String = ...): kotlin/Boolean // org.w3c.css.fonts/FontFaceSet.check|check(kotlin.String;kotlin.String){}[0]
+    open fun clear() // org.w3c.css.fonts/FontFaceSet.clear|clear(){}[0]
+    open fun delete(org.w3c.css.fonts/FontFace): kotlin/Boolean // org.w3c.css.fonts/FontFaceSet.delete|delete(org.w3c.css.fonts.FontFace){}[0]
+
+    // Targets: [js]
+    open fun load(kotlin/String, kotlin/String = ...): kotlin.js/Promise<kotlin/Array<org.w3c.css.fonts/FontFace>> // org.w3c.css.fonts/FontFaceSet.load|load(kotlin.String;kotlin.String){}[0]
+
+    // Targets: [wasmJs]
+    open fun load(kotlin/String, kotlin/String = ...): kotlin.js/Promise<kotlin.js/JsArray<org.w3c.css.fonts/FontFace>> // org.w3c.css.fonts/FontFaceSet.load|load(kotlin.String;kotlin.String){}[0]
 }
 
 abstract class org.w3c.css.masking/SVGClipPathElement : org.w3c.dom.svg/SVGElement { // org.w3c.css.masking/SVGClipPathElement|null[0]
@@ -14372,7 +14417,7 @@ abstract class org.w3c.dom/Window : org.w3c.dom/AnimationFrameProvider, org.w3c.
     open fun postMessage(kotlin.js/JsAny?, org.w3c.dom/WindowPostMessageOptions = ...) // org.w3c.dom/Window.postMessage|postMessage(kotlin.js.JsAny?;org.w3c.dom.WindowPostMessageOptions){}[0]
 }
 
-abstract class org.w3c.dom/WorkerGlobalScope : org.w3c.dom/EventTarget, org.w3c.dom/WindowOrWorkerGlobalScope { // org.w3c.dom/WorkerGlobalScope|null[0]
+abstract class org.w3c.dom/WorkerGlobalScope : org.w3c.css.fonts/FontFaceSource, org.w3c.dom/EventTarget, org.w3c.dom/WindowOrWorkerGlobalScope { // org.w3c.dom/WorkerGlobalScope|null[0]
     constructor <init>() // org.w3c.dom/WorkerGlobalScope.<init>|<init>(){}[0]
 
     open val location // org.w3c.dom/WorkerGlobalScope.location|{}location[0]
@@ -15433,6 +15478,28 @@ open class org.w3c.animations/KeyframeEffect : org.w3c.animations/AnimationEffec
 
     // Targets: [wasmJs]
     open fun setKeyframes(kotlin.js/JsAny?) // org.w3c.animations/KeyframeEffect.setKeyframes|setKeyframes(kotlin.js.JsAny?){}[0]
+}
+
+open class org.w3c.css.fonts/FontFaceSetLoadEvent : org.w3c.dom/Event { // org.w3c.css.fonts/FontFaceSetLoadEvent|null[0]
+    constructor <init>(kotlin/String, org.w3c.css.fonts/FontFaceSetLoadEventInit = ...) // org.w3c.css.fonts/FontFaceSetLoadEvent.<init>|<init>(kotlin.String;org.w3c.css.fonts.FontFaceSetLoadEventInit){}[0]
+
+    open val fontfaces // org.w3c.css.fonts/FontFaceSetLoadEvent.fontfaces|{}fontfaces[0]
+        // Targets: [js]
+        open fun <get-fontfaces>(): kotlin/Array<org.w3c.css.fonts/FontFace> // org.w3c.css.fonts/FontFaceSetLoadEvent.fontfaces.<get-fontfaces>|<get-fontfaces>(){}[0]
+
+        // Targets: [wasmJs]
+        open fun <get-fontfaces>(): kotlin.js/JsArray<org.w3c.css.fonts/FontFace> // org.w3c.css.fonts/FontFaceSetLoadEvent.fontfaces.<get-fontfaces>|<get-fontfaces>(){}[0]
+
+    final object Companion { // org.w3c.css.fonts/FontFaceSetLoadEvent.Companion|null[0]
+        final val AT_TARGET // org.w3c.css.fonts/FontFaceSetLoadEvent.Companion.AT_TARGET|{}AT_TARGET[0]
+            final fun <get-AT_TARGET>(): kotlin/Short // org.w3c.css.fonts/FontFaceSetLoadEvent.Companion.AT_TARGET.<get-AT_TARGET>|<get-AT_TARGET>(){}[0]
+        final val BUBBLING_PHASE // org.w3c.css.fonts/FontFaceSetLoadEvent.Companion.BUBBLING_PHASE|{}BUBBLING_PHASE[0]
+            final fun <get-BUBBLING_PHASE>(): kotlin/Short // org.w3c.css.fonts/FontFaceSetLoadEvent.Companion.BUBBLING_PHASE.<get-BUBBLING_PHASE>|<get-BUBBLING_PHASE>(){}[0]
+        final val CAPTURING_PHASE // org.w3c.css.fonts/FontFaceSetLoadEvent.Companion.CAPTURING_PHASE|{}CAPTURING_PHASE[0]
+            final fun <get-CAPTURING_PHASE>(): kotlin/Short // org.w3c.css.fonts/FontFaceSetLoadEvent.Companion.CAPTURING_PHASE.<get-CAPTURING_PHASE>|<get-CAPTURING_PHASE>(){}[0]
+        final val NONE // org.w3c.css.fonts/FontFaceSetLoadEvent.Companion.NONE|{}NONE[0]
+            final fun <get-NONE>(): kotlin/Short // org.w3c.css.fonts/FontFaceSetLoadEvent.Companion.NONE.<get-NONE>|<get-NONE>(){}[0]
+    }
 }
 
 open class org.w3c.dom.clipboard/ClipboardChangeEvent : org.w3c.dom/Event { // org.w3c.dom.clipboard/ClipboardChangeEvent|null[0]
@@ -17032,7 +17099,7 @@ open class org.w3c.dom/DOMRect : org.w3c.dom/DOMRectReadOnly { // org.w3c.dom/DO
     }
 }
 
-open class org.w3c.dom/Document : org.w3c.dom/ARIANotifyMixin, org.w3c.dom/DocumentOrShadowRoot, org.w3c.dom/GeometryNode, org.w3c.dom/GeometryUtils, org.w3c.dom/GlobalEventHandlers, org.w3c.dom/Node, org.w3c.dom/NonElementParentNode, org.w3c.dom/ParentNode, org.w3c.dom/XPathEvaluatorBase { // org.w3c.dom/Document|null[0]
+open class org.w3c.dom/Document : org.w3c.css.fonts/FontFaceSource, org.w3c.dom/ARIANotifyMixin, org.w3c.dom/DocumentOrShadowRoot, org.w3c.dom/GeometryNode, org.w3c.dom/GeometryUtils, org.w3c.dom/GlobalEventHandlers, org.w3c.dom/Node, org.w3c.dom/NonElementParentNode, org.w3c.dom/ParentNode, org.w3c.dom/XPathEvaluatorBase { // org.w3c.dom/Document|null[0]
     constructor <init>() // org.w3c.dom/Document.<init>|<init>(){}[0]
 
     open val URL // org.w3c.dom/Document.URL|{}URL[0]
@@ -17073,6 +17140,8 @@ open class org.w3c.dom/Document : org.w3c.dom/ARIANotifyMixin, org.w3c.dom/Docum
         open fun <get-embeds>(): org.w3c.dom/HTMLCollection // org.w3c.dom/Document.embeds.<get-embeds>|<get-embeds>(){}[0]
     open val firstElementChild // org.w3c.dom/Document.firstElementChild|{}firstElementChild[0]
         open fun <get-firstElementChild>(): org.w3c.dom/Element? // org.w3c.dom/Document.firstElementChild.<get-firstElementChild>|<get-firstElementChild>(){}[0]
+    open val fonts // org.w3c.dom/Document.fonts|{}fonts[0]
+        open fun <get-fonts>(): org.w3c.css.fonts/FontFaceSet // org.w3c.dom/Document.fonts.<get-fonts>|<get-fonts>(){}[0]
     open val forms // org.w3c.dom/Document.forms|{}forms[0]
         open fun <get-forms>(): org.w3c.dom/HTMLCollection // org.w3c.dom/Document.forms.<get-forms>|<get-forms>(){}[0]
     open val fullscreen // org.w3c.dom/Document.fullscreen|{}fullscreen[0]
@@ -22053,6 +22122,18 @@ final val org.w3c.animations/REVERSE // org.w3c.animations/REVERSE|@org.w3c.anim
     final inline fun (org.w3c.animations/PlaybackDirection.Companion).<get-REVERSE>(): org.w3c.animations/PlaybackDirection // org.w3c.animations/REVERSE.<get-REVERSE>|<get-REVERSE>@org.w3c.animations.PlaybackDirection.Companion(){}[0]
 final val org.w3c.animations/RUNNING // org.w3c.animations/RUNNING|@org.w3c.animations.AnimationPlayState.Companion{}RUNNING[0]
     final inline fun (org.w3c.animations/AnimationPlayState.Companion).<get-RUNNING>(): org.w3c.animations/AnimationPlayState // org.w3c.animations/RUNNING.<get-RUNNING>|<get-RUNNING>@org.w3c.animations.AnimationPlayState.Companion(){}[0]
+final val org.w3c.css.fonts/ERROR // org.w3c.css.fonts/ERROR|@org.w3c.css.fonts.FontFaceLoadStatus.Companion{}ERROR[0]
+    final inline fun (org.w3c.css.fonts/FontFaceLoadStatus.Companion).<get-ERROR>(): org.w3c.css.fonts/FontFaceLoadStatus // org.w3c.css.fonts/ERROR.<get-ERROR>|<get-ERROR>@org.w3c.css.fonts.FontFaceLoadStatus.Companion(){}[0]
+final val org.w3c.css.fonts/LOADED // org.w3c.css.fonts/LOADED|@org.w3c.css.fonts.FontFaceLoadStatus.Companion{}LOADED[0]
+    final inline fun (org.w3c.css.fonts/FontFaceLoadStatus.Companion).<get-LOADED>(): org.w3c.css.fonts/FontFaceLoadStatus // org.w3c.css.fonts/LOADED.<get-LOADED>|<get-LOADED>@org.w3c.css.fonts.FontFaceLoadStatus.Companion(){}[0]
+final val org.w3c.css.fonts/LOADED // org.w3c.css.fonts/LOADED|@org.w3c.css.fonts.FontFaceSetLoadStatus.Companion{}LOADED[0]
+    final inline fun (org.w3c.css.fonts/FontFaceSetLoadStatus.Companion).<get-LOADED>(): org.w3c.css.fonts/FontFaceSetLoadStatus // org.w3c.css.fonts/LOADED.<get-LOADED>|<get-LOADED>@org.w3c.css.fonts.FontFaceSetLoadStatus.Companion(){}[0]
+final val org.w3c.css.fonts/LOADING // org.w3c.css.fonts/LOADING|@org.w3c.css.fonts.FontFaceLoadStatus.Companion{}LOADING[0]
+    final inline fun (org.w3c.css.fonts/FontFaceLoadStatus.Companion).<get-LOADING>(): org.w3c.css.fonts/FontFaceLoadStatus // org.w3c.css.fonts/LOADING.<get-LOADING>|<get-LOADING>@org.w3c.css.fonts.FontFaceLoadStatus.Companion(){}[0]
+final val org.w3c.css.fonts/LOADING // org.w3c.css.fonts/LOADING|@org.w3c.css.fonts.FontFaceSetLoadStatus.Companion{}LOADING[0]
+    final inline fun (org.w3c.css.fonts/FontFaceSetLoadStatus.Companion).<get-LOADING>(): org.w3c.css.fonts/FontFaceSetLoadStatus // org.w3c.css.fonts/LOADING.<get-LOADING>|<get-LOADING>@org.w3c.css.fonts.FontFaceSetLoadStatus.Companion(){}[0]
+final val org.w3c.css.fonts/UNLOADED // org.w3c.css.fonts/UNLOADED|@org.w3c.css.fonts.FontFaceLoadStatus.Companion{}UNLOADED[0]
+    final inline fun (org.w3c.css.fonts/FontFaceLoadStatus.Companion).<get-UNLOADED>(): org.w3c.css.fonts/FontFaceLoadStatus // org.w3c.css.fonts/UNLOADED.<get-UNLOADED>|<get-UNLOADED>@org.w3c.css.fonts.FontFaceLoadStatus.Companion(){}[0]
 final val org.w3c.dom.clipboard/ATTACHMENT // org.w3c.dom.clipboard/ATTACHMENT|@org.w3c.dom.clipboard.PresentationStyle.Companion{}ATTACHMENT[0]
     final inline fun (org.w3c.dom.clipboard/PresentationStyle.Companion).<get-ATTACHMENT>(): org.w3c.dom.clipboard/PresentationStyle // org.w3c.dom.clipboard/ATTACHMENT.<get-ATTACHMENT>|<get-ATTACHMENT>@org.w3c.dom.clipboard.PresentationStyle.Companion(){}[0]
 final val org.w3c.dom.clipboard/INLINE // org.w3c.dom.clipboard/INLINE|@org.w3c.dom.clipboard.PresentationStyle.Companion{}INLINE[0]
@@ -22844,6 +22925,8 @@ final fun (org.khronos.webgl/Uint8Array).org.khronos.webgl/get(kotlin/Int): kotl
 final fun (org.khronos.webgl/Uint8Array).org.khronos.webgl/set(kotlin/Int, kotlin/UByte) // org.khronos.webgl/set|set@org.khronos.webgl.Uint8Array(kotlin.Int;kotlin.UByte){}[0]
 final fun (org.khronos.webgl/Uint8ClampedArray).org.khronos.webgl/get(kotlin/Int): kotlin/UByte // org.khronos.webgl/get|get@org.khronos.webgl.Uint8ClampedArray(kotlin.Int){}[0]
 final fun (org.khronos.webgl/Uint8ClampedArray).org.khronos.webgl/set(kotlin/Int, kotlin/UByte) // org.khronos.webgl/set|set@org.khronos.webgl.Uint8ClampedArray(kotlin.Int;kotlin.UByte){}[0]
+final fun (org.w3c.css.fonts/FontFacePalette).org.w3c.css.fonts/get(kotlin/Int): kotlin/String? // org.w3c.css.fonts/get|get@org.w3c.css.fonts.FontFacePalette(kotlin.Int){}[0]
+final fun (org.w3c.css.fonts/FontFacePalettes).org.w3c.css.fonts/get(kotlin/Int): org.w3c.css.fonts/FontFacePalette? // org.w3c.css.fonts/get|get@org.w3c.css.fonts.FontFacePalettes(kotlin.Int){}[0]
 final fun (org.w3c.dom.css/CSSRuleList).org.w3c.dom.css/get(kotlin/Int): org.w3c.dom.css/CSSRule? // org.w3c.dom.css/get|get@org.w3c.dom.css.CSSRuleList(kotlin.Int){}[0]
 final fun (org.w3c.dom.css/CSSStyleDeclaration).org.w3c.dom.css/get(kotlin/Int): kotlin/String? // org.w3c.dom.css/get|get@org.w3c.dom.css.CSSStyleDeclaration(kotlin.Int){}[0]
 final fun (org.w3c.dom.css/MediaList).org.w3c.dom.css/get(kotlin/Int): kotlin/String? // org.w3c.dom.css/get|get@org.w3c.dom.css.MediaList(kotlin.Int){}[0]
@@ -22906,6 +22989,7 @@ final fun org.w3c.animations/EffectTiming(org.w3c.animations/FillMode? = ..., ko
 final fun org.w3c.animations/GetAnimationsOptions(kotlin/Boolean? = ..., kotlin/String? = ...): org.w3c.animations/GetAnimationsOptions // org.w3c.animations/GetAnimationsOptions|GetAnimationsOptions(kotlin.Boolean?;kotlin.String?){}[0]
 final fun org.w3c.animations/KeyframeAnimationOptions(org.w3c.animations/FillMode? = ..., kotlin/Double? = ..., kotlin/Double? = ..., org.w3c.animations/PlaybackDirection? = ..., kotlin/String? = ..., org.w3c.animations/CompositeOperation? = ..., kotlin/String? = ..., kotlin/String? = ..., org.w3c.animations/AnimationTimeline? = ...): org.w3c.animations/KeyframeAnimationOptions // org.w3c.animations/KeyframeAnimationOptions|KeyframeAnimationOptions(org.w3c.animations.FillMode?;kotlin.Double?;kotlin.Double?;org.w3c.animations.PlaybackDirection?;kotlin.String?;org.w3c.animations.CompositeOperation?;kotlin.String?;kotlin.String?;org.w3c.animations.AnimationTimeline?){}[0]
 final fun org.w3c.animations/KeyframeEffectOptions(org.w3c.animations/FillMode? = ..., kotlin/Double? = ..., kotlin/Double? = ..., org.w3c.animations/PlaybackDirection? = ..., kotlin/String? = ..., org.w3c.animations/CompositeOperation? = ..., kotlin/String? = ...): org.w3c.animations/KeyframeEffectOptions // org.w3c.animations/KeyframeEffectOptions|KeyframeEffectOptions(org.w3c.animations.FillMode?;kotlin.Double?;kotlin.Double?;org.w3c.animations.PlaybackDirection?;kotlin.String?;org.w3c.animations.CompositeOperation?;kotlin.String?){}[0]
+final fun org.w3c.css.fonts/FontFaceDescriptors(kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ..., kotlin/String? = ...): org.w3c.css.fonts/FontFaceDescriptors // org.w3c.css.fonts/FontFaceDescriptors|FontFaceDescriptors(kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?;kotlin.String?){}[0]
 final fun org.w3c.dom.clipboard/ClipboardEventInit(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., org.w3c.dom/DataTransfer? = ...): org.w3c.dom.clipboard/ClipboardEventInit // org.w3c.dom.clipboard/ClipboardEventInit|ClipboardEventInit(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;org.w3c.dom.DataTransfer?){}[0]
 final fun org.w3c.dom.clipboard/ClipboardItemOptions(org.w3c.dom.clipboard/PresentationStyle? = ...): org.w3c.dom.clipboard/ClipboardItemOptions // org.w3c.dom.clipboard/ClipboardItemOptions|ClipboardItemOptions(org.w3c.dom.clipboard.PresentationStyle?){}[0]
 final fun org.w3c.dom.encryptedmedia/MediaEncryptedEventInit(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/String? = ..., org.khronos.webgl/ArrayBuffer? = ...): org.w3c.dom.encryptedmedia/MediaEncryptedEventInit // org.w3c.dom.encryptedmedia/MediaEncryptedEventInit|MediaEncryptedEventInit(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.String?;org.khronos.webgl.ArrayBuffer?){}[0]
@@ -23616,6 +23700,56 @@ abstract interface org.w3c.animations/OptionalEffectTiming { // org.w3c.animatio
 // Targets: [js]
 abstract interface org.w3c.animations/PlaybackDirection { // org.w3c.animations/PlaybackDirection|null[0]
     final object Companion // org.w3c.animations/PlaybackDirection.Companion|null[0]
+}
+
+// Targets: [js]
+abstract interface org.w3c.css.fonts/FontFaceDescriptors { // org.w3c.css.fonts/FontFaceDescriptors|null[0]
+    abstract var ascentOverride // org.w3c.css.fonts/FontFaceDescriptors.ascentOverride|{}ascentOverride[0]
+        abstract fun <get-ascentOverride>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.ascentOverride.<get-ascentOverride>|<get-ascentOverride>(){}[0]
+        abstract fun <set-ascentOverride>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.ascentOverride.<set-ascentOverride>|<set-ascentOverride>(kotlin.String?){}[0]
+    abstract var descentOverride // org.w3c.css.fonts/FontFaceDescriptors.descentOverride|{}descentOverride[0]
+        abstract fun <get-descentOverride>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.descentOverride.<get-descentOverride>|<get-descentOverride>(){}[0]
+        abstract fun <set-descentOverride>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.descentOverride.<set-descentOverride>|<set-descentOverride>(kotlin.String?){}[0]
+    abstract var display // org.w3c.css.fonts/FontFaceDescriptors.display|{}display[0]
+        abstract fun <get-display>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.display.<get-display>|<get-display>(){}[0]
+        abstract fun <set-display>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.display.<set-display>|<set-display>(kotlin.String?){}[0]
+    abstract var featureSettings // org.w3c.css.fonts/FontFaceDescriptors.featureSettings|{}featureSettings[0]
+        abstract fun <get-featureSettings>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.featureSettings.<get-featureSettings>|<get-featureSettings>(){}[0]
+        abstract fun <set-featureSettings>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.featureSettings.<set-featureSettings>|<set-featureSettings>(kotlin.String?){}[0]
+    abstract var lineGapOverride // org.w3c.css.fonts/FontFaceDescriptors.lineGapOverride|{}lineGapOverride[0]
+        abstract fun <get-lineGapOverride>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.lineGapOverride.<get-lineGapOverride>|<get-lineGapOverride>(){}[0]
+        abstract fun <set-lineGapOverride>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.lineGapOverride.<set-lineGapOverride>|<set-lineGapOverride>(kotlin.String?){}[0]
+    abstract var stretch // org.w3c.css.fonts/FontFaceDescriptors.stretch|{}stretch[0]
+        abstract fun <get-stretch>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.stretch.<get-stretch>|<get-stretch>(){}[0]
+        abstract fun <set-stretch>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.stretch.<set-stretch>|<set-stretch>(kotlin.String?){}[0]
+    abstract var style // org.w3c.css.fonts/FontFaceDescriptors.style|{}style[0]
+        abstract fun <get-style>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.style.<get-style>|<get-style>(){}[0]
+        abstract fun <set-style>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.style.<set-style>|<set-style>(kotlin.String?){}[0]
+    abstract var unicodeRange // org.w3c.css.fonts/FontFaceDescriptors.unicodeRange|{}unicodeRange[0]
+        abstract fun <get-unicodeRange>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.unicodeRange.<get-unicodeRange>|<get-unicodeRange>(){}[0]
+        abstract fun <set-unicodeRange>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.unicodeRange.<set-unicodeRange>|<set-unicodeRange>(kotlin.String?){}[0]
+    abstract var variationSettings // org.w3c.css.fonts/FontFaceDescriptors.variationSettings|{}variationSettings[0]
+        abstract fun <get-variationSettings>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.variationSettings.<get-variationSettings>|<get-variationSettings>(){}[0]
+        abstract fun <set-variationSettings>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.variationSettings.<set-variationSettings>|<set-variationSettings>(kotlin.String?){}[0]
+    abstract var weight // org.w3c.css.fonts/FontFaceDescriptors.weight|{}weight[0]
+        abstract fun <get-weight>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.weight.<get-weight>|<get-weight>(){}[0]
+        abstract fun <set-weight>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.weight.<set-weight>|<set-weight>(kotlin.String?){}[0]
+}
+
+// Targets: [js]
+abstract interface org.w3c.css.fonts/FontFaceLoadStatus { // org.w3c.css.fonts/FontFaceLoadStatus|null[0]
+    final object Companion // org.w3c.css.fonts/FontFaceLoadStatus.Companion|null[0]
+}
+
+// Targets: [js]
+abstract interface org.w3c.css.fonts/FontFaceSetLoadStatus { // org.w3c.css.fonts/FontFaceSetLoadStatus|null[0]
+    final object Companion // org.w3c.css.fonts/FontFaceSetLoadStatus.Companion|null[0]
+}
+
+// Targets: [js]
+abstract interface org.w3c.css.fonts/FontFaceSource { // org.w3c.css.fonts/FontFaceSource|null[0]
+    abstract val fonts // org.w3c.css.fonts/FontFaceSource.fonts|{}fonts[0]
+        abstract fun <get-fonts>(): org.w3c.css.fonts/FontFaceSet // org.w3c.css.fonts/FontFaceSource.fonts.<get-fonts>|<get-fonts>(){}[0]
 }
 
 // Targets: [js]
@@ -27180,6 +27314,52 @@ abstract class org.w3c.animations/AnimationTimeline { // org.w3c.animations/Anim
 }
 
 // Targets: [js]
+abstract class org.w3c.css.fonts/FontFaceFeatures { // org.w3c.css.fonts/FontFaceFeatures|null[0]
+    constructor <init>() // org.w3c.css.fonts/FontFaceFeatures.<init>|<init>(){}[0]
+}
+
+// Targets: [js]
+abstract class org.w3c.css.fonts/FontFacePalette { // org.w3c.css.fonts/FontFacePalette|null[0]
+    constructor <init>() // org.w3c.css.fonts/FontFacePalette.<init>|<init>(){}[0]
+
+    open val length // org.w3c.css.fonts/FontFacePalette.length|{}length[0]
+        open fun <get-length>(): kotlin/Int // org.w3c.css.fonts/FontFacePalette.length.<get-length>|<get-length>(){}[0]
+    open val usableWithDarkBackground // org.w3c.css.fonts/FontFacePalette.usableWithDarkBackground|{}usableWithDarkBackground[0]
+        open fun <get-usableWithDarkBackground>(): kotlin/Boolean // org.w3c.css.fonts/FontFacePalette.usableWithDarkBackground.<get-usableWithDarkBackground>|<get-usableWithDarkBackground>(){}[0]
+    open val usableWithLightBackground // org.w3c.css.fonts/FontFacePalette.usableWithLightBackground|{}usableWithLightBackground[0]
+        open fun <get-usableWithLightBackground>(): kotlin/Boolean // org.w3c.css.fonts/FontFacePalette.usableWithLightBackground.<get-usableWithLightBackground>|<get-usableWithLightBackground>(){}[0]
+}
+
+// Targets: [js]
+abstract class org.w3c.css.fonts/FontFacePalettes { // org.w3c.css.fonts/FontFacePalettes|null[0]
+    constructor <init>() // org.w3c.css.fonts/FontFacePalettes.<init>|<init>(){}[0]
+
+    open val length // org.w3c.css.fonts/FontFacePalettes.length|{}length[0]
+        open fun <get-length>(): kotlin/Int // org.w3c.css.fonts/FontFacePalettes.length.<get-length>|<get-length>(){}[0]
+}
+
+// Targets: [js]
+abstract class org.w3c.css.fonts/FontFaceVariationAxis { // org.w3c.css.fonts/FontFaceVariationAxis|null[0]
+    constructor <init>() // org.w3c.css.fonts/FontFaceVariationAxis.<init>|<init>(){}[0]
+
+    open val axisTag // org.w3c.css.fonts/FontFaceVariationAxis.axisTag|{}axisTag[0]
+        open fun <get-axisTag>(): kotlin/String // org.w3c.css.fonts/FontFaceVariationAxis.axisTag.<get-axisTag>|<get-axisTag>(){}[0]
+    open val defaultValue // org.w3c.css.fonts/FontFaceVariationAxis.defaultValue|{}defaultValue[0]
+        open fun <get-defaultValue>(): kotlin/Double // org.w3c.css.fonts/FontFaceVariationAxis.defaultValue.<get-defaultValue>|<get-defaultValue>(){}[0]
+    open val maximumValue // org.w3c.css.fonts/FontFaceVariationAxis.maximumValue|{}maximumValue[0]
+        open fun <get-maximumValue>(): kotlin/Double // org.w3c.css.fonts/FontFaceVariationAxis.maximumValue.<get-maximumValue>|<get-maximumValue>(){}[0]
+    open val minimumValue // org.w3c.css.fonts/FontFaceVariationAxis.minimumValue|{}minimumValue[0]
+        open fun <get-minimumValue>(): kotlin/Double // org.w3c.css.fonts/FontFaceVariationAxis.minimumValue.<get-minimumValue>|<get-minimumValue>(){}[0]
+    open val name // org.w3c.css.fonts/FontFaceVariationAxis.name|{}name[0]
+        open fun <get-name>(): kotlin/String // org.w3c.css.fonts/FontFaceVariationAxis.name.<get-name>|<get-name>(){}[0]
+}
+
+// Targets: [js]
+abstract class org.w3c.css.fonts/FontFaceVariations { // org.w3c.css.fonts/FontFaceVariations|null[0]
+    constructor <init>() // org.w3c.css.fonts/FontFaceVariations.<init>|<init>(){}[0]
+}
+
+// Targets: [js]
 abstract class org.w3c.dom.css/CSSRule { // org.w3c.dom.css/CSSRule|null[0]
     constructor <init>() // org.w3c.dom.css/CSSRule.<init>|<init>(){}[0]
 
@@ -29092,6 +29272,59 @@ open class org.khronos.webgl/Uint8ClampedArray : org.khronos.webgl/ArrayBufferVi
 }
 
 // Targets: [js]
+open class org.w3c.css.fonts/FontFace { // org.w3c.css.fonts/FontFace|null[0]
+    constructor <init>(kotlin/String, kotlin/String, org.w3c.css.fonts/FontFaceDescriptors = ...) // org.w3c.css.fonts/FontFace.<init>|<init>(kotlin.String;kotlin.String;org.w3c.css.fonts.FontFaceDescriptors){}[0]
+    constructor <init>(kotlin/String, org.khronos.webgl/BufferDataSource, org.w3c.css.fonts/FontFaceDescriptors = ...) // org.w3c.css.fonts/FontFace.<init>|<init>(kotlin.String;org.khronos.webgl.BufferDataSource;org.w3c.css.fonts.FontFaceDescriptors){}[0]
+
+    open val features // org.w3c.css.fonts/FontFace.features|{}features[0]
+        open fun <get-features>(): org.w3c.css.fonts/FontFaceFeatures // org.w3c.css.fonts/FontFace.features.<get-features>|<get-features>(){}[0]
+    open val loaded // org.w3c.css.fonts/FontFace.loaded|{}loaded[0]
+        open fun <get-loaded>(): kotlin.js/Promise<org.w3c.css.fonts/FontFace> // org.w3c.css.fonts/FontFace.loaded.<get-loaded>|<get-loaded>(){}[0]
+    open val palettes // org.w3c.css.fonts/FontFace.palettes|{}palettes[0]
+        open fun <get-palettes>(): org.w3c.css.fonts/FontFacePalettes // org.w3c.css.fonts/FontFace.palettes.<get-palettes>|<get-palettes>(){}[0]
+    open val status // org.w3c.css.fonts/FontFace.status|{}status[0]
+        open fun <get-status>(): org.w3c.css.fonts/FontFaceLoadStatus // org.w3c.css.fonts/FontFace.status.<get-status>|<get-status>(){}[0]
+    open val variations // org.w3c.css.fonts/FontFace.variations|{}variations[0]
+        open fun <get-variations>(): org.w3c.css.fonts/FontFaceVariations // org.w3c.css.fonts/FontFace.variations.<get-variations>|<get-variations>(){}[0]
+
+    open var ascentOverride // org.w3c.css.fonts/FontFace.ascentOverride|{}ascentOverride[0]
+        open fun <get-ascentOverride>(): kotlin/String // org.w3c.css.fonts/FontFace.ascentOverride.<get-ascentOverride>|<get-ascentOverride>(){}[0]
+        open fun <set-ascentOverride>(kotlin/String) // org.w3c.css.fonts/FontFace.ascentOverride.<set-ascentOverride>|<set-ascentOverride>(kotlin.String){}[0]
+    open var descentOverride // org.w3c.css.fonts/FontFace.descentOverride|{}descentOverride[0]
+        open fun <get-descentOverride>(): kotlin/String // org.w3c.css.fonts/FontFace.descentOverride.<get-descentOverride>|<get-descentOverride>(){}[0]
+        open fun <set-descentOverride>(kotlin/String) // org.w3c.css.fonts/FontFace.descentOverride.<set-descentOverride>|<set-descentOverride>(kotlin.String){}[0]
+    open var display // org.w3c.css.fonts/FontFace.display|{}display[0]
+        open fun <get-display>(): kotlin/String // org.w3c.css.fonts/FontFace.display.<get-display>|<get-display>(){}[0]
+        open fun <set-display>(kotlin/String) // org.w3c.css.fonts/FontFace.display.<set-display>|<set-display>(kotlin.String){}[0]
+    open var family // org.w3c.css.fonts/FontFace.family|{}family[0]
+        open fun <get-family>(): kotlin/String // org.w3c.css.fonts/FontFace.family.<get-family>|<get-family>(){}[0]
+        open fun <set-family>(kotlin/String) // org.w3c.css.fonts/FontFace.family.<set-family>|<set-family>(kotlin.String){}[0]
+    open var featureSettings // org.w3c.css.fonts/FontFace.featureSettings|{}featureSettings[0]
+        open fun <get-featureSettings>(): kotlin/String // org.w3c.css.fonts/FontFace.featureSettings.<get-featureSettings>|<get-featureSettings>(){}[0]
+        open fun <set-featureSettings>(kotlin/String) // org.w3c.css.fonts/FontFace.featureSettings.<set-featureSettings>|<set-featureSettings>(kotlin.String){}[0]
+    open var lineGapOverride // org.w3c.css.fonts/FontFace.lineGapOverride|{}lineGapOverride[0]
+        open fun <get-lineGapOverride>(): kotlin/String // org.w3c.css.fonts/FontFace.lineGapOverride.<get-lineGapOverride>|<get-lineGapOverride>(){}[0]
+        open fun <set-lineGapOverride>(kotlin/String) // org.w3c.css.fonts/FontFace.lineGapOverride.<set-lineGapOverride>|<set-lineGapOverride>(kotlin.String){}[0]
+    open var stretch // org.w3c.css.fonts/FontFace.stretch|{}stretch[0]
+        open fun <get-stretch>(): kotlin/String // org.w3c.css.fonts/FontFace.stretch.<get-stretch>|<get-stretch>(){}[0]
+        open fun <set-stretch>(kotlin/String) // org.w3c.css.fonts/FontFace.stretch.<set-stretch>|<set-stretch>(kotlin.String){}[0]
+    open var style // org.w3c.css.fonts/FontFace.style|{}style[0]
+        open fun <get-style>(): kotlin/String // org.w3c.css.fonts/FontFace.style.<get-style>|<get-style>(){}[0]
+        open fun <set-style>(kotlin/String) // org.w3c.css.fonts/FontFace.style.<set-style>|<set-style>(kotlin.String){}[0]
+    open var unicodeRange // org.w3c.css.fonts/FontFace.unicodeRange|{}unicodeRange[0]
+        open fun <get-unicodeRange>(): kotlin/String // org.w3c.css.fonts/FontFace.unicodeRange.<get-unicodeRange>|<get-unicodeRange>(){}[0]
+        open fun <set-unicodeRange>(kotlin/String) // org.w3c.css.fonts/FontFace.unicodeRange.<set-unicodeRange>|<set-unicodeRange>(kotlin.String){}[0]
+    open var variationSettings // org.w3c.css.fonts/FontFace.variationSettings|{}variationSettings[0]
+        open fun <get-variationSettings>(): kotlin/String // org.w3c.css.fonts/FontFace.variationSettings.<get-variationSettings>|<get-variationSettings>(){}[0]
+        open fun <set-variationSettings>(kotlin/String) // org.w3c.css.fonts/FontFace.variationSettings.<set-variationSettings>|<set-variationSettings>(kotlin.String){}[0]
+    open var weight // org.w3c.css.fonts/FontFace.weight|{}weight[0]
+        open fun <get-weight>(): kotlin/String // org.w3c.css.fonts/FontFace.weight.<get-weight>|<get-weight>(){}[0]
+        open fun <set-weight>(kotlin/String) // org.w3c.css.fonts/FontFace.weight.<set-weight>|<set-weight>(kotlin.String){}[0]
+
+    open fun load(): kotlin.js/Promise<org.w3c.css.fonts/FontFace> // org.w3c.css.fonts/FontFace.load|load(){}[0]
+}
+
+// Targets: [js]
 open class org.w3c.dom.clipboard/ClipboardItem { // org.w3c.dom.clipboard/ClipboardItem|null[0]
     constructor <init>(kotlin/Any, org.w3c.dom.clipboard/ClipboardItemOptions = ...) // org.w3c.dom.clipboard/ClipboardItem.<init>|<init>(kotlin.Any;org.w3c.dom.clipboard.ClipboardItemOptions){}[0]
 
@@ -29853,6 +30086,9 @@ final fun org.w3c.animations/BasePropertyIndexedKeyframe(kotlin/Any? = ..., kotl
 
 // Targets: [js]
 final fun org.w3c.animations/OptionalEffectTiming(kotlin/Double? = ..., kotlin/Double? = ..., org.w3c.animations/FillMode? = ..., kotlin/Double? = ..., kotlin/Double? = ..., kotlin/Any? = ..., org.w3c.animations/PlaybackDirection? = ..., kotlin/String? = ...): org.w3c.animations/OptionalEffectTiming // org.w3c.animations/OptionalEffectTiming|OptionalEffectTiming(kotlin.Double?;kotlin.Double?;org.w3c.animations.FillMode?;kotlin.Double?;kotlin.Double?;kotlin.Any?;org.w3c.animations.PlaybackDirection?;kotlin.String?){}[0]
+
+// Targets: [js]
+final fun org.w3c.css.fonts/FontFaceSetLoadEventInit(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Array<org.w3c.css.fonts/FontFace>? = ...): org.w3c.css.fonts/FontFaceSetLoadEventInit // org.w3c.css.fonts/FontFaceSetLoadEventInit|FontFaceSetLoadEventInit(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Array<org.w3c.css.fonts.FontFace>?){}[0]
 
 // Targets: [js]
 final fun org.w3c.dom.clipboard/ClipboardChangeEventInit(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Array<kotlin/String>? = ..., kotlin/Long? = ...): org.w3c.dom.clipboard/ClipboardChangeEventInit // org.w3c.dom.clipboard/ClipboardChangeEventInit|ClipboardChangeEventInit(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.Array<kotlin.String>?;kotlin.Long?){}[0]
@@ -30638,6 +30874,56 @@ abstract interface org.w3c.animations/OptionalEffectTiming : kotlin.js/JsAny { /
 // Targets: [wasmJs]
 abstract interface org.w3c.animations/PlaybackDirection : kotlin.js/JsAny { // org.w3c.animations/PlaybackDirection|null[0]
     final object Companion // org.w3c.animations/PlaybackDirection.Companion|null[0]
+}
+
+// Targets: [wasmJs]
+abstract interface org.w3c.css.fonts/FontFaceDescriptors : kotlin.js/JsAny { // org.w3c.css.fonts/FontFaceDescriptors|null[0]
+    abstract var ascentOverride // org.w3c.css.fonts/FontFaceDescriptors.ascentOverride|{}ascentOverride[0]
+        abstract fun <get-ascentOverride>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.ascentOverride.<get-ascentOverride>|<get-ascentOverride>(){}[0]
+        abstract fun <set-ascentOverride>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.ascentOverride.<set-ascentOverride>|<set-ascentOverride>(kotlin.String?){}[0]
+    abstract var descentOverride // org.w3c.css.fonts/FontFaceDescriptors.descentOverride|{}descentOverride[0]
+        abstract fun <get-descentOverride>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.descentOverride.<get-descentOverride>|<get-descentOverride>(){}[0]
+        abstract fun <set-descentOverride>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.descentOverride.<set-descentOverride>|<set-descentOverride>(kotlin.String?){}[0]
+    abstract var display // org.w3c.css.fonts/FontFaceDescriptors.display|{}display[0]
+        abstract fun <get-display>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.display.<get-display>|<get-display>(){}[0]
+        abstract fun <set-display>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.display.<set-display>|<set-display>(kotlin.String?){}[0]
+    abstract var featureSettings // org.w3c.css.fonts/FontFaceDescriptors.featureSettings|{}featureSettings[0]
+        abstract fun <get-featureSettings>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.featureSettings.<get-featureSettings>|<get-featureSettings>(){}[0]
+        abstract fun <set-featureSettings>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.featureSettings.<set-featureSettings>|<set-featureSettings>(kotlin.String?){}[0]
+    abstract var lineGapOverride // org.w3c.css.fonts/FontFaceDescriptors.lineGapOverride|{}lineGapOverride[0]
+        abstract fun <get-lineGapOverride>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.lineGapOverride.<get-lineGapOverride>|<get-lineGapOverride>(){}[0]
+        abstract fun <set-lineGapOverride>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.lineGapOverride.<set-lineGapOverride>|<set-lineGapOverride>(kotlin.String?){}[0]
+    abstract var stretch // org.w3c.css.fonts/FontFaceDescriptors.stretch|{}stretch[0]
+        abstract fun <get-stretch>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.stretch.<get-stretch>|<get-stretch>(){}[0]
+        abstract fun <set-stretch>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.stretch.<set-stretch>|<set-stretch>(kotlin.String?){}[0]
+    abstract var style // org.w3c.css.fonts/FontFaceDescriptors.style|{}style[0]
+        abstract fun <get-style>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.style.<get-style>|<get-style>(){}[0]
+        abstract fun <set-style>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.style.<set-style>|<set-style>(kotlin.String?){}[0]
+    abstract var unicodeRange // org.w3c.css.fonts/FontFaceDescriptors.unicodeRange|{}unicodeRange[0]
+        abstract fun <get-unicodeRange>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.unicodeRange.<get-unicodeRange>|<get-unicodeRange>(){}[0]
+        abstract fun <set-unicodeRange>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.unicodeRange.<set-unicodeRange>|<set-unicodeRange>(kotlin.String?){}[0]
+    abstract var variationSettings // org.w3c.css.fonts/FontFaceDescriptors.variationSettings|{}variationSettings[0]
+        abstract fun <get-variationSettings>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.variationSettings.<get-variationSettings>|<get-variationSettings>(){}[0]
+        abstract fun <set-variationSettings>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.variationSettings.<set-variationSettings>|<set-variationSettings>(kotlin.String?){}[0]
+    abstract var weight // org.w3c.css.fonts/FontFaceDescriptors.weight|{}weight[0]
+        abstract fun <get-weight>(): kotlin/String? // org.w3c.css.fonts/FontFaceDescriptors.weight.<get-weight>|<get-weight>(){}[0]
+        abstract fun <set-weight>(kotlin/String?) // org.w3c.css.fonts/FontFaceDescriptors.weight.<set-weight>|<set-weight>(kotlin.String?){}[0]
+}
+
+// Targets: [wasmJs]
+abstract interface org.w3c.css.fonts/FontFaceLoadStatus : kotlin.js/JsAny { // org.w3c.css.fonts/FontFaceLoadStatus|null[0]
+    final object Companion // org.w3c.css.fonts/FontFaceLoadStatus.Companion|null[0]
+}
+
+// Targets: [wasmJs]
+abstract interface org.w3c.css.fonts/FontFaceSetLoadStatus : kotlin.js/JsAny { // org.w3c.css.fonts/FontFaceSetLoadStatus|null[0]
+    final object Companion // org.w3c.css.fonts/FontFaceSetLoadStatus.Companion|null[0]
+}
+
+// Targets: [wasmJs]
+abstract interface org.w3c.css.fonts/FontFaceSource : kotlin.js/JsAny { // org.w3c.css.fonts/FontFaceSource|null[0]
+    abstract val fonts // org.w3c.css.fonts/FontFaceSource.fonts|{}fonts[0]
+        abstract fun <get-fonts>(): org.w3c.css.fonts/FontFaceSet // org.w3c.css.fonts/FontFaceSource.fonts.<get-fonts>|<get-fonts>(){}[0]
 }
 
 // Targets: [wasmJs]
@@ -34202,6 +34488,52 @@ abstract class org.w3c.animations/AnimationTimeline : kotlin.js/JsAny { // org.w
 }
 
 // Targets: [wasmJs]
+abstract class org.w3c.css.fonts/FontFaceFeatures : kotlin.js/JsAny { // org.w3c.css.fonts/FontFaceFeatures|null[0]
+    constructor <init>() // org.w3c.css.fonts/FontFaceFeatures.<init>|<init>(){}[0]
+}
+
+// Targets: [wasmJs]
+abstract class org.w3c.css.fonts/FontFacePalette : kotlin.js/JsAny { // org.w3c.css.fonts/FontFacePalette|null[0]
+    constructor <init>() // org.w3c.css.fonts/FontFacePalette.<init>|<init>(){}[0]
+
+    open val length // org.w3c.css.fonts/FontFacePalette.length|{}length[0]
+        open fun <get-length>(): kotlin/Int // org.w3c.css.fonts/FontFacePalette.length.<get-length>|<get-length>(){}[0]
+    open val usableWithDarkBackground // org.w3c.css.fonts/FontFacePalette.usableWithDarkBackground|{}usableWithDarkBackground[0]
+        open fun <get-usableWithDarkBackground>(): kotlin/Boolean // org.w3c.css.fonts/FontFacePalette.usableWithDarkBackground.<get-usableWithDarkBackground>|<get-usableWithDarkBackground>(){}[0]
+    open val usableWithLightBackground // org.w3c.css.fonts/FontFacePalette.usableWithLightBackground|{}usableWithLightBackground[0]
+        open fun <get-usableWithLightBackground>(): kotlin/Boolean // org.w3c.css.fonts/FontFacePalette.usableWithLightBackground.<get-usableWithLightBackground>|<get-usableWithLightBackground>(){}[0]
+}
+
+// Targets: [wasmJs]
+abstract class org.w3c.css.fonts/FontFacePalettes : kotlin.js/JsAny { // org.w3c.css.fonts/FontFacePalettes|null[0]
+    constructor <init>() // org.w3c.css.fonts/FontFacePalettes.<init>|<init>(){}[0]
+
+    open val length // org.w3c.css.fonts/FontFacePalettes.length|{}length[0]
+        open fun <get-length>(): kotlin/Int // org.w3c.css.fonts/FontFacePalettes.length.<get-length>|<get-length>(){}[0]
+}
+
+// Targets: [wasmJs]
+abstract class org.w3c.css.fonts/FontFaceVariationAxis : kotlin.js/JsAny { // org.w3c.css.fonts/FontFaceVariationAxis|null[0]
+    constructor <init>() // org.w3c.css.fonts/FontFaceVariationAxis.<init>|<init>(){}[0]
+
+    open val axisTag // org.w3c.css.fonts/FontFaceVariationAxis.axisTag|{}axisTag[0]
+        open fun <get-axisTag>(): kotlin/String // org.w3c.css.fonts/FontFaceVariationAxis.axisTag.<get-axisTag>|<get-axisTag>(){}[0]
+    open val defaultValue // org.w3c.css.fonts/FontFaceVariationAxis.defaultValue|{}defaultValue[0]
+        open fun <get-defaultValue>(): kotlin/Double // org.w3c.css.fonts/FontFaceVariationAxis.defaultValue.<get-defaultValue>|<get-defaultValue>(){}[0]
+    open val maximumValue // org.w3c.css.fonts/FontFaceVariationAxis.maximumValue|{}maximumValue[0]
+        open fun <get-maximumValue>(): kotlin/Double // org.w3c.css.fonts/FontFaceVariationAxis.maximumValue.<get-maximumValue>|<get-maximumValue>(){}[0]
+    open val minimumValue // org.w3c.css.fonts/FontFaceVariationAxis.minimumValue|{}minimumValue[0]
+        open fun <get-minimumValue>(): kotlin/Double // org.w3c.css.fonts/FontFaceVariationAxis.minimumValue.<get-minimumValue>|<get-minimumValue>(){}[0]
+    open val name // org.w3c.css.fonts/FontFaceVariationAxis.name|{}name[0]
+        open fun <get-name>(): kotlin/String // org.w3c.css.fonts/FontFaceVariationAxis.name.<get-name>|<get-name>(){}[0]
+}
+
+// Targets: [wasmJs]
+abstract class org.w3c.css.fonts/FontFaceVariations : kotlin.js/JsAny { // org.w3c.css.fonts/FontFaceVariations|null[0]
+    constructor <init>() // org.w3c.css.fonts/FontFaceVariations.<init>|<init>(){}[0]
+}
+
+// Targets: [wasmJs]
 abstract class org.w3c.dom.css/CSSRule : kotlin.js/JsAny { // org.w3c.dom.css/CSSRule|null[0]
     constructor <init>() // org.w3c.dom.css/CSSRule.<init>|<init>(){}[0]
 
@@ -36114,6 +36446,59 @@ open class org.khronos.webgl/Uint8ClampedArray : kotlin.js/JsAny, org.khronos.we
 }
 
 // Targets: [wasmJs]
+open class org.w3c.css.fonts/FontFace : kotlin.js/JsAny { // org.w3c.css.fonts/FontFace|null[0]
+    constructor <init>(kotlin/String, kotlin/String, org.w3c.css.fonts/FontFaceDescriptors = ...) // org.w3c.css.fonts/FontFace.<init>|<init>(kotlin.String;kotlin.String;org.w3c.css.fonts.FontFaceDescriptors){}[0]
+    constructor <init>(kotlin/String, org.khronos.webgl/BufferDataSource, org.w3c.css.fonts/FontFaceDescriptors = ...) // org.w3c.css.fonts/FontFace.<init>|<init>(kotlin.String;org.khronos.webgl.BufferDataSource;org.w3c.css.fonts.FontFaceDescriptors){}[0]
+
+    open val features // org.w3c.css.fonts/FontFace.features|{}features[0]
+        open fun <get-features>(): org.w3c.css.fonts/FontFaceFeatures // org.w3c.css.fonts/FontFace.features.<get-features>|<get-features>(){}[0]
+    open val loaded // org.w3c.css.fonts/FontFace.loaded|{}loaded[0]
+        open fun <get-loaded>(): kotlin.js/Promise<org.w3c.css.fonts/FontFace> // org.w3c.css.fonts/FontFace.loaded.<get-loaded>|<get-loaded>(){}[0]
+    open val palettes // org.w3c.css.fonts/FontFace.palettes|{}palettes[0]
+        open fun <get-palettes>(): org.w3c.css.fonts/FontFacePalettes // org.w3c.css.fonts/FontFace.palettes.<get-palettes>|<get-palettes>(){}[0]
+    open val status // org.w3c.css.fonts/FontFace.status|{}status[0]
+        open fun <get-status>(): org.w3c.css.fonts/FontFaceLoadStatus // org.w3c.css.fonts/FontFace.status.<get-status>|<get-status>(){}[0]
+    open val variations // org.w3c.css.fonts/FontFace.variations|{}variations[0]
+        open fun <get-variations>(): org.w3c.css.fonts/FontFaceVariations // org.w3c.css.fonts/FontFace.variations.<get-variations>|<get-variations>(){}[0]
+
+    open var ascentOverride // org.w3c.css.fonts/FontFace.ascentOverride|{}ascentOverride[0]
+        open fun <get-ascentOverride>(): kotlin/String // org.w3c.css.fonts/FontFace.ascentOverride.<get-ascentOverride>|<get-ascentOverride>(){}[0]
+        open fun <set-ascentOverride>(kotlin/String) // org.w3c.css.fonts/FontFace.ascentOverride.<set-ascentOverride>|<set-ascentOverride>(kotlin.String){}[0]
+    open var descentOverride // org.w3c.css.fonts/FontFace.descentOverride|{}descentOverride[0]
+        open fun <get-descentOverride>(): kotlin/String // org.w3c.css.fonts/FontFace.descentOverride.<get-descentOverride>|<get-descentOverride>(){}[0]
+        open fun <set-descentOverride>(kotlin/String) // org.w3c.css.fonts/FontFace.descentOverride.<set-descentOverride>|<set-descentOverride>(kotlin.String){}[0]
+    open var display // org.w3c.css.fonts/FontFace.display|{}display[0]
+        open fun <get-display>(): kotlin/String // org.w3c.css.fonts/FontFace.display.<get-display>|<get-display>(){}[0]
+        open fun <set-display>(kotlin/String) // org.w3c.css.fonts/FontFace.display.<set-display>|<set-display>(kotlin.String){}[0]
+    open var family // org.w3c.css.fonts/FontFace.family|{}family[0]
+        open fun <get-family>(): kotlin/String // org.w3c.css.fonts/FontFace.family.<get-family>|<get-family>(){}[0]
+        open fun <set-family>(kotlin/String) // org.w3c.css.fonts/FontFace.family.<set-family>|<set-family>(kotlin.String){}[0]
+    open var featureSettings // org.w3c.css.fonts/FontFace.featureSettings|{}featureSettings[0]
+        open fun <get-featureSettings>(): kotlin/String // org.w3c.css.fonts/FontFace.featureSettings.<get-featureSettings>|<get-featureSettings>(){}[0]
+        open fun <set-featureSettings>(kotlin/String) // org.w3c.css.fonts/FontFace.featureSettings.<set-featureSettings>|<set-featureSettings>(kotlin.String){}[0]
+    open var lineGapOverride // org.w3c.css.fonts/FontFace.lineGapOverride|{}lineGapOverride[0]
+        open fun <get-lineGapOverride>(): kotlin/String // org.w3c.css.fonts/FontFace.lineGapOverride.<get-lineGapOverride>|<get-lineGapOverride>(){}[0]
+        open fun <set-lineGapOverride>(kotlin/String) // org.w3c.css.fonts/FontFace.lineGapOverride.<set-lineGapOverride>|<set-lineGapOverride>(kotlin.String){}[0]
+    open var stretch // org.w3c.css.fonts/FontFace.stretch|{}stretch[0]
+        open fun <get-stretch>(): kotlin/String // org.w3c.css.fonts/FontFace.stretch.<get-stretch>|<get-stretch>(){}[0]
+        open fun <set-stretch>(kotlin/String) // org.w3c.css.fonts/FontFace.stretch.<set-stretch>|<set-stretch>(kotlin.String){}[0]
+    open var style // org.w3c.css.fonts/FontFace.style|{}style[0]
+        open fun <get-style>(): kotlin/String // org.w3c.css.fonts/FontFace.style.<get-style>|<get-style>(){}[0]
+        open fun <set-style>(kotlin/String) // org.w3c.css.fonts/FontFace.style.<set-style>|<set-style>(kotlin.String){}[0]
+    open var unicodeRange // org.w3c.css.fonts/FontFace.unicodeRange|{}unicodeRange[0]
+        open fun <get-unicodeRange>(): kotlin/String // org.w3c.css.fonts/FontFace.unicodeRange.<get-unicodeRange>|<get-unicodeRange>(){}[0]
+        open fun <set-unicodeRange>(kotlin/String) // org.w3c.css.fonts/FontFace.unicodeRange.<set-unicodeRange>|<set-unicodeRange>(kotlin.String){}[0]
+    open var variationSettings // org.w3c.css.fonts/FontFace.variationSettings|{}variationSettings[0]
+        open fun <get-variationSettings>(): kotlin/String // org.w3c.css.fonts/FontFace.variationSettings.<get-variationSettings>|<get-variationSettings>(){}[0]
+        open fun <set-variationSettings>(kotlin/String) // org.w3c.css.fonts/FontFace.variationSettings.<set-variationSettings>|<set-variationSettings>(kotlin.String){}[0]
+    open var weight // org.w3c.css.fonts/FontFace.weight|{}weight[0]
+        open fun <get-weight>(): kotlin/String // org.w3c.css.fonts/FontFace.weight.<get-weight>|<get-weight>(){}[0]
+        open fun <set-weight>(kotlin/String) // org.w3c.css.fonts/FontFace.weight.<set-weight>|<set-weight>(kotlin.String){}[0]
+
+    open fun load(): kotlin.js/Promise<org.w3c.css.fonts/FontFace> // org.w3c.css.fonts/FontFace.load|load(){}[0]
+}
+
+// Targets: [wasmJs]
 open class org.w3c.dom.clipboard/ClipboardItem : kotlin.js/JsAny { // org.w3c.dom.clipboard/ClipboardItem|null[0]
     constructor <init>(kotlin.js/JsAny, org.w3c.dom.clipboard/ClipboardItemOptions = ...) // org.w3c.dom.clipboard/ClipboardItem.<init>|<init>(kotlin.js.JsAny;org.w3c.dom.clipboard.ClipboardItemOptions){}[0]
 
@@ -36875,6 +37260,9 @@ final fun org.w3c.animations/BasePropertyIndexedKeyframe(kotlin.js/JsAny? = ...,
 
 // Targets: [wasmJs]
 final fun org.w3c.animations/OptionalEffectTiming(kotlin/Double? = ..., kotlin/Double? = ..., org.w3c.animations/FillMode? = ..., kotlin/Double? = ..., kotlin/Double? = ..., kotlin.js/JsAny? = ..., org.w3c.animations/PlaybackDirection? = ..., kotlin/String? = ...): org.w3c.animations/OptionalEffectTiming // org.w3c.animations/OptionalEffectTiming|OptionalEffectTiming(kotlin.Double?;kotlin.Double?;org.w3c.animations.FillMode?;kotlin.Double?;kotlin.Double?;kotlin.js.JsAny?;org.w3c.animations.PlaybackDirection?;kotlin.String?){}[0]
+
+// Targets: [wasmJs]
+final fun org.w3c.css.fonts/FontFaceSetLoadEventInit(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin.js/JsArray<org.w3c.css.fonts/FontFace>? = ...): org.w3c.css.fonts/FontFaceSetLoadEventInit // org.w3c.css.fonts/FontFaceSetLoadEventInit|FontFaceSetLoadEventInit(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.js.JsArray<org.w3c.css.fonts.FontFace>?){}[0]
 
 // Targets: [wasmJs]
 final fun org.w3c.dom.clipboard/ClipboardChangeEventInit(kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin/Boolean? = ..., kotlin.js/JsArray<kotlin.js/JsString>? = ..., kotlin.js/JsBigInt? = ...): org.w3c.dom.clipboard/ClipboardChangeEventInit // org.w3c.dom.clipboard/ClipboardChangeEventInit|ClipboardChangeEventInit(kotlin.Boolean?;kotlin.Boolean?;kotlin.Boolean?;kotlin.js.JsArray<kotlin.js.JsString>?;kotlin.js.JsBigInt?){}[0]

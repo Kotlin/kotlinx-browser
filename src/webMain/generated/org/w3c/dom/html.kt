@@ -14,6 +14,7 @@ package org.w3c.dom
 import kotlin.js.*
 import org.khronos.webgl.*
 import org.w3c.animations.*
+import org.w3c.css.fonts.*
 import org.w3c.dom.clipboard.*
 import org.w3c.dom.css.*
 import org.w3c.dom.encryptedmedia.*
@@ -21026,7 +21027,7 @@ public open external class BroadcastChannel : EventTarget {
  *
  * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
-public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGlobalScope {
+public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGlobalScope, FontFaceSource {
     /**
      * The self read-only property of the WorkerGlobalScope interface returns a reference to the WorkerGlobalScope
      * itself. Most of the time it is a specific scope like DedicatedWorkerGlobalScope, SharedWorkerGlobalScope, or

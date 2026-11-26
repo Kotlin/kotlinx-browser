@@ -58,6 +58,7 @@ val SPEC_ALLOWLIST: List<SpecEntry> = listOf(
     SpecEntry("gamepad", "org.w3c.gamepad"),
     SpecEntry("webaudio", "org.w3c.webaudio"),
     SpecEntry("encoding", "org.w3c.encoding"),
+    SpecEntry("css-font-loading", "org.w3c.css.fonts"),
     // Defines webcrypto's KeyUsage and KeyFormat enums since webref moved them there.
     SpecEntry("webcrypto-modern-algos", "org.w3c.webcrypto"),
 )

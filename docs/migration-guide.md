@@ -200,7 +200,7 @@ check against that class's JS global, and it throws if the browser has no such g
 - APIs the old version did not cover at all, each in its own package: Web Animations (`org.w3c.animations`,
   `element.animate(...)`), Web Crypto (`org.w3c.webcrypto`, `window.crypto`), IndexedDB (`org.w3c.indexeddb`),
   Gamepad (`org.w3c.gamepad`), Web Audio (`org.w3c.webaudio`) and Encoding (`org.w3c.encoding`,
-  `TextEncoder`, `TextDecoder`).
+  `TextEncoder`, `TextDecoder`) and CSS Font Loading (`org.w3c.css.fonts`, `FontFace`, `document.fonts`).
 - `on…` handlers typed with the event actually fired: `onclick: ((PointerEvent) -> Unit)?`.
 - `operator get`/`set` for every indexed and named getter and setter.
 - One source set for JS and Wasm. Code written against `webMain` compiles for both targets.

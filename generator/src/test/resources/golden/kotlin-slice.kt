@@ -3311,6 +3311,7 @@ package org.w3c.dom
 
 import kotlin.js.*
 import org.w3c.animations.*
+import org.w3c.css.fonts.*
 import org.w3c.dom.clipboard.*
 import org.w3c.dom.css.*
 import org.w3c.dom.events.*
@@ -4417,7 +4418,7 @@ public abstract external class Node : EventTarget {
  *
  * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
-public open external class Document : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, GeometryNode {
+public open external class Document : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, FontFaceSource, GeometryNode {
     /**
      * The Document constructor creates a new Document object that is a web page loaded in the browser and serving as an
      * entry point into the page's content.
@@ -6221,6 +6222,15 @@ public open external class Document : Node, GlobalEventHandlers, NonElementParen
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun ariaNotify(announcement: String, options: AriaNotificationOptions)
+
+    /**
+     * The fonts read-only property of the Document interface returns the FontFaceSet interface of the document.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fonts)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override val fonts: FontFaceSet
 
     public companion object {
         public val ELEMENT_NODE: Short
@@ -8214,5 +8224,18 @@ package org.w3c.dom
 // See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.animations
+
+
+
+// file: org/w3c/css/fonts/css-font-loading.kt
+/*
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ */
+
+// NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'css-font-loading', DO NOT EDIT!
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
+
+package org.w3c.css.fonts
 
 
