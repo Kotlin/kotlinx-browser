@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'cssom', DO NOT EDIT!
@@ -18,6 +21,8 @@ public external interface UnionElementOrProcessingInstruction : JsAny
  * media attribute.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MediaList : ItemArrayLike<JsString> {
     /**
@@ -25,6 +30,8 @@ public abstract external class MediaList : ItemArrayLike<JsString> {
      * MediaList as text, and also allows you to set a new MediaList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/mediaText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var mediaText: String
 
@@ -32,6 +39,8 @@ public abstract external class MediaList : ItemArrayLike<JsString> {
      * The read-only length property of the MediaList interface returns the number of media queries in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val length: Int
 
@@ -40,6 +49,8 @@ public abstract external class MediaList : ItemArrayLike<JsString> {
      * specified index doesn't exist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/item)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun item(index: Int): JsString?
 
@@ -48,6 +59,8 @@ public abstract external class MediaList : ItemArrayLike<JsString> {
      * already in the collection, this method does nothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/appendMedium)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun appendMedium(medium: String)
 
@@ -55,6 +68,8 @@ public abstract external class MediaList : ItemArrayLike<JsString> {
      * The deleteMedium() method of the MediaList interface removes from this MediaList the given media query.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/deleteMedium)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun deleteMedium(medium: String)
 }
@@ -66,6 +81,8 @@ public operator fun MediaList.get(index: Int): String? = getStringProperty(this,
  * implement the more specialized CSSStyleSheet interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class StyleSheet : JsAny {
     /**
@@ -73,6 +90,8 @@ public abstract external class StyleSheet : JsAny {
      * sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: String
 
@@ -80,6 +99,8 @@ public abstract external class StyleSheet : JsAny {
      * The href property of the StyleSheet interface returns the location of the style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/href)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val href: String?
 
@@ -88,6 +109,8 @@ public abstract external class StyleSheet : JsAny {
      * with the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/ownerNode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ownerNode: UnionElementOrProcessingInstruction?
 
@@ -96,6 +119,8 @@ public abstract external class StyleSheet : JsAny {
      * including the given style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/parentStyleSheet)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val parentStyleSheet: CSSStyleSheet?
 
@@ -103,6 +128,8 @@ public abstract external class StyleSheet : JsAny {
      * The title read-only property of the StyleSheet interface returns the advisory title of the current style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/title)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val title: String?
 
@@ -111,6 +138,8 @@ public abstract external class StyleSheet : JsAny {
      * destination media for style information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/media)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val media: MediaList
 
@@ -119,6 +148,8 @@ public abstract external class StyleSheet : JsAny {
      * to the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/disabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var disabled: Boolean
 }
@@ -128,12 +159,16 @@ public abstract external class StyleSheet : JsAny {
  * contained in the stylesheet. It inherits properties and methods from its parent, StyleSheet.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class CSSStyleSheet : StyleSheet {
     /**
      * The CSSStyleSheet() constructor creates a new CSSStyleSheet object which represents a single Stylesheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/CSSStyleSheet)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(options: CSSStyleSheetInit = definedExternally)
 
@@ -143,6 +178,8 @@ public open external class CSSStyleSheet : StyleSheet {
      * \@import, the returned value is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/ownerRule)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ownerRule: CSSRule?
 
@@ -151,6 +188,8 @@ public open external class CSSStyleSheet : StyleSheet {
      * list of every CSS rule which comprises the stylesheet. Each item in the list is a CSSRule defining a single rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/cssRules)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cssRules: CSSRuleList
 
@@ -158,6 +197,8 @@ public open external class CSSStyleSheet : StyleSheet {
      * The CSSStyleSheet.insertRule() method inserts a new CSS rule into the current style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/insertRule)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun insertRule(rule: String, index: Int = definedExternally): Int
 
@@ -165,6 +206,8 @@ public open external class CSSStyleSheet : StyleSheet {
      * The CSSStyleSheet method deleteRule() removes a rule from the stylesheet object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/deleteRule)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun deleteRule(index: Int)
 
@@ -173,6 +216,8 @@ public open external class CSSStyleSheet : StyleSheet {
      * the content passed into it. The method returns a promise that resolves with the CSSStyleSheet object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun replace(text: String): Promise<CSSStyleSheet>
 
@@ -181,6 +226,8 @@ public open external class CSSStyleSheet : StyleSheet {
      * the content passed into it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replaceSync)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun replaceSync(text: String)
 
@@ -192,6 +239,8 @@ public open external class CSSStyleSheet : StyleSheet {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/rules)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val rules: CSSRuleList
 
@@ -202,6 +251,8 @@ public open external class CSSStyleSheet : StyleSheet {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/addRule)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addRule(selector: String = definedExternally, style: String = definedExternally, index: Int = definedExternally): Int
 
@@ -212,6 +263,8 @@ public open external class CSSStyleSheet : StyleSheet {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/removeRule)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeRule(index: Int = definedExternally)
 }
@@ -233,12 +286,16 @@ public fun CSSStyleSheetInit(baseURL: String? = null, media: JsAny? = null, disa
  * by Document.styleSheets.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class StyleSheetList : ItemArrayLike<CSSStyleSheet> {
     /**
      * The item() method of the StyleSheetList interface returns a single CSSStyleSheet object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/item)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun item(index: Int): CSSStyleSheet?
 
@@ -247,6 +304,8 @@ public abstract external class StyleSheetList : ItemArrayLike<CSSStyleSheet> {
      * collection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val length: Int
 }
@@ -259,6 +318,8 @@ public external interface LinkStyle : JsAny {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sheet)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val sheet: CSSStyleSheet?
 }
@@ -267,6 +328,8 @@ public external interface LinkStyle : JsAny {
  * A CSSRuleList represents an ordered collection of read-only CSSRule objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSRuleList : ItemArrayLike<CSSRule> {
     /**
@@ -274,6 +337,8 @@ public abstract external class CSSRuleList : ItemArrayLike<CSSRule> {
      * specified index doesn't exist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList/item)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun item(index: Int): CSSRule?
 
@@ -281,6 +346,8 @@ public abstract external class CSSRuleList : ItemArrayLike<CSSRule> {
      * The length property of the CSSRuleList interface returns the number of CSSRule objects in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val length: Int
 }
@@ -292,12 +359,16 @@ public operator fun CSSRuleList.get(index: Int): CSSRule? = getProperty(this, in
  * CSSRule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSRule : JsAny {
     /**
      * The cssText property of the CSSRule interface returns the actual text of a CSSStyleSheet style-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/cssText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var cssText: String
 
@@ -306,6 +377,8 @@ public abstract external class CSSRule : JsAny {
      * this exists, or otherwise returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/parentRule)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val parentRule: CSSRule?
 
@@ -314,6 +387,8 @@ public abstract external class CSSRule : JsAny {
      * current rule is defined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/parentStyleSheet)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val parentStyleSheet: CSSStyleSheet?
 
@@ -324,6 +399,8 @@ public abstract external class CSSRule : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: Short
 
@@ -344,6 +421,8 @@ public abstract external class CSSRule : JsAny {
  * The CSSStyleRule interface represents a single CSS style rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSStyleRule : CSSGroupingRule {
     /**
@@ -351,6 +430,8 @@ public abstract external class CSSStyleRule : CSSGroupingRule {
      * CSSStyleRule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/selectorText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selectorText: String
 
@@ -359,6 +440,8 @@ public abstract external class CSSStyleRule : CSSGroupingRule {
      * properties list in this style rule's body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/style)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val style: CSSStyleProperties
 
@@ -379,12 +462,16 @@ public abstract external class CSSStyleRule : CSSGroupingRule {
  * The CSSImportRule interface represents an \@import at-rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSImportRule : CSSRule {
     /**
      * The read-only href property of the CSSImportRule interface returns the URL specified by the \@import at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/href)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val href: String
 
@@ -393,6 +480,8 @@ public abstract external class CSSImportRule : CSSRule {
      * query list of the \@import rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/media)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val media: MediaList
 
@@ -401,6 +490,8 @@ public abstract external class CSSImportRule : CSSRule {
      * \@import at-rule. This will be in the form of a CSSStyleSheet object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/styleSheet)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val styleSheet: CSSStyleSheet?
 
@@ -409,6 +500,8 @@ public abstract external class CSSImportRule : CSSRule {
      * the \@import at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/layerName)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val layerName: String?
 
@@ -417,6 +510,8 @@ public abstract external class CSSImportRule : CSSRule {
      * the \@import at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/supportsText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val supportsText: String?
 
@@ -438,6 +533,8 @@ public abstract external class CSSImportRule : CSSRule {
  * within it.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSGroupingRule : CSSRule {
     /**
@@ -445,6 +542,8 @@ public abstract external class CSSGroupingRule : CSSRule {
      * objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/cssRules)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cssRules: CSSRuleList
 
@@ -452,6 +551,8 @@ public abstract external class CSSGroupingRule : CSSRule {
      * The insertRule() method of the CSSGroupingRule interface adds a new CSS rule to a list of CSS rules.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/insertRule)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun insertRule(rule: String, index: Int = definedExternally): Int
 
@@ -459,6 +560,8 @@ public abstract external class CSSGroupingRule : CSSRule {
      * The deleteRule() method of the CSSGroupingRule interface removes a CSS rule from a list of child CSS rules.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/deleteRule)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun deleteRule(index: Int)
 
@@ -479,12 +582,16 @@ public abstract external class CSSGroupingRule : CSSRule {
  * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSPageDescriptors : CSSStyleDeclaration {
     /**
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var margin: String
 
@@ -492,6 +599,8 @@ public abstract external class CSSPageDescriptors : CSSStyleDeclaration {
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margintop)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var marginTop: String
 
@@ -499,6 +608,8 @@ public abstract external class CSSPageDescriptors : CSSStyleDeclaration {
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginright)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var marginRight: String
 
@@ -506,6 +617,8 @@ public abstract external class CSSPageDescriptors : CSSStyleDeclaration {
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginbottom)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var marginBottom: String
 
@@ -513,6 +626,8 @@ public abstract external class CSSPageDescriptors : CSSStyleDeclaration {
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginleft)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var marginLeft: String
 
@@ -520,6 +635,8 @@ public abstract external class CSSPageDescriptors : CSSStyleDeclaration {
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#size)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var size: String
 
@@ -527,6 +644,8 @@ public abstract external class CSSPageDescriptors : CSSStyleDeclaration {
      * The CSSPageDescriptors interface represents a CSS declaration block for an \@page at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#pageorientation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var pageOrientation: String
     public open var marks: String
@@ -537,6 +656,8 @@ public abstract external class CSSPageDescriptors : CSSStyleDeclaration {
  * CSSPageRule represents a single CSS \@page rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSPageRule : CSSGroupingRule {
     /**
@@ -544,6 +665,8 @@ public abstract external class CSSPageRule : CSSGroupingRule {
      * CSSPageRule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule/selectorText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selectorText: String
 
@@ -552,6 +675,8 @@ public abstract external class CSSPageRule : CSSGroupingRule {
      * descriptors available in the \@page rule's body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule/style)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val style: CSSPageDescriptors
 
@@ -589,6 +714,8 @@ public abstract external class CSSMarginRule : CSSRule {
  * The CSSNamespaceRule interface describes an object representing a single CSS \@namespace at-rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSNamespaceRule : CSSRule {
     /**
@@ -596,6 +723,8 @@ public abstract external class CSSNamespaceRule : CSSRule {
      * the given namespace.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule/namespaceURI)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val namespaceURI: String
 
@@ -604,6 +733,8 @@ public abstract external class CSSNamespaceRule : CSSRule {
      * this namespace. If there is no such prefix, it returns an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule/prefix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val prefix: String
 
@@ -622,6 +753,8 @@ public abstract external class CSSNamespaceRule : CSSRule {
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
     /**
@@ -629,6 +762,8 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      * declaration only.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var cssText: String
 
@@ -637,6 +772,8 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      * declaration block.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val length: Int
 
@@ -644,6 +781,8 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      * The CSSStyleDeclaration.item() method interface returns a CSS property name from a CSSStyleDeclaration by index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/item)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun item(index: Int): JsString
 
@@ -652,6 +791,8 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      * CSS property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getPropertyValue(property: String): String
 
@@ -660,6 +801,8 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      * priorities on the CSS property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyPriority)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getPropertyPriority(property: String): String
 
@@ -668,6 +811,8 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      * object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/setProperty)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setProperty(property: String, value: String, priority: String = definedExternally)
 
@@ -675,6 +820,8 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      * The CSSStyleDeclaration.removeProperty() method interface removes a property from a CSS style declaration object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/removeProperty)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeProperty(property: String): String
 
@@ -683,6 +830,8 @@ public abstract external class CSSStyleDeclaration : ItemArrayLike<JsString> {
      * e.g., a CSSStyleRule representing the style for a CSS selector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/parentRule)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val parentRule: CSSRule?
 }
@@ -694,12 +843,16 @@ public operator fun CSSStyleDeclaration.get(index: Int): String? = getStringProp
  * element, or the styles associated with a CSS style rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleProperties)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSStyleProperties : CSSStyleDeclaration {
     /**
      * The cssFloat property of the CSSStyleProperties interface returns the CSS float property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleProperties/cssFloat)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var cssFloat: String
     public open var accentColor: String
@@ -1473,6 +1626,8 @@ public external interface ElementCSSInlineStyle : JsAny {
      * live CSSStyleProperties object. This object can be used to get and set the inline styles of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/style)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val style: CSSStyleProperties
 }
@@ -1482,6 +1637,8 @@ public external interface ElementCSSInlineStyle : JsAny {
  * static methods and is therefore a utilitarian interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public external object CSS {
     public fun escape(ident: String): String

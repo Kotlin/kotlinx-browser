@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'webgl2', DO NOT EDIT!
@@ -16,6 +19,8 @@ import org.w3c.dom.*
  * default, occlusion queries and primitive queries are available.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLQuery)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WebGLQuery : WebGLObject
 
@@ -24,6 +29,8 @@ public abstract external class WebGLQuery : WebGLObject
  * of a shader.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLSampler)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WebGLSampler : WebGLObject
 
@@ -32,6 +39,8 @@ public abstract external class WebGLSampler : WebGLObject
  * application.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLSync)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WebGLSync : WebGLObject
 
@@ -41,6 +50,8 @@ public abstract external class WebGLSync : WebGLObject
  * of an object and resubmit this data multiple times.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLTransformFeedback)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WebGLTransformFeedback : WebGLObject
 
@@ -49,6 +60,8 @@ public abstract external class WebGLTransformFeedback : WebGLObject
  * vertex array data, and provides names for different sets of vertex data.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLVertexArrayObject)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WebGLVertexArrayObject : WebGLObject
 
@@ -58,6 +71,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * another buffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/copyBufferSubData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun copyBufferSubData(readTarget: Int, writeTarget: Int, readOffset: Double, writeOffset: Double, size: Double)
 
@@ -66,6 +81,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * and writes them to an ArrayBuffer or SharedArrayBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getBufferSubData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getBufferSubData(target: Int, srcByteOffset: Double, dstBuffer: ArrayBufferView, dstOffset: Double = definedExternally, length: Int = definedExternally)
 
@@ -75,6 +92,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLRenderingContext.bindFramebuffer().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/blitFramebuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun blitFramebuffer(srcX0: Int, srcY0: Int, srcX1: Int, srcY1: Int, dstX0: Int, dstY0: Int, dstX1: Int, dstY1: Int, mask: Int, filter: Int)
 
@@ -83,6 +102,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * texture to a framebuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/framebufferTextureLayer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun framebufferTextureLayer(target: Int, attachment: Int, texture: WebGLTexture?, level: Int, layer: Int)
 
@@ -91,6 +112,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * attachments in a framebuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/invalidateFramebuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun invalidateFramebuffer(target: Int, attachments: JsArray<JsNumber>)
 
@@ -99,6 +122,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * contents of attachments in a framebuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/invalidateSubFramebuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun invalidateSubFramebuffer(target: Int, attachments: JsArray<JsNumber>, x: Int, y: Int, width: Int, height: Int)
 
@@ -107,6 +132,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * for subsequent calls to copyTexImage2D, copyTexSubImage2D, copyTexSubImage3D or readPixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/readBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun readBuffer(src: Int)
 
@@ -115,6 +142,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * implementation-dependent support for internal formats.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getInternalformatParameter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getInternalformatParameter(target: Int, internalformat: Int, pname: Int): JsAny?
 
@@ -123,6 +152,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * initializes a renderbuffer object's data store and allows specifying a number of samples to be used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/renderbufferStorageMultisample)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun renderbufferStorageMultisample(target: Int, samples: Int, internalformat: Int, width: Int, height: Int)
 
@@ -131,6 +162,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * texture storage.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texStorage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texStorage2D(target: Int, levels: Int, internalformat: Int, width: Int, height: Int)
 
@@ -139,6 +172,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * three-dimensional texture storage.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texStorage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texStorage3D(target: Int, levels: Int, internalformat: Int, width: Int, height: Int, depth: Int)
 
@@ -147,6 +182,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, pboOffset: Double)
 
@@ -155,6 +192,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, source: TexImageSource)
 
@@ -163,6 +202,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, srcData: ArrayBufferView?)
 
@@ -171,6 +212,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, type: Int, srcData: ArrayBufferView, srcOffset: Double)
 
@@ -179,6 +222,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * sub-rectangle for a texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texSubImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, type: Int, pboOffset: Double)
 
@@ -187,6 +232,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * sub-rectangle for a texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texSubImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, type: Int, source: TexImageSource)
 
@@ -195,6 +242,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * sub-rectangle for a texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texSubImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, type: Int, srcData: ArrayBufferView?, srcOffset: Double = definedExternally)
 
@@ -203,6 +252,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * current WebGLFramebuffer into a 3D texture sub-image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/copyTexSubImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun copyTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, x: Int, y: Int, width: Int, height: Int)
 
@@ -211,6 +262,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * three-dimensional texture image in a compressed format.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, imageSize: Int, offset: Double)
 
@@ -219,6 +272,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * three-dimensional texture image in a compressed format.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
 
@@ -227,6 +282,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * three-dimensional sub-rectangle for a texture image in a compressed format.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexSubImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, imageSize: Int, offset: Double)
 
@@ -235,6 +292,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * three-dimensional sub-rectangle for a texture image in a compressed format.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexSubImage3D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
 
@@ -243,6 +302,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * to user-defined varying out variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getFragDataLocation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getFragDataLocation(program: WebGLProgram, name: String): Int
 
@@ -251,6 +312,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform1ui(location: WebGLUniformLocation?, v0: Int)
 
@@ -259,6 +322,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform2ui(location: WebGLUniformLocation?, v0: Int, v1: Int)
 
@@ -267,6 +332,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform3ui(location: WebGLUniformLocation?, v0: Int, v1: Int, v2: Int)
 
@@ -275,6 +342,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform4ui(location: WebGLUniformLocation?, v0: Int, v1: Int, v2: Int, v3: Int)
 
@@ -283,6 +352,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform1uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -291,6 +362,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform1uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -299,6 +372,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform2uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -307,6 +382,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform2uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -315,6 +392,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform3uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -323,6 +402,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform3uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -331,6 +412,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform4uiv(location: WebGLUniformLocation?, data: Uint32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -339,6 +422,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform4uiv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -347,6 +432,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix3x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -355,6 +442,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix3x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -363,6 +452,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix4x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -371,6 +462,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix4x2fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -379,6 +472,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix2x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -387,6 +482,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix2x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -395,6 +492,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix4x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -403,6 +502,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix4x3fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -411,6 +512,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix2x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -419,6 +522,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix2x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -427,6 +532,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix3x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -435,6 +542,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix3x4fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -443,6 +552,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * generic vertex attributes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun vertexAttribI4i(index: Int, x: Int, y: Int, z: Int, w: Int)
 
@@ -451,6 +562,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * generic vertex attributes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun vertexAttribI4iv(index: Int, values: Int32Array)
 
@@ -459,6 +572,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * generic vertex attributes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun vertexAttribI4iv(index: Int, values: JsArray<JsNumber>)
 
@@ -467,6 +582,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * generic vertex attributes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun vertexAttribI4ui(index: Int, x: Int, y: Int, z: Int, w: Int)
 
@@ -475,6 +592,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * generic vertex attributes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun vertexAttribI4uiv(index: Int, values: Uint32Array)
 
@@ -483,6 +602,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * generic vertex attributes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun vertexAttribI4uiv(index: Int, values: JsArray<JsNumber>)
 
@@ -491,6 +612,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * locations of vertex attributes in a vertex attributes array.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribIPointer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun vertexAttribIPointer(index: Int, size: Int, type: Int, stride: Int, offset: Double)
 
@@ -500,6 +623,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * gl.drawElementsInstanced().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribDivisor)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun vertexAttribDivisor(index: Int, divisor: Int)
 
@@ -508,6 +633,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * like the gl.drawArrays() method. In addition, it can execute multiple instances of the range of elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawArraysInstanced)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun drawArraysInstanced(mode: Int, first: Int, count: Int, instanceCount: Int)
 
@@ -516,6 +643,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * like the gl.drawElements() method. In addition, it can execute multiple instances of a set of elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawElementsInstanced)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun drawElementsInstanced(mode: Int, count: Int, type: Int, offset: Double, instanceCount: Int)
 
@@ -524,6 +653,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * given range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawRangeElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun drawRangeElements(mode: Int, start: Int, end: Int, count: Int, type: Int, offset: Double)
 
@@ -533,6 +664,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * drawing buffer if no framebuffer is bound.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawBuffers)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun drawBuffers(buffers: JsArray<JsNumber>)
 
@@ -541,6 +674,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * bound framebuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun clearBufferfv(buffer: Int, drawbuffer: Int, values: Float32Array, srcOffset: Double = definedExternally)
 
@@ -549,6 +684,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * bound framebuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun clearBufferfv(buffer: Int, drawbuffer: Int, values: JsArray<JsNumber>, srcOffset: Double = definedExternally)
 
@@ -557,6 +694,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * bound framebuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun clearBufferiv(buffer: Int, drawbuffer: Int, values: Int32Array, srcOffset: Double = definedExternally)
 
@@ -565,6 +704,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * bound framebuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun clearBufferiv(buffer: Int, drawbuffer: Int, values: JsArray<JsNumber>, srcOffset: Double = definedExternally)
 
@@ -573,6 +714,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * bound framebuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun clearBufferuiv(buffer: Int, drawbuffer: Int, values: Uint32Array, srcOffset: Double = definedExternally)
 
@@ -581,6 +724,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * bound framebuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun clearBufferuiv(buffer: Int, drawbuffer: Int, values: JsArray<JsNumber>, srcOffset: Double = definedExternally)
 
@@ -589,6 +734,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * bound framebuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun clearBufferfi(buffer: Int, drawbuffer: Int, depth: Float, stencil: Int)
 
@@ -597,6 +744,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * which provide ways to asynchronously query for information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createQuery)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun createQuery(): WebGLQuery
 
@@ -604,6 +753,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * The WebGL2RenderingContext.deleteQuery() method of the WebGL 2 API deletes a given WebGLQuery object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteQuery)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun deleteQuery(query: WebGLQuery?)
 
@@ -612,6 +763,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLQuery object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isQuery)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun isQuery(query: WebGLQuery?): Boolean
 
@@ -620,6 +773,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * parameter indicates which kind of query to begin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/beginQuery)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun beginQuery(target: Int, query: WebGLQuery)
 
@@ -627,6 +782,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * The WebGL2RenderingContext.endQuery() method of the WebGL 2 API marks the end of a given query target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/endQuery)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun endQuery(target: Int)
 
@@ -635,6 +792,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * target, or null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQuery)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getQuery(target: Int, pname: Int): WebGLQuery?
 
@@ -643,6 +802,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLQuery object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQueryParameter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getQueryParameter(query: WebGLQuery, pname: Int): JsAny?
 
@@ -651,6 +812,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createSampler)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun createSampler(): WebGLSampler
 
@@ -658,6 +821,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * The WebGL2RenderingContext.deleteSampler() method of the WebGL 2 API deletes a given WebGLSampler object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteSampler)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun deleteSampler(sampler: WebGLSampler?)
 
@@ -666,6 +831,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLSampler object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isSampler)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun isSampler(sampler: WebGLSampler?): Boolean
 
@@ -674,6 +841,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * texture unit at the passed index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindSampler)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bindSampler(unit: Int, sampler: WebGLSampler?)
 
@@ -681,6 +850,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * The WebGL2RenderingContext.samplerParameter\[if\]() methods of the WebGL 2 API set WebGLSampler parameters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/samplerParameter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun samplerParameteri(sampler: WebGLSampler, pname: Int, param: Int)
 
@@ -688,6 +859,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * The WebGL2RenderingContext.samplerParameter\[if\]() methods of the WebGL 2 API set WebGLSampler parameters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/samplerParameter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun samplerParameterf(sampler: WebGLSampler, pname: Int, param: Float)
 
@@ -696,6 +869,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLSampler object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSamplerParameter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getSamplerParameter(sampler: WebGLSampler, pname: Int): JsAny?
 
@@ -704,6 +879,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * into the GL command stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/fenceSync)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun fenceSync(condition: Int, flags: Int): WebGLSync?
 
@@ -712,6 +889,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLSync object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isSync)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun isSync(sync: WebGLSync?): Boolean
 
@@ -719,6 +898,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * The WebGL2RenderingContext.deleteSync() method of the WebGL 2 API deletes a given WebGLSync object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteSync)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun deleteSync(sync: WebGLSync?)
 
@@ -727,6 +908,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * become signaled or a given timeout to be passed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clientWaitSync)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun clientWaitSync(sync: WebGLSync, flags: Int, timeout: Double): Int
 
@@ -735,6 +918,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * until the given WebGLSync object is signaled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/waitSync)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun waitSync(sync: WebGLSync, flags: Int, timeout: Double)
 
@@ -743,6 +928,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLSync object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSyncParameter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getSyncParameter(sync: WebGLSync, pname: Int): JsAny?
 
@@ -751,6 +938,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLTransformFeedback objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createTransformFeedback)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun createTransformFeedback(): WebGLTransformFeedback
 
@@ -759,6 +948,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLTransformFeedback object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteTransformFeedback)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun deleteTransformFeedback(tf: WebGLTransformFeedback?)
 
@@ -767,6 +958,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * valid WebGLTransformFeedback object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isTransformFeedback)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun isTransformFeedback(tf: WebGLTransformFeedback?): Boolean
 
@@ -775,6 +968,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLTransformFeedback object to the current GL state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindTransformFeedback)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bindTransformFeedback(target: Int, tf: WebGLTransformFeedback?)
 
@@ -783,6 +978,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/beginTransformFeedback)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun beginTransformFeedback(primitiveMode: Int)
 
@@ -790,6 +987,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * The WebGL2RenderingContext.endTransformFeedback() method of the WebGL 2 API ends a transform feedback operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/endTransformFeedback)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun endTransformFeedback()
 
@@ -798,6 +997,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLTransformFeedback buffers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/transformFeedbackVaryings)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun transformFeedbackVaryings(program: WebGLProgram, varyings: JsArray<JsString>, bufferMode: Int)
 
@@ -806,6 +1007,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * varying variables from WebGLTransformFeedback buffers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getTransformFeedbackVarying)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getTransformFeedbackVarying(program: WebGLProgram, index: Int): WebGLActiveInfo?
 
@@ -814,6 +1017,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/pauseTransformFeedback)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun pauseTransformFeedback()
 
@@ -822,6 +1027,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/resumeTransformFeedback)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun resumeTransformFeedback()
 
@@ -830,6 +1037,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * binding point (target) at a given index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindBufferBase)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bindBufferBase(target: Int, index: Int, buffer: WebGLBuffer?)
 
@@ -838,6 +1047,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * given binding point (target) at a given index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindBufferRange)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bindBufferRange(target: Int, index: Int, buffer: WebGLBuffer?, offset: Double, size: Double)
 
@@ -846,6 +1057,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * given target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getIndexedParameter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getIndexedParameter(target: Int, index: Int): JsAny?
 
@@ -854,6 +1067,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniforms within a WebGLProgram.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getUniformIndices)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getUniformIndices(program: WebGLProgram, uniformNames: JsArray<JsString>): JsArray<JsNumber>?
 
@@ -862,6 +1077,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniforms within a WebGLProgram.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniforms)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getActiveUniforms(program: WebGLProgram, uniformIndices: JsArray<JsNumber>, pname: Int): JsAny?
 
@@ -870,6 +1087,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * block within a WebGLProgram.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getUniformBlockIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getUniformBlockIndex(program: WebGLProgram, uniformBlockName: String): Int
 
@@ -878,6 +1097,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * an active uniform block within a WebGLProgram.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockParameter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getActiveUniformBlockParameter(program: WebGLProgram, uniformBlockIndex: Int, pname: Int): JsAny?
 
@@ -886,6 +1107,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform block at a given index within a WebGLProgram.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockName)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getActiveUniformBlockName(program: WebGLProgram, uniformBlockIndex: Int): String?
 
@@ -894,6 +1117,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * uniform blocks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformBlockBinding)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformBlockBinding(program: WebGLProgram, uniformBlockIndex: Int, uniformBlockBinding: Int)
 
@@ -903,6 +1128,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * provides names for different sets of vertex data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createVertexArray)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun createVertexArray(): WebGLVertexArrayObject
 
@@ -911,6 +1138,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteVertexArray)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun deleteVertexArray(vertexArray: WebGLVertexArrayObject?)
 
@@ -919,6 +1148,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * WebGLVertexArrayObject object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isVertexArray)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun isVertexArray(vertexArray: WebGLVertexArrayObject?): Boolean
 
@@ -927,6 +1158,8 @@ public external interface WebGL2RenderingContextBase : JsAny {
      * object to the buffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindVertexArray)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bindVertexArray(array: WebGLVertexArrayObject?)
 
@@ -1203,6 +1436,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bufferData(target: Int, size: Double, usage: Int)
 
@@ -1211,6 +1446,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bufferData(target: Int, srcData: BufferDataSource?, usage: Int)
 
@@ -1219,6 +1456,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferSubData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bufferSubData(target: Int, dstByteOffset: Double, srcData: BufferDataSource)
 
@@ -1227,6 +1466,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bufferData(target: Int, srcData: ArrayBufferView, usage: Int, srcOffset: Double, length: Int = definedExternally)
 
@@ -1235,6 +1476,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferSubData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bufferSubData(target: Int, dstByteOffset: Double, srcData: ArrayBufferView, srcOffset: Double, length: Int = definedExternally)
 
@@ -1243,6 +1486,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, pixels: ArrayBufferView?)
 
@@ -1251,6 +1496,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texImage2D(target: Int, level: Int, internalformat: Int, format: Int, type: Int, source: TexImageSource)
 
@@ -1259,6 +1506,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * sub-rectangle for a texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, pixels: ArrayBufferView?)
 
@@ -1267,6 +1516,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * sub-rectangle for a texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, type: Int, source: TexImageSource)
 
@@ -1275,6 +1526,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, pboOffset: Double)
 
@@ -1283,6 +1536,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, source: TexImageSource)
 
@@ -1291,6 +1546,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, type: Int, srcData: ArrayBufferView, srcOffset: Double)
 
@@ -1299,6 +1556,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * sub-rectangle for a texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, pboOffset: Double)
 
@@ -1307,6 +1566,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * sub-rectangle for a texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, source: TexImageSource)
 
@@ -1315,6 +1576,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * sub-rectangle for a texture image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, type: Int, srcData: ArrayBufferView, srcOffset: Double)
 
@@ -1323,6 +1586,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * two-dimensional texture image in a compressed format.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, imageSize: Int, offset: Double)
 
@@ -1331,6 +1596,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * two-dimensional texture image in a compressed format.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
 
@@ -1339,6 +1606,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * two-dimensional sub-rectangle for a texture image in a compressed format.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexSubImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, imageSize: Int, offset: Double)
 
@@ -1347,6 +1616,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * two-dimensional sub-rectangle for a texture image in a compressed format.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexSubImage2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, srcData: ArrayBufferView, srcOffset: Double = definedExternally, srcLengthOverride: Int = definedExternally)
 
@@ -1357,6 +1628,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform1fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1367,6 +1640,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform1fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1377,6 +1652,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform2fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1387,6 +1664,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform2fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1397,6 +1676,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform3fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1407,6 +1688,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform3fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1417,6 +1700,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform4fv(location: WebGLUniformLocation?, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1427,6 +1712,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform4fv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1437,6 +1724,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform1iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1447,6 +1736,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform1iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1457,6 +1748,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform2iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1467,6 +1760,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform2iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1477,6 +1772,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform3iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1487,6 +1784,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform3iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1497,6 +1796,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform4iv(location: WebGLUniformLocation?, data: Int32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1507,6 +1808,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * successful link operation occurs on the program object, when they are once again initialized to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniform4iv(location: WebGLUniformLocation?, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1515,6 +1818,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1523,6 +1828,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * uniform variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix2fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1531,6 +1838,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1539,6 +1848,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix3fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1547,6 +1858,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, data: Float32Array, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1555,6 +1868,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * variables.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun uniformMatrix4fv(location: WebGLUniformLocation?, transpose: Boolean, data: JsArray<JsNumber>, srcOffset: Double = definedExternally, srcLength: Int = definedExternally)
 
@@ -1563,6 +1878,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * of the current color framebuffer into a TypedArray or a DataView object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/readPixels)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, dstData: ArrayBufferView?)
 
@@ -1571,6 +1888,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * of the current color framebuffer into a TypedArray or a DataView object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/readPixels)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, offset: Double)
 
@@ -1579,6 +1898,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
      * of the current color framebuffer into a TypedArray or a DataView object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/readPixels)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, type: Int, dstData: ArrayBufferView, dstOffset: Double)
 }
@@ -1588,6 +1909,8 @@ public external interface WebGL2RenderingContextOverloads : JsAny {
  * &lt;canvas&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WebGL2RenderingContext : WebGLRenderingContextBase, WebGL2RenderingContextBase, WebGL2RenderingContextOverloads, RenderingContext, OffscreenRenderingContext {
 

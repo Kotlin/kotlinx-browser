@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'geometry', DO NOT EDIT!
@@ -16,6 +19,8 @@ import org.khronos.webgl.*
  * point in a coordinate system.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class DOMPointReadOnly : JsAny {
     /**
@@ -23,6 +28,8 @@ public open external class DOMPointReadOnly : JsAny {
      * optionally with perspective, whose values cannot be altered by script code.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/DOMPointReadOnly)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, w: Double = definedExternally)
 
@@ -31,6 +38,8 @@ public open external class DOMPointReadOnly : JsAny {
      * This property cannot be changed by JavaScript code in this read-only version of the DOMPoint object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: Double
 
@@ -38,6 +47,8 @@ public open external class DOMPointReadOnly : JsAny {
      * The DOMPointReadOnly interface's y property holds the vertical coordinate, y, for a read-only point in space.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: Double
 
@@ -45,6 +56,8 @@ public open external class DOMPointReadOnly : JsAny {
      * The DOMPointReadOnly interface's z property holds the depth coordinate, z, for a read-only point in space.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/z)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val z: Double
 
@@ -53,6 +66,8 @@ public open external class DOMPointReadOnly : JsAny {
      * space.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/w)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val w: Double
 
@@ -62,6 +77,8 @@ public open external class DOMPointReadOnly : JsAny {
      * point are altered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/matrixTransform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun matrixTransform(matrix: DOMMatrixInit = definedExternally): DOMPoint
 
@@ -70,6 +87,8 @@ public open external class DOMPointReadOnly : JsAny {
      * DOMPointReadOnly object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 
@@ -79,6 +98,8 @@ public open external class DOMPointReadOnly : JsAny {
          * source point.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/fromPoint_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromPoint(other: DOMPointInit = definedExternally): DOMPointReadOnly
     }
@@ -90,6 +111,8 @@ public open external class DOMPointReadOnly : JsAny {
  * properties' values to be changed.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class DOMPoint : DOMPointReadOnly {
     /**
@@ -97,6 +120,8 @@ public open external class DOMPoint : DOMPointReadOnly {
      * properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/DOMPoint)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, w: Double = definedExternally)
 
@@ -104,6 +129,8 @@ public open external class DOMPoint : DOMPointReadOnly {
      * The DOMPoint interface's x property holds the horizontal coordinate, x, for a point in space.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var x: Double
 
@@ -111,6 +138,8 @@ public open external class DOMPoint : DOMPointReadOnly {
      * The DOMPoint interface's y property holds the vertical coordinate, y, for a point in space.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var y: Double
 
@@ -118,6 +147,8 @@ public open external class DOMPoint : DOMPointReadOnly {
      * The DOMPoint interface's z property specifies the depth coordinate of a point in space.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/z)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var z: Double
 
@@ -125,6 +156,8 @@ public open external class DOMPoint : DOMPointReadOnly {
      * The DOMPoint interface's w property holds the point's perspective value, w, for a point in space.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/w)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var w: Double
 
@@ -134,6 +167,8 @@ public open external class DOMPoint : DOMPointReadOnly {
          * given a source point.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/fromPoint_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromPoint(other: DOMPointInit = definedExternally): DOMPoint
     }
@@ -158,12 +193,16 @@ public fun DOMPointInit(x: Double? = null, y: Double? = null, z: Double? = null,
  * properties are immutable.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class DOMRectReadOnly : JsAny {
     /**
      * The DOMRectReadOnly() constructor creates a new DOMRectReadOnly object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/DOMRectReadOnly)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(x: Double = definedExternally, y: Double = definedExternally, width: Double = definedExternally, height: Double = definedExternally)
 
@@ -171,6 +210,8 @@ public open external class DOMRectReadOnly : JsAny {
      * The x read-only property of the DOMRectReadOnly interface represents the x coordinate of the DOMRect's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: Double
 
@@ -178,6 +219,8 @@ public open external class DOMRectReadOnly : JsAny {
      * The y read-only property of the DOMRectReadOnly interface represents the y coordinate of the DOMRect's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: Double
 
@@ -185,6 +228,8 @@ public open external class DOMRectReadOnly : JsAny {
      * The width read-only property of the DOMRectReadOnly interface represents the width of the DOMRect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: Double
 
@@ -192,6 +237,8 @@ public open external class DOMRectReadOnly : JsAny {
      * The height read-only property of the DOMRectReadOnly interface represents the height of the DOMRect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: Double
 
@@ -200,6 +247,8 @@ public open external class DOMRectReadOnly : JsAny {
      * the same value as y, or y + height if height is negative.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/top)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val top: Double
 
@@ -208,6 +257,8 @@ public open external class DOMRectReadOnly : JsAny {
      * (Has the same value as x + width, or x if width is negative.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/right)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val right: Double
 
@@ -216,6 +267,8 @@ public open external class DOMRectReadOnly : JsAny {
      * DOMRect. (Has the same value as y + height, or y if height is negative.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/bottom)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val bottom: Double
 
@@ -224,6 +277,8 @@ public open external class DOMRectReadOnly : JsAny {
      * (Has the same value as x, or x + width if width is negative.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/left)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val left: Double
 
@@ -232,6 +287,8 @@ public open external class DOMRectReadOnly : JsAny {
      * DOMRectReadOnly object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 
@@ -241,6 +298,8 @@ public open external class DOMRectReadOnly : JsAny {
          * location and dimensions.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/fromRect_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromRect(other: DOMRectInit = definedExternally): DOMRectReadOnly
     }
@@ -250,12 +309,16 @@ public open external class DOMRectReadOnly : JsAny {
  * A DOMRect describes the size and position of a rectangle.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class DOMRect : DOMRectReadOnly {
     /**
      * The DOMRect() constructor creates a new DOMRect object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/DOMRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(x: Double = definedExternally, y: Double = definedExternally, width: Double = definedExternally, height: Double = definedExternally)
 
@@ -264,6 +327,8 @@ public open external class DOMRect : DOMRectReadOnly {
      * distance between the viewport's left edge and the rectangle's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var x: Double
 
@@ -272,6 +337,8 @@ public open external class DOMRect : DOMRectReadOnly {
      * distance between the viewport's top edge and the rectangle's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var y: Double
 
@@ -279,6 +346,8 @@ public open external class DOMRect : DOMRectReadOnly {
      * The width property of the DOMRect interface represents the width of the rectangle. The value can be negative.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var width: Double
 
@@ -286,6 +355,8 @@ public open external class DOMRect : DOMRectReadOnly {
      * The height property of the DOMRect interface represents the height of the rectangle. The value can be negative.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var height: Double
 
@@ -295,6 +366,8 @@ public open external class DOMRect : DOMRectReadOnly {
          * dimensions.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/fromRect_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromRect(other: DOMRectInit = definedExternally): DOMRect
     }
@@ -321,12 +394,16 @@ public fun DOMRectInit(x: Double? = null, y: Double? = null, width: Double? = nu
  * rectangles in the list.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class DOMRectList : ItemArrayLike<DOMRect> {
     /**
      * The read-only length property of the DOMRectList interface returns the number of DOMRect objects in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val length: Int
 
@@ -335,6 +412,8 @@ public abstract external class DOMRectList : ItemArrayLike<DOMRect> {
      * out of range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectList/item)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun item(index: Int): DOMRect?
 }
@@ -347,6 +426,8 @@ public operator fun DOMRectList.get(index: Int): DOMRect? = getProperty(this, in
  * bounds attribute returning a DOMRectReadOnly for those cases where you just want an axis-aligned bounding rectangle.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class DOMQuad : JsAny {
     /**
@@ -354,6 +435,8 @@ public open external class DOMQuad : JsAny {
      * properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/DOMQuad)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(p1: DOMPointInit = definedExternally, p2: DOMPointInit = definedExternally, p3: DOMPointInit = definedExternally, p4: DOMPointInit = definedExternally)
 
@@ -362,6 +445,8 @@ public open external class DOMQuad : JsAny {
      * DOMQuad. When created from DOMQuad.fromRect(), it is the point (x, y).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p1)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val p1: DOMPoint
 
@@ -370,6 +455,8 @@ public open external class DOMQuad : JsAny {
      * DOMQuad. When created from DOMQuad.fromRect(), it is the point (x + width, y).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p2)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val p2: DOMPoint
 
@@ -378,6 +465,8 @@ public open external class DOMQuad : JsAny {
      * DOMQuad. When created from DOMQuad.fromRect(), it is the point (x + width, y + height).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p3)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val p3: DOMPoint
 
@@ -386,6 +475,8 @@ public open external class DOMQuad : JsAny {
      * DOMQuad. When created from DOMQuad.fromRect(), it is the point (x, y + height).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p4)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val p4: DOMPoint
 
@@ -394,6 +485,8 @@ public open external class DOMQuad : JsAny {
      * the DOMQuad object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/getBounds)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getBounds(): DOMRect
 
@@ -402,6 +495,8 @@ public open external class DOMQuad : JsAny {
      * object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 
@@ -411,6 +506,8 @@ public open external class DOMQuad : JsAny {
          * of coordinates in the shape of a DOMRect object.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/fromRect_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromRect(other: DOMRectInit = definedExternally): DOMQuad
 
@@ -419,6 +516,8 @@ public open external class DOMQuad : JsAny {
          * of coordinates in the shape of another DOMQuad object.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/fromQuad_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromQuad(other: DOMQuadInit = definedExternally): DOMQuad
     }
@@ -444,6 +543,8 @@ public fun DOMQuadInit(p1: DOMPointInit? = null, p2: DOMPointInit? = null, p3: D
  * it.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class DOMMatrixReadOnly : JsAny {
     /**
@@ -451,6 +552,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * suitable for 2D and 3D operations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/DOMMatrixReadOnly)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(init: String)
 
@@ -459,6 +562,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * suitable for 2D and 3D operations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/DOMMatrixReadOnly)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(init: JsArray<JsNumber>)
 
@@ -467,6 +572,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * suitable for 2D and 3D operations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/DOMMatrixReadOnly)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -476,6 +583,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val a: Double
 
@@ -485,6 +594,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val b: Double
 
@@ -494,6 +605,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val c: Double
 
@@ -503,6 +616,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val d: Double
 
@@ -512,6 +627,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val e: Double
 
@@ -521,6 +638,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val f: Double
 
@@ -530,6 +649,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m11: Double
 
@@ -539,6 +660,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m12: Double
 
@@ -548,6 +671,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m13: Double
 
@@ -557,6 +682,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m14: Double
 
@@ -566,6 +693,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m21: Double
 
@@ -575,6 +704,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m22: Double
 
@@ -584,6 +715,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m23: Double
 
@@ -593,6 +726,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m24: Double
 
@@ -602,6 +737,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m31: Double
 
@@ -611,6 +748,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m32: Double
 
@@ -620,6 +759,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m33: Double
 
@@ -629,6 +770,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m34: Double
 
@@ -638,6 +781,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m41: Double
 
@@ -647,6 +792,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m42: Double
 
@@ -656,6 +803,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m43: Double
 
@@ -665,6 +814,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * after creating it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val m44: Double
 
@@ -674,6 +825,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * applied. Otherwise, the matrix is defined in 3D, and is2D is false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/is2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val is2D: Boolean
 
@@ -682,6 +835,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * matrix is the identity matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/isIdentity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val isIdentity: Boolean
 
@@ -690,6 +845,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * matrix with a translation applied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/translate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun translate(tx: Double = definedExternally, ty: Double = definedExternally, tz: Double = definedExternally): DOMMatrix
 
@@ -698,6 +855,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * matrix with a scale transform applied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun scale(scaleX: Double = definedExternally, scaleY: Double = definedExternally, scaleZ: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
     public open fun scaleNonUniform(scaleX: Double = definedExternally, scaleY: Double = definedExternally): DOMMatrix
@@ -709,6 +868,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * 0, 0). The original matrix is not modified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale3d)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun scale3d(scale: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
 
@@ -717,6 +878,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * matrix around each of its axes by the specified number of degrees. The original matrix is not altered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun rotate(rotX: Double = definedExternally, rotY: Double = definedExternally, rotZ: Double = definedExternally): DOMMatrix
 
@@ -727,6 +890,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * 0, the angle is specified as 0. The original matrix is not altered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateFromVector)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun rotateFromVector(x: Double = definedExternally, y: Double = definedExternally): DOMMatrix
 
@@ -735,6 +900,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * source matrix by the given vector and angle. The original matrix is not altered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateAxisAngle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun rotateAxisAngle(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, angle: Double = definedExternally): DOMMatrix
 
@@ -743,6 +910,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * skew transformation to the source matrix along its x-axis. The original matrix is not modified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun skewX(sx: Double = definedExternally): DOMMatrix
 
@@ -751,6 +920,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * skew transformation to the source matrix along its y-axis. The original matrix is not modified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun skewY(sy: Double = definedExternally): DOMMatrix
 
@@ -761,6 +932,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * left: m33 and m34. These have the default value of 1. The original matrix is not modified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/multiply)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun multiply(other: DOMMatrixInit = definedExternally): DOMMatrix
 
@@ -770,6 +943,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * The original matrix is not modified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun flipX(): DOMMatrix
 
@@ -779,6 +954,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * The original matrix is not modified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun flipY(): DOMMatrix
 
@@ -788,6 +965,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * set to false. The original matrix is not changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/inverse)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun inverse(): DOMMatrix
 
@@ -796,6 +975,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * specified point by the matrix. Neither the matrix nor the original point are altered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/transformPoint)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun transformPoint(point: DOMPointInit = definedExternally): DOMPoint
 
@@ -807,6 +988,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * second column, and so forth.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat32Array)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toFloat32Array(): Float32Array
 
@@ -818,6 +1001,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * second column, and so forth.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat64Array)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toFloat64Array(): Float64Array
 
@@ -826,6 +1011,8 @@ public open external class DOMMatrixReadOnly : JsAny {
      * DOMMatrixReadOnly object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 
@@ -835,6 +1022,8 @@ public open external class DOMMatrixReadOnly : JsAny {
          * given an existing matrix or an object which provides the values for its properties.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/fromMatrix_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrixReadOnly
 
@@ -843,6 +1032,8 @@ public open external class DOMMatrixReadOnly : JsAny {
          * object given an array of single-precision (32-bit) floating-point values.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/fromFloat32Array_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromFloat32Array(array32: Float32Array): DOMMatrixReadOnly
 
@@ -851,6 +1042,8 @@ public open external class DOMMatrixReadOnly : JsAny {
          * object given an array of double-precision (64-bit) floating-point values.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/fromFloat64Array_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromFloat64Array(array64: Float64Array): DOMMatrixReadOnly
     }
@@ -862,6 +1055,8 @@ public open external class DOMMatrixReadOnly : JsAny {
  * workers.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class DOMMatrix : DOMMatrixReadOnly {
     /**
@@ -869,6 +1064,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * operations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/DOMMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(init: String)
 
@@ -877,6 +1074,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * operations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/DOMMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(init: JsArray<JsNumber>)
 
@@ -885,6 +1084,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * operations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/DOMMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -894,6 +1095,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var a: Double
 
@@ -903,6 +1106,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var b: Double
 
@@ -912,6 +1117,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var c: Double
 
@@ -921,6 +1128,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var d: Double
 
@@ -930,6 +1139,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var e: Double
 
@@ -939,6 +1150,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var f: Double
 
@@ -948,6 +1161,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m11: Double
 
@@ -957,6 +1172,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m12: Double
 
@@ -966,6 +1183,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m13: Double
 
@@ -975,6 +1194,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m14: Double
 
@@ -984,6 +1205,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m21: Double
 
@@ -993,6 +1216,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m22: Double
 
@@ -1002,6 +1227,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m23: Double
 
@@ -1011,6 +1238,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m24: Double
 
@@ -1020,6 +1249,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m31: Double
 
@@ -1029,6 +1260,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m32: Double
 
@@ -1038,6 +1271,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m33: Double
 
@@ -1047,6 +1282,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m34: Double
 
@@ -1056,6 +1293,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m41: Double
 
@@ -1065,6 +1304,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m42: Double
 
@@ -1074,6 +1315,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m43: Double
 
@@ -1083,6 +1326,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix#instance_properties)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var m44: Double
 
@@ -1093,6 +1338,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * the element immediately above and to its left: m33 and m34. These have the default value of 1.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/multiplySelf)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun multiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
 
@@ -1104,6 +1351,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * left: m33 and m34. These have the default value of 1.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/preMultiplySelf)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun preMultiplySelf(other: DOMMatrixInit = definedExternally): DOMMatrix
 
@@ -1112,6 +1361,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * It applies the specified vectors and returns the updated matrix. The default vector is \[0, 0, 0\].
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/translateSelf)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun translateSelf(tx: Double = definedExternally, ty: Double = definedExternally, tz: Double = definedExternally): DOMMatrix
 
@@ -1121,6 +1372,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * scaled matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun scaleSelf(scaleX: Double = definedExternally, scaleY: Double = definedExternally, scaleZ: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
 
@@ -1130,6 +1383,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * 0, 0), returning the 3D-scaled matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun scale3dSelf(scale: Double = definedExternally, originX: Double = definedExternally, originY: Double = definedExternally, originZ: Double = definedExternally): DOMMatrix
 
@@ -1139,6 +1394,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateSelf)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun rotateSelf(rotX: Double = definedExternally, rotY: Double = definedExternally, rotZ: Double = definedExternally): DOMMatrix
 
@@ -1149,6 +1406,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * x and y are both 0, the angle is specified as 0, and the matrix is not altered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateFromVectorSelf)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun rotateFromVectorSelf(x: Double = definedExternally, y: Double = definedExternally): DOMMatrix
 
@@ -1157,6 +1416,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * matrix by the given vector and angle, returning the altered matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateAxisAngleSelf)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun rotateAxisAngleSelf(x: Double = definedExternally, y: Double = definedExternally, z: Double = definedExternally, angle: Double = definedExternally): DOMMatrix
 
@@ -1166,6 +1427,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/skewXSelf)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun skewXSelf(sx: Double = definedExternally): DOMMatrix
 
@@ -1175,6 +1438,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/skewYSelf)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun skewYSelf(sy: Double = definedExternally): DOMMatrix
 
@@ -1183,6 +1448,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * the new matrix's components are all set to NaN and its is2D property is set to false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/invertSelf)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun invertSelf(): DOMMatrix
 
@@ -1191,6 +1458,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
      * described by the specified transform or transforms, returning itself.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/setMatrixValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setMatrixValue(transformList: String): DOMMatrix
 
@@ -1200,6 +1469,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
          * matrix or an object which provides the values for its properties.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/fromMatrix_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromMatrix(other: DOMMatrixInit = definedExternally): DOMMatrix
 
@@ -1208,6 +1479,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
          * of single-precision (32-bit) floating-point values.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/fromFloat32Array_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromFloat32Array(array32: Float32Array): DOMMatrix
 
@@ -1216,6 +1489,8 @@ public open external class DOMMatrix : DOMMatrixReadOnly {
          * of double-precision (64-bit) floating-point values.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/fromFloat64Array_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun fromFloat64Array(array64: Float64Array): DOMMatrix
     }

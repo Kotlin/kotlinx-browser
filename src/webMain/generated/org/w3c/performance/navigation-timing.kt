@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'navigation-timing', DO NOT EDIT!
@@ -17,6 +20,8 @@ import org.w3c.dom.*
  * load or unload a document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class PerformanceNavigationTiming : PerformanceResourceTiming {
     /**
@@ -24,6 +29,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * the previous document's unload event handler starts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/unloadEventStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val unloadEventStart: Double
 
@@ -32,6 +39,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * previous document's unload event handler completes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/unloadEventEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val unloadEventEnd: Double
 
@@ -40,6 +49,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * user agent sets the document's readyState to "interactive".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domInteractive)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domInteractive: Double
 
@@ -49,6 +60,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      *
      * [MDN
      * Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domContentLoadedEventStart: Double
 
@@ -57,6 +70,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * after the current document's DOMContentLoaded event handler completes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domContentLoadedEventEnd: Double
 
@@ -65,6 +80,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * user agent sets the document's readyState to "complete".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domComplete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domComplete: Double
 
@@ -73,6 +90,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * current document's load event handler starts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/loadEventStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val loadEventStart: Double
 
@@ -81,6 +100,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * current document's load event handler completes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/loadEventEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val loadEventEnd: Double
 
@@ -88,6 +109,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * The type read-only property returns the type of navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: NavigationTimingType
 
@@ -96,6 +119,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * non-redirect navigation in the current browsing context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/redirectCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val redirectCount: Short
 
@@ -107,6 +132,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * that client hint, it is ignored and no connection restart occurs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/criticalCHRestart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val criticalCHRestart: Double
 
@@ -116,6 +143,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * the back/forward cache (bfcache) on navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/notRestoredReasons)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val notRestoredReasons: NotRestoredReasons?
 
@@ -125,6 +154,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * typical application performance, or is likely affected by external factors.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/confidence)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val confidence: PerformanceTimingConfidence
 
@@ -133,6 +164,8 @@ public abstract external class PerformanceNavigationTiming : PerformanceResource
      * representing the PerformanceNavigationTiming object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun toJSON(): JsAny
 }
@@ -151,6 +184,8 @@ public inline val NavigationTimingType.Companion.BACK_FORWARD: NavigationTimingT
  * reflects typical application performance, or is likely affected by external factors.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTimingConfidence)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class PerformanceTimingConfidence : JsAny {
     /**
@@ -158,6 +193,8 @@ public abstract external class PerformanceTimingConfidence : JsAny {
      * noise is applied when exposing the PerformanceTimingConfidence.value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTimingConfidence/randomizedTriggerRate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val randomizedTriggerRate: Double
 
@@ -166,6 +203,8 @@ public abstract external class PerformanceTimingConfidence : JsAny {
      * whether a performance record reflects typical application performance, or is likely affected by external factors.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTimingConfidence/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val value: PerformanceTimingConfidenceValue
 
@@ -174,6 +213,8 @@ public abstract external class PerformanceTimingConfidence : JsAny {
      * representing the PerformanceTimingConfidence object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTimingConfidence/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 }
@@ -194,6 +235,8 @@ public inline val PerformanceTimingConfidenceValue.Companion.LOW: PerformanceTim
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class PerformanceTiming : JsAny {
     /**
@@ -205,6 +248,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/navigationStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigationStart: Double
 
@@ -216,6 +261,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/unloadEventStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val unloadEventStart: Double
 
@@ -228,6 +275,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/unloadEventEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val unloadEventEnd: Double
 
@@ -239,6 +288,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/redirectStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val redirectStart: Double
 
@@ -251,6 +302,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/redirectEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val redirectEnd: Double
 
@@ -262,6 +315,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/fetchStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val fetchStart: Double
 
@@ -274,6 +329,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domainLookupStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domainLookupStart: Double
 
@@ -286,6 +343,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domainLookupEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domainLookupEnd: Double
 
@@ -299,6 +358,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/connectStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val connectStart: Double
 
@@ -312,6 +373,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/connectEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val connectEnd: Double
 
@@ -323,6 +386,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/secureConnectionStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val secureConnectionStart: Double
 
@@ -335,6 +400,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/requestStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val requestStart: Double
 
@@ -346,6 +413,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/responseStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val responseStart: Double
 
@@ -357,6 +426,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/responseEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val responseEnd: Double
 
@@ -368,6 +439,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domLoading)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domLoading: Double
 
@@ -379,6 +452,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domInteractive)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domInteractive: Double
 
@@ -390,6 +465,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domContentLoadedEventStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domContentLoadedEventStart: Double
 
@@ -401,6 +478,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domContentLoadedEventEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domContentLoadedEventEnd: Double
 
@@ -412,6 +491,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/domComplete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domComplete: Double
 
@@ -423,6 +504,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/loadEventStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val loadEventStart: Double
 
@@ -434,6 +517,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/loadEventEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val loadEventEnd: Double
 
@@ -444,6 +529,8 @@ public abstract external class PerformanceTiming : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceTiming/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 }
@@ -455,6 +542,8 @@ public abstract external class PerformanceTiming : JsAny {
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigation)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class PerformanceNavigation : JsAny {
     /**
@@ -464,6 +553,8 @@ public abstract external class PerformanceNavigation : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigation/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: Short
 
@@ -474,6 +565,8 @@ public abstract external class PerformanceNavigation : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigation/redirectCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val redirectCount: Short
 
@@ -484,6 +577,8 @@ public abstract external class PerformanceNavigation : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigation/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 

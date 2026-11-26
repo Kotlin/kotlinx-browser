@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'FileAPI', DO NOT EDIT!
@@ -20,6 +23,8 @@ import org.w3c.xhr.*
  * binary data, or converted into a ReadableStream so its methods can be used for processing the data.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
     /**
@@ -27,6 +32,8 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      * values given in the parameter blobParts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/Blob)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(blobParts: JsArray<JsAny> = definedExternally, options: BlobPropertyBag = definedExternally)
 
@@ -34,6 +41,8 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      * The size read-only property of the Blob interface returns the size of the Blob or File in bytes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/size)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val size: Double
 
@@ -41,6 +50,8 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      * The type read-only property of the Blob interface returns the MIME type of the file.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: String
 
@@ -49,6 +60,8 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      * of the blob on which it's called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun slice(start: Double = definedExternally, end: Double = definedExternally, contentType: String = definedExternally): Blob
 
@@ -57,6 +70,8 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      * within the Blob as chunks of raw bytes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/stream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun stream(): ReadableStream
 
@@ -65,6 +80,8 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      * the blob, interpreted as UTF-8.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun text(): Promise<JsString>
 
@@ -73,6 +90,8 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      * binary data contained in an ArrayBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun arrayBuffer(): Promise<ArrayBuffer>
 
@@ -81,6 +100,8 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      * the Blob in chunks of UTF-8.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/textStream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun textStream(): ReadableStream
 
@@ -89,6 +110,8 @@ public open external class Blob : ImageBitmapSource, UnionBlobOrMediaSource {
      * contents of the blob as an array of bytes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/bytes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun bytes(): Promise<Uint8Array>
 }
@@ -115,12 +138,16 @@ public fun BlobPropertyBag(type: String? = null, endings: EndingType? = null): B
  * The File interface provides information about files and allows JavaScript in a web page to access their content.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class File : Blob {
     /**
      * The File() constructor creates a new File object instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/File)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(fileBits: JsArray<JsAny>, fileName: String, options: FilePropertyBag = definedExternally)
 
@@ -129,6 +156,8 @@ public open external class File : Blob {
      * security reasons, the path is excluded from this property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val name: String
 
@@ -138,6 +167,8 @@ public open external class File : Blob {
      * date return the current date.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/lastModified)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val lastModified: Double
 }
@@ -159,6 +190,8 @@ public fun FilePropertyBag(type: String? = null, endings: EndingType? = null, la
  * details on this usage.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class FileList : ItemArrayLike<File> {
     /**
@@ -166,6 +199,8 @@ public abstract external class FileList : ItemArrayLike<File> {
      * the file list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileList/item)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun item(index: Int): File?
 
@@ -173,6 +208,8 @@ public abstract external class FileList : ItemArrayLike<File> {
      * The length read-only property of the FileList interface returns the number of files in the FileList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val length: Int
 }
@@ -184,12 +221,16 @@ public operator fun FileList.get(index: Int): File? = getProperty(this, index)
  * on the user's computer, using File or Blob objects to specify the file or data to read.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class FileReader : EventTarget {
     /**
      * The FileReader() constructor creates a new FileReader.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/FileReader)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -199,6 +240,8 @@ public open external class FileReader : EventTarget {
      * triggered. At that time, the result property contains an ArrayBuffer representing the file's data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsArrayBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun readAsArrayBuffer(blob: Blob)
 
@@ -210,6 +253,8 @@ public open external class FileReader : EventTarget {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsBinaryString)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun readAsBinaryString(blob: Blob)
 
@@ -219,6 +264,8 @@ public open external class FileReader : EventTarget {
      * and the result property contains the contents of the file as a text string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun readAsText(blob: Blob, encoding: String = definedExternally)
 
@@ -229,6 +276,8 @@ public open external class FileReader : EventTarget {
      * base64 encoded string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsDataURL)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun readAsDataURL(blob: Blob)
 
@@ -237,6 +286,8 @@ public open external class FileReader : EventTarget {
      * DONE.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/abort)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun abort()
 
@@ -245,6 +296,8 @@ public open external class FileReader : EventTarget {
      * operation. This will be one of the states: EMPTY, LOADING, or DONE.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readyState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val readyState: Short
 
@@ -254,6 +307,8 @@ public open external class FileReader : EventTarget {
      * to initiate the read operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/result)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val result: JsAny?
 
@@ -261,6 +316,8 @@ public open external class FileReader : EventTarget {
      * The error read-only property of the FileReader interface returns the error that occurred while reading the file.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/error)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val error: DOMException?
 
@@ -268,6 +325,8 @@ public open external class FileReader : EventTarget {
      * The loadstart event of the FileReader interface is fired when a file read operation has begun.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadstart_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onloadstart: ((ProgressEvent) -> Unit)?
 
@@ -275,6 +334,8 @@ public open external class FileReader : EventTarget {
      * The progress event of the FileReader interface is fired periodically as the FileReader reads data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/progress_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onprogress: ((ProgressEvent) -> Unit)?
 
@@ -282,6 +343,8 @@ public open external class FileReader : EventTarget {
      * The load event of the FileReader interface is fired when a file has been read successfully.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/load_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onload: ((ProgressEvent) -> Unit)?
 
@@ -290,6 +353,8 @@ public open external class FileReader : EventTarget {
      * program called FileReader.abort().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/abort_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onabort: ((ProgressEvent) -> Unit)?
 
@@ -298,6 +363,8 @@ public open external class FileReader : EventTarget {
      * the file was not found or not readable).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onerror: ((ProgressEvent) -> Unit)?
 
@@ -305,6 +372,8 @@ public open external class FileReader : EventTarget {
      * The loadend event of the FileReader interface is fired when a file read has completed, successfully or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onloadend: ((ProgressEvent) -> Unit)?
 
@@ -320,12 +389,16 @@ public open external class FileReader : EventTarget {
  * in workers as it enables synchronous I/O that could potentially block.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class FileReaderSync : JsAny {
     /**
      * The FileReaderSync() constructor creates a new FileReaderSync.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/FileReaderSync)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -335,6 +408,8 @@ public open external class FileReaderSync : JsAny {
      * that could potentially block.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsArrayBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun readAsArrayBuffer(blob: Blob): ArrayBuffer
 
@@ -346,6 +421,8 @@ public open external class FileReaderSync : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsBinaryString)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun readAsBinaryString(blob: Blob): String
 
@@ -355,6 +432,8 @@ public open external class FileReaderSync : JsAny {
      * potentially block.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun readAsText(blob: Blob, encoding: String = definedExternally): String
 
@@ -364,6 +443,8 @@ public open external class FileReaderSync : JsAny {
      * synchronous I/O that could potentially block.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsDataURL)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun readAsDataURL(blob: Blob): String
 }

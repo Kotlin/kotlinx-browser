@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'xhr', DO NOT EDIT!
@@ -19,6 +22,8 @@ import org.w3c.files.*
  * XMLHttpRequestUpload.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestEventTarget)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class XMLHttpRequestEventTarget : EventTarget {
     public open var onloadstart: ((ProgressEvent) -> Unit)?
@@ -36,6 +41,8 @@ public abstract external class XMLHttpRequestEventTarget : EventTarget {
  * be obtained by calling XMLHttpRequest.upload.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class XMLHttpRequestUpload : XMLHttpRequestEventTarget
 
@@ -56,12 +63,16 @@ public inline val XMLHttpRequestResponseType.Companion.TEXT: XMLHttpRequestRespo
  * a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
     /**
      * The XMLHttpRequest() constructor creates a new XMLHttpRequest.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/XMLHttpRequest)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -69,6 +80,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * The readystatechange event is fired whenever the readyState property of the XMLHttpRequest changes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readystatechange_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onreadystatechange: ((Event) -> Unit)?
 
@@ -77,6 +90,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readyState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val readyState: Short
 
@@ -84,6 +99,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * The XMLHttpRequest method open() initializes a newly-created request, or re-initializes an existing one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/open)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun open(method: String, url: String)
 
@@ -91,6 +108,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * The XMLHttpRequest method open() initializes a newly-created request, or re-initializes an existing one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/open)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun open(method: String, url: String, async: Boolean, username: String? = definedExternally, password: String? = definedExternally)
 
@@ -100,6 +119,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * several times with the same header, the values are merged into one single request header.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/setRequestHeader)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setRequestHeader(name: String, value: String)
 
@@ -110,6 +131,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * InvalidAccessError exception. When a timeout happens, a timeout event is fired.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/timeout)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var timeout: Int
 
@@ -119,6 +142,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * certificates. Setting withCredentials has no effect on same-origin requests.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/withCredentials)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var withCredentials: Boolean
 
@@ -127,6 +152,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * observed to monitor an upload's progress.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/upload)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val upload: XMLHttpRequestUpload
 
@@ -134,6 +161,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * The XMLHttpRequest method send() sends the request to the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun send(body: Document?)
 
@@ -141,6 +170,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * The XMLHttpRequest method send() sends the request to the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun send(body: Blob?)
 
@@ -148,6 +179,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * The XMLHttpRequest method send() sends the request to the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun send(body: BufferDataSource?)
 
@@ -155,6 +188,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * The XMLHttpRequest method send() sends the request to the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun send(body: FormData?)
 
@@ -162,6 +197,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * The XMLHttpRequest method send() sends the request to the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun send(body: URLSearchParams?)
 
@@ -169,6 +206,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * The XMLHttpRequest method send() sends the request to the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun send(body: String?)
 
@@ -176,6 +215,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * The XMLHttpRequest method send() sends the request to the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun send()
 
@@ -184,6 +225,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * readyState is changed to XMLHttpRequest.UNSENT (0) and the request's status code is set to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/abort)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun abort()
 
@@ -193,6 +236,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * of responseURL will be the final URL obtained after any redirects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseURL)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val responseURL: String
 
@@ -201,6 +246,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * response.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/status)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val status: Short
 
@@ -211,6 +258,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * or OPENED state, the value of statusText will be an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/statusText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val statusText: String
 
@@ -219,6 +268,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/getResponseHeader)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getResponseHeader(name: String): String?
 
@@ -227,6 +278,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * string, or returns null if no response has been received.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/getAllResponseHeaders)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getAllResponseHeaders(): String
 
@@ -235,6 +288,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * be used instead when interpreting the data being transferred in a request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/overrideMimeType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun overrideMimeType(mime: String)
 
@@ -243,6 +298,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * the response.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var responseType: XMLHttpRequestResponseType
 
@@ -252,6 +309,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * responseType property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/response)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val response: JsAny?
 
@@ -260,6 +319,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * being sent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val responseText: String
 
@@ -269,6 +330,8 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
      * HTML.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseXML)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val responseXML: Document?
 
@@ -287,12 +350,16 @@ public open external class XMLHttpRequest : XMLHttpRequestEventTarget {
  * same format a form would use if the encoding type were set to "multipart/form-data".
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class FormData : JsAny {
     /**
      * The FormData() constructor creates a new FormData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/FormData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(form: HTMLFormElement = definedExternally, submitter: HTMLElement? = definedExternally)
 
@@ -301,6 +368,8 @@ public open external class FormData : JsAny {
      * or adds the key if it does not already exist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun append(name: String, value: String)
 
@@ -309,6 +378,8 @@ public open external class FormData : JsAny {
      * or adds the key if it does not already exist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun append(name: String, blobValue: Blob, filename: String = definedExternally)
 
@@ -316,6 +387,8 @@ public open external class FormData : JsAny {
      * The delete() method of the FormData interface deletes a key and its value(s) from a FormData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/delete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun delete(name: String)
 
@@ -324,6 +397,8 @@ public open external class FormData : JsAny {
      * FormData object. If you expect multiple values and want all of them, use the getAll() method instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/get)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun get(name: String): JsAny?
 
@@ -332,6 +407,8 @@ public open external class FormData : JsAny {
      * FormData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/getAll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getAll(name: String): JsArray<JsAny>
 
@@ -339,6 +416,8 @@ public open external class FormData : JsAny {
      * The has() method of the FormData interface returns whether a FormData object contains a certain key.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/has)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun has(name: String): Boolean
 
@@ -347,6 +426,8 @@ public open external class FormData : JsAny {
      * the key/value if it does not already exist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/set)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun set(name: String, value: String)
 
@@ -355,6 +436,8 @@ public open external class FormData : JsAny {
      * the key/value if it does not already exist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/set)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun set(name: String, blobValue: Blob, filename: String = definedExternally)
     // not printed yet: iterable
@@ -366,6 +449,8 @@ public open external class FormData : JsAny {
  * &lt;video&gt;, &lt;style&gt; or &lt;link&gt;).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ProgressEvent : Event {
     /**
@@ -373,6 +458,8 @@ public open external class ProgressEvent : Event {
      * process.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/ProgressEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: ProgressEventInit = definedExternally)
 
@@ -382,6 +469,8 @@ public open external class ProgressEvent : Event {
      * significant value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/lengthComputable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val lengthComputable: Boolean
 
@@ -390,6 +479,8 @@ public open external class ProgressEvent : Event {
      * processed. The progress ratio can be calculated by dividing the value of this property by ProgressEvent.total.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/loaded)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val loaded: Double
 
@@ -398,6 +489,8 @@ public open external class ProgressEvent : Event {
      * processed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/total)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val total: Double
 

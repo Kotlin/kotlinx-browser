@@ -76,6 +76,7 @@ internal fun kdocLines(doc: WebDoc?, secureContext: Boolean, indent: Int): List<
         if (doc?.deprecated == true) add("Deprecated: MDN no longer recommends using this feature.")
         if (secureContext) add("Available only in secure contexts.")
         doc?.let { add("[MDN Reference](${it.mdnUrl})") }
+        doc?.let { add("© Mozilla Contributors, licensed under CC BY-SA 2.5") }
     }
     if (paragraphs.isEmpty()) return emptyList()
 

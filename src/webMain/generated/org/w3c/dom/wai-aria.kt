@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'wai-aria', DO NOT EDIT!
@@ -17,6 +20,8 @@ public external interface ARIAMixin : JsAny {
      * ARIA role, if any, unless explicitly set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/role)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var role: String?
 
@@ -25,6 +30,8 @@ public external interface ARIAMixin : JsAny {
      * when focus is on a composite widget, combobox, textbox, group, or application.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaActiveDescendantElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaActiveDescendantElement: Element?
 
@@ -34,6 +41,8 @@ public external interface ARIAMixin : JsAny {
      * change notifications defined by the aria-relevant attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaAtomic)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaAtomic: String?
 
@@ -44,6 +53,8 @@ public external interface ARIAMixin : JsAny {
      * were made.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaAutoComplete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaAutoComplete: String?
 
@@ -52,6 +63,8 @@ public external interface ARIAMixin : JsAny {
      * attribute, which defines the ARIA braille label of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBrailleLabel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaBrailleLabel: String?
 
@@ -60,6 +73,8 @@ public external interface ARIAMixin : JsAny {
      * aria-brailleroledescription attribute, which defines the ARIA braille role description of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBrailleRoleDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaBrailleRoleDescription: String?
 
@@ -69,6 +84,8 @@ public external interface ARIAMixin : JsAny {
      * modifications are complete before exposing them to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBusy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaBusy: String?
 
@@ -78,6 +95,8 @@ public external interface ARIAMixin : JsAny {
      * state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaChecked)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaChecked: String?
 
@@ -86,6 +105,8 @@ public external interface ARIAMixin : JsAny {
      * which defines the number of columns in a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaColCount: String?
 
@@ -95,6 +116,8 @@ public external interface ARIAMixin : JsAny {
      * grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaColIndex: String?
 
@@ -103,6 +126,8 @@ public external interface ARIAMixin : JsAny {
      * attribute, which defines a human-readable text alternative of aria-colindex.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColIndexText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaColIndexText: String?
 
@@ -111,6 +136,8 @@ public external interface ARIAMixin : JsAny {
      * which defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColSpan)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaColSpan: String?
 
@@ -120,6 +147,8 @@ public external interface ARIAMixin : JsAny {
      * indicate the element that it pops up, or on a scrollbar to indicate the ID of the element it controls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaControlsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaControlsElements: JsArray<Element>?
 
@@ -128,6 +157,8 @@ public external interface ARIAMixin : JsAny {
      * which indicates the element that represents the current item within a container or set of related elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaCurrent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaCurrent: String?
 
@@ -137,6 +168,8 @@ public external interface ARIAMixin : JsAny {
      * similar to the accessible label (see ariaLabelledByElements), but provides more verbose information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDescribedByElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaDescribedByElements: JsArray<Element>?
 
@@ -145,6 +178,8 @@ public external interface ARIAMixin : JsAny {
      * attribute, which defines a string value that describes or annotates the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaDescription: String?
 
@@ -154,6 +189,8 @@ public external interface ARIAMixin : JsAny {
      * to the accessible description (see ariaDescribedByElements), but provides more verbose information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDetailsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaDetailsElements: JsArray<Element>?
 
@@ -162,6 +199,8 @@ public external interface ARIAMixin : JsAny {
      * which indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDisabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaDisabled: String?
 
@@ -170,6 +209,8 @@ public external interface ARIAMixin : JsAny {
      * elements) that provide an error message for the element it is applied to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaErrorMessageElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaErrorMessageElements: JsArray<Element>?
 
@@ -178,6 +219,8 @@ public external interface ARIAMixin : JsAny {
      * which indicates whether a grouping element owned or controlled by this element is expanded or collapsed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaExpanded)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaExpanded: String?
 
@@ -189,6 +232,8 @@ public external interface ARIAMixin : JsAny {
      * selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaFlowToElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaFlowToElements: JsArray<Element>?
 
@@ -198,6 +243,8 @@ public external interface ARIAMixin : JsAny {
      * triggered by an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaHasPopup)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaHasPopup: String?
 
@@ -206,6 +253,8 @@ public external interface ARIAMixin : JsAny {
      * indicates whether the element is exposed to an accessibility API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaHidden)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaHidden: String?
 
@@ -216,6 +265,8 @@ public external interface ARIAMixin : JsAny {
      * expected by the application.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaInvalid)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaInvalid: String?
 
@@ -225,6 +276,8 @@ public external interface ARIAMixin : JsAny {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaKeyShortcuts)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaKeyShortcuts: String?
 
@@ -233,6 +286,8 @@ public external interface ARIAMixin : JsAny {
      * defines a string value that labels the current Element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLabel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaLabel: String?
 
@@ -241,6 +296,8 @@ public external interface ARIAMixin : JsAny {
      * elements) that provide an accessible name for the element it is applied to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLabelledByElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaLabelledByElements: JsArray<Element>?
 
@@ -249,6 +306,8 @@ public external interface ARIAMixin : JsAny {
      * defines the hierarchical level of an element within a structure.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLevel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaLevel: String?
 
@@ -258,6 +317,8 @@ public external interface ARIAMixin : JsAny {
      * technologies, and user can expect from the live region.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLive)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaLive: String?
 
@@ -266,6 +327,8 @@ public external interface ARIAMixin : JsAny {
      * indicates whether an element is modal when displayed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaModal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaModal: String?
 
@@ -274,6 +337,8 @@ public external interface ARIAMixin : JsAny {
      * which indicates whether a text box accepts multiple lines of input or only a single line.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaMultiLine)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaMultiLine: String?
 
@@ -282,6 +347,8 @@ public external interface ARIAMixin : JsAny {
      * attribute, which indicates that the user may select more than one item from the current selectable descendants.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaMultiSelectable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaMultiSelectable: String?
 
@@ -290,6 +357,8 @@ public external interface ARIAMixin : JsAny {
      * attribute, which indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaOrientation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaOrientation: String?
 
@@ -300,6 +369,8 @@ public external interface ARIAMixin : JsAny {
      * it would not otherwise be available to assistive technology,
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaOwnsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaOwnsElements: JsArray<Element>?
 
@@ -308,6 +379,8 @@ public external interface ARIAMixin : JsAny {
      * attribute, which defines a short hint intended to aid the user with data entry when the control has no value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPlaceholder)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaPlaceholder: String?
 
@@ -316,6 +389,8 @@ public external interface ARIAMixin : JsAny {
      * which defines an element's number or position in the current set of listitems or treeitems.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPosInSet)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaPosInSet: String?
 
@@ -324,6 +399,8 @@ public external interface ARIAMixin : JsAny {
      * which indicates the current "pressed" state of toggle buttons.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPressed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaPressed: String?
 
@@ -332,6 +409,8 @@ public external interface ARIAMixin : JsAny {
      * which indicates that the element is not editable, but is otherwise operable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaReadOnly)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaReadOnly: String?
 
@@ -341,6 +420,8 @@ public external interface ARIAMixin : JsAny {
      * is modified. This is used to describe what changes in an aria-live region are relevant and should be announced.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRelevant)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaRelevant: String?
 
@@ -349,6 +430,8 @@ public external interface ARIAMixin : JsAny {
      * which indicates that user input is required on the element before a form may be submitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRequired)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaRequired: String?
 
@@ -357,6 +440,8 @@ public external interface ARIAMixin : JsAny {
      * attribute, which defines a human-readable, author-localized description for the role of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRoleDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaRoleDescription: String?
 
@@ -365,6 +450,8 @@ public external interface ARIAMixin : JsAny {
      * which defines the total number of rows in a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaRowCount: String?
 
@@ -374,6 +461,8 @@ public external interface ARIAMixin : JsAny {
      * or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaRowIndex: String?
 
@@ -382,6 +471,8 @@ public external interface ARIAMixin : JsAny {
      * attribute, which defines a human-readable text alternative of aria-rowindex.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowIndexText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaRowIndexText: String?
 
@@ -390,6 +481,8 @@ public external interface ARIAMixin : JsAny {
      * which defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowSpan)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaRowSpan: String?
 
@@ -398,6 +491,8 @@ public external interface ARIAMixin : JsAny {
      * which indicates the current "selected" state of elements that have a selected state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSelected)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaSelected: String?
 
@@ -406,6 +501,8 @@ public external interface ARIAMixin : JsAny {
      * which defines the number of items in the current set of listitems or treeitems.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSetSize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaSetSize: String?
 
@@ -414,6 +511,8 @@ public external interface ARIAMixin : JsAny {
      * indicates if items in a table or grid are sorted in ascending or descending order.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSort)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaSort: String?
 
@@ -422,6 +521,8 @@ public external interface ARIAMixin : JsAny {
      * which defines the maximum allowed value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueMax)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaValueMax: String?
 
@@ -430,6 +531,8 @@ public external interface ARIAMixin : JsAny {
      * which defines the minimum allowed value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueMin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaValueMin: String?
 
@@ -438,6 +541,8 @@ public external interface ARIAMixin : JsAny {
      * which defines the current value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueNow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaValueNow: String?
 
@@ -446,6 +551,8 @@ public external interface ARIAMixin : JsAny {
      * which defines the human-readable text alternative of aria-valuenow for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ariaValueText: String?
 }
@@ -471,6 +578,8 @@ public external interface ARIANotifyMixin : JsAny {
      * The ariaNotify() method of the Element interface queues a string of text to be announced by a screen reader.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaNotify)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun ariaNotify(announcement: String, options: AriaNotificationOptions = definedExternally)
 }

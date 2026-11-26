@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'fetch', DO NOT EDIT!
@@ -21,12 +24,16 @@ import org.w3c.xhr.*
  * These actions include retrieving, setting, adding to, and removing headers from the object's header list.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class Headers : JsAny {
     /**
      * The Headers() constructor creates a new Headers object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/Headers)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(init: JsArray<JsArray<JsString>>)
 
@@ -34,6 +41,8 @@ public open external class Headers : JsAny {
      * The Headers() constructor creates a new Headers object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/Headers)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(init: JsAny)
 
@@ -41,6 +50,8 @@ public open external class Headers : JsAny {
      * The Headers() constructor creates a new Headers object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/Headers)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -49,6 +60,8 @@ public open external class Headers : JsAny {
      * or adds the header if it does not already exist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun append(name: String, value: String)
 
@@ -56,6 +69,8 @@ public open external class Headers : JsAny {
      * The delete() method of the Headers interface deletes a header from the current Headers object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/delete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun delete(name: String)
 
@@ -64,6 +79,8 @@ public open external class Headers : JsAny {
      * object with a given name. If the requested header doesn't exist in the Headers object, it returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/get)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun get(name: String): String?
 
@@ -73,6 +90,8 @@ public open external class Headers : JsAny {
      * which wasn't possible prior to its implementation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/getSetCookie)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getSetCookie(): JsArray<JsString>
 
@@ -81,6 +100,8 @@ public open external class Headers : JsAny {
      * header.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/has)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun has(name: String): Boolean
 
@@ -89,6 +110,8 @@ public open external class Headers : JsAny {
      * adds the header if it does not already exist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/set)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun set(name: String, value: String)
     // not printed yet: iterable
@@ -101,6 +124,8 @@ public external interface Body : JsAny {
      * returned in these cases.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/body)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val body: ReadableStream?
 
@@ -109,6 +134,8 @@ public external interface Body : JsAny {
      * body has been read yet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bodyUsed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val bodyUsed: Boolean
 
@@ -117,6 +144,8 @@ public external interface Body : JsAny {
      * resolves with an ArrayBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun arrayBuffer(): Promise<ArrayBuffer>
 
@@ -125,6 +154,8 @@ public external interface Body : JsAny {
      * a Blob.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun blob(): Promise<Blob>
 
@@ -133,6 +164,8 @@ public external interface Body : JsAny {
      * a Uint8Array.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bytes(): Promise<Uint8Array>
 
@@ -141,6 +174,8 @@ public external interface Body : JsAny {
      * with a FormData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun formData(): Promise<FormData>
 
@@ -149,6 +184,8 @@ public external interface Body : JsAny {
      * the result of parsing the body text as JSON.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun json(): Promise<JsAny?>
 
@@ -157,6 +194,8 @@ public external interface Body : JsAny {
      * a String. The response is always decoded using UTF-8.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun text(): Promise<JsString>
 
@@ -165,6 +204,8 @@ public external interface Body : JsAny {
      * of the request body in chunks of UTF-8.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/textStream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun textStream(): ReadableStream
 }
@@ -173,12 +214,16 @@ public external interface Body : JsAny {
  * The Request interface of the Fetch API represents a resource request.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class Request : Body {
     /**
      * The Request() constructor creates a new Request object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/Request)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(input: Request, init: RequestInit = definedExternally)
 
@@ -186,6 +231,8 @@ public open external class Request : Body {
      * The Request() constructor creates a new Request object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/Request)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(input: String, init: RequestInit = definedExternally)
 
@@ -193,6 +240,8 @@ public open external class Request : Body {
      * The method read-only property of the Request interface contains the request's method (GET, POST, etc.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/method)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val method: String
 
@@ -200,6 +249,8 @@ public open external class Request : Body {
      * The url read-only property of the Request interface contains the URL of the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/url)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val url: String
 
@@ -207,6 +258,8 @@ public open external class Request : Body {
      * The headers read-only property of the Request interface contains the Headers object associated with the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/headers)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val headers: Headers
 
@@ -215,6 +268,8 @@ public open external class Request : Body {
      * requested.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/destination)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val destination: RequestDestination
 
@@ -223,6 +278,8 @@ public open external class Request : Body {
      * Request. (e.g., client, no-referrer, or a URL.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/referrer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val referrer: String
 
@@ -231,6 +288,8 @@ public open external class Request : Body {
      * referrer information, sent in the Referer header, should be included with the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/referrerPolicy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val referrerPolicy: ReferrerPolicy
 
@@ -240,6 +299,8 @@ public open external class Request : Body {
      * properties of the response are readable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/mode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val mode: RequestMode
 
@@ -249,6 +310,8 @@ public open external class Request : Body {
      * as whether any Set-Cookie response headers are respected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/credentials)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val credentials: RequestCredentials
 
@@ -257,6 +320,8 @@ public open external class Request : Body {
      * request will interact with the browser's HTTP cache.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/cache)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cache: RequestCache
 
@@ -264,6 +329,8 @@ public open external class Request : Body {
      * The redirect read-only property of the Request interface contains the mode for how redirects are handled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/redirect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val redirect: RequestRedirect
 
@@ -272,6 +339,8 @@ public open external class Request : Body {
      * request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/integrity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val integrity: String
 
@@ -281,6 +350,8 @@ public open external class Request : Body {
      * is unloaded before the request is complete.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/keepalive)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val keepalive: Boolean
 
@@ -289,6 +360,8 @@ public open external class Request : Body {
      * a user-triggered reload.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/isReloadNavigation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val isReloadNavigation: Boolean
 
@@ -297,6 +370,8 @@ public open external class Request : Body {
      * is a history navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/isHistoryNavigation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val isHistoryNavigation: Boolean
 
@@ -304,6 +379,8 @@ public open external class Request : Body {
      * The read-only signal property of the Request interface returns the AbortSignal associated with the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/signal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val signal: AbortSignal
 
@@ -312,6 +389,8 @@ public open external class Request : Body {
      * whether the browser must send the entire request before processing the response.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/duplex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val duplex: RequestDuplex
 
@@ -319,6 +398,8 @@ public open external class Request : Body {
      * The clone() method of the Request interface creates a copy of the current Request object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/clone)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clone(): Request
 
@@ -328,6 +409,8 @@ public open external class Request : Body {
      * returned in these cases.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/body)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val body: ReadableStream?
 
@@ -336,6 +419,8 @@ public open external class Request : Body {
      * body has been read yet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bodyUsed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val bodyUsed: Boolean
 
@@ -344,6 +429,8 @@ public open external class Request : Body {
      * resolves with an ArrayBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun arrayBuffer(): Promise<ArrayBuffer>
 
@@ -352,6 +439,8 @@ public open external class Request : Body {
      * a Blob.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun blob(): Promise<Blob>
 
@@ -360,6 +449,8 @@ public open external class Request : Body {
      * a Uint8Array.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun bytes(): Promise<Uint8Array>
 
@@ -368,6 +459,8 @@ public open external class Request : Body {
      * with a FormData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun formData(): Promise<FormData>
 
@@ -376,6 +469,8 @@ public open external class Request : Body {
      * the result of parsing the body text as JSON.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun json(): Promise<JsAny?>
 
@@ -384,6 +479,8 @@ public open external class Request : Body {
      * a String. The response is always decoded using UTF-8.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun text(): Promise<JsString>
 
@@ -392,6 +489,8 @@ public open external class Request : Body {
      * of the request body in chunks of UTF-8.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/textStream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun textStream(): ReadableStream
 }
@@ -520,12 +619,16 @@ public inline val RequestPriority.Companion.AUTO: RequestPriority get() = "auto"
  * The Response interface of the Fetch API represents the response to a request.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class Response : Body {
     /**
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(body: ReadableStream?, init: ResponseInit = definedExternally)
 
@@ -533,6 +636,8 @@ public open external class Response : Body {
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(body: Blob?, init: ResponseInit = definedExternally)
 
@@ -540,6 +645,8 @@ public open external class Response : Body {
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(body: BufferDataSource?, init: ResponseInit = definedExternally)
 
@@ -547,6 +654,8 @@ public open external class Response : Body {
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(body: FormData?, init: ResponseInit = definedExternally)
 
@@ -554,6 +663,8 @@ public open external class Response : Body {
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(body: URLSearchParams?, init: ResponseInit = definedExternally)
 
@@ -561,6 +672,8 @@ public open external class Response : Body {
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(body: String?, init: ResponseInit = definedExternally)
 
@@ -568,6 +681,8 @@ public open external class Response : Body {
      * The Response() constructor creates a new Response object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/Response)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -576,6 +691,8 @@ public open external class Response : Body {
      * whether scripts are able to access the response body and headers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: ResponseType
 
@@ -584,6 +701,8 @@ public open external class Response : Body {
      * property will be the final URL obtained after any redirects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/url)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val url: String
 
@@ -592,6 +711,8 @@ public open external class Response : Body {
      * of a request you made which was redirected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/redirected)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val redirected: Boolean
 
@@ -599,6 +720,8 @@ public open external class Response : Body {
      * The status read-only property of the Response interface contains the HTTP status code of the response.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/status)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val status: Short
 
@@ -607,6 +730,8 @@ public open external class Response : Body {
      * successful (status in the range 200-299) or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/ok)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ok: Boolean
 
@@ -615,6 +740,8 @@ public open external class Response : Body {
      * status code in Response.status.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/statusText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val statusText: String
 
@@ -623,6 +750,8 @@ public open external class Response : Body {
      * response.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/headers)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val headers: Headers
 
@@ -631,6 +760,8 @@ public open external class Response : Body {
      * stored in a different variable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/clone)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clone(): Response
 
@@ -638,6 +769,8 @@ public open external class Response : Body {
      * The body read-only property of the Response interface is a ReadableStream of the body contents.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/body)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val body: ReadableStream?
 
@@ -646,6 +779,8 @@ public open external class Response : Body {
      * been read yet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/bodyUsed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val bodyUsed: Boolean
 
@@ -654,6 +789,8 @@ public open external class Response : Body {
      * a promise that resolves with an ArrayBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/arrayBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun arrayBuffer(): Promise<ArrayBuffer>
 
@@ -662,6 +799,8 @@ public open external class Response : Body {
      * promise that resolves with a Blob.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/blob)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun blob(): Promise<Blob>
 
@@ -670,6 +809,8 @@ public open external class Response : Body {
      * promise that resolves with a Uint8Array.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/bytes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun bytes(): Promise<Uint8Array>
 
@@ -678,6 +819,8 @@ public open external class Response : Body {
      * promise that resolves with a FormData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/formData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun formData(): Promise<FormData>
 
@@ -686,6 +829,8 @@ public open external class Response : Body {
      * promise which resolves with the result of parsing the body text as JSON.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/json)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun json(): Promise<JsAny?>
 
@@ -694,6 +839,8 @@ public open external class Response : Body {
      * promise that resolves with a String. The response is always decoded using UTF-8.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/text)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun text(): Promise<JsString>
 
@@ -702,6 +849,8 @@ public open external class Response : Body {
      * of the response body in chunks of UTF-8.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/textStream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun textStream(): ReadableStream
 
@@ -711,6 +860,8 @@ public open external class Response : Body {
          * error.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/error_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun error(): Response
 
@@ -719,6 +870,8 @@ public open external class Response : Body {
          * specified URL.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/redirect_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun redirect(url: String, status: Short = definedExternally): Response
 
@@ -728,6 +881,8 @@ public open external class Response : Body {
          * additional headers can also be set.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/json_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun json(data: JsAny?, init: ResponseInit = definedExternally): Response
     }
@@ -785,6 +940,8 @@ public fun DeferredRequestInit(method: String? = null, headers: JsAny? = null, b
  * has been created.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchLaterResult)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class FetchLaterResult : JsAny {
     /**
@@ -792,6 +949,8 @@ public abstract external class FetchLaterResult : JsAny {
      * deferred fetch has been sent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchLaterResult/activated)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val activated: Boolean
 }

@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'service-workers', DO NOT EDIT!
@@ -23,6 +26,8 @@ public external interface UnionClientOrMessagePortOrServiceWorker : JsAny
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ServiceWorker : EventTarget, AbstractWorker, MessageEventSource, UnionClientOrMessagePortOrServiceWorker {
     /**
@@ -31,6 +36,8 @@ public abstract external class ServiceWorker : EventTarget, AbstractWorker, Mess
      * ServiceWorker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/scriptURL)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val scriptURL: String
 
@@ -40,6 +47,8 @@ public abstract external class ServiceWorker : EventTarget, AbstractWorker, Mess
      * or redundant.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/state)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val state: ServiceWorkerState
 
@@ -49,6 +58,8 @@ public abstract external class ServiceWorker : EventTarget, AbstractWorker, Mess
      * algorithm.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
 
@@ -58,6 +69,8 @@ public abstract external class ServiceWorker : EventTarget, AbstractWorker, Mess
      * algorithm.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
 
@@ -65,6 +78,8 @@ public abstract external class ServiceWorker : EventTarget, AbstractWorker, Mess
      * The statechange event fires anytime the ServiceWorker.state changes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onstatechange: ((Event) -> Unit)?
 }
@@ -88,6 +103,8 @@ public inline val ServiceWorkerState.Companion.REDUNDANT: ServiceWorkerState get
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ServiceWorkerRegistration : EventTarget {
     /**
@@ -95,6 +112,8 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      * ServiceWorker.state is installing. This property is initially set to null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/installing)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val installing: ServiceWorker?
 
@@ -103,6 +122,8 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      * ServiceWorker.state is installed. This property is initially set to null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/waiting)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val waiting: ServiceWorker?
 
@@ -111,6 +132,8 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      * ServiceWorker.state is activating or activated. This property is initially set to null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/active)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val active: ServiceWorker?
 
@@ -119,6 +142,8 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      * NavigationPreloadManager associated with the current service worker registration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/navigationPreload)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigationPreload: NavigationPreloadManager
 
@@ -129,6 +154,8 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      * service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/scope)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val scope: String
 
@@ -138,6 +165,8 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      * service worker or any scripts that are imported via importScripts().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updateViaCache)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val updateViaCache: ServiceWorkerUpdateViaCache
 
@@ -148,6 +177,8 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      * ago.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun update(): Promise<ServiceWorkerRegistration>
 
@@ -159,6 +190,8 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      * before it is unregistered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun unregister(): Promise<JsBoolean>
 
@@ -167,6 +200,8 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      * ServiceWorkerRegistration.installing property acquires a new service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onupdatefound: ((Event) -> Unit)?
 
@@ -175,6 +210,8 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      * service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun showNotification(title: String, options: NotificationOptions = definedExternally): Promise<JsAny?>
 
@@ -185,6 +222,8 @@ public abstract external class ServiceWorkerRegistration : EventTarget {
      * on the same origin will not be available to other active service workers on that same origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getNotifications(filter: GetNotificationOptions = definedExternally): Promise<JsArray<Notification>>
 }
@@ -206,6 +245,8 @@ public inline val ServiceWorkerUpdateViaCache.Companion.NONE: ServiceWorkerUpdat
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ServiceWorkerContainer : EventTarget {
     /**
@@ -214,6 +255,8 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      * activating service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controller)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val controller: ServiceWorker?
 
@@ -222,6 +265,8 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      * until a service worker is active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/ready)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ready: Promise<ServiceWorkerRegistration>
 
@@ -230,6 +275,8 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      * the given scope.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun register(scriptURL: String, options: RegistrationOptions = definedExternally): Promise<ServiceWorkerRegistration>
 
@@ -239,6 +286,8 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      * ServiceWorkerRegistration or undefined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getRegistration(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
 
@@ -248,6 +297,8 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      * ServiceWorkerRegistration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getRegistrations(): Promise<JsArray<ServiceWorkerRegistration>>
 
@@ -257,6 +308,8 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      * used to react to sent messages earlier, even before that page's content has finished loading.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/startMessages)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun startMessages()
 
@@ -265,6 +318,8 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      * ServiceWorkerRegistration acquires a new active worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controllerchange_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var oncontrollerchange: ((Event) -> Unit)?
 
@@ -272,6 +327,8 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      * The message event is used in a page controlled by a service worker to receive messages from the service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/message_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onmessage: ((MessageEvent) -> Unit)?
 
@@ -280,6 +337,8 @@ public abstract external class ServiceWorkerContainer : EventTarget {
      * worker can't be deserialized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/messageerror_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onmessageerror: ((MessageEvent) -> Unit)?
 }
@@ -303,6 +362,8 @@ public fun RegistrationOptions(scope: String? = null, type: WorkerType? = null, 
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class NavigationPreloadManager : JsAny {
     /**
@@ -310,6 +371,8 @@ public abstract external class NavigationPreloadManager : JsAny {
      * by the service worker. It returns a promise that resolves with undefined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/enable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun enable(): Promise<JsAny?>
 
@@ -319,6 +382,8 @@ public abstract external class NavigationPreloadManager : JsAny {
      * undefined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/disable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun disable(): Promise<JsAny?>
 
@@ -328,6 +393,8 @@ public abstract external class NavigationPreloadManager : JsAny {
      * during service worker navigation preloading. It returns an empty Promise that resolves with undefined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/setHeaderValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setHeaderValue(value: String): Promise<JsAny?>
 
@@ -337,6 +404,8 @@ public abstract external class NavigationPreloadManager : JsAny {
      * Service-Worker-Navigation-Preload HTTP header.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/getState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getState(): Promise<NavigationPreloadState>
 }
@@ -358,6 +427,8 @@ public fun NavigationPreloadState(enabled: Boolean? = null, headerValue: String?
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
     /**
@@ -365,6 +436,8 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      * with the service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/clients)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val clients: Clients
 
@@ -373,6 +446,8 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      * ServiceWorkerRegistration object, which represents the service worker's registration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/registration)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val registration: ServiceWorkerRegistration
 
@@ -381,6 +456,8 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      * ServiceWorker object, which represents the service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/serviceWorker)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val serviceWorker: ServiceWorker
 
@@ -389,6 +466,8 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      * the active service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun skipWaiting(): Promise<JsAny?>
 
@@ -397,6 +476,8 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      * new ServiceWorkerRegistration.installing worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/install_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var oninstall: ((InstallEvent) -> Unit)?
 
@@ -405,6 +486,8 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      * new ServiceWorkerRegistration.active worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/activate_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onactivate: ((ExtendableEvent) -> Unit)?
 
@@ -414,6 +497,8 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      * customized responses (for example, from a local cache).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/fetch_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onfetch: ((FetchEvent) -> Unit)?
 
@@ -423,6 +508,8 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      * worker can optionally send a response back via the Client.postMessage(), corresponding to the controlled page.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onmessage: ((ExtendableMessageEvent) -> Unit)?
 
@@ -431,6 +518,8 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      * deserialized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/messageerror_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onmessageerror: ((ExtendableMessageEvent) -> Unit)?
 
@@ -439,6 +528,8 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      * notification spawned by ServiceWorkerRegistration.showNotification() has been clicked.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclick_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onnotificationclick: ((NotificationEvent) -> Unit)?
 
@@ -447,6 +538,8 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
      * notification spawned by ServiceWorkerRegistration.showNotification().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclose_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onnotificationclose: ((NotificationEvent) -> Unit)?
 }
@@ -457,12 +550,16 @@ public abstract external class ServiceWorkerGlobalScope : WorkerGlobalScope {
  * Clients.matchAll() and Clients.get().
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Client : UnionClientOrMessagePortOrServiceWorker {
     /**
      * The url read-only property of the Client interface returns the URL of the current service worker client.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/url)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val url: String
 
@@ -471,6 +568,8 @@ public abstract external class Client : UnionClientOrMessagePortOrServiceWorker 
      * Client. This value can be one of "auxiliary", "top-level", "nested", or "none".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/frameType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val frameType: FrameType
 
@@ -478,6 +577,8 @@ public abstract external class Client : UnionClientOrMessagePortOrServiceWorker 
      * The id read-only property of the Client interface returns the universally unique identifier of the Client object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/id)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val id: String
 
@@ -486,6 +587,8 @@ public abstract external class Client : UnionClientOrMessagePortOrServiceWorker 
      * controlling.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: ClientType
 
@@ -494,6 +597,8 @@ public abstract external class Client : UnionClientOrMessagePortOrServiceWorker 
      * Worker, or SharedWorker). The message is received in the message event on navigator.serviceWorker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
 
@@ -502,6 +607,8 @@ public abstract external class Client : UnionClientOrMessagePortOrServiceWorker 
      * Worker, or SharedWorker). The message is received in the message event on navigator.serviceWorker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
 }
@@ -512,6 +619,8 @@ public abstract external class Client : UnionClientOrMessagePortOrServiceWorker 
  * uses a service worker for its own loading and sub-resources.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WindowClient : Client {
     /**
@@ -519,6 +628,8 @@ public abstract external class WindowClient : Client {
      * client. This value can be one of "hidden", "visible", or "prerender".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/visibilityState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val visibilityState: DocumentVisibilityState
 
@@ -527,6 +638,8 @@ public abstract external class WindowClient : Client {
      * current client has focus.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focused)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val focused: Boolean
 
@@ -535,6 +648,8 @@ public abstract external class WindowClient : Client {
      * of all ancestors of the browsing context represented by this WindowClient in reverse order.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/ancestorOrigins)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ancestorOrigins: JsArray<JsString>
 
@@ -543,6 +658,8 @@ public abstract external class WindowClient : Client {
      * Promise that resolves to the existing WindowClient.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun focus(): Promise<WindowClient>
 
@@ -551,6 +668,8 @@ public abstract external class WindowClient : Client {
      * returns a Promise that resolves to the existing WindowClient.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun navigate(url: String): Promise<WindowClient?>
 }
@@ -569,6 +688,8 @@ public inline val FrameType.Companion.NONE: FrameType get() = "none".toJsString(
  * The Clients interface provides access to Client objects. Access it via self.clients within a service worker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Clients : JsAny {
     /**
@@ -576,6 +697,8 @@ public abstract external class Clients : JsAny {
      * Promise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun get(id: String): Promise<Client?>
 
@@ -586,6 +709,8 @@ public abstract external class Clients : JsAny {
      * controlled by the service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun matchAll(options: ClientQueryOptions = definedExternally): Promise<JsArray<Client>>
 
@@ -594,6 +719,8 @@ public abstract external class Clients : JsAny {
      * If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun openWindow(url: String): Promise<WindowClient?>
 
@@ -603,6 +730,8 @@ public abstract external class Clients : JsAny {
      * that become controlled by this service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun claim(): Promise<JsAny?>
 }
@@ -633,12 +762,16 @@ public inline val ClientType.Companion.ALL: ClientType get() = "all".toJsString(
  * until it upgrades database schemas and deletes the outdated cache entries.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ExtendableEvent : Event {
     /**
      * The ExtendableEvent() constructor creates a new ExtendableEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/ExtendableEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: ExtendableEventInit = definedExternally)
 
@@ -648,6 +781,8 @@ public open external class ExtendableEvent : Event {
      * until the promise settles, and it shouldn't terminate the service worker if it wants that work to complete.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun waitUntil(f: Promise<JsAny?>)
 
@@ -673,12 +808,16 @@ public fun ExtendableEventInit(bubbles: Boolean? = null, cancelable: Boolean? = 
  * functional events such as FetchEvent are not dispatched during installation.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InstallEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class InstallEvent : ExtendableEvent {
     /**
      * The InstallEvent() constructor creates a new InstallEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InstallEvent/InstallEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: ExtendableEventInit = definedExternally)
 
@@ -689,6 +828,8 @@ public open external class InstallEvent : ExtendableEvent {
      * Cache, and avoids the performance overhead of unnecessary service worker cycles.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InstallEvent/addRoutes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addRoutes(rules: RouterRule): Promise<JsAny?>
 
@@ -699,6 +840,8 @@ public open external class InstallEvent : ExtendableEvent {
      * Cache, and avoids the performance overhead of unnecessary service worker cycles.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InstallEvent/addRoutes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addRoutes(rules: JsArray<RouterRule>): Promise<JsAny?>
 
@@ -770,12 +913,16 @@ public inline val RouterSourceEnum.Companion.RACE_NETWORK_AND_FETCH_HANDLER: Rou
  * method, which allows us to provide a response to this fetch.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class FetchEvent : ExtendableEvent {
     /**
      * The FetchEvent() constructor creates a new FetchEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/FetchEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: FetchEventInit)
 
@@ -783,6 +930,8 @@ public open external class FetchEvent : ExtendableEvent {
      * The request read-only property of the FetchEvent interface returns the Request that triggered the event handler.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/request)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val request: Request
 
@@ -791,6 +940,8 @@ public open external class FetchEvent : ExtendableEvent {
      * navigation preload Response if navigation preload was triggered, or undefined otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/preloadResponse)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val preloadResponse: Promise<JsAny?>
 
@@ -799,6 +950,8 @@ public open external class FetchEvent : ExtendableEvent {
      * worker is controlling.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/clientId)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val clientId: String
 
@@ -807,6 +960,8 @@ public open external class FetchEvent : ExtendableEvent {
      * previous client during a page navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/resultingClientId)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val resultingClientId: String
     public open val replacesClientId: String
@@ -817,6 +972,8 @@ public open external class FetchEvent : ExtendableEvent {
      * response, and is usually used together with the waitUntil() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/handled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val handled: Promise<JsAny?>
 
@@ -825,6 +982,8 @@ public open external class FetchEvent : ExtendableEvent {
      * promise for a Response yourself.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/respondWith)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun respondWith(r: Promise<Response>)
 
@@ -863,12 +1022,16 @@ public fun FetchEventInit(request: Request, bubbles: Boolean? = null, cancelable
  * lifetime of such events.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ExtendableMessageEvent : ExtendableEvent {
     /**
      * The ExtendableMessageEvent() constructor creates a new ExtendableMessageEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ExtendableMessageEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: ExtendableMessageEventInit = definedExternally)
 
@@ -877,6 +1040,8 @@ public open external class ExtendableMessageEvent : ExtendableEvent {
      * type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/data)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val data: JsAny?
 
@@ -885,6 +1050,8 @@ public open external class ExtendableMessageEvent : ExtendableEvent {
      * the message.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/origin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val origin: String
 
@@ -893,6 +1060,8 @@ public open external class ExtendableMessageEvent : ExtendableEvent {
      * last event ID of the event source. This is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/lastEventId)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val lastEventId: String
 
@@ -901,6 +1070,8 @@ public open external class ExtendableMessageEvent : ExtendableEvent {
      * from which the message was sent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/source)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val source: UnionClientOrMessagePortOrServiceWorker?
 
@@ -909,6 +1080,8 @@ public open external class ExtendableMessageEvent : ExtendableEvent {
      * objects representing the ports of the associated message channel (the channel the message is being sent through.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ports)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ports: JsArray<MessagePort>
 
@@ -949,6 +1122,8 @@ public fun ExtendableMessageEventInit(bubbles: Boolean? = null, cancelable: Bool
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Cache : JsAny {
     /**
@@ -956,6 +1131,8 @@ public abstract external class Cache : JsAny {
      * first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun match(request: Request, options: CacheQueryOptions = definedExternally): Promise<Response?>
 
@@ -964,6 +1141,8 @@ public abstract external class Cache : JsAny {
      * first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun match(request: String, options: CacheQueryOptions = definedExternally): Promise<Response?>
 
@@ -972,6 +1151,8 @@ public abstract external class Cache : JsAny {
      * responses in the Cache object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun matchAll(request: Request, options: CacheQueryOptions = definedExternally): Promise<JsArray<Response>>
 
@@ -980,6 +1161,8 @@ public abstract external class Cache : JsAny {
      * responses in the Cache object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun matchAll(request: String, options: CacheQueryOptions = definedExternally): Promise<JsArray<Response>>
 
@@ -988,6 +1171,8 @@ public abstract external class Cache : JsAny {
      * responses in the Cache object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun matchAll(): Promise<JsArray<Response>>
 
@@ -996,6 +1181,8 @@ public abstract external class Cache : JsAny {
      * given cache.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun add(request: Request): Promise<JsAny?>
 
@@ -1004,6 +1191,8 @@ public abstract external class Cache : JsAny {
      * given cache.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun add(request: String): Promise<JsAny?>
 
@@ -1013,6 +1202,8 @@ public abstract external class Cache : JsAny {
      * response operations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addAll(requests: JsArray<JsAny>): Promise<JsAny?>
 
@@ -1020,6 +1211,8 @@ public abstract external class Cache : JsAny {
      * The put() method of the Cache interface allows key/value pairs to be added to the current Cache object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun put(request: Request, response: Response): Promise<JsAny?>
 
@@ -1027,6 +1220,8 @@ public abstract external class Cache : JsAny {
      * The put() method of the Cache interface allows key/value pairs to be added to the current Cache object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun put(request: String, response: Response): Promise<JsAny?>
 
@@ -1035,6 +1230,8 @@ public abstract external class Cache : JsAny {
      * the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun delete(request: Request, options: CacheQueryOptions = definedExternally): Promise<JsBoolean>
 
@@ -1043,6 +1240,8 @@ public abstract external class Cache : JsAny {
      * the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun delete(request: String, options: CacheQueryOptions = definedExternally): Promise<JsBoolean>
 
@@ -1051,6 +1250,8 @@ public abstract external class Cache : JsAny {
      * representing the keys of the Cache.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun keys(request: Request, options: CacheQueryOptions = definedExternally): Promise<JsArray<Request>>
 
@@ -1059,6 +1260,8 @@ public abstract external class Cache : JsAny {
      * representing the keys of the Cache.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun keys(request: String, options: CacheQueryOptions = definedExternally): Promise<JsArray<Request>>
 
@@ -1067,6 +1270,8 @@ public abstract external class Cache : JsAny {
      * representing the keys of the Cache.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun keys(): Promise<JsArray<Request>>
 }
@@ -1089,6 +1294,8 @@ public fun CacheQueryOptions(ignoreSearch: Boolean? = null, ignoreMethod: Boolea
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CacheStorage : JsAny {
     /**
@@ -1097,6 +1304,8 @@ public abstract external class CacheStorage : JsAny {
      * found.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun match(request: Request, options: MultiCacheQueryOptions = definedExternally): Promise<Response?>
 
@@ -1106,6 +1315,8 @@ public abstract external class CacheStorage : JsAny {
      * found.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun match(request: String, options: MultiCacheQueryOptions = definedExternally): Promise<Response?>
 
@@ -1114,6 +1325,8 @@ public abstract external class CacheStorage : JsAny {
      * the cacheName.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun has(cacheName: String): Promise<JsBoolean>
 
@@ -1122,6 +1335,8 @@ public abstract external class CacheStorage : JsAny {
      * cacheName.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun open(cacheName: String): Promise<Cache>
 
@@ -1131,6 +1346,8 @@ public abstract external class CacheStorage : JsAny {
      * false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun delete(cacheName: String): Promise<JsBoolean>
 
@@ -1140,6 +1357,8 @@ public abstract external class CacheStorage : JsAny {
      * created. Use this method to iterate over a list of all Cache objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun keys(): Promise<JsArray<JsString>>
 }

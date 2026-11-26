@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'url', DO NOT EDIT!
@@ -18,12 +21,16 @@ public external interface UnionBlobOrMediaSource : MediaProvider
  * allow you to easily read and modify the components of a URL.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class URL : JsAny {
     /**
      * The URL() constructor returns a newly created URL object representing the URL defined by the parameters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/URL)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(url: String, base: String = definedExternally)
 
@@ -31,6 +38,8 @@ public open external class URL : JsAny {
      * The href property of the URL interface is a string containing the whole URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/href)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var href: String
 
@@ -39,6 +48,8 @@ public open external class URL : JsAny {
      * origin of the represented URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/origin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val origin: String
 
@@ -47,6 +58,8 @@ public open external class URL : JsAny {
      * the final ":".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/protocol)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var protocol: String
 
@@ -55,6 +68,8 @@ public open external class URL : JsAny {
      * does not have a username, this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/username)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var username: String
 
@@ -63,6 +78,8 @@ public open external class URL : JsAny {
      * does not have a password, this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/password)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var password: String
 
@@ -72,6 +89,8 @@ public open external class URL : JsAny {
      * property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/host)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var host: String
 
@@ -81,6 +100,8 @@ public open external class URL : JsAny {
      * normalized, such as stripping leading zeros, and domain names are converted to IDN.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/hostname)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var hostname: String
 
@@ -90,6 +111,8 @@ public open external class URL : JsAny {
      * an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/port)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var port: String
 
@@ -98,6 +121,8 @@ public open external class URL : JsAny {
      * constructed from a list of path segments, each of which is prefixed by a / character.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/pathname)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var pathname: String
 
@@ -107,6 +132,8 @@ public open external class URL : JsAny {
      * contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/search)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var search: String
 
@@ -115,6 +142,8 @@ public open external class URL : JsAny {
      * GET decoded query arguments contained in the URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/searchParams)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val searchParams: URLSearchParams
 
@@ -123,6 +152,8 @@ public open external class URL : JsAny {
      * URL. If the URL does not have a fragment identifier, this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/hash)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var hash: String
 
@@ -131,6 +162,8 @@ public open external class URL : JsAny {
      * that URL.toString() returns.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): String
 
@@ -140,6 +173,8 @@ public open external class URL : JsAny {
          * defined by the parameters.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun parse(url: String, base: String = definedExternally): URL?
 
@@ -148,6 +183,8 @@ public open external class URL : JsAny {
          * URL, or a relative URL combined with a base URL, are parsable and valid.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/canParse_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun canParse(url: String, base: String = definedExternally): Boolean
 
@@ -156,6 +193,8 @@ public open external class URL : JsAny {
          * the object given in the parameter.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/createObjectURL_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun createObjectURL(obj: UnionBlobOrMediaSource): String
 
@@ -164,6 +203,8 @@ public open external class URL : JsAny {
          * created by calling URL.createObjectURL().
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/revokeObjectURL_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun revokeObjectURL(url: String)
     }
@@ -173,12 +214,16 @@ public open external class URL : JsAny {
  * The URLSearchParams interface defines utility methods to work with the query string of a URL.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class URLSearchParams : JsAny {
     /**
      * The URLSearchParams() constructor creates and returns a new URLSearchParams object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/URLSearchParams)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(init: JsArray<JsArray<JsString>>)
 
@@ -186,6 +231,8 @@ public open external class URLSearchParams : JsAny {
      * The URLSearchParams() constructor creates and returns a new URLSearchParams object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/URLSearchParams)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(init: JsAny)
 
@@ -193,6 +240,8 @@ public open external class URLSearchParams : JsAny {
      * The URLSearchParams() constructor creates and returns a new URLSearchParams object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/URLSearchParams)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(init: String)
 
@@ -200,6 +249,8 @@ public open external class URLSearchParams : JsAny {
      * The URLSearchParams() constructor creates and returns a new URLSearchParams object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/URLSearchParams)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -208,6 +259,8 @@ public open external class URLSearchParams : JsAny {
      * entries.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/size)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val size: Int
 
@@ -216,6 +269,8 @@ public open external class URLSearchParams : JsAny {
      * parameter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun append(name: String, value: String)
 
@@ -224,6 +279,8 @@ public open external class URLSearchParams : JsAny {
      * from the list of all search parameters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/delete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun delete(name: String, value: String = definedExternally)
 
@@ -232,6 +289,8 @@ public open external class URLSearchParams : JsAny {
      * parameter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/get)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun get(name: String): String?
 
@@ -240,6 +299,8 @@ public open external class URLSearchParams : JsAny {
      * parameter as an array.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/getAll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getAll(name: String): JsArray<JsString>
 
@@ -248,6 +309,8 @@ public open external class URLSearchParams : JsAny {
      * parameter is in the search parameters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/has)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun has(name: String, value: String = definedExternally): Boolean
 
@@ -257,6 +320,8 @@ public open external class URLSearchParams : JsAny {
      * doesn't exist, this method creates it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/set)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun set(name: String, value: String)
 
@@ -266,6 +331,8 @@ public open external class URLSearchParams : JsAny {
      * stable sorting algorithm (i.e., the relative order between key/value pairs with equal keys will be preserved).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/sort)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun sort()
     // not printed yet: iterable

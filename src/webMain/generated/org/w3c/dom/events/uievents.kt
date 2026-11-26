@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'uievents', DO NOT EDIT!
@@ -15,12 +18,16 @@ import org.w3c.dom.*
  * various event types and interfaces related to user interactions.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class UIEvent : Event {
     /**
      * The UIEvent() constructor creates a new UIEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/UIEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: UIEventInit = definedExternally)
 
@@ -29,6 +36,8 @@ public open external class UIEvent : Event {
      * browsers, this is the Window object the event happened in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/view)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val view: Window?
 
@@ -37,6 +46,8 @@ public open external class UIEvent : Event {
      * click count.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/detail)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val detail: Int
 
@@ -46,6 +57,8 @@ public open external class UIEvent : Event {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/initUIEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initUIEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, detailArg: Int = definedExternally)
 
@@ -56,6 +69,8 @@ public open external class UIEvent : Event {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/which)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val which: Int
 
@@ -86,6 +101,8 @@ public fun UIEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, co
  * The FocusEvent interface represents focus-related events, including focus, blur, focusin, and focusout.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class FocusEvent : UIEvent {
     /**
@@ -93,11 +110,15 @@ public open external class FocusEvent : UIEvent {
      * event has both a source and a destination, the relatedTarget value must be set to the other target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent/FocusEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: FocusEventInit = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent/relatedTarget)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val relatedTarget: EventTarget?
 
@@ -127,12 +148,16 @@ public fun FocusEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  * The InputEvent interface represents an event notifying the user of editable content changes.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class InputEvent : UIEvent {
     /**
      * The InputEvent() constructor creates a new InputEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/InputEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: InputEventInit = definedExternally)
 
@@ -141,6 +166,8 @@ public open external class InputEvent : UIEvent {
      * empty string if the change doesn't insert text, such as when characters are deleted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/data)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val data: String?
 
@@ -149,6 +176,8 @@ public open external class InputEvent : UIEvent {
      * compositionstart and before compositionend.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/isComposing)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val isComposing: Boolean
 
@@ -157,6 +186,8 @@ public open external class InputEvent : UIEvent {
      * Possible changes include for example inserting, deleting, and formatting text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/inputType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val inputType: String
 
@@ -192,12 +223,16 @@ public fun InputEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  * keypress, or keyup) identifies what kind of keyboard activity occurred.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class KeyboardEvent : UIEvent {
     /**
      * The KeyboardEvent() constructor creates a new KeyboardEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/KeyboardEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: KeyboardEventInit = definedExternally)
 
@@ -206,6 +241,8 @@ public open external class KeyboardEvent : UIEvent {
      * into consideration the state of modifier keys such as Shift as well as the keyboard locale and layout.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/key)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val key: String
 
@@ -215,6 +252,8 @@ public open external class KeyboardEvent : UIEvent {
      * by keyboard layout or the state of the modifier keys.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/code)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val code: String
 
@@ -223,6 +262,8 @@ public open external class KeyboardEvent : UIEvent {
      * the keyboard or other input device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/location)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val location: Int
 
@@ -231,6 +272,8 @@ public open external class KeyboardEvent : UIEvent {
      * pressed (true) or not (false) when the event occurred.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/ctrlKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ctrlKey: Boolean
 
@@ -239,6 +282,8 @@ public open external class KeyboardEvent : UIEvent {
      * (true) or not (false) when the event occurred.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/shiftKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val shiftKey: Boolean
 
@@ -247,6 +292,8 @@ public open external class KeyboardEvent : UIEvent {
      * macOS) was pressed (true) or not (false) when the event occurred.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/altKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val altKey: Boolean
 
@@ -256,6 +303,8 @@ public open external class KeyboardEvent : UIEvent {
      * detected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/metaKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val metaKey: Boolean
 
@@ -264,6 +313,8 @@ public open external class KeyboardEvent : UIEvent {
      * key is being held down such that it is automatically repeating.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/repeat)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val repeat: Boolean
 
@@ -272,6 +323,8 @@ public open external class KeyboardEvent : UIEvent {
      * a composition session, i.e., after compositionstart and before compositionend.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/isComposing)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val isComposing: Boolean
 
@@ -280,6 +333,8 @@ public open external class KeyboardEvent : UIEvent {
      * modifier is active (that is the modifier key is pressed or locked), otherwise, false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/getModifierState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getModifierState(keyArg: String): Boolean
 
@@ -292,6 +347,8 @@ public open external class KeyboardEvent : UIEvent {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/initKeyboardEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initKeyboardEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, keyArg: String = definedExternally, locationArg: Int = definedExternally, ctrlKey: Boolean = definedExternally, altKey: Boolean = definedExternally, shiftKey: Boolean = definedExternally, metaKey: Boolean = definedExternally)
 
@@ -302,6 +359,8 @@ public open external class KeyboardEvent : UIEvent {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/charCode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val charCode: Int
 
@@ -312,6 +371,8 @@ public open external class KeyboardEvent : UIEvent {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/keyCode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val keyCode: Int
 
@@ -411,12 +472,16 @@ public fun EventModifierInit(bubbles: Boolean? = null, cancelable: Boolean? = nu
  * The DOM CompositionEvent represents events that occur due to the user indirectly entering text.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class CompositionEvent : UIEvent {
     /**
      * The CompositionEvent() constructor creates a new CompositionEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/CompositionEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: CompositionEventInit = definedExternally)
 
@@ -426,6 +491,8 @@ public open external class CompositionEvent : UIEvent {
      * CompositionEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/data)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val data: String
 
@@ -436,6 +503,8 @@ public open external class CompositionEvent : UIEvent {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/initCompositionEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initCompositionEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, dataArg: String = definedExternally)
 
@@ -467,6 +536,8 @@ public fun CompositionEventInit(bubbles: Boolean? = null, cancelable: Boolean? =
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class TextEvent : UIEvent {
     /**
@@ -475,6 +546,8 @@ public abstract external class TextEvent : UIEvent {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEvent/data)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val data: String
 
@@ -485,6 +558,8 @@ public abstract external class TextEvent : UIEvent {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEvent/initTextEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initTextEvent(type: String, bubbles: Boolean = definedExternally, cancelable: Boolean = definedExternally, view: Window? = definedExternally, data: String = definedExternally)
 

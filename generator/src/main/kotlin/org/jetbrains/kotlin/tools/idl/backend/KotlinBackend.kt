@@ -207,7 +207,13 @@ private class SpecFile(
         }
 
         return buildString {
-            append(generatedFileHeader(seeDetailsAt = "generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt", generatedFrom = "THE WEB IDL OF '${spec.name}'"))
+            append(
+                generatedFileHeader(
+                    seeDetailsAt = "generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt",
+                    generatedFrom = "THE WEB IDL OF '${spec.name}'",
+                    mdnExcerpts = hasMdnDocs
+                )
+            )
             append("package ").append(spec.packageName).append("\n\n")
             imports.forEach { append("import ").append(it).append(".*\n") }
             if (imports.isNotEmpty()) append('\n')
@@ -736,10 +742,14 @@ private class SpecFile(
 
     private val docs get() = kotlinBackend.docs
 
+    /** Whether any KDoc in this file is from MDN, so the header must say it is licensed separately. */
+    private var hasMdnDocs = false
+
     /** The KDoc of the next declaration, if there is anything to say: see [kdocLines]. */
     private fun kdoc(doc: WebDoc?, extAttrs: List<IdlExtendedAttribute>) {
         val lines = kdocLines(doc, secureContext = extAttrs.has("SecureContext"), indent = indent * 4)
         if (lines.isEmpty()) return
+        if (doc != null) hasMdnDocs = true
         // A documented declaration is set apart from the one before it, unless it opens a block.
         if (!out.endsWith("{\n") && !out.endsWith("\n\n") && out.isNotEmpty()) line()
         lines.forEach(::line)

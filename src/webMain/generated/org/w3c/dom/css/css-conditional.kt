@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'css-conditional', DO NOT EDIT!
@@ -13,12 +16,16 @@ package org.w3c.dom.css
  * condition and a statement block.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSConditionRule)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSConditionRule : CSSGroupingRule {
     /**
      * The read-only conditionText property of the CSSConditionRule interface returns or sets the text of the CSS rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSConditionRule/conditionText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val conditionText: String
 
@@ -39,6 +46,8 @@ public abstract external class CSSConditionRule : CSSGroupingRule {
  * The CSSMediaRule interface represents a single CSS \@media rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMediaRule)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSMediaRule : CSSConditionRule {
     /**
@@ -46,6 +55,8 @@ public abstract external class CSSMediaRule : CSSConditionRule {
      * query list of the \@media rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMediaRule/media)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val media: MediaList
     public open val matches: Boolean
@@ -67,6 +78,8 @@ public abstract external class CSSMediaRule : CSSConditionRule {
  * The CSSSupportsRule interface represents a single CSS \@supports at-rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSupportsRule)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CSSSupportsRule : CSSConditionRule {
     public open val matches: Boolean

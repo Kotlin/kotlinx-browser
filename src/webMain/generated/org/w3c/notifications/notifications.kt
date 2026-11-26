@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'notifications', DO NOT EDIT!
@@ -17,12 +20,16 @@ import org.w3c.workers.*
  * user.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class Notification : EventTarget {
     /**
      * The Notification() constructor creates a new Notification object instance, which represents a user notification.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/Notification)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(title: String, options: NotificationOptions = definedExternally)
 
@@ -30,6 +37,8 @@ public open external class Notification : EventTarget {
      * The click event of the Notification interface fires when the user clicks on displayed Notification.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/click_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onclick: ((Event) -> Unit)?
 
@@ -37,6 +46,8 @@ public open external class Notification : EventTarget {
      * The show event of the Notification interface fires when a Notification is displayed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/show_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onshow: ((Event) -> Unit)?
 
@@ -45,6 +56,8 @@ public open external class Notification : EventTarget {
      * an error preventing the notification from being displayed.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onerror: ((Event) -> Unit)?
 
@@ -52,6 +65,8 @@ public open external class Notification : EventTarget {
      * The close event of the Notification interface fires when a Notification is closed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onclose: ((Event) -> Unit)?
 
@@ -60,6 +75,8 @@ public open external class Notification : EventTarget {
      * in the title parameter of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/title)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val title: String
 
@@ -68,6 +85,8 @@ public open external class Notification : EventTarget {
      * specified in the dir option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/dir)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val dir: NotificationDirection
 
@@ -76,6 +95,8 @@ public open external class Notification : EventTarget {
      * specified in the lang option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/lang)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val lang: String
 
@@ -84,6 +105,8 @@ public open external class Notification : EventTarget {
      * specified in the body option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/body)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val body: String
 
@@ -92,6 +115,8 @@ public open external class Notification : EventTarget {
      * when the user activates the notification.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/navigate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigate: String
 
@@ -100,6 +125,8 @@ public open external class Notification : EventTarget {
      * specified in the tag option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/tag)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val tag: String
 
@@ -109,6 +136,8 @@ public open external class Notification : EventTarget {
      * highest visual priority of the three image options (image, icon, badge).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/image)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val image: String
 
@@ -118,6 +147,8 @@ public open external class Notification : EventTarget {
      * alongside the notification title and body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/icon)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val icon: String
 
@@ -128,6 +159,8 @@ public open external class Notification : EventTarget {
      * display resolution (about 96×96px), and the image will be automatically masked to a monochrome silhouette.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/badge)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val badge: String
 
@@ -136,6 +169,8 @@ public open external class Notification : EventTarget {
      * option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/timestamp)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val timestamp: Double
 
@@ -144,6 +179,8 @@ public open external class Notification : EventTarget {
      * a new notification replaces an old one, as specified in the renotify option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/renotify)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val renotify: Boolean
 
@@ -153,6 +190,8 @@ public open external class Notification : EventTarget {
      * silent option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/silent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val silent: Boolean?
 
@@ -161,6 +200,8 @@ public open external class Notification : EventTarget {
      * notification should remain active until the user clicks or dismisses it, rather than closing automatically.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requireInteraction)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val requireInteraction: Boolean
 
@@ -169,6 +210,8 @@ public open external class Notification : EventTarget {
      * as specified in the data option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/data)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val data: JsAny?
 
@@ -177,6 +220,8 @@ public open external class Notification : EventTarget {
      * when interacting with the notification.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/actions)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val actions: JsArray<NotificationAction>
 
@@ -184,6 +229,8 @@ public open external class Notification : EventTarget {
      * The close() method of the Notification interface is used to close/remove a previously displayed notification.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close()
 
@@ -193,6 +240,8 @@ public open external class Notification : EventTarget {
          * granted by the user for the current origin to display web notifications.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/permission_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public val permission: NotificationPermission
 
@@ -201,6 +250,8 @@ public open external class Notification : EventTarget {
          * current origin to display notifications.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requestPermission_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun requestPermission(deprecatedCallback: (NotificationPermission) -> Unit = definedExternally): Promise<NotificationPermission>
 
@@ -209,6 +260,8 @@ public open external class Notification : EventTarget {
          * that can be displayed in a notification.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/maxActions_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public val maxActions: Int
     }
@@ -293,12 +346,16 @@ public fun GetNotificationOptions(tag: String? = null): GetNotificationOptions =
  * ServiceWorkerGlobalScope of a ServiceWorker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class NotificationEvent : ExtendableEvent {
     /**
      * The NotificationEvent() constructor creates a new NotificationEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/NotificationEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: NotificationEventInit)
 
@@ -309,6 +366,8 @@ public open external class NotificationEvent : ExtendableEvent {
      * for deferred use in the notificationclick event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/notification)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val notification: Notification
 
@@ -319,6 +378,8 @@ public open external class NotificationEvent : ExtendableEvent {
      * Notification via the actions array attribute and can't be modified unless the notification is replaced.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/action)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val action: String
 

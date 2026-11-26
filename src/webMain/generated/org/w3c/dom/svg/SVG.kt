@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'SVG', DO NOT EDIT!
@@ -17,6 +20,8 @@ import org.w3c.dom.css.*
  * interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGElement : Element, ElementCSSInlineStyle, GlobalEventHandlers, HTMLOrSVGOrMathMLElement {
     /**
@@ -24,6 +29,8 @@ public abstract external class SVGElement : Element, ElementCSSInlineStyle, Glob
      * element. null if the given element is the outermost &lt;svg&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/ownerSVGElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ownerSVGElement: SVGSVGElement?
 
@@ -33,6 +40,8 @@ public abstract external class SVGElement : Element, ElementCSSInlineStyle, Glob
      * &lt;svg&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/viewportElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val viewportElement: SVGElement?
 
@@ -77,6 +86,8 @@ public fun SVGBoundingBoxOptions(fill: Boolean? = null, stroke: Boolean? = null,
  * group.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGGraphicsElement : SVGElement, SVGTests {
     /**
@@ -84,6 +95,8 @@ public abstract external class SVGGraphicsElement : SVGElement, SVGTests {
      * property and its corresponding transform attribute of the given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/transform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val transform: SVGAnimatedTransformList
 
@@ -93,6 +106,8 @@ public abstract external class SVGGraphicsElement : SVGElement, SVGTests {
      * the element and its descendants applied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getBBox)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getBBox(options: SVGBoundingBoxOptions = definedExternally): DOMRect
 
@@ -101,6 +116,8 @@ public abstract external class SVGGraphicsElement : SVGElement, SVGTests {
      * element's coordinate system to its SVG viewport's coordinate system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getCTM)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getCTM(): DOMMatrix?
 
@@ -109,6 +126,8 @@ public abstract external class SVGGraphicsElement : SVGElement, SVGTests {
      * element's coordinate system to the coordinate system of the SVG viewport for the SVG document fragment.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getScreenCTM)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getScreenCTM(): DOMMatrix?
 
@@ -139,6 +158,8 @@ public abstract external class SVGGraphicsElement : SVGElement, SVGTests {
  * path, and which can be filled and stroked. This includes paths and the basic shapes.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGGeometryElement : SVGGraphicsElement {
     /**
@@ -146,6 +167,8 @@ public abstract external class SVGGeometryElement : SVGGraphicsElement {
      * path, in user units.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/pathLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pathLength: SVGAnimatedNumber
 
@@ -155,6 +178,8 @@ public abstract external class SVGGeometryElement : SVGGraphicsElement {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInFill)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun isPointInFill(point: DOMPointInit = definedExternally): Boolean
 
@@ -164,6 +189,8 @@ public abstract external class SVGGeometryElement : SVGGraphicsElement {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInStroke)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun isPointInStroke(point: DOMPointInit = definedExternally): Boolean
 
@@ -172,6 +199,8 @@ public abstract external class SVGGeometryElement : SVGGraphicsElement {
      * the path in user units.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getTotalLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getTotalLength(): Float
 
@@ -179,6 +208,8 @@ public abstract external class SVGGeometryElement : SVGGraphicsElement {
      * The SVGGeometryElement.getPointAtLength() method returns the point at a given distance along the path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getPointAtLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getPointAtLength(distance: Float): DOMPoint
 
@@ -208,12 +239,16 @@ public abstract external class SVGGeometryElement : SVGGraphicsElement {
  * The SVGNumber interface corresponds to the &lt;number&gt; basic data type.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumber)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGNumber : JsAny {
     /**
      * The value property of the SVGNumber interface represents the number.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumber/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: Float
 }
@@ -222,6 +257,8 @@ public abstract external class SVGNumber : JsAny {
  * The SVGLength interface correspond to the &lt;length&gt; basic data type.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGLength : JsAny {
     /**
@@ -229,6 +266,8 @@ public abstract external class SVGLength : JsAny {
      * SVG_LENGTHTYPE_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/unitType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val unitType: Short
 
@@ -237,6 +276,8 @@ public abstract external class SVGLength : JsAny {
      * units.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: Float
 
@@ -245,6 +286,8 @@ public abstract external class SVGLength : JsAny {
      * expressed by unitType.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/valueInSpecifiedUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var valueInSpecifiedUnits: Float
 
@@ -253,6 +296,8 @@ public abstract external class SVGLength : JsAny {
      * units expressed by unitType.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/valueAsString)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var valueAsString: String
 
@@ -261,6 +306,8 @@ public abstract external class SVGLength : JsAny {
      * unitType, thereby replacing the values for all of the attributes on the object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/newValueSpecifiedUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun newValueSpecifiedUnits(unitType: Short, valueInSpecifiedUnits: Float)
 
@@ -269,6 +316,8 @@ public abstract external class SVGLength : JsAny {
      * specified unit type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/convertToSpecifiedUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun convertToSpecifiedUnits(unitType: Short)
 
@@ -291,6 +340,8 @@ public abstract external class SVGLength : JsAny {
  * The SVGAngle interface is used to represent a value that can be an &lt;angle&gt; or &lt;number&gt; value.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAngle : JsAny {
     /**
@@ -298,6 +349,8 @@ public abstract external class SVGAngle : JsAny {
      * which this angle's value is expressed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/unitType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val unitType: Short
 
@@ -305,6 +358,8 @@ public abstract external class SVGAngle : JsAny {
      * The value property of the SVGAngle interface represents the floating point value of the &lt;angle&gt; in degrees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: Float
 
@@ -313,6 +368,8 @@ public abstract external class SVGAngle : JsAny {
      * the units expressed by the angle's unitType.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/valueInSpecifiedUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var valueInSpecifiedUnits: Float
 
@@ -321,6 +378,8 @@ public abstract external class SVGAngle : JsAny {
      * expressed by unitType.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/valueAsString)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var valueAsString: String
 
@@ -329,6 +388,8 @@ public abstract external class SVGAngle : JsAny {
      * unitType, thereby replacing the values for all of the attributes on the object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/newValueSpecifiedUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun newValueSpecifiedUnits(unitType: Short, valueInSpecifiedUnits: Float)
 
@@ -337,6 +398,8 @@ public abstract external class SVGAngle : JsAny {
      * specified unit type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/convertToSpecifiedUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun convertToSpecifiedUnits(unitType: Short)
 
@@ -353,6 +416,8 @@ public abstract external class SVGAngle : JsAny {
  * The SVGNumberList interface defines a list of numbers.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGNumberList : JsAny {
     /**
@@ -360,6 +425,8 @@ public abstract external class SVGNumberList : JsAny {
      * numberOfItems to make SVG lists more array-like.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -368,6 +435,8 @@ public abstract external class SVGNumberList : JsAny {
      * alias of it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/numberOfItems)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val numberOfItems: Int
 
@@ -376,6 +445,8 @@ public abstract external class SVGNumberList : JsAny {
      * an empty list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/clear)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clear()
 
@@ -386,6 +457,8 @@ public abstract external class SVGNumberList : JsAny {
      * a copy. The return value is the item inserted into the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/initialize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initialize(newItem: SVGNumber): SVGNumber
 
@@ -395,6 +468,8 @@ public abstract external class SVGNumberList : JsAny {
      * item is indexed 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/getItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getItem(index: Int): SVGNumber
 
@@ -403,6 +478,8 @@ public abstract external class SVGNumberList : JsAny {
      * position. The first item is indexed 0. The inserted item is the item itself and not a copy.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/insertItemBefore)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun insertItemBefore(newItem: SVGNumber, index: Int): SVGNumber
 
@@ -413,6 +490,8 @@ public abstract external class SVGNumberList : JsAny {
      * item to replace is before the removal of the item.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/replaceItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun replaceItem(newItem: SVGNumber, index: Int): SVGNumber
 
@@ -420,6 +499,8 @@ public abstract external class SVGNumberList : JsAny {
      * The removeItem() method of the SVGNumberList interface removes an existing item at the given index from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/removeItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeItem(index: Int): SVGNumber
 
@@ -429,6 +510,8 @@ public abstract external class SVGNumberList : JsAny {
      * inserted item is the item itself and not a copy.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/appendItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun appendItem(newItem: SVGNumber): SVGNumber
 }
@@ -442,6 +525,8 @@ public operator fun SVGNumberList.set(index: Int, newItem: SVGNumber) { setPrope
  * SVGAnimatedLengthList.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGLengthList : JsAny {
     /**
@@ -449,6 +534,8 @@ public abstract external class SVGLengthList : JsAny {
      * numberOfItems to make SVG lists more array-like.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -457,6 +544,8 @@ public abstract external class SVGLengthList : JsAny {
      * alias of it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/numberOfItems)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val numberOfItems: Int
 
@@ -465,6 +554,8 @@ public abstract external class SVGLengthList : JsAny {
      * an empty list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/clear)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clear()
 
@@ -475,6 +566,8 @@ public abstract external class SVGLengthList : JsAny {
      * a copy. The return value is the item inserted into the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/initialize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initialize(newItem: SVGLength): SVGLength
 
@@ -484,6 +577,8 @@ public abstract external class SVGLengthList : JsAny {
      * item is indexed 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/getItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getItem(index: Int): SVGLength
 
@@ -492,6 +587,8 @@ public abstract external class SVGLengthList : JsAny {
      * position. The first item is indexed 0. The inserted item is the item itself and not a copy.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/insertItemBefore)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun insertItemBefore(newItem: SVGLength, index: Int): SVGLength
 
@@ -502,6 +599,8 @@ public abstract external class SVGLengthList : JsAny {
      * item to replace is before the removal of the item.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/replaceItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun replaceItem(newItem: SVGLength, index: Int): SVGLength
 
@@ -509,6 +608,8 @@ public abstract external class SVGLengthList : JsAny {
      * The removeItem() method of the SVGLengthList interface removes an existing item at the given index from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/removeItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeItem(index: Int): SVGLength
 
@@ -518,6 +619,8 @@ public abstract external class SVGLengthList : JsAny {
      * inserted item is the item itself and not a copy.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/appendItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun appendItem(newItem: SVGLength): SVGLength
 }
@@ -530,6 +633,8 @@ public operator fun SVGLengthList.set(index: Int, newItem: SVGLength) { setPrope
  * The SVGStringList interface defines a list of strings.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGStringList : JsAny {
     /**
@@ -537,6 +642,8 @@ public abstract external class SVGStringList : JsAny {
      * numberOfItems to make SVG lists more array-like.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -545,6 +652,8 @@ public abstract external class SVGStringList : JsAny {
      * alias of it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/numberOfItems)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val numberOfItems: Int
 
@@ -553,6 +662,8 @@ public abstract external class SVGStringList : JsAny {
      * an empty list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/clear)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clear()
 
@@ -563,6 +674,8 @@ public abstract external class SVGStringList : JsAny {
      * a copy. The return value is the item inserted into the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/initialize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initialize(newItem: String): String
 
@@ -572,6 +685,8 @@ public abstract external class SVGStringList : JsAny {
      * item is indexed 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/getItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getItem(index: Int): String
 
@@ -580,6 +695,8 @@ public abstract external class SVGStringList : JsAny {
      * position. The first item is indexed 0. The inserted item is the item itself and not a copy.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/insertItemBefore)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun insertItemBefore(newItem: String, index: Int): String
 
@@ -588,6 +705,8 @@ public abstract external class SVGStringList : JsAny {
      * The inserted item is the item itself and not a copy.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/replaceItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun replaceItem(newItem: String, index: Int): String
 
@@ -595,6 +714,8 @@ public abstract external class SVGStringList : JsAny {
      * The removeItem() method of the SVGStringList interface removes an existing item at the given index from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/removeItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeItem(index: Int): String
 
@@ -604,6 +725,8 @@ public abstract external class SVGStringList : JsAny {
      * inserted item is the item itself and not a copy.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/appendItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun appendItem(newItem: String): String
 }
@@ -616,6 +739,8 @@ public operator fun SVGStringList.set(index: Int, newItem: String) { setStringPr
  * The SVGAnimatedBoolean interface is used for attributes of type boolean which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedBoolean : JsAny {
     /**
@@ -624,6 +749,8 @@ public abstract external class SVGAnimatedBoolean : JsAny {
      * when no animations are applied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var baseVal: Boolean
 
@@ -633,6 +760,8 @@ public abstract external class SVGAnimatedBoolean : JsAny {
      * SVGAnimatedBoolean.baseVal.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: Boolean
 }
@@ -642,12 +771,16 @@ public abstract external class SVGAnimatedBoolean : JsAny {
  * which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedEnumeration : JsAny {
     /**
      * The baseVal property of the SVGAnimatedEnumeration interface represents the value of an SVG enumeration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var baseVal: Short
 
@@ -656,6 +789,8 @@ public abstract external class SVGAnimatedEnumeration : JsAny {
      * enumeration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: Short
 }
@@ -664,6 +799,8 @@ public abstract external class SVGAnimatedEnumeration : JsAny {
  * The SVGAnimatedInteger interface is used for attributes of basic type &lt;integer&gt; which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedInteger : JsAny {
     /**
@@ -671,6 +808,8 @@ public abstract external class SVGAnimatedInteger : JsAny {
      * animatable &lt;integer&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var baseVal: Int
 
@@ -679,6 +818,8 @@ public abstract external class SVGAnimatedInteger : JsAny {
      * no animation is applied, animVal equals baseVal.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: Int
 }
@@ -687,6 +828,8 @@ public abstract external class SVGAnimatedInteger : JsAny {
  * The SVGAnimatedNumber interface represents attributes of type &lt;number&gt; which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedNumber : JsAny {
     /**
@@ -694,6 +837,8 @@ public abstract external class SVGAnimatedNumber : JsAny {
      * numeric attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var baseVal: Float
 
@@ -702,6 +847,8 @@ public abstract external class SVGAnimatedNumber : JsAny {
      * element's numeric attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: Float
 }
@@ -710,12 +857,16 @@ public abstract external class SVGAnimatedNumber : JsAny {
  * The SVGAnimatedLength interface represents attributes of type &lt;length&gt; which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedLength : JsAny {
     /**
      * The baseVal property of the SVGAnimatedLength interface contains the initial value of an SVG enumeration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val baseVal: SVGLength
 
@@ -724,6 +875,8 @@ public abstract external class SVGAnimatedLength : JsAny {
      * there is no animation, it is the same value as the baseVal.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: SVGLength
 }
@@ -732,6 +885,8 @@ public abstract external class SVGAnimatedLength : JsAny {
  * The SVGAnimatedAngle interface is used for attributes of basic type &lt;angle&gt; which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedAngle : JsAny {
     /**
@@ -740,6 +895,8 @@ public abstract external class SVGAnimatedAngle : JsAny {
      * &lt;angle&gt;, unaffected by any ongoing animations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val baseVal: SVGAngle
 
@@ -749,6 +906,8 @@ public abstract external class SVGAnimatedAngle : JsAny {
      * same as the baseVal.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: SVGAngle
 }
@@ -758,12 +917,16 @@ public abstract external class SVGAnimatedAngle : JsAny {
  * need to create SVG attribute before doing anything else, everything should be declared inside this.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedString : JsAny {
     /**
      * The baseVal property of the SVGAnimatedString interface gets or sets the base value of the given attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var baseVal: String
 
@@ -772,6 +935,8 @@ public abstract external class SVGAnimatedString : JsAny {
      * the reflected attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: String
 }
@@ -780,6 +945,8 @@ public abstract external class SVGAnimatedString : JsAny {
  * The SVGAnimatedRect interface represents an SVGRect attribute that can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedRect : JsAny {
     /**
@@ -787,6 +954,8 @@ public abstract external class SVGAnimatedRect : JsAny {
      * viewBox attribute of an SVG element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val baseVal: DOMRect
 
@@ -796,6 +965,8 @@ public abstract external class SVGAnimatedRect : JsAny {
      * dynamic state, including the x, y, width, and height values during the animation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: DOMRect
 }
@@ -804,6 +975,8 @@ public abstract external class SVGAnimatedRect : JsAny {
  * The SVGAnimatedNumberList interface represents a list of attributes of type &lt;number&gt; which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedNumberList : JsAny {
     /**
@@ -811,6 +984,8 @@ public abstract external class SVGAnimatedNumberList : JsAny {
      * an animatable attribute that accepts a list of &lt;number&gt; values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val baseVal: SVGNumberList
 
@@ -819,6 +994,8 @@ public abstract external class SVGAnimatedNumberList : JsAny {
      * animatable attribute that accepts a list of &lt;number&gt; values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: SVGNumberList
 }
@@ -827,6 +1004,8 @@ public abstract external class SVGAnimatedNumberList : JsAny {
  * The SVGAnimatedLengthList interface is used for attributes of type SVGLengthList which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedLengthList : JsAny {
     /**
@@ -834,6 +1013,8 @@ public abstract external class SVGAnimatedLengthList : JsAny {
      * an animatable attribute that accepts a list of &lt;length&gt;, &lt;percentage&gt;, or &lt;number&gt; values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val baseVal: SVGLengthList
 
@@ -842,6 +1023,8 @@ public abstract external class SVGAnimatedLengthList : JsAny {
      * attribute that accepts a list of &lt;length&gt;, &lt;percentage&gt;, or &lt;number&gt; values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: SVGLengthList
 }
@@ -851,6 +1034,8 @@ public abstract external class SVGAnimatedLengthList : JsAny {
  * patternContentUnits and other similar attributes.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUnitTypes)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGUnitTypes : JsAny {
 
@@ -867,6 +1052,8 @@ public external interface SVGTests : JsAny {
      * attribute of the given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/requiredExtensions)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val requiredExtensions: SVGStringList
 
@@ -875,6 +1062,8 @@ public external interface SVGTests : JsAny {
      * of the given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/systemLanguage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val systemLanguage: SVGStringList
 }
@@ -885,6 +1074,8 @@ public external interface SVGFitToViewBox : JsAny {
      * attribute as an SVGAnimatedRect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/viewBox)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val viewBox: SVGAnimatedRect
 
@@ -894,6 +1085,8 @@ public external interface SVGFitToViewBox : JsAny {
      * preserving its aspect ratio.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/preserveAspectRatio)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 }
@@ -904,6 +1097,8 @@ public external interface SVGURIReference : JsAny {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/href)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val href: SVGAnimatedString
 }
@@ -914,6 +1109,8 @@ public external interface SVGURIReference : JsAny {
  * operations and the ability to control the time of redraw on visual rendering devices.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewBox, WindowEventHandlers {
     /**
@@ -923,6 +1120,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * coordinate system along the x-axis. Its syntax is the same as that for &lt;length&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: SVGAnimatedLength
 
@@ -933,6 +1132,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * along the y-axis. Its syntax is the same as that for &lt;length&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: SVGAnimatedLength
 
@@ -942,6 +1143,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * width.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: SVGAnimatedLength
 
@@ -951,6 +1154,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * height.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: SVGAnimatedLength
 
@@ -959,6 +1164,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * initial view to take into account user magnification and panning operations on the outermost &lt;svg&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/currentScale)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var currentScale: Float
 
@@ -967,6 +1174,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * into account user "magnification" corresponding to an outermost &lt;svg&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/currentTranslate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val currentTranslate: DOMPoint
     public open fun getIntersectionList(rect: DOMRect, referenceElement: SVGElement?): NodeList
@@ -977,6 +1186,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * intersects the supplied rectangle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/checkIntersection)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun checkIntersection(element: SVGElement, rect: DOMRect): Boolean
 
@@ -985,6 +1196,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * entirely contained within the supplied rectangle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/checkEnclosure)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun checkEnclosure(element: SVGElement, rect: DOMRect): Boolean
 
@@ -993,6 +1206,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * of text strings and type-in bars.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/deselectAll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun deselectAll()
 
@@ -1001,6 +1216,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGNumber)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createSVGNumber(): SVGNumber
 
@@ -1009,6 +1226,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createSVGLength(): SVGLength
 
@@ -1017,6 +1236,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGAngle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createSVGAngle(): SVGAngle
 
@@ -1025,6 +1246,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGPoint)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createSVGPoint(): DOMPoint
 
@@ -1033,6 +1256,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createSVGMatrix(): DOMMatrix
 
@@ -1040,6 +1265,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * The createSVGRect() method of the SVGSVGElement interface creates a DOMRect object outside of any document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createSVGRect(): DOMRect
 
@@ -1048,6 +1275,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGTransform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createSVGTransform(): SVGTransform
 
@@ -1056,6 +1285,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * of any document trees, based on the given DOMMatrix object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGTransformFromMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
 
@@ -1064,6 +1295,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
      * is restricted to a subset of the document tree) for an Element whose id property matches the specified string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/getElementById)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getElementById(elementId: String): Element?
     public open fun suspendRedraw(maxWaitMilliseconds: Int): Int
@@ -1097,6 +1330,8 @@ public abstract external class SVGSVGElement : SVGGraphicsElement, SVGFitToViewB
  * The SVGGElement interface corresponds to the &lt;g&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGGElement : SVGGraphicsElement {
 
@@ -1126,6 +1361,8 @@ public abstract external class SVGGElement : SVGGraphicsElement {
  * The SVGDefsElement interface corresponds to the &lt;defs&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGDefsElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGDefsElement : SVGGraphicsElement {
 
@@ -1155,6 +1392,8 @@ public abstract external class SVGDefsElement : SVGGraphicsElement {
  * The SVGDescElement interface corresponds to the &lt;desc&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGDescElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGDescElement : SVGElement {
 
@@ -1184,6 +1423,8 @@ public abstract external class SVGDescElement : SVGElement {
  * The SVGMetadataElement interface corresponds to the &lt;metadata&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMetadataElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGMetadataElement : SVGElement {
 
@@ -1213,6 +1454,8 @@ public abstract external class SVGMetadataElement : SVGElement {
  * The SVGTitleElement interface corresponds to the &lt;title&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTitleElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGTitleElement : SVGElement {
 
@@ -1242,6 +1485,8 @@ public abstract external class SVGTitleElement : SVGElement {
  * The SVGSymbolElement interface corresponds to the &lt;symbol&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSymbolElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGSymbolElement : SVGGraphicsElement, SVGFitToViewBox {
 
@@ -1271,6 +1516,8 @@ public abstract external class SVGSymbolElement : SVGGraphicsElement, SVGFitToVi
  * The SVGUseElement interface corresponds to the &lt;use&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReference {
     /**
@@ -1279,6 +1526,8 @@ public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReferen
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: SVGAnimatedLength
 
@@ -1288,6 +1537,8 @@ public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReferen
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: SVGAnimatedLength
 
@@ -1296,6 +1547,8 @@ public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReferen
      * SVGAnimatedLength. It reflects the computed value of the width attribute on the &lt;use&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: SVGAnimatedLength
 
@@ -1304,6 +1557,8 @@ public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReferen
      * SVGAnimatedLength. It reflects the computed value of the height attribute on the &lt;use&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: SVGAnimatedLength
 
@@ -1333,6 +1588,8 @@ public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReferen
  * The SVGSwitchElement interface corresponds to the &lt;switch&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSwitchElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGSwitchElement : SVGGraphicsElement {
 
@@ -1366,6 +1623,8 @@ public external interface GetSVGDocument : JsAny {
  * The SVGStyleElement interface corresponds to the SVG &lt;style&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGStyleElement : SVGElement, LinkStyle {
     /**
@@ -1375,6 +1634,8 @@ public abstract external class SVGStyleElement : SVGElement, LinkStyle {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var type: String
 
@@ -1383,6 +1644,8 @@ public abstract external class SVGStyleElement : SVGElement, LinkStyle {
      * style element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/media)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var media: String
 
@@ -1391,6 +1654,8 @@ public abstract external class SVGStyleElement : SVGElement, LinkStyle {
      * element. It may be used to select between alternate style sheets.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/title)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var title: String
 
@@ -1399,6 +1664,8 @@ public abstract external class SVGStyleElement : SVGElement, LinkStyle {
      * (false).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/disabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var disabled: Boolean
 
@@ -1429,6 +1696,8 @@ public abstract external class SVGStyleElement : SVGElement, LinkStyle {
  * SVGTransform object corresponds to a single component (e.g., scale(…) or matrix(…)) within a transform attribute.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGTransform : JsAny {
     /**
@@ -1436,6 +1705,8 @@ public abstract external class SVGTransform : JsAny {
      * specified by one of the SVG_TRANSFORM_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: Short
 
@@ -1444,6 +1715,8 @@ public abstract external class SVGTransform : JsAny {
      * to the transformation type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/matrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val matrix: DOMMatrix
 
@@ -1451,6 +1724,8 @@ public abstract external class SVGTransform : JsAny {
      * The angle read-only property of the SVGTransform interface represents the angle of the transformation in degrees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/angle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val angle: Float
 
@@ -1459,6 +1734,8 @@ public abstract external class SVGTransform : JsAny {
      * parameter matrix defining the new transformation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setMatrix(matrix: DOMMatrix2DInit = definedExternally)
 
@@ -1467,6 +1744,8 @@ public abstract external class SVGTransform : JsAny {
      * parameters tx and ty defining the translation amounts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setTranslate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setTranslate(tx: Float, ty: Float)
 
@@ -1475,6 +1754,8 @@ public abstract external class SVGTransform : JsAny {
      * parameters sx and sy defining the scale amounts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setScale)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setScale(sx: Float, sy: Float)
 
@@ -1483,6 +1764,8 @@ public abstract external class SVGTransform : JsAny {
      * parameter angle defining the rotation angle and parameters cx and cy defining the optional center of rotation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setRotate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setRotate(angle: Float, cx: Float, cy: Float)
 
@@ -1491,6 +1774,8 @@ public abstract external class SVGTransform : JsAny {
      * parameter angle defining the amount of skew along the X-axis.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setSkewX(angle: Float)
 
@@ -1499,6 +1784,8 @@ public abstract external class SVGTransform : JsAny {
      * parameter angle defining the amount of skew along the Y-axis.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setSkewY(angle: Float)
 
@@ -1517,12 +1804,16 @@ public abstract external class SVGTransform : JsAny {
  * The SVGTransformList interface defines a list of SVGTransform objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGTransformList : JsAny {
     /**
      * The length read-only property of the SVGTransformList interface represents the number of items in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -1531,6 +1822,8 @@ public abstract external class SVGTransformList : JsAny {
      * list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/numberOfItems)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val numberOfItems: Int
 
@@ -1539,6 +1832,8 @@ public abstract external class SVGTransformList : JsAny {
      * result being an empty list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/clear)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clear()
 
@@ -1547,6 +1842,8 @@ public abstract external class SVGTransformList : JsAny {
      * re-initializes the list to hold the single item specified by the parameter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/initialize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initialize(newItem: SVGTransform): SVGTransform
 
@@ -1554,6 +1851,8 @@ public abstract external class SVGTransformList : JsAny {
      * The getItem() method of the SVGTransformList interface returns the specified item from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/getItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getItem(index: Int): SVGTransform
 
@@ -1562,6 +1861,8 @@ public abstract external class SVGTransformList : JsAny {
      * position.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/insertItemBefore)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun insertItemBefore(newItem: SVGTransform, index: Int): SVGTransform
 
@@ -1569,6 +1870,8 @@ public abstract external class SVGTransformList : JsAny {
      * The replaceItem() method of the SVGTransformList interface replaces an existing item in the list with a new item.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/replaceItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun replaceItem(newItem: SVGTransform, index: Int): SVGTransform
 
@@ -1576,6 +1879,8 @@ public abstract external class SVGTransformList : JsAny {
      * The removeItem() method of the SVGTransformList interface removes an existing item from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/removeItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeItem(index: Int): SVGTransform
 
@@ -1583,6 +1888,8 @@ public abstract external class SVGTransformList : JsAny {
      * The appendItem() method of the SVGTransformList interface inserts a new item at the end of the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/appendItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun appendItem(newItem: SVGTransform): SVGTransform
 
@@ -1591,6 +1898,8 @@ public abstract external class SVGTransformList : JsAny {
      * is initialized to a transform of type SVG_TRANSFORM_MATRIX and whose values are the given matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/createSVGTransformFromMatrix)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createSVGTransformFromMatrix(matrix: DOMMatrix2DInit = definedExternally): SVGTransform
 
@@ -1600,6 +1909,8 @@ public abstract external class SVGTransformList : JsAny {
      * SVGTransform object of type SVG_TRANSFORM_MATRIX.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/consolidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun consolidate(): SVGTransform?
 }
@@ -1612,6 +1923,8 @@ public operator fun SVGTransformList.set(index: Int, newItem: SVGTransform) { se
  * The SVGAnimatedTransformList interface represents attributes which take a list of numbers and which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedTransformList : JsAny {
     /**
@@ -1619,6 +1932,8 @@ public abstract external class SVGAnimatedTransformList : JsAny {
      * transform attribute of an SVG element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val baseVal: SVGTransformList
 
@@ -1627,6 +1942,8 @@ public abstract external class SVGAnimatedTransformList : JsAny {
      * transform attribute of an SVG element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: SVGTransformList
 }
@@ -1635,6 +1952,8 @@ public abstract external class SVGAnimatedTransformList : JsAny {
  * The SVGPreserveAspectRatio interface corresponds to the preserveAspectRatio attribute.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGPreserveAspectRatio : JsAny {
     /**
@@ -1642,6 +1961,8 @@ public abstract external class SVGPreserveAspectRatio : JsAny {
      * by one of the SVG_PRESERVEASPECTRATIO_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio/align)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var align: Short
 
@@ -1650,6 +1971,8 @@ public abstract external class SVGPreserveAspectRatio : JsAny {
      * specified by one of the SVG_MEETORSLICE_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio/meetOrSlice)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var meetOrSlice: Short
 
@@ -1676,6 +1999,8 @@ public abstract external class SVGPreserveAspectRatio : JsAny {
  * animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAnimatedPreserveAspectRatio : JsAny {
     /**
@@ -1683,6 +2008,8 @@ public abstract external class SVGAnimatedPreserveAspectRatio : JsAny {
      * value of the preserveAspectRatio attribute of an SVG element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio/baseVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val baseVal: SVGPreserveAspectRatio
 
@@ -1691,6 +2018,8 @@ public abstract external class SVGAnimatedPreserveAspectRatio : JsAny {
      * preserveAspectRatio attribute of an SVG element after any animations or transformations are applied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio/animVal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val animVal: SVGPreserveAspectRatio
 }
@@ -1700,6 +2029,8 @@ public abstract external class SVGAnimatedPreserveAspectRatio : JsAny {
  * manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGRectElement : SVGGeometryElement {
     /**
@@ -1709,6 +2040,8 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      * for &lt;length&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: SVGAnimatedLength
 
@@ -1719,6 +2052,8 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      * for &lt;length&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: SVGAnimatedLength
 
@@ -1728,6 +2063,8 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      * that for &lt;length&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: SVGAnimatedLength
 
@@ -1737,6 +2074,8 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      * that for &lt;length&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: SVGAnimatedLength
 
@@ -1746,6 +2085,8 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      * the same as that for &lt;length&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/rx)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val rx: SVGAnimatedLength
 
@@ -1755,6 +2096,8 @@ public abstract external class SVGRectElement : SVGGeometryElement {
      * the same as that for &lt;length&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRectElement/ry)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ry: SVGAnimatedLength
 
@@ -1784,6 +2127,8 @@ public abstract external class SVGRectElement : SVGGeometryElement {
  * The SVGCircleElement interface is an interface for the &lt;circle&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGCircleElement : SVGGeometryElement {
     /**
@@ -1791,6 +2136,8 @@ public abstract external class SVGCircleElement : SVGGeometryElement {
      * and by that defines the x-coordinate of the circle's center.&lt;
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement/cx)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cx: SVGAnimatedLength
 
@@ -1799,6 +2146,8 @@ public abstract external class SVGCircleElement : SVGGeometryElement {
      * and by that defines the y-coordinate of the circle's center.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement/cy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cy: SVGAnimatedLength
 
@@ -1807,6 +2156,8 @@ public abstract external class SVGCircleElement : SVGGeometryElement {
      * and by that defines the radius of the circle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement/r)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val r: SVGAnimatedLength
 
@@ -1836,6 +2187,8 @@ public abstract external class SVGCircleElement : SVGGeometryElement {
  * The SVGEllipseElement interface provides access to the properties of &lt;ellipse&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGEllipseElement : SVGGeometryElement {
     /**
@@ -1844,6 +2197,8 @@ public abstract external class SVGEllipseElement : SVGGeometryElement {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/cx)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cx: SVGAnimatedLength
 
@@ -1853,6 +2208,8 @@ public abstract external class SVGEllipseElement : SVGGeometryElement {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/cy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cy: SVGAnimatedLength
 
@@ -1861,6 +2218,8 @@ public abstract external class SVGEllipseElement : SVGGeometryElement {
      * SVGAnimatedLength. It reflects the computed value of the rx attribute on the &lt;ellipse&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/rx)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val rx: SVGAnimatedLength
 
@@ -1869,6 +2228,8 @@ public abstract external class SVGEllipseElement : SVGGeometryElement {
      * SVGAnimatedLength. It reflects the computed value of the ry attribute on the &lt;ellipse&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGEllipseElement/ry)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ry: SVGAnimatedLength
 
@@ -1899,6 +2260,8 @@ public abstract external class SVGEllipseElement : SVGGeometryElement {
  * manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGLineElement : SVGGeometryElement {
     /**
@@ -1906,6 +2269,8 @@ public abstract external class SVGLineElement : SVGGeometryElement {
      * an SVGAnimatedLength. It reflects the &lt;line&gt; element's x1 geometric attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/x1)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x1: SVGAnimatedLength
 
@@ -1914,6 +2279,8 @@ public abstract external class SVGLineElement : SVGGeometryElement {
      * an SVGAnimatedLength. It reflects the &lt;line&gt; element's y1 geometric attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/y1)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y1: SVGAnimatedLength
 
@@ -1922,6 +2289,8 @@ public abstract external class SVGLineElement : SVGGeometryElement {
      * line as an SVGAnimatedLength. It reflects the &lt;line&gt; element's x2 geometric attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/x2)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x2: SVGAnimatedLength
 
@@ -1930,6 +2299,8 @@ public abstract external class SVGLineElement : SVGGeometryElement {
      * line as an SVGAnimatedLength. It reflects the &lt;line&gt; element's y2 geometric attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLineElement/y2)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y2: SVGAnimatedLength
 
@@ -1962,6 +2333,8 @@ public external interface SVGAnimatedPoints : JsAny {
      * vice versa.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolylineElement/points)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val points: SVGPointList
 
@@ -1971,6 +2344,8 @@ public external interface SVGAnimatedPoints : JsAny {
      * points property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolylineElement/animatedPoints)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val animatedPoints: SVGPointList
 }
@@ -1979,12 +2354,16 @@ public external interface SVGAnimatedPoints : JsAny {
  * The SVGPointList interface represents a list of DOMPoint objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGPointList : JsAny {
     /**
      * The length read-only property of the SVGPointList interface returns the number of items in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -1992,6 +2371,8 @@ public abstract external class SVGPointList : JsAny {
      * The numberOfItems read-only property of the SVGPointList interface returns the number of items in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/numberOfItems)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val numberOfItems: Int
 
@@ -1999,6 +2380,8 @@ public abstract external class SVGPointList : JsAny {
      * The clear() method of the SVGPointList interface removes all items from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/clear)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clear()
 
@@ -2007,6 +2390,8 @@ public abstract external class SVGPointList : JsAny {
      * the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/initialize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initialize(newItem: DOMPoint): DOMPoint
 
@@ -2014,6 +2399,8 @@ public abstract external class SVGPointList : JsAny {
      * The getItem() method of the SVGPointList interface gets one item from the list at the specified index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/getItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getItem(index: Int): DOMPoint
 
@@ -2021,6 +2408,8 @@ public abstract external class SVGPointList : JsAny {
      * The insertItemBefore() method of the SVGPointList interface inserts a DOMPoint before another item in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/insertItemBefore)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun insertItemBefore(newItem: DOMPoint, index: Int): DOMPoint
 
@@ -2028,6 +2417,8 @@ public abstract external class SVGPointList : JsAny {
      * The replaceItem() method of the SVGPointList interface replaces a DOMPoint in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/replaceItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun replaceItem(newItem: DOMPoint, index: Int): DOMPoint
 
@@ -2035,6 +2426,8 @@ public abstract external class SVGPointList : JsAny {
      * The removeItem() method of the SVGPointList interface removes a DOMPoint from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/removeItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeItem(index: Int): DOMPoint
 
@@ -2042,6 +2435,8 @@ public abstract external class SVGPointList : JsAny {
      * The appendItem() method of the SVGPointList interface adds a DOMPoint to the end of the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/appendItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun appendItem(newItem: DOMPoint): DOMPoint
 }
@@ -2055,6 +2450,8 @@ public operator fun SVGPointList.set(index: Int, newItem: DOMPoint) { setPropert
  * to manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolylineElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGPolylineElement : SVGGeometryElement, SVGAnimatedPoints {
 
@@ -2085,6 +2482,8 @@ public abstract external class SVGPolylineElement : SVGGeometryElement, SVGAnima
  * manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolygonElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGPolygonElement : SVGGeometryElement, SVGAnimatedPoints {
 
@@ -2115,6 +2514,8 @@ public abstract external class SVGPolygonElement : SVGGeometryElement, SVGAnimat
  * inherited by various text-related interfaces, such as SVGTextElement, SVGTSpanElement, and SVGTextPathElement.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGTextContentElement : SVGGraphicsElement {
     /**
@@ -2122,6 +2523,8 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      * given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/textLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val textLength: SVGAnimatedLength
 
@@ -2130,6 +2533,8 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      * the given element. It takes one of the LENGTHADJUST_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/lengthAdjust)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val lengthAdjust: SVGAnimatedEnumeration
 
@@ -2138,6 +2543,8 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      * characters available for rendering within the current element, regardless of whether they will be rendered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getNumberOfChars)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getNumberOfChars(): Int
 
@@ -2146,6 +2553,8 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      * text within the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getComputedTextLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getComputedTextLength(): Float
 
@@ -2154,6 +2563,8 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      * formatted text advance distance for a substring of text within the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getSubStringLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getSubStringLength(charnum: Int, nchars: Int): Float
 
@@ -2162,6 +2573,8 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      * character after text layout has been performed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getStartPositionOfChar)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getStartPositionOfChar(charnum: Int): DOMPoint
 
@@ -2170,6 +2583,8 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      * typographic character after text layout has been performed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getEndPositionOfChar)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getEndPositionOfChar(charnum: Int): DOMPoint
 
@@ -2178,6 +2593,8 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      * the glyph cell that corresponds to a given typographic character.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getExtentOfChar)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getExtentOfChar(charnum: Int): DOMRect
 
@@ -2186,6 +2603,8 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      * typographic character.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getRotationOfChar)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getRotationOfChar(charnum: Int): Float
 
@@ -2196,6 +2615,8 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
      * returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getCharNumAtPosition)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getCharNumAtPosition(point: DOMPointInit = definedExternally): Int
     public open fun selectSubString(charnum: Int, nchars: Int)
@@ -2230,6 +2651,8 @@ public abstract external class SVGTextContentElement : SVGGraphicsElement {
  * text glyphs. It is inherited by SVGTextElement and SVGTSpanElement.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGTextPositioningElement : SVGTextContentElement {
     /**
@@ -2238,6 +2661,8 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
      * of the individual text glyphs in the user coordinate system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: SVGAnimatedLengthList
 
@@ -2247,6 +2672,8 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
      * the individual text glyphs in the user coordinate system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: SVGAnimatedLengthList
 
@@ -2256,6 +2683,8 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
      * displacement of the individual text glyphs in the user coordinate system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/dx)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val dx: SVGAnimatedLengthList
 
@@ -2265,6 +2694,8 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
      * displacement of the individual text glyphs in the user coordinate system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/dy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val dy: SVGAnimatedLengthList
 
@@ -2273,6 +2704,8 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
      * glyphs, as specified by the rotate attribute of the given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/rotate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val rotate: SVGAnimatedNumberList
 
@@ -2305,6 +2738,8 @@ public abstract external class SVGTextPositioningElement : SVGTextContentElement
  * The SVGTextElement interface corresponds to the &lt;text&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGTextElement : SVGTextPositioningElement {
 
@@ -2337,6 +2772,8 @@ public abstract external class SVGTextElement : SVGTextPositioningElement {
  * The SVGTSpanElement interface represents a &lt;tspan&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTSpanElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGTSpanElement : SVGTextPositioningElement {
 
@@ -2369,6 +2806,8 @@ public abstract external class SVGTSpanElement : SVGTextPositioningElement {
  * The SVGTextPathElement interface corresponds to the &lt;textPath&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGTextPathElement : SVGTextContentElement, SVGURIReference {
     /**
@@ -2378,6 +2817,8 @@ public abstract external class SVGTextPathElement : SVGTextContentElement, SVGUR
      * coordinate system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/startOffset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val startOffset: SVGAnimatedLength
 
@@ -2386,6 +2827,8 @@ public abstract external class SVGTextPathElement : SVGTextContentElement, SVGUR
      * rendered along the path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/method)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val method: SVGAnimatedEnumeration
 
@@ -2394,6 +2837,8 @@ public abstract external class SVGTextPathElement : SVGTextContentElement, SVGUR
      * characters that are to be rendered along a path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/spacing)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val spacing: SVGAnimatedEnumeration
 
@@ -2402,6 +2847,8 @@ public abstract external class SVGTextPathElement : SVGTextContentElement, SVGUR
      * placed on (relative to the path direction).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/side)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val side: SVGAnimatedEnumeration
 
@@ -2443,6 +2890,8 @@ public abstract external class SVGTextPathElement : SVGTextContentElement, SVGUR
  * The SVGImageElement interface corresponds to the &lt;image&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIReference, CanvasImageSource {
     /**
@@ -2450,6 +2899,8 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      * attribute of the given &lt;image&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: SVGAnimatedLength
 
@@ -2458,6 +2909,8 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      * attribute of the given &lt;image&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: SVGAnimatedLength
 
@@ -2466,6 +2919,8 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      * width attribute of the given &lt;image&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: SVGAnimatedLength
 
@@ -2474,6 +2929,8 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      * height attribute of the given &lt;image&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: SVGAnimatedLength
 
@@ -2483,6 +2940,8 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/preserveAspectRatio)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 
@@ -2492,6 +2951,8 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
      * given &lt;image&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/crossOrigin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var crossOrigin: String?
     public open var referrerPolicy: String
@@ -2523,6 +2984,8 @@ public abstract external class SVGImageElement : SVGGraphicsElement, SVGURIRefer
  * methods to manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGForeignObjectElement : SVGGraphicsElement {
     /**
@@ -2531,6 +2994,8 @@ public abstract external class SVGForeignObjectElement : SVGGraphicsElement {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: SVGAnimatedLength
 
@@ -2540,6 +3005,8 @@ public abstract external class SVGForeignObjectElement : SVGGraphicsElement {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: SVGAnimatedLength
 
@@ -2549,6 +3016,8 @@ public abstract external class SVGForeignObjectElement : SVGGraphicsElement {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: SVGAnimatedLength
 
@@ -2558,6 +3027,8 @@ public abstract external class SVGForeignObjectElement : SVGGraphicsElement {
      * &lt;foreignObject&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: SVGAnimatedLength
 
@@ -2588,6 +3059,8 @@ public abstract external class SVGForeignObjectElement : SVGGraphicsElement {
  * manipulate them. The &lt;marker&gt; element defines the graphics used for drawing marks on a shape.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
     /**
@@ -2595,6 +3068,8 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      * value of the refX attribute of the &lt;marker&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val refX: SVGAnimatedLength
 
@@ -2603,6 +3078,8 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      * value of the refY attribute of the &lt;marker&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val refY: SVGAnimatedLength
 
@@ -2611,6 +3088,8 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      * This object returns an integer which represents the keyword values that the markerUnits attribute accepts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val markerUnits: SVGAnimatedEnumeration
 
@@ -2619,6 +3098,8 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      * containing the width of the &lt;marker&gt; viewport as defined by the markerWidth attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerWidth)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val markerWidth: SVGAnimatedLength
 
@@ -2627,6 +3108,8 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      * containing the height of the &lt;marker&gt; viewport as defined by the markerHeight attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerHeight)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val markerHeight: SVGAnimatedLength
 
@@ -2635,6 +3118,8 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      * indicating whether the orient attribute is auto, an angle value, or something else.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val orientType: SVGAnimatedEnumeration
 
@@ -2643,6 +3128,8 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      * containing the angle of the orient attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientAngle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val orientAngle: SVGAnimatedAngle
 
@@ -2651,6 +3138,8 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      * position on the shape. It reflects the orient attribute value of the corresponding &lt;marker&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orient)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var orient: String
 
@@ -2658,6 +3147,8 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      * The setOrientToAuto() method of the SVGMarkerElement interface sets the value of the orient attribute to auto.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAuto)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setOrientToAuto()
 
@@ -2666,6 +3157,8 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
      * value in the SVGAngle passed in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAngle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setOrientToAngle(angle: SVGAngle)
 
@@ -2702,6 +3195,8 @@ public abstract external class SVGMarkerElement : SVGElement, SVGFitToViewBox {
  * The SVGGradient interface is a base interface used by SVGLinearGradientElement and SVGRadialGradientElement.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGGradientElement : SVGElement, SVGURIReference {
     /**
@@ -2709,6 +3204,8 @@ public abstract external class SVGGradientElement : SVGElement, SVGURIReference 
      * the given element. It takes one of the SVG_UNIT_TYPE_* constants defined in SVGUnitTypes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/gradientUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val gradientUnits: SVGAnimatedEnumeration
 
@@ -2717,6 +3214,8 @@ public abstract external class SVGGradientElement : SVGElement, SVGURIReference 
      * attribute of the given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/gradientTransform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val gradientTransform: SVGAnimatedTransformList
 
@@ -2725,6 +3224,8 @@ public abstract external class SVGGradientElement : SVGElement, SVGURIReference 
      * the given element. It takes one of the SVG_SPREADMETHOD_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/spreadMethod)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val spreadMethod: SVGAnimatedEnumeration
 
@@ -2758,6 +3259,8 @@ public abstract external class SVGGradientElement : SVGElement, SVGURIReference 
  * The SVGLinearGradientElement interface corresponds to the &lt;linearGradient&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGLinearGradientElement : SVGGradientElement {
     /**
@@ -2766,6 +3269,8 @@ public abstract external class SVGLinearGradientElement : SVGGradientElement {
      * &lt;linearGradient&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/x1)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x1: SVGAnimatedLength
 
@@ -2775,6 +3280,8 @@ public abstract external class SVGLinearGradientElement : SVGGradientElement {
      * &lt;linearGradient&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/y1)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y1: SVGAnimatedLength
 
@@ -2784,6 +3291,8 @@ public abstract external class SVGLinearGradientElement : SVGGradientElement {
      * &lt;linearGradient&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/x2)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x2: SVGAnimatedLength
 
@@ -2793,6 +3302,8 @@ public abstract external class SVGLinearGradientElement : SVGGradientElement {
      * &lt;linearGradient&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement/y2)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y2: SVGAnimatedLength
 
@@ -2826,6 +3337,8 @@ public abstract external class SVGLinearGradientElement : SVGGradientElement {
  * The SVGRadialGradientElement interface corresponds to the &lt;RadialGradient&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGRadialGradientElement : SVGGradientElement {
     /**
@@ -2834,6 +3347,8 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      * &lt;radialGradient&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/cx)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cx: SVGAnimatedLength
 
@@ -2843,6 +3358,8 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      * &lt;radialGradient&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/cy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cy: SVGAnimatedLength
 
@@ -2851,6 +3368,8 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      * an SVGAnimatedLength. It reflects the computed value of the r attribute on the &lt;radialGradient&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/r)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val r: SVGAnimatedLength
 
@@ -2860,6 +3379,8 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      * &lt;radialGradient&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fx)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val fx: SVGAnimatedLength
 
@@ -2869,6 +3390,8 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      * &lt;radialGradient&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val fy: SVGAnimatedLength
 
@@ -2878,6 +3401,8 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
      * &lt;radialGradient&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fr)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val fr: SVGAnimatedLength
 
@@ -2911,6 +3436,8 @@ public abstract external class SVGRadialGradientElement : SVGGradientElement {
  * The SVGStopElement interface corresponds to the &lt;stop&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStopElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGStopElement : SVGElement {
     /**
@@ -2918,6 +3445,8 @@ public abstract external class SVGStopElement : SVGElement {
      * &lt;stop&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStopElement/offset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offset: SVGAnimatedNumber
 
@@ -2947,6 +3476,8 @@ public abstract external class SVGStopElement : SVGElement {
  * The SVGPatternElement interface corresponds to the &lt;pattern&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, SVGURIReference {
     /**
@@ -2955,6 +3486,8 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      * constants defined in SVGUnitTypes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val patternUnits: SVGAnimatedEnumeration
 
@@ -2964,6 +3497,8 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      * takes one of the constants defined in SVGUnitTypes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternContentUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val patternContentUnits: SVGAnimatedEnumeration
 
@@ -2973,6 +3508,8 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      * itself, allowing for operations like translate, rotate, scale, and skew.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/patternTransform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val patternTransform: SVGAnimatedTransformList
 
@@ -2982,6 +3519,8 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: SVGAnimatedLength
 
@@ -2991,6 +3530,8 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: SVGAnimatedLength
 
@@ -2999,6 +3540,8 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      * SVGAnimatedLength. It reflects the computed value of the width attribute on the &lt;pattern&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: SVGAnimatedLength
 
@@ -3007,6 +3550,8 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
      * SVGAnimatedLength. It reflects the computed value of the height attribute on the &lt;pattern&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: SVGAnimatedLength
 
@@ -3036,6 +3581,8 @@ public abstract external class SVGPatternElement : SVGElement, SVGFitToViewBox, 
  * The SVGScriptElement interface corresponds to the SVG &lt;script&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGScriptElement : SVGElement, SVGURIReference, HTMLOrSVGScriptElement {
     /**
@@ -3043,6 +3590,8 @@ public abstract external class SVGScriptElement : SVGElement, SVGURIReference, H
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var type: String
 
@@ -3053,6 +3602,8 @@ public abstract external class SVGScriptElement : SVGElement, SVGURIReference, H
      * CORS settings attributes for details.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement/crossOrigin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var crossOrigin: String?
     public open var referrerPolicy: String
@@ -3084,6 +3635,8 @@ public abstract external class SVGScriptElement : SVGElement, SVGURIReference, H
  * them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference, HyperlinkElementUtils {
     /**
@@ -3091,6 +3644,8 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      * portion of a target window, frame, pane into which a document is to be opened when a link is activated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/target)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val target: SVGAnimatedString
 
@@ -3099,6 +3654,8 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      * linked URL as a download.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/download)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var download: String
 
@@ -3108,6 +3665,8 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      * sent by the browser (in the background). Typically used for tracking.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/ping)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var ping: String
 
@@ -3116,6 +3675,8 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      * SVG &lt;a&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/rel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var rel: String
 
@@ -3124,6 +3685,8 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      * string &lt;list-of-Link-Types&gt; values of the rel attribute of the SVG &lt;a&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/relList)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val relList: DOMTokenList
 
@@ -3132,6 +3695,8 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
      * fetching the URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/referrerPolicy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var referrerPolicy: String
 
@@ -3162,6 +3727,8 @@ public abstract external class SVGAElement : SVGGraphicsElement, SVGURIReference
  * manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGViewElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGViewElement : SVGElement, SVGFitToViewBox {
 

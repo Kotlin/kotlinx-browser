@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'pointerevents', DO NOT EDIT!
@@ -81,12 +84,16 @@ public fun PointerEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nul
  * surface, etc.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class PointerEvent : MouseEvent {
     /**
      * The PointerEvent() constructor creates a new synthetic and untrusted PointerEvent object instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/PointerEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: PointerEventInit = definedExternally)
 
@@ -96,6 +103,8 @@ public open external class PointerEvent : MouseEvent {
      * events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pointerId: Int
 
@@ -105,6 +114,8 @@ public open external class PointerEvent : MouseEvent {
      * given pointer, each event may produce a different value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: Double
 
@@ -114,6 +125,8 @@ public open external class PointerEvent : MouseEvent {
      * for a given pointer, each event may produce a different value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: Double
 
@@ -122,6 +135,8 @@ public open external class PointerEvent : MouseEvent {
      * input.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pressure)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pressure: Float
 
@@ -130,6 +145,8 @@ public open external class PointerEvent : MouseEvent {
      * pressure of the pointer input (also known as barrel pressure or cylinder stress).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tangentialPressure)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val tangentialPressure: Float
 
@@ -138,6 +155,8 @@ public open external class PointerEvent : MouseEvent {
      * pointer and the screen. This property is typically only useful for a pen/stylus pointer type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val tiltX: Int
 
@@ -146,6 +165,8 @@ public open external class PointerEvent : MouseEvent {
      * pointer and the screen. This property is typically only useful for a pen/stylus pointer type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val tiltY: Int
 
@@ -154,6 +175,8 @@ public open external class PointerEvent : MouseEvent {
      * (e.g., pen stylus) around its major axis, in degrees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/twist)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val twist: Int
 
@@ -163,6 +186,8 @@ public open external class PointerEvent : MouseEvent {
      * is perpendicular to the screen, parallel, or at some angle in between.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/altitudeAngle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val altitudeAngle: Double
 
@@ -171,6 +196,8 @@ public open external class PointerEvent : MouseEvent {
      * the plane containing both the transducer (pointer or stylus) axis and the Y axis.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/azimuthAngle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val azimuthAngle: Double
 
@@ -179,6 +206,8 @@ public open external class PointerEvent : MouseEvent {
      * that caused a given pointer event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pointerType: String
 
@@ -188,6 +217,8 @@ public open external class PointerEvent : MouseEvent {
      * primary one and returns false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/isPrimary)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val isPrimary: Boolean
 
@@ -197,6 +228,8 @@ public open external class PointerEvent : MouseEvent {
      * (such as pens) interacting with the screen simultaneously.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/persistentDeviceId)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val persistentDeviceId: Int
 
@@ -210,6 +243,8 @@ public open external class PointerEvent : MouseEvent {
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getCoalescedEvents)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getCoalescedEvents(): JsArray<PointerEvent>
 
@@ -219,6 +254,8 @@ public open external class PointerEvent : MouseEvent {
      * they are based on past points, current velocity, and trajectory.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getPredictedEvents)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getPredictedEvents(): JsArray<PointerEvent>
 
@@ -275,12 +312,16 @@ public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  * mouse). Common events using this interface include click, dblclick, mouseup, mousedown.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class MouseEvent : UIEvent {
     /**
      * The MouseEvent() constructor creates a new MouseEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/MouseEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: MouseEventInit = definedExternally)
 
@@ -289,6 +330,8 @@ public open external class MouseEvent : UIEvent {
      * mouse pointer in screen coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val screenX: Int
 
@@ -297,6 +340,8 @@ public open external class MouseEvent : UIEvent {
      * pointer in screen coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val screenY: Int
 
@@ -305,6 +350,8 @@ public open external class MouseEvent : UIEvent {
      * application's viewport at which the event occurred (as opposed to the coordinate within the page).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val clientX: Int
 
@@ -313,6 +360,8 @@ public open external class MouseEvent : UIEvent {
      * application's viewport at which the event occurred (as opposed to the coordinate within the page).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val clientY: Int
 
@@ -321,6 +370,8 @@ public open external class MouseEvent : UIEvent {
      * layer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val layerX: Int
 
@@ -329,6 +380,8 @@ public open external class MouseEvent : UIEvent {
      * layer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/layerY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val layerY: Int
 
@@ -337,6 +390,8 @@ public open external class MouseEvent : UIEvent {
      * not when a given mouse event occurs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/ctrlKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ctrlKey: Boolean
 
@@ -345,6 +400,8 @@ public open external class MouseEvent : UIEvent {
      * not when a given mouse event occurs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/shiftKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val shiftKey: Boolean
 
@@ -353,6 +410,8 @@ public open external class MouseEvent : UIEvent {
      * when a given mouse event occurs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/altKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val altKey: Boolean
 
@@ -361,6 +420,8 @@ public open external class MouseEvent : UIEvent {
      * not when a given mouse event occurs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/metaKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val metaKey: Boolean
 
@@ -369,6 +430,8 @@ public open external class MouseEvent : UIEvent {
      * the event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/button)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val button: Short
 
@@ -377,6 +440,8 @@ public open external class MouseEvent : UIEvent {
      * device) when a mouse event is triggered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/buttons)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val buttons: Short
 
@@ -384,6 +449,8 @@ public open external class MouseEvent : UIEvent {
      * The MouseEvent.relatedTarget read-only property is the secondary target for the mouse event, if there is one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/relatedTarget)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val relatedTarget: EventTarget?
 
@@ -392,6 +459,8 @@ public open external class MouseEvent : UIEvent {
      * modifier is active (i.e., the modifier key is pressed or locked), otherwise, false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/getModifierState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getModifierState(keyArg: String): Boolean
 
@@ -401,6 +470,8 @@ public open external class MouseEvent : UIEvent {
      * document not currently visible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pageX: Double
 
@@ -410,6 +481,8 @@ public open external class MouseEvent : UIEvent {
      * not currently visible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pageY: Double
 
@@ -417,6 +490,8 @@ public open external class MouseEvent : UIEvent {
      * The x read-only property of the MouseEvent interface is an alias for the MouseEvent.clientX property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: Double
 
@@ -424,6 +499,8 @@ public open external class MouseEvent : UIEvent {
      * The y read-only property of the MouseEvent interface is an alias for the MouseEvent.clientY property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: Double
 
@@ -432,6 +509,8 @@ public open external class MouseEvent : UIEvent {
      * pointer between that event and the padding edge of the target node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/offsetX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offsetX: Double
 
@@ -440,6 +519,8 @@ public open external class MouseEvent : UIEvent {
      * pointer between that event and the padding edge of the target node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/offsetY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offsetY: Double
 
@@ -450,6 +531,8 @@ public open external class MouseEvent : UIEvent {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/initMouseEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initMouseEvent(typeArg: String, bubblesArg: Boolean = definedExternally, cancelableArg: Boolean = definedExternally, viewArg: Window? = definedExternally, detailArg: Int = definedExternally, screenXArg: Int = definedExternally, screenYArg: Int = definedExternally, clientXArg: Int = definedExternally, clientYArg: Int = definedExternally, ctrlKeyArg: Boolean = definedExternally, altKeyArg: Boolean = definedExternally, shiftKeyArg: Boolean = definedExternally, metaKeyArg: Boolean = definedExternally, buttonArg: Short = definedExternally, relatedTargetArg: EventTarget? = definedExternally)
 
@@ -508,12 +591,16 @@ public fun WheelEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  * The WheelEvent interface represents events that occur due to the user moving a mouse wheel or similar input device.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class WheelEvent : MouseEvent {
     /**
      * The WheelEvent() constructor returns a new WheelEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/WheelEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: WheelEventInit = definedExternally)
 
@@ -522,6 +609,8 @@ public open external class WheelEvent : MouseEvent {
      * WheelEvent.deltaMode unit.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val deltaX: Double
 
@@ -530,6 +619,8 @@ public open external class WheelEvent : MouseEvent {
      * WheelEvent.deltaMode unit.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val deltaY: Double
 
@@ -538,6 +629,8 @@ public open external class WheelEvent : MouseEvent {
      * WheelEvent.deltaMode unit.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaZ)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val deltaZ: Double
 
@@ -546,6 +639,8 @@ public open external class WheelEvent : MouseEvent {
      * scroll amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaMode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val deltaMode: Int
     public open val momentum: Boolean

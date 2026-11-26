@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'touch-events', DO NOT EDIT!
@@ -60,12 +63,16 @@ public fun TouchInit(identifier: Int, target: EventTarget, clientX: Double? = nu
  * finger or stylus and the device may be a touchscreen or trackpad.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class Touch : JsAny {
     /**
      * The Touch() constructor creates a new Touch object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/Touch)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(touchInitDict: TouchInit)
 
@@ -75,6 +82,8 @@ public open external class Touch : JsAny {
      * stylus's) movement on the surface until it is lifted off the surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/identifier)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val identifier: Int
 
@@ -87,6 +96,8 @@ public open external class Touch : JsAny {
      * attach the touch listeners directly to the target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/target)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val target: EventTarget
 
@@ -95,6 +106,8 @@ public open external class Touch : JsAny {
      * screen, not including any scroll offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/screenX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val screenX: Double
 
@@ -103,6 +116,8 @@ public open external class Touch : JsAny {
      * screen, not including any scroll offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/screenY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val screenY: Double
 
@@ -111,6 +126,8 @@ public open external class Touch : JsAny {
      * including any scroll offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/clientX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val clientX: Double
 
@@ -119,6 +136,8 @@ public open external class Touch : JsAny {
      * viewport, not including any scroll offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/clientY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val clientY: Double
 
@@ -127,6 +146,8 @@ public open external class Touch : JsAny {
      * including any scroll offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/pageX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pageX: Double
 
@@ -135,6 +156,8 @@ public open external class Touch : JsAny {
      * including any scroll offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/pageY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pageY: Double
 
@@ -144,6 +167,8 @@ public open external class Touch : JsAny {
      * Touch.screenX.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/radiusX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val radiusX: Float
 
@@ -153,6 +178,8 @@ public open external class Touch : JsAny {
      * Touch.screenX.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/radiusY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val radiusY: Float
 
@@ -164,6 +191,8 @@ public open external class Touch : JsAny {
      * screen or a small area representing the tip of a stylus, for example.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/rotationAngle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val rotationAngle: Float
 
@@ -172,6 +201,8 @@ public open external class Touch : JsAny {
      * Touch point.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/force)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val force: Float
 
@@ -181,6 +212,8 @@ public open external class Touch : JsAny {
      * perpendicular to the screen, parallel, or at some angle in between.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/altitudeAngle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val altitudeAngle: Float
 
@@ -190,6 +223,8 @@ public open external class Touch : JsAny {
      * that the transducer is pointing in relative to the device surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/azimuthAngle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val azimuthAngle: Float
 
@@ -198,6 +233,8 @@ public open external class Touch : JsAny {
      * as a stylus, or direct touch from a finger.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/touchType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val touchType: TouchType
 }
@@ -208,12 +245,16 @@ public open external class Touch : JsAny {
  * object for each finger, for a total of three entries.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class TouchList : ItemArrayLike<Touch> {
     /**
      * The length read-only property indicates the number of items (touch points) in a given TouchList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val length: Int
 
@@ -221,6 +262,8 @@ public abstract external class TouchList : ItemArrayLike<Touch> {
      * The item() method returns the Touch object at the specified index in the TouchList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchList/item)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun item(index: Int): Touch?
 }
@@ -266,12 +309,16 @@ public fun TouchEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  * points, and so forth.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class TouchEvent : UIEvent {
     /**
      * The TouchEvent() constructor creates a new TouchEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/TouchEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: TouchEventInit = definedExternally)
 
@@ -281,6 +328,8 @@ public open external class TouchEvent : UIEvent {
      * touchstart time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/touches)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val touches: TouchList
 
@@ -290,11 +339,15 @@ public open external class TouchEvent : UIEvent {
      * current target element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/targetTouches)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val targetTouches: TouchList
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/changedTouches)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val changedTouches: TouchList
 
@@ -304,6 +357,8 @@ public open external class TouchEvent : UIEvent {
      * is true. Otherwise, it is false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/altKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val altKey: Boolean
 
@@ -313,6 +368,8 @@ public open external class TouchEvent : UIEvent {
      * Otherwise, it is false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/metaKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val metaKey: Boolean
 
@@ -322,6 +379,8 @@ public open external class TouchEvent : UIEvent {
      * Otherwise, it is false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/ctrlKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ctrlKey: Boolean
 
@@ -331,6 +390,8 @@ public open external class TouchEvent : UIEvent {
      * Otherwise, it is false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/shiftKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val shiftKey: Boolean
     public open fun getModifierState(keyArg: String): Boolean

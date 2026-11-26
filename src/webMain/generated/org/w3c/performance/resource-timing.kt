@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'resource-timing', DO NOT EDIT!
@@ -16,6 +19,8 @@ import kotlin.js.*
  * length of time it takes to fetch a specific resource, such as an XMLHttpRequest, &lt;SVG&gt;, image, or script.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class PerformanceResourceTiming : PerformanceEntry {
     /**
@@ -23,6 +28,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * load.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/initiatorType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val initiatorType: String
 
@@ -31,6 +38,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * cache or from a navigational prefetch.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/deliveryType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val deliveryType: String
 
@@ -39,6 +48,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * as identified by the ALPN Protocol ID (RFC7301).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/nextHopProtocol)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val nextHopProtocol: String
 
@@ -49,6 +60,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * Service Worker the property will always return 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/workerStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val workerStart: Double
 
@@ -57,6 +70,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * initiates the redirect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/redirectStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val redirectStart: Double
 
@@ -65,6 +80,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * of the last redirect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/redirectEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val redirectEnd: Double
 
@@ -73,6 +90,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/fetchStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val fetchStart: Double
 
@@ -81,6 +100,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * name lookup for the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/domainLookupStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domainLookupStart: Double
 
@@ -89,6 +110,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * domain-name lookup for the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/domainLookupEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val domainLookupEnd: Double
 
@@ -97,6 +120,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * the connection to the server to retrieve the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/connectStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val connectStart: Double
 
@@ -106,6 +131,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * the transport connection, as well as other time intervals such as TLS handshake and SOCKS authentication.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/connectEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val connectEnd: Double
 
@@ -115,6 +142,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * zero.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/secureConnectionStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val secureConnectionStart: Double
 
@@ -124,6 +153,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * browser retries the request, the value returned will be the start of the retry request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/requestStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val requestStart: Double
 
@@ -132,6 +163,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * first byte of the final document response (for example, 200 OK) from the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/finalResponseHeadersStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val finalResponseHeadersStart: Double
 
@@ -140,6 +173,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * first byte of the interim 1xx response (for example, 100 Continue or 103 Early Hints) from the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/firstInterimResponseStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val firstInterimResponseStart: Double
 
@@ -148,6 +183,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * the response from the server, cache, or local resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/responseStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val responseStart: Double
 
@@ -156,6 +193,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * the resource or immediately before the transport connection is closed, whichever comes first.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/responseEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val responseEnd: Double
     public open val workerRouterEvaluationStart: Double
@@ -168,6 +207,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * the response body plus a fixed value that stands in for the size of the response headers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/transferSize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val transferSize: Double
 
@@ -176,6 +217,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * the payload body before removing any applied content encodings (like gzip or Brotli).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/encodedBodySize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val encodedBodySize: Double
 
@@ -184,6 +227,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * the message body after removing any applied content encoding (like gzip or Brotli).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/decodedBodySize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val decodedBodySize: Double
 
@@ -192,6 +237,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/responseStatus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val responseStatus: Short
 
@@ -199,6 +246,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * The renderBlockingStatus read-only property returns the render-blocking status of the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/renderBlockingStatus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val renderBlockingStatus: RenderBlockingStatusType
 
@@ -207,6 +256,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * type of the fetched resource, formatted as a MIME type and subtype separated by a forward slash.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/contentType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val contentType: String
 
@@ -215,6 +266,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * content encoding of the fetched resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/contentEncoding)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val contentEncoding: String
 
@@ -223,6 +276,8 @@ public abstract external class PerformanceResourceTiming : PerformanceEntry {
      * representing the PerformanceResourceTiming object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun toJSON(): JsAny
 }

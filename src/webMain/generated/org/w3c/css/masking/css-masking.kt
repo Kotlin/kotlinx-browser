@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'css-masking', DO NOT EDIT!
@@ -15,6 +18,8 @@ import org.w3c.dom.svg.*
  * to manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGClipPathElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGClipPathElement : SVGElement {
     /**
@@ -22,6 +27,8 @@ public abstract external class SVGClipPathElement : SVGElement {
      * a &lt;clipPath&gt; element which defines the coordinate system to use for the content of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGClipPathElement/clipPathUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val clipPathUnits: SVGAnimatedEnumeration
 
@@ -30,6 +37,8 @@ public abstract external class SVGClipPathElement : SVGElement {
      * &lt;clipPath&gt; element, that is a list of transformations applied to the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGClipPathElement/transform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val transform: SVGAnimatedTransformList
 
@@ -60,6 +69,8 @@ public abstract external class SVGClipPathElement : SVGElement {
  * manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGMaskElement : SVGElement {
     /**
@@ -67,6 +78,8 @@ public abstract external class SVGMaskElement : SVGElement {
      * &lt;mask&gt; element which defines the coordinate system to use for the mask of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/maskUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val maskUnits: SVGAnimatedEnumeration
 
@@ -75,6 +88,8 @@ public abstract external class SVGMaskElement : SVGElement {
      * It indicates which coordinate system to use for the contents of the &lt;mask&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/maskContentUnits)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val maskContentUnits: SVGAnimatedEnumeration
 
@@ -84,6 +99,8 @@ public abstract external class SVGMaskElement : SVGElement {
      * area.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: SVGAnimatedLength
 
@@ -93,6 +110,8 @@ public abstract external class SVGMaskElement : SVGElement {
      * area.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: SVGAnimatedLength
 
@@ -101,6 +120,8 @@ public abstract external class SVGMaskElement : SVGElement {
      * value of the width attribute of the &lt;mask&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: SVGAnimatedLength
 
@@ -109,6 +130,8 @@ public abstract external class SVGMaskElement : SVGElement {
      * value of the height attribute of the &lt;mask&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: SVGAnimatedLength
 

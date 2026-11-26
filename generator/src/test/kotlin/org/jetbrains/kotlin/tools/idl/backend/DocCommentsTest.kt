@@ -102,6 +102,8 @@ class DocCommentsTest {
                 " * Available only in secure contexts.",
                 " *",
                 " * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/append)",
+                " *",
+                " * © Mozilla Contributors, licensed under CC BY-SA 2.5",
                 " */",
             ),
             kdocLines(doc, secureContext = true, indent = 4),

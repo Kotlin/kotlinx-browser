@@ -188,9 +188,11 @@ it deprecated, "Available only in secure contexts." for `[SecureContext]`, and a
   ./gradlew :generator:generateWebApi
   ./gradlew :generator:test -PupdateGolden=true
   ```
-- **Licence.** The summaries are MDN prose under CC-BY-SA 2.5 by Mozilla Contributors, not Apache 2.0. `NOTICE`
-  attributes them, every comment links to its page, and every published jar contains `META-INF/NOTICE`. Don't
-  copy MDN text anywhere else in the repository.
+- **Licence.** The summaries are MDN prose under CC BY-SA 2.5 by Mozilla Contributors, not Apache 2.0.
+  `NOTICE` covers `mdn/summaries.json` and the KDoc. Every MDN comment ends with its link and
+  "© Mozilla Contributors, licensed under CC BY-SA 2.5"; the header of every generated file that has one says the
+  comments are licensed separately; every published jar and klib contains `META-INF/NOTICE` and `META-INF/LICENSE`.
+  Don't copy MDN text anywhere else in the repository.
 - **Lookup** (`backend/DocComments.kt`): an interface by name; a member on its own interface, else, for a mixin member,
   on the interfaces that include the mixin and their ancestors, in `includes` order. So `ParentNode.append` is
   documented with MDN's page of `Document.append`. Dictionaries, enums and typedefs have no BCD entries.

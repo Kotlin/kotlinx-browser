@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'websockets', DO NOT EDIT!
@@ -25,6 +28,8 @@ public inline val BinaryType.Companion.ARRAYBUFFER: BinaryType get() = "arraybuf
  * sending and receiving data on the connection.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class WebSocket : EventTarget {
     /**
@@ -32,6 +37,8 @@ public open external class WebSocket : EventTarget {
      * the specified WebSocket URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/WebSocket)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(url: String, protocols: String)
 
@@ -40,6 +47,8 @@ public open external class WebSocket : EventTarget {
      * the specified WebSocket URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/WebSocket)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(url: String, protocols: JsArray<JsString>)
 
@@ -48,6 +57,8 @@ public open external class WebSocket : EventTarget {
      * the specified WebSocket URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/WebSocket)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(url: String)
 
@@ -55,6 +66,8 @@ public open external class WebSocket : EventTarget {
      * The WebSocket.url read-only property returns the absolute URL of the WebSocket as resolved by the constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/url)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val url: String
 
@@ -62,6 +75,8 @@ public open external class WebSocket : EventTarget {
      * The WebSocket.readyState read-only property returns the current state of the WebSocket connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/readyState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val readyState: Short
 
@@ -72,6 +87,8 @@ public open external class WebSocket : EventTarget {
      * continue to climb.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/bufferedAmount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val bufferedAmount: Double
 
@@ -79,6 +96,8 @@ public open external class WebSocket : EventTarget {
      * The open event is fired when a connection with a WebSocket is opened.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/open_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onopen: ((Event) -> Unit)?
 
@@ -87,6 +106,8 @@ public open external class WebSocket : EventTarget {
      * be sent for example).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onerror: ((Event) -> Unit)?
 
@@ -94,6 +115,8 @@ public open external class WebSocket : EventTarget {
      * The close event is fired when a connection with a WebSocket is closed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onclose: ((CloseEvent) -> Unit)?
 
@@ -102,6 +125,8 @@ public open external class WebSocket : EventTarget {
      * the empty string or a list of extensions as negotiated by the connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/extensions)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val extensions: String
 
@@ -111,6 +136,8 @@ public open external class WebSocket : EventTarget {
      * if no connection is established.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/protocol)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val protocol: String
 
@@ -119,6 +146,8 @@ public open external class WebSocket : EventTarget {
      * already CLOSED, this method does nothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close(code: Short = definedExternally, reason: String = definedExternally)
 
@@ -126,6 +155,8 @@ public open external class WebSocket : EventTarget {
      * The message event is fired when data is received through a WebSocket.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/message_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onmessage: ((MessageEvent) -> Unit)?
 
@@ -133,6 +164,8 @@ public open external class WebSocket : EventTarget {
      * The WebSocket.binaryType property controls the type of binary data being received over the WebSocket connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/binaryType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var binaryType: BinaryType
 
@@ -145,6 +178,8 @@ public open external class WebSocket : EventTarget {
      * discard the data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/send)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun send(data: BufferDataSource)
 
@@ -157,6 +192,8 @@ public open external class WebSocket : EventTarget {
      * discard the data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/send)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun send(data: Blob)
 
@@ -169,6 +206,8 @@ public open external class WebSocket : EventTarget {
      * discard the data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/send)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun send(data: String)
 
@@ -185,12 +224,16 @@ public open external class WebSocket : EventTarget {
  * indicated by the WebSocket object's onclose attribute.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class CloseEvent : Event {
     /**
      * The CloseEvent() constructor creates a new CloseEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/CloseEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: CloseEventInit = definedExternally)
 
@@ -198,6 +241,8 @@ public open external class CloseEvent : Event {
      * The wasClean read-only property of the CloseEvent interface returns true if the connection closed cleanly.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/wasClean)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val wasClean: Boolean
 
@@ -206,6 +251,8 @@ public open external class CloseEvent : Event {
      * reason the connection was closed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/code)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val code: Short
 
@@ -214,6 +261,8 @@ public open external class CloseEvent : Event {
      * server gave for closing the connection; that is, a concise human-readable prose explanation for the closure.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/reason)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val reason: String
 

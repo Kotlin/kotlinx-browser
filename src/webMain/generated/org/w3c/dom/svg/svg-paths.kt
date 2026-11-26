@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'svg-paths', DO NOT EDIT!
@@ -30,6 +33,8 @@ public external interface SVGPathData : JsAny {
      * optionally normalizing the values and segment types.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/getPathData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getPathData(settings: SVGPathDataSettings = definedExternally): JsArray<SVGPathSegment>
 
@@ -37,6 +42,8 @@ public external interface SVGPathData : JsAny {
      * The SVGPathElement.setPathData() method sets the sequence of path segments as the new path data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/setPathData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun setPathData(pathData: JsArray<SVGPathSegment>)
 }
@@ -45,6 +52,8 @@ public external interface SVGPathData : JsAny {
  * The SVGPathElement interface corresponds to the &lt;path&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SVGPathElement : SVGGeometryElement, SVGPathData {
     /**
@@ -52,6 +61,8 @@ public abstract external class SVGPathElement : SVGGeometryElement, SVGPathData 
      * &lt;path&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/pathLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val pathLength: SVGAnimatedNumber
 
@@ -60,6 +71,8 @@ public abstract external class SVGPathElement : SVGGeometryElement, SVGPathData 
      * length of the path in user units.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/getTotalLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun getTotalLength(): Float
 
@@ -68,6 +81,8 @@ public abstract external class SVGPathElement : SVGGeometryElement, SVGPathData 
      * path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/getPointAtLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun getPointAtLength(distance: Float): DOMPoint
 
@@ -76,6 +91,8 @@ public abstract external class SVGPathElement : SVGGeometryElement, SVGPathData 
      * along the path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement/getPathSegmentAtLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getPathSegmentAtLength(distance: Float): SVGPathSegment?
 

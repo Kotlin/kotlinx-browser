@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'performance-timeline', DO NOT EDIT!
@@ -16,6 +19,8 @@ import org.w3c.dom.*
  * timeline.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class PerformanceEntry : JsAny {
     public open val id: Double
@@ -25,6 +30,8 @@ public abstract external class PerformanceEntry : JsAny {
      * entry. It acts as an identifier, but it does not have to be unique. The value depends on the subclass.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val name: String
 
@@ -33,6 +40,8 @@ public abstract external class PerformanceEntry : JsAny {
      * represents.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/entryType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val entryType: String
 
@@ -41,6 +50,8 @@ public abstract external class PerformanceEntry : JsAny {
      * this property depends on the value of this entry's entryType.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/startTime)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val startTime: Double
 
@@ -49,6 +60,8 @@ public abstract external class PerformanceEntry : JsAny {
      * this property depends on the value of this entry's entryType.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/duration)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val duration: Double
 
@@ -57,6 +70,8 @@ public abstract external class PerformanceEntry : JsAny {
      * paint happened under.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/navigationId)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigationId: Double
 
@@ -65,6 +80,8 @@ public abstract external class PerformanceEntry : JsAny {
      * PerformanceEntry object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 }
@@ -74,6 +91,8 @@ public abstract external class PerformanceEntry : JsAny {
  * performance entries as they are recorded in the browser's performance timeline.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class PerformanceObserver : JsAny {
     /**
@@ -82,6 +101,8 @@ public open external class PerformanceObserver : JsAny {
      * registered, via the observe() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/PerformanceObserver)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(callback: (PerformanceObserverEntryList, PerformanceObserver, PerformanceObserverCallbackOptions) -> Unit)
 
@@ -90,6 +111,8 @@ public open external class PerformanceObserver : JsAny {
      * to observe.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/observe)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun observe(options: PerformanceObserverInit = definedExternally)
 
@@ -98,6 +121,8 @@ public open external class PerformanceObserver : JsAny {
      * receiving any performance entry events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/disconnect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun disconnect()
 
@@ -106,6 +131,8 @@ public open external class PerformanceObserver : JsAny {
      * objects stored in the performance observer, emptying it out.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/takeRecords)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun takeRecords(): JsArray<PerformanceEntry>
 
@@ -115,6 +142,8 @@ public open external class PerformanceObserver : JsAny {
          * the entryType values supported by the user agent.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/supportedEntryTypes_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public val supportedEntryTypes: JsArray<JsString>
     }
@@ -145,6 +174,8 @@ public fun PerformanceObserverInit(entryTypes: JsArray<JsString>? = null, type: 
  * observe() method.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class PerformanceObserverEntryList : JsAny {
     /**
@@ -154,6 +185,8 @@ public abstract external class PerformanceObserverEntryList : JsAny {
      * callback).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntries)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getEntries(): JsArray<PerformanceEntry>
 
@@ -164,6 +197,8 @@ public abstract external class PerformanceObserverEntryList : JsAny {
      * function (as the first parameter in the callback).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntriesByType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getEntriesByType(type: String): JsArray<PerformanceEntry>
 
@@ -174,6 +209,8 @@ public abstract external class PerformanceObserverEntryList : JsAny {
      * (as the first parameter in the callback).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntriesByName)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getEntriesByName(name: String, type: String = definedExternally): JsArray<PerformanceEntry>
 }

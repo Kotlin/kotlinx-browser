@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'streams', DO NOT EDIT!
@@ -21,12 +24,16 @@ public external interface ReadableStreamController : JsAny
  * concrete instance of a ReadableStream through the body property of a Response object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ReadableStream : JsAny {
     /**
      * The ReadableStream() constructor creates and returns a readable stream object from the given handlers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/ReadableStream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(underlyingSource: JsAny = definedExternally, strategy: QueuingStrategy = definedExternally)
 
@@ -35,6 +42,8 @@ public open external class ReadableStream : JsAny {
      * locked to a reader.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/locked)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val locked: Boolean
 
@@ -42,6 +51,8 @@ public open external class ReadableStream : JsAny {
      * The cancel() method of the ReadableStream interface returns a Promise that resolves when the stream is canceled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun cancel(reason: JsAny? = definedExternally): Promise<JsAny?>
 
@@ -50,6 +61,8 @@ public open external class ReadableStream : JsAny {
      * stream is locked, no other reader can be acquired until this one is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/getReader)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getReader(options: ReadableStreamGetReaderOptions = definedExternally): ReadableStreamReader
 
@@ -58,6 +71,8 @@ public open external class ReadableStream : JsAny {
      * through a transform stream or any other writable/readable pair.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeThrough)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun pipeThrough(transform: ReadableWritablePair, options: StreamPipeOptions = definedExternally): ReadableStream
 
@@ -67,6 +82,8 @@ public open external class ReadableStream : JsAny {
      * encountered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun pipeTo(destination: WritableStream, options: StreamPipeOptions = definedExternally): Promise<JsAny?>
 
@@ -75,6 +92,8 @@ public open external class ReadableStream : JsAny {
      * containing the two resulting branches as new ReadableStream instances.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/tee)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun tee(): JsArray<ReadableStream>
     // not printed yet: async_iterable
@@ -85,6 +104,8 @@ public open external class ReadableStream : JsAny {
          * object.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun from(asyncIterable: JsAny): ReadableStream
     }
@@ -167,6 +188,8 @@ public external interface ReadableStreamGenericReader : JsAny {
      * enables you to write code that responds to an end to the streaming process.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/closed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val closed: Promise<JsAny?>
 
@@ -175,6 +198,8 @@ public external interface ReadableStreamGenericReader : JsAny {
      * is canceled. Calling this method signals a loss of interest in the stream by a consumer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/cancel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun cancel(reason: JsAny? = definedExternally): Promise<JsAny?>
 }
@@ -184,6 +209,8 @@ public external interface ReadableStreamGenericReader : JsAny {
  * stream data supplied from a network (such as a fetch request).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ReadableStreamDefaultReader : ReadableStreamGenericReader, ReadableStreamReader {
     /**
@@ -191,6 +218,8 @@ public open external class ReadableStreamDefaultReader : ReadableStreamGenericRe
      *
      * [MDN
      * Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/ReadableStreamDefaultReader)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(stream: ReadableStream)
 
@@ -199,6 +228,8 @@ public open external class ReadableStreamDefaultReader : ReadableStreamGenericRe
      * chunk in the stream's internal queue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/read)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun read(): Promise<ReadableStreamReadResult>
 
@@ -206,6 +237,8 @@ public open external class ReadableStreamDefaultReader : ReadableStreamGenericRe
      * The releaseLock() method of the ReadableStreamDefaultReader interface releases the reader's lock on the stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/releaseLock)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun releaseLock()
 
@@ -215,6 +248,8 @@ public open external class ReadableStreamDefaultReader : ReadableStreamGenericRe
      * enables you to write code that responds to an end to the streaming process.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/closed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val closed: Promise<JsAny?>
 
@@ -223,6 +258,8 @@ public open external class ReadableStreamDefaultReader : ReadableStreamGenericRe
      * is canceled. Calling this method signals a loss of interest in the stream by a consumer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/cancel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun cancel(reason: JsAny?): Promise<JsAny?>
 }
@@ -243,12 +280,16 @@ public fun ReadableStreamReadResult(value: JsAny? = null, done: Boolean? = null)
  * data is delivered as an "anonymous" sequence of bytes, such as files.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ReadableStreamBYOBReader : ReadableStreamGenericReader, ReadableStreamReader {
     /**
      * The ReadableStreamBYOBReader() constructor creates and returns a ReadableStreamBYOBReader object instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/ReadableStreamBYOBReader)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(stream: ReadableStream)
 
@@ -259,6 +300,8 @@ public open external class ReadableStreamBYOBReader : ReadableStreamGenericReade
      * transfer from the underlying byte source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun read(view: ArrayBufferView, options: ReadableStreamBYOBReaderReadOptions = definedExternally): Promise<ReadableStreamReadResult>
 
@@ -267,6 +310,8 @@ public open external class ReadableStreamBYOBReader : ReadableStreamGenericReade
      * After the lock is released, the reader is no longer active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/releaseLock)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun releaseLock()
 
@@ -275,6 +320,8 @@ public open external class ReadableStreamBYOBReader : ReadableStreamGenericReade
      * stream closes, or rejects if the stream throws an error or the reader's lock is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/closed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val closed: Promise<JsAny?>
 
@@ -283,6 +330,8 @@ public open external class ReadableStreamBYOBReader : ReadableStreamGenericReade
      * canceled. Calling this method signals a loss of interest in the stream by a consumer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/cancel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun cancel(reason: JsAny?): Promise<JsAny?>
 }
@@ -300,6 +349,8 @@ public fun ReadableStreamBYOBReaderReadOptions(min: Double? = null): ReadableStr
  * ReadableStream's state and internal queue. Default controllers are for streams that are not byte streams.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ReadableStreamDefaultController : ReadableStreamController {
     /**
@@ -307,6 +358,8 @@ public abstract external class ReadableStreamDefaultController : ReadableStreamC
      * required to fill the stream's internal queue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/desiredSize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val desiredSize: Double?
 
@@ -314,6 +367,8 @@ public abstract external class ReadableStreamDefaultController : ReadableStreamC
      * The close() method of the ReadableStreamDefaultController interface closes the associated stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close()
 
@@ -322,6 +377,8 @@ public abstract external class ReadableStreamDefaultController : ReadableStreamC
      * stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/enqueue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun enqueue(chunk: JsAny? = definedExternally)
 
@@ -330,6 +387,8 @@ public abstract external class ReadableStreamDefaultController : ReadableStreamC
      * associated stream to error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/error)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun error(e: JsAny? = definedExternally)
 }
@@ -341,6 +400,8 @@ public abstract external class ReadableStreamDefaultController : ReadableStreamC
  * empty.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ReadableByteStreamController : ReadableStreamController {
     /**
@@ -348,6 +409,8 @@ public abstract external class ReadableByteStreamController : ReadableStreamCont
      * request, or null if there are no pending requests.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/byobRequest)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val byobRequest: ReadableStreamBYOBRequest?
 
@@ -356,6 +419,8 @@ public abstract external class ReadableByteStreamController : ReadableStreamCont
      * required to fill the stream's internal queue to its "desired size".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/desiredSize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val desiredSize: Double?
 
@@ -363,6 +428,8 @@ public abstract external class ReadableByteStreamController : ReadableStreamCont
      * The close() method of the ReadableByteStreamController interface closes the associated stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close()
 
@@ -371,6 +438,8 @@ public abstract external class ReadableByteStreamController : ReadableStreamCont
      * readable byte stream (the chunk is transferred into the stream's internal queues).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/enqueue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun enqueue(chunk: ArrayBufferView)
 
@@ -379,6 +448,8 @@ public abstract external class ReadableByteStreamController : ReadableStreamCont
      * associated stream to error with the specified reason.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/error)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun error(e: JsAny? = definedExternally)
 }
@@ -388,12 +459,16 @@ public abstract external class ReadableByteStreamController : ReadableStreamCont
  * source that will be made as a zero-copy transfer to a consumer (bypassing the stream's internal queues).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ReadableStreamBYOBRequest : JsAny {
     /**
      * The view getter property of the ReadableStreamBYOBRequest interface returns the current view.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/view)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val view: Uint8Array?
 
@@ -402,6 +477,8 @@ public abstract external class ReadableStreamBYOBRequest : JsAny {
      * stream that the specified number of bytes were written into the ReadableStreamBYOBRequest.view.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respond)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun respond(bytesWritten: Double)
 
@@ -410,6 +487,8 @@ public abstract external class ReadableStreamBYOBRequest : JsAny {
      * of the associated readable byte stream should write to instead of ReadableStreamBYOBRequest.view.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respondWithNewView)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun respondWithNewView(view: ArrayBufferView)
 }
@@ -419,12 +498,16 @@ public abstract external class ReadableStreamBYOBRequest : JsAny {
  * destination, known as a sink. This object comes with built-in backpressure and queuing.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class WritableStream : JsAny {
     /**
      * The WritableStream() constructor creates a new WritableStream object instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/WritableStream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(underlyingSink: JsAny = definedExternally, strategy: QueuingStrategy = definedExternally)
 
@@ -433,6 +516,8 @@ public open external class WritableStream : JsAny {
      * WritableStream is locked to a writer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/locked)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val locked: Boolean
 
@@ -442,6 +527,8 @@ public open external class WritableStream : JsAny {
      * discarded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/abort)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun abort(reason: JsAny? = definedExternally): Promise<JsAny?>
 
@@ -450,6 +537,8 @@ public open external class WritableStream : JsAny {
      * method is called are sent before the returned promise is fulfilled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close(): Promise<JsAny?>
 
@@ -459,6 +548,8 @@ public open external class WritableStream : JsAny {
      * released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/getWriter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getWriter(): WritableStreamDefaultWriter
 }
@@ -484,6 +575,8 @@ public fun UnderlyingSink(start: ((WritableStreamDefaultController) -> JsAny?)? 
  * once created locks the writer to the WritableStream ensuring that no other streams can write to the underlying sink.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class WritableStreamDefaultWriter : JsAny {
     /**
@@ -491,6 +584,8 @@ public open external class WritableStreamDefaultWriter : JsAny {
      *
      * [MDN
      * Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/WritableStreamDefaultWriter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(stream: WritableStream)
 
@@ -499,6 +594,8 @@ public open external class WritableStreamDefaultWriter : JsAny {
      * stream becomes closed, or rejects if the stream errors or the writer's lock is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/closed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val closed: Promise<JsAny?>
 
@@ -507,6 +604,8 @@ public open external class WritableStreamDefaultWriter : JsAny {
      * to fill the stream's internal queue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/desiredSize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val desiredSize: Double?
 
@@ -516,6 +615,8 @@ public open external class WritableStreamDefaultWriter : JsAny {
      * no longer applying backpressure.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/ready)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ready: Promise<JsAny?>
 
@@ -525,6 +626,8 @@ public open external class WritableStreamDefaultWriter : JsAny {
      * queued writes discarded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun abort(reason: JsAny? = definedExternally): Promise<JsAny?>
 
@@ -532,6 +635,8 @@ public open external class WritableStreamDefaultWriter : JsAny {
      * The close() method of the WritableStreamDefaultWriter interface closes the associated writable stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close(): Promise<JsAny?>
 
@@ -542,6 +647,8 @@ public open external class WritableStreamDefaultWriter : JsAny {
      * writer will appear closed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/releaseLock)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun releaseLock()
 
@@ -551,6 +658,8 @@ public open external class WritableStreamDefaultWriter : JsAny {
      * operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun write(chunk: JsAny? = definedExternally): Promise<JsAny?>
 }
@@ -561,6 +670,8 @@ public open external class WritableStreamDefaultWriter : JsAny {
  * WritableStreamDefaultController instance to manipulate.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WritableStreamDefaultController : JsAny {
     /**
@@ -568,6 +679,8 @@ public abstract external class WritableStreamDefaultController : JsAny {
      * with the controller.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController/signal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val signal: AbortSignal
 
@@ -576,6 +689,8 @@ public abstract external class WritableStreamDefaultController : JsAny {
      * associated stream to error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController/error)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun error(e: JsAny? = definedExternally)
 }
@@ -585,6 +700,8 @@ public abstract external class WritableStreamDefaultController : JsAny {
  * stream concept.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class TransformStream : JsAny {
     /**
@@ -592,6 +709,8 @@ public open external class TransformStream : JsAny {
      * WritableStream representing the writable side, and a ReadableStream representing the readable side.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream/TransformStream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(transformer: JsAny = definedExternally, writableStrategy: QueuingStrategy = definedExternally, readableStrategy: QueuingStrategy = definedExternally)
 
@@ -600,6 +719,8 @@ public open external class TransformStream : JsAny {
      * by this TransformStream. This stream emits the transformed output data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream/readable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val readable: ReadableStream
 
@@ -609,6 +730,8 @@ public open external class TransformStream : JsAny {
      * stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream/writable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val writable: WritableStream
 }
@@ -636,6 +759,8 @@ public fun Transformer(start: ((TransformStreamDefaultController) -> JsAny?)? = 
  * ReadableStream and WritableStream.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class TransformStreamDefaultController : JsAny {
     /**
@@ -643,6 +768,8 @@ public abstract external class TransformStreamDefaultController : JsAny {
      * fill the queue of the associated ReadableStream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/desiredSize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val desiredSize: Double?
 
@@ -651,6 +778,8 @@ public abstract external class TransformStreamDefaultController : JsAny {
      * side of the stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/enqueue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun enqueue(chunk: JsAny? = definedExternally)
 
@@ -659,6 +788,8 @@ public abstract external class TransformStreamDefaultController : JsAny {
      * interactions with it will fail with the given error message, and any chunks in the queue will be discarded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/error)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun error(reason: JsAny? = definedExternally)
 
@@ -667,6 +798,8 @@ public abstract external class TransformStreamDefaultController : JsAny {
      * writable side of the stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/terminate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun terminate()
 }
@@ -694,12 +827,16 @@ public fun QueuingStrategyInit(highWaterMark: Double): QueuingStrategyInit = new
  * be used when constructing streams.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ByteLengthQueuingStrategy : JsAny {
     /**
      * The ByteLengthQueuingStrategy() constructor creates and returns a ByteLengthQueuingStrategy object instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/ByteLengthQueuingStrategy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(init: QueuingStrategyInit)
 
@@ -708,6 +845,8 @@ public open external class ByteLengthQueuingStrategy : JsAny {
      * contained in the internal queue before backpressure is applied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/highWaterMark)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val highWaterMark: Double
 
@@ -715,6 +854,8 @@ public open external class ByteLengthQueuingStrategy : JsAny {
      * The size() method of the ByteLengthQueuingStrategy interface returns the given chunk's byteLength property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/size)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val size: (JsAny?) -> JsAny?
 }
@@ -724,12 +865,16 @@ public open external class ByteLengthQueuingStrategy : JsAny {
  * used when constructing streams.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class CountQueuingStrategy : JsAny {
     /**
      * The CountQueuingStrategy() constructor creates and returns a CountQueuingStrategy object instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy/CountQueuingStrategy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(init: QueuingStrategyInit)
 
@@ -738,6 +883,8 @@ public open external class CountQueuingStrategy : JsAny {
      * contained in the internal queue before backpressure is applied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy/highWaterMark)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val highWaterMark: Double
 
@@ -746,6 +893,8 @@ public open external class CountQueuingStrategy : JsAny {
      * of the number of chunks in the queue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy/size)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val size: (JsAny?) -> JsAny?
 }

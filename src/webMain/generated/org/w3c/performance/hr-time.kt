@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'hr-time', DO NOT EDIT!
@@ -15,6 +18,8 @@ import org.w3c.dom.*
  * The Performance interface provides access to performance-related information for the current page.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Performance : EventTarget {
     /**
@@ -23,6 +28,8 @@ public abstract external class Performance : EventTarget {
      * worker is run in Worker and ServiceWorker contexts).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/now)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun now(): Double
 
@@ -31,6 +38,8 @@ public abstract external class Performance : EventTarget {
      * as the baseline for performance-related timestamps.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/timeOrigin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val timeOrigin: Double
 
@@ -39,6 +48,8 @@ public abstract external class Performance : EventTarget {
      * Performance object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 
@@ -49,6 +60,8 @@ public abstract external class Performance : EventTarget {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/timing)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val timing: PerformanceTiming
 
@@ -60,6 +73,8 @@ public abstract external class Performance : EventTarget {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/navigation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigation: PerformanceNavigation
 
@@ -68,6 +83,8 @@ public abstract external class Performance : EventTarget {
      * timeline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntries)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getEntries(): JsArray<PerformanceEntry>
 
@@ -76,6 +93,8 @@ public abstract external class Performance : EventTarget {
      * timeline for a given type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getEntriesByType(type: String): JsArray<PerformanceEntry>
 
@@ -84,6 +103,8 @@ public abstract external class Performance : EventTarget {
      * timeline with the given name and type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByName)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getEntriesByName(name: String, type: String = definedExternally): JsArray<PerformanceEntry>
 
@@ -92,6 +113,8 @@ public abstract external class Performance : EventTarget {
      * browser's performance timeline and sets the size of the performance resource data buffer to zero.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/clearResourceTimings)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clearResourceTimings()
 
@@ -100,6 +123,8 @@ public abstract external class Performance : EventTarget {
      * stores the "resource" performance entries.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/setResourceTimingBufferSize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setResourceTimingBufferSize(maxSize: Int)
 
@@ -107,6 +132,8 @@ public abstract external class Performance : EventTarget {
      * The resourcetimingbufferfull event is fired when the browser's resource timing buffer is full.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/resourcetimingbufferfull_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onresourcetimingbufferfull: ((Event) -> Unit)?
 }

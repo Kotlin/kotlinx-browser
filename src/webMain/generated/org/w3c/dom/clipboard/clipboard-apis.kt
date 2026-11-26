@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'clipboard-apis', DO NOT EDIT!
@@ -28,6 +31,8 @@ public fun ClipboardEventInit(bubbles: Boolean? = null, cancelable: Boolean? = n
  * the clipboard, that is cut, copy, and paste events.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ClipboardEvent : Event {
     /**
@@ -35,11 +40,15 @@ public open external class ClipboardEvent : Event {
      * related to modification of the clipboard, that is cut, copy, and paste events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/ClipboardEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: ClipboardEventInit = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/clipboardData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val clipboardData: DataTransfer?
 
@@ -69,6 +78,8 @@ public fun ClipboardChangeEventInit(bubbles: Boolean? = null, cancelable: Boolea
  * clipboard are changed.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ClipboardChangeEvent : Event {
     /**
@@ -77,6 +88,8 @@ public open external class ClipboardChangeEvent : Event {
      * app or any other system application.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent/ClipboardChangeEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: ClipboardChangeEventInit = definedExternally)
 
@@ -86,6 +99,8 @@ public open external class ClipboardChangeEvent : Event {
      * types and custom formats are not included to limit fingerprinting.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent/types)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val types: JsArray<JsString>
 
@@ -94,6 +109,8 @@ public open external class ClipboardChangeEvent : Event {
      * identifier for this specific clipboard change operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardChangeEvent/changeId)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val changeId: JsBigInt
 
@@ -112,6 +129,8 @@ public open external class ClipboardChangeEvent : Event {
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ClipboardItem : JsAny {
     /**
@@ -119,6 +138,8 @@ public open external class ClipboardItem : JsAny {
      * retrieved via the Clipboard API clipboard.write() and clipboard.read() methods, respectively.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/ClipboardItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(items: JsAny, options: ClipboardItemOptions = definedExternally)
 
@@ -127,6 +148,8 @@ public open external class ClipboardItem : JsAny {
      * should be presented.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/presentationStyle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val presentationStyle: PresentationStyle
 
@@ -135,6 +158,8 @@ public open external class ClipboardItem : JsAny {
      * ClipboardItem.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/types)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val types: JsArray<JsString>
 
@@ -143,6 +168,8 @@ public open external class ClipboardItem : JsAny {
      * MIME type or an error if the MIME type is not found.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getType(type: String): Promise<Blob>
 
@@ -152,6 +179,8 @@ public open external class ClipboardItem : JsAny {
          * by the clipboard, and false otherwise.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/supports_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun supports(type: String): Boolean
     }
@@ -181,6 +210,8 @@ public fun ClipboardItemOptions(presentationStyle: PresentationStyle? = null): C
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Clipboard : EventTarget {
     /**
@@ -188,6 +219,8 @@ public abstract external class Clipboard : EventTarget {
      * contents.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun read(formats: ClipboardUnsanitizedFormats = definedExternally): Promise<JsArray<ClipboardItem>>
 
@@ -196,6 +229,8 @@ public abstract external class Clipboard : EventTarget {
      * contents of the system clipboard.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/readText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun readText(): Promise<JsString>
 
@@ -204,6 +239,8 @@ public abstract external class Clipboard : EventTarget {
      * the system clipboard.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun write(data: JsArray<ClipboardItem>): Promise<JsAny?>
 
@@ -212,6 +249,8 @@ public abstract external class Clipboard : EventTarget {
      * Promise that is resolved once the system clipboard has been updated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun writeText(data: String): Promise<JsAny?>
 }

@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'encrypted-media', DO NOT EDIT!
@@ -61,6 +64,8 @@ public fun MediaKeySystemMediaCapability(contentType: String? = null, encryption
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MediaKeySystemAccess : JsAny {
     /**
@@ -68,11 +73,15 @@ public abstract external class MediaKeySystemAccess : JsAny {
      * system being used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/keySystem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val keySystem: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/getConfiguration)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getConfiguration(): MediaKeySystemConfiguration
 
@@ -80,6 +89,8 @@ public abstract external class MediaKeySystemAccess : JsAny {
      * The MediaKeySystemAccess.createMediaKeys() method returns a Promise that resolves to a new MediaKeys object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createMediaKeys(): Promise<MediaKeys>
 }
@@ -99,6 +110,8 @@ public inline val MediaKeySessionType.Companion.PERSISTENT_LICENSE: MediaKeySess
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MediaKeys : JsAny {
     /**
@@ -106,6 +119,8 @@ public abstract external class MediaKeys : JsAny {
      * context for message exchange with a content decryption module (CDM).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/createSession)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createSession(sessionType: MediaKeySessionType = definedExternally): MediaKeySession
 
@@ -115,6 +130,8 @@ public abstract external class MediaKeys : JsAny {
      * requirements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getStatusForPolicy(policy: MediaKeysPolicy = definedExternally): Promise<MediaKeyStatus>
 
@@ -123,6 +140,8 @@ public abstract external class MediaKeys : JsAny {
      * messages to the license server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setServerCertificate(serverCertificate: BufferDataSource): Promise<JsBoolean>
 }
@@ -153,6 +172,8 @@ public inline val MediaKeySessionClosedReason.Companion.RESOURCE_EVICTED: MediaK
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MediaKeySession : EventTarget {
     /**
@@ -160,6 +181,8 @@ public abstract external class MediaKeySession : EventTarget {
      * content decryption module (CDM) for the current media object and its associated keys or licenses.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/sessionId)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val sessionId: String
 
@@ -168,6 +191,8 @@ public abstract external class MediaKeySession : EventTarget {
      * current session can no longer be used to decrypt media data, or NaN if no such time exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/expiration)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val expiration: Double
 
@@ -177,6 +202,8 @@ public abstract external class MediaKeySession : EventTarget {
      * associated with it are no longer valid for decrypting media data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/closed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val closed: Promise<MediaKeySessionClosedReason>
 
@@ -185,6 +212,8 @@ public abstract external class MediaKeySession : EventTarget {
      * MediaKeyStatusMap of the current session's keys and their statuses.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/keyStatuses)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val keyStatuses: MediaKeyStatusMap
 
@@ -193,6 +222,8 @@ public abstract external class MediaKeySession : EventTarget {
      * statuses within a session.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/keystatuseschange_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onkeystatuseschange: ((Event) -> Unit)?
 
@@ -201,6 +232,8 @@ public abstract external class MediaKeySession : EventTarget {
      * module.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/message_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onmessage: ((MediaKeyMessageEvent) -> Unit)?
 
@@ -209,6 +242,8 @@ public abstract external class MediaKeySession : EventTarget {
      * request based on initialization data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/generateRequest)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun generateRequest(initDataType: String, initData: BufferDataSource): Promise<JsAny?>
 
@@ -217,6 +252,8 @@ public abstract external class MediaKeySession : EventTarget {
      * loading data for a specified session object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/load)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun load(sessionId: String): Promise<JsBoolean>
 
@@ -225,6 +262,8 @@ public abstract external class MediaKeySession : EventTarget {
      * Promise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/update)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun update(response: BufferDataSource): Promise<JsAny?>
 
@@ -234,6 +273,8 @@ public abstract external class MediaKeySession : EventTarget {
      * Then, it returns a Promise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close(): Promise<JsAny?>
 
@@ -242,6 +283,8 @@ public abstract external class MediaKeySession : EventTarget {
      * with the current object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/remove)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun remove(): Promise<JsAny?>
 }
@@ -253,6 +296,8 @@ public abstract external class MediaKeySession : EventTarget {
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MediaKeyStatusMap : JsAny {
     // not printed yet: iterable
@@ -262,6 +307,8 @@ public abstract external class MediaKeyStatusMap : JsAny {
      * status map.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/size)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val size: Int
 
@@ -270,6 +317,8 @@ public abstract external class MediaKeyStatusMap : JsAny {
      * associated with the given key.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/has)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun has(keyId: BufferDataSource): Boolean
 
@@ -278,6 +327,8 @@ public abstract external class MediaKeyStatusMap : JsAny {
      * undefined if there is none.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/get)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun get(keyId: BufferDataSource): MediaKeyStatus?
 }
@@ -313,12 +364,16 @@ public inline val MediaKeyMessageType.Companion.INDIVIDUALIZATION_REQUEST: Media
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class MediaKeyMessageEvent : Event {
     /**
      * The MediaKeyMessageEvent constructor creates a new MediaKeyMessageEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/MediaKeyMessageEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: MediaKeyMessageEventInit)
 
@@ -327,6 +382,8 @@ public open external class MediaKeyMessageEvent : Event {
      * license-request, license-renewal, license-release, or individualization-request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/messageType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val messageType: MediaKeyMessageType
 
@@ -335,6 +392,8 @@ public open external class MediaKeyMessageEvent : Event {
      * decryption module. Messages vary by key system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/message)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val message: ArrayBuffer
 
@@ -364,12 +423,16 @@ public fun MediaKeyMessageEventInit(messageType: MediaKeyMessageType, message: A
  * encrypted event sent to a HTMLMediaElement when some initialization data is encountered in the media.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class MediaEncryptedEvent : Event {
     /**
      * The MediaEncryptedEvent constructor creates a new MediaEncryptedEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/MediaEncryptedEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: MediaEncryptedEventInit = definedExternally)
 
@@ -378,6 +441,8 @@ public open external class MediaEncryptedEvent : Event {
      * type of the initialization data associated with this event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initDataType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val initDataType: String
 
@@ -386,6 +451,8 @@ public open external class MediaEncryptedEvent : Event {
      * event, if any.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val initData: ArrayBuffer?
 

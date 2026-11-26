@@ -7,13 +7,18 @@ material listed below.
 =========================================================================
 MDN Web Docs Attribution
 =========================================================================
-The KDoc documentation comments in src/webMain/generated/ include content
-adapted (shortened and reformatted as KDoc) from MDN Web Docs
-(https://developer.mozilla.org/) by Mozilla Contributors, licensed under the
-Creative Commons Attribution-ShareAlike 2.5 Generic license (CC-BY-SA 2.5):
+The following material is adapted from MDN Web Docs
+(https://developer.mozilla.org/) by Mozilla Contributors and is licensed under
+the Creative Commons Attribution-ShareAlike 2.5 Generic license (CC BY-SA 2.5):
 https://creativecommons.org/licenses/by-sa/2.5/
 
-The source summaries are in mdn/summaries.json, taken from mdn/content at the
-commit in mdn/commit. Each comment links to the MDN page it is adapted from.
-These excerpts are not covered by the Apache License 2.0 that applies to the
-rest of this project.
+  - mdn/summaries.json: MDN's summary of each Web API page, taken from
+    mdn/content at the commit in mdn/commit.
+  - The KDoc documentation comments in src/webMain/generated/ that are derived
+    from those summaries (shortened and reformatted as KDoc). Each such comment
+    links to the MDN page it is adapted from and carries the attribution
+    "© Mozilla Contributors, licensed under CC BY-SA 2.5".
+
+This material is not covered by the Apache License 2.0 that applies to the rest
+of this project. The links to MDN pages and the deprecation flags come from
+@mdn/browser-compat-data, which is CC0; no other MDN content is used.

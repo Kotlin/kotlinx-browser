@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'webidl', DO NOT EDIT!
@@ -15,12 +18,16 @@ import kotlin.js.*
  * quota.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/QuotaExceededError)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class QuotaExceededError : DOMException {
     /**
      * The QuotaExceededError() constructor creates a new QuotaExceededError object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/QuotaExceededError/QuotaExceededError)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(message: String = definedExternally, options: QuotaExceededErrorOptions = definedExternally)
 
@@ -29,6 +36,8 @@ public open external class QuotaExceededError : DOMException {
      * bytes) that the operation attempted to exceed, or undefined if the information is not available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/QuotaExceededError/quota)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val quota: Double?
 
@@ -37,6 +46,8 @@ public open external class QuotaExceededError : DOMException {
      * requested when the error occurred, or undefined if the information is not available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/QuotaExceededError/requested)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val requested: Double?
 
@@ -84,12 +95,16 @@ public fun QuotaExceededErrorOptions(quota: Double? = null, requested: Double? =
  * method or accessing a property of a web API. This is how error conditions are described in web APIs.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class DOMException : JsAny {
     /**
      * The DOMException() constructor returns a DOMException object with a specified message and name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/DOMException)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(message: String = definedExternally, name: String = definedExternally)
 
@@ -98,6 +113,8 @@ public open external class DOMException : JsAny {
      * associated with an error name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val name: String
 
@@ -106,6 +123,8 @@ public open external class DOMException : JsAny {
      * description associated with the given error name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/message)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val message: String
 
@@ -116,6 +135,8 @@ public open external class DOMException : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/code)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val code: Short
 

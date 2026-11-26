@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'html', DO NOT EDIT!
@@ -54,6 +57,8 @@ public external interface MessageEventSource : JsAny
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAllCollection)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLAllCollection : JsAny {
     /**
@@ -62,6 +67,8 @@ public abstract external class HTMLAllCollection : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAllCollection/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -72,6 +79,8 @@ public abstract external class HTMLAllCollection : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAllCollection/namedItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun namedItem(name: String): UnionElementOrHTMLCollection?
 
@@ -82,6 +91,8 @@ public abstract external class HTMLAllCollection : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAllCollection/item)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun item(nameOrIndex: String = definedExternally): UnionElementOrHTMLCollection?
 }
@@ -95,6 +106,8 @@ public operator fun HTMLAllCollection.get(name: String): UnionElementOrHTMLColle
  * HTMLFormElement interface's elements property.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormControlsCollection)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLFormControlsCollection : HTMLCollection
 
@@ -105,6 +118,8 @@ public operator fun HTMLFormControlsCollection.get(name: String): UnionElementOr
  * HTMLFormControlsCollection.namedItem().
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RadioNodeList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class RadioNodeList : NodeList, UnionElementOrRadioNodeList {
     /**
@@ -115,6 +130,8 @@ public abstract external class RadioNodeList : NodeList, UnionElementOrRadioNode
      * button input element whose value property is equal to the new value will be set to checked.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RadioNodeList/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: String
 }
@@ -125,6 +142,8 @@ public abstract external class RadioNodeList : NodeList, UnionElementOrRadioNode
  * returned only by the options property of select.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLOptionsCollection : HTMLCollection {
     /**
@@ -132,6 +151,8 @@ public abstract external class HTMLOptionsCollection : HTMLCollection {
      * collection. The property can get or set the size of the collection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var length: Int
 
@@ -140,6 +161,8 @@ public abstract external class HTMLOptionsCollection : HTMLCollection {
      * HTMLOptionsCollection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: HTMLElement?)
 
@@ -148,6 +171,8 @@ public abstract external class HTMLOptionsCollection : HTMLCollection {
      * HTMLOptionsCollection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: Int?)
 
@@ -156,6 +181,8 @@ public abstract external class HTMLOptionsCollection : HTMLCollection {
      * HTMLOptionsCollection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement)
 
@@ -164,6 +191,8 @@ public abstract external class HTMLOptionsCollection : HTMLCollection {
      * index from this collection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/remove)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun remove(index: Int)
 
@@ -175,6 +204,8 @@ public abstract external class HTMLOptionsCollection : HTMLCollection {
      * collection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/selectedIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selectedIndex: Int
 }
@@ -186,12 +217,16 @@ public operator fun HTMLOptionsCollection.set(index: Int, option: HTMLOptionElem
  * (DOMString).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class DOMStringList : ItemArrayLike<JsString> {
     /**
      * The read-only length property indicates the number of strings in the DOMStringList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val length: Int
 
@@ -199,6 +234,8 @@ public abstract external class DOMStringList : ItemArrayLike<JsString> {
      * The item() method returns a string from a DOMStringList by index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/item)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun item(index: Int): JsString?
 
@@ -206,6 +243,8 @@ public abstract external class DOMStringList : ItemArrayLike<JsString> {
      * The contains() method returns a boolean indicating whether the given string is in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/contains)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun contains(string: String): Boolean
 }
@@ -234,6 +273,8 @@ public inline val DocumentVisibilityState.Companion.HIDDEN: DocumentVisibilitySt
  * implement it via an interface that inherits it.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLElement : Element, GlobalEventHandlers, ElementContentEditable, HTMLOrSVGOrMathMLElement, ElementCSSInlineStyle {
     /**
@@ -241,6 +282,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * popup when the mouse is over the node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/title)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var title: String
 
@@ -250,6 +293,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * attribute does not affect this property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/lang)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var lang: String
 
@@ -259,6 +304,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * unchanged.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/translate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var translate: Boolean
 
@@ -267,6 +314,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * reflects the element's dir attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dir)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var dir: String
 
@@ -274,6 +323,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * The HTMLElement property hidden reflects the value of the element's hidden attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/hidden)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var hidden: JsAny?
 
@@ -285,6 +336,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * visible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/inert)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var inert: Boolean
 
@@ -293,6 +346,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * click event is fired (unless its disabled attribute is set).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/click)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun click()
 
@@ -300,6 +355,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * The HTMLElement.accessKey property sets the keystroke which a user can press to jump to a given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/accessKey)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var accessKey: String
 
@@ -308,6 +365,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * access key (if any); otherwise it returns an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/accessKeyLabel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val accessKeyLabel: String
 
@@ -316,6 +375,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * is draggable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/draggable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var draggable: Boolean
 
@@ -324,6 +385,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * hint. It is available on all HTML elements, though it doesn't affect all of them.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/spellcheck)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var spellcheck: Boolean
 
@@ -332,6 +395,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * suggestions should be enabled under the scope of the element or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/writingSuggestions)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var writingSuggestions: String
 
@@ -340,6 +405,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * user input.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autocapitalize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var autocapitalize: String
 
@@ -348,6 +415,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * enabled for spelling and/or punctuation errors.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autocorrect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var autocorrect: Boolean
 
@@ -356,6 +425,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * descendants.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/innerText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var innerText: String
 
@@ -365,6 +436,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * content inside the current node).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/outerText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var outerText: String
 
@@ -375,6 +448,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * Model to the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/attachInternals)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun attachInternals(): ElementInternals
 
@@ -383,6 +458,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * attribute) by adding it to the top layer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/showPopover)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun showPopover(options: ShowPopoverOptions = definedExternally)
 
@@ -391,6 +468,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * attribute) by removing it from the top layer and styling it with display: none.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/hidePopover)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun hidePopover()
 
@@ -399,6 +478,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * popover attribute) between the hidden and showing states.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun togglePopover(options: TogglePopoverOptions): Boolean
 
@@ -407,6 +488,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * popover attribute) between the hidden and showing states.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun togglePopover(options: Boolean): Boolean
 
@@ -415,6 +498,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * popover attribute) between the hidden and showing states.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun togglePopover(): Boolean
 
@@ -423,6 +508,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * ("auto", "hint", or "manual"), and can be used for feature detection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/popover)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var popover: String?
     public open var headingOffset: Int
@@ -434,6 +521,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * in the containment hierarchy) positioned ancestor element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetParent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offsetParent: Element?
 
@@ -443,6 +532,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * ancestor element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetTop)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offsetTop: Int
 
@@ -451,6 +542,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * corner of the current element is offset to the left within the HTMLElement.offsetParent node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetLeft)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offsetLeft: Int
 
@@ -459,6 +552,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * integer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetWidth)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offsetWidth: Int
 
@@ -467,6 +562,8 @@ public abstract external class HTMLElement : Element, GlobalEventHandlers, Eleme
      * vertical padding and borders, as an integer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetHeight)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offsetHeight: Int
 
@@ -514,6 +611,8 @@ public fun TogglePopoverOptions(source: HTMLElement? = null, force: Boolean? = n
  * without implementing any additional properties or methods.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLUnknownElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLUnknownElement : HTMLElement {
 
@@ -545,6 +644,8 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
      * (data-*) on elements. It exposes a map of strings (DOMStringMap) with an entry for each data-* attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val dataset: DOMStringMap
 
@@ -553,6 +654,8 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
      * Content Security Policy to determine whether a given fetch will be allowed to proceed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/nonce)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var nonce: String
 
@@ -562,6 +665,8 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
      * &lt;dialog&gt; or popover element, when the &lt;dialog&gt; or popover is shown.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autofocus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var autofocus: Boolean
 
@@ -569,6 +674,8 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
      * The tabIndex property of the HTMLElement interface represents the tab order of the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/tabIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var tabIndex: Int
 
@@ -577,6 +684,8 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
      * the element that will receive keyboard and similar events by default.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/focus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun focus(options: FocusOptions = definedExternally)
 
@@ -584,6 +693,8 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
      * The HTMLElement.blur() method removes keyboard focus from the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/blur)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun blur()
 }
@@ -593,6 +704,8 @@ public external interface HTMLOrSVGOrMathMLElement : JsAny {
  * added to elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringMap)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class DOMStringMap : JsAny {
     // not printed yet: deleter <anonymous>(DOMString)
@@ -607,6 +720,8 @@ public operator fun DOMStringMap.set(name: String, value: String) { setStringPro
  * and methods described in the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHtmlElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLHtmlElement : HTMLElement {
     /**
@@ -616,6 +731,8 @@ public abstract external class HTMLHtmlElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHtmlElement/version)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var version: String
 
@@ -646,6 +763,8 @@ public abstract external class HTMLHtmlElement : HTMLElement {
  * all of the properties and methods described in the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHeadElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLHeadElement : HTMLElement {
 
@@ -676,6 +795,8 @@ public abstract external class HTMLHeadElement : HTMLElement {
  * properties and methods of the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTitleElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLTitleElement : HTMLElement {
     /**
@@ -684,6 +805,8 @@ public abstract external class HTMLTitleElement : HTMLElement {
      * &lt;title&gt; element, they are included as part of the string value rather than being parsed as HTML.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTitleElement/text)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var text: String
 
@@ -714,6 +837,8 @@ public abstract external class HTMLTitleElement : HTMLElement {
  * methods as described in the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLBaseElement : HTMLElement {
     /**
@@ -721,6 +846,8 @@ public abstract external class HTMLBaseElement : HTMLElement {
      * relative URLs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement/href)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var href: String
 
@@ -729,6 +856,8 @@ public abstract external class HTMLBaseElement : HTMLElement {
      * the resulting output for hyperlinks and form elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement/target)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var target: String
 
@@ -761,12 +890,16 @@ public abstract external class HTMLBaseElement : HTMLElement {
  * interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
     /**
      * The href property of the HTMLLinkElement interface contains a string that is the URL associated with the link.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/href)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var href: String
 
@@ -775,6 +908,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * setting to use when retrieving the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/crossOrigin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var crossOrigin: String?
 
@@ -784,6 +919,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * &lt;link&gt; element and the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/rel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var rel: String
 
@@ -792,6 +929,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * preloaded by a link element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/as)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var `as`: String
 
@@ -801,6 +940,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * current document. It reflects the &lt;link&gt; element's rel content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/relList)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val relList: DOMTokenList
 
@@ -809,6 +950,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * to which the resource applies.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/media)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var media: String
 
@@ -817,6 +960,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * use to verify that a fetched resource has been delivered without unexpected manipulation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/integrity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var integrity: String
 
@@ -825,6 +970,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * targeting of a page. This hint can be used by browsers to select the more appropriate page or to improve SEO.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/hreflang)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var hreflang: String
 
@@ -833,6 +980,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var type: String
 
@@ -842,6 +991,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * space-separated sizes, each in the format &lt;width in pixels&gt;x&lt;height in pixels&gt;, or the keyword any.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sizes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val sizes: DOMTokenList
 
@@ -851,6 +1002,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * imagesrcset attribute. This property can retrieve or set the imagesrcset attribute value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/imageSrcset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var imageSrcset: String
 
@@ -860,6 +1013,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * attribute. This property can retrieve or set the imagesizes attribute value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/imageSizes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var imageSizes: String
 
@@ -868,6 +1023,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * &lt;link&gt; element defining which referrer is sent when fetching the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/referrerPolicy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var referrerPolicy: String
 
@@ -877,6 +1034,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * blocking content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/blocking)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val blocking: DOMTokenList
 
@@ -885,6 +1044,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * disabled. It only has an effect with style sheet links (rel property set to stylesheet).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/disabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var disabled: Boolean
 
@@ -894,6 +1055,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
      * &lt;link&gt; element's fetchpriority content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/fetchPriority)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var fetchPriority: String
     public open var charset: String
@@ -927,6 +1090,8 @@ public abstract external class HTMLLinkElement : HTMLElement, LinkStyle {
  * elements. This interface inherits all of the properties and methods described in the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLMetaElement : HTMLElement {
     /**
@@ -935,6 +1100,8 @@ public abstract external class HTMLMetaElement : HTMLElement {
      * defines the value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -943,6 +1110,8 @@ public abstract external class HTMLMetaElement : HTMLElement {
      * HTMLMetaElement.content attribute. For more details on the possible values, see the http-equiv attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/httpEquiv)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var httpEquiv: String
 
@@ -952,6 +1121,8 @@ public abstract external class HTMLMetaElement : HTMLElement {
      * see the content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/content)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var content: String
 
@@ -959,6 +1130,8 @@ public abstract external class HTMLMetaElement : HTMLElement {
      * The HTMLMetaElement.media property enables specifying the media for theme-color metadata.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/media)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var media: String
 
@@ -973,6 +1146,8 @@ public abstract external class HTMLMetaElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/scheme)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var scheme: String
 
@@ -1003,6 +1178,8 @@ public abstract external class HTMLMetaElement : HTMLElement {
  * parent, HTMLElement.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLStyleElement : HTMLElement, LinkStyle {
     /**
@@ -1010,6 +1187,8 @@ public abstract external class HTMLStyleElement : HTMLElement, LinkStyle {
      * not (false).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/disabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var disabled: Boolean
 
@@ -1017,6 +1196,8 @@ public abstract external class HTMLStyleElement : HTMLElement, LinkStyle {
      * The HTMLStyleElement.media property specifies the intended destination medium for style information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/media)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var media: String
 
@@ -1026,6 +1207,8 @@ public abstract external class HTMLStyleElement : HTMLElement, LinkStyle {
      * element's blocking content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/blocking)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val blocking: DOMTokenList
 
@@ -1036,6 +1219,8 @@ public abstract external class HTMLStyleElement : HTMLElement, LinkStyle {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var type: String
 
@@ -1066,6 +1251,8 @@ public abstract external class HTMLStyleElement : HTMLElement, LinkStyle {
  * interface) for manipulating &lt;body&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBodyElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLBodyElement : HTMLElement, WindowEventHandlers {
     public open var text: String
@@ -1102,6 +1289,8 @@ public abstract external class HTMLBodyElement : HTMLElement, WindowEventHandler
  * inherits methods and properties from the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHeadingElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLHeadingElement : HTMLElement {
     public open var align: String
@@ -1133,6 +1322,8 @@ public abstract external class HTMLHeadingElement : HTMLElement {
  * interface it inherits) for manipulating &lt;p&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLParagraphElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLParagraphElement : HTMLElement {
     public open var align: String
@@ -1164,6 +1355,8 @@ public abstract external class HTMLParagraphElement : HTMLElement {
  * available to it by inheritance) for manipulating &lt;hr&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHRElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLHRElement : HTMLElement {
     public open var align: String
@@ -1199,6 +1392,8 @@ public abstract external class HTMLHRElement : HTMLElement {
  * also has available to it by inheritance) for manipulating a block of preformatted text (&lt;pre&gt;).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLPreElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLPreElement : HTMLElement {
     public open var width: Int
@@ -1231,6 +1426,8 @@ public abstract external class HTMLPreElement : HTMLElement {
  * but not the &lt;cite&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLQuoteElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLQuoteElement : HTMLElement {
     /**
@@ -1238,6 +1435,8 @@ public abstract external class HTMLQuoteElement : HTMLElement {
      * reflects the &lt;q&gt; element's cite attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLQuoteElement/cite)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var cite: String
 
@@ -1268,12 +1467,16 @@ public abstract external class HTMLQuoteElement : HTMLElement {
  * it also has available to it by inheritance) for manipulating ordered list elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLOListElement : HTMLElement {
     /**
      * The reversed property of the HTMLOListElement interface indicates order of a list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/reversed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var reversed: Boolean
 
@@ -1282,6 +1485,8 @@ public abstract external class HTMLOListElement : HTMLElement {
      * value of 1.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/start)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var start: Int
 
@@ -1290,6 +1495,8 @@ public abstract external class HTMLOListElement : HTMLElement {
      * list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var type: String
 
@@ -1301,6 +1508,8 @@ public abstract external class HTMLOListElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/compact)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var compact: Boolean
 
@@ -1331,6 +1540,8 @@ public abstract external class HTMLOListElement : HTMLElement {
  * it also has available to it by inheritance) for manipulating unordered list (&lt;ul&gt;) elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLUListElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLUListElement : HTMLElement {
     /**
@@ -1341,6 +1552,8 @@ public abstract external class HTMLUListElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLUListElement/compact)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var compact: Boolean
     public open var type: String
@@ -1372,6 +1585,8 @@ public abstract external class HTMLUListElement : HTMLElement {
  * for manipulating a &lt;menu&gt; element. &lt;menu&gt; is a semantic alternative to the &lt;ul&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMenuElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLMenuElement : HTMLElement {
     /**
@@ -1382,6 +1597,8 @@ public abstract external class HTMLMenuElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMenuElement/compact)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var compact: Boolean
 
@@ -1412,6 +1629,8 @@ public abstract external class HTMLMenuElement : HTMLElement {
  * interface it also has available to it by inheritance) for manipulating list elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLIElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLLIElement : HTMLElement {
     /**
@@ -1420,6 +1639,8 @@ public abstract external class HTMLLIElement : HTMLElement {
      * the property has no meaning.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLIElement/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: Int
     public open var type: String
@@ -1451,6 +1672,8 @@ public abstract external class HTMLLIElement : HTMLElement {
  * has available to it by inheritance) for manipulating definition list (&lt;dl&gt;) elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDListElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLDListElement : HTMLElement {
     /**
@@ -1461,6 +1684,8 @@ public abstract external class HTMLDListElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDListElement/compact)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var compact: Boolean
 
@@ -1491,6 +1716,8 @@ public abstract external class HTMLDListElement : HTMLElement {
  * available to it by inheritance) for manipulating &lt;div&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDivElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLDivElement : HTMLElement {
     public open var align: String
@@ -1524,6 +1751,8 @@ public abstract external class HTMLDivElement : HTMLElement {
  * which is represented by HTMLLinkElement.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElementUtils, HTMLHyperlinkElementUtils {
     /**
@@ -1532,6 +1761,8 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      * of the file. It reflects the download attribute of the &lt;a&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/download)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var download: String
 
@@ -1540,6 +1771,8 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      * followed, the browser will send POST requests with the body PING to the URLs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/ping)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var ping: String
 
@@ -1549,6 +1782,8 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      * current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/rel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var rel: String
 
@@ -1558,6 +1793,8 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      * document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/relList)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val relList: DOMTokenList
 
@@ -1566,6 +1803,8 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      * same information as Node.textContent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/text)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var text: String
 
@@ -1574,6 +1813,8 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
      * defining which referrer is sent when fetching the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/referrerPolicy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var referrerPolicy: String
     public open var coords: String
@@ -1609,12 +1850,16 @@ public abstract external class HTMLAnchorElement : HTMLElement, HyperlinkElement
  * available to it by inheritance) for manipulating &lt;data&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLDataElement : HTMLElement {
     /**
      * The value property of the HTMLDataElement interface returns a string reflecting the value HTML attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataElement/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: String
 
@@ -1645,6 +1890,8 @@ public abstract external class HTMLDataElement : HTMLElement {
  * available to it by inheritance) for manipulating &lt;time&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTimeElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLTimeElement : HTMLElement {
     /**
@@ -1652,6 +1899,8 @@ public abstract external class HTMLTimeElement : HTMLElement {
      * containing a machine-readable form of the element's date and time value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTimeElement/dateTime)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var dateTime: String
 
@@ -1682,6 +1931,8 @@ public abstract external class HTMLTimeElement : HTMLElement {
  * without implementing any additional properties or methods.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSpanElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLSpanElement : HTMLElement {
 
@@ -1711,6 +1962,8 @@ public abstract external class HTMLSpanElement : HTMLElement {
  * The HTMLBRElement interface represents an HTML line break element (&lt;br&gt;). It inherits from HTMLElement.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBRElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLBRElement : HTMLElement {
     public open var clear: String
@@ -1743,6 +1996,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * serialization of the origin of the &lt;a&gt; element's href.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/origin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val origin: String
 
@@ -1751,6 +2006,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * &lt;a&gt; element's href, including the final ":".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/protocol)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var protocol: String
 
@@ -1759,6 +2016,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * &lt;a&gt; element's href. If the URL does not have a username, this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/username)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var username: String
 
@@ -1767,6 +2026,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * &lt;a&gt; element's href. If the URL does not have a password, this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/password)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var password: String
 
@@ -1776,6 +2037,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * hostname, this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/host)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var host: String
 
@@ -1786,6 +2049,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * converted to IDN.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/hostname)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var hostname: String
 
@@ -1795,6 +2060,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * 21 for ftp:), this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/port)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var port: String
 
@@ -1803,6 +2070,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * including the query string or fragment (or the empty string if there is no path).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/pathname)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var pathname: String
 
@@ -1812,6 +2081,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * search query, this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/search)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var search: String
 
@@ -1821,6 +2092,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/hash)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var hash: String
 
@@ -1828,6 +2101,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * The hreflang property of the HTMLAnchorElement interface is a string that is the language of the linked resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/hreflang)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var hreflang: String
 
@@ -1836,6 +2111,8 @@ public external interface HyperlinkElementUtils : JsAny {
      * resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var type: String
 }
@@ -1847,6 +2124,8 @@ public external interface HTMLHyperlinkElementUtils : JsAny {
      * element's href attribute to the provided value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/href)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var href: String
 
@@ -1855,6 +2134,8 @@ public external interface HTMLHyperlinkElementUtils : JsAny {
      * resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/target)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var target: String
 }
@@ -1865,6 +2146,8 @@ public external interface HTMLHyperlinkElementUtils : JsAny {
  * that is &lt;del&gt; and &lt;ins&gt;.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLModElement : HTMLElement {
     /**
@@ -1872,6 +2155,8 @@ public abstract external class HTMLModElement : HTMLElement {
      * It reflects the cite attribute of the &lt;del&gt; element and &lt;ins&gt; elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement/cite)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var cite: String
 
@@ -1880,6 +2165,8 @@ public abstract external class HTMLModElement : HTMLElement {
      * optional time value. It reflects the datetime HTML attribute of the &lt;del&gt; and &lt;ins&gt; elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement/dateTime)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var dateTime: String
 
@@ -1910,6 +2197,8 @@ public abstract external class HTMLModElement : HTMLElement {
  * or methods.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLPictureElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLPictureElement : HTMLElement {
 
@@ -1940,6 +2229,8 @@ public abstract external class HTMLPictureElement : HTMLElement {
  * has available to it by inheritance) for manipulating &lt;source&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLSourceElement : HTMLElement {
     /**
@@ -1947,6 +2238,8 @@ public abstract external class HTMLSourceElement : HTMLElement {
      * the source for the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/src)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var src: String
 
@@ -1955,6 +2248,8 @@ public abstract external class HTMLSourceElement : HTMLElement {
      * resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var type: String
 
@@ -1963,6 +2258,8 @@ public abstract external class HTMLSourceElement : HTMLElement {
      * images.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/srcset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var srcset: String
 
@@ -1971,6 +2268,8 @@ public abstract external class HTMLSourceElement : HTMLElement {
      * representing sizes between breakpoints, to which the resource applies.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/sizes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var sizes: String
 
@@ -1980,6 +2279,8 @@ public abstract external class HTMLSourceElement : HTMLElement {
      * logical operators.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/media)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var media: String
 
@@ -1988,6 +2289,8 @@ public abstract external class HTMLSourceElement : HTMLElement {
      * resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var width: Int
 
@@ -1996,6 +2299,8 @@ public abstract external class HTMLSourceElement : HTMLElement {
      * image resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var height: Int
 
@@ -2026,6 +2331,8 @@ public abstract external class HTMLSourceElement : HTMLElement {
  * manipulate image elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource, TexImageSource {
     /**
@@ -2035,6 +2342,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * alt content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/alt)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var alt: String
 
@@ -2043,6 +2352,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * reflects the &lt;img&gt; element's src content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/src)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var src: String
 
@@ -2054,6 +2365,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * element's srcset content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var srcset: String
 
@@ -2065,6 +2378,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * aspect ratios.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/sizes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var sizes: String
 
@@ -2074,6 +2389,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/crossOrigin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var crossOrigin: String?
 
@@ -2082,6 +2399,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * the image. It reflects the &lt;img&gt; element's usemap content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/useMap)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var useMap: String
 
@@ -2092,6 +2411,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * an &lt;a&gt; element with a valid href attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/isMap)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var isMap: Boolean
     public open var controls: Boolean
@@ -2102,6 +2423,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * the natural, pixel density-corrected width of the image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var width: Int
 
@@ -2111,6 +2434,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * the natural, pixel density-corrected height of the image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var height: Int
 
@@ -2119,6 +2444,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * density-corrected width of the image in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/naturalWidth)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val naturalWidth: Int
 
@@ -2127,6 +2454,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * density-corrected height of the image in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/naturalHeight)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val naturalHeight: Int
 
@@ -2135,6 +2464,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * the image has completely loaded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/complete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val complete: Boolean
 
@@ -2143,6 +2474,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * the browser to load.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/currentSrc)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val currentSrc: String
 
@@ -2151,6 +2484,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * resource. It reflects the &lt;img&gt; element's referrerpolicy content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/referrerPolicy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var referrerPolicy: String
 
@@ -2160,6 +2495,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * updates or not. It reflects the &lt;img&gt; element's decoding content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decoding)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var decoding: String
 
@@ -2170,6 +2507,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * immediately during the initial page load. It reflects the &lt;img&gt; element's loading content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/loading)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var loading: String
 
@@ -2179,6 +2518,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * fetchpriority content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/fetchPriority)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var fetchPriority: String
 
@@ -2187,6 +2528,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * and is safe to be appended to the DOM.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun decode(): Promise<JsAny?>
 
@@ -2198,6 +2541,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
     public open var lowsrc: String
@@ -2209,6 +2554,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/align)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var align: String
 
@@ -2220,6 +2567,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/hspace)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var hspace: Int
 
@@ -2231,6 +2580,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/vspace)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var vspace: Int
 
@@ -2243,6 +2594,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/longDesc)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var longDesc: String
 
@@ -2254,6 +2607,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/border)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var border: String
 
@@ -2262,6 +2617,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * element's left border edge relative to the root element's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/x)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val x: Int
 
@@ -2270,6 +2627,8 @@ public abstract external class HTMLImageElement : HTMLElement, CanvasImageSource
      * element's top border edge relative to the root element's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/y)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val y: Int
 
@@ -2303,6 +2662,8 @@ public open external class Image : HTMLImageElement {
      * document upon which it was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/children)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val children: HTMLCollection
 
@@ -2311,6 +2672,8 @@ public open external class Image : HTMLImageElement {
      * are no child elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/firstElementChild)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val firstElementChild: Element?
 
@@ -2319,6 +2682,8 @@ public open external class Image : HTMLImageElement {
      * no child elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/lastElementChild)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val lastElementChild: Element?
 
@@ -2326,6 +2691,8 @@ public open external class Image : HTMLImageElement {
      * The Document.childElementCount read-only property returns the number of child elements of the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/childElementCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val childElementCount: Int
 
@@ -2334,6 +2701,8 @@ public open external class Image : HTMLImageElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun prepend(vararg nodes: Node)
 
@@ -2342,6 +2711,8 @@ public open external class Image : HTMLImageElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun prepend(vararg nodes: String)
 
@@ -2350,6 +2721,8 @@ public open external class Image : HTMLImageElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun prepend()
 
@@ -2358,6 +2731,8 @@ public open external class Image : HTMLImageElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun append(vararg nodes: Node)
 
@@ -2366,6 +2741,8 @@ public open external class Image : HTMLImageElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun append(vararg nodes: String)
 
@@ -2374,6 +2751,8 @@ public open external class Image : HTMLImageElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun append()
 
@@ -2382,6 +2761,8 @@ public open external class Image : HTMLImageElement {
      * children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceChildren(vararg nodes: Node)
 
@@ -2390,6 +2771,8 @@ public open external class Image : HTMLImageElement {
      * children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceChildren(vararg nodes: String)
 
@@ -2398,6 +2781,8 @@ public open external class Image : HTMLImageElement {
      * children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceChildren()
 
@@ -2406,6 +2791,8 @@ public open external class Image : HTMLImageElement {
      * child, before a given reference node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/moveBefore)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun moveBefore(node: Node, child: Node?)
 
@@ -2414,6 +2801,8 @@ public open external class Image : HTMLImageElement {
      * selector, or group of CSS selectors. If no matches are found, null is returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun querySelector(selectors: String): Element?
 
@@ -2422,6 +2811,8 @@ public open external class Image : HTMLImageElement {
      * elements that match the specified group of selectors.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun querySelectorAll(selectors: String): NodeList
 
@@ -2430,6 +2821,8 @@ public open external class Image : HTMLImageElement {
      * in its parent's children list, or null if the specified element is the first one in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/previousElementSibling)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val previousElementSibling: Element?
 
@@ -2438,6 +2831,8 @@ public open external class Image : HTMLImageElement {
      * its parent's children list, or null if the specified element is the last one in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/nextElementSibling)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val nextElementSibling: Element?
     override fun beforeHTML(html: String, options: SetHTMLOptions)
@@ -2453,6 +2848,8 @@ public open external class Image : HTMLImageElement {
      * Nothing happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/before)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun before(vararg nodes: Node)
 
@@ -2462,6 +2859,8 @@ public open external class Image : HTMLImageElement {
      * Nothing happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/before)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun before(vararg nodes: String)
 
@@ -2471,6 +2870,8 @@ public open external class Image : HTMLImageElement {
      * Nothing happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/before)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun before()
 
@@ -2480,6 +2881,8 @@ public open external class Image : HTMLImageElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/after)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun after(vararg nodes: Node)
 
@@ -2489,6 +2892,8 @@ public open external class Image : HTMLImageElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/after)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun after(vararg nodes: String)
 
@@ -2498,6 +2903,8 @@ public open external class Image : HTMLImageElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/after)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun after()
 
@@ -2507,6 +2914,8 @@ public open external class Image : HTMLImageElement {
      * parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/replaceWith)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceWith(vararg nodes: Node)
 
@@ -2516,6 +2925,8 @@ public open external class Image : HTMLImageElement {
      * parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/replaceWith)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceWith(vararg nodes: String)
 
@@ -2525,6 +2936,8 @@ public open external class Image : HTMLImageElement {
      * parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/replaceWith)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceWith()
 
@@ -2533,6 +2946,8 @@ public open external class Image : HTMLImageElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/remove)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun remove()
 
@@ -2541,6 +2956,8 @@ public open external class Image : HTMLImageElement {
      * &lt;slot&gt; element the node is inserted in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/assignedSlot)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val assignedSlot: HTMLSlotElement?
     override fun getBoxQuads(options: BoxQuadOptions): JsArray<DOMQuad>
@@ -2554,6 +2971,8 @@ public open external class Image : HTMLImageElement {
      * ARIA role, if any, unless explicitly set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/role)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var role: String?
 
@@ -2562,6 +2981,8 @@ public open external class Image : HTMLImageElement {
      * when focus is on a composite widget, combobox, textbox, group, or application.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaActiveDescendantElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaActiveDescendantElement: Element?
 
@@ -2571,6 +2992,8 @@ public open external class Image : HTMLImageElement {
      * change notifications defined by the aria-relevant attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaAtomic)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaAtomic: String?
 
@@ -2581,6 +3004,8 @@ public open external class Image : HTMLImageElement {
      * were made.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaAutoComplete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaAutoComplete: String?
 
@@ -2589,6 +3014,8 @@ public open external class Image : HTMLImageElement {
      * attribute, which defines the ARIA braille label of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBrailleLabel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaBrailleLabel: String?
 
@@ -2597,6 +3024,8 @@ public open external class Image : HTMLImageElement {
      * aria-brailleroledescription attribute, which defines the ARIA braille role description of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBrailleRoleDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaBrailleRoleDescription: String?
 
@@ -2606,6 +3035,8 @@ public open external class Image : HTMLImageElement {
      * modifications are complete before exposing them to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBusy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaBusy: String?
 
@@ -2615,6 +3046,8 @@ public open external class Image : HTMLImageElement {
      * state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaChecked)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaChecked: String?
 
@@ -2623,6 +3056,8 @@ public open external class Image : HTMLImageElement {
      * which defines the number of columns in a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColCount: String?
 
@@ -2632,6 +3067,8 @@ public open external class Image : HTMLImageElement {
      * grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColIndex: String?
 
@@ -2640,6 +3077,8 @@ public open external class Image : HTMLImageElement {
      * attribute, which defines a human-readable text alternative of aria-colindex.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColIndexText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColIndexText: String?
 
@@ -2648,6 +3087,8 @@ public open external class Image : HTMLImageElement {
      * which defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColSpan)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColSpan: String?
 
@@ -2657,6 +3098,8 @@ public open external class Image : HTMLImageElement {
      * indicate the element that it pops up, or on a scrollbar to indicate the ID of the element it controls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaControlsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaControlsElements: JsArray<Element>?
 
@@ -2665,6 +3108,8 @@ public open external class Image : HTMLImageElement {
      * which indicates the element that represents the current item within a container or set of related elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaCurrent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaCurrent: String?
 
@@ -2674,6 +3119,8 @@ public open external class Image : HTMLImageElement {
      * similar to the accessible label (see ariaLabelledByElements), but provides more verbose information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDescribedByElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDescribedByElements: JsArray<Element>?
 
@@ -2682,6 +3129,8 @@ public open external class Image : HTMLImageElement {
      * attribute, which defines a string value that describes or annotates the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDescription: String?
 
@@ -2691,6 +3140,8 @@ public open external class Image : HTMLImageElement {
      * to the accessible description (see ariaDescribedByElements), but provides more verbose information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDetailsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDetailsElements: JsArray<Element>?
 
@@ -2699,6 +3150,8 @@ public open external class Image : HTMLImageElement {
      * which indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDisabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDisabled: String?
 
@@ -2707,6 +3160,8 @@ public open external class Image : HTMLImageElement {
      * elements) that provide an error message for the element it is applied to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaErrorMessageElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaErrorMessageElements: JsArray<Element>?
 
@@ -2715,6 +3170,8 @@ public open external class Image : HTMLImageElement {
      * which indicates whether a grouping element owned or controlled by this element is expanded or collapsed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaExpanded)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaExpanded: String?
 
@@ -2726,6 +3183,8 @@ public open external class Image : HTMLImageElement {
      * selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaFlowToElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaFlowToElements: JsArray<Element>?
 
@@ -2735,6 +3194,8 @@ public open external class Image : HTMLImageElement {
      * triggered by an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaHasPopup)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaHasPopup: String?
 
@@ -2743,6 +3204,8 @@ public open external class Image : HTMLImageElement {
      * indicates whether the element is exposed to an accessibility API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaHidden)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaHidden: String?
 
@@ -2753,6 +3216,8 @@ public open external class Image : HTMLImageElement {
      * expected by the application.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaInvalid)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaInvalid: String?
 
@@ -2762,6 +3227,8 @@ public open external class Image : HTMLImageElement {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaKeyShortcuts)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaKeyShortcuts: String?
 
@@ -2770,6 +3237,8 @@ public open external class Image : HTMLImageElement {
      * defines a string value that labels the current Element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLabel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLabel: String?
 
@@ -2778,6 +3247,8 @@ public open external class Image : HTMLImageElement {
      * elements) that provide an accessible name for the element it is applied to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLabelledByElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLabelledByElements: JsArray<Element>?
 
@@ -2786,6 +3257,8 @@ public open external class Image : HTMLImageElement {
      * defines the hierarchical level of an element within a structure.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLevel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLevel: String?
 
@@ -2795,6 +3268,8 @@ public open external class Image : HTMLImageElement {
      * technologies, and user can expect from the live region.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLive)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLive: String?
 
@@ -2803,6 +3278,8 @@ public open external class Image : HTMLImageElement {
      * indicates whether an element is modal when displayed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaModal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaModal: String?
 
@@ -2811,6 +3288,8 @@ public open external class Image : HTMLImageElement {
      * which indicates whether a text box accepts multiple lines of input or only a single line.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaMultiLine)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaMultiLine: String?
 
@@ -2819,6 +3298,8 @@ public open external class Image : HTMLImageElement {
      * attribute, which indicates that the user may select more than one item from the current selectable descendants.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaMultiSelectable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaMultiSelectable: String?
 
@@ -2827,6 +3308,8 @@ public open external class Image : HTMLImageElement {
      * attribute, which indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaOrientation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaOrientation: String?
 
@@ -2837,6 +3320,8 @@ public open external class Image : HTMLImageElement {
      * it would not otherwise be available to assistive technology,
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaOwnsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaOwnsElements: JsArray<Element>?
 
@@ -2845,6 +3330,8 @@ public open external class Image : HTMLImageElement {
      * attribute, which defines a short hint intended to aid the user with data entry when the control has no value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPlaceholder)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaPlaceholder: String?
 
@@ -2853,6 +3340,8 @@ public open external class Image : HTMLImageElement {
      * which defines an element's number or position in the current set of listitems or treeitems.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPosInSet)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaPosInSet: String?
 
@@ -2861,6 +3350,8 @@ public open external class Image : HTMLImageElement {
      * which indicates the current "pressed" state of toggle buttons.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPressed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaPressed: String?
 
@@ -2869,6 +3360,8 @@ public open external class Image : HTMLImageElement {
      * which indicates that the element is not editable, but is otherwise operable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaReadOnly)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaReadOnly: String?
 
@@ -2878,6 +3371,8 @@ public open external class Image : HTMLImageElement {
      * is modified. This is used to describe what changes in an aria-live region are relevant and should be announced.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRelevant)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRelevant: String?
 
@@ -2886,6 +3381,8 @@ public open external class Image : HTMLImageElement {
      * which indicates that user input is required on the element before a form may be submitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRequired)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRequired: String?
 
@@ -2894,6 +3391,8 @@ public open external class Image : HTMLImageElement {
      * attribute, which defines a human-readable, author-localized description for the role of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRoleDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRoleDescription: String?
 
@@ -2902,6 +3401,8 @@ public open external class Image : HTMLImageElement {
      * which defines the total number of rows in a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowCount: String?
 
@@ -2911,6 +3412,8 @@ public open external class Image : HTMLImageElement {
      * or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowIndex: String?
 
@@ -2919,6 +3422,8 @@ public open external class Image : HTMLImageElement {
      * attribute, which defines a human-readable text alternative of aria-rowindex.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowIndexText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowIndexText: String?
 
@@ -2927,6 +3432,8 @@ public open external class Image : HTMLImageElement {
      * which defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowSpan)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowSpan: String?
 
@@ -2935,6 +3442,8 @@ public open external class Image : HTMLImageElement {
      * which indicates the current "selected" state of elements that have a selected state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSelected)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaSelected: String?
 
@@ -2943,6 +3452,8 @@ public open external class Image : HTMLImageElement {
      * which defines the number of items in the current set of listitems or treeitems.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSetSize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaSetSize: String?
 
@@ -2951,6 +3462,8 @@ public open external class Image : HTMLImageElement {
      * indicates if items in a table or grid are sorted in ascending or descending order.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSort)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaSort: String?
 
@@ -2959,6 +3472,8 @@ public open external class Image : HTMLImageElement {
      * which defines the maximum allowed value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueMax)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueMax: String?
 
@@ -2967,6 +3482,8 @@ public open external class Image : HTMLImageElement {
      * which defines the minimum allowed value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueMin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueMin: String?
 
@@ -2975,6 +3492,8 @@ public open external class Image : HTMLImageElement {
      * which defines the current value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueNow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueNow: String?
 
@@ -2983,6 +3502,8 @@ public open external class Image : HTMLImageElement {
      * which defines the human-readable text alternative of aria-valuenow for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueText: String?
 
@@ -2990,6 +3511,8 @@ public open external class Image : HTMLImageElement {
      * The ariaNotify() method of the Element interface queues a string of text to be announced by a screen reader.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaNotify)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun ariaNotify(announcement: String, options: AriaNotificationOptions)
     override var onabort: ((Event) -> Unit)?
@@ -2999,6 +3522,8 @@ public open external class Image : HTMLImageElement {
      * the primary—usually leftmost—button) has been pressed and released both within the same element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/auxclick_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onauxclick: ((PointerEvent) -> Unit)?
 
@@ -3008,6 +3533,8 @@ public open external class Image : HTMLImageElement {
      * applies to elements with contenteditable enabled, and to any element when designMode is turned on.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforeinput_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onbeforeinput: ((InputEvent) -> Unit)?
 
@@ -3017,6 +3544,8 @@ public open external class Image : HTMLImageElement {
      * navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforematch_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onbeforematch: ((Event) -> Unit)?
 
@@ -3025,6 +3554,8 @@ public open external class Image : HTMLImageElement {
      * is shown or hidden.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforetoggle_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onbeforetoggle: ((ToggleEvent) -> Unit)?
 
@@ -3033,6 +3564,8 @@ public open external class Image : HTMLImageElement {
      * that follows does bubble.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/blur_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onblur: ((FocusEvent) -> Unit)?
     override var oncancel: ((Event) -> Unit)?
@@ -3045,11 +3578,15 @@ public open external class Image : HTMLImageElement {
      * element's value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/change_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onchange: ((Event) -> Unit)?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/click_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onclick: ((PointerEvent) -> Unit)?
     override var onclose: ((Event) -> Unit)?
@@ -3059,6 +3596,8 @@ public open external class Image : HTMLImageElement {
      * commandForElement and command values, whenever the button is interacted with (e.g., it is clicked).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/command_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncommand: ((CommandEvent) -> Unit)?
     override var oncontextlost: ((Event) -> Unit)?
@@ -3068,6 +3607,8 @@ public open external class Image : HTMLImageElement {
      * clicking the right mouse button, or by pressing the context menu key.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncontextmenu: ((PointerEvent) -> Unit)?
     override var oncontextrestored: ((Event) -> Unit)?
@@ -3077,6 +3618,8 @@ public open external class Image : HTMLImageElement {
      * interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/copy_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncopy: ((ClipboardEvent) -> Unit)?
     override var oncuechange: ((Event) -> Unit)?
@@ -3086,6 +3629,8 @@ public open external class Image : HTMLImageElement {
      * interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/cut_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncut: ((ClipboardEvent) -> Unit)?
 
@@ -3094,6 +3639,8 @@ public open external class Image : HTMLImageElement {
      * is, when it's rapidly clicked twice on a single element within a very short span of time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/dblclick_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondblclick: ((MouseEvent) -> Unit)?
 
@@ -3102,6 +3649,8 @@ public open external class Image : HTMLImageElement {
      * frequency depends on the browser, operating system, and pointer movement; do not rely on a fixed interval.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drag_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondrag: ((DragEvent) -> Unit)?
 
@@ -3109,6 +3658,8 @@ public open external class Image : HTMLImageElement {
      * The dragend event is fired when a drag operation ends (by releasing a mouse button or hitting the escape key).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragend: ((DragEvent) -> Unit)?
 
@@ -3118,6 +3669,8 @@ public open external class Image : HTMLImageElement {
      * &lt;body&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragenter: ((DragEvent) -> Unit)?
 
@@ -3125,6 +3678,8 @@ public open external class Image : HTMLImageElement {
      * The dragleave event is fired when a dragged element or text selection leaves a valid drop target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragleave: ((DragEvent) -> Unit)?
 
@@ -3133,6 +3688,8 @@ public open external class Image : HTMLImageElement {
      * target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragover: ((DragEvent) -> Unit)?
 
@@ -3140,6 +3697,8 @@ public open external class Image : HTMLImageElement {
      * The dragstart event is fired when the user starts dragging an element or text selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragstart_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragstart: ((DragEvent) -> Unit)?
 
@@ -3149,6 +3708,8 @@ public open external class Image : HTMLImageElement {
      * which handles the dragover event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drop_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondrop: ((DragEvent) -> Unit)?
     override var ondurationchange: ((Event) -> Unit)?
@@ -3160,6 +3721,8 @@ public open external class Image : HTMLImageElement {
      * has an execution error or an image can't be found or is invalid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onerror: ((JsAny, String, Int, Int, JsAny?) -> Unit)?
 
@@ -3168,6 +3731,8 @@ public open external class Image : HTMLImageElement {
      * event that follows does bubble.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/focus_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onfocus: ((FocusEvent) -> Unit)?
     override var onformdata: ((FormDataEvent) -> Unit)?
@@ -3177,6 +3742,8 @@ public open external class Image : HTMLImageElement {
      * changed as a direct result of a user action (such as typing in a textbox or checking a checkbox).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/input_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oninput: ((InputEvent) -> Unit)?
     override var oninvalid: ((Event) -> Unit)?
@@ -3185,6 +3752,8 @@ public open external class Image : HTMLImageElement {
      * The keydown event is fired when a key is pressed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keydown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onkeydown: ((KeyboardEvent) -> Unit)?
 
@@ -3197,6 +3766,8 @@ public open external class Image : HTMLImageElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keypress_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onkeypress: ((KeyboardEvent) -> Unit)?
 
@@ -3204,6 +3775,8 @@ public open external class Image : HTMLImageElement {
      * The keyup event is fired when a key is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keyup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onkeyup: ((KeyboardEvent) -> Unit)?
 
@@ -3213,6 +3786,8 @@ public open external class Image : HTMLImageElement {
      * &lt;script&gt;, &lt;style&gt;, and &lt;track&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/load_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onload: ((Event) -> Unit)?
     override var onloadeddata: ((Event) -> Unit)?
@@ -3224,6 +3799,8 @@ public open external class Image : HTMLImageElement {
      * the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mousedown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmousedown: ((MouseEvent) -> Unit)?
 
@@ -3232,6 +3809,8 @@ public open external class Image : HTMLImageElement {
      * its hotspot is within the element at which the event was fired.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseenter: ((MouseEvent) -> Unit)?
 
@@ -3240,6 +3819,8 @@ public open external class Image : HTMLImageElement {
      * of it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseleave: ((MouseEvent) -> Unit)?
 
@@ -3248,6 +3829,8 @@ public open external class Image : HTMLImageElement {
      * hotspot is inside it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mousemove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmousemove: ((MouseEvent) -> Unit)?
 
@@ -3256,6 +3839,8 @@ public open external class Image : HTMLImageElement {
      * that it is no longer contained within the element or one of its children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseout_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseout: ((MouseEvent) -> Unit)?
 
@@ -3264,6 +3849,8 @@ public open external class Image : HTMLImageElement {
      * the cursor onto the element or one of its child elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseover: ((MouseEvent) -> Unit)?
 
@@ -3272,6 +3859,8 @@ public open external class Image : HTMLImageElement {
      * released while the pointer is located inside it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseup: ((MouseEvent) -> Unit)?
 
@@ -3280,6 +3869,8 @@ public open external class Image : HTMLImageElement {
      * user interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/paste_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpaste: ((ClipboardEvent) -> Unit)?
     override var onpause: ((Event) -> Unit)?
@@ -3293,6 +3884,8 @@ public open external class Image : HTMLImageElement {
      * The resize event fires when the document view (window) has been resized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resize_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onresize: ((Event) -> Unit)?
 
@@ -3301,6 +3894,8 @@ public open external class Image : HTMLImageElement {
      * scrollend event of Document. For element scrolling, see scroll event of Element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scroll_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onscroll: ((Event) -> Unit)?
 
@@ -3309,6 +3904,8 @@ public open external class Image : HTMLImageElement {
      * the scroll position has no more pending updates and the user has completed their gesture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onscrollend: ((Event) -> Unit)?
 
@@ -3316,6 +3913,8 @@ public open external class Image : HTMLImageElement {
      * The securitypolicyviolation event is fired when a Content Security Policy is violated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/securitypolicyviolation_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onsecuritypolicyviolation: ((Event) -> Unit)?
     override var onseeked: ((Event) -> Unit)?
@@ -3332,6 +3931,8 @@ public open external class Image : HTMLImageElement {
      * &lt;details&gt; element just after it is shown or hidden.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontoggle: ((ToggleEvent) -> Unit)?
     override var onvolumechange: ((Event) -> Unit)?
@@ -3346,6 +3947,8 @@ public open external class Image : HTMLImageElement {
      * fired for related devices that simulate wheel actions, such as trackpads and mouse balls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/wheel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onwheel: ((WheelEvent) -> Unit)?
 
@@ -3353,6 +3956,8 @@ public open external class Image : HTMLImageElement {
      * The touchstart event is fired when one or more touch points are placed on the touch surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchstart_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchstart: ((TouchEvent) -> Unit)?
 
@@ -3361,6 +3966,8 @@ public open external class Image : HTMLImageElement {
      * possible to get a touchcancel event instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchend: ((TouchEvent) -> Unit)?
 
@@ -3368,6 +3975,8 @@ public open external class Image : HTMLImageElement {
      * The touchmove event is fired when one or more touch points are moved along the touch surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchmove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchmove: ((TouchEvent) -> Unit)?
 
@@ -3376,6 +3985,8 @@ public open external class Image : HTMLImageElement {
      * manner.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchcancel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchcancel: ((TouchEvent) -> Unit)?
 
@@ -3383,6 +3994,8 @@ public open external class Image : HTMLImageElement {
      * The pointerover event is fired when a pointing device is moved into an element's hit test boundaries.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerover: ((PointerEvent) -> Unit)?
 
@@ -3393,6 +4006,8 @@ public open external class Image : HTMLImageElement {
      * also dispatched at the same time as mouseover and pointerover events, if appropriate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerenter: ((PointerEvent) -> Unit)?
 
@@ -3402,6 +4017,8 @@ public open external class Image : HTMLImageElement {
      * the digitizer. For pen, it is fired when the stylus makes physical contact with the digitizer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerdown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerdown: ((PointerEvent) -> Unit)?
 
@@ -3412,6 +4029,8 @@ public open external class Image : HTMLImageElement {
      * twist, contact geometry (width and height), or chorded buttons.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointermove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointermove: ((PointerEvent) -> Unit)?
 
@@ -3422,6 +4041,8 @@ public open external class Image : HTMLImageElement {
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerrawupdate_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerrawupdate: ((PointerEvent) -> Unit)?
 
@@ -3430,6 +4051,8 @@ public open external class Image : HTMLImageElement {
      * pointercancel event instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerup: ((PointerEvent) -> Unit)?
 
@@ -3439,6 +4062,8 @@ public open external class Image : HTMLImageElement {
      * panning, zooming, or scrolling.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointercancel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointercancel: ((PointerEvent) -> Unit)?
 
@@ -3449,6 +4074,8 @@ public open external class Image : HTMLImageElement {
      * the digitizer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerout_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerout: ((PointerEvent) -> Unit)?
 
@@ -3459,6 +4086,8 @@ public open external class Image : HTMLImageElement {
      * same time as mouseout and pointerout events, if appropriate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerleave: ((PointerEvent) -> Unit)?
 
@@ -3466,6 +4095,8 @@ public open external class Image : HTMLImageElement {
      * The gotpointercapture event is fired when an element captures a pointer using setPointerCapture().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/gotpointercapture_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ongotpointercapture: ((PointerEvent) -> Unit)?
 
@@ -3473,6 +4104,8 @@ public open external class Image : HTMLImageElement {
      * The lostpointercapture event is fired when a captured pointer is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/lostpointercapture_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onlostpointercapture: ((PointerEvent) -> Unit)?
 
@@ -3480,6 +4113,8 @@ public open external class Image : HTMLImageElement {
      * The contentEditable property of the HTMLElement interface specifies whether or not the element is editable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var contentEditable: String
 
@@ -3488,6 +4123,8 @@ public open external class Image : HTMLImageElement {
      * key on virtual keyboards.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/enterKeyHint)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var enterKeyHint: String
 
@@ -3496,6 +4133,8 @@ public open external class Image : HTMLImageElement {
      * element are editable; otherwise it returns false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/isContentEditable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val isContentEditable: Boolean
 
@@ -3503,6 +4142,8 @@ public open external class Image : HTMLImageElement {
      * The HTMLElement property inputMode reflects the value of the element's inputmode attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/inputMode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var inputMode: String
 
@@ -3511,6 +4152,8 @@ public open external class Image : HTMLImageElement {
      * (data-*) on elements. It exposes a map of strings (DOMStringMap) with an entry for each data-* attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val dataset: DOMStringMap
 
@@ -3519,6 +4162,8 @@ public open external class Image : HTMLImageElement {
      * Content Security Policy to determine whether a given fetch will be allowed to proceed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/nonce)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var nonce: String
 
@@ -3528,6 +4173,8 @@ public open external class Image : HTMLImageElement {
      * &lt;dialog&gt; or popover element, when the &lt;dialog&gt; or popover is shown.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autofocus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var autofocus: Boolean
 
@@ -3535,6 +4182,8 @@ public open external class Image : HTMLImageElement {
      * The tabIndex property of the HTMLElement interface represents the tab order of the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/tabIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var tabIndex: Int
 
@@ -3543,6 +4192,8 @@ public open external class Image : HTMLImageElement {
      * the element that will receive keyboard and similar events by default.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/focus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun focus(options: FocusOptions)
 
@@ -3550,6 +4201,8 @@ public open external class Image : HTMLImageElement {
      * The HTMLElement.blur() method removes keyboard focus from the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/blur)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun blur()
 
@@ -3558,6 +4211,8 @@ public open external class Image : HTMLImageElement {
      * live CSSStyleProperties object. This object can be used to get and set the inline styles of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/style)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val style: CSSStyleProperties
 
@@ -3588,6 +4243,8 @@ public open external class Image : HTMLImageElement {
  * also has available to it by inheritance) for manipulating the layout and presentation of inline frame elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLIFrameElement : HTMLElement {
     /**
@@ -3595,6 +4252,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * be embedded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/src)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var src: String
 
@@ -3603,6 +4262,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/srcdoc)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var srcdoc: String
 
@@ -3611,6 +4272,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * &lt;iframe&gt; element, indicating the specific name of the &lt;iframe&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -3620,6 +4283,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/sandbox)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val sandbox: DOMTokenList
 
@@ -3629,6 +4294,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * example, access to the microphone, camera, battery, web-share, etc.) based on the origin of the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var allow: String
 
@@ -3638,6 +4305,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * requestFullscreen().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allowFullscreen)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var allowFullscreen: Boolean
 
@@ -3646,6 +4315,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * &lt;iframe&gt; element, indicating the width of the frame in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var width: String
 
@@ -3654,6 +4325,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * &lt;iframe&gt; element, indicating the height of the frame in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var height: String
 
@@ -3662,6 +4335,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * element defining which referrer is sent when fetching the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/referrerPolicy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var referrerPolicy: String
 
@@ -3670,6 +4345,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * indicating whether the iframe should be loaded immediately on page load, or only when it is needed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/loading)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var loading: String
 
@@ -3679,6 +4356,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * Origin, else returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/contentDocument)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val contentDocument: Document?
 
@@ -3686,6 +4365,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * The contentWindow property returns the Window object of an HTMLIFrameElement.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/contentWindow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val contentWindow: Window?
 
@@ -3693,6 +4374,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
      * The getSVGDocument() method of the HTMLIFrameElement interface returns the Document object of the embedded SVG.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/getSVGDocument)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getSVGDocument(): Document?
     public open var align: String
@@ -3729,6 +4412,8 @@ public abstract external class HTMLIFrameElement : HTMLElement {
  * available to it by inheritance) for manipulating &lt;embed&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLEmbedElement : HTMLElement {
     /**
@@ -3736,6 +4421,8 @@ public abstract external class HTMLEmbedElement : HTMLElement {
      * embedded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/src)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var src: String
 
@@ -3745,6 +4432,8 @@ public abstract external class HTMLEmbedElement : HTMLElement {
      * attribute
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var type: String
 
@@ -3753,6 +4442,8 @@ public abstract external class HTMLEmbedElement : HTMLElement {
      * &lt;embed&gt; element, indicating the displayed width of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var width: String
 
@@ -3761,6 +4452,8 @@ public abstract external class HTMLEmbedElement : HTMLElement {
      * &lt;embed&gt; element, indicating the displayed height of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var height: String
 
@@ -3768,6 +4461,8 @@ public abstract external class HTMLEmbedElement : HTMLElement {
      * The getSVGDocument() method of the HTMLEmbedElement interface returns the Document object of the embedded SVG.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/getSVGDocument)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getSVGDocument(): Document?
     public open var align: String
@@ -3801,6 +4496,8 @@ public abstract external class HTMLEmbedElement : HTMLElement {
  * representing external resources.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLObjectElement : HTMLElement {
     /**
@@ -3808,6 +4505,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * specifying the address of a resource's data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/data)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var data: String
 
@@ -3816,6 +4515,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * specifying the MIME type of the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var type: String
 
@@ -3824,6 +4525,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * specifying the name of the browsing context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -3832,6 +4535,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * &lt;object&gt;, or null if this object element is not owned by any form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/form)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val form: HTMLFormElement?
 
@@ -3840,6 +4545,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * specifying the displayed width of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var width: String
 
@@ -3848,6 +4555,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * specifying the displayed height of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var height: String
 
@@ -3856,6 +4565,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * active document of the object element's nested browsing context, if any; otherwise null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/contentDocument)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val contentDocument: Document?
 
@@ -3864,6 +4575,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * window proxy of the object element's nested browsing context, if any; otherwise null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/contentWindow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val contentWindow: Window?
 
@@ -3871,6 +4584,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * The getSVGDocument() method of the HTMLObjectElement interface returns the Document object of the embedded SVG.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/getSVGDocument)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getSVGDocument(): Document?
 
@@ -3879,6 +4594,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * elements are not candidates for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/willValidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val willValidate: Boolean
 
@@ -3888,6 +4605,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * validation, the validity state may still be invalid if a custom validity message has been set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/validity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validity: ValidityState
 
@@ -3898,6 +4617,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * satisfies its constraints.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/validationMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validationMessage: String
 
@@ -3906,6 +4627,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * true because &lt;object&gt; elements are never candidates for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/checkValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun checkValidity(): Boolean
 
@@ -3915,6 +4638,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/reportValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reportValidity(): Boolean
 
@@ -3922,6 +4647,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * The setCustomValidity() method of the HTMLObjectElement interface sets a custom validity message for the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/setCustomValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setCustomValidity(error: String)
     public open var align: String
@@ -3941,6 +4668,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/useMap)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var useMap: String
     public open var border: String
@@ -3972,6 +4701,8 @@ public abstract external class HTMLObjectElement : HTMLElement {
  * manipulating video objects. It also inherits properties and methods of HTMLMediaElement and HTMLElement.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageSource, TexImageSource {
     /**
@@ -3979,6 +4710,8 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
      * &lt;video&gt; element, specifying the displayed width of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var width: Int
 
@@ -3987,6 +4720,8 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
      * the &lt;video&gt; element, specifying the displayed height of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var height: Int
 
@@ -3995,6 +4730,8 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
      * expressed in CSS pixels. In simple terms, this is the width of the media in its natural size.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/videoWidth)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val videoWidth: Int
 
@@ -4003,6 +4740,8 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
      * expressed in CSS pixels. In simple terms, this is the height of the media in its natural size.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/videoHeight)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val videoHeight: Int
 
@@ -4011,6 +4750,8 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
      * while no video data is available. If the property does not represent a valid URL, no poster frame will be shown.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/poster)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var poster: String
     public open var playsInline: Boolean
@@ -4051,6 +4792,8 @@ public abstract external class HTMLVideoElement : HTMLMediaElement, CanvasImageS
  * manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAudioElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLAudioElement : HTMLMediaElement {
 
@@ -4093,6 +4836,8 @@ public open external class Audio : HTMLAudioElement {
      * document upon which it was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/children)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val children: HTMLCollection
 
@@ -4101,6 +4846,8 @@ public open external class Audio : HTMLAudioElement {
      * are no child elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/firstElementChild)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val firstElementChild: Element?
 
@@ -4109,6 +4856,8 @@ public open external class Audio : HTMLAudioElement {
      * no child elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/lastElementChild)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val lastElementChild: Element?
 
@@ -4116,6 +4865,8 @@ public open external class Audio : HTMLAudioElement {
      * The Document.childElementCount read-only property returns the number of child elements of the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/childElementCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val childElementCount: Int
 
@@ -4124,6 +4875,8 @@ public open external class Audio : HTMLAudioElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun prepend(vararg nodes: Node)
 
@@ -4132,6 +4885,8 @@ public open external class Audio : HTMLAudioElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun prepend(vararg nodes: String)
 
@@ -4140,6 +4895,8 @@ public open external class Audio : HTMLAudioElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun prepend()
 
@@ -4148,6 +4905,8 @@ public open external class Audio : HTMLAudioElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun append(vararg nodes: Node)
 
@@ -4156,6 +4915,8 @@ public open external class Audio : HTMLAudioElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun append(vararg nodes: String)
 
@@ -4164,6 +4925,8 @@ public open external class Audio : HTMLAudioElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun append()
 
@@ -4172,6 +4935,8 @@ public open external class Audio : HTMLAudioElement {
      * children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceChildren(vararg nodes: Node)
 
@@ -4180,6 +4945,8 @@ public open external class Audio : HTMLAudioElement {
      * children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceChildren(vararg nodes: String)
 
@@ -4188,6 +4955,8 @@ public open external class Audio : HTMLAudioElement {
      * children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceChildren()
 
@@ -4196,6 +4965,8 @@ public open external class Audio : HTMLAudioElement {
      * child, before a given reference node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/moveBefore)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun moveBefore(node: Node, child: Node?)
 
@@ -4204,6 +4975,8 @@ public open external class Audio : HTMLAudioElement {
      * selector, or group of CSS selectors. If no matches are found, null is returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun querySelector(selectors: String): Element?
 
@@ -4212,6 +4985,8 @@ public open external class Audio : HTMLAudioElement {
      * elements that match the specified group of selectors.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun querySelectorAll(selectors: String): NodeList
 
@@ -4220,6 +4995,8 @@ public open external class Audio : HTMLAudioElement {
      * in its parent's children list, or null if the specified element is the first one in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/previousElementSibling)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val previousElementSibling: Element?
 
@@ -4228,6 +5005,8 @@ public open external class Audio : HTMLAudioElement {
      * its parent's children list, or null if the specified element is the last one in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/nextElementSibling)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val nextElementSibling: Element?
     override fun beforeHTML(html: String, options: SetHTMLOptions)
@@ -4243,6 +5022,8 @@ public open external class Audio : HTMLAudioElement {
      * Nothing happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/before)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun before(vararg nodes: Node)
 
@@ -4252,6 +5033,8 @@ public open external class Audio : HTMLAudioElement {
      * Nothing happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/before)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun before(vararg nodes: String)
 
@@ -4261,6 +5044,8 @@ public open external class Audio : HTMLAudioElement {
      * Nothing happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/before)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun before()
 
@@ -4270,6 +5055,8 @@ public open external class Audio : HTMLAudioElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/after)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun after(vararg nodes: Node)
 
@@ -4279,6 +5066,8 @@ public open external class Audio : HTMLAudioElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/after)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun after(vararg nodes: String)
 
@@ -4288,6 +5077,8 @@ public open external class Audio : HTMLAudioElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/after)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun after()
 
@@ -4297,6 +5088,8 @@ public open external class Audio : HTMLAudioElement {
      * parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/replaceWith)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceWith(vararg nodes: Node)
 
@@ -4306,6 +5099,8 @@ public open external class Audio : HTMLAudioElement {
      * parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/replaceWith)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceWith(vararg nodes: String)
 
@@ -4315,6 +5110,8 @@ public open external class Audio : HTMLAudioElement {
      * parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/replaceWith)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceWith()
 
@@ -4323,6 +5120,8 @@ public open external class Audio : HTMLAudioElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/remove)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun remove()
 
@@ -4331,6 +5130,8 @@ public open external class Audio : HTMLAudioElement {
      * &lt;slot&gt; element the node is inserted in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/assignedSlot)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val assignedSlot: HTMLSlotElement?
     override fun getBoxQuads(options: BoxQuadOptions): JsArray<DOMQuad>
@@ -4344,6 +5145,8 @@ public open external class Audio : HTMLAudioElement {
      * ARIA role, if any, unless explicitly set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/role)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var role: String?
 
@@ -4352,6 +5155,8 @@ public open external class Audio : HTMLAudioElement {
      * when focus is on a composite widget, combobox, textbox, group, or application.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaActiveDescendantElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaActiveDescendantElement: Element?
 
@@ -4361,6 +5166,8 @@ public open external class Audio : HTMLAudioElement {
      * change notifications defined by the aria-relevant attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaAtomic)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaAtomic: String?
 
@@ -4371,6 +5178,8 @@ public open external class Audio : HTMLAudioElement {
      * were made.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaAutoComplete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaAutoComplete: String?
 
@@ -4379,6 +5188,8 @@ public open external class Audio : HTMLAudioElement {
      * attribute, which defines the ARIA braille label of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBrailleLabel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaBrailleLabel: String?
 
@@ -4387,6 +5198,8 @@ public open external class Audio : HTMLAudioElement {
      * aria-brailleroledescription attribute, which defines the ARIA braille role description of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBrailleRoleDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaBrailleRoleDescription: String?
 
@@ -4396,6 +5209,8 @@ public open external class Audio : HTMLAudioElement {
      * modifications are complete before exposing them to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBusy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaBusy: String?
 
@@ -4405,6 +5220,8 @@ public open external class Audio : HTMLAudioElement {
      * state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaChecked)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaChecked: String?
 
@@ -4413,6 +5230,8 @@ public open external class Audio : HTMLAudioElement {
      * which defines the number of columns in a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColCount: String?
 
@@ -4422,6 +5241,8 @@ public open external class Audio : HTMLAudioElement {
      * grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColIndex: String?
 
@@ -4430,6 +5251,8 @@ public open external class Audio : HTMLAudioElement {
      * attribute, which defines a human-readable text alternative of aria-colindex.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColIndexText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColIndexText: String?
 
@@ -4438,6 +5261,8 @@ public open external class Audio : HTMLAudioElement {
      * which defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColSpan)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColSpan: String?
 
@@ -4447,6 +5272,8 @@ public open external class Audio : HTMLAudioElement {
      * indicate the element that it pops up, or on a scrollbar to indicate the ID of the element it controls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaControlsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaControlsElements: JsArray<Element>?
 
@@ -4455,6 +5282,8 @@ public open external class Audio : HTMLAudioElement {
      * which indicates the element that represents the current item within a container or set of related elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaCurrent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaCurrent: String?
 
@@ -4464,6 +5293,8 @@ public open external class Audio : HTMLAudioElement {
      * similar to the accessible label (see ariaLabelledByElements), but provides more verbose information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDescribedByElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDescribedByElements: JsArray<Element>?
 
@@ -4472,6 +5303,8 @@ public open external class Audio : HTMLAudioElement {
      * attribute, which defines a string value that describes or annotates the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDescription: String?
 
@@ -4481,6 +5314,8 @@ public open external class Audio : HTMLAudioElement {
      * to the accessible description (see ariaDescribedByElements), but provides more verbose information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDetailsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDetailsElements: JsArray<Element>?
 
@@ -4489,6 +5324,8 @@ public open external class Audio : HTMLAudioElement {
      * which indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDisabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDisabled: String?
 
@@ -4497,6 +5334,8 @@ public open external class Audio : HTMLAudioElement {
      * elements) that provide an error message for the element it is applied to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaErrorMessageElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaErrorMessageElements: JsArray<Element>?
 
@@ -4505,6 +5344,8 @@ public open external class Audio : HTMLAudioElement {
      * which indicates whether a grouping element owned or controlled by this element is expanded or collapsed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaExpanded)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaExpanded: String?
 
@@ -4516,6 +5357,8 @@ public open external class Audio : HTMLAudioElement {
      * selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaFlowToElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaFlowToElements: JsArray<Element>?
 
@@ -4525,6 +5368,8 @@ public open external class Audio : HTMLAudioElement {
      * triggered by an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaHasPopup)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaHasPopup: String?
 
@@ -4533,6 +5378,8 @@ public open external class Audio : HTMLAudioElement {
      * indicates whether the element is exposed to an accessibility API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaHidden)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaHidden: String?
 
@@ -4543,6 +5390,8 @@ public open external class Audio : HTMLAudioElement {
      * expected by the application.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaInvalid)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaInvalid: String?
 
@@ -4552,6 +5401,8 @@ public open external class Audio : HTMLAudioElement {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaKeyShortcuts)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaKeyShortcuts: String?
 
@@ -4560,6 +5411,8 @@ public open external class Audio : HTMLAudioElement {
      * defines a string value that labels the current Element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLabel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLabel: String?
 
@@ -4568,6 +5421,8 @@ public open external class Audio : HTMLAudioElement {
      * elements) that provide an accessible name for the element it is applied to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLabelledByElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLabelledByElements: JsArray<Element>?
 
@@ -4576,6 +5431,8 @@ public open external class Audio : HTMLAudioElement {
      * defines the hierarchical level of an element within a structure.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLevel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLevel: String?
 
@@ -4585,6 +5442,8 @@ public open external class Audio : HTMLAudioElement {
      * technologies, and user can expect from the live region.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLive)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLive: String?
 
@@ -4593,6 +5452,8 @@ public open external class Audio : HTMLAudioElement {
      * indicates whether an element is modal when displayed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaModal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaModal: String?
 
@@ -4601,6 +5462,8 @@ public open external class Audio : HTMLAudioElement {
      * which indicates whether a text box accepts multiple lines of input or only a single line.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaMultiLine)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaMultiLine: String?
 
@@ -4609,6 +5472,8 @@ public open external class Audio : HTMLAudioElement {
      * attribute, which indicates that the user may select more than one item from the current selectable descendants.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaMultiSelectable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaMultiSelectable: String?
 
@@ -4617,6 +5482,8 @@ public open external class Audio : HTMLAudioElement {
      * attribute, which indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaOrientation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaOrientation: String?
 
@@ -4627,6 +5494,8 @@ public open external class Audio : HTMLAudioElement {
      * it would not otherwise be available to assistive technology,
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaOwnsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaOwnsElements: JsArray<Element>?
 
@@ -4635,6 +5504,8 @@ public open external class Audio : HTMLAudioElement {
      * attribute, which defines a short hint intended to aid the user with data entry when the control has no value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPlaceholder)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaPlaceholder: String?
 
@@ -4643,6 +5514,8 @@ public open external class Audio : HTMLAudioElement {
      * which defines an element's number or position in the current set of listitems or treeitems.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPosInSet)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaPosInSet: String?
 
@@ -4651,6 +5524,8 @@ public open external class Audio : HTMLAudioElement {
      * which indicates the current "pressed" state of toggle buttons.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPressed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaPressed: String?
 
@@ -4659,6 +5534,8 @@ public open external class Audio : HTMLAudioElement {
      * which indicates that the element is not editable, but is otherwise operable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaReadOnly)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaReadOnly: String?
 
@@ -4668,6 +5545,8 @@ public open external class Audio : HTMLAudioElement {
      * is modified. This is used to describe what changes in an aria-live region are relevant and should be announced.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRelevant)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRelevant: String?
 
@@ -4676,6 +5555,8 @@ public open external class Audio : HTMLAudioElement {
      * which indicates that user input is required on the element before a form may be submitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRequired)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRequired: String?
 
@@ -4684,6 +5565,8 @@ public open external class Audio : HTMLAudioElement {
      * attribute, which defines a human-readable, author-localized description for the role of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRoleDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRoleDescription: String?
 
@@ -4692,6 +5575,8 @@ public open external class Audio : HTMLAudioElement {
      * which defines the total number of rows in a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowCount: String?
 
@@ -4701,6 +5586,8 @@ public open external class Audio : HTMLAudioElement {
      * or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowIndex: String?
 
@@ -4709,6 +5596,8 @@ public open external class Audio : HTMLAudioElement {
      * attribute, which defines a human-readable text alternative of aria-rowindex.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowIndexText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowIndexText: String?
 
@@ -4717,6 +5606,8 @@ public open external class Audio : HTMLAudioElement {
      * which defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowSpan)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowSpan: String?
 
@@ -4725,6 +5616,8 @@ public open external class Audio : HTMLAudioElement {
      * which indicates the current "selected" state of elements that have a selected state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSelected)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaSelected: String?
 
@@ -4733,6 +5626,8 @@ public open external class Audio : HTMLAudioElement {
      * which defines the number of items in the current set of listitems or treeitems.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSetSize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaSetSize: String?
 
@@ -4741,6 +5636,8 @@ public open external class Audio : HTMLAudioElement {
      * indicates if items in a table or grid are sorted in ascending or descending order.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSort)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaSort: String?
 
@@ -4749,6 +5646,8 @@ public open external class Audio : HTMLAudioElement {
      * which defines the maximum allowed value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueMax)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueMax: String?
 
@@ -4757,6 +5656,8 @@ public open external class Audio : HTMLAudioElement {
      * which defines the minimum allowed value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueMin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueMin: String?
 
@@ -4765,6 +5666,8 @@ public open external class Audio : HTMLAudioElement {
      * which defines the current value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueNow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueNow: String?
 
@@ -4773,6 +5676,8 @@ public open external class Audio : HTMLAudioElement {
      * which defines the human-readable text alternative of aria-valuenow for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueText: String?
 
@@ -4780,6 +5685,8 @@ public open external class Audio : HTMLAudioElement {
      * The ariaNotify() method of the Element interface queues a string of text to be announced by a screen reader.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaNotify)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun ariaNotify(announcement: String, options: AriaNotificationOptions)
     override var onabort: ((Event) -> Unit)?
@@ -4789,6 +5696,8 @@ public open external class Audio : HTMLAudioElement {
      * the primary—usually leftmost—button) has been pressed and released both within the same element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/auxclick_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onauxclick: ((PointerEvent) -> Unit)?
 
@@ -4798,6 +5707,8 @@ public open external class Audio : HTMLAudioElement {
      * applies to elements with contenteditable enabled, and to any element when designMode is turned on.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforeinput_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onbeforeinput: ((InputEvent) -> Unit)?
 
@@ -4807,6 +5718,8 @@ public open external class Audio : HTMLAudioElement {
      * navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforematch_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onbeforematch: ((Event) -> Unit)?
 
@@ -4815,6 +5728,8 @@ public open external class Audio : HTMLAudioElement {
      * is shown or hidden.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforetoggle_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onbeforetoggle: ((ToggleEvent) -> Unit)?
 
@@ -4823,6 +5738,8 @@ public open external class Audio : HTMLAudioElement {
      * that follows does bubble.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/blur_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onblur: ((FocusEvent) -> Unit)?
     override var oncancel: ((Event) -> Unit)?
@@ -4835,11 +5752,15 @@ public open external class Audio : HTMLAudioElement {
      * element's value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/change_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onchange: ((Event) -> Unit)?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/click_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onclick: ((PointerEvent) -> Unit)?
     override var onclose: ((Event) -> Unit)?
@@ -4849,6 +5770,8 @@ public open external class Audio : HTMLAudioElement {
      * commandForElement and command values, whenever the button is interacted with (e.g., it is clicked).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/command_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncommand: ((CommandEvent) -> Unit)?
     override var oncontextlost: ((Event) -> Unit)?
@@ -4858,6 +5781,8 @@ public open external class Audio : HTMLAudioElement {
      * clicking the right mouse button, or by pressing the context menu key.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncontextmenu: ((PointerEvent) -> Unit)?
     override var oncontextrestored: ((Event) -> Unit)?
@@ -4867,6 +5792,8 @@ public open external class Audio : HTMLAudioElement {
      * interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/copy_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncopy: ((ClipboardEvent) -> Unit)?
     override var oncuechange: ((Event) -> Unit)?
@@ -4876,6 +5803,8 @@ public open external class Audio : HTMLAudioElement {
      * interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/cut_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncut: ((ClipboardEvent) -> Unit)?
 
@@ -4884,6 +5813,8 @@ public open external class Audio : HTMLAudioElement {
      * is, when it's rapidly clicked twice on a single element within a very short span of time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/dblclick_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondblclick: ((MouseEvent) -> Unit)?
 
@@ -4892,6 +5823,8 @@ public open external class Audio : HTMLAudioElement {
      * frequency depends on the browser, operating system, and pointer movement; do not rely on a fixed interval.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drag_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondrag: ((DragEvent) -> Unit)?
 
@@ -4899,6 +5832,8 @@ public open external class Audio : HTMLAudioElement {
      * The dragend event is fired when a drag operation ends (by releasing a mouse button or hitting the escape key).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragend: ((DragEvent) -> Unit)?
 
@@ -4908,6 +5843,8 @@ public open external class Audio : HTMLAudioElement {
      * &lt;body&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragenter: ((DragEvent) -> Unit)?
 
@@ -4915,6 +5852,8 @@ public open external class Audio : HTMLAudioElement {
      * The dragleave event is fired when a dragged element or text selection leaves a valid drop target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragleave: ((DragEvent) -> Unit)?
 
@@ -4923,6 +5862,8 @@ public open external class Audio : HTMLAudioElement {
      * target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragover: ((DragEvent) -> Unit)?
 
@@ -4930,6 +5871,8 @@ public open external class Audio : HTMLAudioElement {
      * The dragstart event is fired when the user starts dragging an element or text selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragstart_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragstart: ((DragEvent) -> Unit)?
 
@@ -4939,6 +5882,8 @@ public open external class Audio : HTMLAudioElement {
      * which handles the dragover event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drop_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondrop: ((DragEvent) -> Unit)?
     override var ondurationchange: ((Event) -> Unit)?
@@ -4950,6 +5895,8 @@ public open external class Audio : HTMLAudioElement {
      * has an execution error or an image can't be found or is invalid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onerror: ((JsAny, String, Int, Int, JsAny?) -> Unit)?
 
@@ -4958,6 +5905,8 @@ public open external class Audio : HTMLAudioElement {
      * event that follows does bubble.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/focus_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onfocus: ((FocusEvent) -> Unit)?
     override var onformdata: ((FormDataEvent) -> Unit)?
@@ -4967,6 +5916,8 @@ public open external class Audio : HTMLAudioElement {
      * changed as a direct result of a user action (such as typing in a textbox or checking a checkbox).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/input_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oninput: ((InputEvent) -> Unit)?
     override var oninvalid: ((Event) -> Unit)?
@@ -4975,6 +5926,8 @@ public open external class Audio : HTMLAudioElement {
      * The keydown event is fired when a key is pressed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keydown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onkeydown: ((KeyboardEvent) -> Unit)?
 
@@ -4987,6 +5940,8 @@ public open external class Audio : HTMLAudioElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keypress_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onkeypress: ((KeyboardEvent) -> Unit)?
 
@@ -4994,6 +5949,8 @@ public open external class Audio : HTMLAudioElement {
      * The keyup event is fired when a key is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keyup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onkeyup: ((KeyboardEvent) -> Unit)?
 
@@ -5003,6 +5960,8 @@ public open external class Audio : HTMLAudioElement {
      * &lt;script&gt;, &lt;style&gt;, and &lt;track&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/load_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onload: ((Event) -> Unit)?
     override var onloadeddata: ((Event) -> Unit)?
@@ -5014,6 +5973,8 @@ public open external class Audio : HTMLAudioElement {
      * the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mousedown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmousedown: ((MouseEvent) -> Unit)?
 
@@ -5022,6 +5983,8 @@ public open external class Audio : HTMLAudioElement {
      * its hotspot is within the element at which the event was fired.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseenter: ((MouseEvent) -> Unit)?
 
@@ -5030,6 +5993,8 @@ public open external class Audio : HTMLAudioElement {
      * of it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseleave: ((MouseEvent) -> Unit)?
 
@@ -5038,6 +6003,8 @@ public open external class Audio : HTMLAudioElement {
      * hotspot is inside it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mousemove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmousemove: ((MouseEvent) -> Unit)?
 
@@ -5046,6 +6013,8 @@ public open external class Audio : HTMLAudioElement {
      * that it is no longer contained within the element or one of its children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseout_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseout: ((MouseEvent) -> Unit)?
 
@@ -5054,6 +6023,8 @@ public open external class Audio : HTMLAudioElement {
      * the cursor onto the element or one of its child elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseover: ((MouseEvent) -> Unit)?
 
@@ -5062,6 +6033,8 @@ public open external class Audio : HTMLAudioElement {
      * released while the pointer is located inside it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseup: ((MouseEvent) -> Unit)?
 
@@ -5070,6 +6043,8 @@ public open external class Audio : HTMLAudioElement {
      * user interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/paste_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpaste: ((ClipboardEvent) -> Unit)?
     override var onpause: ((Event) -> Unit)?
@@ -5083,6 +6058,8 @@ public open external class Audio : HTMLAudioElement {
      * The resize event fires when the document view (window) has been resized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resize_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onresize: ((Event) -> Unit)?
 
@@ -5091,6 +6068,8 @@ public open external class Audio : HTMLAudioElement {
      * scrollend event of Document. For element scrolling, see scroll event of Element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scroll_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onscroll: ((Event) -> Unit)?
 
@@ -5099,6 +6078,8 @@ public open external class Audio : HTMLAudioElement {
      * the scroll position has no more pending updates and the user has completed their gesture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onscrollend: ((Event) -> Unit)?
 
@@ -5106,6 +6087,8 @@ public open external class Audio : HTMLAudioElement {
      * The securitypolicyviolation event is fired when a Content Security Policy is violated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/securitypolicyviolation_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onsecuritypolicyviolation: ((Event) -> Unit)?
     override var onseeked: ((Event) -> Unit)?
@@ -5122,6 +6105,8 @@ public open external class Audio : HTMLAudioElement {
      * &lt;details&gt; element just after it is shown or hidden.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontoggle: ((ToggleEvent) -> Unit)?
     override var onvolumechange: ((Event) -> Unit)?
@@ -5136,6 +6121,8 @@ public open external class Audio : HTMLAudioElement {
      * fired for related devices that simulate wheel actions, such as trackpads and mouse balls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/wheel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onwheel: ((WheelEvent) -> Unit)?
 
@@ -5143,6 +6130,8 @@ public open external class Audio : HTMLAudioElement {
      * The touchstart event is fired when one or more touch points are placed on the touch surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchstart_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchstart: ((TouchEvent) -> Unit)?
 
@@ -5151,6 +6140,8 @@ public open external class Audio : HTMLAudioElement {
      * possible to get a touchcancel event instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchend: ((TouchEvent) -> Unit)?
 
@@ -5158,6 +6149,8 @@ public open external class Audio : HTMLAudioElement {
      * The touchmove event is fired when one or more touch points are moved along the touch surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchmove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchmove: ((TouchEvent) -> Unit)?
 
@@ -5166,6 +6159,8 @@ public open external class Audio : HTMLAudioElement {
      * manner.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchcancel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchcancel: ((TouchEvent) -> Unit)?
 
@@ -5173,6 +6168,8 @@ public open external class Audio : HTMLAudioElement {
      * The pointerover event is fired when a pointing device is moved into an element's hit test boundaries.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerover: ((PointerEvent) -> Unit)?
 
@@ -5183,6 +6180,8 @@ public open external class Audio : HTMLAudioElement {
      * also dispatched at the same time as mouseover and pointerover events, if appropriate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerenter: ((PointerEvent) -> Unit)?
 
@@ -5192,6 +6191,8 @@ public open external class Audio : HTMLAudioElement {
      * the digitizer. For pen, it is fired when the stylus makes physical contact with the digitizer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerdown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerdown: ((PointerEvent) -> Unit)?
 
@@ -5202,6 +6203,8 @@ public open external class Audio : HTMLAudioElement {
      * twist, contact geometry (width and height), or chorded buttons.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointermove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointermove: ((PointerEvent) -> Unit)?
 
@@ -5212,6 +6215,8 @@ public open external class Audio : HTMLAudioElement {
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerrawupdate_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerrawupdate: ((PointerEvent) -> Unit)?
 
@@ -5220,6 +6225,8 @@ public open external class Audio : HTMLAudioElement {
      * pointercancel event instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerup: ((PointerEvent) -> Unit)?
 
@@ -5229,6 +6236,8 @@ public open external class Audio : HTMLAudioElement {
      * panning, zooming, or scrolling.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointercancel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointercancel: ((PointerEvent) -> Unit)?
 
@@ -5239,6 +6248,8 @@ public open external class Audio : HTMLAudioElement {
      * the digitizer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerout_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerout: ((PointerEvent) -> Unit)?
 
@@ -5249,6 +6260,8 @@ public open external class Audio : HTMLAudioElement {
      * same time as mouseout and pointerout events, if appropriate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerleave: ((PointerEvent) -> Unit)?
 
@@ -5256,6 +6269,8 @@ public open external class Audio : HTMLAudioElement {
      * The gotpointercapture event is fired when an element captures a pointer using setPointerCapture().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/gotpointercapture_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ongotpointercapture: ((PointerEvent) -> Unit)?
 
@@ -5263,6 +6278,8 @@ public open external class Audio : HTMLAudioElement {
      * The lostpointercapture event is fired when a captured pointer is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/lostpointercapture_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onlostpointercapture: ((PointerEvent) -> Unit)?
 
@@ -5270,6 +6287,8 @@ public open external class Audio : HTMLAudioElement {
      * The contentEditable property of the HTMLElement interface specifies whether or not the element is editable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var contentEditable: String
 
@@ -5278,6 +6297,8 @@ public open external class Audio : HTMLAudioElement {
      * key on virtual keyboards.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/enterKeyHint)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var enterKeyHint: String
 
@@ -5286,6 +6307,8 @@ public open external class Audio : HTMLAudioElement {
      * element are editable; otherwise it returns false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/isContentEditable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val isContentEditable: Boolean
 
@@ -5293,6 +6316,8 @@ public open external class Audio : HTMLAudioElement {
      * The HTMLElement property inputMode reflects the value of the element's inputmode attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/inputMode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var inputMode: String
 
@@ -5301,6 +6326,8 @@ public open external class Audio : HTMLAudioElement {
      * (data-*) on elements. It exposes a map of strings (DOMStringMap) with an entry for each data-* attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val dataset: DOMStringMap
 
@@ -5309,6 +6336,8 @@ public open external class Audio : HTMLAudioElement {
      * Content Security Policy to determine whether a given fetch will be allowed to proceed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/nonce)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var nonce: String
 
@@ -5318,6 +6347,8 @@ public open external class Audio : HTMLAudioElement {
      * &lt;dialog&gt; or popover element, when the &lt;dialog&gt; or popover is shown.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autofocus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var autofocus: Boolean
 
@@ -5325,6 +6356,8 @@ public open external class Audio : HTMLAudioElement {
      * The tabIndex property of the HTMLElement interface represents the tab order of the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/tabIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var tabIndex: Int
 
@@ -5333,6 +6366,8 @@ public open external class Audio : HTMLAudioElement {
      * the element that will receive keyboard and similar events by default.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/focus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun focus(options: FocusOptions)
 
@@ -5340,6 +6375,8 @@ public open external class Audio : HTMLAudioElement {
      * The HTMLElement.blur() method removes keyboard focus from the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/blur)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun blur()
 
@@ -5348,6 +6385,8 @@ public open external class Audio : HTMLAudioElement {
      * live CSSStyleProperties object. This object can be used to get and set the inline styles of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/style)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val style: CSSStyleProperties
 
@@ -5388,6 +6427,8 @@ public open external class Audio : HTMLAudioElement {
  * or subtitles.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLTrackElement : HTMLElement {
     /**
@@ -5395,6 +6436,8 @@ public abstract external class HTMLTrackElement : HTMLElement {
      * to be used. It reflects the &lt;track&gt; element's enumerated kind attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/kind)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var kind: String
 
@@ -5403,6 +6446,8 @@ public abstract external class HTMLTrackElement : HTMLElement {
      * attribute, which indicates the URL of the text track's data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/src)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var src: String
 
@@ -5411,6 +6456,8 @@ public abstract external class HTMLTrackElement : HTMLElement {
      * attribute or the empty string if not defined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/srclang)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var srclang: String
 
@@ -5419,6 +6466,8 @@ public abstract external class HTMLTrackElement : HTMLElement {
      * caption, and audio descriptions for a track. It reflects the &lt;track&gt; element's label attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/label)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var label: String
 
@@ -5428,11 +6477,15 @@ public abstract external class HTMLTrackElement : HTMLElement {
      * boolean default attribute, returning true if present and false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/default)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var default: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/readyState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val readyState: Short
 
@@ -5441,6 +6494,8 @@ public abstract external class HTMLTrackElement : HTMLElement {
      * text track of the &lt;track&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/track)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val track: TextTrack
 
@@ -5484,6 +6539,8 @@ public inline val CanPlayTypeResult.Companion.PROBABLY: CanPlayTypeResult get() 
  * capabilities that are common to audio and video.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLMediaElement : HTMLElement {
     /**
@@ -5492,6 +6549,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * details about what happened by examining this object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/error)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val error: MediaError?
 
@@ -5500,6 +6559,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * the URL of a media resource to use in the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/src)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var src: String
 
@@ -5508,6 +6569,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * the media associated with the HTMLMediaElement, or null if not assigned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/srcObject)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var srcObject: MediaProvider?
 
@@ -5517,6 +6580,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * user's display. The value is an empty string if the networkState property is EMPTY.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/currentSrc)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val currentSrc: String
 
@@ -5525,6 +6590,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * attributes for details.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/crossOrigin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var crossOrigin: String?
 
@@ -5533,6 +6600,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * of media over the network.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/networkState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val networkState: Short
 
@@ -5541,6 +6610,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * the author thinks will lead to the best user experience.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preload)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var preload: String
 
@@ -5550,6 +6621,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * buffered property is accessed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/buffered)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val buffered: TimeRanges
 
@@ -5558,6 +6631,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * selecting a media source and loading the media in preparation for playback to begin at the beginning.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/load)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun load()
 
@@ -5566,6 +6641,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * media of a given MIME type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/canPlayType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun canPlayType(type: String): CanPlayTypeResult
 
@@ -5573,6 +6650,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * The readyState read-only property of the HTMLMediaElement interface indicates the readiness state of the media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/readyState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val readyState: Short
 
@@ -5581,6 +6660,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * the &lt;audio&gt; or &lt;video&gt;, is in the process of seeking to a new position.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeking)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val seeking: Boolean
 
@@ -5588,6 +6669,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * The HTMLMediaElement interface's currentTime property specifies the current playback time in seconds.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/currentTime)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var currentTime: Double
 
@@ -5595,6 +6678,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * The HTMLMediaElement.fastSeek() method quickly seeks the media to the new time with precision tradeoff.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/fastSeek)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun fastSeek(time: Double)
 
@@ -5602,6 +6687,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * The read-only HTMLMediaElement property duration indicates the length of the element's media in seconds.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/duration)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val duration: Double
 
@@ -5610,6 +6697,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * date and time corresponding to the beginning of the media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/getStartDate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getStartDate(): JsAny
 
@@ -5617,6 +6706,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * The read-only HTMLMediaElement.paused property tells whether the media element is paused.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/paused)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val paused: Boolean
 
@@ -5624,6 +6715,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * The HTMLMediaElement.defaultPlaybackRate property indicates the default playback rate for the media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultPlaybackRate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var defaultPlaybackRate: Double
 
@@ -5633,6 +6726,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * this value to obtain the current rate, so a value of 1.0 indicates normal speed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/playbackRate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var playbackRate: Double
 
@@ -5641,6 +6736,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * audio to compensate for changes to the playback rate made by setting HTMLMediaElement.playbackRate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preservesPitch)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var preservesPitch: Boolean
 
@@ -5650,6 +6747,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * ranges of the media source that the browser has played, if any, at the time the attribute is evaluated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/played)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val played: TimeRanges
 
@@ -5659,6 +6758,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * seekable property is accessed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seekable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val seekable: TimeRanges
 
@@ -5667,6 +6768,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * playback.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ended)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ended: Boolean
 
@@ -5675,6 +6778,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * automatically begin as soon as enough media is available to do so without interruption.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/autoplay)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var autoplay: Boolean
 
@@ -5683,6 +6788,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * should start over when it reaches the end.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loop)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var loop: Boolean
 
@@ -5691,6 +6798,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * resolved when playback has been successfully started.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun play(): Promise<JsAny?>
 
@@ -5699,6 +6808,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * this method will have no effect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/pause)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun pause()
 
@@ -5707,6 +6818,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * interface controls for playing the media item will be displayed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/controls)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var controls: Boolean
 
@@ -5714,6 +6827,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * The HTMLMediaElement.volume property sets the volume at which the media will be played.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/volume)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var volume: Double
 
@@ -5721,6 +6836,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * The HTMLMediaElement.muted property indicates whether the media element is muted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/muted)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var muted: Boolean
 
@@ -5730,6 +6847,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * audio output, use the muted property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultMuted)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var defaultMuted: Boolean
 
@@ -5741,6 +6860,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * the &lt;video&gt; element's loading content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loading)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var loading: String
 
@@ -5749,6 +6870,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * the AudioTrack objects representing the media element's audio tracks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/audioTracks)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val audioTracks: AudioTrackList
 
@@ -5757,6 +6880,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * VideoTrack objects representing the media element's video tracks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/videoTracks)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val videoTracks: VideoTrackList
 
@@ -5765,6 +6890,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * TextTrack objects representing the media element's text tracks, in the same order as in the list of text tracks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/textTracks)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val textTracks: TextTrackList
 
@@ -5774,6 +6901,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * TextTrackList interface, only an HTMLMediaElement.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/addTextTrack)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addTextTrack(kind: TextTrackKind, label: String = definedExternally, language: String = definedExternally): TextTrack
 
@@ -5784,6 +6913,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/mediaKeys)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val mediaKeys: MediaKeys?
 
@@ -5791,6 +6922,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * The encrypted event is fired when initialization data is found in the media that indicates it is encrypted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onencrypted: ((MediaEncryptedEvent) -> Unit)?
 
@@ -5799,6 +6932,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * decode the following data, and playback is stopped.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onwaitingforkey: ((Event) -> Unit)?
 
@@ -5809,6 +6944,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setMediaKeys(mediaKeys: MediaKeys?): Promise<JsAny?>
 
@@ -5848,6 +6985,8 @@ public abstract external class HTMLMediaElement : HTMLElement {
  * HTMLMediaElement, such as &lt;audio&gt; or &lt;video&gt;.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MediaError : JsAny {
     /**
@@ -5855,6 +6994,8 @@ public abstract external class MediaError : JsAny {
      * on a media element. To get a text string with specific diagnostic information, see MediaError.message.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError/code)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val code: Short
 
@@ -5864,6 +7005,8 @@ public abstract external class MediaError : JsAny {
      * be determined or provided.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError/message)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val message: String
 
@@ -5880,6 +7023,8 @@ public abstract external class MediaError : JsAny {
  * element, with each track represented by a separate AudioTrack object in the list.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class AudioTrackList : EventTarget {
     /**
@@ -5888,6 +7033,8 @@ public abstract external class AudioTrackList : EventTarget {
      * audio tracks in the media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -5896,6 +7043,8 @@ public abstract external class AudioTrackList : EventTarget {
      * the specified string. This lets you find a specified track if you know its ID string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList/getTrackById)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getTrackById(id: String): AudioTrack?
 
@@ -5904,6 +7053,8 @@ public abstract external class AudioTrackList : EventTarget {
      * property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList/change_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onchange: ((Event) -> Unit)?
 
@@ -5911,6 +7062,8 @@ public abstract external class AudioTrackList : EventTarget {
      * The addtrack event is fired when a track is added to an AudioTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList/addtrack_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onaddtrack: ((TrackEvent) -> Unit)?
 
@@ -5918,6 +7071,8 @@ public abstract external class AudioTrackList : EventTarget {
      * The removetrack event is fired when a track is removed from an AudioTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrackList/removetrack_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onremovetrack: ((TrackEvent) -> Unit)?
 }
@@ -5929,6 +7084,8 @@ public operator fun AudioTrackList.get(index: Int): AudioTrack? = getProperty(th
  * &lt;video&gt;.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTrack {
     /**
@@ -5936,6 +7093,8 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * represented by the AudioTrack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/id)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val id: String
 
@@ -5944,6 +7103,8 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * contained in the AudioTrack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/kind)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val kind: String
 
@@ -5952,6 +7113,8 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * one is available; otherwise, it returns an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/label)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val label: String
 
@@ -5959,6 +7122,8 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * The read-only AudioTrack property language returns a string identifying the language used in the audio track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/language)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val language: String
 
@@ -5967,6 +7132,8 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * If the track is disabled by setting enabled to false, the track is muted and does not produce audio.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/enabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var enabled: Boolean
 
@@ -5976,6 +7143,8 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * attribute of its parent media source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioTrack/sourceBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val sourceBuffer: SourceBuffer?
 }
@@ -5985,6 +7154,8 @@ public abstract external class AudioTrack : UnionAudioTrackOrTextTrackOrVideoTra
  * element, with each track represented by a separate VideoTrack object in the list.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class VideoTrackList : EventTarget {
     /**
@@ -5992,6 +7163,8 @@ public abstract external class VideoTrackList : EventTarget {
      * is a VideoTrack representing one video track in the media element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -6000,6 +7173,8 @@ public abstract external class VideoTrackList : EventTarget {
      * the specified string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/getTrackById)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getTrackById(id: String): VideoTrack?
 
@@ -6008,6 +7183,8 @@ public abstract external class VideoTrackList : EventTarget {
      * -1 otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/selectedIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val selectedIndex: Int
 
@@ -6016,6 +7193,8 @@ public abstract external class VideoTrackList : EventTarget {
      * selected property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/change_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onchange: ((Event) -> Unit)?
 
@@ -6023,6 +7202,8 @@ public abstract external class VideoTrackList : EventTarget {
      * The addtrack event is fired when a video track is added to a VideoTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/addtrack_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onaddtrack: ((TrackEvent) -> Unit)?
 
@@ -6030,6 +7211,8 @@ public abstract external class VideoTrackList : EventTarget {
      * The removetrack event is fired when a video track is removed from a VideoTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrackList/removetrack_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onremovetrack: ((TrackEvent) -> Unit)?
 }
@@ -6040,6 +7223,8 @@ public operator fun VideoTrackList.get(index: Int): VideoTrack? = getProperty(th
  * The VideoTrack interface represents a single video track from a &lt;video&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTrack {
     /**
@@ -6047,6 +7232,8 @@ public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * represented by the VideoTrack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/id)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val id: String
 
@@ -6055,6 +7242,8 @@ public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * contained in the VideoTrack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/kind)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val kind: String
 
@@ -6063,6 +7252,8 @@ public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * one is available; otherwise, it returns an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/label)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val label: String
 
@@ -6070,6 +7261,8 @@ public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * The read-only VideoTrack property language returns a string identifying the language used in the video track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/language)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val language: String
 
@@ -6077,6 +7270,8 @@ public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * The VideoTrack property selected controls whether or not a particular video track is active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/selected)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selected: Boolean
 
@@ -6086,6 +7281,8 @@ public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
      * attribute of its parent media source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoTrack/sourceBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val sourceBuffer: SourceBuffer?
 }
@@ -6095,6 +7292,8 @@ public abstract external class VideoTrack : UnionAudioTrackOrTextTrackOrVideoTra
  * element, with each track represented by a separate TextTrack object in the list.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class TextTrackList : EventTarget {
     /**
@@ -6102,6 +7301,8 @@ public abstract external class TextTrackList : EventTarget {
      * a TextTrack representing one track in the media element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -6110,6 +7311,8 @@ public abstract external class TextTrackList : EventTarget {
      * the specified string. This lets you find a specified track if you know its ID string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/getTrackById)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getTrackById(id: String): TextTrack?
 
@@ -6117,6 +7320,8 @@ public abstract external class TextTrackList : EventTarget {
      * The change event is fired when a text track is made active or inactive, or a TextTrackList is otherwise changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/change_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onchange: ((Event) -> Unit)?
 
@@ -6124,6 +7329,8 @@ public abstract external class TextTrackList : EventTarget {
      * The addtrack event is fired when a track is added to a TextTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/addtrack_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onaddtrack: ((TrackEvent) -> Unit)?
 
@@ -6131,6 +7338,8 @@ public abstract external class TextTrackList : EventTarget {
      * The removetrack event is fired when a track is removed from a TextTrackList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/removetrack_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onremovetrack: ((TrackEvent) -> Unit)?
 }
@@ -6161,6 +7370,8 @@ public inline val TextTrackKind.Companion.METADATA: TextTrackKind get() = "metad
  * The TextTrack interface of the WebVTT API represents a text track associated with a media element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTrackOrVideoTrack {
     /**
@@ -6168,6 +7379,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * This decides how the track will be handled by a user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/kind)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val kind: TextTrackKind
 
@@ -6176,6 +7389,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * is available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/label)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val label: String
 
@@ -6183,6 +7398,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * The language read-only property of the TextTrack interface returns the language of the text track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/language)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val language: String
 
@@ -6190,6 +7407,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * The id read-only property of the TextTrack interface returns the ID of the track if it has one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/id)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val id: String
 
@@ -6198,6 +7417,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * in-band metadata dispatch type of the text track represented by the TextTrack object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/inBandMetadataTrackDispatchType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val inBandMetadataTrackDispatchType: String
 
@@ -6207,6 +7428,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * switch modes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/mode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var mode: TextTrackMode
 
@@ -6215,6 +7438,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * track's cues.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cues)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cues: TextTrackCueList?
 
@@ -6223,6 +7448,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * currently active cues.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/activeCues)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val activeCues: TextTrackCueList?
 
@@ -6230,6 +7457,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * The addCue() method of the TextTrack interface adds a new cue to the list of cues.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/addCue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addCue(cue: TextTrackCue)
 
@@ -6237,6 +7466,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * The removeCue() method of the TextTrack interface removes a cue from the list of cues.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/removeCue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeCue(cue: TextTrackCue)
 
@@ -6245,6 +7476,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * the TextTrack and the HTMLTrackElement in which it's being presented, if any.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cuechange_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var oncuechange: ((Event) -> Unit)?
 
@@ -6254,6 +7487,8 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
      * MediaSource.sourceBuffers attribute of its parent media source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/sourceBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val sourceBuffer: SourceBuffer?
 }
@@ -6263,12 +7498,16 @@ public abstract external class TextTrack : EventTarget, UnionAudioTrackOrTextTra
  * of TextTrackCue objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCueList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class TextTrackCueList : JsAny {
     /**
      * The length read-only property of the TextTrackCueList interface returns the number of cues in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCueList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -6277,6 +7516,8 @@ public abstract external class TextTrackCueList : JsAny {
      * TextTrackCueList object whose identifier matches the value of id.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCueList/getCueById)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getCueById(id: String): TextTrackCue?
 }
@@ -6288,12 +7529,16 @@ public operator fun TextTrackCueList.get(index: Int): TextTrackCue? = getPropert
  * VTTCue and DataCue; you will work with these derived types rather than the base class.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class TextTrackCue : EventTarget {
     /**
      * The track read-only property of the TextTrackCue interface returns the TextTrack object that this cue belongs to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/track)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val track: TextTrack?
 
@@ -6301,6 +7546,8 @@ public abstract external class TextTrackCue : EventTarget {
      * The id property of the TextTrackCue interface returns and sets the identifier for this cue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/id)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var id: String
 
@@ -6308,6 +7555,8 @@ public abstract external class TextTrackCue : EventTarget {
      * The startTime property of the TextTrackCue interface returns and sets the start time of the cue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/startTime)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var startTime: Double
 
@@ -6315,6 +7564,8 @@ public abstract external class TextTrackCue : EventTarget {
      * The endTime property of the TextTrackCue interface returns and sets the end time of the cue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/endTime)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var endTime: Double
 
@@ -6323,6 +7574,8 @@ public abstract external class TextTrackCue : EventTarget {
      * the media should pause when the end of the range to which this cue applies is reached.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/pauseOnExit)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var pauseOnExit: Boolean
 
@@ -6331,6 +7584,8 @@ public abstract external class TextTrackCue : EventTarget {
      * over the media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/enter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onenter: ((Event) -> Unit)?
 
@@ -6338,6 +7593,8 @@ public abstract external class TextTrackCue : EventTarget {
      * The exit event fires when a cue stops being active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/exit_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onexit: ((Event) -> Unit)?
 }
@@ -6348,12 +7605,16 @@ public abstract external class TextTrackCue : EventTarget {
  * played, and the time ranges that are seekable.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class TimeRanges : JsAny {
     /**
      * The TimeRanges.length read-only property returns the number of ranges in the object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -6362,6 +7623,8 @@ public abstract external class TimeRanges : JsAny {
      * range begins.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/start)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun start(index: Int): Double
 
@@ -6370,6 +7633,8 @@ public abstract external class TimeRanges : JsAny {
      * ends.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/end)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun end(index: Int): Double
 }
@@ -6379,6 +7644,8 @@ public abstract external class TimeRanges : JsAny {
  * on an HTML media element; these events are addtrack and removetrack.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class TrackEvent : Event {
     /**
@@ -6386,6 +7653,8 @@ public open external class TrackEvent : Event {
      * list of tracks (AudioTrackList, VideoTrackList, or TextTrackList).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent/TrackEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: TrackEventInit = definedExternally)
 
@@ -6394,6 +7663,8 @@ public open external class TrackEvent : Event {
      * applies.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent/track)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val track: UnionAudioTrackOrTextTrackOrVideoTrack?
 
@@ -6421,6 +7692,8 @@ public fun TrackEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  * interface it also has available to it by inheritance) for manipulating the layout and presentation of map elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLMapElement : HTMLElement {
     /**
@@ -6428,6 +7701,8 @@ public abstract external class HTMLMapElement : HTMLElement {
      * with the useMap attribute of the &lt;img&gt; element to reference a &lt;map&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -6436,6 +7711,8 @@ public abstract external class HTMLMapElement : HTMLElement {
      * associated with the &lt;map&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/areas)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val areas: HTMLCollection
 
@@ -6467,6 +7744,8 @@ public abstract external class HTMLMapElement : HTMLElement {
  * elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUtils, HTMLHyperlinkElementUtils {
     /**
@@ -6474,6 +7753,8 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      * for an image map's link. It reflects the &lt;area&gt; element's alt attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/alt)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var alt: String
 
@@ -6482,6 +7763,8 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      * of floating-point numbers. It reflects the &lt;area&gt; element's coords attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/coords)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var coords: String
 
@@ -6490,6 +7773,8 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      * &lt;area&gt; element's shape attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/shape)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var shape: String
 
@@ -6499,6 +7784,8 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      * of the file. It reflects the download attribute of the &lt;area&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/download)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var download: String
 
@@ -6507,6 +7794,8 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      * the browser will send POST requests with the body PING to the URLs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/ping)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var ping: String
 
@@ -6516,6 +7805,8 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      * current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/rel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var rel: String
 
@@ -6525,6 +7816,8 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      * current document. It reflects the &lt;area&gt; element's rel content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/relList)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val relList: DOMTokenList
 
@@ -6533,6 +7826,8 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
      * defining which referrer is sent when fetching the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/referrerPolicy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var referrerPolicy: String
     public open var noHref: Boolean
@@ -6565,6 +7860,8 @@ public abstract external class HTMLAreaElement : HTMLElement, HyperlinkElementUt
  * HTML document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLTableElement : HTMLElement {
     /**
@@ -6572,6 +7869,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * given &lt;table&gt;, or null if no such element exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/caption)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var caption: HTMLTableCaptionElement?
 
@@ -6581,6 +7880,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * this method returns the first such child without creating one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createCaption)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createCaption(): HTMLTableCaptionElement
 
@@ -6589,6 +7890,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * a given &lt;table&gt;, if any.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteCaption)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun deleteCaption()
 
@@ -6597,6 +7900,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * given &lt;table&gt;, or null if no such element exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tHead)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var tHead: HTMLTableSectionElement?
 
@@ -6607,6 +7912,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * element child, this method returns the first such child without creating one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTHead)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createTHead(): HTMLTableSectionElement
 
@@ -6615,6 +7922,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * given &lt;table&gt;, if any.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteTHead)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun deleteTHead()
 
@@ -6623,6 +7932,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * given &lt;table&gt;, or null if no such element exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tFoot)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var tFoot: HTMLTableSectionElement?
 
@@ -6632,6 +7943,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * this method returns the first such child without creating one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTFoot)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createTFoot(): HTMLTableSectionElement
 
@@ -6640,6 +7953,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * given &lt;table&gt;, if any.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteTFoot)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun deleteTFoot()
 
@@ -6648,6 +7963,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * &lt;tbody&gt; element children of the given &lt;table&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tBodies)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val tBodies: HTMLCollection
 
@@ -6657,6 +7974,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * is no such element, and returns it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTBody)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun createTBody(): HTMLTableSectionElement
 
@@ -6668,6 +7987,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * each group.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/rows)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val rows: HTMLCollection
 
@@ -6677,6 +7998,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * no &lt;tbody&gt; elements, a &lt;tbody&gt; element is first created and inserted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/insertRow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun insertRow(index: Int = definedExternally): HTMLTableRowElement
 
@@ -6685,6 +8008,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * &lt;table&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteRow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun deleteRow(index: Int)
 
@@ -6694,6 +8019,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/align)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var align: String
 
@@ -6703,6 +8030,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/border)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var border: String
 
@@ -6713,6 +8042,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/frame)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var frame: String
 
@@ -6722,6 +8053,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/rules)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var rules: String
 
@@ -6731,6 +8064,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/summary)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var summary: String
 
@@ -6740,6 +8075,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var width: String
 
@@ -6749,6 +8086,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/bgColor)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var bgColor: String
 
@@ -6758,6 +8097,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/cellPadding)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var cellPadding: String
 
@@ -6769,6 +8110,8 @@ public abstract external class HTMLTableElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/cellSpacing)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var cellSpacing: String
 
@@ -6799,6 +8142,8 @@ public abstract external class HTMLTableElement : HTMLElement {
  * has available to it by inheritance) for manipulating table &lt;caption&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCaptionElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLTableCaptionElement : HTMLElement {
     /**
@@ -6808,6 +8153,8 @@ public abstract external class HTMLTableCaptionElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCaptionElement/align)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var align: String
 
@@ -6837,6 +8184,8 @@ public abstract external class HTMLTableCaptionElement : HTMLElement {
  * The HTMLTableColElement interface provides properties for manipulating single or grouped table column elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLTableColElement : HTMLElement {
     /**
@@ -6845,6 +8194,8 @@ public abstract external class HTMLTableColElement : HTMLElement {
      * the span attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/span)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var span: Int
 
@@ -6855,6 +8206,8 @@ public abstract external class HTMLTableColElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/align)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var align: String
 
@@ -6865,6 +8218,8 @@ public abstract external class HTMLTableColElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/ch)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var ch: String
 
@@ -6875,6 +8230,8 @@ public abstract external class HTMLTableColElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/chOff)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var chOff: String
 
@@ -6885,6 +8242,8 @@ public abstract external class HTMLTableColElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/vAlign)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var vAlign: String
     public open var width: String
@@ -6917,6 +8276,8 @@ public abstract external class HTMLTableColElement : HTMLElement {
  * footers and bodies (&lt;thead&gt;, &lt;tfoot&gt;, and &lt;tbody&gt;, respectively) in an HTML table.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLTableSectionElement : HTMLElement {
     /**
@@ -6924,6 +8285,8 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      * rows in the section. The HTMLCollection is live and is automatically updated when rows are added or removed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/rows)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val rows: HTMLCollection
 
@@ -6933,6 +8296,8 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      * returns it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/insertRow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun insertRow(index: Int = definedExternally): HTMLTableRowElement
 
@@ -6941,6 +8306,8 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      * given table sectioning element (&lt;thead&gt;, &lt;tfoot&gt;, or &lt;tbody&gt;).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/deleteRow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun deleteRow(index: Int)
 
@@ -6951,6 +8318,8 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/align)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var align: String
 
@@ -6961,6 +8330,8 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/ch)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var ch: String
 
@@ -6971,6 +8342,8 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/chOff)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var chOff: String
 
@@ -6981,6 +8354,8 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/vAlign)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var vAlign: String
 
@@ -7011,6 +8386,8 @@ public abstract external class HTMLTableSectionElement : HTMLElement {
  * has available to it by inheritance) for manipulating the layout and presentation of rows in an HTML table.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLTableRowElement : HTMLElement {
     /**
@@ -7018,6 +8395,8 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      * whole &lt;table&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/rowIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val rowIndex: Int
 
@@ -7026,6 +8405,8 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      * within the current section (&lt;thead&gt;, &lt;tbody&gt;, or &lt;tfoot&gt;).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/sectionRowIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val sectionRowIndex: Int
 
@@ -7034,6 +8415,8 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      * cells in the row. The HTMLCollection is live and is automatically updated when cells are added or removed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/cells)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cells: HTMLCollection
 
@@ -7042,6 +8425,8 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      * specified position in the given &lt;tr&gt; element, and returns it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/insertCell)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun insertCell(index: Int = definedExternally): HTMLTableCellElement
 
@@ -7049,6 +8434,8 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      * The deleteCell() method of the HTMLTableRowElement interface removes a specific row cell from a given &lt;tr&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/deleteCell)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun deleteCell(index: Int)
 
@@ -7059,6 +8446,8 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/align)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var align: String
 
@@ -7069,6 +8458,8 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/ch)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var ch: String
 
@@ -7079,6 +8470,8 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/chOff)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var chOff: String
 
@@ -7089,6 +8482,8 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/vAlign)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var vAlign: String
 
@@ -7099,6 +8494,8 @@ public abstract external class HTMLTableRowElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/bgColor)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var bgColor: String
 
@@ -7130,6 +8527,8 @@ public abstract external class HTMLTableRowElement : HTMLElement {
  * header cells (&lt;th&gt;) or data cells (&lt;td&gt;), in an HTML document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLTableCellElement : HTMLElement {
     /**
@@ -7137,6 +8536,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * this lets the cell occupy space across multiple columns of the table. It reflects the colspan attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/colSpan)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var colSpan: Int
 
@@ -7145,6 +8546,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * this lets the cell occupy space across multiple rows of the table. It reflects the rowspan attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/rowSpan)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var rowSpan: Int
 
@@ -7153,6 +8556,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * headers for this specific cell.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/headers)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var headers: String
 
@@ -7161,6 +8566,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * its row (&lt;tr&gt;). The first cell has an index of 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/cellIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val cellIndex: Int
 
@@ -7168,6 +8575,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * The scope property of the HTMLTableCellElement interface indicates the scope of a &lt;th&gt; cell.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/scope)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var scope: String
 
@@ -7176,6 +8585,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * the cell does not represent a header cell &lt;th&gt;, it is ignored.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/abbr)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var abbr: String
 
@@ -7186,6 +8597,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/align)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var align: String
     public open var axis: String
@@ -7199,6 +8612,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/ch)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var ch: String
 
@@ -7209,6 +8624,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/chOff)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var chOff: String
 
@@ -7219,6 +8636,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/noWrap)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var noWrap: Boolean
 
@@ -7229,6 +8648,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/vAlign)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var vAlign: String
 
@@ -7239,6 +8660,8 @@ public abstract external class HTMLTableCellElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/bgColor)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var bgColor: String
 
@@ -7269,12 +8692,16 @@ public abstract external class HTMLTableCellElement : HTMLElement {
  * modification of—aspects of the form, as well as access to its component elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLFormElement : HTMLElement {
     /**
      * The HTMLFormElement.acceptCharset property represents the character encoding for the given &lt;form&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/acceptCharset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var acceptCharset: String
 
@@ -7282,6 +8709,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * The HTMLFormElement.action property represents the action of the &lt;form&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/action)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var action: String
 
@@ -7290,6 +8719,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * be automatically completed by the browser. It reflects the &lt;form&gt; element's autocomplete attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/autocomplete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var autocomplete: String
 
@@ -7297,6 +8728,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * The HTMLFormElement.enctype property is the MIME type of content that is used to submit the form to the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/enctype)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var enctype: String
 
@@ -7305,6 +8738,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/encoding)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var encoding: String
 
@@ -7312,6 +8747,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * The HTMLFormElement.method property represents the HTTP method used to submit the &lt;form&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/method)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var method: String
 
@@ -7319,6 +8756,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * The HTMLFormElement.name property represents the name of the current &lt;form&gt; element as a string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -7328,6 +8767,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * attribute present, the value is true.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/noValidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var noValidate: Boolean
 
@@ -7336,6 +8777,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * in which to render its output).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/target)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var target: String
 
@@ -7344,6 +8787,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * kinds of links the HTML &lt;form&gt; element creates, as a space-separated list of enumerated values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/rel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var rel: String
 
@@ -7353,6 +8798,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * current document. It reflects the &lt;form&gt; element's rel content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/relList)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val relList: DOMTokenList
 
@@ -7361,6 +8808,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * all the listed form controls associated with the &lt;form&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/elements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val elements: HTMLFormControlsCollection
 
@@ -7368,6 +8817,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * The HTMLFormElement.length read-only property returns the number of controls in the &lt;form&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -7375,6 +8826,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * The HTMLFormElement.submit() method submits a given &lt;form&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/submit)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun submit()
 
@@ -7382,6 +8835,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * The HTMLFormElement method requestSubmit() requests that the form be submitted using a specific submit button.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/requestSubmit)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun requestSubmit(submitter: HTMLElement? = definedExternally)
 
@@ -7390,6 +8845,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * clicking the form's &lt;input type="reset"&gt; control.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reset()
 
@@ -7400,6 +8857,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * checkValidity(), canceling this invalid event has no effect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/checkValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun checkValidity(): Boolean
 
@@ -7409,6 +8868,8 @@ public abstract external class HTMLFormElement : HTMLElement {
      * the problem to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reportValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reportValidity(): Boolean
 
@@ -7443,6 +8904,8 @@ public operator fun HTMLFormElement.get(name: String): UnionElementOrRadioNodeLi
  * properties from the base HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLLabelElement : HTMLElement {
     /**
@@ -7452,6 +8915,8 @@ public abstract external class HTMLLabelElement : HTMLElement {
      * form-associated custom elements) that is owned by a form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement/form)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val form: HTMLFormElement?
 
@@ -7460,6 +8925,8 @@ public abstract external class HTMLLabelElement : HTMLElement {
      * reflects the value of, and is used to set and get the for content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement/htmlFor)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var htmlFor: String
 
@@ -7469,6 +8936,8 @@ public abstract external class HTMLLabelElement : HTMLElement {
      * label isn't associated with a control.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement/control)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val control: HTMLElement?
 
@@ -7499,6 +8968,8 @@ public abstract external class HTMLLabelElement : HTMLElement {
  * presentation of &lt;input&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttributes {
     /**
@@ -7507,6 +8978,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * an &lt;input&gt; of type file. If the attribute is not explicitly set, the accept property is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/accept)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var accept: String
 
@@ -7516,6 +8989,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * fully opaque. It is only relevant to color controls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/alpha)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var alpha: Boolean
 
@@ -7524,6 +8999,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * agents who cannot use the image. It reflects the &lt;input&gt; element's alt attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/alt)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var alt: String
 
@@ -7532,6 +9009,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * automatically completed by the browser. It reflects the &lt;input&gt; element's autocomplete attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/autocomplete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var autocomplete: String
 
@@ -7540,6 +9019,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * element. This property reflects the &lt;input&gt; element's checked attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultChecked)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var defaultChecked: Boolean
 
@@ -7548,6 +9029,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * whether the form control is checked or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/checked)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var checked: Boolean
 
@@ -7557,6 +9040,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * display-p3. It is only relevant to color controls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/colorSpace)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var colorSpace: String
 
@@ -7566,6 +9051,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * can be retrieved or set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/dirName)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var dirName: String
 
@@ -7575,6 +9062,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * unusable and un-clickable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/disabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var disabled: Boolean
 
@@ -7583,6 +9072,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * &lt;input&gt;, or null if this input is not owned by any form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/form)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val form: HTMLFormElement?
 
@@ -7591,6 +9082,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/files)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var files: FileList?
 
@@ -7600,6 +9093,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formAction)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var formAction: String
 
@@ -7609,6 +9104,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * &lt;input&gt;'s formenctype attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formEnctype)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var formEnctype: String
 
@@ -7618,6 +9115,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * formmethod attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formMethod)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var formMethod: String
 
@@ -7627,6 +9126,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * formnovalidate attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formNoValidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var formNoValidate: Boolean
 
@@ -7636,6 +9137,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formTarget)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var formTarget: String
 
@@ -7644,6 +9147,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * &lt;input&gt; element's height attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var height: Int
 
@@ -7654,6 +9159,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * set via JavaScript and is only relevant to checkbox controls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/indeterminate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var indeterminate: Boolean
 
@@ -7663,6 +9170,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * associated with any &lt;datalist&gt; in the same tree.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/list)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val list: HTMLDataListElement?
 
@@ -7672,6 +9181,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * set, the max property is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/max)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var max: String
 
@@ -7682,6 +9193,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * limit on the length of the value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/maxLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var maxLength: Int
 
@@ -7691,6 +9204,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * set, the min property is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/min)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var min: String
 
@@ -7700,6 +9215,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * attribute. -1 means there is no minimum length requirement.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/minLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var minLength: Int
 
@@ -7708,6 +9225,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * supports multiple for &lt;input type="file"&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/multiple)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var multiple: Boolean
 
@@ -7716,6 +9235,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * the element's name attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -7724,6 +9245,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * value should match. It reflects the &lt;input&gt; element's pattern attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/pattern)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var pattern: String
 
@@ -7732,6 +9255,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * in the control. It reflects the &lt;input&gt; element's placeholder attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/placeholder)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var placeholder: String
 
@@ -7741,6 +9266,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * attribute is present and false when omitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/readOnly)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var readOnly: Boolean
 
@@ -7749,6 +9276,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * submitting a form. It reflects the &lt;input&gt; element's required attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/required)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var required: Boolean
 
@@ -7757,6 +9286,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * reflects the &lt;input&gt; element's size attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/size)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var size: Int
 
@@ -7765,6 +9296,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * submit button. It reflects the &lt;input&gt; element's src attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/src)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var src: String
 
@@ -7775,6 +9308,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * property is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/step)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var step: String
 
@@ -7784,6 +9319,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * help users to enter a valid value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var type: String
 
@@ -7792,6 +9329,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * &lt;input&gt; element. It reflects the element's value attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var defaultValue: String
 
@@ -7800,6 +9339,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * a string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: String
 
@@ -7808,6 +9349,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * element as a Date, or null if conversion is not possible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/valueAsDate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var valueAsDate: JsAny?
 
@@ -7816,6 +9359,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * element as a number or NaN if converting to a numeric value is not possible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/valueAsNumber)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var valueAsNumber: Double
 
@@ -7824,6 +9369,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * &lt;input&gt; element's width attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var width: Int
 
@@ -7834,6 +9381,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * default value for step if not specified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepUp)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun stepUp(n: Int = definedExternally)
 
@@ -7842,6 +9391,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * value of the step attribute or up to n multiples of the step attribute if a number is passed as the parameter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepDown)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun stepDown(n: Int = definedExternally)
 
@@ -7850,6 +9401,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * is a candidate for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/willValidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val willValidate: Boolean
 
@@ -7858,6 +9411,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * the validity states this element is in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validity: ValidityState
 
@@ -7867,6 +9422,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * any).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validationMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validationMessage: String
 
@@ -7877,6 +9434,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * effect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/checkValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun checkValidity(): Boolean
 
@@ -7886,6 +9445,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/reportValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reportValidity(): Boolean
 
@@ -7893,6 +9454,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * The HTMLInputElement.setCustomValidity() method sets a custom validity message for the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setCustomValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setCustomValidity(error: String)
 
@@ -7901,6 +9464,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * the &lt;input&gt; element. If the element has the type hidden, the property returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/labels)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val labels: NodeList?
 
@@ -7909,6 +9474,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * includes a text field.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/select)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun select()
 
@@ -7917,6 +9484,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * selection in an &lt;input&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selectionStart: Int?
 
@@ -7925,6 +9494,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * selection in an &lt;input&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selectionEnd: Int?
 
@@ -7933,6 +9504,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * which the user is selecting the text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionDirection)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selectionDirection: String?
 
@@ -7941,6 +9514,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * element with a new string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setRangeText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setRangeText(replacement: String)
 
@@ -7949,6 +9524,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * element with a new string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setRangeText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setRangeText(replacement: String, start: Int, end: Int, selectionMode: SelectionMode = definedExternally)
 
@@ -7958,6 +9535,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * highlight only appears when the element is focused.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setSelectionRange)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setSelectionRange(start: Int, end: Int, direction: String = definedExternally)
 
@@ -7965,6 +9544,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
      * The HTMLInputElement.showPicker() method displays the browser picker for an input element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/showPicker)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun showPicker()
     public open var align: String
@@ -7999,6 +9580,8 @@ public abstract external class HTMLInputElement : HTMLElement, PopoverTargetAttr
  * available to it by inheritance) for manipulating &lt;button&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAttributes {
     /**
@@ -8006,6 +9589,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * being controlled by this button. For this to have an effect, commandfor must be set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/command)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var command: String
 
@@ -8014,6 +9599,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * button.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/commandForElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var commandForElement: Element?
 
@@ -8022,6 +9609,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * accept any clicks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/disabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var disabled: Boolean
 
@@ -8030,6 +9619,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * &lt;button&gt;, or null if this button is not owned by any form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/form)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val form: HTMLFormElement?
 
@@ -8039,6 +9630,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * formaction attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formAction)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var formAction: String
 
@@ -8047,6 +9640,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * when the form is submitted. It reflects the value of the &lt;button&gt;'s formenctype attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formEnctype)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var formEnctype: String
 
@@ -8056,6 +9651,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * formmethod attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formMethod)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var formMethod: String
 
@@ -8065,6 +9662,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * formnovalidate attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formNoValidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var formNoValidate: Boolean
 
@@ -8074,6 +9673,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formTarget)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var formTarget: String
 
@@ -8082,6 +9683,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * empty string if the element has no name. It reflects the element's name attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -8090,6 +9693,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * &lt;button&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var type: String
 
@@ -8098,6 +9703,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * string, or the empty string if no value is set. It reflects the element's value attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: String
 
@@ -8106,6 +9713,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * element is a candidate for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/willValidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val willValidate: Boolean
 
@@ -8114,6 +9723,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * the validity states this element is in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/validity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validity: ValidityState
 
@@ -8124,6 +9735,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * type is button or reset), or it satisfies its constraints.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/validationMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validationMessage: String
 
@@ -8135,6 +9748,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * willValidate is false).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/checkValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun checkValidity(): Boolean
 
@@ -8145,6 +9760,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * willValidate is false).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/reportValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reportValidity(): Boolean
 
@@ -8153,6 +9770,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * &lt;button&gt; element. Use the empty string to indicate that the element does not have a custom validity error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/setCustomValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setCustomValidity(error: String)
 
@@ -8161,6 +9780,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
      * the &lt;button&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/labels)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val labels: NodeList
 
@@ -8191,6 +9812,8 @@ public abstract external class HTMLButtonElement : HTMLElement, PopoverTargetAtt
  * properties and methods of other HTML elements via the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HTMLOptionElement> {
     /**
@@ -8198,6 +9821,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * automatically completed by the browser. It reflects the &lt;select&gt; element's autocomplete attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/autocomplete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var autocomplete: String
 
@@ -8207,6 +9832,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * unusable and un-clickable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/disabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var disabled: Boolean
 
@@ -8215,6 +9842,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * &lt;select&gt;, or null if this select is not owned by any form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/form)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val form: HTMLFormElement?
 
@@ -8223,6 +9852,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * from the list of options. It reflects the &lt;select&gt; element's multiple attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/multiple)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var multiple: Boolean
 
@@ -8231,6 +9862,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * reflects the element's name attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -8239,6 +9872,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * non-empty string value before submitting a form. It reflects the &lt;select&gt; element's required attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/required)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var required: Boolean
 
@@ -8247,6 +9882,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * visible at one time. It reflects the &lt;select&gt; element's size attribute. If omitted, the value is 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/size)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var size: Int
 
@@ -8254,6 +9891,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * The HTMLSelectElement.type read-only property returns the form control's type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: String
 
@@ -8262,6 +9901,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * contained by the &lt;select&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/options)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val options: HTMLOptionsCollection
 
@@ -8271,6 +9912,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * (HTMLOptionsCollection.length).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var length: Int
 
@@ -8279,6 +9922,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * the options list corresponds to the index given in the parameter, or null if there are none.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/item)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun item(index: Int): HTMLOptionElement?
 
@@ -8287,6 +9932,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * whose name or id match the specified name, or null if no option matches.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/namedItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun namedItem(name: String): HTMLOptionElement?
 
@@ -8294,6 +9941,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * The HTMLSelectElement.add() method adds an element to the collection of option elements for this select element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: HTMLElement?)
 
@@ -8301,6 +9950,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * The HTMLSelectElement.add() method adds an element to the collection of option elements for this select element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement, before: Int?)
 
@@ -8308,6 +9959,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * The HTMLSelectElement.add() method adds an element to the collection of option elements for this select element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun add(element: UnionHTMLOptGroupElementOrHTMLOptionElement)
 
@@ -8316,6 +9969,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * this select element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/remove)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun remove()
 
@@ -8324,6 +9979,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * this select element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/remove)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun remove(index: Int)
 
@@ -8333,6 +9990,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * object with one entry per currently selected option.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedOptions)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val selectedOptions: HTMLCollection
 
@@ -8343,6 +10002,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * currently selected options.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selectedIndex: Int
 
@@ -8351,6 +10012,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * with this &lt;select&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: String
 
@@ -8360,6 +10023,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * validation, such as when its disabled property is true.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/willValidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val willValidate: Boolean
 
@@ -8368,6 +10033,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * the validity states this element is in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/validity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validity: ValidityState
 
@@ -8378,6 +10045,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * (HTMLSelectElement.willValidate is false), or it satisfies its constraints.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/validationMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validationMessage: String
 
@@ -8388,6 +10057,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * effect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/checkValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun checkValidity(): Boolean
 
@@ -8397,6 +10068,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/reportValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reportValidity(): Boolean
 
@@ -8405,6 +10078,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * the specified message. Use the empty string to indicate that the element does not have a custom validity error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/setCustomValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setCustomValidity(error: String)
 
@@ -8412,6 +10087,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * The HTMLSelectElement.showPicker() method displays the browser picker for a select element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/showPicker)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun showPicker()
 
@@ -8420,6 +10097,8 @@ public abstract external class HTMLSelectElement : HTMLElement, ItemArrayLike<HT
      * the &lt;select&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/labels)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val labels: NodeList
 
@@ -8454,6 +10133,8 @@ public operator fun HTMLSelectElement.set(index: Int, option: HTMLOptionElement?
  * available to it by inheritance) to manipulate &lt;datalist&gt; elements and their content.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataListElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLDataListElement : HTMLElement {
     /**
@@ -8462,6 +10143,8 @@ public abstract external class HTMLDataListElement : HTMLElement {
      * predefined options for the &lt;input&gt; control associated with the &lt;datalist&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataListElement/options)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val options: HTMLCollection
 
@@ -8493,6 +10176,8 @@ public abstract external class HTMLDataListElement : HTMLElement {
  * &lt;optgroup&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGroupElementOrHTMLOptionElement {
     /**
@@ -8500,6 +10185,8 @@ public abstract external class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGr
      * element's disabled attribute, which indicates whether the control is disabled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement/disabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var disabled: Boolean
 
@@ -8508,6 +10195,8 @@ public abstract external class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGr
      * element's label attribute, which provides a textual label to the group of options.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement/label)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var label: String
 
@@ -8538,6 +10227,8 @@ public abstract external class HTMLOptGroupElement : HTMLElement, UnionHTMLOptGr
  * HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGroupElementOrHTMLOptionElement {
     /**
@@ -8545,6 +10236,8 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      * element is unavailable to be selected. The property reflects the value of the disabled HTML attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/disabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var disabled: Boolean
 
@@ -8554,6 +10247,8 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      * &lt;select&gt; owned by a form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/form)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val form: HTMLFormElement?
 
@@ -8563,6 +10258,8 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      * element's label attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/label)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var label: String
 
@@ -8572,6 +10269,8 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      * attribute sets the defaultSelected property to true.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/defaultSelected)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var defaultSelected: Boolean
 
@@ -8580,6 +10279,8 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      * is, whether the &lt;option&gt; is selected or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/selected)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selected: Boolean
 
@@ -8589,6 +10290,8 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      * it returns or sets the contents of the element, similar to the textContent property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: String
 
@@ -8597,6 +10300,8 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      * represents the same information as Node.textContent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/text)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var text: String
 
@@ -8606,6 +10311,8 @@ public abstract external class HTMLOptionElement : HTMLElement, UnionHTMLOptGrou
      * the &lt;option&gt; is not part of an option-list, the value is 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/index)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val index: Int
 
@@ -8639,6 +10346,8 @@ public open external class Option : HTMLOptionElement {
      * document upon which it was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/children)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val children: HTMLCollection
 
@@ -8647,6 +10356,8 @@ public open external class Option : HTMLOptionElement {
      * are no child elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/firstElementChild)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val firstElementChild: Element?
 
@@ -8655,6 +10366,8 @@ public open external class Option : HTMLOptionElement {
      * no child elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/lastElementChild)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val lastElementChild: Element?
 
@@ -8662,6 +10375,8 @@ public open external class Option : HTMLOptionElement {
      * The Document.childElementCount read-only property returns the number of child elements of the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/childElementCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val childElementCount: Int
 
@@ -8670,6 +10385,8 @@ public open external class Option : HTMLOptionElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun prepend(vararg nodes: Node)
 
@@ -8678,6 +10395,8 @@ public open external class Option : HTMLOptionElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun prepend(vararg nodes: String)
 
@@ -8686,6 +10405,8 @@ public open external class Option : HTMLOptionElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun prepend()
 
@@ -8694,6 +10415,8 @@ public open external class Option : HTMLOptionElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun append(vararg nodes: Node)
 
@@ -8702,6 +10425,8 @@ public open external class Option : HTMLOptionElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun append(vararg nodes: String)
 
@@ -8710,6 +10435,8 @@ public open external class Option : HTMLOptionElement {
      * Strings are inserted as equivalent Text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun append()
 
@@ -8718,6 +10445,8 @@ public open external class Option : HTMLOptionElement {
      * children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceChildren(vararg nodes: Node)
 
@@ -8726,6 +10455,8 @@ public open external class Option : HTMLOptionElement {
      * children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceChildren(vararg nodes: String)
 
@@ -8734,6 +10465,8 @@ public open external class Option : HTMLOptionElement {
      * children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceChildren()
 
@@ -8742,6 +10475,8 @@ public open external class Option : HTMLOptionElement {
      * child, before a given reference node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/moveBefore)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun moveBefore(node: Node, child: Node?)
 
@@ -8750,6 +10485,8 @@ public open external class Option : HTMLOptionElement {
      * selector, or group of CSS selectors. If no matches are found, null is returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun querySelector(selectors: String): Element?
 
@@ -8758,6 +10495,8 @@ public open external class Option : HTMLOptionElement {
      * elements that match the specified group of selectors.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun querySelectorAll(selectors: String): NodeList
 
@@ -8766,6 +10505,8 @@ public open external class Option : HTMLOptionElement {
      * in its parent's children list, or null if the specified element is the first one in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/previousElementSibling)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val previousElementSibling: Element?
 
@@ -8774,6 +10515,8 @@ public open external class Option : HTMLOptionElement {
      * its parent's children list, or null if the specified element is the last one in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/nextElementSibling)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val nextElementSibling: Element?
     override fun beforeHTML(html: String, options: SetHTMLOptions)
@@ -8789,6 +10532,8 @@ public open external class Option : HTMLOptionElement {
      * Nothing happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/before)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun before(vararg nodes: Node)
 
@@ -8798,6 +10543,8 @@ public open external class Option : HTMLOptionElement {
      * Nothing happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/before)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun before(vararg nodes: String)
 
@@ -8807,6 +10554,8 @@ public open external class Option : HTMLOptionElement {
      * Nothing happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/before)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun before()
 
@@ -8816,6 +10565,8 @@ public open external class Option : HTMLOptionElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/after)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun after(vararg nodes: Node)
 
@@ -8825,6 +10576,8 @@ public open external class Option : HTMLOptionElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/after)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun after(vararg nodes: String)
 
@@ -8834,6 +10587,8 @@ public open external class Option : HTMLOptionElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/after)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun after()
 
@@ -8843,6 +10598,8 @@ public open external class Option : HTMLOptionElement {
      * parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/replaceWith)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceWith(vararg nodes: Node)
 
@@ -8852,6 +10609,8 @@ public open external class Option : HTMLOptionElement {
      * parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/replaceWith)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceWith(vararg nodes: String)
 
@@ -8861,6 +10620,8 @@ public open external class Option : HTMLOptionElement {
      * parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/replaceWith)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun replaceWith()
 
@@ -8869,6 +10630,8 @@ public open external class Option : HTMLOptionElement {
      * happens if parentNode is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/remove)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun remove()
 
@@ -8877,6 +10640,8 @@ public open external class Option : HTMLOptionElement {
      * &lt;slot&gt; element the node is inserted in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/assignedSlot)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val assignedSlot: HTMLSlotElement?
     override fun getBoxQuads(options: BoxQuadOptions): JsArray<DOMQuad>
@@ -8890,6 +10655,8 @@ public open external class Option : HTMLOptionElement {
      * ARIA role, if any, unless explicitly set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/role)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var role: String?
 
@@ -8898,6 +10665,8 @@ public open external class Option : HTMLOptionElement {
      * when focus is on a composite widget, combobox, textbox, group, or application.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaActiveDescendantElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaActiveDescendantElement: Element?
 
@@ -8907,6 +10676,8 @@ public open external class Option : HTMLOptionElement {
      * change notifications defined by the aria-relevant attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaAtomic)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaAtomic: String?
 
@@ -8917,6 +10688,8 @@ public open external class Option : HTMLOptionElement {
      * were made.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaAutoComplete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaAutoComplete: String?
 
@@ -8925,6 +10698,8 @@ public open external class Option : HTMLOptionElement {
      * attribute, which defines the ARIA braille label of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBrailleLabel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaBrailleLabel: String?
 
@@ -8933,6 +10708,8 @@ public open external class Option : HTMLOptionElement {
      * aria-brailleroledescription attribute, which defines the ARIA braille role description of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBrailleRoleDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaBrailleRoleDescription: String?
 
@@ -8942,6 +10719,8 @@ public open external class Option : HTMLOptionElement {
      * modifications are complete before exposing them to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaBusy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaBusy: String?
 
@@ -8951,6 +10730,8 @@ public open external class Option : HTMLOptionElement {
      * state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaChecked)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaChecked: String?
 
@@ -8959,6 +10740,8 @@ public open external class Option : HTMLOptionElement {
      * which defines the number of columns in a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColCount: String?
 
@@ -8968,6 +10751,8 @@ public open external class Option : HTMLOptionElement {
      * grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColIndex: String?
 
@@ -8976,6 +10761,8 @@ public open external class Option : HTMLOptionElement {
      * attribute, which defines a human-readable text alternative of aria-colindex.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColIndexText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColIndexText: String?
 
@@ -8984,6 +10771,8 @@ public open external class Option : HTMLOptionElement {
      * which defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaColSpan)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaColSpan: String?
 
@@ -8993,6 +10782,8 @@ public open external class Option : HTMLOptionElement {
      * indicate the element that it pops up, or on a scrollbar to indicate the ID of the element it controls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaControlsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaControlsElements: JsArray<Element>?
 
@@ -9001,6 +10792,8 @@ public open external class Option : HTMLOptionElement {
      * which indicates the element that represents the current item within a container or set of related elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaCurrent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaCurrent: String?
 
@@ -9010,6 +10803,8 @@ public open external class Option : HTMLOptionElement {
      * similar to the accessible label (see ariaLabelledByElements), but provides more verbose information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDescribedByElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDescribedByElements: JsArray<Element>?
 
@@ -9018,6 +10813,8 @@ public open external class Option : HTMLOptionElement {
      * attribute, which defines a string value that describes or annotates the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDescription: String?
 
@@ -9027,6 +10824,8 @@ public open external class Option : HTMLOptionElement {
      * to the accessible description (see ariaDescribedByElements), but provides more verbose information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDetailsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDetailsElements: JsArray<Element>?
 
@@ -9035,6 +10834,8 @@ public open external class Option : HTMLOptionElement {
      * which indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaDisabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaDisabled: String?
 
@@ -9043,6 +10844,8 @@ public open external class Option : HTMLOptionElement {
      * elements) that provide an error message for the element it is applied to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaErrorMessageElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaErrorMessageElements: JsArray<Element>?
 
@@ -9051,6 +10854,8 @@ public open external class Option : HTMLOptionElement {
      * which indicates whether a grouping element owned or controlled by this element is expanded or collapsed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaExpanded)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaExpanded: String?
 
@@ -9062,6 +10867,8 @@ public open external class Option : HTMLOptionElement {
      * selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaFlowToElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaFlowToElements: JsArray<Element>?
 
@@ -9071,6 +10878,8 @@ public open external class Option : HTMLOptionElement {
      * triggered by an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaHasPopup)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaHasPopup: String?
 
@@ -9079,6 +10888,8 @@ public open external class Option : HTMLOptionElement {
      * indicates whether the element is exposed to an accessibility API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaHidden)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaHidden: String?
 
@@ -9089,6 +10900,8 @@ public open external class Option : HTMLOptionElement {
      * expected by the application.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaInvalid)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaInvalid: String?
 
@@ -9098,6 +10911,8 @@ public open external class Option : HTMLOptionElement {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaKeyShortcuts)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaKeyShortcuts: String?
 
@@ -9106,6 +10921,8 @@ public open external class Option : HTMLOptionElement {
      * defines a string value that labels the current Element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLabel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLabel: String?
 
@@ -9114,6 +10931,8 @@ public open external class Option : HTMLOptionElement {
      * elements) that provide an accessible name for the element it is applied to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLabelledByElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLabelledByElements: JsArray<Element>?
 
@@ -9122,6 +10941,8 @@ public open external class Option : HTMLOptionElement {
      * defines the hierarchical level of an element within a structure.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLevel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLevel: String?
 
@@ -9131,6 +10952,8 @@ public open external class Option : HTMLOptionElement {
      * technologies, and user can expect from the live region.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaLive)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaLive: String?
 
@@ -9139,6 +10962,8 @@ public open external class Option : HTMLOptionElement {
      * indicates whether an element is modal when displayed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaModal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaModal: String?
 
@@ -9147,6 +10972,8 @@ public open external class Option : HTMLOptionElement {
      * which indicates whether a text box accepts multiple lines of input or only a single line.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaMultiLine)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaMultiLine: String?
 
@@ -9155,6 +10982,8 @@ public open external class Option : HTMLOptionElement {
      * attribute, which indicates that the user may select more than one item from the current selectable descendants.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaMultiSelectable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaMultiSelectable: String?
 
@@ -9163,6 +10992,8 @@ public open external class Option : HTMLOptionElement {
      * attribute, which indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaOrientation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaOrientation: String?
 
@@ -9173,6 +11004,8 @@ public open external class Option : HTMLOptionElement {
      * it would not otherwise be available to assistive technology,
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaOwnsElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaOwnsElements: JsArray<Element>?
 
@@ -9181,6 +11014,8 @@ public open external class Option : HTMLOptionElement {
      * attribute, which defines a short hint intended to aid the user with data entry when the control has no value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPlaceholder)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaPlaceholder: String?
 
@@ -9189,6 +11024,8 @@ public open external class Option : HTMLOptionElement {
      * which defines an element's number or position in the current set of listitems or treeitems.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPosInSet)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaPosInSet: String?
 
@@ -9197,6 +11034,8 @@ public open external class Option : HTMLOptionElement {
      * which indicates the current "pressed" state of toggle buttons.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaPressed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaPressed: String?
 
@@ -9205,6 +11044,8 @@ public open external class Option : HTMLOptionElement {
      * which indicates that the element is not editable, but is otherwise operable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaReadOnly)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaReadOnly: String?
 
@@ -9214,6 +11055,8 @@ public open external class Option : HTMLOptionElement {
      * is modified. This is used to describe what changes in an aria-live region are relevant and should be announced.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRelevant)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRelevant: String?
 
@@ -9222,6 +11065,8 @@ public open external class Option : HTMLOptionElement {
      * which indicates that user input is required on the element before a form may be submitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRequired)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRequired: String?
 
@@ -9230,6 +11075,8 @@ public open external class Option : HTMLOptionElement {
      * attribute, which defines a human-readable, author-localized description for the role of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRoleDescription)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRoleDescription: String?
 
@@ -9238,6 +11085,8 @@ public open external class Option : HTMLOptionElement {
      * which defines the total number of rows in a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowCount)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowCount: String?
 
@@ -9247,6 +11096,8 @@ public open external class Option : HTMLOptionElement {
      * or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowIndex: String?
 
@@ -9255,6 +11106,8 @@ public open external class Option : HTMLOptionElement {
      * attribute, which defines a human-readable text alternative of aria-rowindex.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowIndexText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowIndexText: String?
 
@@ -9263,6 +11116,8 @@ public open external class Option : HTMLOptionElement {
      * which defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaRowSpan)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaRowSpan: String?
 
@@ -9271,6 +11126,8 @@ public open external class Option : HTMLOptionElement {
      * which indicates the current "selected" state of elements that have a selected state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSelected)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaSelected: String?
 
@@ -9279,6 +11136,8 @@ public open external class Option : HTMLOptionElement {
      * which defines the number of items in the current set of listitems or treeitems.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSetSize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaSetSize: String?
 
@@ -9287,6 +11146,8 @@ public open external class Option : HTMLOptionElement {
      * indicates if items in a table or grid are sorted in ascending or descending order.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaSort)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaSort: String?
 
@@ -9295,6 +11156,8 @@ public open external class Option : HTMLOptionElement {
      * which defines the maximum allowed value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueMax)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueMax: String?
 
@@ -9303,6 +11166,8 @@ public open external class Option : HTMLOptionElement {
      * which defines the minimum allowed value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueMin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueMin: String?
 
@@ -9311,6 +11176,8 @@ public open external class Option : HTMLOptionElement {
      * which defines the current value for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueNow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueNow: String?
 
@@ -9319,6 +11186,8 @@ public open external class Option : HTMLOptionElement {
      * which defines the human-readable text alternative of aria-valuenow for a range widget.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/ariaValueText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ariaValueText: String?
 
@@ -9326,6 +11195,8 @@ public open external class Option : HTMLOptionElement {
      * The ariaNotify() method of the Element interface queues a string of text to be announced by a screen reader.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaNotify)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun ariaNotify(announcement: String, options: AriaNotificationOptions)
     override var onabort: ((Event) -> Unit)?
@@ -9335,6 +11206,8 @@ public open external class Option : HTMLOptionElement {
      * the primary—usually leftmost—button) has been pressed and released both within the same element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/auxclick_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onauxclick: ((PointerEvent) -> Unit)?
 
@@ -9344,6 +11217,8 @@ public open external class Option : HTMLOptionElement {
      * applies to elements with contenteditable enabled, and to any element when designMode is turned on.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforeinput_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onbeforeinput: ((InputEvent) -> Unit)?
 
@@ -9353,6 +11228,8 @@ public open external class Option : HTMLOptionElement {
      * navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforematch_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onbeforematch: ((Event) -> Unit)?
 
@@ -9361,6 +11238,8 @@ public open external class Option : HTMLOptionElement {
      * is shown or hidden.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforetoggle_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onbeforetoggle: ((ToggleEvent) -> Unit)?
 
@@ -9369,6 +11248,8 @@ public open external class Option : HTMLOptionElement {
      * that follows does bubble.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/blur_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onblur: ((FocusEvent) -> Unit)?
     override var oncancel: ((Event) -> Unit)?
@@ -9381,11 +11262,15 @@ public open external class Option : HTMLOptionElement {
      * element's value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/change_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onchange: ((Event) -> Unit)?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/click_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onclick: ((PointerEvent) -> Unit)?
     override var onclose: ((Event) -> Unit)?
@@ -9395,6 +11280,8 @@ public open external class Option : HTMLOptionElement {
      * commandForElement and command values, whenever the button is interacted with (e.g., it is clicked).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/command_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncommand: ((CommandEvent) -> Unit)?
     override var oncontextlost: ((Event) -> Unit)?
@@ -9404,6 +11291,8 @@ public open external class Option : HTMLOptionElement {
      * clicking the right mouse button, or by pressing the context menu key.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncontextmenu: ((PointerEvent) -> Unit)?
     override var oncontextrestored: ((Event) -> Unit)?
@@ -9413,6 +11302,8 @@ public open external class Option : HTMLOptionElement {
      * interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/copy_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncopy: ((ClipboardEvent) -> Unit)?
     override var oncuechange: ((Event) -> Unit)?
@@ -9422,6 +11313,8 @@ public open external class Option : HTMLOptionElement {
      * interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/cut_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oncut: ((ClipboardEvent) -> Unit)?
 
@@ -9430,6 +11323,8 @@ public open external class Option : HTMLOptionElement {
      * is, when it's rapidly clicked twice on a single element within a very short span of time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/dblclick_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondblclick: ((MouseEvent) -> Unit)?
 
@@ -9438,6 +11333,8 @@ public open external class Option : HTMLOptionElement {
      * frequency depends on the browser, operating system, and pointer movement; do not rely on a fixed interval.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drag_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondrag: ((DragEvent) -> Unit)?
 
@@ -9445,6 +11342,8 @@ public open external class Option : HTMLOptionElement {
      * The dragend event is fired when a drag operation ends (by releasing a mouse button or hitting the escape key).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragend: ((DragEvent) -> Unit)?
 
@@ -9454,6 +11353,8 @@ public open external class Option : HTMLOptionElement {
      * &lt;body&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragenter: ((DragEvent) -> Unit)?
 
@@ -9461,6 +11362,8 @@ public open external class Option : HTMLOptionElement {
      * The dragleave event is fired when a dragged element or text selection leaves a valid drop target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragleave: ((DragEvent) -> Unit)?
 
@@ -9469,6 +11372,8 @@ public open external class Option : HTMLOptionElement {
      * target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragover: ((DragEvent) -> Unit)?
 
@@ -9476,6 +11381,8 @@ public open external class Option : HTMLOptionElement {
      * The dragstart event is fired when the user starts dragging an element or text selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragstart_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondragstart: ((DragEvent) -> Unit)?
 
@@ -9485,6 +11392,8 @@ public open external class Option : HTMLOptionElement {
      * which handles the dragover event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drop_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ondrop: ((DragEvent) -> Unit)?
     override var ondurationchange: ((Event) -> Unit)?
@@ -9496,6 +11405,8 @@ public open external class Option : HTMLOptionElement {
      * has an execution error or an image can't be found or is invalid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onerror: ((JsAny, String, Int, Int, JsAny?) -> Unit)?
 
@@ -9504,6 +11415,8 @@ public open external class Option : HTMLOptionElement {
      * event that follows does bubble.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/focus_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onfocus: ((FocusEvent) -> Unit)?
     override var onformdata: ((FormDataEvent) -> Unit)?
@@ -9513,6 +11426,8 @@ public open external class Option : HTMLOptionElement {
      * changed as a direct result of a user action (such as typing in a textbox or checking a checkbox).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/input_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var oninput: ((InputEvent) -> Unit)?
     override var oninvalid: ((Event) -> Unit)?
@@ -9521,6 +11436,8 @@ public open external class Option : HTMLOptionElement {
      * The keydown event is fired when a key is pressed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keydown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onkeydown: ((KeyboardEvent) -> Unit)?
 
@@ -9533,6 +11450,8 @@ public open external class Option : HTMLOptionElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keypress_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onkeypress: ((KeyboardEvent) -> Unit)?
 
@@ -9540,6 +11459,8 @@ public open external class Option : HTMLOptionElement {
      * The keyup event is fired when a key is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keyup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onkeyup: ((KeyboardEvent) -> Unit)?
 
@@ -9549,6 +11470,8 @@ public open external class Option : HTMLOptionElement {
      * &lt;script&gt;, &lt;style&gt;, and &lt;track&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/load_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onload: ((Event) -> Unit)?
     override var onloadeddata: ((Event) -> Unit)?
@@ -9560,6 +11483,8 @@ public open external class Option : HTMLOptionElement {
      * the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mousedown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmousedown: ((MouseEvent) -> Unit)?
 
@@ -9568,6 +11493,8 @@ public open external class Option : HTMLOptionElement {
      * its hotspot is within the element at which the event was fired.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseenter: ((MouseEvent) -> Unit)?
 
@@ -9576,6 +11503,8 @@ public open external class Option : HTMLOptionElement {
      * of it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseleave: ((MouseEvent) -> Unit)?
 
@@ -9584,6 +11513,8 @@ public open external class Option : HTMLOptionElement {
      * hotspot is inside it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mousemove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmousemove: ((MouseEvent) -> Unit)?
 
@@ -9592,6 +11523,8 @@ public open external class Option : HTMLOptionElement {
      * that it is no longer contained within the element or one of its children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseout_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseout: ((MouseEvent) -> Unit)?
 
@@ -9600,6 +11533,8 @@ public open external class Option : HTMLOptionElement {
      * the cursor onto the element or one of its child elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseover: ((MouseEvent) -> Unit)?
 
@@ -9608,6 +11543,8 @@ public open external class Option : HTMLOptionElement {
      * released while the pointer is located inside it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmouseup: ((MouseEvent) -> Unit)?
 
@@ -9616,6 +11553,8 @@ public open external class Option : HTMLOptionElement {
      * user interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/paste_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpaste: ((ClipboardEvent) -> Unit)?
     override var onpause: ((Event) -> Unit)?
@@ -9629,6 +11568,8 @@ public open external class Option : HTMLOptionElement {
      * The resize event fires when the document view (window) has been resized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resize_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onresize: ((Event) -> Unit)?
 
@@ -9637,6 +11578,8 @@ public open external class Option : HTMLOptionElement {
      * scrollend event of Document. For element scrolling, see scroll event of Element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scroll_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onscroll: ((Event) -> Unit)?
 
@@ -9645,6 +11588,8 @@ public open external class Option : HTMLOptionElement {
      * the scroll position has no more pending updates and the user has completed their gesture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onscrollend: ((Event) -> Unit)?
 
@@ -9652,6 +11597,8 @@ public open external class Option : HTMLOptionElement {
      * The securitypolicyviolation event is fired when a Content Security Policy is violated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/securitypolicyviolation_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onsecuritypolicyviolation: ((Event) -> Unit)?
     override var onseeked: ((Event) -> Unit)?
@@ -9668,6 +11615,8 @@ public open external class Option : HTMLOptionElement {
      * &lt;details&gt; element just after it is shown or hidden.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontoggle: ((ToggleEvent) -> Unit)?
     override var onvolumechange: ((Event) -> Unit)?
@@ -9682,6 +11631,8 @@ public open external class Option : HTMLOptionElement {
      * fired for related devices that simulate wheel actions, such as trackpads and mouse balls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/wheel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onwheel: ((WheelEvent) -> Unit)?
 
@@ -9689,6 +11640,8 @@ public open external class Option : HTMLOptionElement {
      * The touchstart event is fired when one or more touch points are placed on the touch surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchstart_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchstart: ((TouchEvent) -> Unit)?
 
@@ -9697,6 +11650,8 @@ public open external class Option : HTMLOptionElement {
      * possible to get a touchcancel event instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchend: ((TouchEvent) -> Unit)?
 
@@ -9704,6 +11659,8 @@ public open external class Option : HTMLOptionElement {
      * The touchmove event is fired when one or more touch points are moved along the touch surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchmove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchmove: ((TouchEvent) -> Unit)?
 
@@ -9712,6 +11669,8 @@ public open external class Option : HTMLOptionElement {
      * manner.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchcancel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ontouchcancel: ((TouchEvent) -> Unit)?
 
@@ -9719,6 +11678,8 @@ public open external class Option : HTMLOptionElement {
      * The pointerover event is fired when a pointing device is moved into an element's hit test boundaries.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerover: ((PointerEvent) -> Unit)?
 
@@ -9729,6 +11690,8 @@ public open external class Option : HTMLOptionElement {
      * also dispatched at the same time as mouseover and pointerover events, if appropriate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerenter: ((PointerEvent) -> Unit)?
 
@@ -9738,6 +11701,8 @@ public open external class Option : HTMLOptionElement {
      * the digitizer. For pen, it is fired when the stylus makes physical contact with the digitizer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerdown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerdown: ((PointerEvent) -> Unit)?
 
@@ -9748,6 +11713,8 @@ public open external class Option : HTMLOptionElement {
      * twist, contact geometry (width and height), or chorded buttons.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointermove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointermove: ((PointerEvent) -> Unit)?
 
@@ -9758,6 +11725,8 @@ public open external class Option : HTMLOptionElement {
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerrawupdate_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerrawupdate: ((PointerEvent) -> Unit)?
 
@@ -9766,6 +11735,8 @@ public open external class Option : HTMLOptionElement {
      * pointercancel event instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerup: ((PointerEvent) -> Unit)?
 
@@ -9775,6 +11746,8 @@ public open external class Option : HTMLOptionElement {
      * panning, zooming, or scrolling.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointercancel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointercancel: ((PointerEvent) -> Unit)?
 
@@ -9785,6 +11758,8 @@ public open external class Option : HTMLOptionElement {
      * the digitizer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerout_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerout: ((PointerEvent) -> Unit)?
 
@@ -9795,6 +11770,8 @@ public open external class Option : HTMLOptionElement {
      * same time as mouseout and pointerout events, if appropriate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onpointerleave: ((PointerEvent) -> Unit)?
 
@@ -9802,6 +11779,8 @@ public open external class Option : HTMLOptionElement {
      * The gotpointercapture event is fired when an element captures a pointer using setPointerCapture().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/gotpointercapture_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var ongotpointercapture: ((PointerEvent) -> Unit)?
 
@@ -9809,6 +11788,8 @@ public open external class Option : HTMLOptionElement {
      * The lostpointercapture event is fired when a captured pointer is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/lostpointercapture_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onlostpointercapture: ((PointerEvent) -> Unit)?
 
@@ -9816,6 +11797,8 @@ public open external class Option : HTMLOptionElement {
      * The contentEditable property of the HTMLElement interface specifies whether or not the element is editable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var contentEditable: String
 
@@ -9824,6 +11807,8 @@ public open external class Option : HTMLOptionElement {
      * key on virtual keyboards.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/enterKeyHint)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var enterKeyHint: String
 
@@ -9832,6 +11817,8 @@ public open external class Option : HTMLOptionElement {
      * element are editable; otherwise it returns false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/isContentEditable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val isContentEditable: Boolean
 
@@ -9839,6 +11826,8 @@ public open external class Option : HTMLOptionElement {
      * The HTMLElement property inputMode reflects the value of the element's inputmode attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/inputMode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var inputMode: String
 
@@ -9847,6 +11836,8 @@ public open external class Option : HTMLOptionElement {
      * (data-*) on elements. It exposes a map of strings (DOMStringMap) with an entry for each data-* attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val dataset: DOMStringMap
 
@@ -9855,6 +11846,8 @@ public open external class Option : HTMLOptionElement {
      * Content Security Policy to determine whether a given fetch will be allowed to proceed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/nonce)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var nonce: String
 
@@ -9864,6 +11857,8 @@ public open external class Option : HTMLOptionElement {
      * &lt;dialog&gt; or popover element, when the &lt;dialog&gt; or popover is shown.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autofocus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var autofocus: Boolean
 
@@ -9871,6 +11866,8 @@ public open external class Option : HTMLOptionElement {
      * The tabIndex property of the HTMLElement interface represents the tab order of the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/tabIndex)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var tabIndex: Int
 
@@ -9879,6 +11876,8 @@ public open external class Option : HTMLOptionElement {
      * the element that will receive keyboard and similar events by default.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/focus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun focus(options: FocusOptions)
 
@@ -9886,6 +11885,8 @@ public open external class Option : HTMLOptionElement {
      * The HTMLElement.blur() method removes keyboard focus from the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/blur)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun blur()
 
@@ -9894,6 +11895,8 @@ public open external class Option : HTMLOptionElement {
      * live CSSStyleProperties object. This object can be used to get and set the inline styles of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/style)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val style: CSSStyleProperties
 
@@ -9924,6 +11927,8 @@ public open external class Option : HTMLOptionElement {
  * &lt;textarea&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLTextAreaElement : HTMLElement {
     /**
@@ -9931,6 +11936,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * automatically completed by the browser. It reflects the &lt;textarea&gt; element's autocomplete attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/autocomplete)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var autocomplete: String
 
@@ -9940,6 +11947,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/cols)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var cols: Int
 
@@ -9948,6 +11957,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * value of the &lt;textarea&gt; element's dirName attribute. This property can be retrieved or set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/dirName)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var dirName: String
 
@@ -9957,6 +11968,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * false, this textarea may still be disabled if its containing element, such as a &lt;fieldset&gt;, is disabled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/disabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var disabled: Boolean
 
@@ -9965,6 +11978,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * &lt;textarea&gt;, or null if this textarea is not owned by any form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/form)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val form: HTMLFormElement?
 
@@ -9975,6 +11990,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * limit on the length of the value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/maxLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var maxLength: Int
 
@@ -9984,6 +12001,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * minlength attribute. -1 means there is no minimum length requirement.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/minLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var minLength: Int
 
@@ -9992,6 +12011,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * reflects the element's name attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -10000,6 +12021,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * entered in the control. It reflects the &lt;textarea&gt; element's placeholder attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/placeholder)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var placeholder: String
 
@@ -10009,6 +12032,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * selecting in the control. It reflects the &lt;textarea&gt; element's readonly attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/readOnly)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var readOnly: Boolean
 
@@ -10017,6 +12042,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * submitting a form. It reflects the &lt;textarea&gt; element's required attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/required)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var required: Boolean
 
@@ -10025,6 +12052,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * of the text control. It reflects the &lt;textarea&gt; element's rows attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/rows)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var rows: Int
 
@@ -10034,6 +12063,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * effect when the cols attribute is also set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/wrap)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var wrap: String
 
@@ -10041,6 +12072,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * The type read-only property of the HTMLTextAreaElement interface returns the string "textarea".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: String
 
@@ -10049,6 +12082,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * area. Getting and setting this value is equivalent to getting and setting textContent on the &lt;textarea&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/defaultValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var defaultValue: String
 
@@ -10058,6 +12093,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * the control.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: String
 
@@ -10067,6 +12104,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * accessing length on its value property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/textLength)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val textLength: Int
 
@@ -10076,6 +12115,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * validation, such as when its disabled or readOnly property is true.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/willValidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val willValidate: Boolean
 
@@ -10084,6 +12125,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * represents the validity states this element is in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/validity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validity: ValidityState
 
@@ -10094,6 +12137,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * (HTMLTextAreaElement.willValidate is false), or it satisfies its constraints.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/validationMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validationMessage: String
 
@@ -10104,6 +12149,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * effect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/checkValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun checkValidity(): Boolean
 
@@ -10113,6 +12160,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/reportValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reportValidity(): Boolean
 
@@ -10122,6 +12171,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setCustomValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setCustomValidity(error: String)
 
@@ -10130,6 +12181,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * with the &lt;textArea&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/labels)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val labels: NodeList
 
@@ -10137,6 +12190,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * The select() method of the HTMLTextAreaElement interface selects all the text in a &lt;textarea&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/select)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun select()
 
@@ -10145,6 +12200,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * selection in a &lt;textarea&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selectionStart: Int
 
@@ -10153,6 +12210,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * selection in a &lt;textarea&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selectionEnd: Int
 
@@ -10161,6 +12220,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * which the user is selecting the text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionDirection)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var selectionDirection: String
 
@@ -10169,6 +12230,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * element with new text passed as the argument.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setRangeText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setRangeText(replacement: String)
 
@@ -10177,6 +12240,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * element with new text passed as the argument.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setRangeText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setRangeText(replacement: String, start: Int, end: Int, selectionMode: SelectionMode = definedExternally)
 
@@ -10185,6 +12250,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
      * current text selection in a &lt;textarea&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setSelectionRange)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setSelectionRange(start: Int, end: Int, direction: String = definedExternally)
 
@@ -10215,6 +12282,8 @@ public abstract external class HTMLTextAreaElement : HTMLElement {
  * manipulating the layout and presentation of &lt;output&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLOutputElement : HTMLElement {
     /**
@@ -10223,6 +12292,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * &lt;output&gt; element's for content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/htmlFor)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val htmlFor: DOMTokenList
 
@@ -10231,6 +12302,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * &lt;output&gt;, or null if this output is not owned by any form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/form)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val form: HTMLFormElement?
 
@@ -10239,6 +12312,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * reflects the element's name attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -10246,6 +12321,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * The type read-only property of the HTMLOutputElement interface returns the string "output".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: String
 
@@ -10255,6 +12332,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * &lt;output&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/defaultValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var defaultValue: String
 
@@ -10264,6 +12343,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * textContent property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: String
 
@@ -10272,6 +12353,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * elements are not candidates for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/willValidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val willValidate: Boolean
 
@@ -10281,6 +12364,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * validation, the validity state may still be invalid if a custom validity message has been set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validity: ValidityState
 
@@ -10291,6 +12376,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * (HTMLOutputElement.willValidate is false).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validationMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validationMessage: String
 
@@ -10299,6 +12386,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * true because &lt;output&gt; elements are never candidates for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/checkValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun checkValidity(): Boolean
 
@@ -10308,6 +12397,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/reportValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reportValidity(): Boolean
 
@@ -10316,6 +12407,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * &lt;output&gt; element. Use the empty string to indicate that the element does not have a custom validity error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/setCustomValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setCustomValidity(error: String)
 
@@ -10324,6 +12417,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
      * the &lt;output&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/labels)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val labels: NodeList
 
@@ -10355,6 +12450,8 @@ public abstract external class HTMLOutputElement : HTMLElement {
  * elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLProgressElement : HTMLElement {
     /**
@@ -10362,6 +12459,8 @@ public abstract external class HTMLProgressElement : HTMLElement {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: Double
 
@@ -10370,6 +12469,8 @@ public abstract external class HTMLProgressElement : HTMLElement {
      * element's range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/max)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var max: Double
 
@@ -10378,6 +12479,8 @@ public abstract external class HTMLProgressElement : HTMLElement {
      * &lt;progress&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/position)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val position: Double
 
@@ -10386,6 +12489,8 @@ public abstract external class HTMLProgressElement : HTMLElement {
      * with the &lt;progress&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/labels)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val labels: NodeList
 
@@ -10417,6 +12522,8 @@ public abstract external class HTMLProgressElement : HTMLElement {
  * and presentation of &lt;meter&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLMeterElement : HTMLElement {
     /**
@@ -10425,6 +12532,8 @@ public abstract external class HTMLMeterElement : HTMLElement {
      * HTMLMeterElement.min value or 0, whichever is greater.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/value)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var value: Double
 
@@ -10433,6 +12542,8 @@ public abstract external class HTMLMeterElement : HTMLElement {
      * floating-point number. It reflects the element's min attribute, or 0 if no min is defined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/min)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var min: Double
 
@@ -10442,6 +12553,8 @@ public abstract external class HTMLMeterElement : HTMLElement {
      * neither the min nor the max is defined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/max)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var max: Double
 
@@ -10451,6 +12564,8 @@ public abstract external class HTMLMeterElement : HTMLElement {
      * low is clamped by the min and max values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/low)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var low: Double
 
@@ -10460,6 +12575,8 @@ public abstract external class HTMLMeterElement : HTMLElement {
      * of high is clamped by the low and max values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/high)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var high: Double
 
@@ -10469,6 +12586,8 @@ public abstract external class HTMLMeterElement : HTMLElement {
      * max values if not defined. The value of optimum is clamped by the min and max values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/optimum)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var optimum: Double
 
@@ -10477,6 +12596,8 @@ public abstract external class HTMLMeterElement : HTMLElement {
      * the &lt;meter&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/labels)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val labels: NodeList
 
@@ -10508,6 +12629,8 @@ public abstract external class HTMLMeterElement : HTMLElement {
  * elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLFieldSetElement : HTMLElement {
     /**
@@ -10515,6 +12638,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      * element's disabled attribute, which indicates whether the control is disabled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/disabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var disabled: Boolean
 
@@ -10523,6 +12648,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      * &lt;fieldset&gt;, or null if this fieldset is not owned by any form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/form)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val form: HTMLFormElement?
 
@@ -10531,6 +12658,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      * reflects the element's name attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -10538,6 +12667,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      * The type read-only property of the HTMLFieldSetElement interface returns the string "fieldset".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: String
 
@@ -10547,6 +12678,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      * &lt;select&gt;, and &lt;textarea&gt;) that are descendants of this field set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/elements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val elements: HTMLCollection
 
@@ -10555,6 +12688,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      * elements are not candidates for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/willValidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val willValidate: Boolean
 
@@ -10564,6 +12699,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      * constraint validation, the validity state may still be invalid if a custom validity message has been set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/validity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validity: ValidityState
 
@@ -10574,6 +12711,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      * (HTMLFieldSetElement.willValidate is false).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/validationMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validationMessage: String
 
@@ -10582,6 +12721,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      * returns true because &lt;fieldset&gt; elements are never candidates for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/checkValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun checkValidity(): Boolean
 
@@ -10591,6 +12732,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      * constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/reportValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reportValidity(): Boolean
 
@@ -10600,6 +12743,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
      * error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/setCustomValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setCustomValidity(error: String)
 
@@ -10630,6 +12775,8 @@ public abstract external class HTMLFieldSetElement : HTMLElement {
  * properties and methods from the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLegendElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLLegendElement : HTMLElement {
     /**
@@ -10638,6 +12785,8 @@ public abstract external class HTMLLegendElement : HTMLElement {
      * &lt;fieldset&gt; owned by a form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLegendElement/form)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val form: HTMLFormElement?
     public open var align: String
@@ -10668,6 +12817,8 @@ public abstract external class HTMLLegendElement : HTMLElement {
  * The HTMLSelectedContentElement interface represents a &lt;selectedcontent&gt; element in the DOM.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectedContentElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLSelectedContentElement : HTMLElement {
 
@@ -10708,6 +12859,8 @@ public inline val SelectionMode.Companion.PRESERVE: SelectionMode get() = "prese
  * validation. Together, they help explain why an element's value fails to validate, if it's not valid.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ValidityState : JsAny {
     /**
@@ -10715,6 +12868,8 @@ public abstract external class ValidityState : JsAny {
      * &lt;input&gt;, &lt;select&gt;, or &lt;textarea&gt;, has an empty value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/valueMissing)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val valueMissing: Boolean
 
@@ -10723,6 +12878,8 @@ public abstract external class ValidityState : JsAny {
      * after having been edited by the user, does not conform to the constraints set by the element's type attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/typeMismatch)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val typeMismatch: Boolean
 
@@ -10731,6 +12888,8 @@ public abstract external class ValidityState : JsAny {
      * after having been edited by the user, does not conform to the constraints set by the element's pattern attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/patternMismatch)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val patternMismatch: Boolean
 
@@ -10740,6 +12899,8 @@ public abstract external class ValidityState : JsAny {
      * element's maxlength attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/tooLong)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val tooLong: Boolean
 
@@ -10749,6 +12910,8 @@ public abstract external class ValidityState : JsAny {
      * the user, is less than the minimum code-unit length established by the element's minlength attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/tooShort)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val tooShort: Boolean
 
@@ -10757,6 +12920,8 @@ public abstract external class ValidityState : JsAny {
      * after having been edited by the user, does not conform to the constraints set by the element's min attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/rangeUnderflow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val rangeUnderflow: Boolean
 
@@ -10765,6 +12930,8 @@ public abstract external class ValidityState : JsAny {
      * after having been edited by the user, does not conform to the constraints set by the element's max attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/rangeOverflow)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val rangeOverflow: Boolean
 
@@ -10773,6 +12940,8 @@ public abstract external class ValidityState : JsAny {
      * after having been edited by the user, does not conform to the constraints set by the element's step attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/stepMismatch)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val stepMismatch: Boolean
 
@@ -10781,6 +12950,8 @@ public abstract external class ValidityState : JsAny {
      * browser is unable to convert. For example, if you have a number input element whose content is a string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/badInput)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val badInput: Boolean
 
@@ -10789,6 +12960,8 @@ public abstract external class ValidityState : JsAny {
      * validation required in the custom validity set by the element's setCustomValidity() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/customError)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val customError: Boolean
 
@@ -10797,6 +12970,8 @@ public abstract external class ValidityState : JsAny {
      * meets all its validation constraints, and is therefore considered to be valid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState/valid)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val valid: Boolean
 }
@@ -10806,6 +12981,8 @@ public abstract external class ValidityState : JsAny {
  * the &lt;form&gt; when the form's submit action is invoked.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class SubmitEvent : Event {
     /**
@@ -10813,6 +12990,8 @@ public open external class SubmitEvent : Event {
      * event fired at an HTML form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent/SubmitEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: SubmitEventInit = definedExternally)
 
@@ -10821,6 +13000,8 @@ public open external class SubmitEvent : Event {
      * that was invoked to cause the form to be submitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent/submitter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val submitter: HTMLElement?
 
@@ -10849,12 +13030,16 @@ public fun SubmitEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null
  * triggered by the invocation of a FormData() constructor.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class FormDataEvent : Event {
     /**
      * The FormDataEvent() constructor creates a new FormDataEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent/FormDataEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: FormDataEventInit)
 
@@ -10863,6 +13048,8 @@ public open external class FormDataEvent : Event {
      * contained in the form when the event was fired.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent/formData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val formData: FormData
 
@@ -10890,6 +13077,8 @@ public fun FormDataEventInit(formData: FormData, bubbles: Boolean? = null, cance
  * available to it by inheritance) for manipulating &lt;details&gt; elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLDetailsElement : HTMLElement {
     /**
@@ -10899,6 +13088,8 @@ public abstract external class HTMLDetailsElement : HTMLElement {
      * scripting.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -10907,6 +13098,8 @@ public abstract external class HTMLDetailsElement : HTMLElement {
      * indicating whether the &lt;details&gt;'s contents (not counting the &lt;summary&gt;) is to be shown to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/open)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var open: Boolean
 
@@ -10937,6 +13130,8 @@ public abstract external class HTMLDetailsElement : HTMLElement {
  * methods from the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLDialogElement : HTMLElement {
     /**
@@ -10944,6 +13139,8 @@ public abstract external class HTMLDialogElement : HTMLElement {
      * indicating whether the &lt;dialog&gt; is available for interaction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/open)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var open: Boolean
 
@@ -10953,6 +13150,8 @@ public abstract external class HTMLDialogElement : HTMLElement {
      * providing the value as a string argument to close() or requestClose().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/returnValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var returnValue: String
 
@@ -10961,6 +13160,8 @@ public abstract external class HTMLDialogElement : HTMLElement {
      * close the associated &lt;dialog&gt; element. It sets or returns the dialog's closedby attribute value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/closedBy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var closedBy: String
 
@@ -10968,6 +13169,8 @@ public abstract external class HTMLDialogElement : HTMLElement {
      * The show() method of the HTMLDialogElement interface displays the dialog as a non-modal dialog.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/show)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun show()
 
@@ -10976,6 +13179,8 @@ public abstract external class HTMLDialogElement : HTMLElement {
      * any other dialogs or elements that might be visible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/showModal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun showModal()
 
@@ -10984,6 +13189,8 @@ public abstract external class HTMLDialogElement : HTMLElement {
      * as an argument, updating the returnValue of the dialog.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close(returnValue: String = definedExternally)
 
@@ -10992,6 +13199,8 @@ public abstract external class HTMLDialogElement : HTMLElement {
      * string may be passed as an argument, updating the returnValue of the dialog.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/requestClose)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun requestClose(returnValue: String = definedExternally)
 
@@ -11022,12 +13231,16 @@ public abstract external class HTMLDialogElement : HTMLElement {
  * for manipulating the behavior and execution of &lt;script&gt; elements (beyond the inherited HTMLElement interface).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptElement {
     /**
      * The type property of the HTMLScriptElement interface is a string that reflects the type of the script.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var type: String
 
@@ -11036,6 +13249,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * can be used as an alternative to embedding a script directly within a document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/src)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var src: String
 
@@ -11045,6 +13260,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * to older browsers that do not support JavaScript modules.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/noModule)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var noModule: Boolean
 
@@ -11056,6 +13273,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * are available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/async)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var async: Boolean
 
@@ -11066,6 +13285,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * has no effect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/defer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var defer: Boolean
 
@@ -11075,6 +13296,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * element's blocking content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/blocking)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val blocking: DOMTokenList
 
@@ -11085,6 +13308,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * attributes for details.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/crossOrigin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var crossOrigin: String?
 
@@ -11094,6 +13319,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * imports.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/referrerPolicy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var referrerPolicy: String
 
@@ -11102,6 +13329,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * browser can use to verify that a fetched resource has been delivered without unexpected manipulation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/integrity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var integrity: String
 
@@ -11111,6 +13340,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * element's fetchpriority content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/fetchPriority)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var fetchPriority: String
 
@@ -11119,6 +13350,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * element. It behaves in the same way as the textContent and text properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/innerText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var innerText: String
 
@@ -11127,6 +13360,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * &lt;script&gt; element. It behaves in the same way as the text and innerText properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/textContent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var textContent: String?
 
@@ -11135,6 +13370,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
      * element. It behaves in the same way as the textContent and innerText property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/text)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var text: String
     public open var charset: String
@@ -11166,6 +13403,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
          * feature-detect what types of scripts are supported by the user agent.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/supports_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun supports(type: String): Boolean
     }
@@ -11175,6 +13414,8 @@ public abstract external class HTMLScriptElement : HTMLElement, HTMLOrSVGScriptE
  * The HTMLTemplateElement interface enables access to the contents of an HTML &lt;template&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLTemplateElement : HTMLElement {
     /**
@@ -11184,6 +13425,8 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      * holding template content.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val content: DocumentFragment
 
@@ -11193,6 +13436,8 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      * set and get the for content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/htmlFor)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var htmlFor: String
 
@@ -11201,6 +13446,8 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      * attribute of the associated &lt;template&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootMode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var shadowRootMode: String
 
@@ -11209,6 +13456,8 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      * shadowrootdelegatesfocus attribute of the associated &lt;template&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootDelegatesFocus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var shadowRootDelegatesFocus: Boolean
 
@@ -11217,6 +13466,8 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      * &lt;template&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootSerializable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var shadowRootSerializable: Boolean
 
@@ -11225,6 +13476,8 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      * configured to use named or unnamed slot assignment.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootSlotAssignment)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var shadowRootSlotAssignment: String
 
@@ -11233,6 +13486,8 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      * &lt;template&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootClonable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var shadowRootClonable: Boolean
 
@@ -11241,6 +13496,8 @@ public abstract external class HTMLTemplateElement : HTMLElement {
      * shadowrootcustomelementregistry attribute of the associated &lt;template&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootCustomElementRegistry)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var shadowRootCustomElementRegistry: String
 
@@ -11271,6 +13528,8 @@ public abstract external class HTMLTemplateElement : HTMLElement {
  * &lt;slot&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLSlotElement : HTMLElement {
     /**
@@ -11278,6 +13537,8 @@ public abstract external class HTMLSlotElement : HTMLElement {
      * a web component that users can fill with their own markup.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -11286,6 +13547,8 @@ public abstract external class HTMLSlotElement : HTMLElement {
      * slot.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedNodes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun assignedNodes(options: AssignedNodesOptions = definedExternally): JsArray<Node>
 
@@ -11294,6 +13557,8 @@ public abstract external class HTMLSlotElement : HTMLElement {
      * this slot (and no other nodes).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun assignedElements(options: AssignedNodesOptions = definedExternally): JsArray<Element>
 
@@ -11302,6 +13567,8 @@ public abstract external class HTMLSlotElement : HTMLElement {
      * slottables. The manually assigned nodes set is initially empty until nodes are assigned using assign().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun assign(vararg nodes: UnionElementOrText)
 
@@ -11341,6 +13608,8 @@ public fun AssignedNodesOptions(flatten: Boolean? = null): AssignedNodesOptions 
  * interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasElementOrOffscreenCanvas {
     /**
@@ -11349,6 +13618,8 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      * invalid value, like a negative, the default value of 300 is used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var width: Int
 
@@ -11358,6 +13629,8 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      * invalid value, like a negative, the default value of 150 is used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var height: Int
 
@@ -11366,6 +13639,8 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      * identifier is not supported, or the canvas has already been set to a different context mode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/getContext)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getContext(contextId: String, options: JsAny? = definedExternally): RenderingContext?
 
@@ -11374,6 +13649,8 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      * format specified by the type parameter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toDataURL)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toDataURL(type: String = definedExternally, quality: JsAny? = definedExternally): String
 
@@ -11382,6 +13659,8 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      * file may be cached on the disk or stored in memory at the discretion of the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toBlob(callback: (Blob?) -> Unit, type: String = definedExternally, quality: JsAny? = definedExternally)
 
@@ -11390,6 +13669,8 @@ public abstract external class HTMLCanvasElement : HTMLElement, UnionHTMLCanvasE
      * on the main thread or on a worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun transferControlToOffscreen(): OffscreenCanvas
 
@@ -11461,6 +13742,8 @@ public inline val ImageSmoothingQuality.Companion.HIGH: ImageSmoothingQuality ge
  * surface of a &lt;canvas&gt; element. It is used for drawing shapes, text, images, and other objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CanvasRenderingContext2D : CanvasSettings, CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasUserInterface, CanvasText, CanvasDrawImage, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath, RenderingContext {
     /**
@@ -11468,6 +13751,8 @@ public abstract external class CanvasRenderingContext2D : CanvasSettings, Canvas
      * HTMLCanvasElement object that is associated with a given context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val canvas: HTMLCanvasElement
 }
@@ -11478,6 +13763,8 @@ public external interface CanvasSettings : JsAny {
      * context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getContextAttributes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getContextAttributes(): CanvasRenderingContext2DSettings
 }
@@ -11488,6 +13775,8 @@ public external interface CanvasState : JsAny {
      * the current state onto a stack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/save)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun save()
 
@@ -11496,6 +13785,8 @@ public external interface CanvasState : JsAny {
      * by popping the top entry in the drawing state stack. If there is no saved state, this method does nothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/restore)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun restore()
 
@@ -11504,6 +13795,8 @@ public external interface CanvasState : JsAny {
      * state, allowing it to be reused for drawing something else without having to explicitly reset all the properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/reset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun reset()
 
@@ -11512,6 +13805,8 @@ public external interface CanvasState : JsAny {
      * lost (and has not yet been reset). This might occur due to driver crashes, running out of memory, and so on.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isContextLost)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun isContextLost(): Boolean
 }
@@ -11522,6 +13817,8 @@ public external interface CanvasTransform : JsAny {
      * units horizontally and/or vertically.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/scale)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun scale(x: Double, y: Double)
 
@@ -11529,6 +13826,8 @@ public external interface CanvasTransform : JsAny {
      * The CanvasRenderingContext2D.rotate() method of the Canvas 2D API adds a rotation to the transformation matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rotate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun rotate(angle: Double)
 
@@ -11537,6 +13836,8 @@ public external interface CanvasTransform : JsAny {
      * current matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/translate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun translate(x: Double, y: Double)
 
@@ -11546,6 +13847,8 @@ public external interface CanvasTransform : JsAny {
      * context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/transform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun transform(a: Double, b: Double, c: Double, d: Double, e: Double, f: Double)
 
@@ -11554,6 +13857,8 @@ public external interface CanvasTransform : JsAny {
      * matrix being applied to the context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getTransform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getTransform(): DOMMatrix
 
@@ -11563,6 +13868,8 @@ public external interface CanvasTransform : JsAny {
      * method. This lets you scale, rotate, translate (move), and skew the context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setTransform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun setTransform(a: Double, b: Double, c: Double, d: Double, e: Double, f: Double)
 
@@ -11572,6 +13879,8 @@ public external interface CanvasTransform : JsAny {
      * method. This lets you scale, rotate, translate (move), and skew the context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setTransform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun setTransform(transform: DOMMatrix2DInit = definedExternally)
 
@@ -11580,6 +13889,8 @@ public external interface CanvasTransform : JsAny {
      * identity matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/resetTransform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun resetTransform()
 }
@@ -11590,6 +13901,8 @@ public external interface CanvasCompositing : JsAny {
      * that is applied to shapes and images before they are drawn onto the canvas.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/globalAlpha)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var globalAlpha: Double
 
@@ -11598,6 +13911,8 @@ public external interface CanvasCompositing : JsAny {
      * operation to apply when drawing new shapes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var globalCompositeOperation: String
 }
@@ -11609,6 +13924,8 @@ public external interface CanvasImageSmoothing : JsAny {
      * the last value it was set to is returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var imageSmoothingEnabled: Boolean
 
@@ -11617,6 +13934,8 @@ public external interface CanvasImageSmoothing : JsAny {
      * set the quality of image smoothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var imageSmoothingQuality: ImageSmoothingQuality
 }
@@ -11627,6 +13946,8 @@ public external interface CanvasFillStrokeStyles : JsAny {
      * to use for the strokes (outlines) around shapes. The default is black.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeStyle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var strokeStyle: JsAny
 
@@ -11635,6 +13956,8 @@ public external interface CanvasFillStrokeStyles : JsAny {
      * use inside shapes. The default style is black.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillStyle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var fillStyle: JsAny
 
@@ -11643,6 +13966,8 @@ public external interface CanvasFillStrokeStyles : JsAny {
      * connecting two given coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createLinearGradient)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun createLinearGradient(x0: Double, y0: Double, x1: Double, y1: Double): CanvasGradient
 
@@ -11651,6 +13976,8 @@ public external interface CanvasFillStrokeStyles : JsAny {
      * the size and coordinates of two circles.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createRadialGradient)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun createRadialGradient(x0: Double, y0: Double, r0: Double, x1: Double, y1: Double, r1: Double): CanvasGradient
 
@@ -11659,6 +13986,8 @@ public external interface CanvasFillStrokeStyles : JsAny {
      * with given coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createConicGradient)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun createConicGradient(startAngle: Double, x: Double, y: Double): CanvasGradient
 
@@ -11667,6 +13996,8 @@ public external interface CanvasFillStrokeStyles : JsAny {
      * image and repetition. This method returns a CanvasPattern.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createPattern)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun createPattern(image: CanvasImageSource, repetition: String): CanvasPattern?
 }
@@ -11677,6 +14008,8 @@ public external interface CanvasShadowStyles : JsAny {
      * be offset horizontally.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var shadowOffsetX: Double
 
@@ -11685,6 +14018,8 @@ public external interface CanvasShadowStyles : JsAny {
      * be offset vertically.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var shadowOffsetY: Double
 
@@ -11693,6 +14028,8 @@ public external interface CanvasShadowStyles : JsAny {
      * shadows. The default is 0 (no blur).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowBlur)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var shadowBlur: Double
 
@@ -11700,6 +14037,8 @@ public external interface CanvasShadowStyles : JsAny {
      * The CanvasRenderingContext2D.shadowColor property of the Canvas 2D API specifies the color of shadows.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowColor)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var shadowColor: String
 }
@@ -11710,6 +14049,8 @@ public external interface CanvasFilters : JsAny {
      * grayscaling. It is similar to the CSS filter property and accepts the same values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/filter)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var filter: String
 }
@@ -11720,6 +14061,8 @@ public external interface CanvasRect : JsAny {
      * setting them to transparent black.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/clearRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun clearRect(x: Double, y: Double, w: Double, h: Double)
 
@@ -11728,6 +14071,8 @@ public external interface CanvasRect : JsAny {
      * the current fillStyle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun fillRect(x: Double, y: Double, w: Double, h: Double)
 
@@ -11736,6 +14081,8 @@ public external interface CanvasRect : JsAny {
      * (outlined) according to the current strokeStyle and other context settings.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun strokeRect(x: Double, y: Double, w: Double, h: Double)
 }
@@ -11746,6 +14093,8 @@ public external interface CanvasDrawPath : JsAny {
      * sub-paths. Call this method when you want to create a new path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/beginPath)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun beginPath()
 
@@ -11754,6 +14103,8 @@ public external interface CanvasDrawPath : JsAny {
      * fillStyle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fill)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun fill(fillRule: CanvasFillRule = definedExternally)
 
@@ -11762,6 +14113,8 @@ public external interface CanvasDrawPath : JsAny {
      * fillStyle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fill)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun fill(path: Path2D, fillRule: CanvasFillRule = definedExternally)
 
@@ -11770,6 +14123,8 @@ public external interface CanvasDrawPath : JsAny {
      * with the current stroke style.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/stroke)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun stroke()
 
@@ -11778,6 +14133,8 @@ public external interface CanvasDrawPath : JsAny {
      * with the current stroke style.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/stroke)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun stroke(path: Path2D)
 
@@ -11787,6 +14144,8 @@ public external interface CanvasDrawPath : JsAny {
      * the new clipping region.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/clip)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun clip(fillRule: CanvasFillRule = definedExternally)
 
@@ -11796,6 +14155,8 @@ public external interface CanvasDrawPath : JsAny {
      * the new clipping region.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/clip)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun clip(path: Path2D, fillRule: CanvasFillRule = definedExternally)
 
@@ -11804,6 +14165,8 @@ public external interface CanvasDrawPath : JsAny {
      * point is contained in the current path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInPath)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun isPointInPath(x: Double, y: Double, fillRule: CanvasFillRule = definedExternally): Boolean
 
@@ -11812,6 +14175,8 @@ public external interface CanvasDrawPath : JsAny {
      * point is contained in the current path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInPath)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun isPointInPath(path: Path2D, x: Double, y: Double, fillRule: CanvasFillRule = definedExternally): Boolean
 
@@ -11820,6 +14185,8 @@ public external interface CanvasDrawPath : JsAny {
      * point is inside the area contained by the stroking of a path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInStroke)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun isPointInStroke(x: Double, y: Double): Boolean
 
@@ -11828,6 +14195,8 @@ public external interface CanvasDrawPath : JsAny {
      * point is inside the area contained by the stroking of a path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInStroke)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun isPointInStroke(path: Path2D, x: Double, y: Double): Boolean
 }
@@ -11838,6 +14207,8 @@ public external interface CanvasUserInterface : JsAny {
      * current or given path, if the specified element is focused.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawFocusIfNeeded)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun drawFocusIfNeeded(element: Element)
 
@@ -11846,6 +14217,8 @@ public external interface CanvasUserInterface : JsAny {
      * current or given path, if the specified element is focused.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawFocusIfNeeded)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun drawFocusIfNeeded(path: Path2D, element: Element)
 }
@@ -11858,6 +14231,8 @@ public external interface CanvasText : JsAny {
      * lower font size.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun fillText(text: String, x: Double, y: Double, maxWidth: Double = definedExternally)
 
@@ -11868,6 +14243,8 @@ public external interface CanvasText : JsAny {
      * using a lower font size.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun strokeText(text: String, x: Double, y: Double, maxWidth: Double = definedExternally)
 
@@ -11876,6 +14253,8 @@ public external interface CanvasText : JsAny {
      * the measured text (such as its width, for example).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/measureText)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun measureText(text: String): TextMetrics
 }
@@ -11886,6 +14265,8 @@ public external interface CanvasDrawImage : JsAny {
      * onto the canvas.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun drawImage(image: CanvasImageSource, dx: Double, dy: Double)
 
@@ -11894,6 +14275,8 @@ public external interface CanvasDrawImage : JsAny {
      * onto the canvas.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun drawImage(image: CanvasImageSource, dx: Double, dy: Double, dw: Double, dh: Double)
 
@@ -11902,6 +14285,8 @@ public external interface CanvasDrawImage : JsAny {
      * onto the canvas.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun drawImage(image: CanvasImageSource, sx: Double, sy: Double, sw: Double, sh: Double, dx: Double, dy: Double, dw: Double, dh: Double)
 }
@@ -11912,6 +14297,8 @@ public external interface CanvasImageData : JsAny {
      * with the specified dimensions. All of the pixels in the new object are transparent black.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createImageData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun createImageData(sw: Int, sh: Int, settings: ImageDataSettings = definedExternally): ImageData
 
@@ -11920,6 +14307,8 @@ public external interface CanvasImageData : JsAny {
      * with the specified dimensions. All of the pixels in the new object are transparent black.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createImageData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun createImageData(imageData: ImageData): ImageData
 
@@ -11928,6 +14317,8 @@ public external interface CanvasImageData : JsAny {
      * the underlying pixel data for a specified portion of the canvas.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getImageData(sx: Int, sy: Int, sw: Int, sh: Int, settings: ImageDataSettings = definedExternally): ImageData
 
@@ -11937,6 +14328,8 @@ public external interface CanvasImageData : JsAny {
      * method is not affected by the canvas transformation matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/putImageData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun putImageData(imageData: ImageData, dx: Int, dy: Int)
 
@@ -11946,6 +14339,8 @@ public external interface CanvasImageData : JsAny {
      * method is not affected by the canvas transformation matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/putImageData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun putImageData(imageData: ImageData, dx: Int, dy: Int, dirtyX: Int, dirtyY: Int, dirtyWidth: Int, dirtyHeight: Int)
 }
@@ -12052,6 +14447,8 @@ public external interface CanvasPathDrawingStyles : JsAny {
      * The CanvasRenderingContext2D.lineWidth property of the Canvas 2D API sets the thickness of lines.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineWidth)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var lineWidth: Double
 
@@ -12060,6 +14457,8 @@ public external interface CanvasPathDrawingStyles : JsAny {
      * points of lines.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineCap)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var lineCap: CanvasLineCap
 
@@ -12068,6 +14467,8 @@ public external interface CanvasPathDrawingStyles : JsAny {
      * segments where they meet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineJoin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var lineJoin: CanvasLineJoin
 
@@ -12075,6 +14476,8 @@ public external interface CanvasPathDrawingStyles : JsAny {
      * The CanvasRenderingContext2D.miterLimit property of the Canvas 2D API sets the miter limit ratio.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/miterLimit)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var miterLimit: Double
 
@@ -12084,6 +14487,8 @@ public external interface CanvasPathDrawingStyles : JsAny {
      * describe the pattern.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun setLineDash(segments: JsArray<JsNumber>)
 
@@ -12092,6 +14497,8 @@ public external interface CanvasPathDrawingStyles : JsAny {
      * pattern.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getLineDash)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun getLineDash(): JsArray<JsNumber>
 
@@ -12099,6 +14506,8 @@ public external interface CanvasPathDrawingStyles : JsAny {
      * The CanvasRenderingContext2D.lineDashOffset property of the Canvas 2D API sets the line dash offset, or "phase."
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineDashOffset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var lineDashOffset: Double
 }
@@ -12109,6 +14518,8 @@ public external interface CanvasTextDrawingStyles : JsAny {
      * context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lang)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var lang: String
 
@@ -12117,6 +14528,8 @@ public external interface CanvasTextDrawingStyles : JsAny {
      * drawing text. This string uses the same syntax as the CSS font specifier.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/font)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var font: String
 
@@ -12125,6 +14538,8 @@ public external interface CanvasTextDrawingStyles : JsAny {
      * when drawing text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textAlign)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var textAlign: CanvasTextAlign
 
@@ -12133,6 +14548,8 @@ public external interface CanvasTextDrawingStyles : JsAny {
      * when drawing text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textBaseline)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var textBaseline: CanvasTextBaseline
 
@@ -12141,6 +14558,8 @@ public external interface CanvasTextDrawingStyles : JsAny {
      * draw text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/direction)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var direction: CanvasDirection
 
@@ -12149,6 +14568,8 @@ public external interface CanvasTextDrawingStyles : JsAny {
      * drawing text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/letterSpacing)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var letterSpacing: String
 
@@ -12157,6 +14578,8 @@ public external interface CanvasTextDrawingStyles : JsAny {
      * used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontKerning)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var fontKerning: CanvasFontKerning
 
@@ -12165,6 +14588,8 @@ public external interface CanvasTextDrawingStyles : JsAny {
      * condensed when drawing text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontStretch)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var fontStretch: CanvasFontStretch
 
@@ -12173,6 +14598,8 @@ public external interface CanvasTextDrawingStyles : JsAny {
      * of the rendered text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontVariantCaps)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var fontVariantCaps: CanvasFontVariantCaps
 
@@ -12181,6 +14608,8 @@ public external interface CanvasTextDrawingStyles : JsAny {
      * engine about what to optimize for when rendering text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textRendering)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var textRendering: CanvasTextRendering
 
@@ -12189,6 +14618,8 @@ public external interface CanvasTextDrawingStyles : JsAny {
      * drawing text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/wordSpacing)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var wordSpacing: String
 }
@@ -12200,6 +14631,8 @@ public external interface CanvasPath : JsAny {
      * this function does nothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/closePath)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun closePath()
 
@@ -12208,6 +14641,8 @@ public external interface CanvasPath : JsAny {
      * the given (x, y) coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/moveTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun moveTo(x: Double, y: Double)
 
@@ -12216,6 +14651,8 @@ public external interface CanvasPath : JsAny {
      * sub-path by connecting the sub-path's last point to the specified (x, y) coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun lineTo(x: Double, y: Double)
 
@@ -12226,6 +14663,8 @@ public external interface CanvasPath : JsAny {
      * the quadratic Bézier curve.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double)
 
@@ -12236,6 +14675,8 @@ public external interface CanvasPath : JsAny {
      * Bézier curve.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/bezierCurveTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double)
 
@@ -12245,6 +14686,8 @@ public external interface CanvasPath : JsAny {
      * straight line if necessary, for example if the starting point and control points are in a line.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arcTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double)
 
@@ -12252,6 +14695,8 @@ public external interface CanvasPath : JsAny {
      * The CanvasRenderingContext2D.rect() method of the Canvas 2D API adds a rectangle to the current path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun rect(x: Double, y: Double, w: Double, h: Double)
 
@@ -12260,6 +14705,8 @@ public external interface CanvasPath : JsAny {
      * path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: Double)
 
@@ -12268,6 +14715,8 @@ public external interface CanvasPath : JsAny {
      * path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: DOMPointInit)
 
@@ -12276,6 +14725,8 @@ public external interface CanvasPath : JsAny {
      * path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: JsArray<JsAny>)
 
@@ -12284,6 +14735,8 @@ public external interface CanvasPath : JsAny {
      * path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun roundRect(x: Double, y: Double, w: Double, h: Double)
 
@@ -12291,6 +14744,8 @@ public external interface CanvasPath : JsAny {
      * The CanvasRenderingContext2D.arc() method of the Canvas 2D API adds a circular arc to the current sub-path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arc)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally)
 
@@ -12299,6 +14754,8 @@ public external interface CanvasPath : JsAny {
      * sub-path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/ellipse)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean = definedExternally)
 }
@@ -12309,6 +14766,8 @@ public external interface CanvasPath : JsAny {
  * CanvasRenderingContext2D.createRadialGradient().
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasGradient)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CanvasGradient : JsAny {
     /**
@@ -12316,6 +14775,8 @@ public abstract external class CanvasGradient : JsAny {
      * canvas gradient.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasGradient/addColorStop)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addColorStop(offset: Double, color: String)
 }
@@ -12325,6 +14786,8 @@ public abstract external class CanvasGradient : JsAny {
  * video, created by the CanvasRenderingContext2D.createPattern() method.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasPattern)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CanvasPattern : JsAny {
     /**
@@ -12332,6 +14795,8 @@ public abstract external class CanvasPattern : JsAny {
      * invokes it on the pattern.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasPattern/setTransform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setTransform(transform: DOMMatrix2DInit = definedExternally)
 }
@@ -12341,6 +14806,8 @@ public abstract external class CanvasPattern : JsAny {
  * retrieved using the CanvasRenderingContext2D.measureText() method.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class TextMetrics : JsAny {
     /**
@@ -12348,6 +14815,8 @@ public abstract external class TextMetrics : JsAny {
      * inline box) in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: Double
 
@@ -12358,6 +14827,8 @@ public abstract external class TextMetrics : JsAny {
      * going left from the given alignment point.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/actualBoundingBoxLeft)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val actualBoundingBoxLeft: Double
 
@@ -12367,6 +14838,8 @@ public abstract external class TextMetrics : JsAny {
      * right side of the bounding rectangle of the given text, in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/actualBoundingBoxRight)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val actualBoundingBoxRight: Double
 
@@ -12376,6 +14849,8 @@ public abstract external class TextMetrics : JsAny {
      * bounding rectangle of all the fonts used to render the text, in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/fontBoundingBoxAscent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val fontBoundingBoxAscent: Double
 
@@ -12385,6 +14860,8 @@ public abstract external class TextMetrics : JsAny {
      * rectangle of all the fonts used to render the text, in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/fontBoundingBoxDescent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val fontBoundingBoxDescent: Double
 
@@ -12394,6 +14871,8 @@ public abstract external class TextMetrics : JsAny {
      * rectangle used to render the text, in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/actualBoundingBoxAscent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val actualBoundingBoxAscent: Double
 
@@ -12403,6 +14882,8 @@ public abstract external class TextMetrics : JsAny {
      * bounding rectangle used to render the text, in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/actualBoundingBoxDescent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val actualBoundingBoxDescent: Double
 
@@ -12412,6 +14893,8 @@ public abstract external class TextMetrics : JsAny {
      * CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/emHeightAscent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val emHeightAscent: Double
 
@@ -12421,6 +14904,8 @@ public abstract external class TextMetrics : JsAny {
      * in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/emHeightDescent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val emHeightDescent: Double
 
@@ -12430,6 +14915,8 @@ public abstract external class TextMetrics : JsAny {
      * line box, in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/hangingBaseline)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val hangingBaseline: Double
 
@@ -12439,6 +14926,8 @@ public abstract external class TextMetrics : JsAny {
      * line box, in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/alphabeticBaseline)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val alphabeticBaseline: Double
 
@@ -12448,6 +14937,8 @@ public abstract external class TextMetrics : JsAny {
      * the line box, in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextMetrics/ideographicBaseline)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ideographicBaseline: Double
 }
@@ -12458,6 +14949,8 @@ public abstract external class TextMetrics : JsAny {
  * interface, which gives you the convenience of being able to retain and replay your path whenever desired.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class Path2D : CanvasPath {
     /**
@@ -12465,6 +14958,8 @@ public open external class Path2D : CanvasPath {
      * (creates a copy), or optionally with a string consisting of SVG path data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/Path2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(path: Path2D)
 
@@ -12473,6 +14968,8 @@ public open external class Path2D : CanvasPath {
      * (creates a copy), or optionally with a string consisting of SVG path data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/Path2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(path: String)
 
@@ -12481,6 +14978,8 @@ public open external class Path2D : CanvasPath {
      * (creates a copy), or optionally with a string consisting of SVG path data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/Path2D)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -12488,6 +14987,8 @@ public open external class Path2D : CanvasPath {
      * The Path2D.addPath() method of the Canvas 2D API adds one Path2D object to another Path2D object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/addPath)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addPath(path: Path2D, transform: DOMMatrix2DInit = definedExternally)
 
@@ -12497,6 +14998,8 @@ public open external class Path2D : CanvasPath {
      * this function does nothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/closePath)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun closePath()
 
@@ -12505,6 +15008,8 @@ public open external class Path2D : CanvasPath {
      * the given (x, y) coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/moveTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun moveTo(x: Double, y: Double)
 
@@ -12513,6 +15018,8 @@ public open external class Path2D : CanvasPath {
      * sub-path by connecting the sub-path's last point to the specified (x, y) coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun lineTo(x: Double, y: Double)
 
@@ -12523,6 +15030,8 @@ public open external class Path2D : CanvasPath {
      * the quadratic Bézier curve.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double)
 
@@ -12533,6 +15042,8 @@ public open external class Path2D : CanvasPath {
      * Bézier curve.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/bezierCurveTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double)
 
@@ -12542,6 +15053,8 @@ public open external class Path2D : CanvasPath {
      * straight line if necessary, for example if the starting point and control points are in a line.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arcTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double)
 
@@ -12549,6 +15062,8 @@ public open external class Path2D : CanvasPath {
      * The CanvasRenderingContext2D.rect() method of the Canvas 2D API adds a rectangle to the current path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun rect(x: Double, y: Double, w: Double, h: Double)
 
@@ -12557,6 +15072,8 @@ public open external class Path2D : CanvasPath {
      * path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: Double)
 
@@ -12565,6 +15082,8 @@ public open external class Path2D : CanvasPath {
      * path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: DOMPointInit)
 
@@ -12573,6 +15092,8 @@ public open external class Path2D : CanvasPath {
      * path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun roundRect(x: Double, y: Double, w: Double, h: Double, radii: JsArray<JsAny>)
 
@@ -12581,6 +15102,8 @@ public open external class Path2D : CanvasPath {
      * path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun roundRect(x: Double, y: Double, w: Double, h: Double)
 
@@ -12588,6 +15111,8 @@ public open external class Path2D : CanvasPath {
      * The CanvasRenderingContext2D.arc() method of the Canvas 2D API adds a circular arc to the current sub-path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arc)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean)
 
@@ -12596,6 +15121,8 @@ public open external class Path2D : CanvasPath {
      * sub-path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/ellipse)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean)
 }
@@ -12606,6 +15133,8 @@ public open external class Path2D : CanvasPath {
  * HTMLCanvasElement.getContext() or OffscreenCanvas.getContext()) is "bitmaprenderer".
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ImageBitmapRenderingContext : RenderingContext, OffscreenRenderingContext {
     /**
@@ -12613,6 +15142,8 @@ public abstract external class ImageBitmapRenderingContext : RenderingContext, O
      * HTMLCanvasElement or OffscreenCanvas object that is associated with the given context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext/canvas)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val canvas: UnionHTMLCanvasElementOrOffscreenCanvas
 
@@ -12621,6 +15152,8 @@ public abstract external class ImageBitmapRenderingContext : RenderingContext, O
      * associated with this rendering context. The ownership of the ImageBitmap is transferred to the canvas as well.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext/transferFromImageBitmap)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun transferFromImageBitmap(bitmap: ImageBitmap?)
 }
@@ -12660,12 +15193,16 @@ public inline val OffscreenRenderingContextId.Companion.WEBGPU: OffscreenRenderi
  * a significant impact on application performance.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElementOrOffscreenCanvas {
     /**
      * The OffscreenCanvas() constructor returns a newly instantiated OffscreenCanvas object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/OffscreenCanvas)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(width: Double, height: Double)
 
@@ -12673,6 +15210,8 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      * The width property returns and sets the width of an OffscreenCanvas object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var width: Double
 
@@ -12680,6 +15219,8 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      * The height property returns and sets the height of an OffscreenCanvas object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var height: Double
 
@@ -12688,6 +15229,8 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      * identifier is not supported, or the offscreen canvas has already been set to a different context mode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/getContext)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getContext(contextId: OffscreenRenderingContextId, options: JsAny? = definedExternally): OffscreenRenderingContext?
 
@@ -12697,6 +15240,8 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      * image for subsequent rendering.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/transferToImageBitmap)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun transferToImageBitmap(): ImageBitmap
 
@@ -12704,6 +15249,8 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      * The OffscreenCanvas.convertToBlob() method creates a Blob object representing the image contained in the canvas.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun convertToBlob(options: ImageEncodeOptions = definedExternally): Promise<Blob>
 
@@ -12713,6 +15260,8 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      * associated GPU driver crashes, or the application runs out of memory, and so on.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextlost_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var oncontextlost: ((Event) -> Unit)?
 
@@ -12721,6 +15270,8 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
      * OffscreenCanvasRenderingContext2D context that was previously lost.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextrestored_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var oncontextrestored: ((Event) -> Unit)?
 }
@@ -12730,6 +15281,8 @@ public open external class OffscreenCanvas : EventTarget, UnionHTMLCanvasElement
  * bitmap of an OffscreenCanvas object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class OffscreenCanvasRenderingContext2D : CanvasSettings, CanvasState, CanvasTransform, CanvasCompositing, CanvasImageSmoothing, CanvasFillStrokeStyles, CanvasShadowStyles, CanvasFilters, CanvasRect, CanvasDrawPath, CanvasText, CanvasDrawImage, CanvasImageData, CanvasPathDrawingStyles, CanvasTextDrawingStyles, CanvasPath, OffscreenRenderingContext {
     /**
@@ -12737,6 +15290,8 @@ public abstract external class OffscreenCanvasRenderingContext2D : CanvasSetting
      * HTMLCanvasElement object that is associated with a given context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val canvas: OffscreenCanvas
 }
@@ -12757,12 +15312,16 @@ public inline val PredefinedColorSpace.Companion.DISPLAY_P3_LINEAR: PredefinedCo
  * CustomElementRegistry() constructor.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class CustomElementRegistry : JsAny {
     /**
      * The CustomElementRegistry() constructor creates a new CustomElementRegistry object for scoped usage.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/CustomElementRegistry)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -12771,6 +15330,8 @@ public open external class CustomElementRegistry : JsAny {
      * element registry, mapping its name to the constructor which will be used to create it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/define)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun define(name: String, constructor: () -> HTMLElement, options: ElementDefinitionOptions = definedExternally)
 
@@ -12779,6 +15340,8 @@ public open external class CustomElementRegistry : JsAny {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/get)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun get(name: String): (() -> HTMLElement)?
 
@@ -12787,6 +15350,8 @@ public open external class CustomElementRegistry : JsAny {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getName(constructor: () -> HTMLElement): String?
 
@@ -12795,6 +15360,8 @@ public open external class CustomElementRegistry : JsAny {
      * element is defined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun whenDefined(name: String): Promise<JsAny>
 
@@ -12803,6 +15370,8 @@ public open external class CustomElementRegistry : JsAny {
      * Node subtree, even before they are connected to the main document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/upgrade)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun upgrade(root: Node)
 
@@ -12812,6 +15381,8 @@ public open external class CustomElementRegistry : JsAny {
      * upgrade any custom elements found.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/initialize)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initialize(root: Node)
 }
@@ -12830,12 +15401,16 @@ public fun ElementDefinitionOptions(extends: String? = null): ElementDefinitionO
  * with any standard HTML form element, and also exposes the Accessibility Object Model to the element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ElementInternals : ARIAMixin {
     /**
      * The shadowRoot read-only property of the ElementInternals interface returns the ShadowRoot for this element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/shadowRoot)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val shadowRoot: ShadowRoot?
 
@@ -12844,6 +15419,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: File?, state: File?)
 
@@ -12852,6 +15429,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: File?, state: String?)
 
@@ -12860,6 +15439,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: File?, state: FormData?)
 
@@ -12868,6 +15449,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: File?)
 
@@ -12876,6 +15459,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: String?, state: File?)
 
@@ -12884,6 +15469,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: String?, state: String?)
 
@@ -12892,6 +15479,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: String?, state: FormData?)
 
@@ -12900,6 +15489,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: String?)
 
@@ -12908,6 +15499,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: FormData?, state: File?)
 
@@ -12916,6 +15509,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: FormData?, state: String?)
 
@@ -12924,6 +15519,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: FormData?, state: FormData?)
 
@@ -12932,6 +15529,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setFormValue(value: FormData?)
 
@@ -12940,6 +15539,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/form)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val form: HTMLFormElement?
 
@@ -12947,6 +15548,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * The setValidity() method of the ElementInternals interface sets the validity of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setValidity(flags: ValidityStateFlags = definedExternally, message: String = definedExternally, anchor: HTMLElement = definedExternally)
 
@@ -12955,6 +15558,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * submittable element that is a candidate for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/willValidate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val willValidate: Boolean
 
@@ -12963,6 +15568,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * the different validity states the element can be in, with respect to constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/validity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validity: ValidityState
 
@@ -12971,6 +15578,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/validationMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val validationMessage: String
 
@@ -12979,6 +15588,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * validation rules applied to it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/checkValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun checkValidity(): Boolean
 
@@ -12987,6 +15598,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * validation rules applied to it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/reportValidity)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reportValidity(): Boolean
 
@@ -12994,6 +15607,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * The labels read-only property of the ElementInternals interface returns the labels associated with the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/labels)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val labels: NodeList
 
@@ -13002,6 +15617,8 @@ public abstract external class ElementInternals : ARIAMixin {
      * possible states of the custom element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/states)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val states: CustomStateSet
 }
@@ -13037,6 +15654,8 @@ public fun ValidityStateFlags(valueMissing: Boolean? = null, typeMismatch: Boole
  * and allows states to be added and removed from the set.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomStateSet)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CustomStateSet : JsAny {
     // not printed yet: setlike
@@ -13047,6 +15666,8 @@ public abstract external class CustomStateSet : JsAny {
  * the foreground to the background or vice versa.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisibilityStateEntry)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class VisibilityStateEntry : PerformanceEntry {
     override val name: String
@@ -13059,6 +15680,8 @@ public abstract external class VisibilityStateEntry : PerformanceEntry {
  * completed an interaction since page load.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class UserActivation : JsAny {
     /**
@@ -13066,6 +15689,8 @@ public abstract external class UserActivation : JsAny {
      * sticky user activation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation/hasBeenActive)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val hasBeenActive: Boolean
 
@@ -13074,6 +15699,8 @@ public abstract external class UserActivation : JsAny {
      * transient user activation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation/isActive)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val isActive: Boolean
 }
@@ -13083,12 +15710,16 @@ public abstract external class UserActivation : JsAny {
  * hidden.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ToggleEvent : Event {
     /**
      * The ToggleEvent() constructor creates a new ToggleEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/ToggleEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: ToggleEventInit = definedExternally)
 
@@ -13097,6 +15728,8 @@ public open external class ToggleEvent : Event {
      * transitioning from.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/oldState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val oldState: String
 
@@ -13105,6 +15738,8 @@ public open external class ToggleEvent : Event {
      * transitioning to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/newState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val newState: String
 
@@ -13113,6 +15748,8 @@ public open external class ToggleEvent : Event {
      * popover control element that initiated the toggle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/source)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val source: Element?
 
@@ -13144,12 +15781,16 @@ public fun ToggleEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null
  * and command attributes is about to invoke an interactive element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class CommandEvent : Event {
     /**
      * The CommandEvent() constructor creates a new CommandEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/CommandEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: CommandEventInit = definedExternally)
 
@@ -13158,6 +15799,8 @@ public open external class CommandEvent : Event {
      * invoked the given command.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/source)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val source: Element?
 
@@ -13166,6 +15809,8 @@ public open external class CommandEvent : Event {
      * property at the time the event was dispatched.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/command)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val command: String
 
@@ -13205,6 +15850,8 @@ public external interface ElementContentEditable : JsAny {
      * The contentEditable property of the HTMLElement interface specifies whether or not the element is editable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var contentEditable: String
 
@@ -13213,6 +15860,8 @@ public external interface ElementContentEditable : JsAny {
      * key on virtual keyboards.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/enterKeyHint)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var enterKeyHint: String
 
@@ -13221,6 +15870,8 @@ public external interface ElementContentEditable : JsAny {
      * element are editable; otherwise it returns false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/isContentEditable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val isContentEditable: Boolean
 
@@ -13228,6 +15879,8 @@ public external interface ElementContentEditable : JsAny {
      * The HTMLElement property inputMode reflects the value of the element's inputmode attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/inputMode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var inputMode: String
 }
@@ -13237,12 +15890,16 @@ public external interface ElementContentEditable : JsAny {
  * close actions in the same way as a built-in component.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class CloseWatcher : EventTarget {
     /**
      * The CloseWatcher() constructor creates a new CloseWatcher object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/CloseWatcher)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(options: CloseWatcherOptions = definedExternally)
 
@@ -13252,6 +15909,8 @@ public open external class CloseWatcher : EventTarget {
      * destroy() was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/requestClose)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun requestClose()
 
@@ -13260,6 +15919,8 @@ public open external class CloseWatcher : EventTarget {
      * immediately fire the close event. It then deactivates the close watcher as if destroy() was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close()
 
@@ -13268,6 +15929,8 @@ public open external class CloseWatcher : EventTarget {
      * if the relevant UI element is torn down in some other way than being closed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/destroy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun destroy()
 
@@ -13277,6 +15940,8 @@ public open external class CloseWatcher : EventTarget {
      * CloseWatcher.requestClose().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/cancel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var oncancel: ((Event) -> Unit)?
 
@@ -13285,6 +15950,8 @@ public open external class CloseWatcher : EventTarget {
      * event that preceded the close one was not canceled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseWatcher/close_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onclose: ((Event) -> Unit)?
 }
@@ -13302,12 +15969,16 @@ public fun CloseWatcherOptions(signal: AbortSignal? = null): CloseWatcherOptions
  * clipboard read/write. It may hold one or more data items, each of one or more data types.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class DataTransfer : JsAny {
     /**
      * The DataTransfer constructor creates a new DataTransfer object instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/DataTransfer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -13317,6 +15988,8 @@ public open external class DataTransfer : JsAny {
      * target drop element, the browser's cursor may indicate which type of operation will occur.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/dropEffect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var dropEffect: String
 
@@ -13328,6 +16001,8 @@ public open external class DataTransfer : JsAny {
      * the source and drop locations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/effectAllowed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var effectAllowed: String
 
@@ -13337,6 +16012,8 @@ public open external class DataTransfer : JsAny {
      * no items, the list is empty.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/items)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val items: DataTransferItemList
 
@@ -13345,6 +16022,8 @@ public open external class DataTransfer : JsAny {
      * will typically be an &lt;img&gt; element but it can also be a &lt;canvas&gt; or any other visible element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/setDragImage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setDragImage(image: Element, x: Int, y: Int)
 
@@ -13352,6 +16031,8 @@ public open external class DataTransfer : JsAny {
      * The types read-only property of the DataTransfer interface returns the available types that exist in the items.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/types)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val types: JsArray<JsString>
 
@@ -13360,6 +16041,8 @@ public open external class DataTransfer : JsAny {
      * the drag operation does not include data, this method returns an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/getData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getData(format: String): String
 
@@ -13371,6 +16054,8 @@ public open external class DataTransfer : JsAny {
      * same type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/setData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setData(format: String, data: String)
 
@@ -13379,6 +16064,8 @@ public open external class DataTransfer : JsAny {
      * If data for the given type does not exist, this method does nothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/clearData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clearData(format: String = definedExternally)
 
@@ -13387,6 +16074,8 @@ public open external class DataTransfer : JsAny {
      * operation includes no files, the list is empty.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/files)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val files: FileList
 }
@@ -13396,6 +16085,8 @@ public open external class DataTransfer : JsAny {
  * operation, each DragEvent has a dataTransfer property and that property is a DataTransferItemList.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class DataTransferItemList : JsAny {
     /**
@@ -13403,6 +16094,8 @@ public abstract external class DataTransferItemList : JsAny {
      * drag item list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -13412,6 +16105,8 @@ public abstract external class DataTransferItemList : JsAny {
      * successfully added to the list, the newly-created DataTransferItem object is returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/add)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun add(data: String, type: String): DataTransferItem?
 
@@ -13421,6 +16116,8 @@ public abstract external class DataTransferItemList : JsAny {
      * successfully added to the list, the newly-created DataTransferItem object is returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/add)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun add(data: File): DataTransferItem?
 
@@ -13430,6 +16127,8 @@ public abstract external class DataTransferItemList : JsAny {
      * not be changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/remove)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun remove(index: Int)
 
@@ -13438,6 +16137,8 @@ public abstract external class DataTransferItemList : JsAny {
      * items list, leaving the list empty.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/clear)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clear()
 }
@@ -13449,6 +16150,8 @@ public operator fun DataTransferItemList.get(index: Int): DataTransferItem? = ge
  * property which contains a list of drag data items. Each item in the list is a DataTransferItem object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class DataTransferItem : JsAny {
     /**
@@ -13456,6 +16159,8 @@ public abstract external class DataTransferItem : JsAny {
      * representing the drag data item.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val kind: String
 
@@ -13465,6 +16170,8 @@ public abstract external class DataTransferItem : JsAny {
      * type is not required.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/type)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val type: String
 
@@ -13473,6 +16180,8 @@ public abstract external class DataTransferItem : JsAny {
      * string data as the argument if the item's kind is a Plain unicode string (i.e., kind is string).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/getAsString)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getAsString(callback: ((String) -> Unit)?)
 
@@ -13481,6 +16190,8 @@ public abstract external class DataTransferItem : JsAny {
      * a file. If the item is not a file, this method returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/getAsFile)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getAsFile(): File?
 }
@@ -13492,12 +16203,16 @@ public abstract external class DataTransferItem : JsAny {
  * way.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class DragEvent : MouseEvent {
     /**
      * This constructor is used to create a synthetic DragEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent/DragEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: DragEventInit = definedExternally)
 
@@ -13505,6 +16220,8 @@ public open external class DragEvent : MouseEvent {
      * The DragEvent.dataTransfer read-only property holds the drag operation's data (as a DataTransfer object).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent/dataTransfer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val dataTransfer: DataTransfer?
 
@@ -13557,6 +16274,8 @@ public external interface PopoverTargetAttributes : JsAny {
      * via an &lt;input&gt; element of type="button".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/popoverTargetElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var popoverTargetElement: Element?
 
@@ -13565,6 +16284,8 @@ public external interface PopoverTargetAttributes : JsAny {
      * ("hide", "show", or "toggle") on a popover element being controlled by an &lt;input&gt; element of type="button".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/popoverTargetAction)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var popoverTargetAction: String
 }
@@ -13585,12 +16306,16 @@ public open external class Origin : JsAny {
  * loaded in that window.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Window : EventTarget, GlobalEventHandlers, WindowEventHandlers, WindowOrWorkerGlobalScope, AnimationFrameProvider, WindowSessionStorage, WindowLocalStorage, MessageEventSource {
     /**
      * The window read-only property of the Window interface points to the window object itself.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/window)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val window: Window
 
@@ -13602,6 +16327,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * a worker context (self will then resolve to WorkerGlobalScope.self).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/self)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val self: Window
 
@@ -13610,6 +16337,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * window.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/document)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val document: Document
 
@@ -13617,6 +16346,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The Window.name property gets/sets the name of the window's browsing context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var name: String
 
@@ -13625,6 +16356,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * current location of the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/location)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val location: Location
 
@@ -13633,6 +16366,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * manipulating the browser session history (pages visited in the tab or frame that the current page is loaded in).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/history)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val history: History
 
@@ -13641,6 +16376,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/navigation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigation: Navigation
 
@@ -13650,6 +16387,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * previously registered custom elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/customElements)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val customElements: CustomElementRegistry
 
@@ -13657,6 +16396,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The locationbar read-only property of the Window interface returns the locationbar object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/locationbar)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val locationbar: BarProp
 
@@ -13664,6 +16405,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The menubar read-only property of the Window interface returns the menubar object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/menubar)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val menubar: BarProp
 
@@ -13671,6 +16414,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The personalbar read-only property of the Window interface returns the personalbar object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/personalbar)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val personalbar: BarProp
 
@@ -13678,6 +16423,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The scrollbars read-only property of the Window interface returns the scrollbars object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollbars)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val scrollbars: BarProp
 
@@ -13685,6 +16432,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The statusbar read-only property of the Window interface returns the statusbar object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/statusbar)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val statusbar: BarProp
 
@@ -13692,6 +16441,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The toolbar read-only property of the Window interface returns the toolbar object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/toolbar)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val toolbar: BarProp
 
@@ -13703,6 +16454,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/status)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var status: String
 
@@ -13710,6 +16463,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The Window.close() method closes the current window, or the window on which it was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close()
 
@@ -13717,6 +16472,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The Window.closed read-only property indicates whether the referenced window is closed or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/closed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val closed: Boolean
 
@@ -13725,6 +16482,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * in the browser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/stop)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun stop()
 
@@ -13733,6 +16492,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * guaranteed to be frontmost before this method returns.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focus)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun focus()
 
@@ -13742,6 +16503,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/blur)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun blur()
 
@@ -13750,6 +16513,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * listing the direct sub-frames of the current window.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/frames)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val frames: Window
 
@@ -13758,6 +16523,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * &lt;iframe&gt; elements) in the window.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -13766,6 +16533,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * hierarchy.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/top)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val top: Window?
 
@@ -13774,6 +16543,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * open(), or by navigating a link with a target attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/opener)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var opener: JsAny?
 
@@ -13782,6 +16553,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * subframe.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/parent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val parent: Window?
 
@@ -13790,6 +16563,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * &lt;object&gt;) in which the window is embedded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/frameElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val frameElement: Element?
 
@@ -13798,6 +16573,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * (that is, a tab, a window, or an iframe) under a specified name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/open)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun open(url: String = definedExternally, target: String = definedExternally, features: String = definedExternally): Window?
 
@@ -13806,6 +16583,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * properties about the application running the script.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/navigator)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigator: Navigator
     public open val clientInformation: Navigator
@@ -13816,6 +16595,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * operating system process) to this window's origin that are not shared with windows from other origins.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/originAgentCluster)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val originAgentCluster: Boolean
 
@@ -13824,6 +16605,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * dismisses the dialog.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/alert)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun alert()
 
@@ -13832,6 +16615,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * dismisses the dialog.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/alert)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun alert(message: String)
 
@@ -13840,6 +16625,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * either confirms or cancels the dialog.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/confirm)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun confirm(message: String = definedExternally): Boolean
 
@@ -13848,6 +16635,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * some text, and to wait until the user either submits the text or cancels the dialog.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/prompt)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun prompt(message: String = definedExternally, default: String = definedExternally): String?
 
@@ -13855,6 +16644,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * Opens the print dialog to print the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/print)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun print()
 
@@ -13863,6 +16654,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * page and a pop-up that it spawned, or between a page and an iframe embedded within it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, targetOrigin: String, transfer: JsArray<JsAny> = definedExternally)
 
@@ -13871,6 +16664,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * page and a pop-up that it spawned, or between a page and an iframe embedded within it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, options: WindowPostMessageOptions = definedExternally)
 
@@ -13881,6 +16676,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/captureEvents)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun captureEvents()
 
@@ -13890,6 +16687,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/releaseEvents)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun releaseEvents()
 
@@ -13901,6 +16700,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/external)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val external: External
 
@@ -13911,6 +16712,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val event: Event?
 
@@ -13920,6 +16723,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * stops matching) that media query.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/matchMedia)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun matchMedia(query: String): MediaQueryList
 
@@ -13929,6 +16734,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * of the screen on which the current window is being rendered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screen)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val screen: Screen
 
@@ -13937,6 +16744,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * visual viewport for a given window, or null if current document is not fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/visualViewport)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val visualViewport: VisualViewport?
 
@@ -13944,6 +16753,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The moveTo() method of the Window interface moves the current window to the specified coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/moveTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun moveTo(x: Int, y: Int)
 
@@ -13951,6 +16762,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The moveBy() method of the Window interface moves the current window by a specified amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/moveBy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun moveBy(x: Int, y: Int)
 
@@ -13958,6 +16771,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The Window.resizeTo() method dynamically resizes the window.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resizeTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun resizeTo(width: Int, height: Int)
 
@@ -13965,6 +16780,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The Window.resizeBy() method resizes the current window by a specified amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resizeBy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun resizeBy(x: Int, y: Int)
 
@@ -13973,6 +16790,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * of the window's layout viewport). That includes the width of the vertical scroll bar, if one is present.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerWidth)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val innerWidth: Int
 
@@ -13981,6 +16800,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * including the height of the horizontal scroll bar, if present.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerHeight)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val innerHeight: Int
 
@@ -13991,6 +16812,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val scrollX: Double
     public open val pageXOffset: Double
@@ -14002,6 +16825,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * scrollX property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val scrollY: Double
     public open val pageYOffset: Double
@@ -14010,6 +16835,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The scroll() method of the Window interface scrolls the window to a particular place in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scroll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun scroll(options: ScrollToOptions = definedExternally): Promise<ScrollResult>
 
@@ -14017,6 +16844,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The scroll() method of the Window interface scrolls the window to a particular place in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scroll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun scroll(x: Double, y: Double): Promise<ScrollResult>
 
@@ -14024,6 +16853,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The scrollTo() method of the Window interface scrolls to a particular set of coordinates in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun scrollTo(options: ScrollToOptions = definedExternally): Promise<ScrollResult>
 
@@ -14031,6 +16862,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The scrollTo() method of the Window interface scrolls to a particular set of coordinates in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun scrollTo(x: Double, y: Double): Promise<ScrollResult>
 
@@ -14038,6 +16871,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The scrollBy() method of the Window interface scrolls the document in the window by the given amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollBy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun scrollBy(options: ScrollToOptions = definedExternally): Promise<ScrollResult>
 
@@ -14045,6 +16880,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * The scrollBy() method of the Window interface scrolls the document in the window by the given amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollBy)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun scrollBy(x: Double, y: Double): Promise<ScrollResult>
 
@@ -14053,6 +16890,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * left border of the user's browser window to the left side of the screen.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenX)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val screenX: Int
 
@@ -14061,6 +16900,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * the left border of the user's browser window to the left side of the screen.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenLeft)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val screenLeft: Int
 
@@ -14069,6 +16910,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * border of the user's browser window to the top side of the screen.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenY)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val screenY: Int
 
@@ -14077,6 +16920,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * top border of the user's browser window to the top side of the screen.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenTop)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val screenTop: Int
 
@@ -14086,6 +16931,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * borders/handles.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerWidth)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val outerWidth: Int
 
@@ -14094,6 +16941,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * sidebar, window chrome, and window-resizing borders/handles.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerHeight)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val outerHeight: Int
 
@@ -14102,6 +16951,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * pixels to the resolution in CSS pixels for the current display device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val devicePixelRatio: Double
 
@@ -14111,6 +16962,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * values may contain.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/getComputedStyle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getComputedStyle(elt: Element, pseudoElt: String? = definedExternally): CSSStyleProperties
 
@@ -14120,6 +16973,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fetchLater)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun fetchLater(input: Request, init: DeferredRequestInit = definedExternally): FetchLaterResult
 
@@ -14129,6 +16984,8 @@ public abstract external class Window : EventTarget, GlobalEventHandlers, Window
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fetchLater)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun fetchLater(input: String, init: DeferredRequestInit = definedExternally): FetchLaterResult
 }
@@ -14149,6 +17006,8 @@ public fun WindowPostMessageOptions(transfer: JsArray<JsAny>? = null, targetOrig
  * exposed to scripts in web pages. Each of the following interface elements are represented by a BarProp object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BarProp)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class BarProp : JsAny {
     /**
@@ -14156,6 +17015,8 @@ public abstract external class BarProp : JsAny {
      * is visible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BarProp/visible)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val visible: Boolean
 }
@@ -14166,6 +17027,8 @@ public abstract external class BarProp : JsAny {
  * Document.location and Window.location respectively.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Location : JsAny {
     /**
@@ -14173,6 +17036,8 @@ public abstract external class Location : JsAny {
      * allows the href to be updated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/href)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var href: String
 
@@ -14181,6 +17046,8 @@ public abstract external class Location : JsAny {
      * the origin of the location's URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/origin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val origin: String
 
@@ -14189,6 +17056,8 @@ public abstract external class Location : JsAny {
      * URL, including the final ":".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/protocol)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var protocol: String
 
@@ -14198,6 +17067,8 @@ public abstract external class Location : JsAny {
      * this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/host)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var host: String
 
@@ -14207,6 +17078,8 @@ public abstract external class Location : JsAny {
      * addresses are normalized, such as stripping leading zeros, and domain names are converted to IDN.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/hostname)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var hostname: String
 
@@ -14216,6 +17089,8 @@ public abstract external class Location : JsAny {
      * property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/port)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var port: String
 
@@ -14225,6 +17100,8 @@ public abstract external class Location : JsAny {
      * URL, not including the query string or fragment.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/pathname)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var pathname: String
 
@@ -14234,6 +17111,8 @@ public abstract external class Location : JsAny {
      * property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/search)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var search: String
 
@@ -14242,6 +17121,8 @@ public abstract external class Location : JsAny {
      * the location URL. If the URL does not have a fragment identifier, this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/hash)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var hash: String
 
@@ -14251,6 +17132,8 @@ public abstract external class Location : JsAny {
      * pressing the "back" button.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/assign)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun assign(url: String)
 
@@ -14261,6 +17144,8 @@ public abstract external class Location : JsAny {
      * the String method String.prototype.replace().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/replace)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun replace(url: String)
 
@@ -14268,6 +17153,8 @@ public abstract external class Location : JsAny {
      * The reload() method of the Location interface reloads the current URL, like the Refresh button.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/reload)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reload()
 
@@ -14276,6 +17163,8 @@ public abstract external class Location : JsAny {
      * order, the origins of all ancestor browsing contexts of the document associated with the given Location object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/ancestorOrigins)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ancestorOrigins: DOMStringList
 }
@@ -14293,6 +17182,8 @@ public inline val ScrollRestoration.Companion.MANUAL: ScrollRestoration get() = 
  * visited in the tab or frame that the current page is loaded in.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class History : JsAny {
     /**
@@ -14300,6 +17191,8 @@ public abstract external class History : JsAny {
      * the session history, including the currently loaded page.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -14308,6 +17201,8 @@ public abstract external class History : JsAny {
      * restoration behavior on history navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/scrollRestoration)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var scrollRestoration: ScrollRestoration
 
@@ -14316,6 +17211,8 @@ public abstract external class History : JsAny {
      * history stack. This is a way to look at the state without having to wait for a popstate event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/state)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val state: JsAny?
 
@@ -14324,6 +17221,8 @@ public abstract external class History : JsAny {
      * forwards and backwards through the history depending on the value of a parameter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/go)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun go(delta: Int = definedExternally)
 
@@ -14331,6 +17230,8 @@ public abstract external class History : JsAny {
      * The back() method of the History interface causes the browser to move back one page in the session history.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/back)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun back()
 
@@ -14339,6 +17240,8 @@ public abstract external class History : JsAny {
      * It has the same effect as calling history.go(1).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/forward)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun forward()
 
@@ -14346,6 +17249,8 @@ public abstract external class History : JsAny {
      * The pushState() method of the History interface adds an entry to the browser's session history stack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/pushState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun pushState(data: JsAny?, unused: String, url: String? = definedExternally)
 
@@ -14355,6 +17260,8 @@ public abstract external class History : JsAny {
      * the state object or URL of the current history entry in response to some user action.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/replaceState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun replaceState(data: JsAny?, unused: String, url: String? = definedExternally)
 }
@@ -14365,6 +17272,8 @@ public abstract external class History : JsAny {
  * managing navigations as they happen.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Navigation : EventTarget {
     /**
@@ -14372,6 +17281,8 @@ public abstract external class Navigation : EventTarget {
      * all existing history entries.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/entries)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun entries(): JsArray<NavigationHistoryEntry>
 
@@ -14380,6 +17291,8 @@ public abstract external class Navigation : EventTarget {
      * representing the location the user is currently navigated to right now.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/currentEntry)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val currentEntry: NavigationHistoryEntry?
 
@@ -14388,6 +17301,8 @@ public abstract external class Navigation : EventTarget {
      * where the state change will be independent of a navigation or reload.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/updateCurrentEntry)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun updateCurrentEntry(options: NavigationUpdateCurrentEntryOptions)
 
@@ -14396,6 +17311,8 @@ public abstract external class Navigation : EventTarget {
      * the status of an in-progress navigation, which can be used to track it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/transition)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val transition: NavigationTransition?
 
@@ -14405,6 +17322,8 @@ public abstract external class Navigation : EventTarget {
      * stay constant during same-document navigations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/activation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val activation: NavigationActivation?
 
@@ -14414,6 +17333,8 @@ public abstract external class Navigation : EventTarget {
      * it is not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/canGoBack)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val canGoBack: Boolean
 
@@ -14423,6 +17344,8 @@ public abstract external class Navigation : EventTarget {
      * false if it is not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/canGoForward)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val canGoForward: Boolean
 
@@ -14431,6 +17354,8 @@ public abstract external class Navigation : EventTarget {
      * history entries list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun navigate(url: String, options: NavigationNavigateOptions = definedExternally): NavigationResult
 
@@ -14439,6 +17364,8 @@ public abstract external class Navigation : EventTarget {
      * history entries list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/reload)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun reload(options: NavigationReloadOptions = definedExternally): NavigationResult
 
@@ -14447,6 +17374,8 @@ public abstract external class Navigation : EventTarget {
      * given key.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/traverseTo)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun traverseTo(key: String, options: NavigationOptions = definedExternally): NavigationResult
 
@@ -14454,6 +17383,8 @@ public abstract external class Navigation : EventTarget {
      * The back() method of the Navigation interface navigates backwards by one entry in the navigation history.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/back)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun back(options: NavigationOptions = definedExternally): NavigationResult
 
@@ -14461,6 +17392,8 @@ public abstract external class Navigation : EventTarget {
      * The forward() method of the Navigation interface navigates forwards by one entry in the navigation history.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/forward)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun forward(options: NavigationOptions = definedExternally): NavigationResult
 
@@ -14469,6 +17402,8 @@ public abstract external class Navigation : EventTarget {
      * intercept as required.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigate_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onnavigate: ((NavigateEvent) -> Unit)?
 
@@ -14476,6 +17411,8 @@ public abstract external class Navigation : EventTarget {
      * The navigatesuccess event of the Navigation interface is fired when a successful navigation has finished.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigatesuccess_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onnavigatesuccess: ((Event) -> Unit)?
 
@@ -14483,6 +17420,8 @@ public abstract external class Navigation : EventTarget {
      * The navigateerror event of the Navigation interface is fired when a navigation fails.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigateerror_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onnavigateerror: ((ErrorEvent) -> Unit)?
 
@@ -14490,6 +17429,8 @@ public abstract external class Navigation : EventTarget {
      * The currententrychange event of the Navigation interface is fired when the Navigation.currentEntry has changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/currententrychange_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var oncurrententrychange: ((NavigationCurrentEntryChangeEvent) -> Unit)?
 }
@@ -14563,6 +17504,8 @@ public inline val NavigationType.Companion.TRAVERSE: NavigationType get() = "tra
  * The NavigationHistoryEntry interface of the Navigation API represents a single navigation history entry.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class NavigationHistoryEntry : EventTarget {
     /**
@@ -14572,6 +17515,8 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      * returns null. If current document is not fully active, it returns an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/url)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val url: String?
 
@@ -14583,6 +17528,8 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      * the NavigateEvent.navigationType is replace).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/key)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val key: String
 
@@ -14592,6 +17539,8 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      * a specific history entry, useful to correlate it with an external resource such as a storage cache.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/id)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val id: String
 
@@ -14601,6 +17550,8 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      * in the list or if current document is not fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/index)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val index: Double
 
@@ -14609,6 +17560,8 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      * for the same document as the current Document value and current document is fully active, or false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/sameDocument)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val sameDocument: Boolean
 
@@ -14617,6 +17570,8 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      * associated with this history entry.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/getState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getState(): JsAny?
 
@@ -14625,6 +17580,8 @@ public abstract external class NavigationHistoryEntry : EventTarget {
      * history entry list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/dispose_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var ondispose: ((Event) -> Unit)?
 }
@@ -14634,6 +17591,8 @@ public abstract external class NavigationHistoryEntry : EventTarget {
  * yet reached the navigatesuccess or navigateerror stage.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class NavigationTransition : JsAny {
     /**
@@ -14641,6 +17600,8 @@ public abstract external class NavigationTransition : JsAny {
      * navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/navigationType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigationType: NavigationType
 
@@ -14649,6 +17610,8 @@ public abstract external class NavigationTransition : JsAny {
      * transition is coming from.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/from)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val from: NavigationHistoryEntry
 
@@ -14657,6 +17620,8 @@ public abstract external class NavigationTransition : JsAny {
      * transition is navigating to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/to)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val to: NavigationDestination
 
@@ -14666,6 +17631,8 @@ public abstract external class NavigationTransition : JsAny {
      * committed. This happens after all precommit handlers for the navigation are fulfilled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/committed)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val committed: Promise<JsAny?>
 
@@ -14674,6 +17641,8 @@ public abstract external class NavigationTransition : JsAny {
      * time the navigatesuccess event fires, or rejects at the same time the navigateerror event fires.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/finished)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val finished: Promise<JsAny?>
 }
@@ -14683,6 +17652,8 @@ public abstract external class NavigationTransition : JsAny {
  * the navigation type and outgoing and inbound document history entries.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class NavigationActivation : JsAny {
     /**
@@ -14690,6 +17661,8 @@ public abstract external class NavigationActivation : JsAny {
      * representing the history entry for the outgoing ("from") document in the navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation/from)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val from: NavigationHistoryEntry?
 
@@ -14699,6 +17672,8 @@ public abstract external class NavigationActivation : JsAny {
      * Navigation.currentEntry property at the moment the inbound document was activated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation/entry)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val entry: NavigationHistoryEntry
 
@@ -14707,6 +17682,8 @@ public abstract external class NavigationActivation : JsAny {
      * of navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation/navigationType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigationType: NavigationType
 }
@@ -14718,12 +17695,16 @@ public abstract external class NavigationActivation : JsAny {
  * handling.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class NavigateEvent : Event {
     /**
      * The NavigateEvent() constructor creates a new NavigateEvent object instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/NavigateEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: NavigateEventInit)
 
@@ -14732,6 +17713,8 @@ public open external class NavigateEvent : Event {
      * reload, replace, or traverse.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/navigationType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigationType: NavigationType
 
@@ -14740,6 +17723,8 @@ public open external class NavigateEvent : Event {
      * representing the destination being navigated to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/destination)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val destination: NavigationDestination
 
@@ -14748,6 +17733,8 @@ public open external class NavigateEvent : Event {
      * intercepted and have its URL rewritten, or false otherwise
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/canIntercept)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val canIntercept: Boolean
 
@@ -14757,6 +17744,8 @@ public open external class NavigateEvent : Event {
      * false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/userInitiated)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val userInitiated: Boolean
 
@@ -14765,6 +17754,8 @@ public open external class NavigateEvent : Event {
      * navigation (i.e., to a fragment identifier in the same document), or false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/hashChange)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val hashChange: Boolean
 
@@ -14774,6 +17765,8 @@ public open external class NavigateEvent : Event {
      * starting and thus canceling the ongoing one).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/signal)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val signal: AbortSignal
 
@@ -14782,6 +17775,8 @@ public open external class NavigateEvent : Event {
      * submitted data in the case of a POST form submission, or null otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/formData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val formData: FormData?
 
@@ -14791,6 +17786,8 @@ public open external class NavigateEvent : Event {
      * attribute), or null otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/downloadRequest)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val downloadRequest: String?
 
@@ -14800,6 +17797,8 @@ public open external class NavigateEvent : Event {
      * passed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/info)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val info: JsAny?
 
@@ -14808,6 +17807,8 @@ public open external class NavigateEvent : Event {
      * performed a visual transition for this navigation before dispatching this event, or false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/hasUAVisualTransition)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val hasUAVisualTransition: Boolean
 
@@ -14816,6 +17817,8 @@ public open external class NavigateEvent : Event {
      * initiating element, in cases where the navigation was initiated by an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/sourceElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val sourceElement: Element?
 
@@ -14824,6 +17827,8 @@ public open external class NavigateEvent : Event {
      * navigation to the destination URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/intercept)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun intercept(options: NavigationInterceptOptions = definedExternally)
 
@@ -14833,6 +17838,8 @@ public open external class NavigateEvent : Event {
      * completed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/scroll)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun scroll()
 
@@ -14910,6 +17917,8 @@ public inline val NavigationScrollBehavior.Companion.MANUAL: NavigationScrollBeh
  * handler callback.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPrecommitController)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class NavigationPrecommitController : JsAny {
     /**
@@ -14917,6 +17926,8 @@ public abstract external class NavigationPrecommitController : JsAny {
      * specifies history behavior and any desired state information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPrecommitController/redirect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun redirect(url: String, options: NavigationNavigateOptions = definedExternally)
 
@@ -14925,6 +17936,8 @@ public abstract external class NavigationPrecommitController : JsAny {
      * callback function in precommit code, which will then be run after the navigation has committed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPrecommitController/addHandler)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addHandler(handler: () -> Promise<JsAny?>)
 }
@@ -14934,12 +17947,16 @@ public abstract external class NavigationPrecommitController : JsAny {
  * current navigation.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class NavigationDestination : JsAny {
     /**
      * The url read-only property of the NavigationDestination interface returns the URL being navigated to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/url)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val url: String
 
@@ -14948,6 +17965,8 @@ public abstract external class NavigationDestination : JsAny {
      * NavigationHistoryEntry if the NavigateEvent.navigationType is traverse, or an empty string otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/key)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val key: String
 
@@ -14956,6 +17975,8 @@ public abstract external class NavigationDestination : JsAny {
      * NavigationHistoryEntry if the NavigateEvent.navigationType is traverse, or an empty string otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/id)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val id: String
 
@@ -14964,6 +17985,8 @@ public abstract external class NavigationDestination : JsAny {
      * NavigationHistoryEntry if the NavigateEvent.navigationType is traverse, or -1 otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/index)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val index: Double
 
@@ -14972,6 +17995,8 @@ public abstract external class NavigationDestination : JsAny {
      * the same document as the current Document value, or false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/sameDocument)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val sameDocument: Boolean
 
@@ -14981,6 +18006,8 @@ public abstract external class NavigationDestination : JsAny {
      * appropriate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationDestination/getState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getState(): JsAny?
 }
@@ -14990,6 +18017,8 @@ public abstract external class NavigationDestination : JsAny {
  * event, which fires when the Navigation.currentEntry has changed.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class NavigationCurrentEntryChangeEvent : Event {
     /**
@@ -14997,6 +18026,8 @@ public open external class NavigationCurrentEntryChangeEvent : Event {
      *
      * [MDN
      * Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent/NavigationCurrentEntryChangeEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: NavigationCurrentEntryChangeEventInit)
 
@@ -15006,6 +18037,8 @@ public open external class NavigationCurrentEntryChangeEvent : Event {
      * Navigation.updateCurrentEntry().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent/navigationType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigationType: NavigationType?
 
@@ -15014,6 +18047,8 @@ public open external class NavigationCurrentEntryChangeEvent : Event {
      * that was navigated from.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent/from)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val from: NavigationHistoryEntry
 
@@ -15042,12 +18077,16 @@ public fun NavigationCurrentEntryChangeEventInit(from: NavigationHistoryEntry, b
  * PopStateEvent is an interface for the popstate event.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class PopStateEvent : Event {
     /**
      * The PopStateEvent() constructor creates a new PopStateEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/PopStateEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: PopStateEventInit = definedExternally)
 
@@ -15056,6 +18095,8 @@ public open external class PopStateEvent : Event {
      * created.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/state)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val state: JsAny?
 
@@ -15064,6 +18105,8 @@ public open external class PopStateEvent : Event {
      * performed a visual transition for this navigation before dispatching this event, or false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/hasUAVisualTransition)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val hasUAVisualTransition: Boolean
 
@@ -15092,6 +18135,8 @@ public fun PopStateEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nu
  * The HashChangeEvent interface represents events that fire when the fragment identifier of the URL has changed.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class HashChangeEvent : Event {
     /**
@@ -15099,6 +18144,8 @@ public open external class HashChangeEvent : Event {
      * fired at the window object when the fragment of the URL changes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/HashChangeEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: HashChangeEventInit = definedExternally)
 
@@ -15107,6 +18154,8 @@ public open external class HashChangeEvent : Event {
      * navigated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/oldURL)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val oldURL: String
 
@@ -15115,6 +18164,8 @@ public open external class HashChangeEvent : Event {
      * navigating.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/newURL)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val newURL: String
 
@@ -15143,12 +18194,16 @@ public fun HashChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = 
  * The PageSwapEvent event object is made available inside handler functions for the pageswap event.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class PageSwapEvent : Event {
     /**
      * The PageSwapEvent() constructor creates a new PageSwapEvent object instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent/PageSwapEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: PageSwapEventInit = definedExternally)
 
@@ -15157,6 +18212,8 @@ public open external class PageSwapEvent : Event {
      * containing the navigation type and current and destination document history entries for a same-origin navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent/activation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val activation: NavigationActivation?
 
@@ -15183,12 +18240,16 @@ public fun PageSwapEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nu
  * The PageRevealEvent event object is made available inside handler functions for the pagereveal event.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageRevealEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class PageRevealEvent : Event {
     /**
      * The PageRevealEvent() constructor creates a new PageRevealEvent object instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageRevealEvent/PageRevealEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: PageRevealEventInit = definedExternally)
 
@@ -15213,6 +18274,8 @@ public fun PageRevealEventInit(bubbles: Boolean? = null, cancelable: Boolean? = 
  * fired when a document is being loaded or unloaded.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class PageTransitionEvent : Event {
     /**
@@ -15220,6 +18283,8 @@ public open external class PageTransitionEvent : Event {
      * pagehide events, fired at the window object when a page is loaded or unloaded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/PageTransitionEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: PageTransitionEventInit = definedExternally)
 
@@ -15227,6 +18292,8 @@ public open external class PageTransitionEvent : Event {
      * The persisted read-only property indicates if a webpage is loading from a cache.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val persisted: Boolean
 
@@ -15254,6 +18321,8 @@ public fun PageTransitionEventInit(bubbles: Boolean? = null, cancelable: Boolean
  * current window, contained document, and associated resources are about to be unloaded.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BeforeUnloadEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class BeforeUnloadEvent : Event {
 
@@ -15270,6 +18339,8 @@ public abstract external class BeforeUnloadEvent : Event {
  * blocked from using the back/forward cache (bfcache).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasonDetails)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class NotRestoredReasonDetails : JsAny {
     /**
@@ -15277,6 +18348,8 @@ public abstract external class NotRestoredReasonDetails : JsAny {
      * the page was blocked from using the back/forward cache (bfcache).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasonDetails/reason)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val reason: String
 
@@ -15285,6 +18358,8 @@ public abstract external class NotRestoredReasonDetails : JsAny {
      * representing the NotRestoredReasonDetails object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasonDetails/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 }
@@ -15294,6 +18369,8 @@ public abstract external class NotRestoredReasonDetails : JsAny {
  * document was blocked from using the back/forward cache (bfcache) on navigation.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class NotRestoredReasons : JsAny {
     /**
@@ -15301,6 +18378,8 @@ public abstract external class NotRestoredReasons : JsAny {
      * source of the &lt;iframe&gt; the document is contained in (for example &lt;iframe src="b.html"&gt;).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/src)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val src: String?
 
@@ -15309,6 +18388,8 @@ public abstract external class NotRestoredReasons : JsAny {
      * value of the &lt;iframe&gt; the document is contained in (for example &lt;iframe id="foo" src="..."&gt;).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/id)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val id: String?
 
@@ -15317,6 +18398,8 @@ public abstract external class NotRestoredReasons : JsAny {
      * value of the &lt;iframe&gt; the document is contained in (for example &lt;iframe name="bar" src="..."&gt;).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val name: String?
 
@@ -15325,6 +18408,8 @@ public abstract external class NotRestoredReasons : JsAny {
      * navigated page or &lt;iframe&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/url)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val url: String?
 
@@ -15334,6 +18419,8 @@ public abstract external class NotRestoredReasons : JsAny {
      * (bfcache).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/reasons)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val reasons: JsArray<NotRestoredReasonDetails>?
 
@@ -15343,6 +18430,8 @@ public abstract external class NotRestoredReasons : JsAny {
      * top-level frame was blocked relating to the child frames.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/children)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val children: JsArray<NotRestoredReasons>?
 
@@ -15351,6 +18440,8 @@ public abstract external class NotRestoredReasons : JsAny {
      * NotRestoredReasons object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotRestoredReasons/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 }
@@ -15359,12 +18450,16 @@ public abstract external class NotRestoredReasons : JsAny {
  * The ErrorEvent interface represents events providing information related to errors in scripts or in files.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ErrorEvent : Event {
     /**
      * The ErrorEvent() constructor creates a new ErrorEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/ErrorEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: ErrorEventInit = definedExternally)
 
@@ -15373,6 +18468,8 @@ public open external class ErrorEvent : Event {
      * message describing the problem.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/message)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val message: String
 
@@ -15381,6 +18478,8 @@ public open external class ErrorEvent : Event {
      * file in which the error occurred.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/filename)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val filename: String
 
@@ -15389,6 +18488,8 @@ public open external class ErrorEvent : Event {
      * script file on which the error occurred.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/lineno)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val lineno: Int
 
@@ -15397,6 +18498,8 @@ public open external class ErrorEvent : Event {
      * script file on which the error occurred.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/colno)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val colno: Int
 
@@ -15405,6 +18508,8 @@ public open external class ErrorEvent : Event {
      * DOMException, representing the error associated with this event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent/error)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val error: JsAny?
 
@@ -15440,6 +18545,8 @@ public fun ErrorEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null,
  * Promises are rejected. These events are particularly useful for telemetry and debugging purposes.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class PromiseRejectionEvent : Event {
     /**
@@ -15447,6 +18554,8 @@ public open external class PromiseRejectionEvent : Event {
      * when a JavaScript Promise is rejected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/PromiseRejectionEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: PromiseRejectionEventInit)
 
@@ -15456,6 +18565,8 @@ public open external class PromiseRejectionEvent : Event {
      * rejected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/promise)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val promise: JsAny
 
@@ -15464,6 +18575,8 @@ public open external class PromiseRejectionEvent : Event {
      * passed into Promise.reject(). This in theory provides information about why the promise was rejected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/reason)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val reason: JsAny?
 
@@ -15496,6 +18609,8 @@ public external interface GlobalEventHandlers : JsAny {
      * the primary—usually leftmost—button) has been pressed and released both within the same element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/auxclick_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onauxclick: ((PointerEvent) -> Unit)?
 
@@ -15505,6 +18620,8 @@ public external interface GlobalEventHandlers : JsAny {
      * applies to elements with contenteditable enabled, and to any element when designMode is turned on.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforeinput_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onbeforeinput: ((InputEvent) -> Unit)?
 
@@ -15514,6 +18631,8 @@ public external interface GlobalEventHandlers : JsAny {
      * navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforematch_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onbeforematch: ((Event) -> Unit)?
 
@@ -15522,6 +18641,8 @@ public external interface GlobalEventHandlers : JsAny {
      * is shown or hidden.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforetoggle_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onbeforetoggle: ((ToggleEvent) -> Unit)?
 
@@ -15530,6 +18651,8 @@ public external interface GlobalEventHandlers : JsAny {
      * that follows does bubble.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/blur_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onblur: ((FocusEvent) -> Unit)?
     public var oncancel: ((Event) -> Unit)?
@@ -15542,11 +18665,15 @@ public external interface GlobalEventHandlers : JsAny {
      * element's value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/change_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onchange: ((Event) -> Unit)?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/click_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onclick: ((PointerEvent) -> Unit)?
     public var onclose: ((Event) -> Unit)?
@@ -15556,6 +18683,8 @@ public external interface GlobalEventHandlers : JsAny {
      * commandForElement and command values, whenever the button is interacted with (e.g., it is clicked).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/command_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var oncommand: ((CommandEvent) -> Unit)?
     public var oncontextlost: ((Event) -> Unit)?
@@ -15565,6 +18694,8 @@ public external interface GlobalEventHandlers : JsAny {
      * clicking the right mouse button, or by pressing the context menu key.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var oncontextmenu: ((PointerEvent) -> Unit)?
     public var oncontextrestored: ((Event) -> Unit)?
@@ -15574,6 +18705,8 @@ public external interface GlobalEventHandlers : JsAny {
      * interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/copy_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var oncopy: ((ClipboardEvent) -> Unit)?
     public var oncuechange: ((Event) -> Unit)?
@@ -15583,6 +18716,8 @@ public external interface GlobalEventHandlers : JsAny {
      * interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/cut_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var oncut: ((ClipboardEvent) -> Unit)?
 
@@ -15591,6 +18726,8 @@ public external interface GlobalEventHandlers : JsAny {
      * is, when it's rapidly clicked twice on a single element within a very short span of time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/dblclick_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ondblclick: ((MouseEvent) -> Unit)?
 
@@ -15599,6 +18736,8 @@ public external interface GlobalEventHandlers : JsAny {
      * frequency depends on the browser, operating system, and pointer movement; do not rely on a fixed interval.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drag_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ondrag: ((DragEvent) -> Unit)?
 
@@ -15606,6 +18745,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The dragend event is fired when a drag operation ends (by releasing a mouse button or hitting the escape key).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ondragend: ((DragEvent) -> Unit)?
 
@@ -15615,6 +18756,8 @@ public external interface GlobalEventHandlers : JsAny {
      * &lt;body&gt; element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ondragenter: ((DragEvent) -> Unit)?
 
@@ -15622,6 +18765,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The dragleave event is fired when a dragged element or text selection leaves a valid drop target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ondragleave: ((DragEvent) -> Unit)?
 
@@ -15630,6 +18775,8 @@ public external interface GlobalEventHandlers : JsAny {
      * target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ondragover: ((DragEvent) -> Unit)?
 
@@ -15637,6 +18784,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The dragstart event is fired when the user starts dragging an element or text selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragstart_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ondragstart: ((DragEvent) -> Unit)?
 
@@ -15646,6 +18795,8 @@ public external interface GlobalEventHandlers : JsAny {
      * which handles the dragover event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drop_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ondrop: ((DragEvent) -> Unit)?
     public var ondurationchange: ((Event) -> Unit)?
@@ -15657,6 +18808,8 @@ public external interface GlobalEventHandlers : JsAny {
      * has an execution error or an image can't be found or is invalid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onerror: ((JsAny, String, Int, Int, JsAny?) -> Unit)?
 
@@ -15665,6 +18818,8 @@ public external interface GlobalEventHandlers : JsAny {
      * event that follows does bubble.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/focus_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onfocus: ((FocusEvent) -> Unit)?
     public var onformdata: ((FormDataEvent) -> Unit)?
@@ -15674,6 +18829,8 @@ public external interface GlobalEventHandlers : JsAny {
      * changed as a direct result of a user action (such as typing in a textbox or checking a checkbox).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/input_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var oninput: ((InputEvent) -> Unit)?
     public var oninvalid: ((Event) -> Unit)?
@@ -15682,6 +18839,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The keydown event is fired when a key is pressed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keydown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onkeydown: ((KeyboardEvent) -> Unit)?
 
@@ -15694,6 +18853,8 @@ public external interface GlobalEventHandlers : JsAny {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keypress_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onkeypress: ((KeyboardEvent) -> Unit)?
 
@@ -15701,6 +18862,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The keyup event is fired when a key is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/keyup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onkeyup: ((KeyboardEvent) -> Unit)?
 
@@ -15710,6 +18873,8 @@ public external interface GlobalEventHandlers : JsAny {
      * &lt;script&gt;, &lt;style&gt;, and &lt;track&gt;.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/load_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onload: ((Event) -> Unit)?
     public var onloadeddata: ((Event) -> Unit)?
@@ -15721,6 +18886,8 @@ public external interface GlobalEventHandlers : JsAny {
      * the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mousedown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onmousedown: ((MouseEvent) -> Unit)?
 
@@ -15729,6 +18896,8 @@ public external interface GlobalEventHandlers : JsAny {
      * its hotspot is within the element at which the event was fired.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onmouseenter: ((MouseEvent) -> Unit)?
 
@@ -15737,6 +18906,8 @@ public external interface GlobalEventHandlers : JsAny {
      * of it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onmouseleave: ((MouseEvent) -> Unit)?
 
@@ -15745,6 +18916,8 @@ public external interface GlobalEventHandlers : JsAny {
      * hotspot is inside it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mousemove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onmousemove: ((MouseEvent) -> Unit)?
 
@@ -15753,6 +18926,8 @@ public external interface GlobalEventHandlers : JsAny {
      * that it is no longer contained within the element or one of its children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseout_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onmouseout: ((MouseEvent) -> Unit)?
 
@@ -15761,6 +18936,8 @@ public external interface GlobalEventHandlers : JsAny {
      * the cursor onto the element or one of its child elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onmouseover: ((MouseEvent) -> Unit)?
 
@@ -15769,6 +18946,8 @@ public external interface GlobalEventHandlers : JsAny {
      * released while the pointer is located inside it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/mouseup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onmouseup: ((MouseEvent) -> Unit)?
 
@@ -15777,6 +18956,8 @@ public external interface GlobalEventHandlers : JsAny {
      * user interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/paste_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpaste: ((ClipboardEvent) -> Unit)?
     public var onpause: ((Event) -> Unit)?
@@ -15790,6 +18971,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The resize event fires when the document view (window) has been resized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resize_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onresize: ((Event) -> Unit)?
 
@@ -15798,6 +18981,8 @@ public external interface GlobalEventHandlers : JsAny {
      * scrollend event of Document. For element scrolling, see scroll event of Element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scroll_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onscroll: ((Event) -> Unit)?
 
@@ -15806,6 +18991,8 @@ public external interface GlobalEventHandlers : JsAny {
      * the scroll position has no more pending updates and the user has completed their gesture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onscrollend: ((Event) -> Unit)?
 
@@ -15813,6 +19000,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The securitypolicyviolation event is fired when a Content Security Policy is violated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/securitypolicyviolation_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onsecuritypolicyviolation: ((Event) -> Unit)?
     public var onseeked: ((Event) -> Unit)?
@@ -15829,6 +19018,8 @@ public external interface GlobalEventHandlers : JsAny {
      * &lt;details&gt; element just after it is shown or hidden.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ontoggle: ((ToggleEvent) -> Unit)?
     public var onvolumechange: ((Event) -> Unit)?
@@ -15843,6 +19034,8 @@ public external interface GlobalEventHandlers : JsAny {
      * fired for related devices that simulate wheel actions, such as trackpads and mouse balls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/wheel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onwheel: ((WheelEvent) -> Unit)?
 
@@ -15850,6 +19043,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The touchstart event is fired when one or more touch points are placed on the touch surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchstart_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ontouchstart: ((TouchEvent) -> Unit)?
 
@@ -15858,6 +19053,8 @@ public external interface GlobalEventHandlers : JsAny {
      * possible to get a touchcancel event instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ontouchend: ((TouchEvent) -> Unit)?
 
@@ -15865,6 +19062,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The touchmove event is fired when one or more touch points are moved along the touch surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchmove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ontouchmove: ((TouchEvent) -> Unit)?
 
@@ -15873,6 +19072,8 @@ public external interface GlobalEventHandlers : JsAny {
      * manner.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/touchcancel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ontouchcancel: ((TouchEvent) -> Unit)?
 
@@ -15880,6 +19081,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The pointerover event is fired when a pointing device is moved into an element's hit test boundaries.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerover_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpointerover: ((PointerEvent) -> Unit)?
 
@@ -15890,6 +19093,8 @@ public external interface GlobalEventHandlers : JsAny {
      * also dispatched at the same time as mouseover and pointerover events, if appropriate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerenter_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpointerenter: ((PointerEvent) -> Unit)?
 
@@ -15899,6 +19104,8 @@ public external interface GlobalEventHandlers : JsAny {
      * the digitizer. For pen, it is fired when the stylus makes physical contact with the digitizer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerdown_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpointerdown: ((PointerEvent) -> Unit)?
 
@@ -15909,6 +19116,8 @@ public external interface GlobalEventHandlers : JsAny {
      * twist, contact geometry (width and height), or chorded buttons.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointermove_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpointermove: ((PointerEvent) -> Unit)?
 
@@ -15919,6 +19128,8 @@ public external interface GlobalEventHandlers : JsAny {
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerrawupdate_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpointerrawupdate: ((PointerEvent) -> Unit)?
 
@@ -15927,6 +19138,8 @@ public external interface GlobalEventHandlers : JsAny {
      * pointercancel event instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerup_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpointerup: ((PointerEvent) -> Unit)?
 
@@ -15936,6 +19149,8 @@ public external interface GlobalEventHandlers : JsAny {
      * panning, zooming, or scrolling.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointercancel_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpointercancel: ((PointerEvent) -> Unit)?
 
@@ -15946,6 +19161,8 @@ public external interface GlobalEventHandlers : JsAny {
      * the digitizer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerout_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpointerout: ((PointerEvent) -> Unit)?
 
@@ -15956,6 +19173,8 @@ public external interface GlobalEventHandlers : JsAny {
      * same time as mouseout and pointerout events, if appropriate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerleave_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpointerleave: ((PointerEvent) -> Unit)?
 
@@ -15963,6 +19182,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The gotpointercapture event is fired when an element captures a pointer using setPointerCapture().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/gotpointercapture_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ongotpointercapture: ((PointerEvent) -> Unit)?
 
@@ -15970,6 +19191,8 @@ public external interface GlobalEventHandlers : JsAny {
      * The lostpointercapture event is fired when a captured pointer is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/lostpointercapture_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onlostpointercapture: ((PointerEvent) -> Unit)?
 }
@@ -15980,6 +19203,8 @@ public external interface WindowEventHandlers : JsAny {
      * closed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/afterprint_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onafterprint: ((Event) -> Unit)?
 
@@ -15987,6 +19212,8 @@ public external interface WindowEventHandlers : JsAny {
      * The beforeprint event is fired when the associated document is about to be printed or previewed for printing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeprint_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onbeforeprint: ((Event) -> Unit)?
 
@@ -15995,6 +19222,8 @@ public external interface WindowEventHandlers : JsAny {
      * to be unloaded. The document is still visible and the event is still cancelable at this point.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeunload_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onbeforeunload: ((BeforeUnloadEvent) -> String?)?
 
@@ -16003,6 +19232,8 @@ public external interface WindowEventHandlers : JsAny {
      * with and following the # symbol).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/hashchange_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onhashchange: ((HashChangeEvent) -> Unit)?
 
@@ -16010,6 +19241,8 @@ public external interface WindowEventHandlers : JsAny {
      * The languagechange event is fired at the global scope object when the user's preferred language changes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/languagechange_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onlanguagechange: ((Event) -> Unit)?
 
@@ -16018,6 +19251,8 @@ public external interface WindowEventHandlers : JsAny {
      * Window.postMessage() from another browsing context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/message_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onmessage: ((MessageEvent) -> Unit)?
 
@@ -16025,6 +19260,8 @@ public external interface WindowEventHandlers : JsAny {
      * The messageerror event is fired on a Window object when it receives a message that can't be deserialized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/messageerror_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onmessageerror: ((MessageEvent) -> Unit)?
 
@@ -16033,6 +19270,8 @@ public external interface WindowEventHandlers : JsAny {
      * of Navigator.onLine switches to false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/offline_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onoffline: ((Event) -> Unit)?
 
@@ -16041,6 +19280,8 @@ public external interface WindowEventHandlers : JsAny {
      * of Navigator.onLine switches to true.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/online_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var ononline: ((Event) -> Unit)?
 
@@ -16049,6 +19290,8 @@ public external interface WindowEventHandlers : JsAny {
      * different page from the session's history.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagehide_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpagehide: ((PageTransitionEvent) -> Unit)?
 
@@ -16057,6 +19300,8 @@ public external interface WindowEventHandlers : JsAny {
      * network or activating a document (either from back/forward cache (bfcache) or prerender).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagereveal_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpagereveal: ((PageRevealEvent) -> Unit)?
 
@@ -16064,6 +19309,8 @@ public external interface WindowEventHandlers : JsAny {
      * The pageshow event is sent to a Window when the browser navigates to a new document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageshow_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpageshow: ((PageTransitionEvent) -> Unit)?
 
@@ -16071,6 +19318,8 @@ public external interface WindowEventHandlers : JsAny {
      * The pageswap event is fired when you navigate across documents, when the previous document is about to unload.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageswap_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpageswap: ((PageSwapEvent) -> Unit)?
 
@@ -16081,6 +19330,8 @@ public external interface WindowEventHandlers : JsAny {
      * instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/popstate_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onpopstate: ((PopStateEvent) -> Unit)?
 
@@ -16090,6 +19341,8 @@ public external interface WindowEventHandlers : JsAny {
      * had caused an unhandledrejection event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/rejectionhandled_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onrejectionhandled: ((PromiseRejectionEvent) -> Unit)?
 
@@ -16099,6 +19352,8 @@ public external interface WindowEventHandlers : JsAny {
      * window that made the change.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/storage_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onstorage: ((StorageEvent) -> Unit)?
 
@@ -16107,6 +19362,8 @@ public external interface WindowEventHandlers : JsAny {
      * rejection handler is rejected; typically, this is the window, but may also be a Worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/unhandledrejection_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onunhandledrejection: ((PromiseRejectionEvent) -> Unit)?
 
@@ -16114,6 +19371,8 @@ public external interface WindowEventHandlers : JsAny {
      * The unload event is fired when the document or a child resource is being unloaded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/unload_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onunload: ((Event) -> Unit)?
 }
@@ -16192,6 +19451,8 @@ public fun GetHTMLOptions(serializableShadowRoots: Boolean? = null, shadowRoots:
  * The DOMParser interface provides the ability to parse XML or HTML source code from a string into a DOM Document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class DOMParser : JsAny {
     /**
@@ -16199,6 +19460,8 @@ public open external class DOMParser : JsAny {
      * document using the parseFromString() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser/DOMParser)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -16207,6 +19470,8 @@ public open external class DOMParser : JsAny {
      * a Document with the type given in the contentType property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser/parseFromString)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun parseFromString(string: String, type: DOMParserSupportedType): Document
 }
@@ -16227,12 +19492,16 @@ public inline val DOMParserSupportedType.Companion.IMAGE_SVG_XML: DOMParserSuppo
  * tree.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class XMLSerializer : JsAny {
     /**
      * The XMLSerializer() constructor creates a new XMLSerializer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer/XMLSerializer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -16240,6 +19509,8 @@ public open external class XMLSerializer : JsAny {
      * The XMLSerializer method serializeToString() constructs a string representing the specified DOM tree in XML form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer/serializeToString)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun serializeToString(root: Node): String
 }
@@ -16250,6 +19521,8 @@ public open external class XMLSerializer : JsAny {
  * ShadowRoot, or when parsing an HTML string into a Document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class Sanitizer : JsAny {
     /**
@@ -16257,6 +19530,8 @@ public open external class Sanitizer : JsAny {
      * attributes from HTML or documents before they are inserted/parsed into the DOM.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/Sanitizer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(configuration: SanitizerConfig)
 
@@ -16265,6 +19540,8 @@ public open external class Sanitizer : JsAny {
      * attributes from HTML or documents before they are inserted/parsed into the DOM.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/Sanitizer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(configuration: SanitizerPresets)
 
@@ -16273,6 +19550,8 @@ public open external class Sanitizer : JsAny {
      * attributes from HTML or documents before they are inserted/parsed into the DOM.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/Sanitizer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -16281,6 +19560,8 @@ public open external class Sanitizer : JsAny {
      * current Sanitizer configuration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/get)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun get(): SanitizerConfig
 
@@ -16289,6 +19570,8 @@ public open external class Sanitizer : JsAny {
      * when the sanitizer is used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/allowElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun allowElement(element: String): Boolean
 
@@ -16297,6 +19580,8 @@ public open external class Sanitizer : JsAny {
      * when the sanitizer is used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/allowElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun allowElement(element: SanitizerElementNamespaceWithAttributes): Boolean
 
@@ -16305,6 +19590,8 @@ public open external class Sanitizer : JsAny {
      * the sanitizer is used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/removeElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeElement(element: String): Boolean
 
@@ -16313,6 +19600,8 @@ public open external class Sanitizer : JsAny {
      * the sanitizer is used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/removeElement)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeElement(element: SanitizerElementNamespace): Boolean
 
@@ -16321,6 +19610,8 @@ public open external class Sanitizer : JsAny {
      * HTML elements when the sanitizer is used. This is primarily used for stripping styles from text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/replaceElementWithChildren)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun replaceElementWithChildren(element: String): Boolean
 
@@ -16329,6 +19620,8 @@ public open external class Sanitizer : JsAny {
      * HTML elements when the sanitizer is used. This is primarily used for stripping styles from text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/replaceElementWithChildren)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun replaceElementWithChildren(element: SanitizerElementNamespace): Boolean
     public open fun allowProcessingInstruction(pi: String): Boolean
@@ -16341,6 +19634,8 @@ public open external class Sanitizer : JsAny {
      * sanitizer is used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/allowAttribute)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun allowAttribute(attribute: String): Boolean
 
@@ -16349,6 +19644,8 @@ public open external class Sanitizer : JsAny {
      * sanitizer is used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/allowAttribute)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun allowAttribute(attribute: SanitizerAttributeNamespace): Boolean
 
@@ -16357,6 +19654,8 @@ public open external class Sanitizer : JsAny {
      * the sanitizer is used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/removeAttribute)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeAttribute(attribute: String): Boolean
 
@@ -16365,6 +19664,8 @@ public open external class Sanitizer : JsAny {
      * the sanitizer is used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/removeAttribute)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeAttribute(attribute: SanitizerAttributeNamespace): Boolean
 
@@ -16373,6 +19674,8 @@ public open external class Sanitizer : JsAny {
      * sanitizer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/setComments)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setComments(allow: Boolean): Boolean
 
@@ -16381,6 +19684,8 @@ public open external class Sanitizer : JsAny {
      * the sanitizer, or if they must be individually specified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/setDataAttributes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setDataAttributes(allow: Boolean): Boolean
     public open fun setJavascriptURLs(allow: Boolean): Boolean
@@ -16390,6 +19695,8 @@ public open external class Sanitizer : JsAny {
      * and attributes that are considered XSS-unsafe by the browser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/removeUnsafe)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeUnsafe(): Boolean
 }
@@ -16465,6 +19772,8 @@ public fun SanitizerConfig(elements: JsArray<JsAny>? = null, removeElements: JsA
  * register themselves to carry on some activities.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Navigator : NavigatorID, NavigatorLanguage, NavigatorOnLine, NavigatorContentUtils, NavigatorCookies, NavigatorPlugins, NavigatorConcurrentHardware {
     /**
@@ -16472,6 +19781,8 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      * information about the current window's user activation state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/userActivation)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val userActivation: UserActivation
 
@@ -16480,6 +19791,8 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      * contact points that are supported by the current device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/maxTouchPoints)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val maxTouchPoints: Int
 
@@ -16490,6 +19803,8 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mediaDevices)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val mediaDevices: MediaDevices
 
@@ -16500,6 +19815,8 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/clipboard)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val clipboard: Clipboard
 
@@ -16509,6 +19826,8 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      * progress when this method is called, the previous pattern is halted and the new one begins instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vibrate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun vibrate(pattern: Int): Boolean
 
@@ -16518,6 +19837,8 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      * progress when this method is called, the previous pattern is halted and the new one begins instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vibrate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun vibrate(pattern: JsArray<JsNumber>): Boolean
 
@@ -16529,6 +19850,8 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/serviceWorker)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val serviceWorker: ServiceWorkerContainer
 
@@ -16540,6 +19863,8 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMediaKeySystemAccess)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun requestMediaKeySystemAccess(keySystem: String, supportedConfigurations: JsArray<MediaKeySystemConfiguration>): Promise<MediaKeySystemAccess>
 }
@@ -16550,6 +19875,8 @@ public external interface NavigatorID : JsAny {
      * is kept only for compatibility purposes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/appCodeName)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val appCodeName: String
 
@@ -16558,6 +19885,8 @@ public external interface NavigatorID : JsAny {
      * kept only for compatibility purposes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/appName)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val appName: String
 
@@ -16566,6 +19895,8 @@ public external interface NavigatorID : JsAny {
      * information about the browser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/appVersion)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val appVersion: String
 
@@ -16574,6 +19905,8 @@ public external interface NavigatorID : JsAny {
      * which the user's browser is running.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/platform)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val platform: String
 
@@ -16582,6 +19915,8 @@ public external interface NavigatorID : JsAny {
      * kept only for compatibility purposes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/product)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val product: String
 
@@ -16589,6 +19924,8 @@ public external interface NavigatorID : JsAny {
      * The Navigator.productSub read-only property that returns either the string "20030107", or the string "20100101".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/productSub)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val productSub: String
 
@@ -16597,6 +19934,8 @@ public external interface NavigatorID : JsAny {
      * current browser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/userAgent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val userAgent: String
 
@@ -16605,6 +19944,8 @@ public external interface NavigatorID : JsAny {
      * or (in Firefox) the empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vendor)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val vendor: String
 
@@ -16612,6 +19953,8 @@ public external interface NavigatorID : JsAny {
      * The vendorSub read-only property of the Navigator interface is always the empty string, in any browser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vendorSub)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val vendorSub: String
 
@@ -16619,6 +19962,8 @@ public external interface NavigatorID : JsAny {
      * The Navigator.taintEnabled() method always returns false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/taintEnabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun taintEnabled(): Boolean
 
@@ -16627,6 +19972,8 @@ public external interface NavigatorID : JsAny {
      * system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/oscpu)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val oscpu: String
 }
@@ -16637,6 +19984,8 @@ public external interface NavigatorLanguage : JsAny {
      * of the user, usually the language of the browser UI.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/language)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val language: String
 
@@ -16646,6 +19995,8 @@ public external interface NavigatorLanguage : JsAny {
      * ordered by preference with the most preferred language first.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/languages)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val languages: JsArray<JsString>
 }
@@ -16659,6 +20010,8 @@ public external interface NavigatorOnLine : JsAny {
      * changes, an online or offline event is fired on the window.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/onLine)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val onLine: Boolean
 }
@@ -16671,6 +20024,8 @@ public external interface NavigatorContentUtils : JsAny {
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/registerProtocolHandler)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun registerProtocolHandler(scheme: String, url: String)
 
@@ -16680,6 +20035,8 @@ public external interface NavigatorContentUtils : JsAny {
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/unregisterProtocolHandler)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun unregisterProtocolHandler(scheme: String, url: String)
 }
@@ -16689,6 +20046,8 @@ public external interface NavigatorCookies : JsAny {
      * navigator.cookieEnabled returns a Boolean value that indicates whether cookies are enabled or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/cookieEnabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val cookieEnabled: Boolean
 }
@@ -16700,6 +20059,8 @@ public external interface NavigatorPlugins : JsAny {
      * enumerable (except in very old browser versions).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/plugins)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val plugins: PluginArray
 
@@ -16710,6 +20071,8 @@ public external interface NavigatorPlugins : JsAny {
      * the returned object are not enumerable (except in very old browser versions).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mimeTypes)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val mimeTypes: MimeTypeArray
 
@@ -16717,6 +20080,8 @@ public external interface NavigatorPlugins : JsAny {
      * This method always returns false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/javaEnabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun javaEnabled(): Boolean
 
@@ -16725,6 +20090,8 @@ public external interface NavigatorPlugins : JsAny {
      * display of PDF files when navigating to them.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/pdfViewerEnabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val pdfViewerEnabled: Boolean
 }
@@ -16737,6 +20104,8 @@ public external interface NavigatorPlugins : JsAny {
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PluginArray)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class PluginArray : ItemArrayLike<Plugin> {
     public open fun refresh()
@@ -16756,6 +20125,8 @@ public operator fun PluginArray.get(name: String): Plugin? = getProperty(this, n
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MimeTypeArray)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MimeTypeArray : ItemArrayLike<MimeType> {
     override val length: Int
@@ -16773,6 +20144,8 @@ public operator fun MimeTypeArray.get(name: String): MimeType? = getProperty(thi
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Plugin)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Plugin : ItemArrayLike<MimeType> {
     public open val name: String
@@ -16794,6 +20167,8 @@ public operator fun Plugin.get(name: String): MimeType? = getProperty(this, name
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MimeType)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MimeType : JsAny {
     public open val type: String
@@ -16824,6 +20199,8 @@ public fun ImageDataSettings(colorSpace: PredefinedColorSpace? = null, pixelForm
  * The ImageData interface represents the underlying pixel data of an area of a &lt;canvas&gt; element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ImageData : TexImageSource {
     /**
@@ -16831,6 +20208,8 @@ public open external class ImageData : TexImageSource {
      * having the specified width and height.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/ImageData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(sw: Int, sh: Int, settings: ImageDataSettings = definedExternally)
 
@@ -16839,6 +20218,8 @@ public open external class ImageData : TexImageSource {
      * having the specified width and height.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/ImageData)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(data: Uint8ClampedArray, sw: Int, sh: Int = definedExternally, settings: ImageDataSettings = definedExternally)
 
@@ -16846,6 +20227,8 @@ public open external class ImageData : TexImageSource {
      * The readonly ImageData.width property returns the number of pixels per row in the ImageData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: Int
 
@@ -16853,6 +20236,8 @@ public open external class ImageData : TexImageSource {
      * The readonly ImageData.height property returns the number of rows in the ImageData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: Int
 
@@ -16861,6 +20246,8 @@ public open external class ImageData : TexImageSource {
      * object's pixel data. Data is stored as a one-dimensional array in the RGBA order.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/data)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val data: Uint8ClampedArray
 
@@ -16868,6 +20255,8 @@ public open external class ImageData : TexImageSource {
      * The read-only ImageData.pixelFormat property is a string indicating the pixel format of the image data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/pixelFormat)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pixelFormat: ImageDataPixelFormat
 
@@ -16875,6 +20264,8 @@ public open external class ImageData : TexImageSource {
      * The read-only ImageData.colorSpace property is a string indicating the color space of the image data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/colorSpace)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val colorSpace: PredefinedColorSpace
 }
@@ -16886,12 +20277,16 @@ public open external class ImageData : TexImageSource {
  * pathway to prepare textures for rendering in WebGL.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ImageBitmap : CanvasImageSource, TexImageSource {
     /**
      * The ImageBitmap.width read-only property returns the ImageBitmap object's width in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: Int
 
@@ -16899,6 +20294,8 @@ public abstract external class ImageBitmap : CanvasImageSource, TexImageSource {
      * The ImageBitmap.height read-only property returns the ImageBitmap object's height in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: Int
 
@@ -16906,6 +20303,8 @@ public abstract external class ImageBitmap : CanvasImageSource, TexImageSource {
      * The ImageBitmap.close() method disposes of all graphical resources associated with an ImageBitmap.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close()
 }
@@ -16969,6 +20368,8 @@ public external interface AnimationFrameProvider : JsAny {
      * browser to call a user-supplied callback function before the next repaint.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/requestAnimationFrame)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun requestAnimationFrame(callback: (Double) -> Unit): Int
 
@@ -16977,6 +20378,8 @@ public external interface AnimationFrameProvider : JsAny {
      * to window.requestAnimationFrame().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/cancelAnimationFrame)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public fun cancelAnimationFrame(handle: Int)
 }
@@ -16985,12 +20388,16 @@ public external interface AnimationFrameProvider : JsAny {
  * The MessageEvent interface represents a message received by a target object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class MessageEvent : Event {
     /**
      * The MessageEvent() constructor creates a new MessageEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/MessageEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: MessageEventInit = definedExternally)
 
@@ -16998,6 +20405,8 @@ public open external class MessageEvent : Event {
      * The data read-only property of the MessageEvent interface represents the data sent by the message emitter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/data)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val data: JsAny?
 
@@ -17006,6 +20415,8 @@ public open external class MessageEvent : Event {
      * emitter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/origin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val origin: String
 
@@ -17014,6 +20425,8 @@ public open external class MessageEvent : Event {
      * event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/lastEventId)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val lastEventId: String
 
@@ -17022,6 +20435,8 @@ public open external class MessageEvent : Event {
      * MessagePort, or ServiceWorker object) representing the message emitter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/source)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val source: MessageEventSource?
 
@@ -17030,6 +20445,8 @@ public open external class MessageEvent : Event {
      * MessagePort objects sent with the message, in order.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/ports)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val ports: JsArray<MessagePort>
     public open fun initMessageEvent(type: String, bubbles: Boolean = definedExternally, cancelable: Boolean = definedExternally, data: JsAny? = definedExternally, origin: String = definedExternally, lastEventId: String = definedExternally, source: MessageEventSource? = definedExternally, ports: JsArray<MessagePort> = definedExternally)
@@ -17065,12 +20482,16 @@ public fun MessageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nul
  * The EventSource interface is web content's interface to server-sent events.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class EventSource : EventTarget {
     /**
      * The EventSource() constructor returns a newly-created EventSource, which represents a remote resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/EventSource)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(url: String, eventSourceInitDict: EventSourceInit = definedExternally)
 
@@ -17078,6 +20499,8 @@ public open external class EventSource : EventTarget {
      * The url read-only property of the EventSource interface returns a string representing the URL of the source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/url)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val url: String
 
@@ -17086,6 +20509,8 @@ public open external class EventSource : EventTarget {
      * the EventSource object was instantiated with CORS credentials set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/withCredentials)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val withCredentials: Boolean
 
@@ -17094,6 +20519,8 @@ public open external class EventSource : EventTarget {
      * connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/readyState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val readyState: Short
 
@@ -17101,6 +20528,8 @@ public open external class EventSource : EventTarget {
      * The open event of the EventSource interface is fired when a connection with an event source is opened.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/open_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onopen: ((Event) -> Unit)?
 
@@ -17108,6 +20537,8 @@ public open external class EventSource : EventTarget {
      * The message event of the EventSource interface is fired when data is received through an event source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/message_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onmessage: ((MessageEvent) -> Unit)?
 
@@ -17115,6 +20546,8 @@ public open external class EventSource : EventTarget {
      * The error event of the EventSource API is fired when a connection with an event source fails to be opened.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onerror: ((Event) -> Unit)?
 
@@ -17123,6 +20556,8 @@ public open external class EventSource : EventTarget {
      * EventSource.readyState attribute to 2 (closed).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close()
 
@@ -17146,6 +20581,8 @@ public fun EventSourceInit(withCredentials: Boolean? = null): EventSourceInit = 
  * through it via its two MessagePort properties.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageChannel)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class MessageChannel : JsAny {
     /**
@@ -17153,6 +20590,8 @@ public open external class MessageChannel : JsAny {
      * MessagePort objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageChannel/MessageChannel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -17161,6 +20600,8 @@ public open external class MessageChannel : JsAny {
      * port attached to the context that originated the channel.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageChannel/port1)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val port1: MessagePort
 
@@ -17169,6 +20610,8 @@ public open external class MessageChannel : JsAny {
      * port attached to the context at the other end of the channel, which the message is initially sent to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageChannel/port2)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val port2: MessagePort
 }
@@ -17178,6 +20621,8 @@ public external interface MessageEventTarget : JsAny {
      * The message event is fired on a MessagePort object when a message arrives on that channel.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onmessage: ((MessageEvent) -> Unit)?
 
@@ -17185,6 +20630,8 @@ public external interface MessageEventTarget : JsAny {
      * The messageerror event is fired on a MessagePort object when it receives a message that can't be deserialized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onmessageerror: ((MessageEvent) -> Unit)?
 }
@@ -17194,6 +20641,8 @@ public external interface MessageEventTarget : JsAny {
  * messages to be sent from one port and listening out for them arriving at the other.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MessagePort : EventTarget, MessageEventTarget, MessageEventSource, UnionClientOrMessagePortOrServiceWorker {
     /**
@@ -17201,6 +20650,8 @@ public abstract external class MessagePort : EventTarget, MessageEventTarget, Me
      * ownership of objects to other browsing contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
 
@@ -17209,6 +20660,8 @@ public abstract external class MessagePort : EventTarget, MessageEventTarget, Me
      * ownership of objects to other browsing contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
 
@@ -17217,6 +20670,8 @@ public abstract external class MessagePort : EventTarget, MessageEventTarget, Me
      * only needed when using EventTarget.addEventListener; it is implied when using onmessage.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/start)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun start()
 
@@ -17225,6 +20680,8 @@ public abstract external class MessagePort : EventTarget, MessageEventTarget, Me
      * flow of messages to that port.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close()
 }
@@ -17244,12 +20701,16 @@ public fun StructuredSerializeOptions(transfer: JsArray<JsAny>? = null): Structu
  * except the object that sent the message.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class BroadcastChannel : EventTarget {
     /**
      * The BroadcastChannel() constructor creates a new BroadcastChannel and connects it to the underlying channel.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/BroadcastChannel)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(name: String)
 
@@ -17259,6 +20720,8 @@ public open external class BroadcastChannel : EventTarget {
      * therefore read-only.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val name: String
 
@@ -17268,6 +20731,8 @@ public open external class BroadcastChannel : EventTarget {
      * targeted at each BroadcastChannel bound to the channel.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?)
 
@@ -17277,6 +20742,8 @@ public open external class BroadcastChannel : EventTarget {
      * browser to know that this channel is not needed anymore.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close()
 
@@ -17284,6 +20751,8 @@ public open external class BroadcastChannel : EventTarget {
      * The message event of the BroadcastChannel interface fires when a message arrives on that channel.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onmessage: ((MessageEvent) -> Unit)?
 
@@ -17292,6 +20761,8 @@ public open external class BroadcastChannel : EventTarget {
      * on the channel.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/messageerror_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onmessageerror: ((MessageEvent) -> Unit)?
 }
@@ -17302,6 +20773,8 @@ public open external class BroadcastChannel : EventTarget {
  * handlers, the console or the associated WorkerNavigator object. Each WorkerGlobalScope has its own event loop.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGlobalScope {
     /**
@@ -17310,6 +20783,8 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      * ServiceWorkerGlobalScope.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/self)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val self: WorkerGlobalScope
 
@@ -17319,6 +20794,8 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      * workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/location)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val location: WorkerLocation
 
@@ -17328,6 +20805,8 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      * to workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/navigator)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val navigator: WorkerNavigator
 
@@ -17336,6 +20815,8 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      * scope of a classic worker (a worker constructed from a classic script).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun importScripts(vararg urls: String)
 
@@ -17343,6 +20824,8 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      * The error event of the WorkerGlobalScope interface fires when an error occurs in the worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onerror: ((JsAny, String, Int, Int, JsAny?) -> Unit)?
 
@@ -17350,6 +20833,8 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      * The languagechange event is fired at the global scope object when the user's preferred language changes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/languagechange_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onlanguagechange: ((Event) -> Unit)?
 
@@ -17357,6 +20842,8 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      * The offline event of the WorkerGlobalScope fires when the device loses connection to the internet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/offline_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onoffline: ((Event) -> Unit)?
 
@@ -17364,6 +20851,8 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      * The online event of the WorkerGlobalScope fires when the device reconnects to the internet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/online_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var ononline: ((Event) -> Unit)?
 
@@ -17373,6 +20862,8 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      * unhandledrejection event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/rejectionhandled_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onrejectionhandled: ((PromiseRejectionEvent) -> Unit)?
 
@@ -17381,6 +20872,8 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
      * that has no rejection handler is rejected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/unhandledrejection_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onunhandledrejection: ((PromiseRejectionEvent) -> Unit)?
 }
@@ -17391,6 +20884,8 @@ public abstract external class WorkerGlobalScope : EventTarget, WindowOrWorkerGl
  * scope, but available on it, are listed in the JavaScript Reference. See also: Functions available to workers.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class DedicatedWorkerGlobalScope : WorkerGlobalScope, AnimationFrameProvider, MessageEventTarget {
     /**
@@ -17399,6 +20894,8 @@ public abstract external class DedicatedWorkerGlobalScope : WorkerGlobalScope, A
      * reference to the DedicatedWorkerGlobalScope.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val name: String
 
@@ -17407,6 +20904,8 @@ public abstract external class DedicatedWorkerGlobalScope : WorkerGlobalScope, A
      * spawned it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
 
@@ -17415,6 +20914,8 @@ public abstract external class DedicatedWorkerGlobalScope : WorkerGlobalScope, A
      * spawned it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
 
@@ -17423,6 +20924,8 @@ public abstract external class DedicatedWorkerGlobalScope : WorkerGlobalScope, A
      * DedicatedWorkerGlobalScope's event loop, effectively closing this particular scope.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close()
 }
@@ -17434,6 +20937,8 @@ public abstract external class DedicatedWorkerGlobalScope : WorkerGlobalScope, A
  * workers.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SharedWorkerGlobalScope : WorkerGlobalScope {
     /**
@@ -17442,6 +20947,8 @@ public abstract external class SharedWorkerGlobalScope : WorkerGlobalScope {
      * reference to the SharedWorkerGlobalScope.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/name)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val name: String
 
@@ -17450,6 +20957,8 @@ public abstract external class SharedWorkerGlobalScope : WorkerGlobalScope {
      * SharedWorkerGlobalScope's event loop, effectively closing this particular scope.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/close)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun close()
 
@@ -17457,6 +20966,8 @@ public abstract external class SharedWorkerGlobalScope : WorkerGlobalScope {
      * The connect event is fired in shared workers at their SharedWorkerGlobalScope when a new client connects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/connect_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onconnect: ((MessageEvent) -> Unit)?
 }
@@ -17466,6 +20977,8 @@ public external interface AbstractWorker : JsAny {
      * The error event of the Worker interface fires when an error occurs in the worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onerror: ((Event) -> Unit)?
 }
@@ -17475,12 +20988,16 @@ public external interface AbstractWorker : JsAny {
  * send messages back to its creator.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class Worker : EventTarget, AbstractWorker, MessageEventTarget {
     /**
      * The Worker() constructor creates a Worker object that executes the classic script or module at the specified URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/Worker)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(scriptURL: String, options: WorkerOptions = definedExternally)
 
@@ -17489,6 +21006,8 @@ public open external class Worker : EventTarget, AbstractWorker, MessageEventTar
      * an opportunity to finish its operations; it is stopped at once.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/terminate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun terminate()
 
@@ -17498,6 +21017,8 @@ public open external class Worker : EventTarget, AbstractWorker, MessageEventTar
      * algorithm.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, transfer: JsArray<JsAny>)
 
@@ -17507,6 +21028,8 @@ public open external class Worker : EventTarget, AbstractWorker, MessageEventTar
      * algorithm.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/postMessage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun postMessage(message: JsAny?, options: StructuredSerializeOptions = definedExternally)
 
@@ -17514,6 +21037,8 @@ public open external class Worker : EventTarget, AbstractWorker, MessageEventTar
      * The error event of the Worker interface fires when an error occurs in the worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onerror: ((Event) -> Unit)?
 
@@ -17522,6 +21047,8 @@ public open external class Worker : EventTarget, AbstractWorker, MessageEventTar
      * when the worker sends a message using DedicatedWorkerGlobalScope.postMessage()).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/message_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmessage: ((MessageEvent) -> Unit)?
 
@@ -17529,6 +21056,8 @@ public open external class Worker : EventTarget, AbstractWorker, MessageEventTar
      * The messageerror event is fired on a Worker object when it receives a message that can't be deserialized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/messageerror_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onmessageerror: ((MessageEvent) -> Unit)?
 }
@@ -17560,12 +21089,16 @@ public inline val WorkerType.Companion.MODULE: WorkerType get() = "module".toJsS
  * so they cannot be instantiated from dedicated workers.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class SharedWorker : EventTarget, AbstractWorker {
     /**
      * The SharedWorker() constructor creates a SharedWorker object that executes the script at the specified URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/SharedWorker)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(scriptURL: String, options: String)
 
@@ -17573,6 +21106,8 @@ public open external class SharedWorker : EventTarget, AbstractWorker {
      * The SharedWorker() constructor creates a SharedWorker object that executes the script at the specified URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/SharedWorker)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(scriptURL: String, options: SharedWorkerOptions)
 
@@ -17580,6 +21115,8 @@ public open external class SharedWorker : EventTarget, AbstractWorker {
      * The SharedWorker() constructor creates a SharedWorker object that executes the script at the specified URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/SharedWorker)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(scriptURL: String)
 
@@ -17588,6 +21125,8 @@ public open external class SharedWorker : EventTarget, AbstractWorker {
      * shared worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/port)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val port: MessagePort
 
@@ -17595,6 +21134,8 @@ public open external class SharedWorker : EventTarget, AbstractWorker {
      * The error event of the SharedWorker interface fires when an error occurs in the worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override var onerror: ((Event) -> Unit)?
 }
@@ -17616,6 +21157,8 @@ public external interface NavigatorConcurrentHardware : JsAny {
      * threads on the user's computer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/hardwareConcurrency)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val hardwareConcurrency: Double
 }
@@ -17625,6 +21168,8 @@ public external interface NavigatorConcurrentHardware : JsAny {
  * Such an object is initialized for each worker and is available via the self.navigator property.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WorkerNavigator : NavigatorID, NavigatorLanguage, NavigatorOnLine, NavigatorConcurrentHardware {
     /**
@@ -17635,6 +21180,8 @@ public abstract external class WorkerNavigator : NavigatorID, NavigatorLanguage,
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator/serviceWorker)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val serviceWorker: ServiceWorkerContainer
 }
@@ -17645,6 +21192,8 @@ public abstract external class WorkerNavigator : NavigatorID, NavigatorLanguage,
  * self.location.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WorkerLocation : JsAny {
     /**
@@ -17652,6 +21201,8 @@ public abstract external class WorkerLocation : JsAny {
      * location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/href)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val href: String
 
@@ -17659,6 +21210,8 @@ public abstract external class WorkerLocation : JsAny {
      * The origin property of a WorkerLocation object returns the worker's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/origin)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val origin: String
 
@@ -17666,6 +21219,8 @@ public abstract external class WorkerLocation : JsAny {
      * The protocol property of a WorkerLocation object returns the protocol part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/protocol)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val protocol: String
 
@@ -17673,6 +21228,8 @@ public abstract external class WorkerLocation : JsAny {
      * The host property of a WorkerLocation object returns the host part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/host)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val host: String
 
@@ -17680,6 +21237,8 @@ public abstract external class WorkerLocation : JsAny {
      * The hostname property of a WorkerLocation object returns the hostname part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/hostname)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val hostname: String
 
@@ -17687,6 +21246,8 @@ public abstract external class WorkerLocation : JsAny {
      * The port property of a WorkerLocation object returns the port part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/port)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val port: String
 
@@ -17694,6 +21255,8 @@ public abstract external class WorkerLocation : JsAny {
      * The pathname property of a WorkerLocation object returns the pathname part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/pathname)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pathname: String
 
@@ -17701,6 +21264,8 @@ public abstract external class WorkerLocation : JsAny {
      * The search property of a WorkerLocation object returns the search part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/search)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val search: String
 
@@ -17708,6 +21273,8 @@ public abstract external class WorkerLocation : JsAny {
      * The hash property of a WorkerLocation object returns the hash part of the worker's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation/hash)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val hash: String
 }
@@ -17719,6 +21286,8 @@ public abstract external class WorkerLocation : JsAny {
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkletGlobalScope)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class WorkletGlobalScope : JsAny
 
@@ -17729,6 +21298,8 @@ public abstract external class WorkletGlobalScope : JsAny
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Worklet : JsAny {
     /**
@@ -17736,6 +21307,8 @@ public abstract external class Worklet : JsAny {
      * current Worklet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addModule(moduleURL: String, options: WorkletOptions = definedExternally): Promise<JsAny?>
 }
@@ -17753,6 +21326,8 @@ public fun WorkletOptions(credentials: RequestCredentials? = null): WorkletOptio
  * allows, for example, the addition, modification, or deletion of stored data items.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Storage : JsAny {
     /**
@@ -17760,6 +21335,8 @@ public abstract external class Storage : JsAny {
      * object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
 
@@ -17768,6 +21345,8 @@ public abstract external class Storage : JsAny {
      * Storage object. The order of keys is user-agent defined, so you should not rely on it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/key)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun key(index: Int): String?
 
@@ -17776,6 +21355,8 @@ public abstract external class Storage : JsAny {
      * the key does not exist, in the given Storage object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/getItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getItem(key: String): String?
 
@@ -17784,6 +21365,8 @@ public abstract external class Storage : JsAny {
      * Storage object, or update that key's value if it already exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/setItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setItem(key: String, value: String)
 
@@ -17793,6 +21376,8 @@ public abstract external class Storage : JsAny {
      * domain's session or local storage.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/removeItem)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeItem(key: String)
 
@@ -17800,6 +21385,8 @@ public abstract external class Storage : JsAny {
      * The clear() method of the Storage interface clears all keys stored in a given Storage object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/clear)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clear()
 }
@@ -17816,6 +21403,8 @@ public external interface WindowSessionStorage : JsAny {
      * kept for the duration of the page session.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val sessionStorage: Storage
 }
@@ -17826,6 +21415,8 @@ public external interface WindowLocalStorage : JsAny {
      * Document's origin; the stored data is saved across browser sessions.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/localStorage)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val localStorage: Storage
 }
@@ -17835,12 +21426,16 @@ public external interface WindowLocalStorage : JsAny {
  * window has access to is changed within the context of another document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class StorageEvent : Event {
     /**
      * The StorageEvent() constructor creates a new StorageEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/StorageEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: StorageEventInit = definedExternally)
 
@@ -17848,6 +21443,8 @@ public open external class StorageEvent : Event {
      * The key property of the StorageEvent interface returns the key for the storage item that was changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/key)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val key: String?
 
@@ -17856,6 +21453,8 @@ public open external class StorageEvent : Event {
      * changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/oldValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val oldValue: String?
 
@@ -17864,6 +21463,8 @@ public open external class StorageEvent : Event {
      * changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/newValue)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val newValue: String?
 
@@ -17871,6 +21472,8 @@ public open external class StorageEvent : Event {
      * The url property of the StorageEvent interface returns the URL of the document whose storage changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/url)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val url: String
 
@@ -17878,6 +21481,8 @@ public open external class StorageEvent : Event {
      * The storageArea property of the StorageEvent interface returns the storage object that was affected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/storageArea)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val storageArea: Storage?
 
@@ -17887,6 +21492,8 @@ public open external class StorageEvent : Event {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/initStorageEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun initStorageEvent(type: String, bubbles: Boolean = definedExternally, cancelable: Boolean = definedExternally, key: String? = definedExternally, oldValue: String? = definedExternally, newValue: String? = definedExternally, url: String = definedExternally, storageArea: Storage? = definedExternally)
 
@@ -17923,6 +21530,8 @@ public fun StorageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = nul
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMarqueeElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLMarqueeElement : HTMLElement {
     public open var behavior: String
@@ -17968,6 +21577,8 @@ public abstract external class HTMLMarqueeElement : HTMLElement {
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFrameSetElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLFrameSetElement : HTMLElement, WindowEventHandlers {
     public open var cols: String
@@ -18061,6 +21672,8 @@ public abstract external class HTMLDirectoryElement : HTMLElement {
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFontElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLFontElement : HTMLElement {
     /**
@@ -18070,6 +21683,8 @@ public abstract external class HTMLFontElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFontElement/color)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var color: String
 
@@ -18080,6 +21695,8 @@ public abstract external class HTMLFontElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFontElement/face)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var face: String
 
@@ -18090,6 +21707,8 @@ public abstract external class HTMLFontElement : HTMLElement {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFontElement/size)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var size: String
 
@@ -18123,6 +21742,8 @@ public abstract external class HTMLFontElement : HTMLElement {
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLParamElement)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class HTMLParamElement : HTMLElement {
     public open var name: String

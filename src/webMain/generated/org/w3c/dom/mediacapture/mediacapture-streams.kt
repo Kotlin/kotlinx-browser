@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'mediacapture-streams', DO NOT EDIT!
@@ -17,6 +20,8 @@ import org.w3c.dom.*
  * MediaStreamTrack.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class MediaStream : EventTarget, MediaProvider {
     /**
@@ -24,6 +29,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * each represented by a MediaStreamTrack object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/MediaStream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -32,6 +39,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * each represented by a MediaStreamTrack object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/MediaStream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(stream: MediaStream)
 
@@ -40,6 +49,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * each represented by a MediaStreamTrack object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/MediaStream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(tracks: JsArray<MediaStreamTrack>)
 
@@ -48,6 +59,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * identifier (GUID) for the object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/id)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val id: String
 
@@ -56,6 +69,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * MediaStreamTrack objects in this stream's track set where MediaStreamTrack.kind is audio.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getAudioTracks)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getAudioTracks(): JsArray<MediaStreamTrack>
 
@@ -64,6 +79,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * representing the video tracks in this stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getVideoTracks)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getVideoTracks(): JsArray<MediaStreamTrack>
 
@@ -72,6 +89,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * objects in this stream's track set, regardless of MediaStreamTrack.kind.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getTracks)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getTracks(): JsArray<MediaStreamTrack>
 
@@ -80,6 +99,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * with the specified ID string. If there is no track with the specified ID, this method returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getTrackById)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getTrackById(trackId: String): MediaStreamTrack?
 
@@ -88,6 +109,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * parameter of type MediaStreamTrack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addTrack)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addTrack(track: MediaStreamTrack)
 
@@ -95,6 +118,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * The removeTrack() method of the MediaStream interface removes a MediaStreamTrack from a stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removeTrack)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeTrack(track: MediaStreamTrack)
 
@@ -104,6 +129,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * clone() was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/clone)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clone(): MediaStream
 
@@ -114,6 +141,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * ended, the stream's active property becomes false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/active)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val active: Boolean
 
@@ -121,6 +150,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * The addtrack event is fired when a new MediaStreamTrack object has been added to a MediaStream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addtrack_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onaddtrack: ((MediaStreamTrackEvent) -> Unit)?
 
@@ -128,6 +159,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
      * The removetrack event is fired when a new MediaStreamTrack object has been removed from a MediaStream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removetrack_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onremovetrack: ((MediaStreamTrackEvent) -> Unit)?
 }
@@ -137,6 +170,8 @@ public open external class MediaStream : EventTarget, MediaProvider {
  * typically, these are audio or video tracks, but other track types may exist as well.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MediaStreamTrack : EventTarget {
     /**
@@ -145,6 +180,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/kind)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val kind: String
 
@@ -153,6 +190,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * (GUID) for the track, which is generated by the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/id)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val id: String
 
@@ -161,6 +200,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * label that identifies the track source, as in "internal microphone".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/label)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val label: String
 
@@ -169,6 +210,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * to render the source stream or false if it is not. This can be used to intentionally mute a track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/enabled)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var enabled: Boolean
 
@@ -177,6 +220,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * the track is currently unable to provide media output.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/muted)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val muted: Boolean
 
@@ -184,6 +229,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * The mute event is sent to a MediaStreamTrack when the track's source is temporarily unable to provide media data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/mute_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onmute: ((Event) -> Unit)?
 
@@ -192,6 +239,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * after a period of not being able to do so.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/unmute_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onunmute: ((Event) -> Unit)?
 
@@ -200,6 +249,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * of the track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/readyState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val readyState: MediaStreamTrackState
 
@@ -208,6 +259,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * of the media was reached or because no further data is available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/ended_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onended: ((Event) -> Unit)?
 
@@ -216,6 +269,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * MediaStreamTrack object is identical except for its unique id.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/clone)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clone(): MediaStreamTrack
 
@@ -223,6 +278,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * The stop() method of the MediaStreamTrack interface stops the track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/stop)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun stop()
 
@@ -232,6 +289,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getCapabilities)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getCapabilities(): MediaTrackCapabilities
 
@@ -242,6 +301,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * acceptable for the included constrainable properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getConstraints)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getConstraints(): MediaTrackConstraints
 
@@ -250,6 +311,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * each of the constrainable properties for the current MediaStreamTrack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getSettings(): MediaTrackSettings
 
@@ -259,6 +322,8 @@ public abstract external class MediaStreamTrack : EventTarget {
      * properties of the track, such as frame rate, dimensions, echo cancellation, and so forth.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun applyConstraints(constraints: MediaTrackConstraints = definedExternally): Promise<JsAny?>
 }
@@ -479,6 +544,8 @@ public inline val EchoCancellationModeEnum.Companion.REMOTE_ONLY: EchoCancellati
  * methods. These events are sent to the stream when these changes occur.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class MediaStreamTrackEvent : Event {
     /**
@@ -486,6 +553,8 @@ public open external class MediaStreamTrackEvent : Event {
      * signaling that a MediaStreamTrack has been added to or removed from a MediaStream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent/MediaStreamTrackEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: MediaStreamTrackEventInit)
 
@@ -494,6 +563,8 @@ public open external class MediaStreamTrackEvent : Event {
      * this event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent/track)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val track: MediaStreamTrack
 
@@ -523,6 +594,8 @@ public fun MediaStreamTrackEventInit(track: MediaStreamTrack, bubbles: Boolean? 
  * constraints are applied.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OverconstrainedError)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class OverconstrainedError : DOMException {
     /**
@@ -532,6 +605,8 @@ public open external class OverconstrainedError : DOMException {
      * constraints are applied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OverconstrainedError/OverconstrainedError)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(constraint: String, message: String = definedExternally)
 
@@ -540,6 +615,8 @@ public open external class OverconstrainedError : DOMException {
      * in the constructor, meaning the constraint that was not satisfied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OverconstrainedError/constraint)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val constraint: String
 
@@ -580,6 +657,8 @@ public open external class OverconstrainedError : DOMException {
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MediaDevices : EventTarget {
     /**
@@ -587,6 +666,8 @@ public abstract external class MediaDevices : EventTarget {
      * or speaker is connected to or removed from the system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/devicechange_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var ondevicechange: ((DeviceChangeEvent) -> Unit)?
 
@@ -596,6 +677,8 @@ public abstract external class MediaDevices : EventTarget {
      * with an array of MediaDeviceInfo objects describing the devices.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun enumerateDevices(): Promise<JsArray<MediaDeviceInfo>>
 
@@ -604,6 +687,8 @@ public abstract external class MediaDevices : EventTarget {
      * specify one of the constrainable properties the user agent understands.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getSupportedConstraints(): MediaTrackSupportedConstraints
 
@@ -612,6 +697,8 @@ public abstract external class MediaDevices : EventTarget {
      * which produces a MediaStream with tracks containing the requested types of media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getUserMedia(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
 }
@@ -623,6 +710,8 @@ public abstract external class MediaDevices : EventTarget {
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MediaDeviceInfo : JsAny {
     /**
@@ -630,6 +719,8 @@ public abstract external class MediaDeviceInfo : JsAny {
      * represented device and is persisted across sessions.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/deviceId)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val deviceId: String
 
@@ -638,6 +729,8 @@ public abstract external class MediaDeviceInfo : JsAny {
      * "videoinput", "audioinput" or "audiooutput".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/kind)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val kind: MediaDeviceKind
 
@@ -646,6 +739,8 @@ public abstract external class MediaDeviceInfo : JsAny {
      * example "External USB Webcam").
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/label)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val label: String
 
@@ -653,6 +748,8 @@ public abstract external class MediaDeviceInfo : JsAny {
      * The groupId read-only property of the MediaDeviceInfo interface returns a string that is a group identifier.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/groupId)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val groupId: String
 
@@ -661,6 +758,8 @@ public abstract external class MediaDeviceInfo : JsAny {
      * MediaDeviceInfo object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/toJSON)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun toJSON(): JsAny
 }
@@ -681,6 +780,8 @@ public inline val MediaDeviceKind.Companion.VIDEOINPUT: MediaDeviceKind get() = 
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputDeviceInfo)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class InputDeviceInfo : MediaDeviceInfo {
     /**
@@ -688,6 +789,8 @@ public abstract external class InputDeviceInfo : MediaDeviceInfo {
      * the primary audio or video track of the device's MediaStream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputDeviceInfo/getCapabilities)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getCapabilities(): MediaTrackCapabilities
 }

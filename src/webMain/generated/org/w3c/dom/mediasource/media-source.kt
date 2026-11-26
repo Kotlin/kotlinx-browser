@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'media-source', DO NOT EDIT!
@@ -35,6 +38,8 @@ public inline val EndOfStreamError.Companion.DECODE: EndOfStreamError get() = "d
  * HTMLMediaElement object. A MediaSource object can be attached to a HTMLMediaElement to be played in the user agent.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
     /**
@@ -42,6 +47,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * no associated source buffers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/MediaSource)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -51,6 +58,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * element via its HTMLMediaElement.srcObject property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/handle)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val handle: MediaSourceHandle
 
@@ -59,6 +68,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * the list of SourceBuffer objects associated with this MediaSource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceBuffers)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val sourceBuffers: SourceBufferList
 
@@ -68,6 +79,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * the selected video track, enabled audio tracks, and shown/hidden text tracks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/activeSourceBuffers)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val activeSourceBuffers: SourceBufferList
 
@@ -76,6 +89,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * current MediaSource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/readyState)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val readyState: ReadyState
 
@@ -84,6 +99,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * presented.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/duration)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var duration: Double
 
@@ -93,6 +110,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * is first attached to a media element or when the readyState changes from "ended" back to "open".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceopen_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onsourceopen: ((Event) -> Unit)?
 
@@ -103,6 +122,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * the MediaSource. This causes the readyState to transition to "ended" and triggers the sourceended event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceended_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onsourceended: ((Event) -> Unit)?
 
@@ -111,6 +132,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * the MediaSource has been detached from the media element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceclose_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onsourceclose: ((Event) -> Unit)?
 
@@ -119,6 +142,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * adds it to the MediaSource's sourceBuffers list. The new SourceBuffer is also returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/addSourceBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addSourceBuffer(type: String): SourceBuffer
 
@@ -127,6 +152,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * SourceBufferList associated with this MediaSource object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/removeSourceBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeSourceBuffer(sourceBuffer: SourceBuffer)
 
@@ -134,6 +161,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * The endOfStream() method of the MediaSource interface signals the end of the stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/endOfStream)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun endOfStream(error: EndOfStreamError = definedExternally)
 
@@ -142,6 +171,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * media element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/setLiveSeekableRange)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun setLiveSeekableRange(start: Double, end: Double)
 
@@ -150,6 +181,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
      * call to setLiveSeekableRange().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/clearLiveSeekableRange)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun clearLiveSeekableRange()
 
@@ -159,6 +192,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
          * MediaSource worker support is implemented, providing a low-latency feature detection mechanism.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/canConstructInDedicatedWorker_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public val canConstructInDedicatedWorker: Boolean
 
@@ -167,6 +202,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
          * and (optional) codec are likely to be supported by the current user agent.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/isTypeSupported_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun isTypeSupported(type: String): Boolean
     }
@@ -179,6 +216,8 @@ public open external class MediaSource : EventTarget, UnionBlobOrMediaSource {
  * the need for MediaSourceHandles.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSourceHandle)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MediaSourceHandle : JsAny
 
@@ -195,6 +234,8 @@ public inline val AppendMode.Companion.SEQUENCE: AppendMode get() = "sequence".t
  * MediaSource object. This can be made up of one or several media segments.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SourceBuffer : EventTarget {
     /**
@@ -202,6 +243,8 @@ public abstract external class SourceBuffer : EventTarget {
      * SourceBuffer in any order, or in a strict sequence.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/mode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var mode: AppendMode
 
@@ -210,6 +253,8 @@ public abstract external class SourceBuffer : EventTarget {
      * being updated — i.e., whether an appendBuffer() or remove() operation is currently in progress.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updating)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val updating: Boolean
 
@@ -218,6 +263,8 @@ public abstract external class SourceBuffer : EventTarget {
      * in the SourceBuffer as a normalized TimeRanges object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/buffered)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val buffered: TimeRanges
 
@@ -226,6 +273,8 @@ public abstract external class SourceBuffer : EventTarget {
      * segments that are appended to the SourceBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/timestampOffset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var timestampOffset: Double
 
@@ -234,6 +283,8 @@ public abstract external class SourceBuffer : EventTarget {
      * contained inside the SourceBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/audioTracks)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val audioTracks: AudioTrackList
 
@@ -242,6 +293,8 @@ public abstract external class SourceBuffer : EventTarget {
      * contained inside the SourceBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/videoTracks)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val videoTracks: VideoTrackList
 
@@ -250,6 +303,8 @@ public abstract external class SourceBuffer : EventTarget {
      * contained inside the SourceBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/textTracks)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val textTracks: TextTrackList
 
@@ -259,6 +314,8 @@ public abstract external class SourceBuffer : EventTarget {
      * frames with timestamps within this range will be appended, whereas those outside the range will be filtered out.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowStart)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var appendWindowStart: Double
 
@@ -268,6 +325,8 @@ public abstract external class SourceBuffer : EventTarget {
      * frames with timestamps within this range will be appended, whereas those outside the range will be filtered out.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowEnd)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var appendWindowEnd: Double
 
@@ -276,6 +335,8 @@ public abstract external class SourceBuffer : EventTarget {
      * operation. The updating attribute transitions from false to true.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updatestart_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onupdatestart: ((Event) -> Unit)?
 
@@ -284,6 +345,8 @@ public abstract external class SourceBuffer : EventTarget {
      * operation. The updating attribute transitions from true to false. This event is fired before the updateend event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/update_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onupdate: ((Event) -> Unit)?
 
@@ -293,6 +356,8 @@ public abstract external class SourceBuffer : EventTarget {
      * after the update, error, or abort events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updateend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onupdateend: ((Event) -> Unit)?
 
@@ -303,6 +368,8 @@ public abstract external class SourceBuffer : EventTarget {
      * transitions from true to false. This event is fired before the updateend event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/error_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onerror: ((Event) -> Unit)?
 
@@ -313,6 +380,8 @@ public abstract external class SourceBuffer : EventTarget {
      * event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onabort: ((Event) -> Unit)?
 
@@ -321,6 +390,8 @@ public abstract external class SourceBuffer : EventTarget {
      * TypedArray or a DataView object to the SourceBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendBuffer)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun appendBuffer(data: BufferDataSource)
 
@@ -328,6 +399,8 @@ public abstract external class SourceBuffer : EventTarget {
      * The abort() method of the SourceBuffer interface aborts the current segment and resets the segment parser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun abort()
 
@@ -337,6 +410,8 @@ public abstract external class SourceBuffer : EventTarget {
      * mid-stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/changeType)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun changeType(type: String)
 
@@ -346,6 +421,8 @@ public abstract external class SourceBuffer : EventTarget {
      * not equal to false, call SourceBuffer.abort().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/remove)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun remove(start: Double, end: Double)
 }
@@ -354,6 +431,8 @@ public abstract external class SourceBuffer : EventTarget {
  * The SourceBufferList interface represents a simple container list for multiple SourceBuffer objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class SourceBufferList : EventTarget {
     /**
@@ -361,6 +440,8 @@ public abstract external class SourceBufferList : EventTarget {
      * list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/length)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val length: Int
     public open var onaddsourcebuffer: ((Event) -> Unit)?
@@ -376,6 +457,8 @@ public operator fun SourceBufferList.get(index: Int): SourceBuffer? = getPropert
  * scenarios where the user agent needs more control over buffered media data.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedMediaSource)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class ManagedMediaSource : MediaSource {
     /**
@@ -383,6 +466,8 @@ public open external class ManagedMediaSource : MediaSource {
      * ManagedMediaSource object instance with no associated source buffers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedMediaSource/ManagedMediaSource)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor()
 
@@ -391,6 +476,8 @@ public open external class ManagedMediaSource : MediaSource {
      * application should actively fetch and append media data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedMediaSource/streaming)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val streaming: Boolean
 
@@ -400,6 +487,8 @@ public open external class ManagedMediaSource : MediaSource {
      * application should begin fetching and appending media segments.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedMediaSource/startstreaming_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onstartstreaming: ((Event) -> Unit)?
 
@@ -409,6 +498,8 @@ public open external class ManagedMediaSource : MediaSource {
      * application can stop fetching new media segments.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedMediaSource/endstreaming_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onendstreaming: ((Event) -> Unit)?
 
@@ -418,6 +509,8 @@ public open external class ManagedMediaSource : MediaSource {
          * MediaSource worker support is implemented, providing a low-latency feature detection mechanism.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/canConstructInDedicatedWorker_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public val canConstructInDedicatedWorker: Boolean
 
@@ -426,6 +519,8 @@ public open external class ManagedMediaSource : MediaSource {
          * and (optional) codec are likely to be supported by the current user agent.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/isTypeSupported_static)
+         *
+         * © Mozilla Contributors, licensed under CC BY-SA 2.5
          */
         public fun isTypeSupported(type: String): Boolean
     }
@@ -438,6 +533,8 @@ public open external class ManagedMediaSource : MediaSource {
  * user agent runs the memory cleanup algorithm.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BufferedChangeEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class BufferedChangeEvent : Event {
     /**
@@ -445,6 +542,8 @@ public open external class BufferedChangeEvent : Event {
      * object instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BufferedChangeEvent/BufferedChangeEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: BufferedChangeEventInit = definedExternally)
 
@@ -454,6 +553,8 @@ public open external class BufferedChangeEvent : Event {
      * last updatestart and updateend events, during the most recent run of the coded frame processing algorithm.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BufferedChangeEvent/addedRanges)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val addedRanges: TimeRanges
 
@@ -464,6 +565,8 @@ public open external class BufferedChangeEvent : Event {
      * or coded frame eviction algorithm, or as a consequence of the user agent running the memory cleanup algorithm.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BufferedChangeEvent/removedRanges)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val removedRanges: TimeRanges
 
@@ -495,6 +598,8 @@ public fun BufferedChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean
  * content as part of its memory cleanup algorithm.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedSourceBuffer)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class ManagedSourceBuffer : SourceBuffer {
     /**
@@ -503,6 +608,8 @@ public abstract external class ManagedSourceBuffer : SourceBuffer {
      * the user agent running the memory cleanup algorithm.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ManagedSourceBuffer/bufferedchange_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onbufferedchange: ((BufferedChangeEvent) -> Unit)?
 }

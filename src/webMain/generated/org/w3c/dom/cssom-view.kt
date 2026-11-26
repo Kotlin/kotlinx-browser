@@ -1,6 +1,9 @@
 /*
  * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ *
+ * The documentation comments adapted from MDN Web Docs are © Mozilla Contributors and licensed separately, under
+ * CC BY-SA 2.5, not Apache 2.0. See the NOTICE file.
  */
 
 // NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'cssom-view', DO NOT EDIT!
@@ -53,12 +56,16 @@ public fun ScrollResult(interrupted: Boolean): ScrollResult = newJsObject<Scroll
  * and event-driven matching against the state of the document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class MediaQueryList : EventTarget {
     /**
      * The media read-only property of the MediaQueryList interface is a string representing a serialized media query.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/media)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val media: String
 
@@ -67,6 +74,8 @@ public abstract external class MediaQueryList : EventTarget {
      * document currently matches the media query list, or false if not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/matches)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val matches: Boolean
 
@@ -77,6 +86,8 @@ public abstract external class MediaQueryList : EventTarget {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/addListener)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun addListener(callback: EventListener?)
 
@@ -86,6 +97,8 @@ public abstract external class MediaQueryList : EventTarget {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/removeListener)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeListener(callback: EventListener?)
 
@@ -95,6 +108,8 @@ public abstract external class MediaQueryList : EventTarget {
      * Deprecated: MDN no longer recommends using this feature.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/removeListener)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun removeListener(callback: (Event) -> Unit)
 
@@ -102,6 +117,8 @@ public abstract external class MediaQueryList : EventTarget {
      * The change event of the MediaQueryList interface fires when the status of media query support changes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/change_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onchange: ((MediaQueryListEvent) -> Unit)?
 }
@@ -115,6 +132,8 @@ private fun toEventListener(callback: (Event) -> Unit): EventListener = js("call
  * Deprecated: MDN no longer recommends using this feature.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/addListener)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public fun MediaQueryList.addListener(callback: (Event) -> Unit): () -> Unit {
     val listener = toEventListener(callback)
@@ -127,12 +146,16 @@ public fun MediaQueryList.addListener(callback: (Event) -> Unit): () -> Unit {
  * instances are available as the event object on a function referenced by a change event.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public open external class MediaQueryListEvent : Event {
     /**
      * The MediaQueryListEvent() constructor creates a new MediaQueryListEvent object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/MediaQueryListEvent)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public constructor(type: String, eventInitDict: MediaQueryListEventInit = definedExternally)
 
@@ -141,6 +164,8 @@ public open external class MediaQueryListEvent : Event {
      * query.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/media)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val media: String
 
@@ -149,6 +174,8 @@ public open external class MediaQueryListEvent : Event {
      * document currently matches the media query list, or false if not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/matches)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val matches: Boolean
 
@@ -178,6 +205,8 @@ public fun MediaQueryListEventInit(bubbles: Boolean? = null, cancelable: Boolean
  * obtained using window.screen.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class Screen : JsAny {
     /**
@@ -185,6 +214,8 @@ public abstract external class Screen : JsAny {
      * available to the window.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/availWidth)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val availWidth: Int
 
@@ -194,6 +225,8 @@ public abstract external class Screen : JsAny {
      * access availHeight using window.screen.availHeight.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/availHeight)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val availHeight: Int
 
@@ -201,6 +234,8 @@ public abstract external class Screen : JsAny {
      * The Screen.width read-only property returns the width of the screen in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: Int
 
@@ -208,6 +243,8 @@ public abstract external class Screen : JsAny {
      * The Screen.height read-only property returns the height of the screen in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: Int
 
@@ -216,6 +253,8 @@ public abstract external class Screen : JsAny {
      * implementations return 24 for compatibility reasons. See the browser compatibility section for those that don't.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/colorDepth)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val colorDepth: Int
 
@@ -225,6 +264,8 @@ public abstract external class Screen : JsAny {
      * don't.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/pixelDepth)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pixelDepth: Int
 }
@@ -242,6 +283,8 @@ public fun CaretPositionFromPointOptions(shadowRoots: JsArray<ShadowRoot>? = nul
  * CaretPosition using the Document.caretPositionFromPoint() method.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class CaretPosition : JsAny {
     /**
@@ -249,6 +292,8 @@ public abstract external class CaretPosition : JsAny {
      * position.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition/offsetNode)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offsetNode: Node
 
@@ -257,6 +302,8 @@ public abstract external class CaretPosition : JsAny {
      * the caret position node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition/offset)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offset: Int
 
@@ -264,6 +311,8 @@ public abstract external class CaretPosition : JsAny {
      * The getClientRect() method of the CaretPosition interface returns the client rectangle for the caret range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition/getClientRect)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun getClientRect(): DOMRect?
 }
@@ -358,6 +407,8 @@ public external interface GeometryUtils : JsAny {
  * window on a page will have a unique VisualViewport representing the properties associated with that window.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport)
+ *
+ * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
 public abstract external class VisualViewport : EventTarget {
     /**
@@ -366,6 +417,8 @@ public abstract external class VisualViewport : EventTarget {
      * active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/offsetLeft)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offsetLeft: Double
 
@@ -374,6 +427,8 @@ public abstract external class VisualViewport : EventTarget {
      * viewport from the top edge of the layout viewport in CSS pixels, or 0 if current document is not fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/offsetTop)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val offsetTop: Double
 
@@ -383,6 +438,8 @@ public abstract external class VisualViewport : EventTarget {
      * fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/pageLeft)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pageLeft: Double
 
@@ -392,6 +449,8 @@ public abstract external class VisualViewport : EventTarget {
      * fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/pageTop)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val pageTop: Double
 
@@ -400,6 +459,8 @@ public abstract external class VisualViewport : EventTarget {
      * pixels, or 0 if current document is not fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/width)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val width: Double
 
@@ -408,6 +469,8 @@ public abstract external class VisualViewport : EventTarget {
      * pixels, or 0 if current document is not fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/height)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val height: Double
 
@@ -416,6 +479,8 @@ public abstract external class VisualViewport : EventTarget {
      * visual viewport, or 0 if current document is not fully active, or 1 if there is no output device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scale)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open val scale: Double
 
@@ -425,6 +490,8 @@ public abstract external class VisualViewport : EventTarget {
      * viewport.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/resize_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onresize: ((Event) -> Unit)?
 
@@ -434,6 +501,8 @@ public abstract external class VisualViewport : EventTarget {
      * layout viewport.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scroll_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onscroll: ((Event) -> Unit)?
 
@@ -444,6 +513,8 @@ public abstract external class VisualViewport : EventTarget {
      * update it with new content when scrolling ends using scrollend.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scrollend_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onscrollend: ((Event) -> Unit)?
 }
