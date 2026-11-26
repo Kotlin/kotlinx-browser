@@ -102,6 +102,7 @@ declared; use the standard name. `wordWrap`, `fontStretch` and `gridGap` are kep
 | `setTimeout(handler: dynamic, timeout, vararg arguments)` (also `setInterval`) | `setTimeout(handler: () -> Unit, timeout)` and `setTimeout(handler: String, timeout)` | The return value is ignored; capture values in the lambda instead of passing `arguments` |
 | `Promise<Unit>` (JS), `Promise<Nothing?>` (Wasm) for `Promise<undefined>` | `Promise<JsAny?>` | One declaration for both targets |
 | `Int` for IDL `long long` (`Blob.slice`, the offset of `drawElements`, `vertexAttribPointer`) | `Double` | A JS number; exact up to 2^53 |
+| `MouseEvent.clientX`, `clientY`, `screenX`, `screenY`: `Int` (also in `MouseEventInit` and the inits extending it) | `Double` | Pointer events report sub-pixel positions; use `.toInt()` where an integer is needed |
 | `getClientRects(): Array<DOMRect>` | `getClientRects(): DOMRectList` | As specified; `asList()` gives a `List` |
 | `WebGLRenderingContextBase.createBuffer(): WebGLBuffer?` and the other `create*` | Not nullable | WebGL spec change |
 | `Element.scroll*`, `Window.scroll*` returning `Unit` | Return `Promise<ScrollResult>` | CSSOM View change; ignoring the result is fine |

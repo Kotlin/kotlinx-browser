@@ -101,3 +101,27 @@ val EXCLUDED_TYPES: List<ExcludedType> = listOf(
         "Not provided by the hand-written typed arrays yet; ImageData.data stays Uint8ClampedArray as in the legacy API."
     ),
 )
+
+/**
+ * A member whose IDL type browsers do not follow: the attribute or dictionary field [member] of [owner] is generated
+ * with the IDL type [type] instead. Each entry must change exactly one member, or the build fails.
+ */
+data class TypeCorrection(
+    val owner: String,
+    val member: String,
+    val type: String,
+    val reason: String,
+)
+
+private const val FRACTIONAL_COORDINATES =
+    "Pointer events (click, pointermove, …) report sub-pixel coordinates: Chromium returns clientX = 10.5 for a " +
+            "PointerEvent. As `long`, JS holds 10.5 in an Int and Wasm truncates it to 10."
+
+/** See [TypeCorrection]. Applied by `correctTypes`, right after partials are merged. */
+val TYPE_CORRECTIONS: List<TypeCorrection> = listOf("screenX", "screenY", "clientX", "clientY")
+    .flatMap {
+        listOf(
+            TypeCorrection("MouseEvent", it, "double", FRACTIONAL_COORDINATES),
+            TypeCorrection("MouseEventInit", it, "double", FRACTIONAL_COORDINATES),
+        )
+    }

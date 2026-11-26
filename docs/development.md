@@ -95,19 +95,22 @@ All generator code is under `generator/src/main/kotlin/org/jetbrains/kotlin/tool
 
 | Stage | Code | What it does |
 |---|---|---|
-| Inputs | `IdlInput.kt`, `Specs.kt` | `GeneratorPaths` (locations from system properties); `SPEC_ALLOWLIST` (spec → Kotlin package), `EXCLUDED_SPECS`, `EXCLUDED_TYPES` |
+| Inputs | `IdlInput.kt`, `Specs.kt` | `GeneratorPaths` (locations from system properties); `SPEC_ALLOWLIST` (spec → Kotlin package), `EXCLUDED_SPECS`, `EXCLUDED_TYPES`, `TYPE_CORRECTIONS` |
 | Front-end | `frontend/WebIdl2JsonFrontend.kt` | Reads `webref-idl.json` into the IR (`ir/IdlIR.kt`). The IR is lossless: `checkIrRoundTrip` prints it back and compares |
 | | `frontend/WebrefEvents.kt` | Which event each `on…` handler receives |
 | | `frontend/WebDocs.kt` | The KDoc inputs: MDN page and deprecation per declaration (BCD), MDN summaries |
 | | `frontend/WebrefCss.kt` | Adds the CSS property attributes of `CSSStyleProperties`, which CSSOM defines in prose rather than IDL, as a partial interface |
 | Surface | `surface/Surface.kt`, `surface/Builtins.kt` | Starts from the whole corpus. Keeps the allowlisted specs and prunes references into excluded specs and types (recorded in `surface-report.txt`). Any reference left unresolved fails generation |
-| Lowering | `lowering/Lowering.kt` | In order: `mergePartials`, `resolveTypedefs`, `UnionMarkers`, `expandUnionOverloads`, `Shapes`, `EventHandlerTypes`, `Overrides` |
+| Lowering | `lowering/Lowering.kt` | In order: `mergePartials`, `correctTypes`, `simplifyTimerHandlers`, `resolveTypedefs`, `UnionMarkers`, `expandUnionOverloads`, `Shapes`, `EventHandlerTypes`, `Overrides` |
 | Type mapping | `mapping/WasmTypeMapping.kt` | IDL type → Kotlin type, depending on position (`String` in a signature, `JsString` as a type argument) |
 | Backend | `backend/KotlinBackend.kt` | Prints one Kotlin file per spec |
 
 The lowerings, briefly:
 
 - **`mergePartials`:** folds `partial interface`/`partial dictionary` declarations into the main definition.
+- **`correctTypes`:** gives the members listed in `TYPE_CORRECTIONS` the type browsers actually use
+  (`MouseEvent.clientX` is `double`, not `long`).
+- **`simplifyTimerHandlers`:** `setTimeout`/`setInterval` take a `() -> Unit` handler and no `arguments` (KT-60392).
 - **`resolveTypedefs`:** replaces every typedef with its type.
 - **`UnionMarkers`:** a union whose members are all interfaces becomes an empty marker interface that every member
   extends. It is named after its typedef (`CanvasImageSource`) or after its members (`UnionElementOrText`).
@@ -148,6 +151,8 @@ the golden file.
 - **Leave out a spec or a built-in type that an allowlisted spec references:** add it to `EXCLUDED_SPECS` or
   `EXCLUDED_TYPES` with a reason. References into it are pruned and listed in `surface-report.txt`. An entry that no
   longer prunes anything fails generation, so the lists can only shrink.
+- **A member whose IDL type browsers don't follow:** add a `TypeCorrection` to `TYPE_CORRECTIONS` with the reason,
+  and a `DomTest` showing the runtime value. An entry that no longer changes anything fails generation.
 - **Packages:** every definition goes into its spec's package; there are no per-definition overrides.
 - **A spec bug the backend must work around:** keep the workaround narrow, named and tested so that it fails once
   the spec is fixed. Example: `NOT_INDEXERS` in the backend, guarded by `notIndexersAreStillSpecial`.

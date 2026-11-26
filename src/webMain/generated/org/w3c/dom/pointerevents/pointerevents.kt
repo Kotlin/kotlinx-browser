@@ -33,7 +33,7 @@ public external interface PointerEventInit : MouseEventInit {
     public var predictedEvents: JsArray<PointerEvent>?
 }
 
-public fun PointerEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null, pointerId: Int? = null, width: Double? = null, height: Double? = null, pressure: Float? = null, tangentialPressure: Float? = null, tiltX: Int? = null, tiltY: Int? = null, twist: Int? = null, altitudeAngle: Double? = null, azimuthAngle: Double? = null, pointerType: String? = null, isPrimary: Boolean? = null, persistentDeviceId: Int? = null, coalescedEvents: JsArray<PointerEvent>? = null, predictedEvents: JsArray<PointerEvent>? = null): PointerEventInit {
+public fun PointerEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Double? = null, screenY: Double? = null, clientX: Double? = null, clientY: Double? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null, pointerId: Int? = null, width: Double? = null, height: Double? = null, pressure: Float? = null, tangentialPressure: Float? = null, tiltX: Int? = null, tiltY: Int? = null, twist: Int? = null, altitudeAngle: Double? = null, azimuthAngle: Double? = null, pointerType: String? = null, isPrimary: Boolean? = null, persistentDeviceId: Int? = null, coalescedEvents: JsArray<PointerEvent>? = null, predictedEvents: JsArray<PointerEvent>? = null): PointerEventInit {
     val dictionary = newJsObject<PointerEventInit>()
     if (bubbles != null) dictionary.bubbles = bubbles
     if (cancelable != null) dictionary.cancelable = cancelable
@@ -270,16 +270,16 @@ public open external class PointerEvent : MouseEvent {
 }
 
 public external interface MouseEventInit : EventModifierInit {
-    public var screenX: Int?
-    public var screenY: Int?
-    public var clientX: Int?
-    public var clientY: Int?
+    public var screenX: Double?
+    public var screenY: Double?
+    public var clientX: Double?
+    public var clientY: Double?
     public var button: Short?
     public var buttons: Short?
     public var relatedTarget: EventTarget?
 }
 
-public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null): MouseEventInit {
+public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Double? = null, screenY: Double? = null, clientX: Double? = null, clientY: Double? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null): MouseEventInit {
     val dictionary = newJsObject<MouseEventInit>()
     if (bubbles != null) dictionary.bubbles = bubbles
     if (cancelable != null) dictionary.cancelable = cancelable
@@ -337,7 +337,7 @@ public open external class MouseEvent : UIEvent {
      *
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
-    public open val screenX: Int
+    public open val screenX: Double
 
     /**
      * The screenY read-only property of the MouseEvent interface provides the vertical coordinate (offset) of the mouse
@@ -347,7 +347,7 @@ public open external class MouseEvent : UIEvent {
      *
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
-    public open val screenY: Int
+    public open val screenY: Double
 
     /**
      * The clientX read-only property of the MouseEvent interface provides the horizontal coordinate within the
@@ -357,7 +357,7 @@ public open external class MouseEvent : UIEvent {
      *
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
-    public open val clientX: Int
+    public open val clientX: Double
 
     /**
      * The clientY read-only property of the MouseEvent interface provides the vertical coordinate within the
@@ -367,7 +367,7 @@ public open external class MouseEvent : UIEvent {
      *
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
-    public open val clientY: Int
+    public open val clientY: Double
 
     /**
      * The MouseEvent.layerX read-only property returns the horizontal coordinate of the event relative to the current
@@ -556,7 +556,7 @@ public external interface WheelEventInit : MouseEventInit {
     public var momentum: Boolean?
 }
 
-public fun WheelEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null, deltaX: Double? = null, deltaY: Double? = null, deltaZ: Double? = null, deltaMode: Int? = null, momentum: Boolean? = null): WheelEventInit {
+public fun WheelEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Double? = null, screenY: Double? = null, clientX: Double? = null, clientY: Double? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null, deltaX: Double? = null, deltaY: Double? = null, deltaZ: Double? = null, deltaMode: Int? = null, momentum: Boolean? = null): WheelEventInit {
     val dictionary = newJsObject<WheelEventInit>()
     if (bubbles != null) dictionary.bubbles = bubbles
     if (cancelable != null) dictionary.cancelable = cancelable

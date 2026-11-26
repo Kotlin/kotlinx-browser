@@ -12,6 +12,7 @@ import org.w3c.dom.*
 import org.w3c.animations.*
 import org.w3c.css.fonts.*
 import org.w3c.dom.pointerevents.PointerEvent
+import org.w3c.dom.pointerevents.PointerEventInit
 import org.w3c.encoding.TextDecoder
 import org.w3c.encoding.TextEncoder
 import org.w3c.webaudio.OfflineAudioContext
@@ -212,6 +213,15 @@ class DomTest {
         assertEquals(str(AnimationPlayState.RUNNING), str(animation.playState))
         animation.cancel()
         assertEquals(str(AnimationPlayState.IDLE), str(animation.playState))
+    }
+
+    /** Pointer events carry sub-pixel coordinates, so `clientX` and the like are `Double` (`TYPE_CORRECTIONS`). */
+    @Test
+    fun fractionalPointerCoordinates() {
+        if (!isBrowser()) return
+        val event = PointerEvent("pointermove", PointerEventInit(clientX = 10.5, screenY = 3.25))
+        assertEquals(10.5, event.clientX)
+        assertEquals(3.25, event.screenY)
     }
 
     /** `ImageData.data` is a `Uint8ClampedArray`: its elements are `UByte`, so 255 is 255, not -1. */

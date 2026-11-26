@@ -34,6 +34,7 @@ class LoweredIR(
 fun IdlIR.lower(events: List<WebrefEvent>): LoweredIR {
     val resolved = this
         .mergePartials()
+        .correctTypes()
         .simplifyTimerHandlers()
         .resolveTypedefs()
 

@@ -58,7 +58,7 @@ built-ins, `ItemArrayLike` and `JsObjects.kt`.
 
 | To change | Edit |
 |---|---|
-| Which specs are generated, their packages, exclusions | `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/Specs.kt` |
+| Which specs are generated, their packages, exclusions, type corrections (`TYPE_CORRECTIONS`) | `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/Specs.kt` |
 | How IDL types map to Kotlin types | `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/mapping/WasmTypeMapping.kt` |
 | Class/interface/object shape, copied constants and statics, supertypes | `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/lowering/Shapes.kt` |
 | `override`/`open`, members inherited through several paths, dropped clashes | `generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/lowering/Overrides.kt` |

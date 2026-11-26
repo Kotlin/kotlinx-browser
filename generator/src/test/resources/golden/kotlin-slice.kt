@@ -7089,16 +7089,16 @@ import org.w3c.dom.*
 import org.w3c.dom.events.*
 
 public external interface MouseEventInit : EventModifierInit {
-    public var screenX: Int?
-    public var screenY: Int?
-    public var clientX: Int?
-    public var clientY: Int?
+    public var screenX: Double?
+    public var screenY: Double?
+    public var clientX: Double?
+    public var clientY: Double?
     public var button: Short?
     public var buttons: Short?
     public var relatedTarget: EventTarget?
 }
 
-public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null): MouseEventInit {
+public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Double? = null, screenY: Double? = null, clientX: Double? = null, clientY: Double? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null): MouseEventInit {
     val dictionary = newJsObject<MouseEventInit>()
     if (bubbles != null) dictionary.bubbles = bubbles
     if (cancelable != null) dictionary.cancelable = cancelable
