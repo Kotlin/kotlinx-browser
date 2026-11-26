@@ -97,7 +97,7 @@ object SurfaceBuilder {
 
         val definedIn = mutableMapOf<String, MutableSet<String>>()
         for (spec in corpus.specs) for (definition in spec.definitions) {
-            definition.definedNames().forEach { definedIn.getOrPut(it) { linkedSetOf() } += spec.name }
+            definition.definedNames().forEach { definedIn.getOrPut(it) { mutableSetOf() } += spec.name }
         }
         for (type in excludedTypes) {
             if (type in definedIn) problems += "excluded type '$type' is defined in ${
@@ -173,7 +173,7 @@ private class Pruner(
     /** Definitions removed in an earlier pass → the excluded spec responsible. */
     private val removedDefinitions = mutableMapOf<String, String>()
     private var available: Set<String> = emptySet()
-    private val unresolved = linkedMapOf<String, MutableSet<String>>()
+    private val unresolved = mutableMapOf<String, MutableSet<String>>()
     var removedDefinitionInLastPass = false
         private set
 
@@ -199,7 +199,7 @@ private class Pruner(
         if (name in excludedTypes) return name
         val where = definedIn[name].orEmpty()
         where.firstOrNull { it in excludedSpecs }?.let { return it }
-        unresolved.getOrPut(name) { linkedSetOf() } += from
+        unresolved.getOrPut(name) { mutableSetOf() } += from
         return null
     }
 

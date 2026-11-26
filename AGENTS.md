@@ -42,7 +42,9 @@ built-ins, `ItemArrayLike` and `JsObjects.kt`.
    Playwright Chromium for both targets; `DomTest` returns at once on Node. Several "obvious" shapes turned out wrong
    only at runtime (see below).
 5. **Generated output must be deterministic:** no clock, no `System.lineSeparator()`, no map iteration order that
-   isn't sorted or insertion-ordered. Headers come from `generatedFileHeader` in
+   isn't sorted or insertion-ordered. The stdlib defaults (`setOf`, `mapOf`, `mutableSetOf`, `mutableMapOf`,
+   `groupBy`, …) are insertion-ordered, so use them rather than `linkedSetOf`/`linkedMapOf`; never `hashSetOf`,
+   `hashMapOf` or `HashMap()`. Headers come from `generatedFileHeader` in
    `generator/src/main/kotlin/org/jetbrains/kotlin/generators/helpers/header.kt`.
 6. **Follow the spec.** Each definition goes into its spec's package and members go where the IDL puts them.
    Legacy (dukat-era) shapes are not a reason to diverge; when a spec change breaks users, record it in

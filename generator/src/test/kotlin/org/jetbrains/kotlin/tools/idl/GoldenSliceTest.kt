@@ -28,7 +28,7 @@ class GoldenSliceTest {
     }
 
     companion object {
-        val GOLDEN_SLICE: Set<String> = linkedSetOf(
+        val GOLDEN_SLICE: Set<String> = setOf(
             // deep hierarchy, [SameObject], constants, partials across specs
             "Node", "Element", "Document",
             // mixins and `includes`

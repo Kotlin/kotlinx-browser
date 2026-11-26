@@ -107,8 +107,8 @@ private class OverrideAnalysis(
      */
     private fun ownOverrides(name: String): Pair<Set<IdlMember>, Set<IdlMember>> {
         val inheritedByKey = inheritedByKey(name)
-        val overriding = linkedSetOf<IdlMember>()
-        val conflicting = linkedSetOf<IdlMember>()
+        val overriding = mutableSetOf<IdlMember>()
+        val conflicting = mutableSetOf<IdlMember>()
 
         declared(name)
             .filter { !it.member.isStatic() }
@@ -282,7 +282,7 @@ private class OverrideAnalysis(
 
     /** All supertypes of [name], nearest first. */
     private fun ancestors(name: String): Set<String> = ancestorsCache.getOrPut(name) {
-        val result = linkedSetOf<String>()
+        val result = mutableSetOf<String>()
 
         fun visit(n: String): Unit = supertypes(n)
             .forEach {

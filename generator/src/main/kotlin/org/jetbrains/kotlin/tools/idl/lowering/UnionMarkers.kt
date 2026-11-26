@@ -79,7 +79,7 @@ private constructor(
 
             val problems = mutableListOf<String>()
 
-            val markers = linkedMapOf<String, UnionMarker>()
+            val markers = mutableMapOf<String, UnionMarker>()
             for ((val specName = name, val definitions) in ir.specs) {
                 for (d in definitions) {
                     for (t in d.allTypes()) {

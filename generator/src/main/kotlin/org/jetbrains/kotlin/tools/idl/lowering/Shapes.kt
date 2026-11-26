@@ -232,7 +232,7 @@ class Shapes private constructor(
                 return markers.of(i.name) - inherited
             }
 
-            val shapes = linkedMapOf<String, Shape>()
+            val shapes = mutableMapOf<String, Shape>()
             interfaces
                 .values
                 .forEach { i ->
