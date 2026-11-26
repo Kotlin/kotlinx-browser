@@ -159,6 +159,28 @@ class DomTest {
         assertEquals(Node.TEXT_NODE, document.createTextNode("x").nodeType)
     }
 
+    /**
+     * KT-16305: `observe` threw while the factory set absent members to `null` (`attributeFilter: null` is not a
+     * sequence). Only the given members are set now, and `attributeFilter` takes a `JsArray`.
+     */
+    @Test
+    fun mutationObserverOptions() {
+        if (!isBrowser()) return
+        val element = div()
+        val observer = MutationObserver { _, _ -> }
+
+        observer.observe(element, MutationObserverInit(childList = true))
+        element.append("x")
+        assertEquals("childList", observer.takeRecords()[0]?.type)
+
+        observer.observe(element, MutationObserverInit(attributeFilter = listOf("title".toJsString()).toJsArray()))
+        element.setAttribute("lang", "en")
+        element.setAttribute("title", "t")
+        val records = observer.takeRecords()
+        observer.disconnect()
+        assertEquals(listOf("title"), List(records.length) { records[it]?.attributeName })
+    }
+
     /** `ImageData.data` is a `Uint8ClampedArray`: its elements are `UByte`, so 255 is 255, not -1. */
     @Test
     fun canvasPixelsAreUnsigned() {
