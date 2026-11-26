@@ -99,6 +99,7 @@ declared; use the standard name. `wordWrap`, `fontStretch` and `gridGap` are kep
 |---|---|---|
 | `dynamic`, `Any?` parameters (`Request(input)`, `Headers(init)`, `XMLHttpRequest.send(body)`, `SourceBuffer.appendBuffer(data)`, …) | Typed overloads (`String`, `Request`, `BufferDataSource`, …) or `JsAny` | `dynamic` does not exist on Wasm; unions become overloads |
 | `append(vararg nodes: dynamic)` (also `prepend`, `before`, `after`, `replaceWith`, `replaceChildren`) | `append(vararg nodes: Node)`, `append(vararg nodes: String)` and `append()` | Mixing nodes and strings in one call needs two calls |
+| `setTimeout(handler: dynamic, timeout, vararg arguments)` (also `setInterval`) | `setTimeout(handler: () -> Unit, timeout)` and `setTimeout(handler: String, timeout)` | The return value is ignored; capture values in the lambda instead of passing `arguments` |
 | `Promise<Unit>` (JS), `Promise<Nothing?>` (Wasm) for `Promise<undefined>` | `Promise<JsAny?>` | One declaration for both targets |
 | `Int` for IDL `long long` (`Blob.slice`, the offset of `drawElements`, `vertexAttribPointer`) | `Double` | A JS number; exact up to 2^53 |
 | `getClientRects(): Array<DOMRect>` | `getClientRects(): DOMRectList` | As specified; `asList()` gives a `List` |

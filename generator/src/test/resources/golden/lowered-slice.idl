@@ -266,11 +266,11 @@ interface mixin WindowOrWorkerGlobalScope {
   undefined reportError(any e);
   DOMString btoa(DOMString data);
   ByteString atob(DOMString data);
-  long setTimeout(DOMString handler, optional long timeout = 0, any... arguments);
-  long setTimeout(Function handler, optional long timeout = 0, any... arguments);
+  long setTimeout(DOMString handler, optional long timeout = 0);
+  long setTimeout(VoidFunction handler, optional long timeout = 0);
   undefined clearTimeout(optional long id = 0);
-  long setInterval(DOMString handler, optional long timeout = 0, any... arguments);
-  long setInterval(Function handler, optional long timeout = 0, any... arguments);
+  long setInterval(DOMString handler, optional long timeout = 0);
+  long setInterval(VoidFunction handler, optional long timeout = 0);
   undefined clearInterval(optional long id = 0);
   undefined queueMicrotask(VoidFunction callback);
   Promise<ImageBitmap> createImageBitmap((HTMLImageElement or SVGImageElement or HTMLVideoElement or HTMLCanvasElement or ImageBitmap or OffscreenCanvas or Blob or ImageData) image, optional ImageBitmapOptions options = {});

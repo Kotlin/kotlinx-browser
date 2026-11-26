@@ -13,6 +13,8 @@ private fun keys(o: JsAny): String = js("Object.keys(o).join(',')")
 private fun str(o: JsAny): String = js("String(o)")
 private fun array(): JsAny = js("['a', 'b']")
 private fun obj(): JsAny = js("({ x: 'y' })")
+/** A timer host that calls a function handler at once, with the extra arguments the browser would pass. */
+private fun timers(): JsAny = js("({ setTimeout: (h, t) => { h(1, 'x', {}); return t; } })")
 
 /** The shapes the generator relies on, at runtime on both targets (Node: `EventTarget` and `Event` are global). */
 class InteropTest {
@@ -94,5 +96,14 @@ class InteropTest {
         assertEquals(-1, NodeFilter.SHOW_ALL, "0xFFFFFFFF")
         assertEquals(0x4000, WebGLRenderingContextBase.COLOR_BUFFER_BIT)
         assertEquals(-1.0, WebGL2RenderingContextBase.TIMEOUT_IGNORED)
+    }
+
+    /** A timer handler is a `() -> Unit` (KT-60392): JS may call it with arguments and ignores what it returns. */
+    @Test
+    fun timerHandlerIgnoresArguments() {
+        val host = timers().unsafeCast<WindowOrWorkerGlobalScope>()
+        var calls = 0
+        assertEquals(5, host.setTimeout({ calls++ }, 5))
+        assertEquals(1, calls)
     }
 }

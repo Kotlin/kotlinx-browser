@@ -23786,10 +23786,10 @@ abstract interface org.w3c.dom/WindowOrWorkerGlobalScope { // org.w3c.dom/Window
     abstract fun fetch(org.w3c.fetch/Request, org.w3c.fetch/RequestInit = ...): kotlin.js/Promise<org.w3c.fetch/Response> // org.w3c.dom/WindowOrWorkerGlobalScope.fetch|fetch(org.w3c.fetch.Request;org.w3c.fetch.RequestInit){}[0]
     abstract fun queueMicrotask(kotlin/Function0<kotlin/Unit>) // org.w3c.dom/WindowOrWorkerGlobalScope.queueMicrotask|queueMicrotask(kotlin.Function0<kotlin.Unit>){}[0]
     abstract fun reportError(kotlin/Any?) // org.w3c.dom/WindowOrWorkerGlobalScope.reportError|reportError(kotlin.Any?){}[0]
-    abstract fun setInterval(kotlin/Function1<kotlin/Any?, kotlin/Any?>, kotlin/Int = ..., kotlin/Array<out kotlin/Any?>...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setInterval|setInterval(kotlin.Function1<kotlin.Any?,kotlin.Any?>;kotlin.Int;kotlin.Array<out|kotlin.Any?>...){}[0]
-    abstract fun setInterval(kotlin/String, kotlin/Int = ..., kotlin/Array<out kotlin/Any?>...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setInterval|setInterval(kotlin.String;kotlin.Int;kotlin.Array<out|kotlin.Any?>...){}[0]
-    abstract fun setTimeout(kotlin/Function1<kotlin/Any?, kotlin/Any?>, kotlin/Int = ..., kotlin/Array<out kotlin/Any?>...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setTimeout|setTimeout(kotlin.Function1<kotlin.Any?,kotlin.Any?>;kotlin.Int;kotlin.Array<out|kotlin.Any?>...){}[0]
-    abstract fun setTimeout(kotlin/String, kotlin/Int = ..., kotlin/Array<out kotlin/Any?>...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setTimeout|setTimeout(kotlin.String;kotlin.Int;kotlin.Array<out|kotlin.Any?>...){}[0]
+    abstract fun setInterval(kotlin/Function0<kotlin/Unit>, kotlin/Int = ...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setInterval|setInterval(kotlin.Function0<kotlin.Unit>;kotlin.Int){}[0]
+    abstract fun setInterval(kotlin/String, kotlin/Int = ...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setInterval|setInterval(kotlin.String;kotlin.Int){}[0]
+    abstract fun setTimeout(kotlin/Function0<kotlin/Unit>, kotlin/Int = ...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setTimeout|setTimeout(kotlin.Function0<kotlin.Unit>;kotlin.Int){}[0]
+    abstract fun setTimeout(kotlin/String, kotlin/Int = ...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setTimeout|setTimeout(kotlin.String;kotlin.Int){}[0]
     abstract fun structuredClone(kotlin/Any?, org.w3c.dom/StructuredSerializeOptions = ...): kotlin/Any? // org.w3c.dom/WindowOrWorkerGlobalScope.structuredClone|structuredClone(kotlin.Any?;org.w3c.dom.StructuredSerializeOptions){}[0]
 }
 
@@ -29775,10 +29775,10 @@ abstract interface org.w3c.dom/WindowOrWorkerGlobalScope : kotlin.js/JsAny { // 
     abstract fun fetch(org.w3c.fetch/Request, org.w3c.fetch/RequestInit = ...): kotlin.js/Promise<org.w3c.fetch/Response> // org.w3c.dom/WindowOrWorkerGlobalScope.fetch|fetch(org.w3c.fetch.Request;org.w3c.fetch.RequestInit){}[0]
     abstract fun queueMicrotask(kotlin/Function0<kotlin/Unit>) // org.w3c.dom/WindowOrWorkerGlobalScope.queueMicrotask|queueMicrotask(kotlin.Function0<kotlin.Unit>){}[0]
     abstract fun reportError(kotlin.js/JsAny?) // org.w3c.dom/WindowOrWorkerGlobalScope.reportError|reportError(kotlin.js.JsAny?){}[0]
-    abstract fun setInterval(kotlin/Function1<kotlin.js/JsAny?, kotlin.js/JsAny?>, kotlin/Int = ..., kotlin/Array<out kotlin.js/JsAny?>...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setInterval|setInterval(kotlin.Function1<kotlin.js.JsAny?,kotlin.js.JsAny?>;kotlin.Int;kotlin.Array<out|kotlin.js.JsAny?>...){}[0]
-    abstract fun setInterval(kotlin/String, kotlin/Int = ..., kotlin/Array<out kotlin.js/JsAny?>...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setInterval|setInterval(kotlin.String;kotlin.Int;kotlin.Array<out|kotlin.js.JsAny?>...){}[0]
-    abstract fun setTimeout(kotlin/Function1<kotlin.js/JsAny?, kotlin.js/JsAny?>, kotlin/Int = ..., kotlin/Array<out kotlin.js/JsAny?>...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setTimeout|setTimeout(kotlin.Function1<kotlin.js.JsAny?,kotlin.js.JsAny?>;kotlin.Int;kotlin.Array<out|kotlin.js.JsAny?>...){}[0]
-    abstract fun setTimeout(kotlin/String, kotlin/Int = ..., kotlin/Array<out kotlin.js/JsAny?>...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setTimeout|setTimeout(kotlin.String;kotlin.Int;kotlin.Array<out|kotlin.js.JsAny?>...){}[0]
+    abstract fun setInterval(kotlin/Function0<kotlin/Unit>, kotlin/Int = ...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setInterval|setInterval(kotlin.Function0<kotlin.Unit>;kotlin.Int){}[0]
+    abstract fun setInterval(kotlin/String, kotlin/Int = ...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setInterval|setInterval(kotlin.String;kotlin.Int){}[0]
+    abstract fun setTimeout(kotlin/Function0<kotlin/Unit>, kotlin/Int = ...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setTimeout|setTimeout(kotlin.Function0<kotlin.Unit>;kotlin.Int){}[0]
+    abstract fun setTimeout(kotlin/String, kotlin/Int = ...): kotlin/Int // org.w3c.dom/WindowOrWorkerGlobalScope.setTimeout|setTimeout(kotlin.String;kotlin.Int){}[0]
     abstract fun structuredClone(kotlin.js/JsAny?, org.w3c.dom/StructuredSerializeOptions = ...): kotlin.js/JsAny? // org.w3c.dom/WindowOrWorkerGlobalScope.structuredClone|structuredClone(kotlin.js.JsAny?;org.w3c.dom.StructuredSerializeOptions){}[0]
 }
 

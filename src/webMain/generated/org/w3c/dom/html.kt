@@ -19448,11 +19448,11 @@ public external interface WindowOrWorkerGlobalScope : JsAny {
     public fun reportError(e: JsAny?)
     public fun btoa(data: String): String
     public fun atob(data: String): String
-    public fun setTimeout(handler: String, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
-    public fun setTimeout(handler: (JsAny?) -> JsAny?, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
+    public fun setTimeout(handler: String, timeout: Int = definedExternally): Int
+    public fun setTimeout(handler: () -> Unit, timeout: Int = definedExternally): Int
     public fun clearTimeout(id: Int = definedExternally)
-    public fun setInterval(handler: String, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
-    public fun setInterval(handler: (JsAny?) -> JsAny?, timeout: Int = definedExternally, vararg arguments: JsAny?): Int
+    public fun setInterval(handler: String, timeout: Int = definedExternally): Int
+    public fun setInterval(handler: () -> Unit, timeout: Int = definedExternally): Int
     public fun clearInterval(id: Int = definedExternally)
     public fun queueMicrotask(callback: () -> Unit)
     public fun createImageBitmap(image: ImageBitmapSource, options: ImageBitmapOptions = definedExternally): Promise<ImageBitmap>
