@@ -922,6 +922,24 @@ public open external class CountQueuingStrategy : JsAny {
 }
 
 public external interface GenericTransformStream : JsAny {
+    /**
+     * The readable read-only property of the TextDecoderStream interface returns a ReadableStream that emits decoded
+     * strings.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoderStream/readable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
     public val readable: ReadableStream
+
+    /**
+     * The writable read-only property of the TextDecoderStream interface returns a WritableStream that accepts binary
+     * data, in the form of ArrayBuffer, TypedArray, or DataView chunks (SharedArrayBuffer and its views are also
+     * allowed), to be decoded into strings.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoderStream/writable)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
     public val writable: WritableStream
 }

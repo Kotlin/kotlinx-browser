@@ -6,9 +6,14 @@
 import kotlinx.browser.document
 import kotlinx.browser.localStorage
 import kotlinx.browser.window
+import org.khronos.webgl.Uint8Array
 import org.khronos.webgl.get
 import org.w3c.dom.*
+import org.w3c.animations.*
 import org.w3c.dom.pointerevents.PointerEvent
+import org.w3c.encoding.TextDecoder
+import org.w3c.encoding.TextEncoder
+import org.w3c.webaudio.OfflineAudioContext
 import kotlin.test.*
 
 private fun isBrowser(): Boolean = js("typeof document !== 'undefined'")
@@ -171,14 +176,36 @@ class DomTest {
 
         observer.observe(element, MutationObserverInit(childList = true))
         element.append("x")
-        assertEquals("childList", observer.takeRecords()[0]?.type)
+        assertEquals("childList", observer.takeRecords().toList().single().type)
 
         observer.observe(element, MutationObserverInit(attributeFilter = listOf("title".toJsString()).toJsArray()))
         element.setAttribute("lang", "en")
         element.setAttribute("title", "t")
         val records = observer.takeRecords()
         observer.disconnect()
-        assertEquals(listOf("title"), List(records.length) { records[it]?.attributeName })
+        assertEquals(listOf("title"), records.toList().map { it.attributeName })
+    }
+
+    /** An entry point of each spec added after the dukat-era set, reached through the mixins that bring it in. */
+    @Test
+    fun addedSpecs() {
+        if (!isBrowser()) return
+        assertEquals(36, window.crypto.randomUUID().length)
+        val bytes = Uint8Array(16)
+        window.crypto.getRandomValues(bytes)
+        assertTrue(List(16) { bytes[it] }.any { it != 0.toUByte() })
+
+        assertEquals(3, TextEncoder().encode("hé").length)
+        assertEquals("hé", TextDecoder().decode(TextEncoder().encode("hé")))
+
+        assertNotNull(window.indexedDB)
+        assertNotNull(window.navigator.getGamepads())
+        assertEquals(44100f, OfflineAudioContext(1, 128, 44100f).sampleRate)
+
+        val animation = div().animate(null, 1000.0)
+        assertEquals(str(AnimationPlayState.RUNNING), str(animation.playState))
+        animation.cancel()
+        assertEquals(str(AnimationPlayState.IDLE), str(animation.playState))
     }
 
     /** `ImageData.data` is a `Uint8ClampedArray`: its elements are `UByte`, so 255 is 255, not -1. */

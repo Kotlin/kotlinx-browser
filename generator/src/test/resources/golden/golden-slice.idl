@@ -753,3 +753,19 @@ partial namespace CSS {
 Element includes ARIAMixin;
 Element includes ARIANotifyMixin;
 Document includes ARIANotifyMixin;
+// spec: web-animations (org.w3c.animations)
+partial interface Document {
+  readonly attribute DocumentTimeline timeline;
+};
+partial interface mixin DocumentOrShadowRoot {
+  sequence<Animation> getAnimations();
+};
+Element includes Animatable;
+// spec: webcrypto (org.w3c.webcrypto)
+partial interface mixin WindowOrWorkerGlobalScope {
+  [SameObject] readonly attribute Crypto crypto;
+};
+// spec: IndexedDB (org.w3c.indexeddb)
+partial interface mixin WindowOrWorkerGlobalScope {
+  [SameObject] readonly attribute IDBFactory indexedDB;
+};

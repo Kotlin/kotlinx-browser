@@ -14,12 +14,15 @@ package org.w3c.dom
 
 import kotlin.js.*
 import org.khronos.webgl.*
+import org.w3c.animations.*
 import org.w3c.dom.clipboard.*
 import org.w3c.dom.css.*
 import org.w3c.dom.events.*
 import org.w3c.dom.pointerevents.*
 import org.w3c.fetch.*
+import org.w3c.indexeddb.*
 import org.w3c.performance.*
+import org.w3c.webcrypto.*
 import org.w3c.workers.*
 
 public external interface UnionElementOrHTMLCollection : JsAny
@@ -1673,6 +1676,47 @@ public open external class Image : HTMLImageElement {
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun ariaNotify(announcement: String, options: AriaNotificationOptions)
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?, options: Double): Animation
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?, options: KeyframeAnimationOptions): Animation
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?): Animation
+
+    /**
+     * The getAnimations() method of the Element interface returns an array of all Animation objects affecting this
+     * element, or that are scheduled to do so in the future. It can optionally return Animation objects either for
+     * descendant elements and their pseudo-elements or just for the specified pseudo-element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAnimations)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun getAnimations(options: GetAnimationsOptions): JsArray<Animation>
     override var onabort: ((Event) -> Unit)?
 
     /**
@@ -3247,6 +3291,8 @@ public external interface WindowOrWorkerGlobalScope : JsAny {
      * Available only in secure contexts.
      */
     public val caches: CacheStorage
+    public val crypto: Crypto
+    public val indexedDB: IDBFactory
 }
 
 // file: org/w3c/dom/dom.kt
@@ -3264,6 +3310,7 @@ public external interface WindowOrWorkerGlobalScope : JsAny {
 package org.w3c.dom
 
 import kotlin.js.*
+import org.w3c.animations.*
 import org.w3c.dom.clipboard.*
 import org.w3c.dom.css.*
 import org.w3c.dom.events.*
@@ -3834,6 +3881,17 @@ public external interface DocumentOrShadowRoot : JsAny {
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val fullscreenElement: Element?
+
+    /**
+     * The getAnimations() method of the Document interface returns an array of all Animation objects currently in
+     * effect whose target elements are descendants of the document. This array includes CSS Animations, CSS
+     * Transitions, and Web Animations.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getAnimations)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    public fun getAnimations(): JsArray<Animation>
 }
 
 public external interface ParentNode : JsAny {
@@ -5266,6 +5324,16 @@ public open external class Document : Node, GlobalEventHandlers, NonElementParen
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onfullscreenerror: ((Event) -> Unit)?
+
+    /**
+     * The timeline readonly property of the Document interface represents the default timeline of the current document.
+     * This timeline is a special instance of DocumentTimeline.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/timeline)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    public open val timeline: DocumentTimeline
     override var onabort: ((Event) -> Unit)?
 
     /**
@@ -5922,6 +5990,17 @@ public open external class Document : Node, GlobalEventHandlers, NonElementParen
     override val fullscreenElement: Element?
 
     /**
+     * The getAnimations() method of the Document interface returns an array of all Animation objects currently in
+     * effect whose target elements are descendants of the document. This array includes CSS Animations, CSS
+     * Transitions, and Web Animations.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getAnimations)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun getAnimations(): JsArray<Animation>
+
+    /**
      * The read-only children property returns a live HTMLCollection which contains all of the child elements of the
      * document upon which it was called.
      *
@@ -6196,7 +6275,7 @@ public operator fun Document.get(name: String): JsAny? = getProperty(this, name)
  *
  * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
-public abstract external class Element : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction {
+public abstract external class Element : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, Animatable, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction {
     /**
      * The Element.namespaceURI read-only property returns the namespace URI of the element, or null if the element is
      * not in a namespace.
@@ -8122,5 +8201,18 @@ public inline val RequestCredentials.Companion.INCLUDE: RequestCredentials get()
 // See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
 
 package org.w3c.dom
+
+
+
+// file: org/w3c/animations/web-animations.kt
+/*
+ * Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ */
+
+// NOTE: THIS FILE IS AUTO-GENERATED FROM THE WEB IDL OF 'web-animations', DO NOT EDIT!
+// See generator/src/main/kotlin/org/jetbrains/kotlin/tools/idl/generateWebApi.kt for details.
+
+package org.w3c.animations
 
 

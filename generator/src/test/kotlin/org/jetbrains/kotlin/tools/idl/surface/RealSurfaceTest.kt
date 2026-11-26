@@ -35,7 +35,7 @@ class RealSurfaceTest {
     @Test
     fun noReferenceIntoAnExcludedSpecSurvives() {
         val rendered = surface.ir.definitions.joinToString("\n") { it.render() }
-        for (name in listOf("TrustedHTML", "Animation ", "GPUCanvasContext", "VideoFrame", "CSSPseudoElement", "ViewTransition")) {
+        for (name in listOf("TrustedHTML", "GPUCanvasContext", "VideoFrame", "CSSPseudoElement", "ViewTransition")) {
             assertTrue(name !in rendered, "$name still referenced")
         }
     }

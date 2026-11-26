@@ -12,6 +12,7 @@
 package org.w3c.dom.svg
 
 import kotlin.js.*
+import org.w3c.animations.*
 import org.w3c.dom.*
 import org.w3c.dom.css.*
 
@@ -1584,6 +1585,11 @@ public abstract external class SVGUseElement : SVGGraphicsElement, SVGURIReferen
         public val DOCUMENT_POSITION_CONTAINED_BY: Short
         public val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Short
     }
+}
+
+public open external class ShadowAnimation : Animation {
+    public constructor(source: Animation, newTarget: Element)
+    public open val sourceAnimation: Animation
 }
 
 /**

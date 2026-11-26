@@ -280,6 +280,8 @@ interface mixin WindowOrWorkerGlobalScope {
   [NewObject] Promise<Response> fetch(USVString input, optional RequestInit init = {});
   [Replaceable] readonly attribute Performance performance;
   [SecureContext, SameObject] readonly attribute CacheStorage caches;
+  [SameObject] readonly attribute Crypto crypto;
+  [SameObject] readonly attribute IDBFactory indexedDB;
 };
 // spec: dom (org.w3c.dom)
 // union marker HTMLOrSVGScriptElement = HTMLScriptElement | SVGScriptElement
@@ -354,6 +356,7 @@ interface mixin DocumentOrShadowRoot {
   [SameObject] readonly attribute StyleSheetList styleSheets;
   attribute ObservableArray<CSSStyleSheet> adoptedStyleSheets;
   [LegacyLenientSetter] readonly attribute Element? fullscreenElement;
+  sequence<Animation> getAnimations();
 };
 Document includes DocumentOrShadowRoot;
 // shape: interface
@@ -441,7 +444,7 @@ interface Node : EventTarget {
 };
 // shape: open class : Node, GlobalEventHandlers, NonElementParentNode, DocumentOrShadowRoot, ParentNode, XPathEvaluatorBase, GeometryUtils, ARIANotifyMixin, GeometryNode
 //   copied constants: Node(18)
-//   adds: GlobalEventHandlers(91); NonElementParentNode(1); DocumentOrShadowRoot(5); ParentNode(16); XPathEvaluatorBase(3); GeometryUtils(4); ARIANotifyMixin(1)
+//   adds: GlobalEventHandlers(91); NonElementParentNode(1); DocumentOrShadowRoot(6); ParentNode(16); XPathEvaluatorBase(3); GeometryUtils(4); ARIANotifyMixin(1)
 [Exposed=Window, LegacyOverrideBuiltIns]
 interface Document : Node {
   constructor();
@@ -539,8 +542,9 @@ interface Document : Node {
   Promise<undefined> exitFullscreen();
   attribute EventHandlerNonNull? onfullscreenchange;
   attribute EventHandlerNonNull? onfullscreenerror;
+  readonly attribute DocumentTimeline timeline;
 };
-// shape: abstract class : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction
+// shape: abstract class : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, Animatable, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction
 //   copied constants: Node(18)
 [Exposed=Window]
 interface Element : Node {
@@ -769,3 +773,5 @@ enum RequestCredentials { "omit", "same-origin", "include" };
 Element includes ARIAMixin;
 Element includes ARIANotifyMixin;
 Document includes ARIANotifyMixin;
+// spec: web-animations (org.w3c.animations)
+Element includes Animatable;

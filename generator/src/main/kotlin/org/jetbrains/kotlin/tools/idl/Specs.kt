@@ -52,6 +52,14 @@ val SPEC_ALLOWLIST: List<SpecEntry> = listOf(
     SpecEntry("referrer-policy", "org.w3c.fetch"),
     SpecEntry("performance-timeline", "org.w3c.performance"),
     SpecEntry("resource-timing", "org.w3c.performance"),
+    SpecEntry("web-animations", "org.w3c.animations"),
+    SpecEntry("webcrypto", "org.w3c.webcrypto"),
+    SpecEntry("IndexedDB", "org.w3c.indexeddb"),
+    SpecEntry("gamepad", "org.w3c.gamepad"),
+    SpecEntry("webaudio", "org.w3c.webaudio"),
+    SpecEntry("encoding", "org.w3c.encoding"),
+    // Defines webcrypto's KeyUsage and KeyFormat enums since webref moved them there.
+    SpecEntry("webcrypto-modern-algos", "org.w3c.webcrypto"),
 )
 
 /** A spec that allowlisted specs reference but that is deliberately not generated. */
@@ -70,7 +78,6 @@ val EXCLUDED_SPECS: List<ExcludedSpec> = listOf(
         "trusted-types",
         "Trusted Types alternatives are dropped from unions so HTML sinks stay String-typed, as in the legacy API; revisit with BCD filtering."
     ),
-    ExcludedSpec("web-animations", "Web Animations API is not part of the basic surface yet."),
     ExcludedSpec("css-view-transitions", "View Transitions are not part of the basic surface yet."),
     ExcludedSpec("css-pseudo", "CSSPseudoElement is experimental."),
     ExcludedSpec("webgpu", "WebGPU is not part of the basic surface."),

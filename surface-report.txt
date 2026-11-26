@@ -45,9 +45,6 @@ dom: dropped union alternative TrustedType in interface Element: [CEReactions] u
 SVG: dropped union alternative TrustedScriptURL in interface SVGAnimatedString: attribute (DOMString or TrustedScriptURL) baseVal;
 service-workers: dropped union alternative TrustedScriptURL in interface ServiceWorkerContainer: [NewObject] Promise<ServiceWorkerRegistration> register((TrustedScriptURL or USVString) scriptURL, optional RegistrationOptions options = {});
 
-## spec web-animations — Web Animations API is not part of the basic surface yet.
-SVG: removed interface ShadowAnimation: depends on Animation
-
 ## spec css-view-transitions — View Transitions are not part of the basic surface yet.
 html: removed from interface PageSwapEvent: readonly attribute ViewTransition? viewTransition;
 html: removed from dictionary PageSwapEventInit: ViewTransition? viewTransition = null;
@@ -57,6 +54,7 @@ html: removed from dictionary PageRevealEventInit: ViewTransition? viewTransitio
 ## spec css-pseudo — CSSPseudoElement is experimental.
 cssom-view: removed CSSPseudoElement includes GeometryUtils: depends on CSSPseudoElement
 cssom-view: dropped union alternative CSSPseudoElement in typedef GeometryNode: typedef (Text or Element or CSSPseudoElement or Document) GeometryNode;
+SVG: dropped union alternative CSSPseudoElement in interface ShadowAnimation: constructor(Animation source, (Element or CSSPseudoElement) newTarget);
 
 ## spec webgpu — WebGPU is not part of the basic surface.
 html: dropped union alternative GPUCanvasContext in typedef RenderingContext: typedef (CanvasRenderingContext2D or ImageBitmapRenderingContext or WebGLRenderingContext or WebGL2RenderingContext or GPUCanvasContext) RenderingContext;

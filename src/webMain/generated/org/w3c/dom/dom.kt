@@ -12,6 +12,7 @@
 package org.w3c.dom
 
 import kotlin.js.*
+import org.w3c.animations.*
 import org.w3c.dom.clipboard.*
 import org.w3c.dom.css.*
 import org.w3c.dom.events.*
@@ -705,6 +706,17 @@ public external interface DocumentOrShadowRoot : JsAny {
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public val fullscreenElement: Element?
+
+    /**
+     * The getAnimations() method of the Document interface returns an array of all Animation objects currently in
+     * effect whose target elements are descendants of the document. This array includes CSS Animations, CSS
+     * Transitions, and Web Animations.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getAnimations)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    public fun getAnimations(): JsArray<Animation>
 }
 
 public external interface ParentNode : JsAny {
@@ -2510,6 +2522,16 @@ public open external class Document : Node, GlobalEventHandlers, NonElementParen
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open var onfullscreenerror: ((Event) -> Unit)?
+
+    /**
+     * The timeline readonly property of the Document interface represents the default timeline of the current document.
+     * This timeline is a special instance of DocumentTimeline.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/timeline)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    public open val timeline: DocumentTimeline
     override var onabort: ((Event) -> Unit)?
 
     /**
@@ -3164,6 +3186,17 @@ public open external class Document : Node, GlobalEventHandlers, NonElementParen
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override val fullscreenElement: Element?
+
+    /**
+     * The getAnimations() method of the Document interface returns an array of all Animation objects currently in
+     * effect whose target elements are descendants of the document. This array includes CSS Animations, CSS
+     * Transitions, and Web Animations.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getAnimations)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun getAnimations(): JsArray<Animation>
 
     /**
      * The read-only children property returns a live HTMLCollection which contains all of the child elements of the
@@ -3987,7 +4020,7 @@ public inline val SlotAssignmentMode.Companion.NAMED: SlotAssignmentMode get() =
  *
  * © Mozilla Contributors, licensed under CC BY-SA 2.5
  */
-public abstract external class Element : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction {
+public abstract external class Element : Node, ParentNode, NonDocumentTypeChildNode, ChildNode, Slottable, GeometryUtils, ARIAMixin, ARIANotifyMixin, Animatable, UnionElementOrHTMLCollection, UnionElementOrRadioNodeList, UnionElementOrText, UnionElementOrProcessingInstruction {
     /**
      * The Element.namespaceURI read-only property returns the namespace URI of the element, or null if the element is
      * not in a namespace.

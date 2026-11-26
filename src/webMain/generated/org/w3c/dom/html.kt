@@ -13,6 +13,7 @@ package org.w3c.dom
 
 import kotlin.js.*
 import org.khronos.webgl.*
+import org.w3c.animations.*
 import org.w3c.dom.clipboard.*
 import org.w3c.dom.css.*
 import org.w3c.dom.encryptedmedia.*
@@ -22,7 +23,10 @@ import org.w3c.dom.mediasource.*
 import org.w3c.dom.pointerevents.*
 import org.w3c.fetch.*
 import org.w3c.files.*
+import org.w3c.gamepad.*
+import org.w3c.indexeddb.*
 import org.w3c.performance.*
+import org.w3c.webcrypto.*
 import org.w3c.workers.*
 import org.w3c.xhr.*
 
@@ -3519,6 +3523,47 @@ public open external class Image : HTMLImageElement {
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun ariaNotify(announcement: String, options: AriaNotificationOptions)
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?, options: Double): Animation
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?, options: KeyframeAnimationOptions): Animation
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?): Animation
+
+    /**
+     * The getAnimations() method of the Element interface returns an array of all Animation objects affecting this
+     * element, or that are scheduled to do so in the future. It can optionally return Animation objects either for
+     * descendant elements and their pseudo-elements or just for the specified pseudo-element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAnimations)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun getAnimations(options: GetAnimationsOptions): JsArray<Animation>
     override var onabort: ((Event) -> Unit)?
 
     /**
@@ -5693,6 +5738,47 @@ public open external class Audio : HTMLAudioElement {
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun ariaNotify(announcement: String, options: AriaNotificationOptions)
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?, options: Double): Animation
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?, options: KeyframeAnimationOptions): Animation
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?): Animation
+
+    /**
+     * The getAnimations() method of the Element interface returns an array of all Animation objects affecting this
+     * element, or that are scheduled to do so in the future. It can optionally return Animation objects either for
+     * descendant elements and their pseudo-elements or just for the specified pseudo-element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAnimations)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun getAnimations(options: GetAnimationsOptions): JsArray<Animation>
     override var onabort: ((Event) -> Unit)?
 
     /**
@@ -11205,6 +11291,47 @@ public open external class Option : HTMLOptionElement {
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     override fun ariaNotify(announcement: String, options: AriaNotificationOptions)
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?, options: Double): Animation
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?, options: KeyframeAnimationOptions): Animation
+
+    /**
+     * The Element interface's animate() method is a shortcut method which creates a new Animation, applies it to the
+     * element, then plays the animation. It returns the created Animation object instance.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun animate(keyframes: JsAny?): Animation
+
+    /**
+     * The getAnimations() method of the Element interface returns an array of all Animation objects affecting this
+     * element, or that are scheduled to do so in the future. It can optionally return Animation objects either for
+     * descendant elements and their pseudo-elements or just for the specified pseudo-element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAnimations)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    override fun getAnimations(options: GetAnimationsOptions): JsArray<Animation>
     override var onabort: ((Event) -> Unit)?
 
     /**
@@ -19439,6 +19566,25 @@ public external interface WindowEventHandlers : JsAny {
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public var onunload: ((Event) -> Unit)?
+
+    /**
+     * The gamepadconnected event is fired when the browser detects that a gamepad has been connected or the first time
+     * a button/axis of the gamepad is used.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/gamepadconnected_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    public var ongamepadconnected: ((GamepadEvent) -> Unit)?
+
+    /**
+     * The gamepaddisconnected event is fired when the browser detects that a gamepad has been disconnected.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/gamepaddisconnected_event)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    public var ongamepaddisconnected: ((GamepadEvent) -> Unit)?
 }
 
 public external interface WindowOrWorkerGlobalScope : JsAny {
@@ -19466,6 +19612,8 @@ public external interface WindowOrWorkerGlobalScope : JsAny {
      * Available only in secure contexts.
      */
     public val caches: CacheStorage
+    public val crypto: Crypto
+    public val indexedDB: IDBFactory
 }
 
 public external interface SanitizerPresets : JsAny {
@@ -19949,6 +20097,16 @@ public abstract external class Navigator : NavigatorID, NavigatorLanguage, Navig
      * © Mozilla Contributors, licensed under CC BY-SA 2.5
      */
     public open fun requestMediaKeySystemAccess(keySystem: String, supportedConfigurations: JsArray<MediaKeySystemConfiguration>): Promise<MediaKeySystemAccess>
+
+    /**
+     * The Navigator.getGamepads() method returns an array of Gamepad objects, one for each gamepad connected to the
+     * device.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/getGamepads)
+     *
+     * © Mozilla Contributors, licensed under CC BY-SA 2.5
+     */
+    public open fun getGamepads(): JsArray<Gamepad?>
 }
 
 public external interface NavigatorID : JsAny {
