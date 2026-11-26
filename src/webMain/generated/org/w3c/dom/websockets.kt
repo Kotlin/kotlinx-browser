@@ -280,11 +280,13 @@ public external interface CloseEventInit : EventInit {
     public var reason: String?
 }
 
-public fun CloseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, wasClean: Boolean? = null, code: Short? = null, reason: String? = null): CloseEventInit = newJsObject<CloseEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (wasClean != null) this.wasClean = wasClean
-    if (code != null) this.code = code
-    if (reason != null) this.reason = reason
+public fun CloseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, wasClean: Boolean? = null, code: Short? = null, reason: String? = null): CloseEventInit {
+    val dictionary = newJsObject<CloseEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (wasClean != null) dictionary.wasClean = wasClean
+    if (code != null) dictionary.code = code
+    if (reason != null) dictionary.reason = reason
+    return dictionary
 }

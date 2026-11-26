@@ -3500,10 +3500,12 @@ public external interface EventInit : JsAny {
     public var composed: Boolean?
 }
 
-public fun EventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): EventInit = newJsObject<EventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
+public fun EventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): EventInit {
+    val dictionary = newJsObject<EventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    return dictionary
 }
 
 /**
@@ -6930,13 +6932,15 @@ public external interface UIEventInit : EventInit {
     public var which: Int?
 }
 
-public fun UIEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null): UIEventInit = newJsObject<UIEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (view != null) this.view = view
-    if (detail != null) this.detail = detail
-    if (which != null) this.which = which
+public fun UIEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null): UIEventInit {
+    val dictionary = newJsObject<UIEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (view != null) dictionary.view = view
+    if (detail != null) dictionary.detail = detail
+    if (which != null) dictionary.which = which
+    return dictionary
 }
 
 public external interface EventModifierInit : UIEventInit {
@@ -6956,27 +6960,29 @@ public external interface EventModifierInit : UIEventInit {
     public var modifierSymbolLock: Boolean?
 }
 
-public fun EventModifierInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null): EventModifierInit = newJsObject<EventModifierInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (view != null) this.view = view
-    if (detail != null) this.detail = detail
-    if (which != null) this.which = which
-    if (ctrlKey != null) this.ctrlKey = ctrlKey
-    if (shiftKey != null) this.shiftKey = shiftKey
-    if (altKey != null) this.altKey = altKey
-    if (metaKey != null) this.metaKey = metaKey
-    if (modifierAltGraph != null) this.modifierAltGraph = modifierAltGraph
-    if (modifierCapsLock != null) this.modifierCapsLock = modifierCapsLock
-    if (modifierFn != null) this.modifierFn = modifierFn
-    if (modifierFnLock != null) this.modifierFnLock = modifierFnLock
-    if (modifierHyper != null) this.modifierHyper = modifierHyper
-    if (modifierNumLock != null) this.modifierNumLock = modifierNumLock
-    if (modifierScrollLock != null) this.modifierScrollLock = modifierScrollLock
-    if (modifierSuper != null) this.modifierSuper = modifierSuper
-    if (modifierSymbol != null) this.modifierSymbol = modifierSymbol
-    if (modifierSymbolLock != null) this.modifierSymbolLock = modifierSymbolLock
+public fun EventModifierInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null): EventModifierInit {
+    val dictionary = newJsObject<EventModifierInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (view != null) dictionary.view = view
+    if (detail != null) dictionary.detail = detail
+    if (which != null) dictionary.which = which
+    if (ctrlKey != null) dictionary.ctrlKey = ctrlKey
+    if (shiftKey != null) dictionary.shiftKey = shiftKey
+    if (altKey != null) dictionary.altKey = altKey
+    if (metaKey != null) dictionary.metaKey = metaKey
+    if (modifierAltGraph != null) dictionary.modifierAltGraph = modifierAltGraph
+    if (modifierCapsLock != null) dictionary.modifierCapsLock = modifierCapsLock
+    if (modifierFn != null) dictionary.modifierFn = modifierFn
+    if (modifierFnLock != null) dictionary.modifierFnLock = modifierFnLock
+    if (modifierHyper != null) dictionary.modifierHyper = modifierHyper
+    if (modifierNumLock != null) dictionary.modifierNumLock = modifierNumLock
+    if (modifierScrollLock != null) dictionary.modifierScrollLock = modifierScrollLock
+    if (modifierSuper != null) dictionary.modifierSuper = modifierSuper
+    if (modifierSymbol != null) dictionary.modifierSymbol = modifierSymbol
+    if (modifierSymbolLock != null) dictionary.modifierSymbolLock = modifierSymbolLock
+    return dictionary
 }
 
 // file: org/w3c/dom/pointerevents/pointerevents.kt
@@ -7003,34 +7009,36 @@ public external interface MouseEventInit : EventModifierInit {
     public var relatedTarget: EventTarget?
 }
 
-public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null): MouseEventInit = newJsObject<MouseEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (view != null) this.view = view
-    if (detail != null) this.detail = detail
-    if (which != null) this.which = which
-    if (ctrlKey != null) this.ctrlKey = ctrlKey
-    if (shiftKey != null) this.shiftKey = shiftKey
-    if (altKey != null) this.altKey = altKey
-    if (metaKey != null) this.metaKey = metaKey
-    if (modifierAltGraph != null) this.modifierAltGraph = modifierAltGraph
-    if (modifierCapsLock != null) this.modifierCapsLock = modifierCapsLock
-    if (modifierFn != null) this.modifierFn = modifierFn
-    if (modifierFnLock != null) this.modifierFnLock = modifierFnLock
-    if (modifierHyper != null) this.modifierHyper = modifierHyper
-    if (modifierNumLock != null) this.modifierNumLock = modifierNumLock
-    if (modifierScrollLock != null) this.modifierScrollLock = modifierScrollLock
-    if (modifierSuper != null) this.modifierSuper = modifierSuper
-    if (modifierSymbol != null) this.modifierSymbol = modifierSymbol
-    if (modifierSymbolLock != null) this.modifierSymbolLock = modifierSymbolLock
-    if (screenX != null) this.screenX = screenX
-    if (screenY != null) this.screenY = screenY
-    if (clientX != null) this.clientX = clientX
-    if (clientY != null) this.clientY = clientY
-    if (button != null) this.button = button
-    if (buttons != null) this.buttons = buttons
-    if (relatedTarget != null) this.relatedTarget = relatedTarget
+public fun MouseEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null): MouseEventInit {
+    val dictionary = newJsObject<MouseEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (view != null) dictionary.view = view
+    if (detail != null) dictionary.detail = detail
+    if (which != null) dictionary.which = which
+    if (ctrlKey != null) dictionary.ctrlKey = ctrlKey
+    if (shiftKey != null) dictionary.shiftKey = shiftKey
+    if (altKey != null) dictionary.altKey = altKey
+    if (metaKey != null) dictionary.metaKey = metaKey
+    if (modifierAltGraph != null) dictionary.modifierAltGraph = modifierAltGraph
+    if (modifierCapsLock != null) dictionary.modifierCapsLock = modifierCapsLock
+    if (modifierFn != null) dictionary.modifierFn = modifierFn
+    if (modifierFnLock != null) dictionary.modifierFnLock = modifierFnLock
+    if (modifierHyper != null) dictionary.modifierHyper = modifierHyper
+    if (modifierNumLock != null) dictionary.modifierNumLock = modifierNumLock
+    if (modifierScrollLock != null) dictionary.modifierScrollLock = modifierScrollLock
+    if (modifierSuper != null) dictionary.modifierSuper = modifierSuper
+    if (modifierSymbol != null) dictionary.modifierSymbol = modifierSymbol
+    if (modifierSymbolLock != null) dictionary.modifierSymbolLock = modifierSymbolLock
+    if (screenX != null) dictionary.screenX = screenX
+    if (screenY != null) dictionary.screenY = screenY
+    if (clientX != null) dictionary.clientX = clientX
+    if (clientY != null) dictionary.clientY = clientY
+    if (button != null) dictionary.button = button
+    if (buttons != null) dictionary.buttons = buttons
+    if (relatedTarget != null) dictionary.relatedTarget = relatedTarget
+    return dictionary
 }
 
 // file: org/w3c/dom/css/cssom.kt
@@ -8065,22 +8073,24 @@ public external interface RequestInit : JsAny {
     public var window: JsAny?
 }
 
-public fun RequestInit(method: String? = null, headers: JsAny? = null, body: JsAny? = null, referrer: String? = null, referrerPolicy: ReferrerPolicy? = null, mode: RequestMode? = null, credentials: RequestCredentials? = null, cache: RequestCache? = null, redirect: RequestRedirect? = null, integrity: String? = null, keepalive: Boolean? = null, signal: AbortSignal? = null, duplex: RequestDuplex? = null, priority: RequestPriority? = null, window: JsAny? = null): RequestInit = newJsObject<RequestInit>().apply {
-    if (method != null) this.method = method
-    if (headers != null) this.headers = headers
-    if (body != null) this.body = body
-    if (referrer != null) this.referrer = referrer
-    if (referrerPolicy != null) this.referrerPolicy = referrerPolicy
-    if (mode != null) this.mode = mode
-    if (credentials != null) this.credentials = credentials
-    if (cache != null) this.cache = cache
-    if (redirect != null) this.redirect = redirect
-    if (integrity != null) this.integrity = integrity
-    if (keepalive != null) this.keepalive = keepalive
-    if (signal != null) this.signal = signal
-    if (duplex != null) this.duplex = duplex
-    if (priority != null) this.priority = priority
-    if (window != null) this.window = window
+public fun RequestInit(method: String? = null, headers: JsAny? = null, body: JsAny? = null, referrer: String? = null, referrerPolicy: ReferrerPolicy? = null, mode: RequestMode? = null, credentials: RequestCredentials? = null, cache: RequestCache? = null, redirect: RequestRedirect? = null, integrity: String? = null, keepalive: Boolean? = null, signal: AbortSignal? = null, duplex: RequestDuplex? = null, priority: RequestPriority? = null, window: JsAny? = null): RequestInit {
+    val dictionary = newJsObject<RequestInit>()
+    if (method != null) dictionary.method = method
+    if (headers != null) dictionary.headers = headers
+    if (body != null) dictionary.body = body
+    if (referrer != null) dictionary.referrer = referrer
+    if (referrerPolicy != null) dictionary.referrerPolicy = referrerPolicy
+    if (mode != null) dictionary.mode = mode
+    if (credentials != null) dictionary.credentials = credentials
+    if (cache != null) dictionary.cache = cache
+    if (redirect != null) dictionary.redirect = redirect
+    if (integrity != null) dictionary.integrity = integrity
+    if (keepalive != null) dictionary.keepalive = keepalive
+    if (signal != null) dictionary.signal = signal
+    if (duplex != null) dictionary.duplex = duplex
+    if (priority != null) dictionary.priority = priority
+    if (window != null) dictionary.window = window
+    return dictionary
 }
 
 public external interface RequestMode : JsAny {

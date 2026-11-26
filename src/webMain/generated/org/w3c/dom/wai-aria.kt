@@ -569,8 +569,10 @@ public external interface AriaNotificationOptions : JsAny {
     public var priority: AriaNotifyPriority?
 }
 
-public fun AriaNotificationOptions(priority: AriaNotifyPriority? = null): AriaNotificationOptions = newJsObject<AriaNotificationOptions>().apply {
-    if (priority != null) this.priority = priority
+public fun AriaNotificationOptions(priority: AriaNotifyPriority? = null): AriaNotificationOptions {
+    val dictionary = newJsObject<AriaNotificationOptions>()
+    if (priority != null) dictionary.priority = priority
+    return dictionary
 }
 
 public external interface ARIANotifyMixin : JsAny {

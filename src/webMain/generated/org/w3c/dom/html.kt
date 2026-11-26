@@ -593,17 +593,21 @@ public external interface ShowPopoverOptions : JsAny {
     public var source: HTMLElement?
 }
 
-public fun ShowPopoverOptions(source: HTMLElement? = null): ShowPopoverOptions = newJsObject<ShowPopoverOptions>().apply {
-    if (source != null) this.source = source
+public fun ShowPopoverOptions(source: HTMLElement? = null): ShowPopoverOptions {
+    val dictionary = newJsObject<ShowPopoverOptions>()
+    if (source != null) dictionary.source = source
+    return dictionary
 }
 
 public external interface TogglePopoverOptions : ShowPopoverOptions {
     public var force: Boolean?
 }
 
-public fun TogglePopoverOptions(source: HTMLElement? = null, force: Boolean? = null): TogglePopoverOptions = newJsObject<TogglePopoverOptions>().apply {
-    if (source != null) this.source = source
-    if (force != null) this.force = force
+public fun TogglePopoverOptions(source: HTMLElement? = null, force: Boolean? = null): TogglePopoverOptions {
+    val dictionary = newJsObject<TogglePopoverOptions>()
+    if (source != null) dictionary.source = source
+    if (force != null) dictionary.force = force
+    return dictionary
 }
 
 /**
@@ -7680,11 +7684,13 @@ public external interface TrackEventInit : EventInit {
     public var track: UnionAudioTrackOrTextTrackOrVideoTrack?
 }
 
-public fun TrackEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, track: UnionAudioTrackOrTextTrackOrVideoTrack? = null): TrackEventInit = newJsObject<TrackEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (track != null) this.track = track
+public fun TrackEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, track: UnionAudioTrackOrTextTrackOrVideoTrack? = null): TrackEventInit {
+    val dictionary = newJsObject<TrackEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (track != null) dictionary.track = track
+    return dictionary
 }
 
 /**
@@ -13017,11 +13023,13 @@ public external interface SubmitEventInit : EventInit {
     public var submitter: HTMLElement?
 }
 
-public fun SubmitEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, submitter: HTMLElement? = null): SubmitEventInit = newJsObject<SubmitEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (submitter != null) this.submitter = submitter
+public fun SubmitEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, submitter: HTMLElement? = null): SubmitEventInit {
+    val dictionary = newJsObject<SubmitEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (submitter != null) dictionary.submitter = submitter
+    return dictionary
 }
 
 /**
@@ -13065,11 +13073,13 @@ public external interface FormDataEventInit : EventInit {
     public var formData: FormData
 }
 
-public fun FormDataEventInit(formData: FormData, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): FormDataEventInit = newJsObject<FormDataEventInit>().apply {
-    this.formData = formData
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
+public fun FormDataEventInit(formData: FormData, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): FormDataEventInit {
+    val dictionary = newJsObject<FormDataEventInit>()
+    dictionary.formData = formData
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    return dictionary
 }
 
 /**
@@ -13598,8 +13608,10 @@ public external interface AssignedNodesOptions : JsAny {
     public var flatten: Boolean?
 }
 
-public fun AssignedNodesOptions(flatten: Boolean? = null): AssignedNodesOptions = newJsObject<AssignedNodesOptions>().apply {
-    if (flatten != null) this.flatten = flatten
+public fun AssignedNodesOptions(flatten: Boolean? = null): AssignedNodesOptions {
+    val dictionary = newJsObject<AssignedNodesOptions>()
+    if (flatten != null) dictionary.flatten = flatten
+    return dictionary
 }
 
 /**
@@ -13720,12 +13732,14 @@ public external interface CanvasRenderingContext2DSettings : JsAny {
     public var willReadFrequently: Boolean?
 }
 
-public fun CanvasRenderingContext2DSettings(alpha: Boolean? = null, desynchronized: Boolean? = null, colorSpace: PredefinedColorSpace? = null, colorType: CanvasColorType? = null, willReadFrequently: Boolean? = null): CanvasRenderingContext2DSettings = newJsObject<CanvasRenderingContext2DSettings>().apply {
-    if (alpha != null) this.alpha = alpha
-    if (desynchronized != null) this.desynchronized = desynchronized
-    if (colorSpace != null) this.colorSpace = colorSpace
-    if (colorType != null) this.colorType = colorType
-    if (willReadFrequently != null) this.willReadFrequently = willReadFrequently
+public fun CanvasRenderingContext2DSettings(alpha: Boolean? = null, desynchronized: Boolean? = null, colorSpace: PredefinedColorSpace? = null, colorType: CanvasColorType? = null, willReadFrequently: Boolean? = null): CanvasRenderingContext2DSettings {
+    val dictionary = newJsObject<CanvasRenderingContext2DSettings>()
+    if (alpha != null) dictionary.alpha = alpha
+    if (desynchronized != null) dictionary.desynchronized = desynchronized
+    if (colorSpace != null) dictionary.colorSpace = colorSpace
+    if (colorType != null) dictionary.colorType = colorType
+    if (willReadFrequently != null) dictionary.willReadFrequently = willReadFrequently
+    return dictionary
 }
 
 public external interface ImageSmoothingQuality : JsAny {
@@ -15162,8 +15176,10 @@ public external interface ImageBitmapRenderingContextSettings : JsAny {
     public var alpha: Boolean?
 }
 
-public fun ImageBitmapRenderingContextSettings(alpha: Boolean? = null): ImageBitmapRenderingContextSettings = newJsObject<ImageBitmapRenderingContextSettings>().apply {
-    if (alpha != null) this.alpha = alpha
+public fun ImageBitmapRenderingContextSettings(alpha: Boolean? = null): ImageBitmapRenderingContextSettings {
+    val dictionary = newJsObject<ImageBitmapRenderingContextSettings>()
+    if (alpha != null) dictionary.alpha = alpha
+    return dictionary
 }
 
 public external interface ImageEncodeOptions : JsAny {
@@ -15171,9 +15187,11 @@ public external interface ImageEncodeOptions : JsAny {
     public var quality: Double?
 }
 
-public fun ImageEncodeOptions(type: String? = null, quality: Double? = null): ImageEncodeOptions = newJsObject<ImageEncodeOptions>().apply {
-    if (type != null) this.type = type
-    if (quality != null) this.quality = quality
+public fun ImageEncodeOptions(type: String? = null, quality: Double? = null): ImageEncodeOptions {
+    val dictionary = newJsObject<ImageEncodeOptions>()
+    if (type != null) dictionary.type = type
+    if (quality != null) dictionary.quality = quality
+    return dictionary
 }
 
 public external interface OffscreenRenderingContextId : JsAny {
@@ -15391,8 +15409,10 @@ public external interface ElementDefinitionOptions : JsAny {
     public var extends: String?
 }
 
-public fun ElementDefinitionOptions(extends: String? = null): ElementDefinitionOptions = newJsObject<ElementDefinitionOptions>().apply {
-    if (extends != null) this.extends = extends
+public fun ElementDefinitionOptions(extends: String? = null): ElementDefinitionOptions {
+    val dictionary = newJsObject<ElementDefinitionOptions>()
+    if (extends != null) dictionary.extends = extends
+    return dictionary
 }
 
 /**
@@ -15636,17 +15656,19 @@ public external interface ValidityStateFlags : JsAny {
     public var customError: Boolean?
 }
 
-public fun ValidityStateFlags(valueMissing: Boolean? = null, typeMismatch: Boolean? = null, patternMismatch: Boolean? = null, tooLong: Boolean? = null, tooShort: Boolean? = null, rangeUnderflow: Boolean? = null, rangeOverflow: Boolean? = null, stepMismatch: Boolean? = null, badInput: Boolean? = null, customError: Boolean? = null): ValidityStateFlags = newJsObject<ValidityStateFlags>().apply {
-    if (valueMissing != null) this.valueMissing = valueMissing
-    if (typeMismatch != null) this.typeMismatch = typeMismatch
-    if (patternMismatch != null) this.patternMismatch = patternMismatch
-    if (tooLong != null) this.tooLong = tooLong
-    if (tooShort != null) this.tooShort = tooShort
-    if (rangeUnderflow != null) this.rangeUnderflow = rangeUnderflow
-    if (rangeOverflow != null) this.rangeOverflow = rangeOverflow
-    if (stepMismatch != null) this.stepMismatch = stepMismatch
-    if (badInput != null) this.badInput = badInput
-    if (customError != null) this.customError = customError
+public fun ValidityStateFlags(valueMissing: Boolean? = null, typeMismatch: Boolean? = null, patternMismatch: Boolean? = null, tooLong: Boolean? = null, tooShort: Boolean? = null, rangeUnderflow: Boolean? = null, rangeOverflow: Boolean? = null, stepMismatch: Boolean? = null, badInput: Boolean? = null, customError: Boolean? = null): ValidityStateFlags {
+    val dictionary = newJsObject<ValidityStateFlags>()
+    if (valueMissing != null) dictionary.valueMissing = valueMissing
+    if (typeMismatch != null) dictionary.typeMismatch = typeMismatch
+    if (patternMismatch != null) dictionary.patternMismatch = patternMismatch
+    if (tooLong != null) dictionary.tooLong = tooLong
+    if (tooShort != null) dictionary.tooShort = tooShort
+    if (rangeUnderflow != null) dictionary.rangeUnderflow = rangeUnderflow
+    if (rangeOverflow != null) dictionary.rangeOverflow = rangeOverflow
+    if (stepMismatch != null) dictionary.stepMismatch = stepMismatch
+    if (badInput != null) dictionary.badInput = badInput
+    if (customError != null) dictionary.customError = customError
+    return dictionary
 }
 
 /**
@@ -15767,13 +15789,15 @@ public external interface ToggleEventInit : EventInit {
     public var source: Element?
 }
 
-public fun ToggleEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, oldState: String? = null, newState: String? = null, source: Element? = null): ToggleEventInit = newJsObject<ToggleEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (oldState != null) this.oldState = oldState
-    if (newState != null) this.newState = newState
-    if (source != null) this.source = source
+public fun ToggleEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, oldState: String? = null, newState: String? = null, source: Element? = null): ToggleEventInit {
+    val dictionary = newJsObject<ToggleEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (oldState != null) dictionary.oldState = oldState
+    if (newState != null) dictionary.newState = newState
+    if (source != null) dictionary.source = source
+    return dictionary
 }
 
 /**
@@ -15827,12 +15851,14 @@ public external interface CommandEventInit : EventInit {
     public var command: String?
 }
 
-public fun CommandEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, source: Element? = null, command: String? = null): CommandEventInit = newJsObject<CommandEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (source != null) this.source = source
-    if (command != null) this.command = command
+public fun CommandEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, source: Element? = null, command: String? = null): CommandEventInit {
+    val dictionary = newJsObject<CommandEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (source != null) dictionary.source = source
+    if (command != null) dictionary.command = command
+    return dictionary
 }
 
 public external interface FocusOptions : JsAny {
@@ -15840,9 +15866,11 @@ public external interface FocusOptions : JsAny {
     public var focusVisible: Boolean?
 }
 
-public fun FocusOptions(preventScroll: Boolean? = null, focusVisible: Boolean? = null): FocusOptions = newJsObject<FocusOptions>().apply {
-    if (preventScroll != null) this.preventScroll = preventScroll
-    if (focusVisible != null) this.focusVisible = focusVisible
+public fun FocusOptions(preventScroll: Boolean? = null, focusVisible: Boolean? = null): FocusOptions {
+    val dictionary = newJsObject<FocusOptions>()
+    if (preventScroll != null) dictionary.preventScroll = preventScroll
+    if (focusVisible != null) dictionary.focusVisible = focusVisible
+    return dictionary
 }
 
 public external interface ElementContentEditable : JsAny {
@@ -15960,8 +15988,10 @@ public external interface CloseWatcherOptions : JsAny {
     public var signal: AbortSignal?
 }
 
-public fun CloseWatcherOptions(signal: AbortSignal? = null): CloseWatcherOptions = newJsObject<CloseWatcherOptions>().apply {
-    if (signal != null) this.signal = signal
+public fun CloseWatcherOptions(signal: AbortSignal? = null): CloseWatcherOptions {
+    val dictionary = newJsObject<CloseWatcherOptions>()
+    if (signal != null) dictionary.signal = signal
+    return dictionary
 }
 
 /**
@@ -16237,35 +16267,37 @@ public external interface DragEventInit : MouseEventInit {
     public var dataTransfer: DataTransfer?
 }
 
-public fun DragEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null, dataTransfer: DataTransfer? = null): DragEventInit = newJsObject<DragEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (view != null) this.view = view
-    if (detail != null) this.detail = detail
-    if (which != null) this.which = which
-    if (ctrlKey != null) this.ctrlKey = ctrlKey
-    if (shiftKey != null) this.shiftKey = shiftKey
-    if (altKey != null) this.altKey = altKey
-    if (metaKey != null) this.metaKey = metaKey
-    if (modifierAltGraph != null) this.modifierAltGraph = modifierAltGraph
-    if (modifierCapsLock != null) this.modifierCapsLock = modifierCapsLock
-    if (modifierFn != null) this.modifierFn = modifierFn
-    if (modifierFnLock != null) this.modifierFnLock = modifierFnLock
-    if (modifierHyper != null) this.modifierHyper = modifierHyper
-    if (modifierNumLock != null) this.modifierNumLock = modifierNumLock
-    if (modifierScrollLock != null) this.modifierScrollLock = modifierScrollLock
-    if (modifierSuper != null) this.modifierSuper = modifierSuper
-    if (modifierSymbol != null) this.modifierSymbol = modifierSymbol
-    if (modifierSymbolLock != null) this.modifierSymbolLock = modifierSymbolLock
-    if (screenX != null) this.screenX = screenX
-    if (screenY != null) this.screenY = screenY
-    if (clientX != null) this.clientX = clientX
-    if (clientY != null) this.clientY = clientY
-    if (button != null) this.button = button
-    if (buttons != null) this.buttons = buttons
-    if (relatedTarget != null) this.relatedTarget = relatedTarget
-    if (dataTransfer != null) this.dataTransfer = dataTransfer
+public fun DragEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, screenX: Int? = null, screenY: Int? = null, clientX: Int? = null, clientY: Int? = null, button: Short? = null, buttons: Short? = null, relatedTarget: EventTarget? = null, dataTransfer: DataTransfer? = null): DragEventInit {
+    val dictionary = newJsObject<DragEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (view != null) dictionary.view = view
+    if (detail != null) dictionary.detail = detail
+    if (which != null) dictionary.which = which
+    if (ctrlKey != null) dictionary.ctrlKey = ctrlKey
+    if (shiftKey != null) dictionary.shiftKey = shiftKey
+    if (altKey != null) dictionary.altKey = altKey
+    if (metaKey != null) dictionary.metaKey = metaKey
+    if (modifierAltGraph != null) dictionary.modifierAltGraph = modifierAltGraph
+    if (modifierCapsLock != null) dictionary.modifierCapsLock = modifierCapsLock
+    if (modifierFn != null) dictionary.modifierFn = modifierFn
+    if (modifierFnLock != null) dictionary.modifierFnLock = modifierFnLock
+    if (modifierHyper != null) dictionary.modifierHyper = modifierHyper
+    if (modifierNumLock != null) dictionary.modifierNumLock = modifierNumLock
+    if (modifierScrollLock != null) dictionary.modifierScrollLock = modifierScrollLock
+    if (modifierSuper != null) dictionary.modifierSuper = modifierSuper
+    if (modifierSymbol != null) dictionary.modifierSymbol = modifierSymbol
+    if (modifierSymbolLock != null) dictionary.modifierSymbolLock = modifierSymbolLock
+    if (screenX != null) dictionary.screenX = screenX
+    if (screenY != null) dictionary.screenY = screenY
+    if (clientX != null) dictionary.clientX = clientX
+    if (clientY != null) dictionary.clientY = clientY
+    if (button != null) dictionary.button = button
+    if (buttons != null) dictionary.buttons = buttons
+    if (relatedTarget != null) dictionary.relatedTarget = relatedTarget
+    if (dataTransfer != null) dictionary.dataTransfer = dataTransfer
+    return dictionary
 }
 
 public external interface PopoverTargetAttributes : JsAny {
@@ -16996,9 +17028,11 @@ public external interface WindowPostMessageOptions : StructuredSerializeOptions 
     public var targetOrigin: String?
 }
 
-public fun WindowPostMessageOptions(transfer: JsArray<JsAny>? = null, targetOrigin: String? = null): WindowPostMessageOptions = newJsObject<WindowPostMessageOptions>().apply {
-    if (transfer != null) this.transfer = transfer
-    if (targetOrigin != null) this.targetOrigin = targetOrigin
+public fun WindowPostMessageOptions(transfer: JsArray<JsAny>? = null, targetOrigin: String? = null): WindowPostMessageOptions {
+    val dictionary = newJsObject<WindowPostMessageOptions>()
+    if (transfer != null) dictionary.transfer = transfer
+    if (targetOrigin != null) dictionary.targetOrigin = targetOrigin
+    return dictionary
 }
 
 /**
@@ -17439,16 +17473,20 @@ public external interface NavigationUpdateCurrentEntryOptions : JsAny {
     public var state: JsAny?
 }
 
-public fun NavigationUpdateCurrentEntryOptions(state: JsAny?): NavigationUpdateCurrentEntryOptions = newJsObject<NavigationUpdateCurrentEntryOptions>().apply {
-    this.state = state
+public fun NavigationUpdateCurrentEntryOptions(state: JsAny?): NavigationUpdateCurrentEntryOptions {
+    val dictionary = newJsObject<NavigationUpdateCurrentEntryOptions>()
+    dictionary.state = state
+    return dictionary
 }
 
 public external interface NavigationOptions : JsAny {
     public var info: JsAny?
 }
 
-public fun NavigationOptions(info: JsAny? = null): NavigationOptions = newJsObject<NavigationOptions>().apply {
-    if (info != null) this.info = info
+public fun NavigationOptions(info: JsAny? = null): NavigationOptions {
+    val dictionary = newJsObject<NavigationOptions>()
+    if (info != null) dictionary.info = info
+    return dictionary
 }
 
 public external interface NavigationNavigateOptions : NavigationOptions {
@@ -17456,19 +17494,23 @@ public external interface NavigationNavigateOptions : NavigationOptions {
     public var history: NavigationHistoryBehavior?
 }
 
-public fun NavigationNavigateOptions(info: JsAny? = null, state: JsAny? = null, history: NavigationHistoryBehavior? = null): NavigationNavigateOptions = newJsObject<NavigationNavigateOptions>().apply {
-    if (info != null) this.info = info
-    if (state != null) this.state = state
-    if (history != null) this.history = history
+public fun NavigationNavigateOptions(info: JsAny? = null, state: JsAny? = null, history: NavigationHistoryBehavior? = null): NavigationNavigateOptions {
+    val dictionary = newJsObject<NavigationNavigateOptions>()
+    if (info != null) dictionary.info = info
+    if (state != null) dictionary.state = state
+    if (history != null) dictionary.history = history
+    return dictionary
 }
 
 public external interface NavigationReloadOptions : NavigationOptions {
     public var state: JsAny?
 }
 
-public fun NavigationReloadOptions(info: JsAny? = null, state: JsAny? = null): NavigationReloadOptions = newJsObject<NavigationReloadOptions>().apply {
-    if (info != null) this.info = info
-    if (state != null) this.state = state
+public fun NavigationReloadOptions(info: JsAny? = null, state: JsAny? = null): NavigationReloadOptions {
+    val dictionary = newJsObject<NavigationReloadOptions>()
+    if (info != null) dictionary.info = info
+    if (state != null) dictionary.state = state
+    return dictionary
 }
 
 public external interface NavigationResult : JsAny {
@@ -17476,9 +17518,11 @@ public external interface NavigationResult : JsAny {
     public var finished: Promise<NavigationHistoryEntry>?
 }
 
-public fun NavigationResult(committed: Promise<NavigationHistoryEntry>? = null, finished: Promise<NavigationHistoryEntry>? = null): NavigationResult = newJsObject<NavigationResult>().apply {
-    if (committed != null) this.committed = committed
-    if (finished != null) this.finished = finished
+public fun NavigationResult(committed: Promise<NavigationHistoryEntry>? = null, finished: Promise<NavigationHistoryEntry>? = null): NavigationResult {
+    val dictionary = newJsObject<NavigationResult>()
+    if (committed != null) dictionary.committed = committed
+    if (finished != null) dictionary.finished = finished
+    return dictionary
 }
 
 public external interface NavigationHistoryBehavior : JsAny {
@@ -17865,21 +17909,23 @@ public external interface NavigateEventInit : EventInit {
     public var sourceElement: Element?
 }
 
-public fun NavigateEventInit(destination: NavigationDestination, signal: AbortSignal, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, navigationType: NavigationType? = null, canIntercept: Boolean? = null, userInitiated: Boolean? = null, hashChange: Boolean? = null, formData: FormData? = null, downloadRequest: String? = null, info: JsAny? = null, hasUAVisualTransition: Boolean? = null, sourceElement: Element? = null): NavigateEventInit = newJsObject<NavigateEventInit>().apply {
-    this.destination = destination
-    this.signal = signal
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (navigationType != null) this.navigationType = navigationType
-    if (canIntercept != null) this.canIntercept = canIntercept
-    if (userInitiated != null) this.userInitiated = userInitiated
-    if (hashChange != null) this.hashChange = hashChange
-    if (formData != null) this.formData = formData
-    if (downloadRequest != null) this.downloadRequest = downloadRequest
-    if (info != null) this.info = info
-    if (hasUAVisualTransition != null) this.hasUAVisualTransition = hasUAVisualTransition
-    if (sourceElement != null) this.sourceElement = sourceElement
+public fun NavigateEventInit(destination: NavigationDestination, signal: AbortSignal, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, navigationType: NavigationType? = null, canIntercept: Boolean? = null, userInitiated: Boolean? = null, hashChange: Boolean? = null, formData: FormData? = null, downloadRequest: String? = null, info: JsAny? = null, hasUAVisualTransition: Boolean? = null, sourceElement: Element? = null): NavigateEventInit {
+    val dictionary = newJsObject<NavigateEventInit>()
+    dictionary.destination = destination
+    dictionary.signal = signal
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (navigationType != null) dictionary.navigationType = navigationType
+    if (canIntercept != null) dictionary.canIntercept = canIntercept
+    if (userInitiated != null) dictionary.userInitiated = userInitiated
+    if (hashChange != null) dictionary.hashChange = hashChange
+    if (formData != null) dictionary.formData = formData
+    if (downloadRequest != null) dictionary.downloadRequest = downloadRequest
+    if (info != null) dictionary.info = info
+    if (hasUAVisualTransition != null) dictionary.hasUAVisualTransition = hasUAVisualTransition
+    if (sourceElement != null) dictionary.sourceElement = sourceElement
+    return dictionary
 }
 
 public external interface NavigationInterceptOptions : JsAny {
@@ -17889,11 +17935,13 @@ public external interface NavigationInterceptOptions : JsAny {
     public var scroll: NavigationScrollBehavior?
 }
 
-public fun NavigationInterceptOptions(precommitHandler: ((NavigationPrecommitController) -> Promise<JsAny?>)? = null, handler: (() -> Promise<JsAny?>)? = null, focusReset: NavigationFocusReset? = null, scroll: NavigationScrollBehavior? = null): NavigationInterceptOptions = newJsObject<NavigationInterceptOptions>().apply {
-    if (precommitHandler != null) this.precommitHandler = precommitHandler
-    if (handler != null) this.handler = handler
-    if (focusReset != null) this.focusReset = focusReset
-    if (scroll != null) this.scroll = scroll
+public fun NavigationInterceptOptions(precommitHandler: ((NavigationPrecommitController) -> Promise<JsAny?>)? = null, handler: (() -> Promise<JsAny?>)? = null, focusReset: NavigationFocusReset? = null, scroll: NavigationScrollBehavior? = null): NavigationInterceptOptions {
+    val dictionary = newJsObject<NavigationInterceptOptions>()
+    if (precommitHandler != null) dictionary.precommitHandler = precommitHandler
+    if (handler != null) dictionary.handler = handler
+    if (focusReset != null) dictionary.focusReset = focusReset
+    if (scroll != null) dictionary.scroll = scroll
+    return dictionary
 }
 
 public external interface NavigationFocusReset : JsAny {
@@ -18065,12 +18113,14 @@ public external interface NavigationCurrentEntryChangeEventInit : EventInit {
     public var from: NavigationHistoryEntry
 }
 
-public fun NavigationCurrentEntryChangeEventInit(from: NavigationHistoryEntry, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, navigationType: NavigationType? = null): NavigationCurrentEntryChangeEventInit = newJsObject<NavigationCurrentEntryChangeEventInit>().apply {
-    this.from = from
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (navigationType != null) this.navigationType = navigationType
+public fun NavigationCurrentEntryChangeEventInit(from: NavigationHistoryEntry, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, navigationType: NavigationType? = null): NavigationCurrentEntryChangeEventInit {
+    val dictionary = newJsObject<NavigationCurrentEntryChangeEventInit>()
+    dictionary.from = from
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (navigationType != null) dictionary.navigationType = navigationType
+    return dictionary
 }
 
 /**
@@ -18123,12 +18173,14 @@ public external interface PopStateEventInit : EventInit {
     public var hasUAVisualTransition: Boolean?
 }
 
-public fun PopStateEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, state: JsAny? = null, hasUAVisualTransition: Boolean? = null): PopStateEventInit = newJsObject<PopStateEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (state != null) this.state = state
-    if (hasUAVisualTransition != null) this.hasUAVisualTransition = hasUAVisualTransition
+public fun PopStateEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, state: JsAny? = null, hasUAVisualTransition: Boolean? = null): PopStateEventInit {
+    val dictionary = newJsObject<PopStateEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (state != null) dictionary.state = state
+    if (hasUAVisualTransition != null) dictionary.hasUAVisualTransition = hasUAVisualTransition
+    return dictionary
 }
 
 /**
@@ -18182,12 +18234,14 @@ public external interface HashChangeEventInit : EventInit {
     public var newURL: String?
 }
 
-public fun HashChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, oldURL: String? = null, newURL: String? = null): HashChangeEventInit = newJsObject<HashChangeEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (oldURL != null) this.oldURL = oldURL
-    if (newURL != null) this.newURL = newURL
+public fun HashChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, oldURL: String? = null, newURL: String? = null): HashChangeEventInit {
+    val dictionary = newJsObject<HashChangeEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (oldURL != null) dictionary.oldURL = oldURL
+    if (newURL != null) dictionary.newURL = newURL
+    return dictionary
 }
 
 /**
@@ -18229,11 +18283,13 @@ public external interface PageSwapEventInit : EventInit {
     public var activation: NavigationActivation?
 }
 
-public fun PageSwapEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, activation: NavigationActivation? = null): PageSwapEventInit = newJsObject<PageSwapEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (activation != null) this.activation = activation
+public fun PageSwapEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, activation: NavigationActivation? = null): PageSwapEventInit {
+    val dictionary = newJsObject<PageSwapEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (activation != null) dictionary.activation = activation
+    return dictionary
 }
 
 /**
@@ -18263,10 +18319,12 @@ public open external class PageRevealEvent : Event {
 
 public external interface PageRevealEventInit : EventInit
 
-public fun PageRevealEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): PageRevealEventInit = newJsObject<PageRevealEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
+public fun PageRevealEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): PageRevealEventInit {
+    val dictionary = newJsObject<PageRevealEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    return dictionary
 }
 
 /**
@@ -18309,11 +18367,13 @@ public external interface PageTransitionEventInit : EventInit {
     public var persisted: Boolean?
 }
 
-public fun PageTransitionEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, persisted: Boolean? = null): PageTransitionEventInit = newJsObject<PageTransitionEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (persisted != null) this.persisted = persisted
+public fun PageTransitionEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, persisted: Boolean? = null): PageTransitionEventInit {
+    val dictionary = newJsObject<PageTransitionEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (persisted != null) dictionary.persisted = persisted
+    return dictionary
 }
 
 /**
@@ -18529,15 +18589,17 @@ public external interface ErrorEventInit : EventInit {
     public var error: JsAny?
 }
 
-public fun ErrorEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, message: String? = null, filename: String? = null, lineno: Int? = null, colno: Int? = null, error: JsAny? = null): ErrorEventInit = newJsObject<ErrorEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (message != null) this.message = message
-    if (filename != null) this.filename = filename
-    if (lineno != null) this.lineno = lineno
-    if (colno != null) this.colno = colno
-    if (error != null) this.error = error
+public fun ErrorEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, message: String? = null, filename: String? = null, lineno: Int? = null, colno: Int? = null, error: JsAny? = null): ErrorEventInit {
+    val dictionary = newJsObject<ErrorEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (message != null) dictionary.message = message
+    if (filename != null) dictionary.filename = filename
+    if (lineno != null) dictionary.lineno = lineno
+    if (colno != null) dictionary.colno = colno
+    if (error != null) dictionary.error = error
+    return dictionary
 }
 
 /**
@@ -18593,12 +18655,14 @@ public external interface PromiseRejectionEventInit : EventInit {
     public var reason: JsAny?
 }
 
-public fun PromiseRejectionEventInit(promise: JsAny, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, reason: JsAny? = null): PromiseRejectionEventInit = newJsObject<PromiseRejectionEventInit>().apply {
-    this.promise = promise
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (reason != null) this.reason = reason
+public fun PromiseRejectionEventInit(promise: JsAny, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, reason: JsAny? = null): PromiseRejectionEventInit {
+    val dictionary = newJsObject<PromiseRejectionEventInit>()
+    dictionary.promise = promise
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (reason != null) dictionary.reason = reason
+    return dictionary
 }
 
 public external interface GlobalEventHandlers : JsAny {
@@ -19415,8 +19479,10 @@ public external interface SetHTMLOptions : JsAny {
     public var sanitizer: JsAny?
 }
 
-public fun SetHTMLOptions(sanitizer: JsAny? = null): SetHTMLOptions = newJsObject<SetHTMLOptions>().apply {
-    if (sanitizer != null) this.sanitizer = sanitizer
+public fun SetHTMLOptions(sanitizer: JsAny? = null): SetHTMLOptions {
+    val dictionary = newJsObject<SetHTMLOptions>()
+    if (sanitizer != null) dictionary.sanitizer = sanitizer
+    return dictionary
 }
 
 public external interface SetHTMLUnsafeOptions : JsAny {
@@ -19424,17 +19490,21 @@ public external interface SetHTMLUnsafeOptions : JsAny {
     public var runScripts: Boolean?
 }
 
-public fun SetHTMLUnsafeOptions(sanitizer: JsAny? = null, runScripts: Boolean? = null): SetHTMLUnsafeOptions = newJsObject<SetHTMLUnsafeOptions>().apply {
-    if (sanitizer != null) this.sanitizer = sanitizer
-    if (runScripts != null) this.runScripts = runScripts
+public fun SetHTMLUnsafeOptions(sanitizer: JsAny? = null, runScripts: Boolean? = null): SetHTMLUnsafeOptions {
+    val dictionary = newJsObject<SetHTMLUnsafeOptions>()
+    if (sanitizer != null) dictionary.sanitizer = sanitizer
+    if (runScripts != null) dictionary.runScripts = runScripts
+    return dictionary
 }
 
 public external interface ParseHTMLUnsafeOptions : JsAny {
     public var sanitizer: JsAny?
 }
 
-public fun ParseHTMLUnsafeOptions(sanitizer: JsAny? = null): ParseHTMLUnsafeOptions = newJsObject<ParseHTMLUnsafeOptions>().apply {
-    if (sanitizer != null) this.sanitizer = sanitizer
+public fun ParseHTMLUnsafeOptions(sanitizer: JsAny? = null): ParseHTMLUnsafeOptions {
+    val dictionary = newJsObject<ParseHTMLUnsafeOptions>()
+    if (sanitizer != null) dictionary.sanitizer = sanitizer
+    return dictionary
 }
 
 public external interface GetHTMLOptions : JsAny {
@@ -19442,9 +19512,11 @@ public external interface GetHTMLOptions : JsAny {
     public var shadowRoots: JsArray<ShadowRoot>?
 }
 
-public fun GetHTMLOptions(serializableShadowRoots: Boolean? = null, shadowRoots: JsArray<ShadowRoot>? = null): GetHTMLOptions = newJsObject<GetHTMLOptions>().apply {
-    if (serializableShadowRoots != null) this.serializableShadowRoots = serializableShadowRoots
-    if (shadowRoots != null) this.shadowRoots = shadowRoots
+public fun GetHTMLOptions(serializableShadowRoots: Boolean? = null, shadowRoots: JsArray<ShadowRoot>? = null): GetHTMLOptions {
+    val dictionary = newJsObject<GetHTMLOptions>()
+    if (serializableShadowRoots != null) dictionary.serializableShadowRoots = serializableShadowRoots
+    if (shadowRoots != null) dictionary.shadowRoots = shadowRoots
+    return dictionary
 }
 
 /**
@@ -19706,9 +19778,11 @@ public external interface SanitizerElementNamespace : JsAny {
     public var namespace: String?
 }
 
-public fun SanitizerElementNamespace(name: String, namespace: String? = null): SanitizerElementNamespace = newJsObject<SanitizerElementNamespace>().apply {
-    this.name = name
-    if (namespace != null) this.namespace = namespace
+public fun SanitizerElementNamespace(name: String, namespace: String? = null): SanitizerElementNamespace {
+    val dictionary = newJsObject<SanitizerElementNamespace>()
+    dictionary.name = name
+    if (namespace != null) dictionary.namespace = namespace
+    return dictionary
 }
 
 public external interface SanitizerElementNamespaceWithAttributes : SanitizerElementNamespace {
@@ -19716,11 +19790,13 @@ public external interface SanitizerElementNamespaceWithAttributes : SanitizerEle
     public var removeAttributes: JsArray<JsAny>?
 }
 
-public fun SanitizerElementNamespaceWithAttributes(name: String, namespace: String? = null, attributes: JsArray<JsAny>? = null, removeAttributes: JsArray<JsAny>? = null): SanitizerElementNamespaceWithAttributes = newJsObject<SanitizerElementNamespaceWithAttributes>().apply {
-    this.name = name
-    if (namespace != null) this.namespace = namespace
-    if (attributes != null) this.attributes = attributes
-    if (removeAttributes != null) this.removeAttributes = removeAttributes
+public fun SanitizerElementNamespaceWithAttributes(name: String, namespace: String? = null, attributes: JsArray<JsAny>? = null, removeAttributes: JsArray<JsAny>? = null): SanitizerElementNamespaceWithAttributes {
+    val dictionary = newJsObject<SanitizerElementNamespaceWithAttributes>()
+    dictionary.name = name
+    if (namespace != null) dictionary.namespace = namespace
+    if (attributes != null) dictionary.attributes = attributes
+    if (removeAttributes != null) dictionary.removeAttributes = removeAttributes
+    return dictionary
 }
 
 public external interface SanitizerAttributeNamespace : JsAny {
@@ -19728,17 +19804,21 @@ public external interface SanitizerAttributeNamespace : JsAny {
     public var namespace: String?
 }
 
-public fun SanitizerAttributeNamespace(name: String, namespace: String? = null): SanitizerAttributeNamespace = newJsObject<SanitizerAttributeNamespace>().apply {
-    this.name = name
-    if (namespace != null) this.namespace = namespace
+public fun SanitizerAttributeNamespace(name: String, namespace: String? = null): SanitizerAttributeNamespace {
+    val dictionary = newJsObject<SanitizerAttributeNamespace>()
+    dictionary.name = name
+    if (namespace != null) dictionary.namespace = namespace
+    return dictionary
 }
 
 public external interface SanitizerProcessingInstruction : JsAny {
     public var target: String
 }
 
-public fun SanitizerProcessingInstruction(target: String): SanitizerProcessingInstruction = newJsObject<SanitizerProcessingInstruction>().apply {
-    this.target = target
+public fun SanitizerProcessingInstruction(target: String): SanitizerProcessingInstruction {
+    val dictionary = newJsObject<SanitizerProcessingInstruction>()
+    dictionary.target = target
+    return dictionary
 }
 
 public external interface SanitizerConfig : JsAny {
@@ -19754,17 +19834,19 @@ public external interface SanitizerConfig : JsAny {
     public var javascriptURLs: Boolean?
 }
 
-public fun SanitizerConfig(elements: JsArray<JsAny>? = null, removeElements: JsArray<JsAny>? = null, replaceWithChildrenElements: JsArray<JsAny>? = null, processingInstructions: JsArray<JsAny>? = null, removeProcessingInstructions: JsArray<JsAny>? = null, attributes: JsArray<JsAny>? = null, removeAttributes: JsArray<JsAny>? = null, comments: Boolean? = null, dataAttributes: Boolean? = null, javascriptURLs: Boolean? = null): SanitizerConfig = newJsObject<SanitizerConfig>().apply {
-    if (elements != null) this.elements = elements
-    if (removeElements != null) this.removeElements = removeElements
-    if (replaceWithChildrenElements != null) this.replaceWithChildrenElements = replaceWithChildrenElements
-    if (processingInstructions != null) this.processingInstructions = processingInstructions
-    if (removeProcessingInstructions != null) this.removeProcessingInstructions = removeProcessingInstructions
-    if (attributes != null) this.attributes = attributes
-    if (removeAttributes != null) this.removeAttributes = removeAttributes
-    if (comments != null) this.comments = comments
-    if (dataAttributes != null) this.dataAttributes = dataAttributes
-    if (javascriptURLs != null) this.javascriptURLs = javascriptURLs
+public fun SanitizerConfig(elements: JsArray<JsAny>? = null, removeElements: JsArray<JsAny>? = null, replaceWithChildrenElements: JsArray<JsAny>? = null, processingInstructions: JsArray<JsAny>? = null, removeProcessingInstructions: JsArray<JsAny>? = null, attributes: JsArray<JsAny>? = null, removeAttributes: JsArray<JsAny>? = null, comments: Boolean? = null, dataAttributes: Boolean? = null, javascriptURLs: Boolean? = null): SanitizerConfig {
+    val dictionary = newJsObject<SanitizerConfig>()
+    if (elements != null) dictionary.elements = elements
+    if (removeElements != null) dictionary.removeElements = removeElements
+    if (replaceWithChildrenElements != null) dictionary.replaceWithChildrenElements = replaceWithChildrenElements
+    if (processingInstructions != null) dictionary.processingInstructions = processingInstructions
+    if (removeProcessingInstructions != null) dictionary.removeProcessingInstructions = removeProcessingInstructions
+    if (attributes != null) dictionary.attributes = attributes
+    if (removeAttributes != null) dictionary.removeAttributes = removeAttributes
+    if (comments != null) dictionary.comments = comments
+    if (dataAttributes != null) dictionary.dataAttributes = dataAttributes
+    if (javascriptURLs != null) dictionary.javascriptURLs = javascriptURLs
+    return dictionary
 }
 
 /**
@@ -20190,9 +20272,11 @@ public external interface ImageDataSettings : JsAny {
     public var pixelFormat: ImageDataPixelFormat?
 }
 
-public fun ImageDataSettings(colorSpace: PredefinedColorSpace? = null, pixelFormat: ImageDataPixelFormat? = null): ImageDataSettings = newJsObject<ImageDataSettings>().apply {
-    if (colorSpace != null) this.colorSpace = colorSpace
-    if (pixelFormat != null) this.pixelFormat = pixelFormat
+public fun ImageDataSettings(colorSpace: PredefinedColorSpace? = null, pixelFormat: ImageDataPixelFormat? = null): ImageDataSettings {
+    val dictionary = newJsObject<ImageDataSettings>()
+    if (colorSpace != null) dictionary.colorSpace = colorSpace
+    if (pixelFormat != null) dictionary.pixelFormat = pixelFormat
+    return dictionary
 }
 
 /**
@@ -20353,13 +20437,15 @@ public external interface ImageBitmapOptions : JsAny {
     public var resizeQuality: ResizeQuality?
 }
 
-public fun ImageBitmapOptions(imageOrientation: ImageOrientation? = null, premultiplyAlpha: PremultiplyAlpha? = null, colorSpaceConversion: ColorSpaceConversion? = null, resizeWidth: Int? = null, resizeHeight: Int? = null, resizeQuality: ResizeQuality? = null): ImageBitmapOptions = newJsObject<ImageBitmapOptions>().apply {
-    if (imageOrientation != null) this.imageOrientation = imageOrientation
-    if (premultiplyAlpha != null) this.premultiplyAlpha = premultiplyAlpha
-    if (colorSpaceConversion != null) this.colorSpaceConversion = colorSpaceConversion
-    if (resizeWidth != null) this.resizeWidth = resizeWidth
-    if (resizeHeight != null) this.resizeHeight = resizeHeight
-    if (resizeQuality != null) this.resizeQuality = resizeQuality
+public fun ImageBitmapOptions(imageOrientation: ImageOrientation? = null, premultiplyAlpha: PremultiplyAlpha? = null, colorSpaceConversion: ColorSpaceConversion? = null, resizeWidth: Int? = null, resizeHeight: Int? = null, resizeQuality: ResizeQuality? = null): ImageBitmapOptions {
+    val dictionary = newJsObject<ImageBitmapOptions>()
+    if (imageOrientation != null) dictionary.imageOrientation = imageOrientation
+    if (premultiplyAlpha != null) dictionary.premultiplyAlpha = premultiplyAlpha
+    if (colorSpaceConversion != null) dictionary.colorSpaceConversion = colorSpaceConversion
+    if (resizeWidth != null) dictionary.resizeWidth = resizeWidth
+    if (resizeHeight != null) dictionary.resizeHeight = resizeHeight
+    if (resizeQuality != null) dictionary.resizeQuality = resizeQuality
+    return dictionary
 }
 
 public external interface AnimationFrameProvider : JsAny {
@@ -20467,15 +20553,17 @@ public external interface MessageEventInit : EventInit {
     public var ports: JsArray<MessagePort>?
 }
 
-public fun MessageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, data: JsAny? = null, origin: String? = null, lastEventId: String? = null, source: MessageEventSource? = null, ports: JsArray<MessagePort>? = null): MessageEventInit = newJsObject<MessageEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (data != null) this.data = data
-    if (origin != null) this.origin = origin
-    if (lastEventId != null) this.lastEventId = lastEventId
-    if (source != null) this.source = source
-    if (ports != null) this.ports = ports
+public fun MessageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, data: JsAny? = null, origin: String? = null, lastEventId: String? = null, source: MessageEventSource? = null, ports: JsArray<MessagePort>? = null): MessageEventInit {
+    val dictionary = newJsObject<MessageEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (data != null) dictionary.data = data
+    if (origin != null) dictionary.origin = origin
+    if (lastEventId != null) dictionary.lastEventId = lastEventId
+    if (source != null) dictionary.source = source
+    if (ports != null) dictionary.ports = ports
+    return dictionary
 }
 
 /**
@@ -20572,8 +20660,10 @@ public external interface EventSourceInit : JsAny {
     public var withCredentials: Boolean?
 }
 
-public fun EventSourceInit(withCredentials: Boolean? = null): EventSourceInit = newJsObject<EventSourceInit>().apply {
-    if (withCredentials != null) this.withCredentials = withCredentials
+public fun EventSourceInit(withCredentials: Boolean? = null): EventSourceInit {
+    val dictionary = newJsObject<EventSourceInit>()
+    if (withCredentials != null) dictionary.withCredentials = withCredentials
+    return dictionary
 }
 
 /**
@@ -20690,8 +20780,10 @@ public external interface StructuredSerializeOptions : JsAny {
     public var transfer: JsArray<JsAny>?
 }
 
-public fun StructuredSerializeOptions(transfer: JsArray<JsAny>? = null): StructuredSerializeOptions = newJsObject<StructuredSerializeOptions>().apply {
-    if (transfer != null) this.transfer = transfer
+public fun StructuredSerializeOptions(transfer: JsArray<JsAny>? = null): StructuredSerializeOptions {
+    val dictionary = newJsObject<StructuredSerializeOptions>()
+    if (transfer != null) dictionary.transfer = transfer
+    return dictionary
 }
 
 /**
@@ -21068,10 +21160,12 @@ public external interface WorkerOptions : JsAny {
     public var credentials: RequestCredentials?
 }
 
-public fun WorkerOptions(name: String? = null, type: WorkerType? = null, credentials: RequestCredentials? = null): WorkerOptions = newJsObject<WorkerOptions>().apply {
-    if (name != null) this.name = name
-    if (type != null) this.type = type
-    if (credentials != null) this.credentials = credentials
+public fun WorkerOptions(name: String? = null, type: WorkerType? = null, credentials: RequestCredentials? = null): WorkerOptions {
+    val dictionary = newJsObject<WorkerOptions>()
+    if (name != null) dictionary.name = name
+    if (type != null) dictionary.type = type
+    if (credentials != null) dictionary.credentials = credentials
+    return dictionary
 }
 
 public external interface WorkerType : JsAny {
@@ -21144,11 +21238,13 @@ public external interface SharedWorkerOptions : WorkerOptions {
     public var extendedLifetime: Boolean?
 }
 
-public fun SharedWorkerOptions(name: String? = null, type: WorkerType? = null, credentials: RequestCredentials? = null, extendedLifetime: Boolean? = null): SharedWorkerOptions = newJsObject<SharedWorkerOptions>().apply {
-    if (name != null) this.name = name
-    if (type != null) this.type = type
-    if (credentials != null) this.credentials = credentials
-    if (extendedLifetime != null) this.extendedLifetime = extendedLifetime
+public fun SharedWorkerOptions(name: String? = null, type: WorkerType? = null, credentials: RequestCredentials? = null, extendedLifetime: Boolean? = null): SharedWorkerOptions {
+    val dictionary = newJsObject<SharedWorkerOptions>()
+    if (name != null) dictionary.name = name
+    if (type != null) dictionary.type = type
+    if (credentials != null) dictionary.credentials = credentials
+    if (extendedLifetime != null) dictionary.extendedLifetime = extendedLifetime
+    return dictionary
 }
 
 public external interface NavigatorConcurrentHardware : JsAny {
@@ -21317,8 +21413,10 @@ public external interface WorkletOptions : JsAny {
     public var credentials: RequestCredentials?
 }
 
-public fun WorkletOptions(credentials: RequestCredentials? = null): WorkletOptions = newJsObject<WorkletOptions>().apply {
-    if (credentials != null) this.credentials = credentials
+public fun WorkletOptions(credentials: RequestCredentials? = null): WorkletOptions {
+    val dictionary = newJsObject<WorkletOptions>()
+    if (credentials != null) dictionary.credentials = credentials
+    return dictionary
 }
 
 /**
@@ -21513,15 +21611,17 @@ public external interface StorageEventInit : EventInit {
     public var storageArea: Storage?
 }
 
-public fun StorageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, key: String? = null, oldValue: String? = null, newValue: String? = null, url: String? = null, storageArea: Storage? = null): StorageEventInit = newJsObject<StorageEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (key != null) this.key = key
-    if (oldValue != null) this.oldValue = oldValue
-    if (newValue != null) this.newValue = newValue
-    if (url != null) this.url = url
-    if (storageArea != null) this.storageArea = storageArea
+public fun StorageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, key: String? = null, oldValue: String? = null, newValue: String? = null, url: String? = null, storageArea: Storage? = null): StorageEventInit {
+    val dictionary = newJsObject<StorageEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (key != null) dictionary.key = key
+    if (oldValue != null) dictionary.oldValue = oldValue
+    if (newValue != null) dictionary.newValue = newValue
+    if (url != null) dictionary.url = url
+    if (storageArea != null) dictionary.storageArea = storageArea
+    return dictionary
 }
 
 /**

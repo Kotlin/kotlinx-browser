@@ -23,8 +23,10 @@ public external interface SVGPathDataSettings : JsAny {
     public var normalize: Boolean?
 }
 
-public fun SVGPathDataSettings(normalize: Boolean? = null): SVGPathDataSettings = newJsObject<SVGPathDataSettings>().apply {
-    if (normalize != null) this.normalize = normalize
+public fun SVGPathDataSettings(normalize: Boolean? = null): SVGPathDataSettings {
+    val dictionary = newJsObject<SVGPathDataSettings>()
+    if (normalize != null) dictionary.normalize = normalize
+    return dictionary
 }
 
 public external interface SVGPathData : JsAny {

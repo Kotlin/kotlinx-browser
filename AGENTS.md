@@ -87,6 +87,8 @@ built-ins, `ItemArrayLike` and `JsObjects.kt`.
 - On Wasm, the declared types of a `js()` function decide the conversion at the boundary, so `JsObjects.kt` has one
   helper per key and value kind.
 - Dictionary factories must omit absent members. JS treats `null` differently from "missing".
+- On Wasm, an external value passed through an inlined scope function (`apply`, `also`, `let`, …) is converted to
+  `Any` and back (KT-90953). Generated code and the helpers it calls use a local variable instead.
 - Node 22.0–26.2 does not remove capture event listeners. That is a Node bug, so don't assert on it.
 - Gradle only reruns `:generator:test` when its declared inputs change. The committed files it reads are declared in
   `generator/build.gradle.kts`; add any new one there.

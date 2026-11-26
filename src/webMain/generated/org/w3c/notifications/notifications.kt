@@ -284,21 +284,23 @@ public external interface NotificationOptions : JsAny {
     public var actions: JsArray<NotificationAction>?
 }
 
-public fun NotificationOptions(dir: NotificationDirection? = null, lang: String? = null, body: String? = null, navigate: String? = null, tag: String? = null, image: String? = null, icon: String? = null, badge: String? = null, timestamp: Double? = null, renotify: Boolean? = null, silent: Boolean? = null, requireInteraction: Boolean? = null, data: JsAny? = null, actions: JsArray<NotificationAction>? = null): NotificationOptions = newJsObject<NotificationOptions>().apply {
-    if (dir != null) this.dir = dir
-    if (lang != null) this.lang = lang
-    if (body != null) this.body = body
-    if (navigate != null) this.navigate = navigate
-    if (tag != null) this.tag = tag
-    if (image != null) this.image = image
-    if (icon != null) this.icon = icon
-    if (badge != null) this.badge = badge
-    if (timestamp != null) this.timestamp = timestamp
-    if (renotify != null) this.renotify = renotify
-    if (silent != null) this.silent = silent
-    if (requireInteraction != null) this.requireInteraction = requireInteraction
-    if (data != null) this.data = data
-    if (actions != null) this.actions = actions
+public fun NotificationOptions(dir: NotificationDirection? = null, lang: String? = null, body: String? = null, navigate: String? = null, tag: String? = null, image: String? = null, icon: String? = null, badge: String? = null, timestamp: Double? = null, renotify: Boolean? = null, silent: Boolean? = null, requireInteraction: Boolean? = null, data: JsAny? = null, actions: JsArray<NotificationAction>? = null): NotificationOptions {
+    val dictionary = newJsObject<NotificationOptions>()
+    if (dir != null) dictionary.dir = dir
+    if (lang != null) dictionary.lang = lang
+    if (body != null) dictionary.body = body
+    if (navigate != null) dictionary.navigate = navigate
+    if (tag != null) dictionary.tag = tag
+    if (image != null) dictionary.image = image
+    if (icon != null) dictionary.icon = icon
+    if (badge != null) dictionary.badge = badge
+    if (timestamp != null) dictionary.timestamp = timestamp
+    if (renotify != null) dictionary.renotify = renotify
+    if (silent != null) dictionary.silent = silent
+    if (requireInteraction != null) dictionary.requireInteraction = requireInteraction
+    if (data != null) dictionary.data = data
+    if (actions != null) dictionary.actions = actions
+    return dictionary
 }
 
 public external interface NotificationPermission : JsAny {
@@ -326,19 +328,23 @@ public external interface NotificationAction : JsAny {
     public var icon: String?
 }
 
-public fun NotificationAction(action: String, title: String, navigate: String? = null, icon: String? = null): NotificationAction = newJsObject<NotificationAction>().apply {
-    this.action = action
-    this.title = title
-    if (navigate != null) this.navigate = navigate
-    if (icon != null) this.icon = icon
+public fun NotificationAction(action: String, title: String, navigate: String? = null, icon: String? = null): NotificationAction {
+    val dictionary = newJsObject<NotificationAction>()
+    dictionary.action = action
+    dictionary.title = title
+    if (navigate != null) dictionary.navigate = navigate
+    if (icon != null) dictionary.icon = icon
+    return dictionary
 }
 
 public external interface GetNotificationOptions : JsAny {
     public var tag: String?
 }
 
-public fun GetNotificationOptions(tag: String? = null): GetNotificationOptions = newJsObject<GetNotificationOptions>().apply {
-    if (tag != null) this.tag = tag
+public fun GetNotificationOptions(tag: String? = null): GetNotificationOptions {
+    val dictionary = newJsObject<GetNotificationOptions>()
+    if (tag != null) dictionary.tag = tag
+    return dictionary
 }
 
 /**
@@ -396,10 +402,12 @@ public external interface NotificationEventInit : ExtendableEventInit {
     public var action: String?
 }
 
-public fun NotificationEventInit(notification: Notification, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, action: String? = null): NotificationEventInit = newJsObject<NotificationEventInit>().apply {
-    this.notification = notification
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (action != null) this.action = action
+public fun NotificationEventInit(notification: Notification, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, action: String? = null): NotificationEventInit {
+    val dictionary = newJsObject<NotificationEventInit>()
+    dictionary.notification = notification
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (action != null) dictionary.action = action
+    return dictionary
 }

@@ -34,14 +34,16 @@ public external interface MediaKeySystemConfiguration : JsAny {
     public var sessionTypes: JsArray<JsString>?
 }
 
-public fun MediaKeySystemConfiguration(label: String? = null, initDataTypes: JsArray<JsString>? = null, audioCapabilities: JsArray<MediaKeySystemMediaCapability>? = null, videoCapabilities: JsArray<MediaKeySystemMediaCapability>? = null, distinctiveIdentifier: MediaKeysRequirement? = null, persistentState: MediaKeysRequirement? = null, sessionTypes: JsArray<JsString>? = null): MediaKeySystemConfiguration = newJsObject<MediaKeySystemConfiguration>().apply {
-    if (label != null) this.label = label
-    if (initDataTypes != null) this.initDataTypes = initDataTypes
-    if (audioCapabilities != null) this.audioCapabilities = audioCapabilities
-    if (videoCapabilities != null) this.videoCapabilities = videoCapabilities
-    if (distinctiveIdentifier != null) this.distinctiveIdentifier = distinctiveIdentifier
-    if (persistentState != null) this.persistentState = persistentState
-    if (sessionTypes != null) this.sessionTypes = sessionTypes
+public fun MediaKeySystemConfiguration(label: String? = null, initDataTypes: JsArray<JsString>? = null, audioCapabilities: JsArray<MediaKeySystemMediaCapability>? = null, videoCapabilities: JsArray<MediaKeySystemMediaCapability>? = null, distinctiveIdentifier: MediaKeysRequirement? = null, persistentState: MediaKeysRequirement? = null, sessionTypes: JsArray<JsString>? = null): MediaKeySystemConfiguration {
+    val dictionary = newJsObject<MediaKeySystemConfiguration>()
+    if (label != null) dictionary.label = label
+    if (initDataTypes != null) dictionary.initDataTypes = initDataTypes
+    if (audioCapabilities != null) dictionary.audioCapabilities = audioCapabilities
+    if (videoCapabilities != null) dictionary.videoCapabilities = videoCapabilities
+    if (distinctiveIdentifier != null) dictionary.distinctiveIdentifier = distinctiveIdentifier
+    if (persistentState != null) dictionary.persistentState = persistentState
+    if (sessionTypes != null) dictionary.sessionTypes = sessionTypes
+    return dictionary
 }
 
 public external interface MediaKeySystemMediaCapability : JsAny {
@@ -50,10 +52,12 @@ public external interface MediaKeySystemMediaCapability : JsAny {
     public var robustness: String?
 }
 
-public fun MediaKeySystemMediaCapability(contentType: String? = null, encryptionScheme: String? = null, robustness: String? = null): MediaKeySystemMediaCapability = newJsObject<MediaKeySystemMediaCapability>().apply {
-    if (contentType != null) this.contentType = contentType
-    if (encryptionScheme != null) this.encryptionScheme = encryptionScheme
-    if (robustness != null) this.robustness = robustness
+public fun MediaKeySystemMediaCapability(contentType: String? = null, encryptionScheme: String? = null, robustness: String? = null): MediaKeySystemMediaCapability {
+    val dictionary = newJsObject<MediaKeySystemMediaCapability>()
+    if (contentType != null) dictionary.contentType = contentType
+    if (encryptionScheme != null) dictionary.encryptionScheme = encryptionScheme
+    if (robustness != null) dictionary.robustness = robustness
+    return dictionary
 }
 
 /**
@@ -150,8 +154,10 @@ public external interface MediaKeysPolicy : JsAny {
     public var minHdcpVersion: String?
 }
 
-public fun MediaKeysPolicy(minHdcpVersion: String? = null): MediaKeysPolicy = newJsObject<MediaKeysPolicy>().apply {
-    if (minHdcpVersion != null) this.minHdcpVersion = minHdcpVersion
+public fun MediaKeysPolicy(minHdcpVersion: String? = null): MediaKeysPolicy {
+    val dictionary = newJsObject<MediaKeysPolicy>()
+    if (minHdcpVersion != null) dictionary.minHdcpVersion = minHdcpVersion
+    return dictionary
 }
 
 public external interface MediaKeySessionClosedReason : JsAny {
@@ -410,12 +416,14 @@ public external interface MediaKeyMessageEventInit : EventInit {
     public var message: ArrayBuffer
 }
 
-public fun MediaKeyMessageEventInit(messageType: MediaKeyMessageType, message: ArrayBuffer, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): MediaKeyMessageEventInit = newJsObject<MediaKeyMessageEventInit>().apply {
-    this.messageType = messageType
-    this.message = message
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
+public fun MediaKeyMessageEventInit(messageType: MediaKeyMessageType, message: ArrayBuffer, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): MediaKeyMessageEventInit {
+    val dictionary = newJsObject<MediaKeyMessageEventInit>()
+    dictionary.messageType = messageType
+    dictionary.message = message
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    return dictionary
 }
 
 /**
@@ -469,10 +477,12 @@ public external interface MediaEncryptedEventInit : EventInit {
     public var initData: ArrayBuffer?
 }
 
-public fun MediaEncryptedEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, initDataType: String? = null, initData: ArrayBuffer? = null): MediaEncryptedEventInit = newJsObject<MediaEncryptedEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (initDataType != null) this.initDataType = initDataType
-    if (initData != null) this.initData = initData
+public fun MediaEncryptedEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, initDataType: String? = null, initData: ArrayBuffer? = null): MediaEncryptedEventInit {
+    val dictionary = newJsObject<MediaEncryptedEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (initDataType != null) dictionary.initDataType = initDataType
+    if (initData != null) dictionary.initData = initData
+    return dictionary
 }

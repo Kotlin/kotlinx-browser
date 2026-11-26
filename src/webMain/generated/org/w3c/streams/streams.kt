@@ -122,16 +122,20 @@ public external interface ReadableStreamGetReaderOptions : JsAny {
     public var mode: ReadableStreamReaderMode?
 }
 
-public fun ReadableStreamGetReaderOptions(mode: ReadableStreamReaderMode? = null): ReadableStreamGetReaderOptions = newJsObject<ReadableStreamGetReaderOptions>().apply {
-    if (mode != null) this.mode = mode
+public fun ReadableStreamGetReaderOptions(mode: ReadableStreamReaderMode? = null): ReadableStreamGetReaderOptions {
+    val dictionary = newJsObject<ReadableStreamGetReaderOptions>()
+    if (mode != null) dictionary.mode = mode
+    return dictionary
 }
 
 public external interface ReadableStreamIteratorOptions : JsAny {
     public var preventCancel: Boolean?
 }
 
-public fun ReadableStreamIteratorOptions(preventCancel: Boolean? = null): ReadableStreamIteratorOptions = newJsObject<ReadableStreamIteratorOptions>().apply {
-    if (preventCancel != null) this.preventCancel = preventCancel
+public fun ReadableStreamIteratorOptions(preventCancel: Boolean? = null): ReadableStreamIteratorOptions {
+    val dictionary = newJsObject<ReadableStreamIteratorOptions>()
+    if (preventCancel != null) dictionary.preventCancel = preventCancel
+    return dictionary
 }
 
 public external interface ReadableWritablePair : JsAny {
@@ -139,9 +143,11 @@ public external interface ReadableWritablePair : JsAny {
     public var writable: WritableStream
 }
 
-public fun ReadableWritablePair(readable: ReadableStream, writable: WritableStream): ReadableWritablePair = newJsObject<ReadableWritablePair>().apply {
-    this.readable = readable
-    this.writable = writable
+public fun ReadableWritablePair(readable: ReadableStream, writable: WritableStream): ReadableWritablePair {
+    val dictionary = newJsObject<ReadableWritablePair>()
+    dictionary.readable = readable
+    dictionary.writable = writable
+    return dictionary
 }
 
 public external interface StreamPipeOptions : JsAny {
@@ -151,11 +157,13 @@ public external interface StreamPipeOptions : JsAny {
     public var signal: AbortSignal?
 }
 
-public fun StreamPipeOptions(preventClose: Boolean? = null, preventAbort: Boolean? = null, preventCancel: Boolean? = null, signal: AbortSignal? = null): StreamPipeOptions = newJsObject<StreamPipeOptions>().apply {
-    if (preventClose != null) this.preventClose = preventClose
-    if (preventAbort != null) this.preventAbort = preventAbort
-    if (preventCancel != null) this.preventCancel = preventCancel
-    if (signal != null) this.signal = signal
+public fun StreamPipeOptions(preventClose: Boolean? = null, preventAbort: Boolean? = null, preventCancel: Boolean? = null, signal: AbortSignal? = null): StreamPipeOptions {
+    val dictionary = newJsObject<StreamPipeOptions>()
+    if (preventClose != null) dictionary.preventClose = preventClose
+    if (preventAbort != null) dictionary.preventAbort = preventAbort
+    if (preventCancel != null) dictionary.preventCancel = preventCancel
+    if (signal != null) dictionary.signal = signal
+    return dictionary
 }
 
 public external interface UnderlyingSource : JsAny {
@@ -166,12 +174,14 @@ public external interface UnderlyingSource : JsAny {
     public var autoAllocateChunkSize: Double?
 }
 
-public fun UnderlyingSource(start: ((ReadableStreamController) -> JsAny?)? = null, pull: ((ReadableStreamController) -> Promise<JsAny?>)? = null, cancel: ((JsAny?) -> Promise<JsAny?>)? = null, type: ReadableStreamType? = null, autoAllocateChunkSize: Double? = null): UnderlyingSource = newJsObject<UnderlyingSource>().apply {
-    if (start != null) this.start = start
-    if (pull != null) this.pull = pull
-    if (cancel != null) this.cancel = cancel
-    if (type != null) this.type = type
-    if (autoAllocateChunkSize != null) this.autoAllocateChunkSize = autoAllocateChunkSize
+public fun UnderlyingSource(start: ((ReadableStreamController) -> JsAny?)? = null, pull: ((ReadableStreamController) -> Promise<JsAny?>)? = null, cancel: ((JsAny?) -> Promise<JsAny?>)? = null, type: ReadableStreamType? = null, autoAllocateChunkSize: Double? = null): UnderlyingSource {
+    val dictionary = newJsObject<UnderlyingSource>()
+    if (start != null) dictionary.start = start
+    if (pull != null) dictionary.pull = pull
+    if (cancel != null) dictionary.cancel = cancel
+    if (type != null) dictionary.type = type
+    if (autoAllocateChunkSize != null) dictionary.autoAllocateChunkSize = autoAllocateChunkSize
+    return dictionary
 }
 
 public external interface ReadableStreamType : JsAny {
@@ -269,9 +279,11 @@ public external interface ReadableStreamReadResult : JsAny {
     public var done: Boolean?
 }
 
-public fun ReadableStreamReadResult(value: JsAny? = null, done: Boolean? = null): ReadableStreamReadResult = newJsObject<ReadableStreamReadResult>().apply {
-    if (value != null) this.value = value
-    if (done != null) this.done = done
+public fun ReadableStreamReadResult(value: JsAny? = null, done: Boolean? = null): ReadableStreamReadResult {
+    val dictionary = newJsObject<ReadableStreamReadResult>()
+    if (value != null) dictionary.value = value
+    if (done != null) dictionary.done = done
+    return dictionary
 }
 
 /**
@@ -340,8 +352,10 @@ public external interface ReadableStreamBYOBReaderReadOptions : JsAny {
     public var min: Double?
 }
 
-public fun ReadableStreamBYOBReaderReadOptions(min: Double? = null): ReadableStreamBYOBReaderReadOptions = newJsObject<ReadableStreamBYOBReaderReadOptions>().apply {
-    if (min != null) this.min = min
+public fun ReadableStreamBYOBReaderReadOptions(min: Double? = null): ReadableStreamBYOBReaderReadOptions {
+    val dictionary = newJsObject<ReadableStreamBYOBReaderReadOptions>()
+    if (min != null) dictionary.min = min
+    return dictionary
 }
 
 /**
@@ -562,12 +576,14 @@ public external interface UnderlyingSink : JsAny {
     public var type: JsAny?
 }
 
-public fun UnderlyingSink(start: ((WritableStreamDefaultController) -> JsAny?)? = null, write: ((JsAny?, WritableStreamDefaultController) -> Promise<JsAny?>)? = null, close: (() -> Promise<JsAny?>)? = null, abort: ((JsAny?) -> Promise<JsAny?>)? = null, type: JsAny? = null): UnderlyingSink = newJsObject<UnderlyingSink>().apply {
-    if (start != null) this.start = start
-    if (write != null) this.write = write
-    if (close != null) this.close = close
-    if (abort != null) this.abort = abort
-    if (type != null) this.type = type
+public fun UnderlyingSink(start: ((WritableStreamDefaultController) -> JsAny?)? = null, write: ((JsAny?, WritableStreamDefaultController) -> Promise<JsAny?>)? = null, close: (() -> Promise<JsAny?>)? = null, abort: ((JsAny?) -> Promise<JsAny?>)? = null, type: JsAny? = null): UnderlyingSink {
+    val dictionary = newJsObject<UnderlyingSink>()
+    if (start != null) dictionary.start = start
+    if (write != null) dictionary.write = write
+    if (close != null) dictionary.close = close
+    if (abort != null) dictionary.abort = abort
+    if (type != null) dictionary.type = type
+    return dictionary
 }
 
 /**
@@ -745,13 +761,15 @@ public external interface Transformer : JsAny {
     public var writableType: JsAny?
 }
 
-public fun Transformer(start: ((TransformStreamDefaultController) -> JsAny?)? = null, transform: ((JsAny?, TransformStreamDefaultController) -> Promise<JsAny?>)? = null, flush: ((TransformStreamDefaultController) -> Promise<JsAny?>)? = null, cancel: ((JsAny?) -> Promise<JsAny?>)? = null, readableType: JsAny? = null, writableType: JsAny? = null): Transformer = newJsObject<Transformer>().apply {
-    if (start != null) this.start = start
-    if (transform != null) this.transform = transform
-    if (flush != null) this.flush = flush
-    if (cancel != null) this.cancel = cancel
-    if (readableType != null) this.readableType = readableType
-    if (writableType != null) this.writableType = writableType
+public fun Transformer(start: ((TransformStreamDefaultController) -> JsAny?)? = null, transform: ((JsAny?, TransformStreamDefaultController) -> Promise<JsAny?>)? = null, flush: ((TransformStreamDefaultController) -> Promise<JsAny?>)? = null, cancel: ((JsAny?) -> Promise<JsAny?>)? = null, readableType: JsAny? = null, writableType: JsAny? = null): Transformer {
+    val dictionary = newJsObject<Transformer>()
+    if (start != null) dictionary.start = start
+    if (transform != null) dictionary.transform = transform
+    if (flush != null) dictionary.flush = flush
+    if (cancel != null) dictionary.cancel = cancel
+    if (readableType != null) dictionary.readableType = readableType
+    if (writableType != null) dictionary.writableType = writableType
+    return dictionary
 }
 
 /**
@@ -809,17 +827,21 @@ public external interface QueuingStrategy : JsAny {
     public var size: ((JsAny?) -> Double)?
 }
 
-public fun QueuingStrategy(highWaterMark: Double? = null, size: ((JsAny?) -> Double)? = null): QueuingStrategy = newJsObject<QueuingStrategy>().apply {
-    if (highWaterMark != null) this.highWaterMark = highWaterMark
-    if (size != null) this.size = size
+public fun QueuingStrategy(highWaterMark: Double? = null, size: ((JsAny?) -> Double)? = null): QueuingStrategy {
+    val dictionary = newJsObject<QueuingStrategy>()
+    if (highWaterMark != null) dictionary.highWaterMark = highWaterMark
+    if (size != null) dictionary.size = size
+    return dictionary
 }
 
 public external interface QueuingStrategyInit : JsAny {
     public var highWaterMark: Double
 }
 
-public fun QueuingStrategyInit(highWaterMark: Double): QueuingStrategyInit = newJsObject<QueuingStrategyInit>().apply {
-    this.highWaterMark = highWaterMark
+public fun QueuingStrategyInit(highWaterMark: Double): QueuingStrategyInit {
+    val dictionary = newJsObject<QueuingStrategyInit>()
+    dictionary.highWaterMark = highWaterMark
+    return dictionary
 }
 
 /**

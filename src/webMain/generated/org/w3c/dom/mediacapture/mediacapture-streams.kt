@@ -355,23 +355,25 @@ public external interface MediaTrackSupportedConstraints : JsAny {
     public var backgroundBlur: Boolean?
 }
 
-public fun MediaTrackSupportedConstraints(width: Boolean? = null, height: Boolean? = null, aspectRatio: Boolean? = null, frameRate: Boolean? = null, facingMode: Boolean? = null, resizeMode: Boolean? = null, sampleRate: Boolean? = null, sampleSize: Boolean? = null, echoCancellation: Boolean? = null, autoGainControl: Boolean? = null, noiseSuppression: Boolean? = null, latency: Boolean? = null, channelCount: Boolean? = null, deviceId: Boolean? = null, groupId: Boolean? = null, backgroundBlur: Boolean? = null): MediaTrackSupportedConstraints = newJsObject<MediaTrackSupportedConstraints>().apply {
-    if (width != null) this.width = width
-    if (height != null) this.height = height
-    if (aspectRatio != null) this.aspectRatio = aspectRatio
-    if (frameRate != null) this.frameRate = frameRate
-    if (facingMode != null) this.facingMode = facingMode
-    if (resizeMode != null) this.resizeMode = resizeMode
-    if (sampleRate != null) this.sampleRate = sampleRate
-    if (sampleSize != null) this.sampleSize = sampleSize
-    if (echoCancellation != null) this.echoCancellation = echoCancellation
-    if (autoGainControl != null) this.autoGainControl = autoGainControl
-    if (noiseSuppression != null) this.noiseSuppression = noiseSuppression
-    if (latency != null) this.latency = latency
-    if (channelCount != null) this.channelCount = channelCount
-    if (deviceId != null) this.deviceId = deviceId
-    if (groupId != null) this.groupId = groupId
-    if (backgroundBlur != null) this.backgroundBlur = backgroundBlur
+public fun MediaTrackSupportedConstraints(width: Boolean? = null, height: Boolean? = null, aspectRatio: Boolean? = null, frameRate: Boolean? = null, facingMode: Boolean? = null, resizeMode: Boolean? = null, sampleRate: Boolean? = null, sampleSize: Boolean? = null, echoCancellation: Boolean? = null, autoGainControl: Boolean? = null, noiseSuppression: Boolean? = null, latency: Boolean? = null, channelCount: Boolean? = null, deviceId: Boolean? = null, groupId: Boolean? = null, backgroundBlur: Boolean? = null): MediaTrackSupportedConstraints {
+    val dictionary = newJsObject<MediaTrackSupportedConstraints>()
+    if (width != null) dictionary.width = width
+    if (height != null) dictionary.height = height
+    if (aspectRatio != null) dictionary.aspectRatio = aspectRatio
+    if (frameRate != null) dictionary.frameRate = frameRate
+    if (facingMode != null) dictionary.facingMode = facingMode
+    if (resizeMode != null) dictionary.resizeMode = resizeMode
+    if (sampleRate != null) dictionary.sampleRate = sampleRate
+    if (sampleSize != null) dictionary.sampleSize = sampleSize
+    if (echoCancellation != null) dictionary.echoCancellation = echoCancellation
+    if (autoGainControl != null) dictionary.autoGainControl = autoGainControl
+    if (noiseSuppression != null) dictionary.noiseSuppression = noiseSuppression
+    if (latency != null) dictionary.latency = latency
+    if (channelCount != null) dictionary.channelCount = channelCount
+    if (deviceId != null) dictionary.deviceId = deviceId
+    if (groupId != null) dictionary.groupId = groupId
+    if (backgroundBlur != null) dictionary.backgroundBlur = backgroundBlur
+    return dictionary
 }
 
 public external interface MediaTrackCapabilities : JsAny {
@@ -393,47 +395,51 @@ public external interface MediaTrackCapabilities : JsAny {
     public var backgroundBlur: JsArray<JsBoolean>?
 }
 
-public fun MediaTrackCapabilities(width: ULongRange? = null, height: ULongRange? = null, aspectRatio: DoubleRange? = null, frameRate: DoubleRange? = null, facingMode: JsArray<JsString>? = null, resizeMode: JsArray<JsString>? = null, sampleRate: ULongRange? = null, sampleSize: ULongRange? = null, echoCancellation: JsArray<JsAny>? = null, autoGainControl: JsArray<JsBoolean>? = null, noiseSuppression: JsArray<JsBoolean>? = null, latency: DoubleRange? = null, channelCount: ULongRange? = null, deviceId: String? = null, groupId: String? = null, backgroundBlur: JsArray<JsBoolean>? = null): MediaTrackCapabilities = newJsObject<MediaTrackCapabilities>().apply {
-    if (width != null) this.width = width
-    if (height != null) this.height = height
-    if (aspectRatio != null) this.aspectRatio = aspectRatio
-    if (frameRate != null) this.frameRate = frameRate
-    if (facingMode != null) this.facingMode = facingMode
-    if (resizeMode != null) this.resizeMode = resizeMode
-    if (sampleRate != null) this.sampleRate = sampleRate
-    if (sampleSize != null) this.sampleSize = sampleSize
-    if (echoCancellation != null) this.echoCancellation = echoCancellation
-    if (autoGainControl != null) this.autoGainControl = autoGainControl
-    if (noiseSuppression != null) this.noiseSuppression = noiseSuppression
-    if (latency != null) this.latency = latency
-    if (channelCount != null) this.channelCount = channelCount
-    if (deviceId != null) this.deviceId = deviceId
-    if (groupId != null) this.groupId = groupId
-    if (backgroundBlur != null) this.backgroundBlur = backgroundBlur
+public fun MediaTrackCapabilities(width: ULongRange? = null, height: ULongRange? = null, aspectRatio: DoubleRange? = null, frameRate: DoubleRange? = null, facingMode: JsArray<JsString>? = null, resizeMode: JsArray<JsString>? = null, sampleRate: ULongRange? = null, sampleSize: ULongRange? = null, echoCancellation: JsArray<JsAny>? = null, autoGainControl: JsArray<JsBoolean>? = null, noiseSuppression: JsArray<JsBoolean>? = null, latency: DoubleRange? = null, channelCount: ULongRange? = null, deviceId: String? = null, groupId: String? = null, backgroundBlur: JsArray<JsBoolean>? = null): MediaTrackCapabilities {
+    val dictionary = newJsObject<MediaTrackCapabilities>()
+    if (width != null) dictionary.width = width
+    if (height != null) dictionary.height = height
+    if (aspectRatio != null) dictionary.aspectRatio = aspectRatio
+    if (frameRate != null) dictionary.frameRate = frameRate
+    if (facingMode != null) dictionary.facingMode = facingMode
+    if (resizeMode != null) dictionary.resizeMode = resizeMode
+    if (sampleRate != null) dictionary.sampleRate = sampleRate
+    if (sampleSize != null) dictionary.sampleSize = sampleSize
+    if (echoCancellation != null) dictionary.echoCancellation = echoCancellation
+    if (autoGainControl != null) dictionary.autoGainControl = autoGainControl
+    if (noiseSuppression != null) dictionary.noiseSuppression = noiseSuppression
+    if (latency != null) dictionary.latency = latency
+    if (channelCount != null) dictionary.channelCount = channelCount
+    if (deviceId != null) dictionary.deviceId = deviceId
+    if (groupId != null) dictionary.groupId = groupId
+    if (backgroundBlur != null) dictionary.backgroundBlur = backgroundBlur
+    return dictionary
 }
 
 public external interface MediaTrackConstraints : MediaTrackConstraintSet {
     public var advanced: JsArray<MediaTrackConstraintSet>?
 }
 
-public fun MediaTrackConstraints(width: JsAny? = null, height: JsAny? = null, aspectRatio: JsAny? = null, frameRate: JsAny? = null, facingMode: JsAny? = null, resizeMode: JsAny? = null, sampleRate: JsAny? = null, sampleSize: JsAny? = null, echoCancellation: JsAny? = null, autoGainControl: JsAny? = null, noiseSuppression: JsAny? = null, latency: JsAny? = null, channelCount: JsAny? = null, deviceId: JsAny? = null, groupId: JsAny? = null, backgroundBlur: JsAny? = null, advanced: JsArray<MediaTrackConstraintSet>? = null): MediaTrackConstraints = newJsObject<MediaTrackConstraints>().apply {
-    if (width != null) this.width = width
-    if (height != null) this.height = height
-    if (aspectRatio != null) this.aspectRatio = aspectRatio
-    if (frameRate != null) this.frameRate = frameRate
-    if (facingMode != null) this.facingMode = facingMode
-    if (resizeMode != null) this.resizeMode = resizeMode
-    if (sampleRate != null) this.sampleRate = sampleRate
-    if (sampleSize != null) this.sampleSize = sampleSize
-    if (echoCancellation != null) this.echoCancellation = echoCancellation
-    if (autoGainControl != null) this.autoGainControl = autoGainControl
-    if (noiseSuppression != null) this.noiseSuppression = noiseSuppression
-    if (latency != null) this.latency = latency
-    if (channelCount != null) this.channelCount = channelCount
-    if (deviceId != null) this.deviceId = deviceId
-    if (groupId != null) this.groupId = groupId
-    if (backgroundBlur != null) this.backgroundBlur = backgroundBlur
-    if (advanced != null) this.advanced = advanced
+public fun MediaTrackConstraints(width: JsAny? = null, height: JsAny? = null, aspectRatio: JsAny? = null, frameRate: JsAny? = null, facingMode: JsAny? = null, resizeMode: JsAny? = null, sampleRate: JsAny? = null, sampleSize: JsAny? = null, echoCancellation: JsAny? = null, autoGainControl: JsAny? = null, noiseSuppression: JsAny? = null, latency: JsAny? = null, channelCount: JsAny? = null, deviceId: JsAny? = null, groupId: JsAny? = null, backgroundBlur: JsAny? = null, advanced: JsArray<MediaTrackConstraintSet>? = null): MediaTrackConstraints {
+    val dictionary = newJsObject<MediaTrackConstraints>()
+    if (width != null) dictionary.width = width
+    if (height != null) dictionary.height = height
+    if (aspectRatio != null) dictionary.aspectRatio = aspectRatio
+    if (frameRate != null) dictionary.frameRate = frameRate
+    if (facingMode != null) dictionary.facingMode = facingMode
+    if (resizeMode != null) dictionary.resizeMode = resizeMode
+    if (sampleRate != null) dictionary.sampleRate = sampleRate
+    if (sampleSize != null) dictionary.sampleSize = sampleSize
+    if (echoCancellation != null) dictionary.echoCancellation = echoCancellation
+    if (autoGainControl != null) dictionary.autoGainControl = autoGainControl
+    if (noiseSuppression != null) dictionary.noiseSuppression = noiseSuppression
+    if (latency != null) dictionary.latency = latency
+    if (channelCount != null) dictionary.channelCount = channelCount
+    if (deviceId != null) dictionary.deviceId = deviceId
+    if (groupId != null) dictionary.groupId = groupId
+    if (backgroundBlur != null) dictionary.backgroundBlur = backgroundBlur
+    if (advanced != null) dictionary.advanced = advanced
+    return dictionary
 }
 
 public external interface MediaTrackConstraintSet : JsAny {
@@ -455,23 +461,25 @@ public external interface MediaTrackConstraintSet : JsAny {
     public var backgroundBlur: JsAny?
 }
 
-public fun MediaTrackConstraintSet(width: JsAny? = null, height: JsAny? = null, aspectRatio: JsAny? = null, frameRate: JsAny? = null, facingMode: JsAny? = null, resizeMode: JsAny? = null, sampleRate: JsAny? = null, sampleSize: JsAny? = null, echoCancellation: JsAny? = null, autoGainControl: JsAny? = null, noiseSuppression: JsAny? = null, latency: JsAny? = null, channelCount: JsAny? = null, deviceId: JsAny? = null, groupId: JsAny? = null, backgroundBlur: JsAny? = null): MediaTrackConstraintSet = newJsObject<MediaTrackConstraintSet>().apply {
-    if (width != null) this.width = width
-    if (height != null) this.height = height
-    if (aspectRatio != null) this.aspectRatio = aspectRatio
-    if (frameRate != null) this.frameRate = frameRate
-    if (facingMode != null) this.facingMode = facingMode
-    if (resizeMode != null) this.resizeMode = resizeMode
-    if (sampleRate != null) this.sampleRate = sampleRate
-    if (sampleSize != null) this.sampleSize = sampleSize
-    if (echoCancellation != null) this.echoCancellation = echoCancellation
-    if (autoGainControl != null) this.autoGainControl = autoGainControl
-    if (noiseSuppression != null) this.noiseSuppression = noiseSuppression
-    if (latency != null) this.latency = latency
-    if (channelCount != null) this.channelCount = channelCount
-    if (deviceId != null) this.deviceId = deviceId
-    if (groupId != null) this.groupId = groupId
-    if (backgroundBlur != null) this.backgroundBlur = backgroundBlur
+public fun MediaTrackConstraintSet(width: JsAny? = null, height: JsAny? = null, aspectRatio: JsAny? = null, frameRate: JsAny? = null, facingMode: JsAny? = null, resizeMode: JsAny? = null, sampleRate: JsAny? = null, sampleSize: JsAny? = null, echoCancellation: JsAny? = null, autoGainControl: JsAny? = null, noiseSuppression: JsAny? = null, latency: JsAny? = null, channelCount: JsAny? = null, deviceId: JsAny? = null, groupId: JsAny? = null, backgroundBlur: JsAny? = null): MediaTrackConstraintSet {
+    val dictionary = newJsObject<MediaTrackConstraintSet>()
+    if (width != null) dictionary.width = width
+    if (height != null) dictionary.height = height
+    if (aspectRatio != null) dictionary.aspectRatio = aspectRatio
+    if (frameRate != null) dictionary.frameRate = frameRate
+    if (facingMode != null) dictionary.facingMode = facingMode
+    if (resizeMode != null) dictionary.resizeMode = resizeMode
+    if (sampleRate != null) dictionary.sampleRate = sampleRate
+    if (sampleSize != null) dictionary.sampleSize = sampleSize
+    if (echoCancellation != null) dictionary.echoCancellation = echoCancellation
+    if (autoGainControl != null) dictionary.autoGainControl = autoGainControl
+    if (noiseSuppression != null) dictionary.noiseSuppression = noiseSuppression
+    if (latency != null) dictionary.latency = latency
+    if (channelCount != null) dictionary.channelCount = channelCount
+    if (deviceId != null) dictionary.deviceId = deviceId
+    if (groupId != null) dictionary.groupId = groupId
+    if (backgroundBlur != null) dictionary.backgroundBlur = backgroundBlur
+    return dictionary
 }
 
 public external interface MediaTrackSettings : JsAny {
@@ -493,23 +501,25 @@ public external interface MediaTrackSettings : JsAny {
     public var backgroundBlur: Boolean?
 }
 
-public fun MediaTrackSettings(width: Int? = null, height: Int? = null, aspectRatio: Double? = null, frameRate: Double? = null, facingMode: String? = null, resizeMode: String? = null, sampleRate: Int? = null, sampleSize: Int? = null, echoCancellation: JsAny? = null, autoGainControl: Boolean? = null, noiseSuppression: Boolean? = null, latency: Double? = null, channelCount: Int? = null, deviceId: String? = null, groupId: String? = null, backgroundBlur: Boolean? = null): MediaTrackSettings = newJsObject<MediaTrackSettings>().apply {
-    if (width != null) this.width = width
-    if (height != null) this.height = height
-    if (aspectRatio != null) this.aspectRatio = aspectRatio
-    if (frameRate != null) this.frameRate = frameRate
-    if (facingMode != null) this.facingMode = facingMode
-    if (resizeMode != null) this.resizeMode = resizeMode
-    if (sampleRate != null) this.sampleRate = sampleRate
-    if (sampleSize != null) this.sampleSize = sampleSize
-    if (echoCancellation != null) this.echoCancellation = echoCancellation
-    if (autoGainControl != null) this.autoGainControl = autoGainControl
-    if (noiseSuppression != null) this.noiseSuppression = noiseSuppression
-    if (latency != null) this.latency = latency
-    if (channelCount != null) this.channelCount = channelCount
-    if (deviceId != null) this.deviceId = deviceId
-    if (groupId != null) this.groupId = groupId
-    if (backgroundBlur != null) this.backgroundBlur = backgroundBlur
+public fun MediaTrackSettings(width: Int? = null, height: Int? = null, aspectRatio: Double? = null, frameRate: Double? = null, facingMode: String? = null, resizeMode: String? = null, sampleRate: Int? = null, sampleSize: Int? = null, echoCancellation: JsAny? = null, autoGainControl: Boolean? = null, noiseSuppression: Boolean? = null, latency: Double? = null, channelCount: Int? = null, deviceId: String? = null, groupId: String? = null, backgroundBlur: Boolean? = null): MediaTrackSettings {
+    val dictionary = newJsObject<MediaTrackSettings>()
+    if (width != null) dictionary.width = width
+    if (height != null) dictionary.height = height
+    if (aspectRatio != null) dictionary.aspectRatio = aspectRatio
+    if (frameRate != null) dictionary.frameRate = frameRate
+    if (facingMode != null) dictionary.facingMode = facingMode
+    if (resizeMode != null) dictionary.resizeMode = resizeMode
+    if (sampleRate != null) dictionary.sampleRate = sampleRate
+    if (sampleSize != null) dictionary.sampleSize = sampleSize
+    if (echoCancellation != null) dictionary.echoCancellation = echoCancellation
+    if (autoGainControl != null) dictionary.autoGainControl = autoGainControl
+    if (noiseSuppression != null) dictionary.noiseSuppression = noiseSuppression
+    if (latency != null) dictionary.latency = latency
+    if (channelCount != null) dictionary.channelCount = channelCount
+    if (deviceId != null) dictionary.deviceId = deviceId
+    if (groupId != null) dictionary.groupId = groupId
+    if (backgroundBlur != null) dictionary.backgroundBlur = backgroundBlur
+    return dictionary
 }
 
 public external interface VideoFacingModeEnum : JsAny {
@@ -580,11 +590,13 @@ public external interface MediaStreamTrackEventInit : EventInit {
     public var track: MediaStreamTrack
 }
 
-public fun MediaStreamTrackEventInit(track: MediaStreamTrack, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): MediaStreamTrackEventInit = newJsObject<MediaStreamTrackEventInit>().apply {
-    this.track = track
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
+public fun MediaStreamTrackEventInit(track: MediaStreamTrack, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): MediaStreamTrackEventInit {
+    val dictionary = newJsObject<MediaStreamTrackEventInit>()
+    dictionary.track = track
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    return dictionary
 }
 
 /**
@@ -812,11 +824,13 @@ public external interface DeviceChangeEventInit : EventInit {
     public var devices: JsArray<MediaDeviceInfo>?
 }
 
-public fun DeviceChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, devices: JsArray<MediaDeviceInfo>? = null): DeviceChangeEventInit = newJsObject<DeviceChangeEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (devices != null) this.devices = devices
+public fun DeviceChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, devices: JsArray<MediaDeviceInfo>? = null): DeviceChangeEventInit {
+    val dictionary = newJsObject<DeviceChangeEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (devices != null) dictionary.devices = devices
+    return dictionary
 }
 
 public external interface MediaStreamConstraints : JsAny {
@@ -824,9 +838,11 @@ public external interface MediaStreamConstraints : JsAny {
     public var audio: JsAny?
 }
 
-public fun MediaStreamConstraints(video: JsAny? = null, audio: JsAny? = null): MediaStreamConstraints = newJsObject<MediaStreamConstraints>().apply {
-    if (video != null) this.video = video
-    if (audio != null) this.audio = audio
+public fun MediaStreamConstraints(video: JsAny? = null, audio: JsAny? = null): MediaStreamConstraints {
+    val dictionary = newJsObject<MediaStreamConstraints>()
+    if (video != null) dictionary.video = video
+    if (audio != null) dictionary.audio = audio
+    return dictionary
 }
 
 public external interface DoubleRange : JsAny {
@@ -834,9 +850,11 @@ public external interface DoubleRange : JsAny {
     public var min: Double?
 }
 
-public fun DoubleRange(max: Double? = null, min: Double? = null): DoubleRange = newJsObject<DoubleRange>().apply {
-    if (max != null) this.max = max
-    if (min != null) this.min = min
+public fun DoubleRange(max: Double? = null, min: Double? = null): DoubleRange {
+    val dictionary = newJsObject<DoubleRange>()
+    if (max != null) dictionary.max = max
+    if (min != null) dictionary.min = min
+    return dictionary
 }
 
 public external interface ConstrainDoubleRange : DoubleRange {
@@ -844,11 +862,13 @@ public external interface ConstrainDoubleRange : DoubleRange {
     public var ideal: Double?
 }
 
-public fun ConstrainDoubleRange(max: Double? = null, min: Double? = null, exact: Double? = null, ideal: Double? = null): ConstrainDoubleRange = newJsObject<ConstrainDoubleRange>().apply {
-    if (max != null) this.max = max
-    if (min != null) this.min = min
-    if (exact != null) this.exact = exact
-    if (ideal != null) this.ideal = ideal
+public fun ConstrainDoubleRange(max: Double? = null, min: Double? = null, exact: Double? = null, ideal: Double? = null): ConstrainDoubleRange {
+    val dictionary = newJsObject<ConstrainDoubleRange>()
+    if (max != null) dictionary.max = max
+    if (min != null) dictionary.min = min
+    if (exact != null) dictionary.exact = exact
+    if (ideal != null) dictionary.ideal = ideal
+    return dictionary
 }
 
 public external interface ULongRange : JsAny {
@@ -856,9 +876,11 @@ public external interface ULongRange : JsAny {
     public var min: Int?
 }
 
-public fun ULongRange(max: Int? = null, min: Int? = null): ULongRange = newJsObject<ULongRange>().apply {
-    if (max != null) this.max = max
-    if (min != null) this.min = min
+public fun ULongRange(max: Int? = null, min: Int? = null): ULongRange {
+    val dictionary = newJsObject<ULongRange>()
+    if (max != null) dictionary.max = max
+    if (min != null) dictionary.min = min
+    return dictionary
 }
 
 public external interface ConstrainULongRange : ULongRange {
@@ -866,11 +888,13 @@ public external interface ConstrainULongRange : ULongRange {
     public var ideal: Int?
 }
 
-public fun ConstrainULongRange(max: Int? = null, min: Int? = null, exact: Int? = null, ideal: Int? = null): ConstrainULongRange = newJsObject<ConstrainULongRange>().apply {
-    if (max != null) this.max = max
-    if (min != null) this.min = min
-    if (exact != null) this.exact = exact
-    if (ideal != null) this.ideal = ideal
+public fun ConstrainULongRange(max: Int? = null, min: Int? = null, exact: Int? = null, ideal: Int? = null): ConstrainULongRange {
+    val dictionary = newJsObject<ConstrainULongRange>()
+    if (max != null) dictionary.max = max
+    if (min != null) dictionary.min = min
+    if (exact != null) dictionary.exact = exact
+    if (ideal != null) dictionary.ideal = ideal
+    return dictionary
 }
 
 public external interface ConstrainBooleanParameters : JsAny {
@@ -878,9 +902,11 @@ public external interface ConstrainBooleanParameters : JsAny {
     public var ideal: Boolean?
 }
 
-public fun ConstrainBooleanParameters(exact: Boolean? = null, ideal: Boolean? = null): ConstrainBooleanParameters = newJsObject<ConstrainBooleanParameters>().apply {
-    if (exact != null) this.exact = exact
-    if (ideal != null) this.ideal = ideal
+public fun ConstrainBooleanParameters(exact: Boolean? = null, ideal: Boolean? = null): ConstrainBooleanParameters {
+    val dictionary = newJsObject<ConstrainBooleanParameters>()
+    if (exact != null) dictionary.exact = exact
+    if (ideal != null) dictionary.ideal = ideal
+    return dictionary
 }
 
 public external interface ConstrainDOMStringParameters : JsAny {
@@ -888,9 +914,11 @@ public external interface ConstrainDOMStringParameters : JsAny {
     public var ideal: JsAny?
 }
 
-public fun ConstrainDOMStringParameters(exact: JsAny? = null, ideal: JsAny? = null): ConstrainDOMStringParameters = newJsObject<ConstrainDOMStringParameters>().apply {
-    if (exact != null) this.exact = exact
-    if (ideal != null) this.ideal = ideal
+public fun ConstrainDOMStringParameters(exact: JsAny? = null, ideal: JsAny? = null): ConstrainDOMStringParameters {
+    val dictionary = newJsObject<ConstrainDOMStringParameters>()
+    if (exact != null) dictionary.exact = exact
+    if (ideal != null) dictionary.ideal = ideal
+    return dictionary
 }
 
 public external interface ConstrainBooleanOrDOMStringParameters : JsAny {
@@ -898,7 +926,9 @@ public external interface ConstrainBooleanOrDOMStringParameters : JsAny {
     public var ideal: JsAny?
 }
 
-public fun ConstrainBooleanOrDOMStringParameters(exact: JsAny? = null, ideal: JsAny? = null): ConstrainBooleanOrDOMStringParameters = newJsObject<ConstrainBooleanOrDOMStringParameters>().apply {
-    if (exact != null) this.exact = exact
-    if (ideal != null) this.ideal = ideal
+public fun ConstrainBooleanOrDOMStringParameters(exact: JsAny? = null, ideal: JsAny? = null): ConstrainBooleanOrDOMStringParameters {
+    val dictionary = newJsObject<ConstrainBooleanOrDOMStringParameters>()
+    if (exact != null) dictionary.exact = exact
+    if (ideal != null) dictionary.ideal = ideal
+    return dictionary
 }

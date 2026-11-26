@@ -85,9 +85,11 @@ public external interface QuotaExceededErrorOptions : JsAny {
     public var requested: Double?
 }
 
-public fun QuotaExceededErrorOptions(quota: Double? = null, requested: Double? = null): QuotaExceededErrorOptions = newJsObject<QuotaExceededErrorOptions>().apply {
-    if (quota != null) this.quota = quota
-    if (requested != null) this.requested = requested
+public fun QuotaExceededErrorOptions(quota: Double? = null, requested: Double? = null): QuotaExceededErrorOptions {
+    val dictionary = newJsObject<QuotaExceededErrorOptions>()
+    if (quota != null) dictionary.quota = quota
+    if (requested != null) dictionary.requested = requested
+    return dictionary
 }
 
 /**

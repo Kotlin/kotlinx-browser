@@ -583,12 +583,14 @@ public external interface BufferedChangeEventInit : EventInit {
     public var removedRanges: TimeRanges?
 }
 
-public fun BufferedChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, addedRanges: TimeRanges? = null, removedRanges: TimeRanges? = null): BufferedChangeEventInit = newJsObject<BufferedChangeEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (addedRanges != null) this.addedRanges = addedRanges
-    if (removedRanges != null) this.removedRanges = removedRanges
+public fun BufferedChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, addedRanges: TimeRanges? = null, removedRanges: TimeRanges? = null): BufferedChangeEventInit {
+    val dictionary = newJsObject<BufferedChangeEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (addedRanges != null) dictionary.addedRanges = addedRanges
+    if (removedRanges != null) dictionary.removedRanges = removedRanges
+    return dictionary
 }
 
 /**

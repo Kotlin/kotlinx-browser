@@ -74,11 +74,13 @@ public external interface SVGBoundingBoxOptions : JsAny {
     public var clipped: Boolean?
 }
 
-public fun SVGBoundingBoxOptions(fill: Boolean? = null, stroke: Boolean? = null, markers: Boolean? = null, clipped: Boolean? = null): SVGBoundingBoxOptions = newJsObject<SVGBoundingBoxOptions>().apply {
-    if (fill != null) this.fill = fill
-    if (stroke != null) this.stroke = stroke
-    if (markers != null) this.markers = markers
-    if (clipped != null) this.clipped = clipped
+public fun SVGBoundingBoxOptions(fill: Boolean? = null, stroke: Boolean? = null, markers: Boolean? = null, clipped: Boolean? = null): SVGBoundingBoxOptions {
+    val dictionary = newJsObject<SVGBoundingBoxOptions>()
+    if (fill != null) dictionary.fill = fill
+    if (stroke != null) dictionary.stroke = stroke
+    if (markers != null) dictionary.markers = markers
+    if (clipped != null) dictionary.clipped = clipped
+    return dictionary
 }
 
 /**

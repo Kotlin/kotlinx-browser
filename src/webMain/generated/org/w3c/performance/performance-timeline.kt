@@ -153,8 +153,10 @@ public external interface PerformanceObserverCallbackOptions : JsAny {
     public var droppedEntriesCount: Double?
 }
 
-public fun PerformanceObserverCallbackOptions(droppedEntriesCount: Double? = null): PerformanceObserverCallbackOptions = newJsObject<PerformanceObserverCallbackOptions>().apply {
-    if (droppedEntriesCount != null) this.droppedEntriesCount = droppedEntriesCount
+public fun PerformanceObserverCallbackOptions(droppedEntriesCount: Double? = null): PerformanceObserverCallbackOptions {
+    val dictionary = newJsObject<PerformanceObserverCallbackOptions>()
+    if (droppedEntriesCount != null) dictionary.droppedEntriesCount = droppedEntriesCount
+    return dictionary
 }
 
 public external interface PerformanceObserverInit : JsAny {
@@ -163,10 +165,12 @@ public external interface PerformanceObserverInit : JsAny {
     public var buffered: Boolean?
 }
 
-public fun PerformanceObserverInit(entryTypes: JsArray<JsString>? = null, type: String? = null, buffered: Boolean? = null): PerformanceObserverInit = newJsObject<PerformanceObserverInit>().apply {
-    if (entryTypes != null) this.entryTypes = entryTypes
-    if (type != null) this.type = type
-    if (buffered != null) this.buffered = buffered
+public fun PerformanceObserverInit(entryTypes: JsArray<JsString>? = null, type: String? = null, buffered: Boolean? = null): PerformanceObserverInit {
+    val dictionary = newJsObject<PerformanceObserverInit>()
+    if (entryTypes != null) dictionary.entryTypes = entryTypes
+    if (type != null) dictionary.type = type
+    if (buffered != null) dictionary.buffered = buffered
+    return dictionary
 }
 
 /**

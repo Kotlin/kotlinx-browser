@@ -508,11 +508,13 @@ public external interface ProgressEventInit : EventInit {
     public var total: Double?
 }
 
-public fun ProgressEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, lengthComputable: Boolean? = null, loaded: Double? = null, total: Double? = null): ProgressEventInit = newJsObject<ProgressEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (lengthComputable != null) this.lengthComputable = lengthComputable
-    if (loaded != null) this.loaded = loaded
-    if (total != null) this.total = total
+public fun ProgressEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, lengthComputable: Boolean? = null, loaded: Double? = null, total: Double? = null): ProgressEventInit {
+    val dictionary = newJsObject<ProgressEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (lengthComputable != null) dictionary.lengthComputable = lengthComputable
+    if (loaded != null) dictionary.loaded = loaded
+    if (total != null) dictionary.total = total
+    return dictionary
 }

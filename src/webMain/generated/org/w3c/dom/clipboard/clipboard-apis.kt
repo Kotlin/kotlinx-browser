@@ -19,11 +19,13 @@ public external interface ClipboardEventInit : EventInit {
     public var clipboardData: DataTransfer?
 }
 
-public fun ClipboardEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, clipboardData: DataTransfer? = null): ClipboardEventInit = newJsObject<ClipboardEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (clipboardData != null) this.clipboardData = clipboardData
+public fun ClipboardEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, clipboardData: DataTransfer? = null): ClipboardEventInit {
+    val dictionary = newJsObject<ClipboardEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (clipboardData != null) dictionary.clipboardData = clipboardData
+    return dictionary
 }
 
 /**
@@ -65,12 +67,14 @@ public external interface ClipboardChangeEventInit : EventInit {
     public var changeId: JsBigInt?
 }
 
-public fun ClipboardChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, types: JsArray<JsString>? = null, changeId: JsBigInt? = null): ClipboardChangeEventInit = newJsObject<ClipboardChangeEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (types != null) this.types = types
-    if (changeId != null) this.changeId = changeId
+public fun ClipboardChangeEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, types: JsArray<JsString>? = null, changeId: JsBigInt? = null): ClipboardChangeEventInit {
+    val dictionary = newJsObject<ClipboardChangeEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (types != null) dictionary.types = types
+    if (changeId != null) dictionary.changeId = changeId
+    return dictionary
 }
 
 /**
@@ -199,8 +203,10 @@ public external interface ClipboardItemOptions : JsAny {
     public var presentationStyle: PresentationStyle?
 }
 
-public fun ClipboardItemOptions(presentationStyle: PresentationStyle? = null): ClipboardItemOptions = newJsObject<ClipboardItemOptions>().apply {
-    if (presentationStyle != null) this.presentationStyle = presentationStyle
+public fun ClipboardItemOptions(presentationStyle: PresentationStyle? = null): ClipboardItemOptions {
+    val dictionary = newJsObject<ClipboardItemOptions>()
+    if (presentationStyle != null) dictionary.presentationStyle = presentationStyle
+    return dictionary
 }
 
 /**
@@ -259,6 +265,8 @@ public external interface ClipboardUnsanitizedFormats : JsAny {
     public var unsanitized: JsArray<JsString>?
 }
 
-public fun ClipboardUnsanitizedFormats(unsanitized: JsArray<JsString>? = null): ClipboardUnsanitizedFormats = newJsObject<ClipboardUnsanitizedFormats>().apply {
-    if (unsanitized != null) this.unsanitized = unsanitized
+public fun ClipboardUnsanitizedFormats(unsanitized: JsArray<JsString>? = null): ClipboardUnsanitizedFormats {
+    val dictionary = newJsObject<ClipboardUnsanitizedFormats>()
+    if (unsanitized != null) dictionary.unsanitized = unsanitized
+    return dictionary
 }

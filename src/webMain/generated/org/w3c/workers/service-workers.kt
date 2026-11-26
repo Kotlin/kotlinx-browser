@@ -349,10 +349,12 @@ public external interface RegistrationOptions : JsAny {
     public var updateViaCache: ServiceWorkerUpdateViaCache?
 }
 
-public fun RegistrationOptions(scope: String? = null, type: WorkerType? = null, updateViaCache: ServiceWorkerUpdateViaCache? = null): RegistrationOptions = newJsObject<RegistrationOptions>().apply {
-    if (scope != null) this.scope = scope
-    if (type != null) this.type = type
-    if (updateViaCache != null) this.updateViaCache = updateViaCache
+public fun RegistrationOptions(scope: String? = null, type: WorkerType? = null, updateViaCache: ServiceWorkerUpdateViaCache? = null): RegistrationOptions {
+    val dictionary = newJsObject<RegistrationOptions>()
+    if (scope != null) dictionary.scope = scope
+    if (type != null) dictionary.type = type
+    if (updateViaCache != null) dictionary.updateViaCache = updateViaCache
+    return dictionary
 }
 
 /**
@@ -415,9 +417,11 @@ public external interface NavigationPreloadState : JsAny {
     public var headerValue: String?
 }
 
-public fun NavigationPreloadState(enabled: Boolean? = null, headerValue: String? = null): NavigationPreloadState = newJsObject<NavigationPreloadState>().apply {
-    if (enabled != null) this.enabled = enabled
-    if (headerValue != null) this.headerValue = headerValue
+public fun NavigationPreloadState(enabled: Boolean? = null, headerValue: String? = null): NavigationPreloadState {
+    val dictionary = newJsObject<NavigationPreloadState>()
+    if (enabled != null) dictionary.enabled = enabled
+    if (headerValue != null) dictionary.headerValue = headerValue
+    return dictionary
 }
 
 /**
@@ -741,9 +745,11 @@ public external interface ClientQueryOptions : JsAny {
     public var type: ClientType?
 }
 
-public fun ClientQueryOptions(includeUncontrolled: Boolean? = null, type: ClientType? = null): ClientQueryOptions = newJsObject<ClientQueryOptions>().apply {
-    if (includeUncontrolled != null) this.includeUncontrolled = includeUncontrolled
-    if (type != null) this.type = type
+public fun ClientQueryOptions(includeUncontrolled: Boolean? = null, type: ClientType? = null): ClientQueryOptions {
+    val dictionary = newJsObject<ClientQueryOptions>()
+    if (includeUncontrolled != null) dictionary.includeUncontrolled = includeUncontrolled
+    if (type != null) dictionary.type = type
+    return dictionary
 }
 
 public external interface ClientType : JsAny {
@@ -796,10 +802,12 @@ public open external class ExtendableEvent : Event {
 
 public external interface ExtendableEventInit : EventInit
 
-public fun ExtendableEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): ExtendableEventInit = newJsObject<ExtendableEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
+public fun ExtendableEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): ExtendableEventInit {
+    val dictionary = newJsObject<ExtendableEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    return dictionary
 }
 
 /**
@@ -858,9 +866,11 @@ public external interface RouterRule : JsAny {
     public var source: JsAny
 }
 
-public fun RouterRule(condition: RouterCondition, source: JsAny): RouterRule = newJsObject<RouterRule>().apply {
-    this.condition = condition
-    this.source = source
+public fun RouterRule(condition: RouterCondition, source: JsAny): RouterRule {
+    val dictionary = newJsObject<RouterRule>()
+    dictionary.condition = condition
+    dictionary.source = source
+    return dictionary
 }
 
 public external interface RouterCondition : JsAny {
@@ -872,21 +882,25 @@ public external interface RouterCondition : JsAny {
     public var not: RouterCondition?
 }
 
-public fun RouterCondition(requestMethod: String? = null, requestMode: RequestMode? = null, requestDestination: RequestDestination? = null, runningStatus: RunningStatus? = null, or: JsArray<RouterCondition>? = null, not: RouterCondition? = null): RouterCondition = newJsObject<RouterCondition>().apply {
-    if (requestMethod != null) this.requestMethod = requestMethod
-    if (requestMode != null) this.requestMode = requestMode
-    if (requestDestination != null) this.requestDestination = requestDestination
-    if (runningStatus != null) this.runningStatus = runningStatus
-    if (or != null) this.or = or
-    if (not != null) this.not = not
+public fun RouterCondition(requestMethod: String? = null, requestMode: RequestMode? = null, requestDestination: RequestDestination? = null, runningStatus: RunningStatus? = null, or: JsArray<RouterCondition>? = null, not: RouterCondition? = null): RouterCondition {
+    val dictionary = newJsObject<RouterCondition>()
+    if (requestMethod != null) dictionary.requestMethod = requestMethod
+    if (requestMode != null) dictionary.requestMode = requestMode
+    if (requestDestination != null) dictionary.requestDestination = requestDestination
+    if (runningStatus != null) dictionary.runningStatus = runningStatus
+    if (or != null) dictionary.or = or
+    if (not != null) dictionary.not = not
+    return dictionary
 }
 
 public external interface RouterSourceDict : JsAny {
     public var cacheName: String?
 }
 
-public fun RouterSourceDict(cacheName: String? = null): RouterSourceDict = newJsObject<RouterSourceDict>().apply {
-    if (cacheName != null) this.cacheName = cacheName
+public fun RouterSourceDict(cacheName: String? = null): RouterSourceDict {
+    val dictionary = newJsObject<RouterSourceDict>()
+    if (cacheName != null) dictionary.cacheName = cacheName
+    return dictionary
 }
 
 public external interface RunningStatus : JsAny {
@@ -1004,16 +1018,18 @@ public external interface FetchEventInit : ExtendableEventInit {
     public var handled: Promise<JsAny?>?
 }
 
-public fun FetchEventInit(request: Request, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, preloadResponse: Promise<JsAny?>? = null, clientId: String? = null, resultingClientId: String? = null, replacesClientId: String? = null, handled: Promise<JsAny?>? = null): FetchEventInit = newJsObject<FetchEventInit>().apply {
-    this.request = request
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (preloadResponse != null) this.preloadResponse = preloadResponse
-    if (clientId != null) this.clientId = clientId
-    if (resultingClientId != null) this.resultingClientId = resultingClientId
-    if (replacesClientId != null) this.replacesClientId = replacesClientId
-    if (handled != null) this.handled = handled
+public fun FetchEventInit(request: Request, bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, preloadResponse: Promise<JsAny?>? = null, clientId: String? = null, resultingClientId: String? = null, replacesClientId: String? = null, handled: Promise<JsAny?>? = null): FetchEventInit {
+    val dictionary = newJsObject<FetchEventInit>()
+    dictionary.request = request
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (preloadResponse != null) dictionary.preloadResponse = preloadResponse
+    if (clientId != null) dictionary.clientId = clientId
+    if (resultingClientId != null) dictionary.resultingClientId = resultingClientId
+    if (replacesClientId != null) dictionary.replacesClientId = replacesClientId
+    if (handled != null) dictionary.handled = handled
+    return dictionary
 }
 
 /**
@@ -1101,15 +1117,17 @@ public external interface ExtendableMessageEventInit : ExtendableEventInit {
     public var ports: JsArray<MessagePort>?
 }
 
-public fun ExtendableMessageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, data: JsAny? = null, origin: String? = null, lastEventId: String? = null, source: UnionClientOrMessagePortOrServiceWorker? = null, ports: JsArray<MessagePort>? = null): ExtendableMessageEventInit = newJsObject<ExtendableMessageEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (data != null) this.data = data
-    if (origin != null) this.origin = origin
-    if (lastEventId != null) this.lastEventId = lastEventId
-    if (source != null) this.source = source
-    if (ports != null) this.ports = ports
+public fun ExtendableMessageEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, data: JsAny? = null, origin: String? = null, lastEventId: String? = null, source: UnionClientOrMessagePortOrServiceWorker? = null, ports: JsArray<MessagePort>? = null): ExtendableMessageEventInit {
+    val dictionary = newJsObject<ExtendableMessageEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (data != null) dictionary.data = data
+    if (origin != null) dictionary.origin = origin
+    if (lastEventId != null) dictionary.lastEventId = lastEventId
+    if (source != null) dictionary.source = source
+    if (ports != null) dictionary.ports = ports
+    return dictionary
 }
 
 /**
@@ -1282,10 +1300,12 @@ public external interface CacheQueryOptions : JsAny {
     public var ignoreVary: Boolean?
 }
 
-public fun CacheQueryOptions(ignoreSearch: Boolean? = null, ignoreMethod: Boolean? = null, ignoreVary: Boolean? = null): CacheQueryOptions = newJsObject<CacheQueryOptions>().apply {
-    if (ignoreSearch != null) this.ignoreSearch = ignoreSearch
-    if (ignoreMethod != null) this.ignoreMethod = ignoreMethod
-    if (ignoreVary != null) this.ignoreVary = ignoreVary
+public fun CacheQueryOptions(ignoreSearch: Boolean? = null, ignoreMethod: Boolean? = null, ignoreVary: Boolean? = null): CacheQueryOptions {
+    val dictionary = newJsObject<CacheQueryOptions>()
+    if (ignoreSearch != null) dictionary.ignoreSearch = ignoreSearch
+    if (ignoreMethod != null) dictionary.ignoreMethod = ignoreMethod
+    if (ignoreVary != null) dictionary.ignoreVary = ignoreVary
+    return dictionary
 }
 
 /**
@@ -1367,9 +1387,11 @@ public external interface MultiCacheQueryOptions : CacheQueryOptions {
     public var cacheName: String?
 }
 
-public fun MultiCacheQueryOptions(ignoreSearch: Boolean? = null, ignoreMethod: Boolean? = null, ignoreVary: Boolean? = null, cacheName: String? = null): MultiCacheQueryOptions = newJsObject<MultiCacheQueryOptions>().apply {
-    if (ignoreSearch != null) this.ignoreSearch = ignoreSearch
-    if (ignoreMethod != null) this.ignoreMethod = ignoreMethod
-    if (ignoreVary != null) this.ignoreVary = ignoreVary
-    if (cacheName != null) this.cacheName = cacheName
+public fun MultiCacheQueryOptions(ignoreSearch: Boolean? = null, ignoreMethod: Boolean? = null, ignoreVary: Boolean? = null, cacheName: String? = null): MultiCacheQueryOptions {
+    val dictionary = newJsObject<MultiCacheQueryOptions>()
+    if (ignoreSearch != null) dictionary.ignoreSearch = ignoreSearch
+    if (ignoreMethod != null) dictionary.ignoreMethod = ignoreMethod
+    if (ignoreVary != null) dictionary.ignoreVary = ignoreVary
+    if (cacheName != null) dictionary.cacheName = cacheName
+    return dictionary
 }

@@ -366,6 +366,9 @@ private class SpecFile(
      * every field, inherited ones included. Required fields come first, without defaults. An optional field is
      * nullable, defaults to `null`, and is only set when it is not `null`: an absent member must stay absent, or JS
      * converts `null` instead of applying the member's default (`{cancelable: null}` is not `{}`).
+     *
+     * The factory fills a local rather than using `apply`: on Wasm an external value passed through an inlined scope
+     * function is converted to `Any` and back (KT-90953), which costs more than the object itself.
      */
     private fun printDictionary(d: IdlDictionary) {
         kdoc(docs.ofDefinition(d.name), d.extAttrs)
@@ -379,17 +382,22 @@ private class SpecFile(
         val parameters = fields.joinToString(", ") { f ->
             "${name(f.name)}: ${fieldType(f)}" + if (f.required) "" else " = null"
         }
-        val factory = "public fun ${d.name}($parameters): ${d.name} = ${reference(NEW_JS_OBJECT)}<${d.name}>()"
+        val header = "public fun ${d.name}($parameters): ${d.name}"
+        val newObject = "${reference(NEW_JS_OBJECT)}<${d.name}>()"
         if (fields.isEmpty()) {
-            line(factory)
+            line("$header = $newObject")
             line()
             return
         }
-        block("$factory.apply") {
+        val parameterNames = fields.map { name(it.name) }.toSet()
+        val local = generateSequence("dictionary") { "_$it" }.first { it !in parameterNames }
+        block(header) {
+            line("val $local = $newObject")
             for (f in fields) {
                 val n = name(f.name)
-                line(if (f.required) "this.$n = $n" else "if ($n != null) this.$n = $n")
+                line(if (f.required) "$local.$n = $n" else "if ($n != null) $local.$n = $n")
             }
+            line("return $local")
         }
     }
 

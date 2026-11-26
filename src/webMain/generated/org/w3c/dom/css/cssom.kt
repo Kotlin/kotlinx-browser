@@ -275,10 +275,12 @@ public external interface CSSStyleSheetInit : JsAny {
     public var disabled: Boolean?
 }
 
-public fun CSSStyleSheetInit(baseURL: String? = null, media: JsAny? = null, disabled: Boolean? = null): CSSStyleSheetInit = newJsObject<CSSStyleSheetInit>().apply {
-    if (baseURL != null) this.baseURL = baseURL
-    if (media != null) this.media = media
-    if (disabled != null) this.disabled = disabled
+public fun CSSStyleSheetInit(baseURL: String? = null, media: JsAny? = null, disabled: Boolean? = null): CSSStyleSheetInit {
+    val dictionary = newJsObject<CSSStyleSheetInit>()
+    if (baseURL != null) dictionary.baseURL = baseURL
+    if (media != null) dictionary.media = media
+    if (disabled != null) dictionary.disabled = disabled
+    return dictionary
 }
 
 /**

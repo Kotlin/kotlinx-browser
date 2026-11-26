@@ -33,7 +33,9 @@ public external interface FullscreenOptions : JsAny {
     public var navigationUI: FullscreenNavigationUI?
 }
 
-public fun FullscreenOptions(keyboardLock: FullscreenKeyboardLock? = null, navigationUI: FullscreenNavigationUI? = null): FullscreenOptions = newJsObject<FullscreenOptions>().apply {
-    if (keyboardLock != null) this.keyboardLock = keyboardLock
-    if (navigationUI != null) this.navigationUI = navigationUI
+public fun FullscreenOptions(keyboardLock: FullscreenKeyboardLock? = null, navigationUI: FullscreenNavigationUI? = null): FullscreenOptions {
+    val dictionary = newJsObject<FullscreenOptions>()
+    if (keyboardLock != null) dictionary.keyboardLock = keyboardLock
+    if (navigationUI != null) dictionary.navigationUI = navigationUI
+    return dictionary
 }

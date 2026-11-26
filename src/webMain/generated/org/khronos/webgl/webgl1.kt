@@ -37,16 +37,18 @@ public external interface WebGLContextAttributes : JsAny {
     public var desynchronized: Boolean?
 }
 
-public fun WebGLContextAttributes(alpha: Boolean? = null, depth: Boolean? = null, stencil: Boolean? = null, antialias: Boolean? = null, premultipliedAlpha: Boolean? = null, preserveDrawingBuffer: Boolean? = null, powerPreference: WebGLPowerPreference? = null, failIfMajorPerformanceCaveat: Boolean? = null, desynchronized: Boolean? = null): WebGLContextAttributes = newJsObject<WebGLContextAttributes>().apply {
-    if (alpha != null) this.alpha = alpha
-    if (depth != null) this.depth = depth
-    if (stencil != null) this.stencil = stencil
-    if (antialias != null) this.antialias = antialias
-    if (premultipliedAlpha != null) this.premultipliedAlpha = premultipliedAlpha
-    if (preserveDrawingBuffer != null) this.preserveDrawingBuffer = preserveDrawingBuffer
-    if (powerPreference != null) this.powerPreference = powerPreference
-    if (failIfMajorPerformanceCaveat != null) this.failIfMajorPerformanceCaveat = failIfMajorPerformanceCaveat
-    if (desynchronized != null) this.desynchronized = desynchronized
+public fun WebGLContextAttributes(alpha: Boolean? = null, depth: Boolean? = null, stencil: Boolean? = null, antialias: Boolean? = null, premultipliedAlpha: Boolean? = null, preserveDrawingBuffer: Boolean? = null, powerPreference: WebGLPowerPreference? = null, failIfMajorPerformanceCaveat: Boolean? = null, desynchronized: Boolean? = null): WebGLContextAttributes {
+    val dictionary = newJsObject<WebGLContextAttributes>()
+    if (alpha != null) dictionary.alpha = alpha
+    if (depth != null) dictionary.depth = depth
+    if (stencil != null) dictionary.stencil = stencil
+    if (antialias != null) dictionary.antialias = antialias
+    if (premultipliedAlpha != null) dictionary.premultipliedAlpha = premultipliedAlpha
+    if (preserveDrawingBuffer != null) dictionary.preserveDrawingBuffer = preserveDrawingBuffer
+    if (powerPreference != null) dictionary.powerPreference = powerPreference
+    if (failIfMajorPerformanceCaveat != null) dictionary.failIfMajorPerformanceCaveat = failIfMajorPerformanceCaveat
+    if (desynchronized != null) dictionary.desynchronized = desynchronized
+    return dictionary
 }
 
 /**
@@ -2496,9 +2498,11 @@ public external interface WebGLContextEventInit : EventInit {
     public var statusMessage: String?
 }
 
-public fun WebGLContextEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, statusMessage: String? = null): WebGLContextEventInit = newJsObject<WebGLContextEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (statusMessage != null) this.statusMessage = statusMessage
+public fun WebGLContextEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, statusMessage: String? = null): WebGLContextEventInit {
+    val dictionary = newJsObject<WebGLContextEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (statusMessage != null) dictionary.statusMessage = statusMessage
+    return dictionary
 }

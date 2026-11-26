@@ -513,22 +513,24 @@ public external interface RequestInit : JsAny {
     public var window: JsAny?
 }
 
-public fun RequestInit(method: String? = null, headers: JsAny? = null, body: JsAny? = null, referrer: String? = null, referrerPolicy: ReferrerPolicy? = null, mode: RequestMode? = null, credentials: RequestCredentials? = null, cache: RequestCache? = null, redirect: RequestRedirect? = null, integrity: String? = null, keepalive: Boolean? = null, signal: AbortSignal? = null, duplex: RequestDuplex? = null, priority: RequestPriority? = null, window: JsAny? = null): RequestInit = newJsObject<RequestInit>().apply {
-    if (method != null) this.method = method
-    if (headers != null) this.headers = headers
-    if (body != null) this.body = body
-    if (referrer != null) this.referrer = referrer
-    if (referrerPolicy != null) this.referrerPolicy = referrerPolicy
-    if (mode != null) this.mode = mode
-    if (credentials != null) this.credentials = credentials
-    if (cache != null) this.cache = cache
-    if (redirect != null) this.redirect = redirect
-    if (integrity != null) this.integrity = integrity
-    if (keepalive != null) this.keepalive = keepalive
-    if (signal != null) this.signal = signal
-    if (duplex != null) this.duplex = duplex
-    if (priority != null) this.priority = priority
-    if (window != null) this.window = window
+public fun RequestInit(method: String? = null, headers: JsAny? = null, body: JsAny? = null, referrer: String? = null, referrerPolicy: ReferrerPolicy? = null, mode: RequestMode? = null, credentials: RequestCredentials? = null, cache: RequestCache? = null, redirect: RequestRedirect? = null, integrity: String? = null, keepalive: Boolean? = null, signal: AbortSignal? = null, duplex: RequestDuplex? = null, priority: RequestPriority? = null, window: JsAny? = null): RequestInit {
+    val dictionary = newJsObject<RequestInit>()
+    if (method != null) dictionary.method = method
+    if (headers != null) dictionary.headers = headers
+    if (body != null) dictionary.body = body
+    if (referrer != null) dictionary.referrer = referrer
+    if (referrerPolicy != null) dictionary.referrerPolicy = referrerPolicy
+    if (mode != null) dictionary.mode = mode
+    if (credentials != null) dictionary.credentials = credentials
+    if (cache != null) dictionary.cache = cache
+    if (redirect != null) dictionary.redirect = redirect
+    if (integrity != null) dictionary.integrity = integrity
+    if (keepalive != null) dictionary.keepalive = keepalive
+    if (signal != null) dictionary.signal = signal
+    if (duplex != null) dictionary.duplex = duplex
+    if (priority != null) dictionary.priority = priority
+    if (window != null) dictionary.window = window
+    return dictionary
 }
 
 public external interface RequestDestination : JsAny {
@@ -894,10 +896,12 @@ public external interface ResponseInit : JsAny {
     public var headers: JsAny?
 }
 
-public fun ResponseInit(status: Short? = null, statusText: String? = null, headers: JsAny? = null): ResponseInit = newJsObject<ResponseInit>().apply {
-    if (status != null) this.status = status
-    if (statusText != null) this.statusText = statusText
-    if (headers != null) this.headers = headers
+public fun ResponseInit(status: Short? = null, statusText: String? = null, headers: JsAny? = null): ResponseInit {
+    val dictionary = newJsObject<ResponseInit>()
+    if (status != null) dictionary.status = status
+    if (statusText != null) dictionary.statusText = statusText
+    if (headers != null) dictionary.headers = headers
+    return dictionary
 }
 
 public external interface ResponseType : JsAny {
@@ -916,23 +920,25 @@ public external interface DeferredRequestInit : RequestInit {
     public var activateAfter: Double?
 }
 
-public fun DeferredRequestInit(method: String? = null, headers: JsAny? = null, body: JsAny? = null, referrer: String? = null, referrerPolicy: ReferrerPolicy? = null, mode: RequestMode? = null, credentials: RequestCredentials? = null, cache: RequestCache? = null, redirect: RequestRedirect? = null, integrity: String? = null, keepalive: Boolean? = null, signal: AbortSignal? = null, duplex: RequestDuplex? = null, priority: RequestPriority? = null, window: JsAny? = null, activateAfter: Double? = null): DeferredRequestInit = newJsObject<DeferredRequestInit>().apply {
-    if (method != null) this.method = method
-    if (headers != null) this.headers = headers
-    if (body != null) this.body = body
-    if (referrer != null) this.referrer = referrer
-    if (referrerPolicy != null) this.referrerPolicy = referrerPolicy
-    if (mode != null) this.mode = mode
-    if (credentials != null) this.credentials = credentials
-    if (cache != null) this.cache = cache
-    if (redirect != null) this.redirect = redirect
-    if (integrity != null) this.integrity = integrity
-    if (keepalive != null) this.keepalive = keepalive
-    if (signal != null) this.signal = signal
-    if (duplex != null) this.duplex = duplex
-    if (priority != null) this.priority = priority
-    if (window != null) this.window = window
-    if (activateAfter != null) this.activateAfter = activateAfter
+public fun DeferredRequestInit(method: String? = null, headers: JsAny? = null, body: JsAny? = null, referrer: String? = null, referrerPolicy: ReferrerPolicy? = null, mode: RequestMode? = null, credentials: RequestCredentials? = null, cache: RequestCache? = null, redirect: RequestRedirect? = null, integrity: String? = null, keepalive: Boolean? = null, signal: AbortSignal? = null, duplex: RequestDuplex? = null, priority: RequestPriority? = null, window: JsAny? = null, activateAfter: Double? = null): DeferredRequestInit {
+    val dictionary = newJsObject<DeferredRequestInit>()
+    if (method != null) dictionary.method = method
+    if (headers != null) dictionary.headers = headers
+    if (body != null) dictionary.body = body
+    if (referrer != null) dictionary.referrer = referrer
+    if (referrerPolicy != null) dictionary.referrerPolicy = referrerPolicy
+    if (mode != null) dictionary.mode = mode
+    if (credentials != null) dictionary.credentials = credentials
+    if (cache != null) dictionary.cache = cache
+    if (redirect != null) dictionary.redirect = redirect
+    if (integrity != null) dictionary.integrity = integrity
+    if (keepalive != null) dictionary.keepalive = keepalive
+    if (signal != null) dictionary.signal = signal
+    if (duplex != null) dictionary.duplex = duplex
+    if (priority != null) dictionary.priority = priority
+    if (window != null) dictionary.window = window
+    if (activateAfter != null) dictionary.activateAfter = activateAfter
+    return dictionary
 }
 
 /**

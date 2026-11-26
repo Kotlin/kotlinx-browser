@@ -28,8 +28,10 @@ public external interface ScrollOptions : JsAny {
     public var behavior: ScrollBehavior?
 }
 
-public fun ScrollOptions(behavior: ScrollBehavior? = null): ScrollOptions = newJsObject<ScrollOptions>().apply {
-    if (behavior != null) this.behavior = behavior
+public fun ScrollOptions(behavior: ScrollBehavior? = null): ScrollOptions {
+    val dictionary = newJsObject<ScrollOptions>()
+    if (behavior != null) dictionary.behavior = behavior
+    return dictionary
 }
 
 public external interface ScrollToOptions : ScrollOptions {
@@ -37,18 +39,22 @@ public external interface ScrollToOptions : ScrollOptions {
     public var top: Double?
 }
 
-public fun ScrollToOptions(behavior: ScrollBehavior? = null, left: Double? = null, top: Double? = null): ScrollToOptions = newJsObject<ScrollToOptions>().apply {
-    if (behavior != null) this.behavior = behavior
-    if (left != null) this.left = left
-    if (top != null) this.top = top
+public fun ScrollToOptions(behavior: ScrollBehavior? = null, left: Double? = null, top: Double? = null): ScrollToOptions {
+    val dictionary = newJsObject<ScrollToOptions>()
+    if (behavior != null) dictionary.behavior = behavior
+    if (left != null) dictionary.left = left
+    if (top != null) dictionary.top = top
+    return dictionary
 }
 
 public external interface ScrollResult : JsAny {
     public var interrupted: Boolean
 }
 
-public fun ScrollResult(interrupted: Boolean): ScrollResult = newJsObject<ScrollResult>().apply {
-    this.interrupted = interrupted
+public fun ScrollResult(interrupted: Boolean): ScrollResult {
+    val dictionary = newJsObject<ScrollResult>()
+    dictionary.interrupted = interrupted
+    return dictionary
 }
 
 /**
@@ -192,12 +198,14 @@ public external interface MediaQueryListEventInit : EventInit {
     public var matches: Boolean?
 }
 
-public fun MediaQueryListEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, media: String? = null, matches: Boolean? = null): MediaQueryListEventInit = newJsObject<MediaQueryListEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (media != null) this.media = media
-    if (matches != null) this.matches = matches
+public fun MediaQueryListEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, media: String? = null, matches: Boolean? = null): MediaQueryListEventInit {
+    val dictionary = newJsObject<MediaQueryListEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (media != null) dictionary.media = media
+    if (matches != null) dictionary.matches = matches
+    return dictionary
 }
 
 /**
@@ -274,8 +282,10 @@ public external interface CaretPositionFromPointOptions : JsAny {
     public var shadowRoots: JsArray<ShadowRoot>?
 }
 
-public fun CaretPositionFromPointOptions(shadowRoots: JsArray<ShadowRoot>? = null): CaretPositionFromPointOptions = newJsObject<CaretPositionFromPointOptions>().apply {
-    if (shadowRoots != null) this.shadowRoots = shadowRoots
+public fun CaretPositionFromPointOptions(shadowRoots: JsArray<ShadowRoot>? = null): CaretPositionFromPointOptions {
+    val dictionary = newJsObject<CaretPositionFromPointOptions>()
+    if (shadowRoots != null) dictionary.shadowRoots = shadowRoots
+    return dictionary
 }
 
 /**
@@ -333,11 +343,13 @@ public external interface ScrollIntoViewOptions : ScrollOptions {
     public var container: ScrollIntoViewContainer?
 }
 
-public fun ScrollIntoViewOptions(behavior: ScrollBehavior? = null, block: ScrollLogicalPosition? = null, inline: ScrollLogicalPosition? = null, container: ScrollIntoViewContainer? = null): ScrollIntoViewOptions = newJsObject<ScrollIntoViewOptions>().apply {
-    if (behavior != null) this.behavior = behavior
-    if (block != null) this.block = block
-    if (inline != null) this.inline = inline
-    if (container != null) this.container = container
+public fun ScrollIntoViewOptions(behavior: ScrollBehavior? = null, block: ScrollLogicalPosition? = null, inline: ScrollLogicalPosition? = null, container: ScrollIntoViewContainer? = null): ScrollIntoViewOptions {
+    val dictionary = newJsObject<ScrollIntoViewOptions>()
+    if (behavior != null) dictionary.behavior = behavior
+    if (block != null) dictionary.block = block
+    if (inline != null) dictionary.inline = inline
+    if (container != null) dictionary.container = container
+    return dictionary
 }
 
 public external interface ScrollIntoViewContainer : JsAny {
@@ -356,12 +368,14 @@ public external interface CheckVisibilityOptions : JsAny {
     public var visibilityProperty: Boolean?
 }
 
-public fun CheckVisibilityOptions(checkOpacity: Boolean? = null, checkVisibilityCSS: Boolean? = null, contentVisibilityAuto: Boolean? = null, opacityProperty: Boolean? = null, visibilityProperty: Boolean? = null): CheckVisibilityOptions = newJsObject<CheckVisibilityOptions>().apply {
-    if (checkOpacity != null) this.checkOpacity = checkOpacity
-    if (checkVisibilityCSS != null) this.checkVisibilityCSS = checkVisibilityCSS
-    if (contentVisibilityAuto != null) this.contentVisibilityAuto = contentVisibilityAuto
-    if (opacityProperty != null) this.opacityProperty = opacityProperty
-    if (visibilityProperty != null) this.visibilityProperty = visibilityProperty
+public fun CheckVisibilityOptions(checkOpacity: Boolean? = null, checkVisibilityCSS: Boolean? = null, contentVisibilityAuto: Boolean? = null, opacityProperty: Boolean? = null, visibilityProperty: Boolean? = null): CheckVisibilityOptions {
+    val dictionary = newJsObject<CheckVisibilityOptions>()
+    if (checkOpacity != null) dictionary.checkOpacity = checkOpacity
+    if (checkVisibilityCSS != null) dictionary.checkVisibilityCSS = checkVisibilityCSS
+    if (contentVisibilityAuto != null) dictionary.contentVisibilityAuto = contentVisibilityAuto
+    if (opacityProperty != null) dictionary.opacityProperty = opacityProperty
+    if (visibilityProperty != null) dictionary.visibilityProperty = visibilityProperty
+    return dictionary
 }
 
 public external interface CSSBoxType : JsAny {
@@ -379,9 +393,11 @@ public external interface BoxQuadOptions : JsAny {
     public var relativeTo: GeometryNode?
 }
 
-public fun BoxQuadOptions(box: CSSBoxType? = null, relativeTo: GeometryNode? = null): BoxQuadOptions = newJsObject<BoxQuadOptions>().apply {
-    if (box != null) this.box = box
-    if (relativeTo != null) this.relativeTo = relativeTo
+public fun BoxQuadOptions(box: CSSBoxType? = null, relativeTo: GeometryNode? = null): BoxQuadOptions {
+    val dictionary = newJsObject<BoxQuadOptions>()
+    if (box != null) dictionary.box = box
+    if (relativeTo != null) dictionary.relativeTo = relativeTo
+    return dictionary
 }
 
 public external interface ConvertCoordinateOptions : JsAny {
@@ -389,9 +405,11 @@ public external interface ConvertCoordinateOptions : JsAny {
     public var toBox: CSSBoxType?
 }
 
-public fun ConvertCoordinateOptions(fromBox: CSSBoxType? = null, toBox: CSSBoxType? = null): ConvertCoordinateOptions = newJsObject<ConvertCoordinateOptions>().apply {
-    if (fromBox != null) this.fromBox = fromBox
-    if (toBox != null) this.toBox = toBox
+public fun ConvertCoordinateOptions(fromBox: CSSBoxType? = null, toBox: CSSBoxType? = null): ConvertCoordinateOptions {
+    val dictionary = newJsObject<ConvertCoordinateOptions>()
+    if (fromBox != null) dictionary.fromBox = fromBox
+    if (toBox != null) dictionary.toBox = toBox
+    return dictionary
 }
 
 public external interface GeometryUtils : JsAny {

@@ -181,11 +181,13 @@ public external interface DOMPointInit : JsAny {
     public var w: Double?
 }
 
-public fun DOMPointInit(x: Double? = null, y: Double? = null, z: Double? = null, w: Double? = null): DOMPointInit = newJsObject<DOMPointInit>().apply {
-    if (x != null) this.x = x
-    if (y != null) this.y = y
-    if (z != null) this.z = z
-    if (w != null) this.w = w
+public fun DOMPointInit(x: Double? = null, y: Double? = null, z: Double? = null, w: Double? = null): DOMPointInit {
+    val dictionary = newJsObject<DOMPointInit>()
+    if (x != null) dictionary.x = x
+    if (y != null) dictionary.y = y
+    if (z != null) dictionary.z = z
+    if (w != null) dictionary.w = w
+    return dictionary
 }
 
 /**
@@ -380,11 +382,13 @@ public external interface DOMRectInit : JsAny {
     public var height: Double?
 }
 
-public fun DOMRectInit(x: Double? = null, y: Double? = null, width: Double? = null, height: Double? = null): DOMRectInit = newJsObject<DOMRectInit>().apply {
-    if (x != null) this.x = x
-    if (y != null) this.y = y
-    if (width != null) this.width = width
-    if (height != null) this.height = height
+public fun DOMRectInit(x: Double? = null, y: Double? = null, width: Double? = null, height: Double? = null): DOMRectInit {
+    val dictionary = newJsObject<DOMRectInit>()
+    if (x != null) dictionary.x = x
+    if (y != null) dictionary.y = y
+    if (width != null) dictionary.width = width
+    if (height != null) dictionary.height = height
+    return dictionary
 }
 
 /**
@@ -530,11 +534,13 @@ public external interface DOMQuadInit : JsAny {
     public var p4: DOMPointInit?
 }
 
-public fun DOMQuadInit(p1: DOMPointInit? = null, p2: DOMPointInit? = null, p3: DOMPointInit? = null, p4: DOMPointInit? = null): DOMQuadInit = newJsObject<DOMQuadInit>().apply {
-    if (p1 != null) this.p1 = p1
-    if (p2 != null) this.p2 = p2
-    if (p3 != null) this.p3 = p3
-    if (p4 != null) this.p4 = p4
+public fun DOMQuadInit(p1: DOMPointInit? = null, p2: DOMPointInit? = null, p3: DOMPointInit? = null, p4: DOMPointInit? = null): DOMQuadInit {
+    val dictionary = newJsObject<DOMQuadInit>()
+    if (p1 != null) dictionary.p1 = p1
+    if (p2 != null) dictionary.p2 = p2
+    if (p3 != null) dictionary.p3 = p3
+    if (p4 != null) dictionary.p4 = p4
+    return dictionary
 }
 
 /**
@@ -1511,19 +1517,21 @@ public external interface DOMMatrix2DInit : JsAny {
     public var m42: Double?
 }
 
-public fun DOMMatrix2DInit(a: Double? = null, b: Double? = null, c: Double? = null, d: Double? = null, e: Double? = null, f: Double? = null, m11: Double? = null, m12: Double? = null, m21: Double? = null, m22: Double? = null, m41: Double? = null, m42: Double? = null): DOMMatrix2DInit = newJsObject<DOMMatrix2DInit>().apply {
-    if (a != null) this.a = a
-    if (b != null) this.b = b
-    if (c != null) this.c = c
-    if (d != null) this.d = d
-    if (e != null) this.e = e
-    if (f != null) this.f = f
-    if (m11 != null) this.m11 = m11
-    if (m12 != null) this.m12 = m12
-    if (m21 != null) this.m21 = m21
-    if (m22 != null) this.m22 = m22
-    if (m41 != null) this.m41 = m41
-    if (m42 != null) this.m42 = m42
+public fun DOMMatrix2DInit(a: Double? = null, b: Double? = null, c: Double? = null, d: Double? = null, e: Double? = null, f: Double? = null, m11: Double? = null, m12: Double? = null, m21: Double? = null, m22: Double? = null, m41: Double? = null, m42: Double? = null): DOMMatrix2DInit {
+    val dictionary = newJsObject<DOMMatrix2DInit>()
+    if (a != null) dictionary.a = a
+    if (b != null) dictionary.b = b
+    if (c != null) dictionary.c = c
+    if (d != null) dictionary.d = d
+    if (e != null) dictionary.e = e
+    if (f != null) dictionary.f = f
+    if (m11 != null) dictionary.m11 = m11
+    if (m12 != null) dictionary.m12 = m12
+    if (m21 != null) dictionary.m21 = m21
+    if (m22 != null) dictionary.m22 = m22
+    if (m41 != null) dictionary.m41 = m41
+    if (m42 != null) dictionary.m42 = m42
+    return dictionary
 }
 
 public external interface DOMMatrixInit : DOMMatrix2DInit {
@@ -1540,28 +1548,30 @@ public external interface DOMMatrixInit : DOMMatrix2DInit {
     public var is2D: Boolean?
 }
 
-public fun DOMMatrixInit(a: Double? = null, b: Double? = null, c: Double? = null, d: Double? = null, e: Double? = null, f: Double? = null, m11: Double? = null, m12: Double? = null, m21: Double? = null, m22: Double? = null, m41: Double? = null, m42: Double? = null, m13: Double? = null, m14: Double? = null, m23: Double? = null, m24: Double? = null, m31: Double? = null, m32: Double? = null, m33: Double? = null, m34: Double? = null, m43: Double? = null, m44: Double? = null, is2D: Boolean? = null): DOMMatrixInit = newJsObject<DOMMatrixInit>().apply {
-    if (a != null) this.a = a
-    if (b != null) this.b = b
-    if (c != null) this.c = c
-    if (d != null) this.d = d
-    if (e != null) this.e = e
-    if (f != null) this.f = f
-    if (m11 != null) this.m11 = m11
-    if (m12 != null) this.m12 = m12
-    if (m21 != null) this.m21 = m21
-    if (m22 != null) this.m22 = m22
-    if (m41 != null) this.m41 = m41
-    if (m42 != null) this.m42 = m42
-    if (m13 != null) this.m13 = m13
-    if (m14 != null) this.m14 = m14
-    if (m23 != null) this.m23 = m23
-    if (m24 != null) this.m24 = m24
-    if (m31 != null) this.m31 = m31
-    if (m32 != null) this.m32 = m32
-    if (m33 != null) this.m33 = m33
-    if (m34 != null) this.m34 = m34
-    if (m43 != null) this.m43 = m43
-    if (m44 != null) this.m44 = m44
-    if (is2D != null) this.is2D = is2D
+public fun DOMMatrixInit(a: Double? = null, b: Double? = null, c: Double? = null, d: Double? = null, e: Double? = null, f: Double? = null, m11: Double? = null, m12: Double? = null, m21: Double? = null, m22: Double? = null, m41: Double? = null, m42: Double? = null, m13: Double? = null, m14: Double? = null, m23: Double? = null, m24: Double? = null, m31: Double? = null, m32: Double? = null, m33: Double? = null, m34: Double? = null, m43: Double? = null, m44: Double? = null, is2D: Boolean? = null): DOMMatrixInit {
+    val dictionary = newJsObject<DOMMatrixInit>()
+    if (a != null) dictionary.a = a
+    if (b != null) dictionary.b = b
+    if (c != null) dictionary.c = c
+    if (d != null) dictionary.d = d
+    if (e != null) dictionary.e = e
+    if (f != null) dictionary.f = f
+    if (m11 != null) dictionary.m11 = m11
+    if (m12 != null) dictionary.m12 = m12
+    if (m21 != null) dictionary.m21 = m21
+    if (m22 != null) dictionary.m22 = m22
+    if (m41 != null) dictionary.m41 = m41
+    if (m42 != null) dictionary.m42 = m42
+    if (m13 != null) dictionary.m13 = m13
+    if (m14 != null) dictionary.m14 = m14
+    if (m23 != null) dictionary.m23 = m23
+    if (m24 != null) dictionary.m24 = m24
+    if (m31 != null) dictionary.m31 = m31
+    if (m32 != null) dictionary.m32 = m32
+    if (m33 != null) dictionary.m33 = m33
+    if (m34 != null) dictionary.m34 = m34
+    if (m43 != null) dictionary.m43 = m43
+    if (m44 != null) dictionary.m44 = m44
+    if (is2D != null) dictionary.is2D = is2D
+    return dictionary
 }

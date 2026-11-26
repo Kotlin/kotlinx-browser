@@ -248,10 +248,12 @@ public external interface EventInit : JsAny {
     public var composed: Boolean?
 }
 
-public fun EventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): EventInit = newJsObject<EventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
+public fun EventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null): EventInit {
+    val dictionary = newJsObject<EventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    return dictionary
 }
 
 /**
@@ -304,11 +306,13 @@ public external interface CustomEventInit : EventInit {
     public var detail: JsAny?
 }
 
-public fun CustomEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, detail: JsAny? = null): CustomEventInit = newJsObject<CustomEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (detail != null) this.detail = detail
+public fun CustomEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, detail: JsAny? = null): CustomEventInit {
+    val dictionary = newJsObject<CustomEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (detail != null) dictionary.detail = detail
+    return dictionary
 }
 
 /**
@@ -495,8 +499,10 @@ public external interface EventListenerOptions : JsAny {
     public var capture: Boolean?
 }
 
-public fun EventListenerOptions(capture: Boolean? = null): EventListenerOptions = newJsObject<EventListenerOptions>().apply {
-    if (capture != null) this.capture = capture
+public fun EventListenerOptions(capture: Boolean? = null): EventListenerOptions {
+    val dictionary = newJsObject<EventListenerOptions>()
+    if (capture != null) dictionary.capture = capture
+    return dictionary
 }
 
 public external interface AddEventListenerOptions : EventListenerOptions {
@@ -505,11 +511,13 @@ public external interface AddEventListenerOptions : EventListenerOptions {
     public var signal: AbortSignal?
 }
 
-public fun AddEventListenerOptions(capture: Boolean? = null, passive: Boolean? = null, once: Boolean? = null, signal: AbortSignal? = null): AddEventListenerOptions = newJsObject<AddEventListenerOptions>().apply {
-    if (capture != null) this.capture = capture
-    if (passive != null) this.passive = passive
-    if (once != null) this.once = once
-    if (signal != null) this.signal = signal
+public fun AddEventListenerOptions(capture: Boolean? = null, passive: Boolean? = null, once: Boolean? = null, signal: AbortSignal? = null): AddEventListenerOptions {
+    val dictionary = newJsObject<AddEventListenerOptions>()
+    if (capture != null) dictionary.capture = capture
+    if (passive != null) dictionary.passive = passive
+    if (once != null) dictionary.once = once
+    if (signal != null) dictionary.signal = signal
+    return dictionary
 }
 
 /**
@@ -1144,14 +1152,16 @@ public external interface MutationObserverInit : JsAny {
     public var attributeFilter: JsArray<JsString>?
 }
 
-public fun MutationObserverInit(childList: Boolean? = null, attributes: Boolean? = null, characterData: Boolean? = null, subtree: Boolean? = null, attributeOldValue: Boolean? = null, characterDataOldValue: Boolean? = null, attributeFilter: JsArray<JsString>? = null): MutationObserverInit = newJsObject<MutationObserverInit>().apply {
-    if (childList != null) this.childList = childList
-    if (attributes != null) this.attributes = attributes
-    if (characterData != null) this.characterData = characterData
-    if (subtree != null) this.subtree = subtree
-    if (attributeOldValue != null) this.attributeOldValue = attributeOldValue
-    if (characterDataOldValue != null) this.characterDataOldValue = characterDataOldValue
-    if (attributeFilter != null) this.attributeFilter = attributeFilter
+public fun MutationObserverInit(childList: Boolean? = null, attributes: Boolean? = null, characterData: Boolean? = null, subtree: Boolean? = null, attributeOldValue: Boolean? = null, characterDataOldValue: Boolean? = null, attributeFilter: JsArray<JsString>? = null): MutationObserverInit {
+    val dictionary = newJsObject<MutationObserverInit>()
+    if (childList != null) dictionary.childList = childList
+    if (attributes != null) dictionary.attributes = attributes
+    if (characterData != null) dictionary.characterData = characterData
+    if (subtree != null) dictionary.subtree = subtree
+    if (attributeOldValue != null) dictionary.attributeOldValue = attributeOldValue
+    if (characterDataOldValue != null) dictionary.characterDataOldValue = characterDataOldValue
+    if (attributeFilter != null) dictionary.attributeFilter = attributeFilter
+    return dictionary
 }
 
 /**
@@ -1579,8 +1589,10 @@ public external interface GetRootNodeOptions : JsAny {
     public var composed: Boolean?
 }
 
-public fun GetRootNodeOptions(composed: Boolean? = null): GetRootNodeOptions = newJsObject<GetRootNodeOptions>().apply {
-    if (composed != null) this.composed = composed
+public fun GetRootNodeOptions(composed: Boolean? = null): GetRootNodeOptions {
+    val dictionary = newJsObject<GetRootNodeOptions>()
+    if (composed != null) dictionary.composed = composed
+    return dictionary
 }
 
 /**
@@ -3477,9 +3489,11 @@ public external interface ElementCreationOptions : JsAny {
     public var `is`: String?
 }
 
-public fun ElementCreationOptions(customElementRegistry: CustomElementRegistry? = null, `is`: String? = null): ElementCreationOptions = newJsObject<ElementCreationOptions>().apply {
-    if (customElementRegistry != null) this.customElementRegistry = customElementRegistry
-    if (`is` != null) this.`is` = `is`
+public fun ElementCreationOptions(customElementRegistry: CustomElementRegistry? = null, `is`: String? = null): ElementCreationOptions {
+    val dictionary = newJsObject<ElementCreationOptions>()
+    if (customElementRegistry != null) dictionary.customElementRegistry = customElementRegistry
+    if (`is` != null) dictionary.`is` = `is`
+    return dictionary
 }
 
 public external interface ImportNodeOptions : JsAny {
@@ -3487,9 +3501,11 @@ public external interface ImportNodeOptions : JsAny {
     public var selfOnly: Boolean?
 }
 
-public fun ImportNodeOptions(customElementRegistry: CustomElementRegistry? = null, selfOnly: Boolean? = null): ImportNodeOptions = newJsObject<ImportNodeOptions>().apply {
-    if (customElementRegistry != null) this.customElementRegistry = customElementRegistry
-    if (selfOnly != null) this.selfOnly = selfOnly
+public fun ImportNodeOptions(customElementRegistry: CustomElementRegistry? = null, selfOnly: Boolean? = null): ImportNodeOptions {
+    val dictionary = newJsObject<ImportNodeOptions>()
+    if (customElementRegistry != null) dictionary.customElementRegistry = customElementRegistry
+    if (selfOnly != null) dictionary.selfOnly = selfOnly
+    return dictionary
 }
 
 /**
@@ -4682,13 +4698,15 @@ public external interface ShadowRootInit : JsAny {
     public var customElementRegistry: CustomElementRegistry?
 }
 
-public fun ShadowRootInit(mode: ShadowRootMode, delegatesFocus: Boolean? = null, serializable: Boolean? = null, slotAssignment: SlotAssignmentMode? = null, clonable: Boolean? = null, customElementRegistry: CustomElementRegistry? = null): ShadowRootInit = newJsObject<ShadowRootInit>().apply {
-    this.mode = mode
-    if (delegatesFocus != null) this.delegatesFocus = delegatesFocus
-    if (serializable != null) this.serializable = serializable
-    if (slotAssignment != null) this.slotAssignment = slotAssignment
-    if (clonable != null) this.clonable = clonable
-    if (customElementRegistry != null) this.customElementRegistry = customElementRegistry
+public fun ShadowRootInit(mode: ShadowRootMode, delegatesFocus: Boolean? = null, serializable: Boolean? = null, slotAssignment: SlotAssignmentMode? = null, clonable: Boolean? = null, customElementRegistry: CustomElementRegistry? = null): ShadowRootInit {
+    val dictionary = newJsObject<ShadowRootInit>()
+    dictionary.mode = mode
+    if (delegatesFocus != null) dictionary.delegatesFocus = delegatesFocus
+    if (serializable != null) dictionary.serializable = serializable
+    if (slotAssignment != null) dictionary.slotAssignment = slotAssignment
+    if (clonable != null) dictionary.clonable = clonable
+    if (customElementRegistry != null) dictionary.customElementRegistry = customElementRegistry
+    return dictionary
 }
 
 /**
@@ -5733,11 +5751,13 @@ public external interface StaticRangeInit : JsAny {
     public var endOffset: Int
 }
 
-public fun StaticRangeInit(startContainer: Node, startOffset: Int, endContainer: Node, endOffset: Int): StaticRangeInit = newJsObject<StaticRangeInit>().apply {
-    this.startContainer = startContainer
-    this.startOffset = startOffset
-    this.endContainer = endContainer
-    this.endOffset = endOffset
+public fun StaticRangeInit(startContainer: Node, startOffset: Int, endContainer: Node, endOffset: Int): StaticRangeInit {
+    val dictionary = newJsObject<StaticRangeInit>()
+    dictionary.startContainer = startContainer
+    dictionary.startOffset = startOffset
+    dictionary.endContainer = endContainer
+    dictionary.endOffset = endOffset
+    return dictionary
 }
 
 /**

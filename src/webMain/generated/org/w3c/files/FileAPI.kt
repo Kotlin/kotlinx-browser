@@ -129,9 +129,11 @@ public external interface BlobPropertyBag : JsAny {
     public var endings: EndingType?
 }
 
-public fun BlobPropertyBag(type: String? = null, endings: EndingType? = null): BlobPropertyBag = newJsObject<BlobPropertyBag>().apply {
-    if (type != null) this.type = type
-    if (endings != null) this.endings = endings
+public fun BlobPropertyBag(type: String? = null, endings: EndingType? = null): BlobPropertyBag {
+    val dictionary = newJsObject<BlobPropertyBag>()
+    if (type != null) dictionary.type = type
+    if (endings != null) dictionary.endings = endings
+    return dictionary
 }
 
 /**
@@ -177,10 +179,12 @@ public external interface FilePropertyBag : BlobPropertyBag {
     public var lastModified: Double?
 }
 
-public fun FilePropertyBag(type: String? = null, endings: EndingType? = null, lastModified: Double? = null): FilePropertyBag = newJsObject<FilePropertyBag>().apply {
-    if (type != null) this.type = type
-    if (endings != null) this.endings = endings
-    if (lastModified != null) this.lastModified = lastModified
+public fun FilePropertyBag(type: String? = null, endings: EndingType? = null, lastModified: Double? = null): FilePropertyBag {
+    val dictionary = newJsObject<FilePropertyBag>()
+    if (type != null) dictionary.type = type
+    if (endings != null) dictionary.endings = endings
+    if (lastModified != null) dictionary.lastModified = lastModified
+    return dictionary
 }
 
 /**

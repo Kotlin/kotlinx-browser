@@ -88,13 +88,15 @@ public external interface UIEventInit : EventInit {
     public var which: Int?
 }
 
-public fun UIEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null): UIEventInit = newJsObject<UIEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (view != null) this.view = view
-    if (detail != null) this.detail = detail
-    if (which != null) this.which = which
+public fun UIEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null): UIEventInit {
+    val dictionary = newJsObject<UIEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (view != null) dictionary.view = view
+    if (detail != null) dictionary.detail = detail
+    if (which != null) dictionary.which = which
+    return dictionary
 }
 
 /**
@@ -134,14 +136,16 @@ public external interface FocusEventInit : UIEventInit {
     public var relatedTarget: EventTarget?
 }
 
-public fun FocusEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, relatedTarget: EventTarget? = null): FocusEventInit = newJsObject<FocusEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (view != null) this.view = view
-    if (detail != null) this.detail = detail
-    if (which != null) this.which = which
-    if (relatedTarget != null) this.relatedTarget = relatedTarget
+public fun FocusEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, relatedTarget: EventTarget? = null): FocusEventInit {
+    val dictionary = newJsObject<FocusEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (view != null) dictionary.view = view
+    if (detail != null) dictionary.detail = detail
+    if (which != null) dictionary.which = which
+    if (relatedTarget != null) dictionary.relatedTarget = relatedTarget
+    return dictionary
 }
 
 /**
@@ -205,16 +209,18 @@ public external interface InputEventInit : UIEventInit {
     public var inputType: String?
 }
 
-public fun InputEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, data: String? = null, isComposing: Boolean? = null, inputType: String? = null): InputEventInit = newJsObject<InputEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (view != null) this.view = view
-    if (detail != null) this.detail = detail
-    if (which != null) this.which = which
-    if (data != null) this.data = data
-    if (isComposing != null) this.isComposing = isComposing
-    if (inputType != null) this.inputType = inputType
+public fun InputEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, data: String? = null, isComposing: Boolean? = null, inputType: String? = null): InputEventInit {
+    val dictionary = newJsObject<InputEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (view != null) dictionary.view = view
+    if (detail != null) dictionary.detail = detail
+    if (which != null) dictionary.which = which
+    if (data != null) dictionary.data = data
+    if (isComposing != null) dictionary.isComposing = isComposing
+    if (inputType != null) dictionary.inputType = inputType
+    return dictionary
 }
 
 /**
@@ -398,34 +404,36 @@ public external interface KeyboardEventInit : EventModifierInit {
     public var keyCode: Int?
 }
 
-public fun KeyboardEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, key: String? = null, code: String? = null, location: Int? = null, repeat: Boolean? = null, isComposing: Boolean? = null, charCode: Int? = null, keyCode: Int? = null): KeyboardEventInit = newJsObject<KeyboardEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (view != null) this.view = view
-    if (detail != null) this.detail = detail
-    if (which != null) this.which = which
-    if (ctrlKey != null) this.ctrlKey = ctrlKey
-    if (shiftKey != null) this.shiftKey = shiftKey
-    if (altKey != null) this.altKey = altKey
-    if (metaKey != null) this.metaKey = metaKey
-    if (modifierAltGraph != null) this.modifierAltGraph = modifierAltGraph
-    if (modifierCapsLock != null) this.modifierCapsLock = modifierCapsLock
-    if (modifierFn != null) this.modifierFn = modifierFn
-    if (modifierFnLock != null) this.modifierFnLock = modifierFnLock
-    if (modifierHyper != null) this.modifierHyper = modifierHyper
-    if (modifierNumLock != null) this.modifierNumLock = modifierNumLock
-    if (modifierScrollLock != null) this.modifierScrollLock = modifierScrollLock
-    if (modifierSuper != null) this.modifierSuper = modifierSuper
-    if (modifierSymbol != null) this.modifierSymbol = modifierSymbol
-    if (modifierSymbolLock != null) this.modifierSymbolLock = modifierSymbolLock
-    if (key != null) this.key = key
-    if (code != null) this.code = code
-    if (location != null) this.location = location
-    if (repeat != null) this.repeat = repeat
-    if (isComposing != null) this.isComposing = isComposing
-    if (charCode != null) this.charCode = charCode
-    if (keyCode != null) this.keyCode = keyCode
+public fun KeyboardEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null, key: String? = null, code: String? = null, location: Int? = null, repeat: Boolean? = null, isComposing: Boolean? = null, charCode: Int? = null, keyCode: Int? = null): KeyboardEventInit {
+    val dictionary = newJsObject<KeyboardEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (view != null) dictionary.view = view
+    if (detail != null) dictionary.detail = detail
+    if (which != null) dictionary.which = which
+    if (ctrlKey != null) dictionary.ctrlKey = ctrlKey
+    if (shiftKey != null) dictionary.shiftKey = shiftKey
+    if (altKey != null) dictionary.altKey = altKey
+    if (metaKey != null) dictionary.metaKey = metaKey
+    if (modifierAltGraph != null) dictionary.modifierAltGraph = modifierAltGraph
+    if (modifierCapsLock != null) dictionary.modifierCapsLock = modifierCapsLock
+    if (modifierFn != null) dictionary.modifierFn = modifierFn
+    if (modifierFnLock != null) dictionary.modifierFnLock = modifierFnLock
+    if (modifierHyper != null) dictionary.modifierHyper = modifierHyper
+    if (modifierNumLock != null) dictionary.modifierNumLock = modifierNumLock
+    if (modifierScrollLock != null) dictionary.modifierScrollLock = modifierScrollLock
+    if (modifierSuper != null) dictionary.modifierSuper = modifierSuper
+    if (modifierSymbol != null) dictionary.modifierSymbol = modifierSymbol
+    if (modifierSymbolLock != null) dictionary.modifierSymbolLock = modifierSymbolLock
+    if (key != null) dictionary.key = key
+    if (code != null) dictionary.code = code
+    if (location != null) dictionary.location = location
+    if (repeat != null) dictionary.repeat = repeat
+    if (isComposing != null) dictionary.isComposing = isComposing
+    if (charCode != null) dictionary.charCode = charCode
+    if (keyCode != null) dictionary.keyCode = keyCode
+    return dictionary
 }
 
 public external interface EventModifierInit : UIEventInit {
@@ -445,27 +453,29 @@ public external interface EventModifierInit : UIEventInit {
     public var modifierSymbolLock: Boolean?
 }
 
-public fun EventModifierInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null): EventModifierInit = newJsObject<EventModifierInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (view != null) this.view = view
-    if (detail != null) this.detail = detail
-    if (which != null) this.which = which
-    if (ctrlKey != null) this.ctrlKey = ctrlKey
-    if (shiftKey != null) this.shiftKey = shiftKey
-    if (altKey != null) this.altKey = altKey
-    if (metaKey != null) this.metaKey = metaKey
-    if (modifierAltGraph != null) this.modifierAltGraph = modifierAltGraph
-    if (modifierCapsLock != null) this.modifierCapsLock = modifierCapsLock
-    if (modifierFn != null) this.modifierFn = modifierFn
-    if (modifierFnLock != null) this.modifierFnLock = modifierFnLock
-    if (modifierHyper != null) this.modifierHyper = modifierHyper
-    if (modifierNumLock != null) this.modifierNumLock = modifierNumLock
-    if (modifierScrollLock != null) this.modifierScrollLock = modifierScrollLock
-    if (modifierSuper != null) this.modifierSuper = modifierSuper
-    if (modifierSymbol != null) this.modifierSymbol = modifierSymbol
-    if (modifierSymbolLock != null) this.modifierSymbolLock = modifierSymbolLock
+public fun EventModifierInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, ctrlKey: Boolean? = null, shiftKey: Boolean? = null, altKey: Boolean? = null, metaKey: Boolean? = null, modifierAltGraph: Boolean? = null, modifierCapsLock: Boolean? = null, modifierFn: Boolean? = null, modifierFnLock: Boolean? = null, modifierHyper: Boolean? = null, modifierNumLock: Boolean? = null, modifierScrollLock: Boolean? = null, modifierSuper: Boolean? = null, modifierSymbol: Boolean? = null, modifierSymbolLock: Boolean? = null): EventModifierInit {
+    val dictionary = newJsObject<EventModifierInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (view != null) dictionary.view = view
+    if (detail != null) dictionary.detail = detail
+    if (which != null) dictionary.which = which
+    if (ctrlKey != null) dictionary.ctrlKey = ctrlKey
+    if (shiftKey != null) dictionary.shiftKey = shiftKey
+    if (altKey != null) dictionary.altKey = altKey
+    if (metaKey != null) dictionary.metaKey = metaKey
+    if (modifierAltGraph != null) dictionary.modifierAltGraph = modifierAltGraph
+    if (modifierCapsLock != null) dictionary.modifierCapsLock = modifierCapsLock
+    if (modifierFn != null) dictionary.modifierFn = modifierFn
+    if (modifierFnLock != null) dictionary.modifierFnLock = modifierFnLock
+    if (modifierHyper != null) dictionary.modifierHyper = modifierHyper
+    if (modifierNumLock != null) dictionary.modifierNumLock = modifierNumLock
+    if (modifierScrollLock != null) dictionary.modifierScrollLock = modifierScrollLock
+    if (modifierSuper != null) dictionary.modifierSuper = modifierSuper
+    if (modifierSymbol != null) dictionary.modifierSymbol = modifierSymbol
+    if (modifierSymbolLock != null) dictionary.modifierSymbolLock = modifierSymbolLock
+    return dictionary
 }
 
 /**
@@ -520,14 +530,16 @@ public external interface CompositionEventInit : UIEventInit {
     public var data: String?
 }
 
-public fun CompositionEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, data: String? = null): CompositionEventInit = newJsObject<CompositionEventInit>().apply {
-    if (bubbles != null) this.bubbles = bubbles
-    if (cancelable != null) this.cancelable = cancelable
-    if (composed != null) this.composed = composed
-    if (view != null) this.view = view
-    if (detail != null) this.detail = detail
-    if (which != null) this.which = which
-    if (data != null) this.data = data
+public fun CompositionEventInit(bubbles: Boolean? = null, cancelable: Boolean? = null, composed: Boolean? = null, view: Window? = null, detail: Int? = null, which: Int? = null, data: String? = null): CompositionEventInit {
+    val dictionary = newJsObject<CompositionEventInit>()
+    if (bubbles != null) dictionary.bubbles = bubbles
+    if (cancelable != null) dictionary.cancelable = cancelable
+    if (composed != null) dictionary.composed = composed
+    if (view != null) dictionary.view = view
+    if (detail != null) dictionary.detail = detail
+    if (which != null) dictionary.which = which
+    if (data != null) dictionary.data = data
+    return dictionary
 }
 
 /**
