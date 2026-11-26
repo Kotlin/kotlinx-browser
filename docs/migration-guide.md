@@ -121,6 +121,18 @@ declared; use the standard name. `wordWrap`, `fontStretch` and `gridGap` are kep
   imageData.data[0] = 255u
   ```
 
+- **Kotlin/JS: no unsigned overloads taking a signed Kotlin array.** `Uint8Array(Array<Byte>)`,
+  `Uint8ClampedArray(Array<Byte>)`, `Uint16Array(Array<Short>)`, `Uint32Array(Array<Int>)` and their
+  `set(array, offset)` are removed: a clamped array turned every negative `Byte` into 0, so it could not hold 128–255.
+  Use the conversions, which exist on both targets:
+
+  ```kotlin
+  val pixels = ubyteArrayOf(255u, 128u, 0u, 255u).toUint8ClampedArray()   // was Uint8ClampedArray(arrayOf<Byte>(...))
+  ```
+
+  `Uint8ClampedArray.toUByteArray()` and `UByteArray.toUint8ClampedArray()` are new. The signed and `Float32Array`
+  overloads stay.
+
 - **Conversions copy on JS.** `toByteArray()`, `toInt8Array()`, `toFloat32Array()`, … and their unsigned versions
   always return a new array containing exactly the elements of the view (`byteOffset`, `length`), as on Wasm. On JS
   the signed ones used to return the same object, so writes went to both. The unsigned ones used to convert the

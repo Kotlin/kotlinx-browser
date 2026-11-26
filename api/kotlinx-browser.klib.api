@@ -30037,18 +30037,6 @@ final fun (org.khronos.webgl/Int32Array).org.khronos.webgl/set(kotlin/Array<kotl
 final fun (org.khronos.webgl/Int8Array).org.khronos.webgl/set(kotlin/Array<kotlin/Byte>, kotlin/Int = ...) // org.khronos.webgl/set|set@org.khronos.webgl.Int8Array(kotlin.Array<kotlin.Byte>;kotlin.Int){}[0]
 
 // Targets: [js]
-final fun (org.khronos.webgl/Uint16Array).org.khronos.webgl/set(kotlin/Array<kotlin/Short>, kotlin/Int = ...) // org.khronos.webgl/set|set@org.khronos.webgl.Uint16Array(kotlin.Array<kotlin.Short>;kotlin.Int){}[0]
-
-// Targets: [js]
-final fun (org.khronos.webgl/Uint32Array).org.khronos.webgl/set(kotlin/Array<kotlin/Int>, kotlin/Int = ...) // org.khronos.webgl/set|set@org.khronos.webgl.Uint32Array(kotlin.Array<kotlin.Int>;kotlin.Int){}[0]
-
-// Targets: [js]
-final fun (org.khronos.webgl/Uint8Array).org.khronos.webgl/set(kotlin/Array<kotlin/Byte>, kotlin/Int = ...) // org.khronos.webgl/set|set@org.khronos.webgl.Uint8Array(kotlin.Array<kotlin.Byte>;kotlin.Int){}[0]
-
-// Targets: [js]
-final fun (org.khronos.webgl/Uint8ClampedArray).org.khronos.webgl/set(kotlin/Array<kotlin/Byte>, kotlin/Int = ...) // org.khronos.webgl/set|set@org.khronos.webgl.Uint8ClampedArray(kotlin.Array<kotlin.Byte>;kotlin.Int){}[0]
-
-// Targets: [js]
 final fun (org.w3c.dom/Document).org.w3c.dom/get(kotlin/String): kotlin/Any? // org.w3c.dom/get|get@org.w3c.dom.Document(kotlin.String){}[0]
 
 // Targets: [js]
@@ -30068,18 +30056,6 @@ final fun org.khronos.webgl/Int32Array(kotlin/Array<kotlin/Int>): org.khronos.we
 
 // Targets: [js]
 final fun org.khronos.webgl/Int8Array(kotlin/Array<kotlin/Byte>): org.khronos.webgl/Int8Array // org.khronos.webgl/Int8Array|Int8Array(kotlin.Array<kotlin.Byte>){}[0]
-
-// Targets: [js]
-final fun org.khronos.webgl/Uint16Array(kotlin/Array<kotlin/Short>): org.khronos.webgl/Uint16Array // org.khronos.webgl/Uint16Array|Uint16Array(kotlin.Array<kotlin.Short>){}[0]
-
-// Targets: [js]
-final fun org.khronos.webgl/Uint32Array(kotlin/Array<kotlin/Int>): org.khronos.webgl/Uint32Array // org.khronos.webgl/Uint32Array|Uint32Array(kotlin.Array<kotlin.Int>){}[0]
-
-// Targets: [js]
-final fun org.khronos.webgl/Uint8Array(kotlin/Array<kotlin/Byte>): org.khronos.webgl/Uint8Array // org.khronos.webgl/Uint8Array|Uint8Array(kotlin.Array<kotlin.Byte>){}[0]
-
-// Targets: [js]
-final fun org.khronos.webgl/Uint8ClampedArray(kotlin/Array<kotlin/Byte>): org.khronos.webgl/Uint8ClampedArray // org.khronos.webgl/Uint8ClampedArray|Uint8ClampedArray(kotlin.Array<kotlin.Byte>){}[0]
 
 // Targets: [js]
 final fun org.w3c.animations/BasePropertyIndexedKeyframe(kotlin/Any? = ..., kotlin/Any? = ..., kotlin/Any? = ...): org.w3c.animations/BasePropertyIndexedKeyframe // org.w3c.animations/BasePropertyIndexedKeyframe|BasePropertyIndexedKeyframe(kotlin.Any?;kotlin.Any?;kotlin.Any?){}[0]
@@ -30304,6 +30280,9 @@ final inline fun (kotlin/ShortArray).org.khronos.webgl/toInt16Array(): org.khron
 final inline fun (kotlin/UByteArray).org.khronos.webgl/toUint8Array(): org.khronos.webgl/Uint8Array // org.khronos.webgl/toUint8Array|toUint8Array@kotlin.UByteArray(){}[0]
 
 // Targets: [js]
+final inline fun (kotlin/UByteArray).org.khronos.webgl/toUint8ClampedArray(): org.khronos.webgl/Uint8ClampedArray // org.khronos.webgl/toUint8ClampedArray|toUint8ClampedArray@kotlin.UByteArray(){}[0]
+
+// Targets: [js]
 final inline fun (kotlin/UIntArray).org.khronos.webgl/toUint32Array(): org.khronos.webgl/Uint32Array // org.khronos.webgl/toUint32Array|toUint32Array@kotlin.UIntArray(){}[0]
 
 // Targets: [js]
@@ -30332,6 +30311,9 @@ final inline fun (org.khronos.webgl/Uint32Array).org.khronos.webgl/toUIntArray()
 
 // Targets: [js]
 final inline fun (org.khronos.webgl/Uint8Array).org.khronos.webgl/toUByteArray(): kotlin/UByteArray // org.khronos.webgl/toUByteArray|toUByteArray@org.khronos.webgl.Uint8Array(){}[0]
+
+// Targets: [js]
+final inline fun (org.khronos.webgl/Uint8ClampedArray).org.khronos.webgl/toUByteArray(): kotlin/UByteArray // org.khronos.webgl/toUByteArray|toUByteArray@org.khronos.webgl.Uint8ClampedArray(){}[0]
 
 // Targets: [wasmJs]
 abstract interface <#A: out kotlin.js/JsAny?> org.w3c.dom/ItemArrayLike : kotlin.js/JsAny { // org.w3c.dom/ItemArrayLike|null[0]
@@ -37217,6 +37199,9 @@ final fun (kotlin/ShortArray).org.khronos.webgl/toInt16Array(): org.khronos.webg
 final fun (kotlin/UByteArray).org.khronos.webgl/toUint8Array(): org.khronos.webgl/Uint8Array // org.khronos.webgl/toUint8Array|toUint8Array@kotlin.UByteArray(){}[0]
 
 // Targets: [wasmJs]
+final fun (kotlin/UByteArray).org.khronos.webgl/toUint8ClampedArray(): org.khronos.webgl/Uint8ClampedArray // org.khronos.webgl/toUint8ClampedArray|toUint8ClampedArray@kotlin.UByteArray(){}[0]
+
+// Targets: [wasmJs]
 final fun (kotlin/UIntArray).org.khronos.webgl/toUint32Array(): org.khronos.webgl/Uint32Array // org.khronos.webgl/toUint32Array|toUint32Array@kotlin.UIntArray(){}[0]
 
 // Targets: [wasmJs]
@@ -37245,6 +37230,9 @@ final fun (org.khronos.webgl/Uint32Array).org.khronos.webgl/toUIntArray(): kotli
 
 // Targets: [wasmJs]
 final fun (org.khronos.webgl/Uint8Array).org.khronos.webgl/toUByteArray(): kotlin/UByteArray // org.khronos.webgl/toUByteArray|toUByteArray@org.khronos.webgl.Uint8Array(){}[0]
+
+// Targets: [wasmJs]
+final fun (org.khronos.webgl/Uint8ClampedArray).org.khronos.webgl/toUByteArray(): kotlin/UByteArray // org.khronos.webgl/toUByteArray|toUByteArray@org.khronos.webgl.Uint8ClampedArray(){}[0]
 
 // Targets: [wasmJs]
 final fun (org.w3c.dom/Document).org.w3c.dom/get(kotlin/String): kotlin.js/JsAny? // org.w3c.dom/get|get@org.w3c.dom.Document(kotlin.String){}[0]

@@ -13,7 +13,6 @@ class TypedArraysJsTest {
         val signed = Int8Array(arrayOf<Byte>(1, -2))
         assertEquals(2, signed.length)
         assertEquals(-2, signed[1])
-        assertEquals(255u, Uint8Array(arrayOf<Byte>(-1))[0])
         assertEquals(1.5f, Float32Array(arrayOf(1.5f))[0])
         assertEquals(70000, Int32Array(arrayOf(70000))[0])
     }

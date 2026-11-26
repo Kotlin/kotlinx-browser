@@ -18,6 +18,16 @@ public actual inline fun Uint8Array.toUByteArray(): UByteArray =
 public actual inline fun UByteArray.toUint8Array(): Uint8Array =
     Uint8Array(asByteArray().copyOf().unsafeCast<Int8Array>().buffer)
 
+/** Returns a new [UByteArray] containing all the elements of this [Uint8ClampedArray]. */
+@ExperimentalUnsignedTypes
+public actual inline fun Uint8ClampedArray.toUByteArray(): UByteArray =
+    Int8Array(buffer, byteOffset, length).unsafeCast<ByteArray>().copyOf().asUByteArray()
+
+/** Returns a new [Uint8ClampedArray] containing all the elements of this [UByteArray]. */
+@ExperimentalUnsignedTypes
+public actual inline fun UByteArray.toUint8ClampedArray(): Uint8ClampedArray =
+    Uint8ClampedArray(asByteArray().copyOf().unsafeCast<Int8Array>().buffer)
+
 /** Returns a new [ByteArray] containing all the elements of this [Int8Array]. */
 public actual inline fun Int8Array.toByteArray(): ByteArray =
     unsafeCast<ByteArray>().copyOf()

@@ -6,7 +6,8 @@
 // NOTE: HAND-WRITTEN, NOT GENERATED.
 // Kotlin/JS only: the typed-array overloads taking a Kotlin array of the element type, kept from the declarations
 // bundled with Kotlin/JS. On JS such an array is a JS array of numbers, as is `JsArray<JsNumber>`; the shared
-// declarations are in webMain.
+// declarations are in webMain. Only the signed and float arrays have them: a Kotlin array of signed values does not
+// fit an unsigned typed array (a clamped one turns every negative byte into 0); use `UByteArray.toUint8Array()` etc.
 
 package org.khronos.webgl
 
@@ -16,41 +17,17 @@ public fun Int8Array(array: Array<Byte>): Int8Array = Int8Array(array.unsafeCast
 /** Copies the elements of [array] into this array, starting at [offset]. */
 public fun Int8Array.set(array: Array<Byte>, offset: Int = 0): Unit = set(array.unsafeCast<Array<Double>>(), offset)
 
-/** A new [Uint8Array] with the elements of [array]. */
-public fun Uint8Array(array: Array<Byte>): Uint8Array = Uint8Array(array.unsafeCast<Array<Double>>())
-
-/** Copies the elements of [array] into this array, starting at [offset]. */
-public fun Uint8Array.set(array: Array<Byte>, offset: Int = 0): Unit = set(array.unsafeCast<Array<Double>>(), offset)
-
-/** A new [Uint8ClampedArray] with the elements of [array]. */
-public fun Uint8ClampedArray(array: Array<Byte>): Uint8ClampedArray = Uint8ClampedArray(array.unsafeCast<Array<Double>>())
-
-/** Copies the elements of [array] into this array, starting at [offset]. */
-public fun Uint8ClampedArray.set(array: Array<Byte>, offset: Int = 0): Unit = set(array.unsafeCast<Array<Double>>(), offset)
-
 /** A new [Int16Array] with the elements of [array]. */
 public fun Int16Array(array: Array<Short>): Int16Array = Int16Array(array.unsafeCast<Array<Double>>())
 
 /** Copies the elements of [array] into this array, starting at [offset]. */
 public fun Int16Array.set(array: Array<Short>, offset: Int = 0): Unit = set(array.unsafeCast<Array<Double>>(), offset)
 
-/** A new [Uint16Array] with the elements of [array]. */
-public fun Uint16Array(array: Array<Short>): Uint16Array = Uint16Array(array.unsafeCast<Array<Double>>())
-
-/** Copies the elements of [array] into this array, starting at [offset]. */
-public fun Uint16Array.set(array: Array<Short>, offset: Int = 0): Unit = set(array.unsafeCast<Array<Double>>(), offset)
-
 /** A new [Int32Array] with the elements of [array]. */
 public fun Int32Array(array: Array<Int>): Int32Array = Int32Array(array.unsafeCast<Array<Double>>())
 
 /** Copies the elements of [array] into this array, starting at [offset]. */
 public fun Int32Array.set(array: Array<Int>, offset: Int = 0): Unit = set(array.unsafeCast<Array<Double>>(), offset)
-
-/** A new [Uint32Array] with the elements of [array]. */
-public fun Uint32Array(array: Array<Int>): Uint32Array = Uint32Array(array.unsafeCast<Array<Double>>())
-
-/** Copies the elements of [array] into this array, starting at [offset]. */
-public fun Uint32Array.set(array: Array<Int>, offset: Int = 0): Unit = set(array.unsafeCast<Array<Double>>(), offset)
 
 /** A new [Float32Array] with the elements of [array]. */
 public fun Float32Array(array: Array<Float>): Float32Array = Float32Array(array.unsafeCast<Array<Double>>())

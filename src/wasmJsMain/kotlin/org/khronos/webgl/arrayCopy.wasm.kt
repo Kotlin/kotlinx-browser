@@ -23,6 +23,21 @@ public actual fun UByteArray.toUint8Array(): Uint8Array {
     return result
 }
 
+/** Returns a new [UByteArray] containing all the elements of this [Uint8ClampedArray]. */
+@ExperimentalUnsignedTypes
+public actual fun Uint8ClampedArray.toUByteArray(): UByteArray =
+    UByteArray(this.length) { this[it] }
+
+/** Returns a new [Uint8ClampedArray] containing all the elements of this [UByteArray]. */
+@ExperimentalUnsignedTypes
+public actual fun UByteArray.toUint8ClampedArray(): Uint8ClampedArray {
+    val result = Uint8ClampedArray(this.size)
+    for (index in this.indices) {
+        result[index] = this[index]
+    }
+    return result
+}
+
 /** Returns a new [ByteArray] containing all the elements of this [Int8Array]. */
 public actual fun Int8Array.toByteArray(): ByteArray =
     ByteArray(this.length) { this[it] }

@@ -11,31 +11,7 @@
 import org.khronos.webgl.*
 import kotlin.test.*
 
-private fun testJsRoundTrip(array: ByteArray) {
-    val jsArray = array.toInt8Array()
-    assertEquals(array.size, jsArray.length)
-    for (i in array.indices) {
-        assertEquals(array[i], jsArray[i])
-    }
-    val roundTrippedArray = jsArray.toByteArray()
-    assertContentEquals(array, roundTrippedArray)
-
-    // A view converts only its own elements.
-    if (array.size >= 3) {
-        val view = Int8Array(jsArray.buffer, Int8Array.BYTES_PER_ELEMENT, array.size - 2)
-        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toByteArray())
-    }
-
-    // Both conversions copy: changing one side leaves the other as it was.
-    if (array.size >= 2 && array[0] != array[1]) {
-        val first = jsArray[0]
-        array[0] = array[1]
-        roundTrippedArray[0] = array[1]
-        assertEquals(first, jsArray[0])
-    }
-}
-
-private fun testJsRoundTrip(array: UByteArray) {
+private fun testUint8ArrayRoundTrip(array: UByteArray) {
     val jsArray = array.toUint8Array()
     assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
@@ -59,19 +35,19 @@ private fun testJsRoundTrip(array: UByteArray) {
     }
 }
 
-private fun testJsRoundTrip(array: ShortArray) {
-    val jsArray = array.toInt16Array()
+private fun testUint8ClampedArrayRoundTrip(array: UByteArray) {
+    val jsArray = array.toUint8ClampedArray()
     assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
         assertEquals(array[i], jsArray[i])
     }
-    val roundTrippedArray = jsArray.toShortArray()
+    val roundTrippedArray = jsArray.toUByteArray()
     assertContentEquals(array, roundTrippedArray)
 
     // A view converts only its own elements.
     if (array.size >= 3) {
-        val view = Int16Array(jsArray.buffer, Int16Array.BYTES_PER_ELEMENT, array.size - 2)
-        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toShortArray())
+        val view = Uint8ClampedArray(jsArray.buffer, Uint8ClampedArray.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toUByteArray())
     }
 
     // Both conversions copy: changing one side leaves the other as it was.
@@ -83,7 +59,31 @@ private fun testJsRoundTrip(array: ShortArray) {
     }
 }
 
-private fun testJsRoundTrip(array: UShortArray) {
+private fun testInt8ArrayRoundTrip(array: ByteArray) {
+    val jsArray = array.toInt8Array()
+    assertEquals(array.size, jsArray.length)
+    for (i in array.indices) {
+        assertEquals(array[i], jsArray[i])
+    }
+    val roundTrippedArray = jsArray.toByteArray()
+    assertContentEquals(array, roundTrippedArray)
+
+    // A view converts only its own elements.
+    if (array.size >= 3) {
+        val view = Int8Array(jsArray.buffer, Int8Array.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toByteArray())
+    }
+
+    // Both conversions copy: changing one side leaves the other as it was.
+    if (array.size >= 2 && array[0] != array[1]) {
+        val first = jsArray[0]
+        array[0] = array[1]
+        roundTrippedArray[0] = array[1]
+        assertEquals(first, jsArray[0])
+    }
+}
+
+private fun testUint16ArrayRoundTrip(array: UShortArray) {
     val jsArray = array.toUint16Array()
     assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
@@ -107,19 +107,19 @@ private fun testJsRoundTrip(array: UShortArray) {
     }
 }
 
-private fun testJsRoundTrip(array: IntArray) {
-    val jsArray = array.toInt32Array()
+private fun testInt16ArrayRoundTrip(array: ShortArray) {
+    val jsArray = array.toInt16Array()
     assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
         assertEquals(array[i], jsArray[i])
     }
-    val roundTrippedArray = jsArray.toIntArray()
+    val roundTrippedArray = jsArray.toShortArray()
     assertContentEquals(array, roundTrippedArray)
 
     // A view converts only its own elements.
     if (array.size >= 3) {
-        val view = Int32Array(jsArray.buffer, Int32Array.BYTES_PER_ELEMENT, array.size - 2)
-        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toIntArray())
+        val view = Int16Array(jsArray.buffer, Int16Array.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toShortArray())
     }
 
     // Both conversions copy: changing one side leaves the other as it was.
@@ -131,7 +131,7 @@ private fun testJsRoundTrip(array: IntArray) {
     }
 }
 
-private fun testJsRoundTrip(array: UIntArray) {
+private fun testUint32ArrayRoundTrip(array: UIntArray) {
     val jsArray = array.toUint32Array()
     assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
@@ -155,7 +155,31 @@ private fun testJsRoundTrip(array: UIntArray) {
     }
 }
 
-private fun testJsRoundTrip(array: FloatArray) {
+private fun testInt32ArrayRoundTrip(array: IntArray) {
+    val jsArray = array.toInt32Array()
+    assertEquals(array.size, jsArray.length)
+    for (i in array.indices) {
+        assertEquals(array[i], jsArray[i])
+    }
+    val roundTrippedArray = jsArray.toIntArray()
+    assertContentEquals(array, roundTrippedArray)
+
+    // A view converts only its own elements.
+    if (array.size >= 3) {
+        val view = Int32Array(jsArray.buffer, Int32Array.BYTES_PER_ELEMENT, array.size - 2)
+        assertContentEquals(array.copyOfRange(1, array.size - 1), view.toIntArray())
+    }
+
+    // Both conversions copy: changing one side leaves the other as it was.
+    if (array.size >= 2 && array[0] != array[1]) {
+        val first = jsArray[0]
+        array[0] = array[1]
+        roundTrippedArray[0] = array[1]
+        assertEquals(first, jsArray[0])
+    }
+}
+
+private fun testFloat32ArrayRoundTrip(array: FloatArray) {
     val jsArray = array.toFloat32Array()
     assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
@@ -179,7 +203,7 @@ private fun testJsRoundTrip(array: FloatArray) {
     }
 }
 
-private fun testJsRoundTrip(array: DoubleArray) {
+private fun testFloat64ArrayRoundTrip(array: DoubleArray) {
     val jsArray = array.toFloat64Array()
     assertEquals(array.size, jsArray.length)
     for (i in array.indices) {
@@ -206,58 +230,65 @@ private fun testJsRoundTrip(array: DoubleArray) {
 class JsArrayConversionTest {
 
     @Test
-    fun testByteArray() {
-        testJsRoundTrip(byteArrayOf())
-        testJsRoundTrip(byteArrayOf(0.toByte(), (-42).toByte(), Byte.MIN_VALUE, Byte.MAX_VALUE))
-        testJsRoundTrip(ByteArray(1000) { it.toByte() })
+    fun testUint8Array() {
+        testUint8ArrayRoundTrip(ubyteArrayOf())
+        testUint8ArrayRoundTrip(ubyteArrayOf(0.toUByte(), (-42).toUByte(), UByte.MIN_VALUE, UByte.MAX_VALUE))
+        testUint8ArrayRoundTrip(UByteArray(1000) { it.toUByte() })
     }
 
     @Test
-    fun testUByteArray() {
-        testJsRoundTrip(ubyteArrayOf())
-        testJsRoundTrip(ubyteArrayOf(0.toUByte(), (-42).toUByte(), UByte.MIN_VALUE, UByte.MAX_VALUE))
-        testJsRoundTrip(UByteArray(1000) { it.toUByte() })
+    fun testUint8ClampedArray() {
+        testUint8ClampedArrayRoundTrip(ubyteArrayOf())
+        testUint8ClampedArrayRoundTrip(ubyteArrayOf(0.toUByte(), (-42).toUByte(), UByte.MIN_VALUE, UByte.MAX_VALUE))
+        testUint8ClampedArrayRoundTrip(UByteArray(1000) { it.toUByte() })
     }
 
     @Test
-    fun testShortArray() {
-        testJsRoundTrip(shortArrayOf())
-        testJsRoundTrip(shortArrayOf(0.toShort(), (-42).toShort(), Short.MIN_VALUE, Short.MAX_VALUE))
-        testJsRoundTrip(ShortArray(1000) { it.toShort() })
+    fun testInt8Array() {
+        testInt8ArrayRoundTrip(byteArrayOf())
+        testInt8ArrayRoundTrip(byteArrayOf(0.toByte(), (-42).toByte(), Byte.MIN_VALUE, Byte.MAX_VALUE))
+        testInt8ArrayRoundTrip(ByteArray(1000) { it.toByte() })
     }
 
     @Test
-    fun testUShortArray() {
-        testJsRoundTrip(ushortArrayOf())
-        testJsRoundTrip(ushortArrayOf(0.toUShort(), (-42).toUShort(), UShort.MIN_VALUE, UShort.MAX_VALUE))
-        testJsRoundTrip(UShortArray(1000) { it.toUShort() })
+    fun testUint16Array() {
+        testUint16ArrayRoundTrip(ushortArrayOf())
+        testUint16ArrayRoundTrip(ushortArrayOf(0.toUShort(), (-42).toUShort(), UShort.MIN_VALUE, UShort.MAX_VALUE))
+        testUint16ArrayRoundTrip(UShortArray(1000) { it.toUShort() })
     }
 
     @Test
-    fun testIntArray() {
-        testJsRoundTrip(intArrayOf())
-        testJsRoundTrip(intArrayOf(0.toInt(), (-42).toInt(), Int.MIN_VALUE, Int.MAX_VALUE))
-        testJsRoundTrip(IntArray(1000) { it.toInt() })
+    fun testInt16Array() {
+        testInt16ArrayRoundTrip(shortArrayOf())
+        testInt16ArrayRoundTrip(shortArrayOf(0.toShort(), (-42).toShort(), Short.MIN_VALUE, Short.MAX_VALUE))
+        testInt16ArrayRoundTrip(ShortArray(1000) { it.toShort() })
     }
 
     @Test
-    fun testUIntArray() {
-        testJsRoundTrip(uintArrayOf())
-        testJsRoundTrip(uintArrayOf(0.toUInt(), (-42).toUInt(), UInt.MIN_VALUE, UInt.MAX_VALUE))
-        testJsRoundTrip(UIntArray(1000) { it.toUInt() })
+    fun testUint32Array() {
+        testUint32ArrayRoundTrip(uintArrayOf())
+        testUint32ArrayRoundTrip(uintArrayOf(0.toUInt(), (-42).toUInt(), UInt.MIN_VALUE, UInt.MAX_VALUE))
+        testUint32ArrayRoundTrip(UIntArray(1000) { it.toUInt() })
     }
 
     @Test
-    fun testFloatArray() {
-        testJsRoundTrip(floatArrayOf())
-        testJsRoundTrip(floatArrayOf(0.toFloat(), (-42).toFloat(), Float.MIN_VALUE, Float.MAX_VALUE))
-        testJsRoundTrip(FloatArray(1000) { it.toFloat() })
+    fun testInt32Array() {
+        testInt32ArrayRoundTrip(intArrayOf())
+        testInt32ArrayRoundTrip(intArrayOf(0.toInt(), (-42).toInt(), Int.MIN_VALUE, Int.MAX_VALUE))
+        testInt32ArrayRoundTrip(IntArray(1000) { it.toInt() })
     }
 
     @Test
-    fun testDoubleArray() {
-        testJsRoundTrip(doubleArrayOf())
-        testJsRoundTrip(doubleArrayOf(0.toDouble(), (-42).toDouble(), Double.MIN_VALUE, Double.MAX_VALUE))
-        testJsRoundTrip(DoubleArray(1000) { it.toDouble() })
+    fun testFloat32Array() {
+        testFloat32ArrayRoundTrip(floatArrayOf())
+        testFloat32ArrayRoundTrip(floatArrayOf(0.toFloat(), (-42).toFloat(), Float.MIN_VALUE, Float.MAX_VALUE))
+        testFloat32ArrayRoundTrip(FloatArray(1000) { it.toFloat() })
+    }
+
+    @Test
+    fun testFloat64Array() {
+        testFloat64ArrayRoundTrip(doubleArrayOf())
+        testFloat64ArrayRoundTrip(doubleArrayOf(0.toDouble(), (-42).toDouble(), Double.MIN_VALUE, Double.MAX_VALUE))
+        testFloat64ArrayRoundTrip(DoubleArray(1000) { it.toDouble() })
     }
 }

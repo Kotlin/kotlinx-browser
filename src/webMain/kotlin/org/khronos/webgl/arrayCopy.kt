@@ -16,6 +16,14 @@ public expect fun Uint8Array.toUByteArray(): UByteArray
 @ExperimentalUnsignedTypes
 public expect fun UByteArray.toUint8Array(): Uint8Array
 
+/** Returns a new [UByteArray] containing all the elements of this [Uint8ClampedArray]. */
+@ExperimentalUnsignedTypes
+public expect fun Uint8ClampedArray.toUByteArray(): UByteArray
+
+/** Returns a new [Uint8ClampedArray] containing all the elements of this [UByteArray]. */
+@ExperimentalUnsignedTypes
+public expect fun UByteArray.toUint8ClampedArray(): Uint8ClampedArray
+
 /** Returns a new [ByteArray] containing all the elements of this [Int8Array]. */
 public expect fun Int8Array.toByteArray(): ByteArray
 

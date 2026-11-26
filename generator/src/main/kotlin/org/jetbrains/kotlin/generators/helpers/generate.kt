@@ -24,6 +24,8 @@ fun generateUtils(): Map<String, String> {
     val conversions = buildList {
         add(Conversion("Byte", "Int8").also {
             add(Conversion("UByte", "Uint8", signedConversion = it))
+            // The bytes are copied as they are: a clamped array clamps only values assigned as numbers.
+            add(Conversion("UByte", "Uint8Clamped", signedConversion = it))
         })
 
         add(Conversion("Short", "Int16").also {
@@ -62,7 +64,7 @@ fun generateUtils(): Map<String, String> {
                 appendWasmConversionsForType(ktType, jsType, signedConversion)
             }
         },
-        "src/webTest/kotlin/arrayCopyTest.kt" to file { appendTests() },
+        "src/webTest/kotlin/arrayCopyTest.kt" to file { appendTests(conversions) },
     )
 }
 
@@ -160,34 +162,17 @@ private fun StringBuilder.appendWasmConversionsForType(
     appendLine("}")
 }
 
-private fun StringBuilder.appendTests() {
+private fun StringBuilder.appendTests(conversions: List<Conversion>) {
     appendLine()
     appendLine("@file:OptIn(ExperimentalUnsignedTypes::class)")
     appendLine("import org.khronos.webgl.*")
     appendLine("import kotlin.test.*")
 
-
-    appendTestJsRoundTripHelper("Byte", "Int8")
-    appendTestJsRoundTripHelper("UByte", "Uint8")
-    appendTestJsRoundTripHelper("Short", "Int16")
-    appendTestJsRoundTripHelper("UShort", "Uint16")
-    appendTestJsRoundTripHelper("Int", "Int32")
-    appendTestJsRoundTripHelper("UInt", "Uint32")
-    appendTestJsRoundTripHelper("Float", "Float32")
-    appendTestJsRoundTripHelper("Double", "Float64")
+    conversions.forEach { appendTestJsRoundTripHelper(it.ktType, it.jsType) }
 
     appendLine()
     appendLine("class JsArrayConversionTest {")
-
-    appendTestFunction("Byte")
-    appendTestFunction("UByte")
-    appendTestFunction("Short")
-    appendTestFunction("UShort")
-    appendTestFunction("Int")
-    appendTestFunction("UInt")
-    appendTestFunction("Float")
-    appendTestFunction("Double")
-
+    conversions.forEach { appendTestFunction(it.ktType, it.jsType) }
     appendLine("}")
 }
 
@@ -201,7 +186,7 @@ private fun StringBuilder.appendTestJsRoundTripHelper(
     appendLine(
         """
             
-            private fun testJsRoundTrip(array: $kotlinArrayType) {
+            private fun test${jsArrayType}RoundTrip(array: $kotlinArrayType) {
                 val jsArray = array.to$jsArrayType()
                 assertEquals(array.size, jsArray.length)
                 for (i in array.indices) {
@@ -230,16 +215,18 @@ private fun StringBuilder.appendTestJsRoundTripHelper(
 
 private fun StringBuilder.appendTestFunction(
     ktType: String,
+    jsType: String,
 ) {
     val kotlinArrayType = "${ktType}Array"
     val ktArrayOf = "${ktType.lowercase()}ArrayOf"
+    val roundTrip = "test${jsType}ArrayRoundTrip"
 
     appendLine()
     appendLine("    @Test")
-    appendLine("    fun test$kotlinArrayType() {")
-    appendLine("        testJsRoundTrip($ktArrayOf())")
-    appendLine("        testJsRoundTrip($ktArrayOf(0.to$ktType(), (-42).to$ktType(), $ktType.MIN_VALUE, $ktType.MAX_VALUE))")
-    appendLine("        testJsRoundTrip($kotlinArrayType(1000) { it.to$ktType() })")
+    appendLine("    fun test${jsType}Array() {")
+    appendLine("        $roundTrip($ktArrayOf())")
+    appendLine("        $roundTrip($ktArrayOf(0.to$ktType(), (-42).to$ktType(), $ktType.MIN_VALUE, $ktType.MAX_VALUE))")
+    appendLine("        $roundTrip($kotlinArrayType(1000) { it.to$ktType() })")
     appendLine("    }")
 }
 
