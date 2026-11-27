@@ -12,7 +12,7 @@
 package org.w3c.dom
 
 import kotlin.js.*
-import org.khronos.webgl.*
+import kotlinx.browser.typedarrays.*
 
 /**
  * The DOMPointReadOnly interface specifies the coordinate and perspective fields used by DOMPoint to define a 2D or 3D

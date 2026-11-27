@@ -12,7 +12,7 @@
 package org.w3c.streams
 
 import kotlin.js.*
-import org.khronos.webgl.*
+import kotlinx.browser.typedarrays.*
 import org.w3c.dom.*
 
 public external interface ReadableStreamReader : JsAny

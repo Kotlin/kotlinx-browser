@@ -12,6 +12,7 @@
 package org.khronos.webgl
 
 import kotlin.js.*
+import kotlinx.browser.typedarrays.*
 import org.w3c.dom.*
 
 public external interface TexImageSource : ImageBitmapSource

@@ -135,9 +135,9 @@ tasks.test {
     locationProperty("kotlinx.browser.repositoryRoot", repositoryRoot)
 
     inputs.files(
-        repositoryRoot.file("src/webMain/kotlin/org/khronos/webgl/arrayCopy.kt"),
-        repositoryRoot.file("src/jsMain/kotlin/org/khronos/webgl/arrayCopy.js.kt"),
-        repositoryRoot.file("src/wasmJsMain/kotlin/org/khronos/webgl/arrayCopy.wasm.kt"),
+        repositoryRoot.file("src/webMain/kotlin/kotlinx/browser/typedarrays/arrayCopy.kt"),
+        repositoryRoot.file("src/jsMain/kotlin/kotlinx/browser/typedarrays/arrayCopy.js.kt"),
+        repositoryRoot.file("src/wasmJsMain/kotlin/kotlinx/browser/typedarrays/arrayCopy.wasm.kt"),
         repositoryRoot.file("src/webTest/kotlin/arrayCopyTest.kt"),
     ).withPropertyName("arrayCopy").withPathSensitivity(PathSensitivity.RELATIVE)
 }

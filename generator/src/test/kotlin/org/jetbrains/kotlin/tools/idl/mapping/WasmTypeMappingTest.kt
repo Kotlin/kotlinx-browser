@@ -87,8 +87,8 @@ class WasmTypeMappingTest {
     @Test
     fun stringsAndBuffers() {
         for (s in listOf("DOMString", "USVString", "ByteString", "CSSOMString")) assertEquals(named("kotlin.String"), value(t(s)))
-        assertEquals(named("org.khronos.webgl.Float32Array"), value(t("Float32Array")))
-        assertEquals(named("org.khronos.webgl.BufferDataSource", nullable = true), value(t("BufferSource", nullable = true)))
+        assertEquals(named("kotlinx.browser.typedarrays.Float32Array"), value(t("Float32Array")))
+        assertEquals(named("kotlinx.browser.typedarrays.BufferDataSource", nullable = true), value(t("BufferSource", nullable = true)))
     }
 
     @Test

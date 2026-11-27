@@ -7,7 +7,7 @@ the changes users see coming from the dukat-generated versions, see [migration-g
 ## What the library is
 
 The library is Kotlin `external` declarations for the browser APIs (`org.w3c.*`, `org.khronos.webgl`), plus the
-hand-written `kotlinx.browser` globals, for **Kotlin/JS and Kotlin/Wasm from one source set**. The
+hand-written `kotlinx.browser` globals and typed arrays (`kotlinx.browser.typedarrays`), for **Kotlin/JS and Kotlin/Wasm from one source set**. The
 declarations are generated from the specifications' Web IDL. There is one copy in `webMain`, with no `expect`/`actual`.
 
 ## Repository layout
@@ -15,11 +15,11 @@ declarations are generated from the specifications' Web IDL. There is one copy i
 | Path | What it is | Edit by hand? |
 |---|---|---|
 | `src/webMain/generated/` | Generated declarations, one file per spec, at `<package path>/<spec>.kt` | **No.** Regenerate |
-| `src/webMain/kotlin/kotlinx/browser/` | `window`, `document`, `localStorage`, `sessionStorage` | Yes |
+| `src/webMain/kotlin/kotlinx/browser/declarations.kt` | `window`, `document`, `localStorage`, `sessionStorage` | Yes |
 | `src/webMain/kotlin/org/w3c/dom/` | `ItemArrayLike` and `asList()`, `JsObjects.kt` (internal helpers the generated code calls) | Yes |
-| `src/webMain/kotlin/org/khronos/webgl/TypedArrays.kt` | ECMAScript built-ins Web IDL refers to (`ArrayBuffer`, typed arrays, `DataView`), external declarations for both targets | Yes |
-| `src/jsMain/kotlin/org/khronos/webgl/TypedArrays.js.kt` | JS-only factories and `set` overloads taking a Kotlin array (`Int8Array(arrayOf<Byte>(1))`), kept from the Kotlin/JS declarations | Yes |
-| `src/{web,js,wasmJs}Main/kotlin/org/khronos/webgl/arrayCopy*.kt`, `src/webTest/kotlin/arrayCopyTest.kt` | Typed-array ↔ Kotlin-array conversions and their test | **No.** `./gradlew :generator:generateUtils` |
+| `src/webMain/kotlin/kotlinx/browser/typedarrays/TypedArrays.kt` | ECMAScript built-ins Web IDL refers to (`ArrayBuffer`, typed arrays, `DataView`), external declarations for both targets | Yes |
+| `src/jsMain/kotlin/kotlinx/browser/typedarrays/TypedArrays.js.kt` | JS-only factories and `set` overloads taking a Kotlin array (`Int8Array(arrayOf<Byte>(1))`), kept from the Kotlin/JS declarations | Yes |
+| `src/{web,js,wasmJs}Main/kotlin/kotlinx/browser/typedarrays/arrayCopy*.kt`, `src/webTest/kotlin/arrayCopyTest.kt` | Typed-array ↔ Kotlin-array conversions and their test | **No.** `./gradlew :generator:generateUtils` |
 | `src/webTest/kotlin/` | Runtime tests for both targets, on Node and in Playwright Chromium (`InteropTest`, `DomTest`, `SmokeTest`) | Yes |
 | `api/kotlinx-browser.klib.api` | ABI dump for both targets in one file | **No.** `./gradlew updateKotlinAbi` |
 | `generator/` | The generator (Kotlin/JVM, Gradle subproject `:generator`) | Yes |

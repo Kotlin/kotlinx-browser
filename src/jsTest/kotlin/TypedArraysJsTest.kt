@@ -3,7 +3,7 @@
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
-import org.khronos.webgl.*
+import kotlinx.browser.typedarrays.*
 import kotlin.test.*
 
 /** The JS-only typed-array overloads taking a Kotlin array: it is passed to JS as is, an array of numbers. */

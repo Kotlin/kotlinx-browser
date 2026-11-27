@@ -6,7 +6,7 @@
 // NOTE: THIS FILE IS AUTO-GENERATED, DO NOT EDIT!
 // See generator/src/main/kotlin/org/jetbrains/kotlin/generators/helpers/generate.kt for details.
 
-package org.khronos.webgl
+package kotlinx.browser.typedarrays
 
 /** Returns a new [UByteArray] containing all the elements of this [Uint8Array]. */
 @ExperimentalUnsignedTypes

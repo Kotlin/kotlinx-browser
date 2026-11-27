@@ -31,8 +31,20 @@ than in the old snapshot:
 | `Event`, `EventTarget`, `EventListener` | `org.w3c.dom.events` | `org.w3c.dom` |
 | `MouseEvent`, `MouseEventInit`, `WheelEvent`, `WheelEventInit` | `org.w3c.dom.events` | `org.w3c.dom.pointerevents` |
 | `DOMParser`, `XMLSerializer` | `org.w3c.dom.parsing` | `org.w3c.dom` |
+| `ArrayBuffer`, `DataView`, `Int8Array` … `Float64Array`, `ArrayBufferView`, `BufferDataSource`, their indexers and `toXxxArray()` conversions | `org.khronos.webgl` | `kotlinx.browser.typedarrays` |
 
 `UIEvent`, `KeyboardEvent`, `FocusEvent`, `InputEvent` and `CompositionEvent` are still in `org.w3c.dom.events`.
+
+The typed arrays are ECMAScript built-ins, not WebGL, so they left `org.khronos.webgl` (KT-57303); the WebGL API
+itself stays there. WebGL code imports both:
+
+```kotlin
+import kotlinx.browser.typedarrays.*
+import org.khronos.webgl.*
+```
+
+There are no deprecated aliases in the old package: an alias and the class, star-imported from both packages, make
+the name unresolvable.
 
 ```kotlin
 // Before
@@ -124,8 +136,8 @@ declared; use the standard name. `wordWrap`, `fontStretch` and `gridGap` are kep
 
 - **`DataView` unsigned accessors are unsigned.** `getUint8`, `getUint16` and `getUint32` return `UByte`, `UShort`
   and `UInt`, and `setUint8`, `setUint16` and `setUint32` take them; they were `Byte`, `Short` and `Int`, so
-  `getUint8` of 200 was 200 in a `Byte` on JS and -56 on Wasm. They are extensions in `org.khronos.webgl` now, so code
-  calling them needs that import (`import org.khronos.webgl.*` covers it). The signed and float accessors are unchanged.
+  `getUint8` of 200 was 200 in a `Byte` on JS and -56 on Wasm. They are extensions now, so code
+  calling them needs the package import (`import kotlinx.browser.typedarrays.*` covers it). The signed and float accessors are unchanged.
 - **`subarray()` and `subarray(start)`.** Both parameters of `subarray` are optional, as in JS.
 - **`TypedArray<Self>`, a common interface of the nine typed arrays.** It has `length`, `set` and `subarray`, so one
   function can take any of them (`fun checksum(data: TypedArray<*>)`). The constructor taking an array and

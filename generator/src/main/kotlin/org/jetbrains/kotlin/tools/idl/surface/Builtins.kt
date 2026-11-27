@@ -19,7 +19,7 @@ object Builtins {
     /**
      * ECMAScript built-ins that Web IDL references but never defines (`ArrayBuffer`, typed arrays, `DataView`), plus
      * the `webidl` buffer typedefs that are modelled by the same hand-written declarations (`BufferSource`,
-     * `ArrayBufferView`). They are provided by the hand-written `org.khronos.webgl` sources.
+     * `ArrayBufferView`). They are provided by the hand-written `kotlinx.browser.typedarrays` sources.
      */
     val HAND_WRITTEN: Set<String> = WasmTypeMapping.BUFFER_TYPES.keys
 

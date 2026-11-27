@@ -8,7 +8,7 @@
 
 
 @file:OptIn(ExperimentalUnsignedTypes::class)
-import org.khronos.webgl.*
+import kotlinx.browser.typedarrays.*
 import kotlin.test.*
 
 private fun testUint8ArrayRoundTrip(array: UByteArray) {

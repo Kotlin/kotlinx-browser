@@ -9,7 +9,7 @@
 // declarations are in webMain. Only the signed and float arrays have them: a Kotlin array of signed values does not
 // fit an unsigned typed array (a clamped one turns every negative byte into 0); use `UByteArray.toUint8Array()` etc.
 
-package org.khronos.webgl
+package kotlinx.browser.typedarrays
 
 /** A new [Int8Array] with the elements of [array]. */
 public fun Int8Array(array: Array<Byte>): Int8Array = Int8Array(array.unsafeCast<Array<Double>>())

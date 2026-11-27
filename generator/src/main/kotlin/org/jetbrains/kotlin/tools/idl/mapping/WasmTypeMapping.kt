@@ -70,8 +70,8 @@ class UnmappableTypeException(message: String) : IllegalArgumentException(messag
  * | `sequence<T>`, `FrozenArray<T>`, `ObservableArray<T>` | `JsArray<T>` | same             |
  * | `Promise<T>`                              | `Promise<T>`        | same                 |
  * | `async_sequence<T>`                       | `JsAny`             | `JsAny`              |
- * | `ArrayBuffer`, `ArrayBufferView`, `DataView`, typed arrays | `org.khronos.webgl.*` | same     |
- * | `BufferSource`, `AllowSharedBufferSource` | `org.khronos.webgl.BufferDataSource` | same |
+ * | `ArrayBuffer`, `ArrayBufferView`, `DataView`, typed arrays | `kotlinx.browser.typedarrays.*` | same |
+ * | `BufferSource`, `AllowSharedBufferSource` | `kotlinx.browser.typedarrays.BufferDataSource` | same |
  * | union                                     | [KotlinType.Union]  | `JsAny`              |
  * | `(undefined or T)`                        | `T?`                | `T?`                 |
  * | `WindowProxy`                              | `Window` reference  | same                 |
@@ -201,8 +201,8 @@ object WasmTypeMapping {
         "Int8Array", "Int16Array", "Int32Array",
         "Uint8Array", "Uint16Array", "Uint32Array", "Uint8ClampedArray",
         "Float32Array", "Float64Array",
-    ).associateWith { "org.khronos.webgl.$it" } + mapOf(
-        "BufferSource" to "org.khronos.webgl.BufferDataSource",
-        "AllowSharedBufferSource" to "org.khronos.webgl.BufferDataSource",
+    ).associateWith { "kotlinx.browser.typedarrays.$it" } + mapOf(
+        "BufferSource" to "kotlinx.browser.typedarrays.BufferDataSource",
+        "AllowSharedBufferSource" to "kotlinx.browser.typedarrays.BufferDataSource",
     )
 }

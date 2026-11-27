@@ -46,20 +46,20 @@ fun generateUtils(): Map<String, String> {
     }
 
     return sortedMapOf(
-        "src/webMain/kotlin/org/khronos/webgl/arrayCopy.kt" to file {
-            appendLine("package org.khronos.webgl")
+        "src/webMain/kotlin/kotlinx/browser/typedarrays/arrayCopy.kt" to file {
+            appendLine("package kotlinx.browser.typedarrays")
             conversions.forEach { (ktType, jsType, signedConversion) ->
                 appendExpectConversionsForType(ktType, jsType, signedConversion)
             }
         },
-        "src/jsMain/kotlin/org/khronos/webgl/arrayCopy.js.kt" to file {
-            appendLine("package org.khronos.webgl")
+        "src/jsMain/kotlin/kotlinx/browser/typedarrays/arrayCopy.js.kt" to file {
+            appendLine("package kotlinx.browser.typedarrays")
             conversions.forEach { (ktType, jsType, signedConversion) ->
                 appendJsConversionsForType(ktType, jsType, signedConversion)
             }
         },
-        "src/wasmJsMain/kotlin/org/khronos/webgl/arrayCopy.wasm.kt" to file {
-            appendLine("package org.khronos.webgl")
+        "src/wasmJsMain/kotlin/kotlinx/browser/typedarrays/arrayCopy.wasm.kt" to file {
+            appendLine("package kotlinx.browser.typedarrays")
             conversions.forEach { (ktType, jsType, signedConversion) ->
                 appendWasmConversionsForType(ktType, jsType, signedConversion)
             }
@@ -165,7 +165,7 @@ private fun StringBuilder.appendWasmConversionsForType(
 private fun StringBuilder.appendTests(conversions: List<Conversion>) {
     appendLine()
     appendLine("@file:OptIn(ExperimentalUnsignedTypes::class)")
-    appendLine("import org.khronos.webgl.*")
+    appendLine("import kotlinx.browser.typedarrays.*")
     appendLine("import kotlin.test.*")
 
     conversions.forEach { appendTestJsRoundTripHelper(it.ktType, it.jsType) }

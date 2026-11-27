@@ -12,6 +12,7 @@
 package org.w3c.dom
 
 import kotlin.js.*
+import kotlinx.browser.typedarrays.*
 import org.khronos.webgl.*
 import org.w3c.animations.*
 import org.w3c.css.fonts.*

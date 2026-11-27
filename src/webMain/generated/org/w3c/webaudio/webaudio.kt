@@ -12,7 +12,7 @@
 package org.w3c.webaudio
 
 import kotlin.js.*
-import org.khronos.webgl.*
+import kotlinx.browser.typedarrays.*
 import org.w3c.dom.*
 import org.w3c.dom.mediacapture.*
 

@@ -6,8 +6,8 @@
 import kotlinx.browser.document
 import kotlinx.browser.localStorage
 import kotlinx.browser.window
-import org.khronos.webgl.Uint8Array
-import org.khronos.webgl.get
+import kotlinx.browser.typedarrays.Uint8Array
+import kotlinx.browser.typedarrays.get
 import org.w3c.dom.*
 import org.w3c.animations.*
 import org.w3c.css.fonts.*
