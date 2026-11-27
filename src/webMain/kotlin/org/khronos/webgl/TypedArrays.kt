@@ -33,20 +33,41 @@ public external interface ArrayBufferView : BufferDataSource, JsAny {
 }
 
 /**
+ * The members every typed array has (ECMAScript's `%TypedArray%`), with [Self] the concrete array type, so code can
+ * take any typed array: `fun checksum(data: TypedArray<*>)`. Element access stays on each array, whose Kotlin element
+ * types differ (`Byte`, `UByte`, `Float`, …).
+ *
+ * An interface, not a class: `%TypedArray%` is not a global, and a check against an external class (`is`, `as`) reads
+ * the global of its name, which would fail at runtime. Interfaces are not checked.
+ */
+public external interface TypedArray<Self : TypedArray<Self>> : ArrayBufferView, JsAny {
+    public val length: Int
+
+    /** Copies the elements of [array], of any typed array type, into this array starting at [offset], converting each. */
+    public fun set(array: TypedArray<*>, offset: Int = definedExternally)
+
+    /** Copies the numbers of [array] into this array starting at [offset], converting each to the element type. */
+    public fun set(array: JsArray<JsNumber>, offset: Int = definedExternally)
+
+    /** A view of the elements from [start] to [end] (exclusive) on the same buffer; the whole array by default. */
+    public fun subarray(start: Int = definedExternally, end: Int = definedExternally): Self
+}
+
+/**
  * Exposes the JavaScript [Int8Array](https://developer.mozilla.org/en/docs/Web/API/Int8Array) to Kotlin
  */
-public open external class Int8Array : ArrayBufferView, JsAny {
+public open external class Int8Array : TypedArray<Int8Array>, JsAny {
     public constructor(length: Int)
-    public constructor(array: Int8Array)
+    public constructor(array: TypedArray<*>)
     public constructor(array: JsArray<JsNumber>)
     public constructor(buffer: ArrayBuffer, byteOffset: Int = definedExternally, length: Int = definedExternally)
-    public open val length: Int
+    override val length: Int
     override val buffer: ArrayBuffer
     override val byteOffset: Int
     override val byteLength: Int
-    public fun set(array: Int8Array, offset: Int = definedExternally)
-    public fun set(array: JsArray<JsNumber>, offset: Int = definedExternally)
-    public fun subarray(start: Int, end: Int): Int8Array
+    override fun set(array: TypedArray<*>, offset: Int)
+    override fun set(array: JsArray<JsNumber>, offset: Int)
+    override fun subarray(start: Int, end: Int): Int8Array
 
     public companion object {
         public val BYTES_PER_ELEMENT: Int
@@ -66,18 +87,18 @@ public operator fun Int8Array.set(index: Int, value: Byte): Unit = setMethodImpl
 /**
  * Exposes the JavaScript [Uint8Array](https://developer.mozilla.org/en/docs/Web/API/Uint8Array) to Kotlin
  */
-public open external class Uint8Array : ArrayBufferView, JsAny {
+public open external class Uint8Array : TypedArray<Uint8Array>, JsAny {
     public constructor(length: Int)
-    public constructor(array: Uint8Array)
+    public constructor(array: TypedArray<*>)
     public constructor(array: JsArray<JsNumber>)
     public constructor(buffer: ArrayBuffer, byteOffset: Int = definedExternally, length: Int = definedExternally)
-    public open val length: Int
+    override val length: Int
     override val buffer: ArrayBuffer
     override val byteOffset: Int
     override val byteLength: Int
-    public fun set(array: Uint8Array, offset: Int = definedExternally)
-    public fun set(array: JsArray<JsNumber>, offset: Int = definedExternally)
-    public fun subarray(start: Int, end: Int): Uint8Array
+    override fun set(array: TypedArray<*>, offset: Int)
+    override fun set(array: JsArray<JsNumber>, offset: Int)
+    override fun subarray(start: Int, end: Int): Uint8Array
 
     public companion object {
         public val BYTES_PER_ELEMENT: Int
@@ -97,18 +118,18 @@ public operator fun Uint8Array.set(index: Int, value: UByte): Unit = setMethodIm
 /**
  * Exposes the JavaScript [Uint8ClampedArray](https://developer.mozilla.org/en/docs/Web/API/Uint8ClampedArray) to Kotlin
  */
-public open external class Uint8ClampedArray : ArrayBufferView, JsAny {
+public open external class Uint8ClampedArray : TypedArray<Uint8ClampedArray>, JsAny {
     public constructor(length: Int)
-    public constructor(array: Uint8ClampedArray)
+    public constructor(array: TypedArray<*>)
     public constructor(array: JsArray<JsNumber>)
     public constructor(buffer: ArrayBuffer, byteOffset: Int = definedExternally, length: Int = definedExternally)
-    public open val length: Int
+    override val length: Int
     override val buffer: ArrayBuffer
     override val byteOffset: Int
     override val byteLength: Int
-    public fun set(array: Uint8ClampedArray, offset: Int = definedExternally)
-    public fun set(array: JsArray<JsNumber>, offset: Int = definedExternally)
-    public fun subarray(start: Int, end: Int): Uint8ClampedArray
+    override fun set(array: TypedArray<*>, offset: Int)
+    override fun set(array: JsArray<JsNumber>, offset: Int)
+    override fun subarray(start: Int, end: Int): Uint8ClampedArray
 
     public companion object {
         public val BYTES_PER_ELEMENT: Int
@@ -128,18 +149,18 @@ public operator fun Uint8ClampedArray.set(index: Int, value: UByte): Unit = setM
 /**
  * Exposes the JavaScript [Int16Array](https://developer.mozilla.org/en/docs/Web/API/Int16Array) to Kotlin
  */
-public open external class Int16Array : ArrayBufferView, JsAny {
+public open external class Int16Array : TypedArray<Int16Array>, JsAny {
     public constructor(length: Int)
-    public constructor(array: Int16Array)
+    public constructor(array: TypedArray<*>)
     public constructor(array: JsArray<JsNumber>)
     public constructor(buffer: ArrayBuffer, byteOffset: Int = definedExternally, length: Int = definedExternally)
-    public open val length: Int
+    override val length: Int
     override val buffer: ArrayBuffer
     override val byteOffset: Int
     override val byteLength: Int
-    public fun set(array: Int16Array, offset: Int = definedExternally)
-    public fun set(array: JsArray<JsNumber>, offset: Int = definedExternally)
-    public fun subarray(start: Int, end: Int): Int16Array
+    override fun set(array: TypedArray<*>, offset: Int)
+    override fun set(array: JsArray<JsNumber>, offset: Int)
+    override fun subarray(start: Int, end: Int): Int16Array
 
     public companion object {
         public val BYTES_PER_ELEMENT: Int
@@ -159,18 +180,18 @@ public operator fun Int16Array.set(index: Int, value: Short): Unit = setMethodIm
 /**
  * Exposes the JavaScript [Uint16Array](https://developer.mozilla.org/en/docs/Web/API/Uint16Array) to Kotlin
  */
-public open external class Uint16Array : ArrayBufferView, JsAny {
+public open external class Uint16Array : TypedArray<Uint16Array>, JsAny {
     public constructor(length: Int)
-    public constructor(array: Uint16Array)
+    public constructor(array: TypedArray<*>)
     public constructor(array: JsArray<JsNumber>)
     public constructor(buffer: ArrayBuffer, byteOffset: Int = definedExternally, length: Int = definedExternally)
-    public open val length: Int
+    override val length: Int
     override val buffer: ArrayBuffer
     override val byteOffset: Int
     override val byteLength: Int
-    public fun set(array: Uint16Array, offset: Int = definedExternally)
-    public fun set(array: JsArray<JsNumber>, offset: Int = definedExternally)
-    public fun subarray(start: Int, end: Int): Uint16Array
+    override fun set(array: TypedArray<*>, offset: Int)
+    override fun set(array: JsArray<JsNumber>, offset: Int)
+    override fun subarray(start: Int, end: Int): Uint16Array
 
     public companion object {
         public val BYTES_PER_ELEMENT: Int
@@ -190,18 +211,18 @@ public operator fun Uint16Array.set(index: Int, value: UShort): Unit = setMethod
 /**
  * Exposes the JavaScript [Int32Array](https://developer.mozilla.org/en/docs/Web/API/Int32Array) to Kotlin
  */
-public open external class Int32Array : ArrayBufferView, JsAny {
+public open external class Int32Array : TypedArray<Int32Array>, JsAny {
     public constructor(length: Int)
-    public constructor(array: Int32Array)
+    public constructor(array: TypedArray<*>)
     public constructor(array: JsArray<JsNumber>)
     public constructor(buffer: ArrayBuffer, byteOffset: Int = definedExternally, length: Int = definedExternally)
-    public open val length: Int
+    override val length: Int
     override val buffer: ArrayBuffer
     override val byteOffset: Int
     override val byteLength: Int
-    public fun set(array: Int32Array, offset: Int = definedExternally)
-    public fun set(array: JsArray<JsNumber>, offset: Int = definedExternally)
-    public fun subarray(start: Int, end: Int): Int32Array
+    override fun set(array: TypedArray<*>, offset: Int)
+    override fun set(array: JsArray<JsNumber>, offset: Int)
+    override fun subarray(start: Int, end: Int): Int32Array
 
     public companion object {
         public val BYTES_PER_ELEMENT: Int
@@ -221,18 +242,18 @@ public operator fun Int32Array.set(index: Int, value: Int): Unit = setMethodImpl
 /**
  * Exposes the JavaScript [Uint32Array](https://developer.mozilla.org/en/docs/Web/API/Uint32Array) to Kotlin
  */
-public open external class Uint32Array : ArrayBufferView, JsAny {
+public open external class Uint32Array : TypedArray<Uint32Array>, JsAny {
     public constructor(length: Int)
-    public constructor(array: Uint32Array)
+    public constructor(array: TypedArray<*>)
     public constructor(array: JsArray<JsNumber>)
     public constructor(buffer: ArrayBuffer, byteOffset: Int = definedExternally, length: Int = definedExternally)
-    public open val length: Int
+    override val length: Int
     override val buffer: ArrayBuffer
     override val byteOffset: Int
     override val byteLength: Int
-    public fun set(array: Uint32Array, offset: Int = definedExternally)
-    public fun set(array: JsArray<JsNumber>, offset: Int = definedExternally)
-    public fun subarray(start: Int, end: Int): Uint32Array
+    override fun set(array: TypedArray<*>, offset: Int)
+    override fun set(array: JsArray<JsNumber>, offset: Int)
+    override fun subarray(start: Int, end: Int): Uint32Array
 
     public companion object {
         public val BYTES_PER_ELEMENT: Int
@@ -252,18 +273,18 @@ public operator fun Uint32Array.set(index: Int, value: UInt): Unit = setMethodIm
 /**
  * Exposes the JavaScript [Float32Array](https://developer.mozilla.org/en/docs/Web/API/Float32Array) to Kotlin
  */
-public open external class Float32Array : ArrayBufferView, JsAny {
+public open external class Float32Array : TypedArray<Float32Array>, JsAny {
     public constructor(length: Int)
-    public constructor(array: Float32Array)
+    public constructor(array: TypedArray<*>)
     public constructor(array: JsArray<JsNumber>)
     public constructor(buffer: ArrayBuffer, byteOffset: Int = definedExternally, length: Int = definedExternally)
-    public open val length: Int
+    override val length: Int
     override val buffer: ArrayBuffer
     override val byteOffset: Int
     override val byteLength: Int
-    public fun set(array: Float32Array, offset: Int = definedExternally)
-    public fun set(array: JsArray<JsNumber>, offset: Int = definedExternally)
-    public fun subarray(start: Int, end: Int): Float32Array
+    override fun set(array: TypedArray<*>, offset: Int)
+    override fun set(array: JsArray<JsNumber>, offset: Int)
+    override fun subarray(start: Int, end: Int): Float32Array
 
     public companion object {
         public val BYTES_PER_ELEMENT: Int
@@ -283,18 +304,18 @@ public operator fun Float32Array.set(index: Int, value: Float): Unit = setMethod
 /**
  * Exposes the JavaScript [Float64Array](https://developer.mozilla.org/en/docs/Web/API/Float64Array) to Kotlin
  */
-public open external class Float64Array : ArrayBufferView, JsAny {
+public open external class Float64Array : TypedArray<Float64Array>, JsAny {
     public constructor(length: Int)
-    public constructor(array: Float64Array)
+    public constructor(array: TypedArray<*>)
     public constructor(array: JsArray<JsNumber>)
     public constructor(buffer: ArrayBuffer, byteOffset: Int = definedExternally, length: Int = definedExternally)
-    public open val length: Int
+    override val length: Int
     override val buffer: ArrayBuffer
     override val byteOffset: Int
     override val byteLength: Int
-    public fun set(array: Float64Array, offset: Int = definedExternally)
-    public fun set(array: JsArray<JsNumber>, offset: Int = definedExternally)
-    public fun subarray(start: Int, end: Int): Float64Array
+    override fun set(array: TypedArray<*>, offset: Int)
+    override fun set(array: JsArray<JsNumber>, offset: Int)
+    override fun subarray(start: Int, end: Int): Float64Array
 
     public companion object {
         public val BYTES_PER_ELEMENT: Int
@@ -319,21 +340,68 @@ public open external class DataView(buffer: ArrayBuffer, byteOffset: Int = defin
     override val byteOffset: Int
     override val byteLength: Int
     public fun getInt8(byteOffset: Int): Byte
-    public fun getUint8(byteOffset: Int): Byte
     public fun getInt16(byteOffset: Int, littleEndian: Boolean = definedExternally): Short
-    public fun getUint16(byteOffset: Int, littleEndian: Boolean = definedExternally): Short
     public fun getInt32(byteOffset: Int, littleEndian: Boolean = definedExternally): Int
-    public fun getUint32(byteOffset: Int, littleEndian: Boolean = definedExternally): Int
     public fun getFloat32(byteOffset: Int, littleEndian: Boolean = definedExternally): Float
     public fun getFloat64(byteOffset: Int, littleEndian: Boolean = definedExternally): Double
     public fun setInt8(byteOffset: Int, value: Byte)
-    public fun setUint8(byteOffset: Int, value: Byte)
     public fun setInt16(byteOffset: Int, value: Short, littleEndian: Boolean = definedExternally)
-    public fun setUint16(byteOffset: Int, value: Short, littleEndian: Boolean = definedExternally)
     public fun setInt32(byteOffset: Int, value: Int, littleEndian: Boolean = definedExternally)
-    public fun setUint32(byteOffset: Int, value: Int, littleEndian: Boolean = definedExternally)
     public fun setFloat32(byteOffset: Int, value: Float, littleEndian: Boolean = definedExternally)
     public fun setFloat64(byteOffset: Int, value: Double, littleEndian: Boolean = definedExternally)
 }
+
+// The unsigned accessors are extensions, like the indexers of the unsigned arrays: an unsigned type cannot cross the
+// JS boundary, so the helpers take and return a JS number and the extension converts it (`getUint8` of 200 is 200u,
+// not 200 in a `Byte` on JS and -56 on Wasm). The setters hand JS `value.toInt()`, which it wraps into range.
+
+@Suppress("UNUSED_PARAMETER")
+internal fun getUint8ImplForDataView(view: DataView, byteOffset: Int): Int = js("view.getUint8(byteOffset)")
+
+/** The unsigned byte at [byteOffset]. */
+public fun DataView.getUint8(byteOffset: Int): UByte = getUint8ImplForDataView(this, byteOffset).toUByte()
+
+@Suppress("UNUSED_PARAMETER")
+internal fun getUint16ImplForDataView(view: DataView, byteOffset: Int, littleEndian: Boolean): Int =
+    js("view.getUint16(byteOffset, littleEndian)")
+
+/** The unsigned 16-bit integer at [byteOffset], big-endian unless [littleEndian]. */
+public fun DataView.getUint16(byteOffset: Int, littleEndian: Boolean = false): UShort =
+    getUint16ImplForDataView(this, byteOffset, littleEndian).toUShort()
+
+@Suppress("UNUSED_PARAMETER")
+internal fun getUint32ImplForDataView(view: DataView, byteOffset: Int, littleEndian: Boolean): Double =
+    js("view.getUint32(byteOffset, littleEndian)")
+
+/** The unsigned 32-bit integer at [byteOffset], big-endian unless [littleEndian]. */
+public fun DataView.getUint32(byteOffset: Int, littleEndian: Boolean = false): UInt =
+    getUint32ImplForDataView(this, byteOffset, littleEndian).toUInt()
+
+@Suppress("UNUSED_PARAMETER")
+internal fun setUint8ImplForDataView(view: DataView, byteOffset: Int, value: Int) {
+    js("view.setUint8(byteOffset, value);")
+}
+
+/** Stores [value] as an unsigned byte at [byteOffset]. */
+public fun DataView.setUint8(byteOffset: Int, value: UByte): Unit =
+    setUint8ImplForDataView(this, byteOffset, value.toInt())
+
+@Suppress("UNUSED_PARAMETER")
+internal fun setUint16ImplForDataView(view: DataView, byteOffset: Int, value: Int, littleEndian: Boolean) {
+    js("view.setUint16(byteOffset, value, littleEndian);")
+}
+
+/** Stores [value] as an unsigned 16-bit integer at [byteOffset], big-endian unless [littleEndian]. */
+public fun DataView.setUint16(byteOffset: Int, value: UShort, littleEndian: Boolean = false): Unit =
+    setUint16ImplForDataView(this, byteOffset, value.toInt(), littleEndian)
+
+@Suppress("UNUSED_PARAMETER")
+internal fun setUint32ImplForDataView(view: DataView, byteOffset: Int, value: Int, littleEndian: Boolean) {
+    js("view.setUint32(byteOffset, value, littleEndian);")
+}
+
+/** Stores [value] as an unsigned 32-bit integer at [byteOffset], big-endian unless [littleEndian]. */
+public fun DataView.setUint32(byteOffset: Int, value: UInt, littleEndian: Boolean = false): Unit =
+    setUint32ImplForDataView(this, byteOffset, value.toInt(), littleEndian)
 
 public external interface BufferDataSource

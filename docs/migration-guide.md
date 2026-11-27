@@ -122,6 +122,16 @@ declared; use the standard name. `wordWrap`, `fontStretch` and `gridGap` are kep
   imageData.data[0] = 255u
   ```
 
+- **`DataView` unsigned accessors are unsigned.** `getUint8`, `getUint16` and `getUint32` return `UByte`, `UShort`
+  and `UInt`, and `setUint8`, `setUint16` and `setUint32` take them; they were `Byte`, `Short` and `Int`, so
+  `getUint8` of 200 was 200 in a `Byte` on JS and -56 on Wasm. They are extensions in `org.khronos.webgl` now, so code
+  calling them needs that import (`import org.khronos.webgl.*` covers it). The signed and float accessors are unchanged.
+- **`subarray()` and `subarray(start)`.** Both parameters of `subarray` are optional, as in JS.
+- **`TypedArray<Self>`, a common interface of the nine typed arrays.** It has `length`, `set` and `subarray`, so one
+  function can take any of them (`fun checksum(data: TypedArray<*>)`). The constructor taking an array and
+  `set(array, offset)` accept any typed array, converting each element as JS does (`Int16Array(uint8Array)`); they
+  took only the same type. It is an interface because `%TypedArray%` has no global, so `x is TypedArray<*>` is not
+  available; check for the concrete type.
 - **Kotlin/JS: no unsigned overloads taking a signed Kotlin array.** `Uint8Array(Array<Byte>)`,
   `Uint8ClampedArray(Array<Byte>)`, `Uint16Array(Array<Short>)`, `Uint32Array(Array<Int>)` and their
   `set(array, offset)` are removed: a clamped array turned every negative `Byte` into 0, so it could not hold 128–255.
